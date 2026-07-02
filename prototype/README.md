@@ -68,6 +68,46 @@ dados/
 | redação por template | Claude API com guard-rail de números + citações obrigatórias |
 | HTML | HTML + export PDF/PPTX com white-label |
 
+## Ligando dados públicos reais
+
+O relatório mostra o selo de fonte no fim de cada seção: **cinza** = veio ao vivo da
+fonte oficial; **laranja (DEMONSTRAÇÃO)** = fixture. O banner do topo some quando todas
+as fontes forem reais. Estado atual e como ligar cada uma:
+
+| Seção | Fonte real | Status | Como ligar |
+|---|---|---|---|
+| 3. Macroeconomia | Banco Central (SGS 432/433) | **já funciona** em rede aberta (`--modo auto`) | nada a fazer — se continuar laranja, rode `python3 testar_fontes.py` para ver o erro real (ex.: certificado SSL do Python no macOS) |
+| 4. Top-down | IBGE — PAS, [tabela SIDRA 2577](https://sidra.ibge.gov.br/tabela/2577) (receita por atividade) | falta configurar variável/classificação | passo 1 abaixo |
+| 5. Bottom-up | IBGE — CEMPRE, [tabela 6449](https://sidra.ibge.gov.br/tabela/6449) (nº de empresas por classe CNAE) e/ou agregados da base CNPJ | falta configurar / gerar agregados | passos 1 e 2 abaixo |
+| 7. Dinâmica | Base CNPJ (aberturas/fechamentos) | CSV demo | passo 2 abaixo |
+
+**Passo 1 — descobrir e configurar as tabelas do IBGE (10 min):**
+
+```bash
+cd prototype
+python3 testar_fontes.py
+```
+
+O script testa a conexão e baixa os metadados reais das tabelas candidatas
+(PAS 2577, CEMPRE 6449/993) direto da API do IBGE, salvando em
+`saida/descoberta_fontes.json` os IDs de variável e classificação necessários.
+Com esse arquivo em mãos, preencha o bloco `topdown.agregado_sidra` em
+`setores/estetica_sp.json` (ou envie o arquivo no chat do Claude para configurarmos).
+
+**Passo 2 — agregados reais de CNPJ via Base dos Dados (30–60 min, conta Google):**
+
+1. Crie um projeto gratuito no Google Cloud e acesse o BigQuery.
+2. Siga o guia da [Base dos Dados](https://basedosdados.org/docs) para conectar o
+   datalake público.
+3. Rode a consulta de `dados/sql/agregados_cnpj_basedosdados.sql` (ajuste os CNAEs).
+4. Exporte o resultado como CSV no mesmo esquema de `dados/cnpj_agregados_demo.csv`
+   e substitua o arquivo (idem para a dinâmica de aberturas/fechamentos).
+5. Atualize o campo `cnpj_extracao` no JSON do setor com o mês real da extração.
+
+Alternativa sem Google Cloud: baixar os dumps abertos da própria Receita
+(https://dadosabertos.rfb.gov.br/CNPJ/) e processar com o pipeline de referência
+citado na pesquisa — mais trabalhoso (arquivos de vários GB).
+
 ## Dados de demonstração
 
 Os valores das fixtures e dos CSVs são **ilustrativos** (rotulados no relatório).

@@ -179,7 +179,9 @@ def gerar(config: dict, modo: str) -> str:
         "regiao": config["regiao"]["nome"],
         "gerado_em": time.strftime("%d/%m/%Y %H:%M UTC", time.gmtime()),
     }
-    return R.montar(s, meta, tem_demo=cliente.usou_fixture or modo != "live")
+    provs = [prov_ibge, prov_cnpj] + [prov for _, prov in series_macro]
+    tem_demo = any(p["origem"] == "fixture" for p in provs)
+    return R.montar(s, meta, tem_demo=tem_demo)
 
 
 def main():

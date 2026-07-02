@@ -220,11 +220,12 @@ footer{color:var(--mudo);font-size:.8rem;margin-top:28px}
 
 def montar(secoes: list, meta: dict, tem_demo: bool) -> str:
     aviso = (
-        '<div class="aviso-demo"><b>Relatório de demonstração.</b> Este ambiente não '
-        "alcança as APIs públicas (política de rede), então os valores exibidos vêm de "
-        "fixtures ilustrativas. A estrutura, os cálculos e as citações são os de produção: "
-        "rodando com <code>--modo live</code> em rede aberta, cada número passa a vir da "
-        "fonte oficial indicada no selo de cada seção.</div>"
+        '<div class="aviso-demo"><b>Este relatório contém dados de demonstração.</b> '
+        "Confira o selo de fonte no fim de cada seção: selo <b>cinza</b> = dado obtido ao "
+        "vivo da fonte oficial no momento da geração; selo <b>laranja (DEMONSTRAÇÃO)</b> = "
+        "valor ilustrativo de fixture. Para ligar as fontes reais que ainda faltam, siga "
+        "o passo a passo em <code>prototype/README.md</code> (seção &quot;Ligando dados "
+        "públicos reais&quot;) — comece rodando <code>python3 testar_fontes.py</code>.</div>"
         if tem_demo
         else ""
     )
