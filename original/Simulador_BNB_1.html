@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simulador BNB / FNE</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Arial, -apple-system, sans-serif; background: #f0f2f5; padding: 16px; color: #1a1a1a; }
+  .container { max-width: 720px; margin: 0 auto; background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,.1); border: 1px solid #e5e7eb; }
+  .header { background: linear-gradient(90deg, #1e40af, #2563eb); color: #fff; padding: 16px; display: flex; align-items: center; gap: 12px; }
+  .header .icon { width: 40px; height: 40px; background: rgba(255,255,255,.2); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 20px; }
+  .header h1 { font-size: 18px; }
+  .header p { font-size: 11px; opacity: .8; }
+  .progress { padding: 12px 16px 0; display: flex; gap: 4px; }
+  .progress .seg { flex: 1; }
+  .progress .bar { height: 6px; border-radius: 3px; background: #e5e7eb; }
+  .progress .bar.active { background: #2563eb; }
+  .progress .lbl { font-size: 11px; margin-top: 4px; color: #9ca3af; }
+  .progress .lbl.active { color: #1d4ed8; font-weight: bold; }
+  .body { padding: 16px; }
+  h2 { font-size: 18px; margin-bottom: 16px; }
+  h3 { font-size: 14px; color: #1e40af; margin: 12px 0 8px; }
+  label { display: block; font-size: 13px; font-weight: 600; color: #374151; margin-bottom: 4px; }
+  .field { margin-bottom: 12px; }
+  input, select { width: 100%; padding: 8px 12px; border: 2px solid #facc15; border-radius: 8px; background: #fefce8; font-size: 14px; font-weight: 500; }
+  input.blue { border-color: #60a5fa; background: #eff6ff; }
+  input.plain { border-color: #d1d5db; background: #fff; }
+  input:focus, select:focus { outline: none; box-shadow: 0 0 0 2px #3b82f6; }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .hint { font-size: 11px; color: #2563eb; margin-top: 4px; font-weight: 500; }
+  .infobox { background: #eff6ff; border-radius: 8px; padding: 8px 12px; font-size: 12px; color: #1d4ed8; margin-bottom: 12px; }
+  .summary { background: #eff6ff; border-radius: 8px; padding: 12px; font-size: 14px; }
+  .summary .row { display: flex; justify-content: space-between; padding: 2px 0; }
+  .btns { display: flex; justify-content: space-between; margin-top: 16px; }
+  .btn { padding: 10px 24px; border-radius: 8px; font-weight: bold; font-size: 14px; border: none; cursor: pointer; }
+  .btn.primary { background: #2563eb; color: #fff; box-shadow: 0 4px 6px rgba(37,99,235,.3); }
+  .btn.primary:hover { background: #1d4ed8; }
+  .btn.gray { background: #e5e7eb; color: #374151; }
+  .btn.gray:hover { background: #d1d5db; }
+  .desemb-row { display: flex; gap: 8px; align-items: center; margin-bottom: 8px; }
+  .desemb-row .num { font-size: 11px; color: #9ca3af; width: 20px; }
+  .desemb-row input { padding: 6px 8px; font-size: 13px; }
+  .valid { margin-top: 12px; padding: 8px; border-radius: 8px; font-size: 14px; font-weight: bold; }
+  .valid.ok { background: #dcfce7; color: #166534; }
+  .valid.err { background: #fee2e2; color: #991b1b; }
+  .cost-row { display: flex; gap: 8px; align-items: center; margin-bottom: 8px; }
+  .cost-row input:first-child { flex: 1; }
+  .cost-row input:last-child { width: 144px; text-align: right; }
+  .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 16px; }
+  .card { padding: 12px; border-radius: 12px; color: #fff; }
+  .card .t { font-size: 11px; opacity: .8; }
+  .card .v { font-size: 18px; font-weight: bold; }
+  .card.blue { background: linear-gradient(135deg, #2563eb, #1e40af); }
+  .card.green { background: linear-gradient(135deg, #16a34a, #166534); }
+  .card.purple { background: linear-gradient(135deg, #9333ea, #6b21a8); }
+  .card.orange { background: linear-gradient(135deg, #f97316, #dc2626); }
+  .detail { background: #f9fafb; border-radius: 8px; padding: 12px; font-size: 12px; margin-bottom: 16px; }
+  .detail .row { display: flex; justify-content: space-between; padding: 2px 0; }
+  .tabs { display: flex; gap: 4px; margin-bottom: 12px; overflow-x: auto; }
+  .tab { padding: 6px 12px; border-radius: 8px; font-size: 12px; font-weight: 500; white-space: nowrap; border: none; cursor: pointer; background: #f3f4f6; color: #4b5563; }
+  .tab.active { background: #2563eb; color: #fff; }
+  table { width: 100%; border-collapse: collapse; font-size: 12px; }
+  th { padding: 4px; }
+  td { padding: 2px 4px; }
+  thead.blue th { background: #1d4ed8; color: #fff; }
+  thead.purple th { background: #6b21a8; color: #fff; }
+  thead.amber th { background: #b45309; color: #fff; }
+  .th-yellow th { background: #fef9c3; }
+  .th-blue th { background: #dbeafe; }
+  tr.grace { background: #fefce8; }
+  tr.disb { background: #f0fdf4; }
+  tr.tot { background: #dcfce7; font-weight: bold; }
+  .scroll { overflow-x: auto; max-height: 55vh; }
+  .r { text-align: right; }
+  .c { text-align: center; }
+  .link { font-size: 12px; color: #2563eb; cursor: pointer; text-decoration: underline; background: none; border: none; }
+  .editbar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+  .note { font-size: 11px; color: #6b7280; margin-bottom: 8px; }
+</style>
+</head>
+<body>
+<div class="container" id="app"></div>
+
+<script>
+// ============================================================
+// MOTOR BNB — VALIDADO 100% contra planilha original (10/10 cenários exatos)
+// ============================================================
+const FERIADOS = new Map();
+(function(){
+  const H=[[2017,12,25,2],[2018,1,1,2],[2018,2,12,2],[2018,2,13,2],[2018,3,30,2],[2018,4,21,1],[2018,5,1,2],[2018,5,31,2],[2018,9,7,2],[2018,10,12,2],[2018,11,2,2],[2018,11,15,2],[2018,12,25,2],[2019,1,1,2],[2019,3,4,2],[2019,3,5,2],[2019,4,19,2],[2019,4,21,1],[2019,5,1,2],[2019,6,20,2],[2019,9,7,1],[2019,10,12,1],[2019,11,2,1],[2019,11,15,2],[2019,12,25,2],[2020,1,1,2],[2020,2,24,2],[2020,2,25,2],[2020,4,10,2],[2020,4,21,2],[2020,5,1,2],[2020,6,11,2],[2020,9,7,2],[2020,10,12,2],[2020,11,2,2],[2020,11,15,1],[2020,12,25,2],[2021,1,1,2],[2021,2,15,2],[2021,2,16,2],[2021,4,2,2],[2021,4,21,2],[2021,5,1,1],[2021,6,3,2],[2021,9,7,2],[2021,10,12,2],[2021,11,2,2],[2021,11,15,2],[2021,12,25,1],[2022,1,1,1],[2022,2,28,2],[2022,3,1,2],[2022,4,15,2],[2022,4,21,2],[2022,5,1,1],[2022,6,16,2],[2022,9,7,2],[2022,10,12,2],[2022,11,2,2],[2022,11,15,2],[2022,12,25,1],[2023,1,1,1],[2023,2,20,2],[2023,2,21,2],[2023,4,7,2],[2023,4,21,2],[2023,5,1,2],[2023,6,8,2],[2023,9,7,2],[2023,10,12,2],[2023,11,2,2],[2023,11,15,2],[2023,12,25,2],[2024,1,1,2],[2024,2,12,2],[2024,2,13,2],[2024,3,29,2],[2024,4,21,1],[2024,5,1,2],[2024,5,30,2],[2024,9,7,1],[2024,10,12,1],[2024,11,2,1],[2024,11,15,2],[2024,12,25,2],[2025,1,1,2],[2025,3,3,2],[2025,3,4,2],[2025,4,18,2],[2025,4,21,2],[2025,5,1,2],[2025,6,19,2],[2025,9,7,1],[2025,10,12,1],[2025,11,2,1],[2025,11,15,1],[2025,12,25,2],[2026,1,1,2],[2026,2,16,2],[2026,2,17,2],[2026,4,3,2],[2026,4,21,2],[2026,5,1,2],[2026,6,4,2],[2026,9,7,2],[2026,10,12,2],[2026,11,2,2],[2026,11,15,1],[2026,12,25,2],[2027,1,1,2],[2027,2,8,2],[2027,2,9,2],[2027,3,26,2],[2027,4,21,2],[2027,5,1,1],[2027,5,27,2],[2027,9,7,2],[2027,10,12,2],[2027,11,2,2],[2027,11,15,2],[2027,12,25,1],[2028,1,1,1],[2028,2,28,2],[2028,2,29,2],[2028,4,14,2],[2028,4,21,2],[2028,5,1,2],[2028,6,15,2],[2028,9,7,2],[2028,10,12,2],[2028,11,2,2],[2028,11,15,2],[2028,12,25,2],[2029,1,1,2],[2029,2,19,2],[2029,2,20,2],[2029,4,6,2],[2029,4,21,1],[2029,5,1,2],[2029,6,7,2],[2029,9,7,2],[2029,10,12,2],[2029,11,2,2],[2029,11,15,2],[2029,12,25,2],[2030,1,1,2],[2030,2,11,2],[2030,2,12,2],[2030,3,29,2],[2030,4,21,1],[2030,5,1,2],[2030,5,30,2],[2030,9,7,1],[2030,10,12,1],[2030,11,2,1],[2030,11,15,2],[2030,12,25,2],[2031,1,1,2],[2031,3,3,2],[2031,3,4,2],[2031,4,18,2],[2031,4,21,2],[2031,5,1,2],[2031,6,19,2],[2031,9,7,1],[2031,10,12,1],[2031,11,2,1],[2031,11,15,1],[2031,12,25,2],[2032,1,1,2],[2032,2,9,2],[2032,2,10,2],[2032,3,26,2],[2032,4,21,2],[2032,5,1,1],[2032,5,27,2],[2032,9,7,2],[2032,10,12,2],[2032,11,2,2],[2032,11,15,2],[2032,12,25,1],[2033,1,1,1],[2033,2,28,2],[2033,3,1,2],[2033,4,15,2],[2033,4,21,2],[2033,5,1,1],[2033,6,16,2],[2033,9,7,2],[2033,10,12,2],[2033,11,2,2],[2033,11,15,2],[2033,12,25,1],[2034,1,1,1],[2034,2,20,2],[2034,2,21,2],[2034,4,7,2],[2034,4,21,2],[2034,5,1,2],[2034,6,8,2],[2034,9,7,2],[2034,10,12,2],[2034,11,2,2],[2034,11,15,2],[2034,12,25,2],[2035,1,1,2],[2035,2,5,2],[2035,2,6,2],[2035,3,23,2],[2035,4,21,1],[2035,5,1,2],[2035,5,24,2],[2035,9,7,2],[2035,10,12,2],[2035,11,2,2],[2035,11,15,2],[2035,12,25,2],[2036,1,1,2],[2036,2,25,2],[2036,2,26,2],[2036,4,11,2],[2036,4,21,2],[2036,5,1,2],[2036,6,12,2],[2036,9,7,1],[2036,10,12,1],[2036,11,2,1],[2036,11,15,1],[2036,12,25,2],[2037,1,1,2],[2037,2,16,2],[2037,2,17,2],[2037,4,3,2],[2037,4,21,2],[2037,5,1,2],[2037,6,4,2],[2037,9,7,2],[2037,10,12,2],[2037,11,2,2],[2037,11,15,1],[2037,12,25,2],[2038,1,1,2],[2038,3,8,2],[2038,3,9,2],[2038,4,23,2],[2038,4,21,2],[2038,5,1,1],[2038,6,24,2],[2038,9,7,2],[2038,10,12,2],[2038,11,2,2],[2038,11,15,2],[2038,12,25,1],[2039,1,1,1],[2039,2,21,2],[2039,2,22,2],[2039,4,8,2],[2039,4,21,2],[2039,5,1,1],[2039,6,9,2],[2039,9,7,2],[2039,10,12,2],[2039,11,2,2],[2039,11,15,2],[2039,12,25,1],[2040,1,1,1],[2040,2,13,2],[2040,2,14,2],[2040,3,30,2],[2040,4,21,1],[2040,5,1,2],[2040,5,31,2],[2040,9,7,2],[2040,10,12,2],[2040,11,2,2],[2040,11,15,2],[2040,12,25,2],[2041,1,1,2],[2041,3,4,2],[2041,3,5,2],[2041,4,19,2],[2041,4,21,1],[2041,5,1,2],[2041,6,20,2],[2041,9,7,1],[2041,10,12,1],[2041,11,2,1],[2041,11,15,2],[2041,12,25,2],[2042,1,1,2],[2042,2,17,2],[2042,2,18,2],[2042,4,4,2],[2042,4,21,2],[2042,5,1,2],[2042,6,5,2],[2042,9,7,1],[2042,10,12,1],[2042,11,2,1],[2042,11,15,1],[2042,12,25,2],[2043,1,1,2],[2043,2,9,2],[2043,2,10,2],[2043,3,27,2],[2043,4,21,2],[2043,5,1,2],[2043,5,28,2],[2043,9,7,2],[2043,10,12,2],[2043,11,2,2],[2043,11,15,1],[2043,12,25,2],[2044,1,1,2],[2044,2,29,2],[2044,3,1,2],[2044,4,15,2],[2044,4,21,2],[2044,5,1,1],[2044,6,16,2],[2044,9,7,2],[2044,10,12,2],[2044,11,2,2],[2044,11,15,2],[2044,12,25,1],[2045,1,1,1],[2045,2,20,2],[2045,2,21,2],[2045,4,7,2],[2045,4,21,2],[2045,5,1,2],[2045,6,8,2],[2045,9,7,2],[2045,10,12,2],[2045,11,2,2],[2045,11,15,2],[2045,12,25,2],[2046,1,1,2],[2046,2,5,2],[2046,2,6,2],[2046,3,23,2],[2046,4,21,1],[2046,5,1,2],[2046,5,24,2],[2046,9,7,2],[2046,10,12,2],[2046,11,2,2],[2046,11,15,2],[2046,12,25,2],[2047,1,1,2],[2047,2,25,2],[2047,2,26,2],[2047,4,12,2],[2047,4,21,1],[2047,5,1,2],[2047,6,13,2],[2047,9,7,1],[2047,10,12,1],[2047,11,2,1],[2047,11,15,2],[2047,12,25,2],[2048,1,1,2],[2048,2,17,2],[2048,2,18,2],[2048,4,3,2],[2048,4,21,2],[2048,5,1,2],[2048,6,4,2],[2048,9,7,2],[2048,10,12,2],[2048,11,2,2],[2048,11,15,1],[2048,12,25,2],[2049,1,1,2],[2049,3,8,2],[2049,3,9,2],[2049,4,23,2],[2049,4,21,2],[2049,5,1,1],[2049,6,24,2],[2049,9,7,2],[2049,10,12,2],[2049,11,2,2],[2049,11,15,2],[2049,12,25,1],[2050,1,1,1],[2050,2,21,2],[2050,2,22,2],[2050,4,8,2],[2050,4,21,2],[2050,5,1,1],[2050,6,9,2],[2050,9,7,2],[2050,10,12,2],[2050,11,2,2],[2050,11,15,2],[2050,12,25,1],[2051,1,1,1],[2051,2,13,2],[2051,2,14,2],[2051,3,31,2],[2051,4,21,2],[2051,5,1,2],[2051,6,1,2],[2051,9,7,2],[2051,10,12,2],[2051,11,2,2],[2051,11,15,2],[2051,12,25,2],[2052,1,1,2],[2052,3,4,2],[2052,3,5,2],[2052,4,19,2],[2052,4,21,1],[2052,5,1,2],[2052,6,20,2],[2052,9,7,1],[2052,10,12,1],[2052,11,2,1],[2052,11,15,2],[2052,12,25,2],[2053,1,1,2],[2053,2,17,2],[2053,2,18,2],[2053,4,4,2],[2053,4,21,2],[2053,5,1,2],[2053,6,5,2],[2053,9,7,1],[2053,10,12,1],[2053,11,2,1],[2053,11,15,1],[2053,12,25,2],[2054,1,1,2],[2054,2,9,2],[2054,2,10,2],[2054,3,27,2],[2054,4,21,2],[2054,5,1,2],[2054,5,28,2],[2054,9,7,2],[2054,10,12,2],[2054,11,2,2],[2054,11,15,1],[2054,12,25,2],[2055,1,1,2],[2055,3,1,2],[2055,3,2,2],[2055,4,16,2],[2055,4,21,2],[2055,5,1,1],[2055,6,17,2],[2055,9,7,2],[2055,10,12,2],[2055,11,2,2],[2055,11,15,2],[2055,12,25,1],[2056,1,1,1],[2056,2,14,2],[2056,2,15,2],[2056,3,31,2],[2056,4,21,2],[2056,5,1,2],[2056,6,1,2],[2056,9,7,2],[2056,10,12,2],[2056,11,2,2],[2056,11,15,2],[2056,12,25,2],[2057,1,1,2],[2057,3,5,2],[2057,3,6,2],[2057,4,20,2],[2057,4,21,1],[2057,5,1,2],[2057,6,21,2],[2057,9,7,2],[2057,10,12,2],[2057,11,2,2],[2057,11,15,2],[2057,12,25,2],[2058,1,1,2],[2058,2,25,2],[2058,2,26,2],[2058,4,12,2],[2058,4,21,1],[2058,5,1,2],[2058,6,13,2],[2058,9,7,1],[2058,10,12,1],[2058,11,2,1],[2058,11,15,2],[2058,12,25,2],[2059,1,1,2],[2059,2,10,2],[2059,2,11,2],[2059,3,28,2],[2059,4,21,2],[2059,5,1,2],[2059,5,29,2],[2059,9,7,1],[2059,10,12,1],[2059,11,2,1],[2059,11,15,1],[2059,12,25,2],[2060,1,1,2],[2060,3,1,2],[2060,3,2,2],[2060,4,16,2],[2060,4,21,2],[2060,5,1,1],[2060,6,17,2],[2060,9,7,2],[2060,10,12,2],[2060,11,2,2],[2060,11,15,2],[2060,12,25,1]];
+  H.forEach(([y,m,d,cfg])=>FERIADOS.set(new Date(y,m-1,d).getTime(),cfg));
+})();
+const isWeekend=d=>d.getDay()===0||d.getDay()===6;
+const holCfg=d=>FERIADOS.get(new Date(d.getFullYear(),d.getMonth(),d.getDate()).getTime())||0;
+function networkDays(s,e){if(!s||!e||s>e)return 0;let c=0;const cur=new Date(s.getFullYear(),s.getMonth(),s.getDate());const end=new Date(e.getFullYear(),e.getMonth(),e.getDate());while(cur<=end){if(!isWeekend(cur)&&!holCfg(cur))c++;cur.setDate(cur.getDate()+1);}return c;}
+function ajFlag(d){if(isWeekend(d))return 2;if(holCfg(d)===2)return 2;return 1;}
+function amDays(p,c){if(!p||!c||c<=p)return 0;const nd=networkDays(p,c);return ajFlag(c)===2?nd:nd-1;}
+function edate(d,m){const y=d.getFullYear()+Math.floor((d.getMonth()+m)/12);const mo=((d.getMonth()+m)%12+12)%12;const ld=new Date(y,mo+1,0).getDate();return new Date(y,mo,Math.min(d.getDate(),ld));}
+function eomonth(d,m){const y=d.getFullYear()+Math.floor((d.getMonth()+m)/12);const mo=((d.getMonth()+m)%12+12)%12;return new Date(y,mo+1,0);}
+const r2=v=>v>=0?Number((v+1e-12).toFixed(2)):-Number((-v+1e-12).toFixed(2));
+const r6=v=>Number((v+1e-15).toFixed(6));
+const parseDate=s=>{if(!s)return null;const p=s.split('-');return new Date(+p[0],+p[1]-1,+p[2]);};
+const fmt=v=>(v||0).toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2});
+const fmtPct=v=>(v*100).toFixed(4)+'%';
+const fmtDate=d=>d?String(d.getDate()).padStart(2,'0')+'/'+String(d.getMonth()+1).padStart(2,'0')+'/'+d.getFullYear():'';
+const sameDay=(a,b)=>a&&b&&a.getFullYear()===b.getFullYear()&&a.getMonth()===b.getMonth()&&a.getDate()===b.getDate();
+const PERIOD_M={'MENSAL':1,'BIMESTRAL':2,'TRIMESTRAL':3,'SEMESTRAL':6,'ANUAL':12};
+
+function xirr(cfs,dts,guess=0.1){if(!cfs.length)return 0;const d0=dts[0],diffs=dts.map(d=>(d-d0)/(365*864e5));let rate=guess;
+for(let it=0;it<300;it++){let f=0,df=0;for(let i=0;i<cfs.length;i++){const t=diffs[i],base=1+rate;if(base<=0)continue;f+=cfs[i]/Math.pow(base,t);df-=t*cfs[i]/Math.pow(base,t+1);}
+if(Math.abs(df)<1e-14)break;const nr=rate-f/df;if(Math.abs(nr-rate)<1e-13)return nr;rate=nr;if(!isFinite(rate)||rate<-0.99)rate=guess*0.5;}return rate;}
+
+function runSim(p){
+  const C4=p.data0, valor=p.valor;
+  const dia = p.dia || (C4.getDate()>=29 ? 28 : C4.getDate());
+  const ts=p.taxaSem, tc=p.taxaCom;
+  const prazo=p.prazoAmort, car=p.carencia, prazoTotal=prazo+car;
+  const pp=p.periodPrinc||'MENSAL', pc=p.periodCar||'TRIMESTRAL';
+  const iguais=p.parcelasIguais, reemb=p.reembolso||{};
+
+  // Data-base (P15)
+  let base;
+  if(C4.getDate()<=dia){const ld=new Date(C4.getFullYear(),C4.getMonth()+1,0).getDate();base=new Date(C4.getFullYear(),C4.getMonth(),Math.min(dia,ld));}
+  else{const nx=edate(C4,1);const ld=new Date(nx.getFullYear(),nx.getMonth()+1,0).getDate();base=new Date(nx.getFullYear(),nx.getMonth(),Math.min(dia,ld));}
+
+  // 1ª prestação, vencimento, qtd
+  let data1a, qtdPrest;
+  if(pp==='PARCELA ÚNICA'){data1a=edate(base,prazoTotal);qtdPrest=1;}
+  else{const pm=PERIOD_M[pp]||1;data1a=edate(base,car+pm);qtdPrest=Math.floor(prazo/pm);}
+  const venc=edate(base,prazoTotal);
+  const D7=qtdPrest, K9=r2(valor/D7);
+  const J4=edate(data1a,-1);
+
+  // CÁLCULO DESEMB
+  const cd=[];
+  p.desembolsos.filter(d=>d.valor>0&&d.data).forEach(({data:dstr,valor:C})=>{
+    const B=(dstr instanceof Date)?dstr:new Date(dstr+'T00:00:00');
+    if(B>venc)return;
+    const D=B.getDate(), eom0=eomonth(B,0);
+    let F;
+    if(D===dia)F=new Date(B);
+    else{const cand=new Date(B);cand.setDate(B.getDate()+(dia-D));F=cand>eom0?eom0:cand;}
+    const AD=Math.round((F-B)/864e5);
+    const eom1=eomonth(B,1);
+    const W_=new Date(eom1.getFullYear(),eom1.getMonth(),Math.min(dia,eom1.getDate()));
+    const Xd=W_>eom1?eom1:W_;
+    const G=AD>0?F:Xd;
+    const H=sameDay(F,B)?new Date(B):G;
+    let I=0;
+    if(B<=venc){const nd=networkDays(B,H);I=ajFlag(H)===2?nd:nd-1;if(sameDay(H,B)&&ajFlag(H)!==2)I=0;}
+    const Pv=I>0?r2((r6(Math.pow(1+ts,I/252))-1)*C):0;
+    const Qv=I>0?r2((r6(Math.pow(1+tc,I/252))-1)*C):0;
+    let AE;
+    if(sameDay(B,C4))AE=C;else if(sameDay(B,venc))AE=C;else if(D===dia)AE=0;else AE=C;
+    cd.push({B,C,H,I,P:Pv,Q:Qv,AE});
+  });
+  const sumCD=(f,dt)=>cd.reduce((s,x)=>s+(sameDay(x.H,dt)?x[f]:0),0);
+
+  // MEMÓRIA CÁLCULO
+  let O=0,Pb=0,Q=0,R=0,S=0,X=valor,AOp=0,AUp=0,prev=C4;
+  let totJ=0,totK=0,totL=0;
+  const totalDesembAlloc=cd.reduce((s,x)=>s+x.C,0);
+  let cumDesemb=0;
+  const rows=[];
+  for(let m=0;m<=prazoTotal;m++){
+    const Cd=m===0?new Date(base):edate(base,m);
+    const AM=Cd>prev?amDays(prev,Cd):0;
+    const Dm=sumCD('C',Cd), Em=sumCD('P',Cd), Fm=sumCD('Q',Cd);
+    const Gm=r2((r6(Math.pow(1+ts,AM/252))-1)*R)+Em;
+    const Hm=r2((r6(Math.pow(1+tc,AM/252))-1)*S)+Fm;
+    const AT=sameDay(Cd,data1a)?1:0;
+    let AO;
+    if(AOp+1>D7)AO=0;else if(AT===1)AO=1;else if(AOp>0)AO=AOp+1;else AO=0;
+    const AU=AO;
+    const Bm=AU!==AUp?AU:0;
+    let Im=0;
+    if(!iguais&&Bm>0&&Bm<=D7)Im=reemb[Bm]||0;
+    let T;
+    if(Cd>venc||Bm===0)T=0;
+    else if(sameDay(Cd,venc))T=X;
+    else if(iguais)T=K9;
+    else if(Im>0)T=Im;
+    else T=X/((D7+1)-Bm);
+    const Wm=(T!==0&&X!==0)?T/X:0;
+    const Um=sumCD('AE',Cd);
+    let Jm;
+    if(sameDay(Cd,venc))Jm=Q+Um;
+    else Jm=r2((Q+Um)*Wm);
+    let BB=0;
+    if(pc!=='NENHUMA'){
+      const gate=(Cd<=J4)&&(AU===0);
+      const div=PERIOD_M[pc]||3;
+      BB=(gate&&m%div===0)?1:0;
+    }
+    let Km,Lm;
+    if(data1a>Cd){Km=(O+Gm)*BB;Lm=(Pb+Hm)*BB;}
+    else if(Jm===0){Km=0;Lm=0;}
+    else{Km=O+Gm;Lm=Pb+Hm;}
+    O=O+Gm-Km;Pb=Pb+Hm-Lm;Q=Q+Dm-Jm;R=O+Q;S=Pb+Q;
+    if(T>0)X=X-T;
+    if(Jm>0)totJ+=Jm;if(Km>0)totK+=Km;if(Lm>0)totL+=Lm;
+    rows.push({mes:m,seq:Bm,data:Cd,disbValor:Dm,amd:AM,juroMensalSem:Gm,juroPagoSem:Km,juroPagoCom:Lm,
+      principal:Jm,totalSem:Jm+Km,totalCom:Jm+Lm,bonus:Km-Lm,saldoPrinc:Math.max(Q,0),
+      isGrace:Cd<data1a&&m>0,isAmort:Cd>=data1a});
+    prev=Cd;AOp=AO;AUp=AU;cumDesemb+=Dm;
+    if(Q<=0.01&&Cd>=data1a&&cumDesemb>=totalDesembAlloc-0.01)break;
+  }
+
+  // CET (metodologia Anexo CET da planilha): desembolsos nas datas REAIS (+),
+  // custos totais na 1ª data de desembolso (−), prestações em TODAS as datas com pagamento (INCLUINDO mês 0).
+  // Planilha usa prestações SEM bônus; calculamos também COM bônus (para taxas diferenciadas).
+  const custosTotal=p.custos.reduce((s,c)=>s+c.valor,0);
+  const buildFlow=(campo)=>{
+    const fm=new Map();const addF=(d,v)=>{const k=new Date(d.getFullYear(),d.getMonth(),d.getDate()).getTime();fm.set(k,(fm.get(k)||0)+v);};
+    const vd=p.desembolsos.filter(d=>d.valor>0&&d.data).map(d=>({data:(d.data instanceof Date)?d.data:new Date(d.data+'T00:00:00'),valor:d.valor})).filter(d=>d.data<=venc);
+    vd.forEach(({data,valor})=>addF(data,valor));
+    if(vd.length){const fd=vd.reduce((mn,d)=>d.data<mn?d.data:mn,vd[0].data);addF(fd,-custosTotal);}
+    rows.forEach(s=>{const prest=s[campo];if(prest>0.001)addF(s.data,-prest);});
+    const keys=[...fm.keys()].sort((a,b)=>a-b);
+    return {cfs:keys.map(k=>fm.get(k)),dts:keys.map(k=>new Date(k))};
+  };
+  const fSem=buildFlow('totalSem');
+  const cetAnual=fSem.cfs.length>2?xirr(fSem.cfs,fSem.dts,0.1):0;           // = planilha (sem bônus)
+  const fCom=buildFlow('totalCom');
+  const cetAnualComBonus=fCom.cfs.length>2?xirr(fCom.cfs,fCom.dts,0.1):0;   // com bônus de adimplência
+
+  const amortRows=rows.filter(s=>s.principal>0.001);
+  return {rows,sched:rows,cd,
+    disbDetail:cd.map(x=>({dtLib:x.B,valor:x.C,alloc:x.H,busDays:x.I,juroSem:x.P})),
+    qtdPrest:D7,data1a,venc,base,dia,
+    totalJurosSem:Math.round(totK*100)/100,totalJurosCom:Math.round(totL*100)/100,
+    totalPrincipal:Math.round(totJ*100)/100,totalBonus:Math.round((totK-totL)*100)/100,
+    mediaPrestCom:amortRows.length?amortRows.reduce((s,r)=>s+r.totalCom,0)/amortRows.length:0,
+    cetAnual,cetMensal:Math.pow(1+cetAnual,1/12)-1,
+    cetAnualComBonus,cetMensalComBonus:Math.pow(1+cetAnualComBonus,1/12)-1,custosTotal};
+}
+
+// ============================================================
+// STATE + RENDER
+// ============================================================
+let S = {
+  step: 0, viewTab: 'resumo',
+  dataContratacao:'2026-03-05', valorFin:'15000000', diaAniv:'5',
+  taxaSem:'9.4776', taxaCom:'8.056', prazoAmort:'120', carencia:'24',
+  periodPrinc:'MENSAL', periodCar:'TRIMESTRAL', parcelasIguais:'SIM', reembolso:{},
+  desembolsos:[{data:'2026-03-05',valor:2800000},{data:'2026-06-24',valor:4020000},{data:'2027-09-24',valor:1250000},{data:'2027-12-24',valor:1250000},{data:'2028-03-05',valor:4820000},{data:'2028-06-05',valor:860000},{data:'',valor:0},{data:'',valor:0},{data:'',valor:0},{data:'',valor:0}],
+  custos:[{nome:'Tarifa de análise',valor:187500},{nome:'Custo cartório/avaliação',valor:25000},{nome:'Seguro prestamista',valor:300000},{nome:'Outros custos 1',valor:0},{nome:'Outros custos 2',valor:0}]
+};
+
+function calc(){
+  try {
+    return runSim({data0:parseDate(S.dataContratacao),valor:+S.valorFin,dia:+S.diaAniv,taxaSem:+S.taxaSem/100,taxaCom:+S.taxaCom/100,prazoAmort:+S.prazoAmort,carencia:+S.carencia,periodPrinc:S.periodPrinc,periodCar:S.periodCar,parcelasIguais:S.parcelasIguais==='SIM',reembolso:S.reembolso||{},desembolsos:S.desembolsos,custos:S.custos});
+  } catch(e){ console.error(e); return null; }
+}
+
+function validar(){
+  const errs=[];
+  const car=+S.carencia, pa=+S.prazoAmort, tot=car+pa;
+  if(tot>360)errs.push('Prazo total ('+tot+'m) excede 360 meses — a planilha oficial do BNB exibe "prazo total>360m".');
+  if(S.periodPrinc!=='PARCELA ÚNICA'){const pm=PERIOD_M[S.periodPrinc]||1;if(pa%pm!==0)errs.push('Prazo de amortização ('+pa+'m) não é múltiplo da periodicidade do principal ('+S.periodPrinc+' = '+pm+'m) — a planilha exibe "erro periodicidade".');}
+  if(S.periodCar!=='NENHUMA'&&car>0){const pc=PERIOD_M[S.periodCar]||3;if(car%pc!==0)errs.push('AJUSTAR CARÊNCIA: '+car+'m não é múltiplo da periodicidade de juros na carência ('+S.periodCar+' = '+pc+'m) — mesma validação da planilha oficial do BNB.');}
+  if(S.parcelasIguais==='NÃO'&&(!S.reembolso||Object.keys(S.reembolso).length===0))errs.push('Parcelas diferenciadas (NÃO) exigem a tabela de reembolso preenchida — recurso da próxima etapa. Use SIM por enquanto.');
+  return errs;
+}
+
+function set(k,v){ S[k]=v; render(); }
+function setDesemb(i,f,v){ S.desembolsos[i][f]=f==='valor'?+v:v; render(); }
+function setCusto(i,f,v){ S.custos[i][f]=f==='valor'?+v:v; render(); }
+
+function render(){
+  const R = calc();
+  const totalDesemb = S.desembolsos.reduce((s,d)=>s+d.valor,0);
+  const custosTotal = S.custos.reduce((s,c)=>s+c.valor,0);
+  let h = `<div class="header"><div class="icon">🏦</div><div><h1>Simulador BNB / FNE</h1><p>Metodologia exata do Banco do Nordeste · dias úteis/252 · validado 100%</p></div></div>`;
+
+  if(S.step<4){
+    const names=['Operação','Prazos','Desembolsos','Custos CET'];
+    h+=`<div class="progress">`;
+    names.forEach((n,i)=>{h+=`<div class="seg"><div class="bar ${i<=S.step?'active':''}"></div><div class="lbl ${i===S.step?'active':''}">${n}</div></div>`;});
+    h+=`</div>`;
+  }
+  h+=`<div class="body">`;
+
+  if(S.step===0){
+    h+=`<h2>📋 Passo 1: Dados da Operação</h2>
+    <div class="field"><label>Data da Contratação</label><input type="date" value="${S.dataContratacao}" oninput="set('dataContratacao',this.value)"></div>
+    <div class="field"><label>Valor do Financiamento (R$)</label><input type="number" value="${S.valorFin}" oninput="set('valorFin',this.value)"><div class="hint">= R$ ${fmt(+S.valorFin)}</div></div>
+    <div class="grid2">
+      <div class="field"><label>Taxa SEM bônus (% a.a.)</label><input type="number" step="0.0001" value="${S.taxaSem}" oninput="set('taxaSem',this.value)"></div>
+      <div class="field"><label>Taxa COM bônus (% a.a.)</label><input type="number" step="0.0001" value="${S.taxaCom}" oninput="set('taxaCom',this.value)"></div>
+    </div>
+    <div class="infobox">💡 As duas taxas são independentes (como na planilha). Para o CET pela taxa cheia, coloque as duas iguais.</div>
+    <div class="field"><label>Dia de Aniversário dos Pagamentos</label><input type="number" min="1" max="28" value="${S.diaAniv}" oninput="set('diaAniv',this.value)"></div>
+    <div class="btns"><span></span><button class="btn primary" onclick="set('step',1)">Próximo →</button></div>`;
+  }
+  else if(S.step===1){
+    h+=`<h2>📅 Passo 2: Prazos e Periodicidade</h2>
+    <div class="grid2">
+      <div class="field"><label>Prazo de Amortização (meses)</label><input type="number" value="${S.prazoAmort}" oninput="set('prazoAmort',this.value)"></div>
+      <div class="field"><label>Carência (meses)</label><input type="number" value="${S.carencia}" oninput="set('carencia',this.value)"></div>
+    </div>
+    <div class="field"><label>Periodicidade do Principal</label><select oninput="set('periodPrinc',this.value)">${['MENSAL','BIMESTRAL','TRIMESTRAL','SEMESTRAL','ANUAL','PARCELA ÚNICA'].map(o=>`<option ${o===S.periodPrinc?'selected':''}>${o}</option>`).join('')}</select></div>
+    <div class="field"><label>Periodicidade de Juros na Carência</label><select oninput="set('periodCar',this.value)">${['MENSAL','BIMESTRAL','TRIMESTRAL','SEMESTRAL','ANUAL','NENHUMA'].map(o=>`<option ${o===S.periodCar?'selected':''}>${o}</option>`).join('')}</select></div>
+    <div class="field"><label>Parcelas de Principal Iguais?</label><select oninput="set('parcelasIguais',this.value)"><option ${S.parcelasIguais==='SIM'?'selected':''}>SIM</option><option ${S.parcelasIguais==='NÃO'?'selected':''}>NÃO</option></select></div>
+    <div class="summary">
+      <div class="row"><span>Prazo total:</span><b>${+S.prazoAmort + +S.carencia} meses</b></div>
+      <div class="row"><span>Qtd. prestações:</span><b>${R?R.qtdPrest:'-'}</b></div>
+      <div class="row"><span>1ª prestação:</span><b>${R?fmtDate(R.data1a):'-'}</b></div>
+      <div class="row"><span>Vencimento final:</span><b>${R?fmtDate(R.venc):'-'}</b></div>
+    </div>
+    ${(()=>{const errs=validar();return errs.length?`<div style="background:#fef2f2;border:1px solid #fecaca;border-radius:8px;padding:12px 14px;margin-top:12px">${errs.map(e=>`<div style="color:#b91c1c;font-size:13px;margin:4px 0">⚠️ ${e}</div>`).join('')}</div>`:'';})()}
+    <div class="btns"><button class="btn gray" onclick="set('step',0)">← Voltar</button><button class="btn primary" onclick="set('step',2)">Próximo →</button></div>`;
+  }
+  else if(S.step===2){
+    h+=`<h2>💰 Passo 3: Esquema de Desembolso</h2><div class="note">Datas e valores de cada liberação</div>`;
+    S.desembolsos.forEach((d,i)=>{
+      h+=`<div class="desemb-row"><span class="num">${i+1}</span><input type="date" value="${d.data}" oninput="setDesemb(${i},'data',this.value)"><input type="number" placeholder="Valor R$" value="${d.valor||''}" oninput="setDesemb(${i},'valor',this.value)" class="r"></div>`;
+    });
+    const ok=Math.abs(totalDesemb-+S.valorFin)<1;
+    h+=`<div class="valid ${ok?'ok':'err'}">Total: R$ ${fmt(totalDesemb)} ${ok?'✅ OK':`❌ Diferença de R$ ${fmt(Math.abs(totalDesemb-+S.valorFin))}`}</div>
+    <div class="btns"><button class="btn gray" onclick="set('step',1)">← Voltar</button><button class="btn primary" onclick="set('step',3)">Próximo →</button></div>`;
+  }
+  else if(S.step===3){
+    h+=`<h2>📊 Passo 4: Custos para CET</h2><div class="note">Custos da operação (campos azuis)</div>`;
+    S.custos.forEach((c,i)=>{
+      h+=`<div class="cost-row"><input class="plain" value="${c.nome}" oninput="setCusto(${i},'nome',this.value)"><input class="blue" type="number" value="${c.valor||''}" oninput="setCusto(${i},'valor',this.value)"></div>`;
+    });
+    h+=`<div class="summary" style="margin-top:12px"><span>Custos totais:</span> <b>R$ ${fmt(custosTotal)}</b></div>
+    ${(()=>{const errs=validar();return errs.length?`<div style="background:#fef2f2;border:1px solid #fecaca;border-radius:8px;padding:12px 14px;margin-top:12px">${errs.map(e=>`<div style="color:#b91c1c;font-size:13px;margin:4px 0">⚠️ ${e}</div>`).join('')}<div style="color:#7f1d1d;font-size:12px;margin-top:6px">Corrija no Passo 2 para simular.</div></div>`:'';})()}
+    <div class="btns"><button class="btn gray" onclick="set('step',2)">← Voltar</button>${validar().length?`<button class="btn primary" disabled style="opacity:.45;cursor:not-allowed">🚀 SIMULAR</button>`:`<button class="btn primary" onclick="set('step',4)">🚀 SIMULAR</button>`}</div>`;
+  }
+  else if(S.step===4 && R){
+    h+=`<div class="editbar"><h2>📊 Resultado</h2><button class="link" onclick="set('step',0)">✏️ Editar dados</button></div>
+    <div class="cards">
+      <div class="card blue"><div class="t">Valor Financiado</div><div class="v">R$ ${fmt(+S.valorFin)}</div></div>
+      <div class="card green"><div class="t">Média Prestação c/Bônus</div><div class="v">R$ ${fmt(R.mediaPrestCom)}</div></div>
+      <div class="card purple"><div class="t">Total Juros c/Bônus</div><div class="v">R$ ${fmt(R.totalJurosCom)}</div></div>
+      <div class="card orange"><div class="t">CET ao ano (taxa cheia)</div><div class="v">${fmtPct(R.cetAnual)}</div></div>
+    </div>
+    <div class="detail">
+      <div class="row"><span>Taxa sem bônus:</span><b>${S.taxaSem}% a.a.</b></div>
+      <div class="row"><span>Taxa com bônus:</span><b>${S.taxaCom}% a.a.</b></div>
+      <div class="row"><span>Carência / Amortização:</span><b>${S.carencia}m / ${S.prazoAmort}m</b></div>
+      <div class="row"><span>Total juros SEM bônus:</span><b>R$ ${fmt(R.totalJurosSem)}</b></div>
+      <div class="row"><span>Total juros COM bônus:</span><b>R$ ${fmt(R.totalJurosCom)}</b></div>
+      <div class="row"><span>Total a pagar (c/bônus):</span><b style="color:#15803d">R$ ${fmt(R.totalPrincipal+R.totalJurosCom)}</b></div>
+      <div class="row"><span>Economia com bônus:</span><b style="color:#15803d">R$ ${fmt(R.totalBonus)}</b></div>
+      <div class="row"><span>CET a.a. — prestações taxa cheia (= planilha BNB):</span><b>${fmtPct(R.cetAnual)}</b></div>
+      <div class="row"><span>CET mensal (taxa cheia):</span><b>${fmtPct(R.cetMensal)}</b></div>
+      <div class="row"><span>CET a.a. — com bônus de adimplência:</span><b style="color:#15803d">${fmtPct(R.cetAnualComBonus)}</b></div>
+      <div class="row"><span>CET mensal (com bônus):</span><b style="color:#15803d">${fmtPct(R.cetMensalComBonus)}</b></div>
+    </div>
+    <div class="tabs">
+      ${[['resumo','📋 Resumo'],['tabela','📊 Tabela'],['memoria','🔢 Memória'],['desemb','💰 Desemb.']].map(([id,l])=>`<button class="tab ${S.viewTab===id?'active':''}" onclick="set('viewTab','${id}')">${l}</button>`).join('')}
+    </div>`;
+
+    if(S.viewTab==='resumo'){
+      h+=`<h3>Pagamentos na Carência</h3><table><thead class="th-yellow"><tr><th style="text-align:left">DATA</th><th class="r">JUROS c/BÔNUS</th></tr></thead><tbody>`;
+      R.sched.filter(s=>s.isGrace&&s.juroPagoCom>0.01).forEach(s=>{h+=`<tr style="border-bottom:1px solid #eee"><td>${fmtDate(s.data)}</td><td class="r">${fmt(s.juroPagoCom)}</td></tr>`;});
+      h+=`</tbody></table><h3>Primeiras 12 Prestações</h3><table><thead class="th-blue"><tr><th>#</th><th>DATA</th><th class="r">PRINCIPAL</th><th class="r">JUROS</th><th class="r">TOTAL</th></tr></thead><tbody>`;
+      R.sched.filter(s=>s.isAmort&&s.seq<=12&&s.principal>0.001).forEach(s=>{h+=`<tr style="border-bottom:1px solid #eee"><td class="c">${s.seq}</td><td>${fmtDate(s.data)}</td><td class="r">${fmt(s.principal)}</td><td class="r">${fmt(s.juroPagoCom)}</td><td class="r"><b>${fmt(s.totalCom)}</b></td></tr>`;});
+      h+=`</tbody></table>`;
+    }
+    else if(S.viewTab==='tabela'){
+      h+=`<div class="scroll"><table><thead class="blue"><tr><th>SEQ</th><th>DATA</th><th class="r">PRINCIPAL</th><th class="r">JUROS</th><th class="r">S/BÔNUS</th><th class="r">C/BÔNUS</th><th class="r">BÔNUS</th></tr></thead><tbody>`;
+      h+=`<tr class="tot"><td colspan="2">TOTAIS</td><td class="r">${fmt(R.totalPrincipal)}</td><td class="r">${fmt(R.totalJurosSem)}</td><td class="r">${fmt(R.totalPrincipal+R.totalJurosSem)}</td><td class="r">${fmt(R.totalPrincipal+R.totalJurosCom)}</td><td class="r">${fmt(R.totalBonus)}</td></tr>`;
+      R.sched.filter(s=>s.mes>0&&s.totalSem>0.01).forEach(s=>{h+=`<tr class="${s.isGrace?'grace':''}" style="border-bottom:1px solid #eee"><td class="c">${s.isGrace?'C'+s.mes:s.seq}</td><td>${fmtDate(s.data)}</td><td class="r">${s.principal>0.01?fmt(s.principal):'-'}</td><td class="r">${s.juroPagoSem>0.01?fmt(s.juroPagoSem):'-'}</td><td class="r">${fmt(s.totalSem)}</td><td class="r" style="color:#1d4ed8"><b>${fmt(s.totalCom)}</b></td><td class="r" style="color:#16a34a">${s.bonus>0.01?fmt(s.bonus):'-'}</td></tr>`;});
+      h+=`</tbody></table></div>`;
+    }
+    else if(S.viewTab==='memoria'){
+      h+=`<div class="note">Juros = Saldo Total × ((1 + taxa)^(dias úteis/252) − 1). Saldo Total inclui juros acumulados na carência.</div><div class="scroll"><table><thead class="purple"><tr><th>MÊS</th><th>DATA</th><th>D.U.</th><th class="r">DESEMB</th><th class="r">JURO MÊS</th><th class="r">JURO PAGO</th><th class="r">PRINC.</th><th class="r">SALDO</th></tr></thead><tbody>`;
+      R.sched.filter(s=>s.saldoPrinc>0||s.mes===0||s.totalSem>0).forEach(s=>{h+=`<tr class="${s.disbValor>0?'disb':s.isGrace?'grace':''}" style="border-bottom:1px solid #eee"><td class="c">${s.mes}</td><td>${fmtDate(s.data)}</td><td class="c" style="color:#9ca3af">${s.amd||''}</td><td class="r" style="color:#15803d">${s.disbValor>0?fmt(s.disbValor):''}</td><td class="r">${s.juroMensalSem>0.01?fmt(s.juroMensalSem):''}</td><td class="r" style="color:#dc2626">${s.juroPagoSem>0.01?fmt(s.juroPagoSem):''}</td><td class="r" style="color:#1d4ed8">${s.principal>0.01?fmt(s.principal):''}</td><td class="r"><b>${fmt(s.saldoPrinc)}</b></td></tr>`;});
+      h+=`</tbody></table></div>`;
+    }
+    else if(S.viewTab==='desemb'){
+      h+=`<table><thead class="amber"><tr><th>#</th><th>LIBERAÇÃO</th><th class="r">VALOR</th><th>ALOCAÇÃO</th><th class="c">D.U.</th><th class="r">JUROS</th></tr></thead><tbody>`;
+      R.disbDetail.forEach((d,i)=>{h+=`<tr style="border-bottom:1px solid #eee"><td class="c">${i+1}</td><td>${fmtDate(d.dtLib)}</td><td class="r">${fmt(d.valor)}</td><td>${fmtDate(d.alloc)}</td><td class="c">${d.busDays}</td><td class="r">${fmt(d.juroSem)}</td></tr>`;});
+      h+=`</tbody></table>`;
+    }
+  }
+  h+=`</div>`;
+  document.getElementById('app').innerHTML = h;
+}
+render();
+</script>
+</body>
+</html>

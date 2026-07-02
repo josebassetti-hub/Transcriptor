@@ -1,0 +1,1421 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proposta FNE · Simulador BNB</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: Arial, -apple-system, sans-serif; background: #f0f2f5; padding: 16px; color: #1a1a1a; }
+  .container { max-width: 720px; margin: 0 auto; background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,.1); border: 1px solid #e5e7eb; }
+  .header { background: linear-gradient(90deg, #1e40af, #2563eb); color: #fff; padding: 16px; display: flex; align-items: center; gap: 12px; }
+  .header .icon { width: 40px; height: 40px; background: rgba(255,255,255,.2); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 20px; }
+  .header h1 { font-size: 18px; }
+  .header p { font-size: 11px; opacity: .8; }
+  .progress { padding: 12px 16px 0; display: flex; gap: 4px; }
+  .progress .seg { flex: 1; }
+  .progress .bar { height: 6px; border-radius: 3px; background: #e5e7eb; }
+  .progress .bar.active { background: #2563eb; }
+  .progress .lbl { font-size: 11px; margin-top: 4px; color: #9ca3af; }
+  .progress .lbl.active { color: #1d4ed8; font-weight: bold; }
+  .body { padding: 16px; }
+  h2 { font-size: 18px; margin-bottom: 16px; }
+  h3 { font-size: 14px; color: #1e40af; margin: 12px 0 8px; }
+  label { display: block; font-size: 13px; font-weight: 600; color: #374151; margin-bottom: 4px; }
+  .field { margin-bottom: 12px; }
+  input, select { width: 100%; padding: 8px 12px; border: 2px solid #facc15; border-radius: 8px; background: #fefce8; font-size: 14px; font-weight: 500; }
+  input.blue { border-color: #60a5fa; background: #eff6ff; }
+  input.plain, select.plain { border-color: #d1d5db; background: #fff; }
+  input:focus, select:focus { outline: none; box-shadow: 0 0 0 2px #3b82f6; }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .hint { font-size: 11px; color: #2563eb; margin-top: 4px; font-weight: 500; }
+  .infobox { background: #eff6ff; border-radius: 8px; padding: 8px 12px; font-size: 12px; color: #1d4ed8; margin-bottom: 12px; }
+  .summary { background: #eff6ff; border-radius: 8px; padding: 12px; font-size: 14px; }
+  .summary .row { display: flex; justify-content: space-between; padding: 2px 0; }
+  .btns { display: flex; justify-content: space-between; margin-top: 16px; }
+  .btn { padding: 10px 24px; border-radius: 8px; font-weight: bold; font-size: 14px; border: none; cursor: pointer; }
+  .btn.primary { background: #2563eb; color: #fff; box-shadow: 0 4px 6px rgba(37,99,235,.3); }
+  .btn.primary:hover { background: #1d4ed8; }
+  .btn.gray { background: #e5e7eb; color: #374151; }
+  .btn.gray:hover { background: #d1d5db; }
+  .btn.green { background: #16a34a; color: #fff; box-shadow: 0 4px 6px rgba(22,163,74,.3); }
+  .btn.green:hover { background: #15803d; }
+  .desemb-row { display: flex; gap: 8px; align-items: center; margin-bottom: 8px; }
+  .desemb-row .num { font-size: 11px; color: #9ca3af; width: 20px; }
+  .desemb-row input { padding: 6px 8px; font-size: 13px; }
+  .valid { margin-top: 12px; padding: 8px; border-radius: 8px; font-size: 14px; font-weight: bold; }
+  .valid.ok { background: #dcfce7; color: #166534; }
+  .valid.err { background: #fee2e2; color: #991b1b; }
+  .cost-row { display: flex; gap: 8px; align-items: center; margin-bottom: 8px; }
+  .cost-row input:first-child { flex: 1; }
+  .cost-row input:last-child { width: 144px; text-align: right; }
+  .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 16px; }
+  .card { padding: 12px; border-radius: 12px; color: #fff; }
+  .card .t { font-size: 11px; opacity: .8; }
+  .card .v { font-size: 18px; font-weight: bold; }
+  .card.blue { background: linear-gradient(135deg, #2563eb, #1e40af); }
+  .card.green { background: linear-gradient(135deg, #16a34a, #166534); }
+  .card.purple { background: linear-gradient(135deg, #9333ea, #6b21a8); }
+  .card.orange { background: linear-gradient(135deg, #f97316, #dc2626); }
+  .detail { background: #f9fafb; border-radius: 8px; padding: 12px; font-size: 12px; margin-bottom: 16px; }
+  .detail .row { display: flex; justify-content: space-between; padding: 2px 0; }
+  .tabs { display: flex; gap: 4px; margin-bottom: 12px; overflow-x: auto; }
+  .tab { padding: 6px 12px; border-radius: 8px; font-size: 12px; font-weight: 500; white-space: nowrap; border: none; cursor: pointer; background: #f3f4f6; color: #4b5563; }
+  .tab.active { background: #2563eb; color: #fff; }
+  table { width: 100%; border-collapse: collapse; font-size: 12px; }
+  th { padding: 4px; }
+  td { padding: 2px 4px; }
+  thead.blue th { background: #1d4ed8; color: #fff; }
+  thead.purple th { background: #6b21a8; color: #fff; }
+  thead.amber th { background: #b45309; color: #fff; }
+  .th-yellow th { background: #fef9c3; }
+  .th-blue th { background: #dbeafe; }
+  tr.grace { background: #fefce8; }
+  tr.disb { background: #f0fdf4; }
+  tr.tot { background: #dcfce7; font-weight: bold; }
+  .scroll { overflow-x: auto; max-height: 55vh; }
+  .r { text-align: right; }
+  .c { text-align: center; }
+  .link { font-size: 12px; color: #2563eb; cursor: pointer; text-decoration: underline; background: none; border: none; }
+  .editbar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+  .note { font-size: 11px; color: #6b7280; margin-bottom: 8px; }
+
+  /* ===== V2: navegação de modos ===== */
+  .modenav { display: flex; gap: 6px; padding: 10px 16px; background: #0f172a; }
+  .modenav button { flex: 1; padding: 8px 6px; border-radius: 8px; border: none; cursor: pointer; font-size: 12px; font-weight: bold; background: #1e293b; color: #94a3b8; }
+  .modenav button.active { background: #2563eb; color: #fff; }
+  .databadge { font-size: 10px; color: #64748b; text-align: right; padding: 4px 16px 0; background: #fff; }
+
+  /* ===== V2: apresentação ===== */
+  .apr { padding: 16px; }
+  .apr h2 { font-size: 20px; color: #0f172a; }
+  .apr .sub { font-size: 13px; color: #475569; margin: 4px 0 14px; }
+  .hero { text-align: center; padding: 22px 14px 10px; }
+  .hero .pill { display: inline-block; background: #dcfce7; color: #166534; border: 1px solid #86efac; border-radius: 999px; padding: 5px 14px; font-size: 12px; font-weight: bold; margin-bottom: 12px; }
+  .hero h2 { font-size: 24px; line-height: 1.25; }
+  .hero .sub { font-size: 14px; }
+  .checklist { text-align: left; max-width: 430px; margin: 14px auto; background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 12px; padding: 12px 16px; }
+  .checklist div { padding: 4px 0; font-size: 13.5px; color: #14532d; font-weight: 500; }
+  .bignum { text-align: center; margin: 10px 0 2px; }
+  .bignum .v { font-size: 40px; font-weight: 800; color: #15803d; letter-spacing: -1px; }
+  .bignum .t { font-size: 13px; color: #475569; font-weight: 600; }
+  .bignum .d { font-size: 12.5px; color: #64748b; margin-top: 2px; }
+  .kpirow { display: grid; grid-template-columns: repeat(2,1fr); gap: 8px; margin: 14px 0; }
+  @media (min-width:560px){ .kpirow { grid-template-columns: repeat(4,1fr); } }
+  .kpi { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 10px; text-align: center; }
+  .kpi .v { font-size: 19px; font-weight: 800; color: #0f172a; }
+  .kpi .t { font-size: 10.5px; color: #64748b; font-weight: 600; text-transform: uppercase; letter-spacing: .3px; }
+  .kpi.destaque { background: #f0fdf4; border-color: #86efac; }
+  .kpi.destaque .v { color: #15803d; }
+  .mundos { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 12px 0; }
+  @media (max-width:520px){ .mundos { grid-template-columns: 1fr; } }
+  .mundo { border-radius: 14px; padding: 14px; border: 2px solid; }
+  .mundo h4 { font-size: 13px; margin-bottom: 8px; }
+  .mundo ul { list-style: none; font-size: 12.5px; }
+  .mundo li { padding: 3px 0; }
+  .mundo.a { background: #fef2f2; border-color: #fecaca; color: #7f1d1d; }
+  .mundo.b { background: #f0fdf4; border-color: #86efac; color: #14532d; }
+  .deltafinal { text-align: center; background: linear-gradient(135deg,#16a34a,#166534); color: #fff; border-radius: 14px; padding: 14px; margin: 12px 0; }
+  .deltafinal .v { font-size: 30px; font-weight: 800; }
+  .deltafinal .t { font-size: 12.5px; opacity: .92; }
+  .svgbox { background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 10px 6px 4px; margin: 10px 0; }
+  .svgbox svg { width: 100%; height: auto; display: block; }
+  .svgtitle { font-size: 12px; font-weight: bold; color: #334155; padding: 0 8px 6px; }
+  .caixabox, .avisobox { border-radius: 12px; padding: 12px 14px; font-size: 12.5px; margin: 10px 0; }
+  .caixabox { background: #eff6ff; border: 1px solid #bfdbfe; color: #1e3a8a; }
+  .avisobox { background: #fffbeb; border: 1px solid #fde68a; color: #78350f; }
+  .esperabox { background: #fff7ed; border: 2px solid #fdba74; border-radius: 14px; padding: 14px; margin: 12px 0; color: #7c2d12; }
+  .esperabox .v { font-size: 22px; font-weight: 800; }
+  .pacotes { display: grid; grid-template-columns: repeat(3,1fr); gap: 8px; margin: 12px 0; }
+  @media (max-width:560px){ .pacotes { grid-template-columns: 1fr; } }
+  .pacote { border: 2px solid #e2e8f0; border-radius: 14px; padding: 12px; text-align: center; cursor: pointer; background: #fff; position: relative; }
+  .pacote.sel { border-color: #16a34a; background: #f0fdf4; box-shadow: 0 4px 14px rgba(22,163,74,.18); }
+  .pacote .star { position: absolute; top: -10px; left: 50%; transform: translateX(-50%); background: #16a34a; color: #fff; font-size: 10px; font-weight: bold; border-radius: 999px; padding: 2px 10px; white-space: nowrap; }
+  .pacote h4 { font-size: 13px; margin: 6px 0 2px; }
+  .pacote .pv { font-size: 17px; font-weight: 800; color: #0f172a; }
+  .pacote .pd { font-size: 11px; color: #64748b; }
+  .semaforo td, .semaforo th { font-size: 11.5px; padding: 5px 6px; border-bottom: 1px solid #f1f5f9; }
+  .semaforo th { background: #0f172a; color: #fff; }
+  .semaforo td:first-child { font-weight: 600; color: #334155; }
+  .dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 4px; vertical-align: baseline; }
+  .dot.g { background: #22c55e; } .dot.y { background: #eab308; } .dot.r { background: #ef4444; }
+  .cenpills { display: flex; gap: 6px; margin: 10px 0; }
+  .cenpills button { flex: 1; padding: 7px 4px; border-radius: 999px; border: 2px solid #e2e8f0; background: #fff; font-size: 12px; font-weight: bold; color: #475569; cursor: pointer; }
+  .cenpills button.active { border-color: #2563eb; background: #eff6ff; color: #1d4ed8; }
+  .fraseouro { font-size: 13px; background: #f0fdf4; border-left: 4px solid #16a34a; border-radius: 0 10px 10px 0; padding: 10px 12px; color: #14532d; margin: 8px 0; font-weight: 500; }
+  .scqa { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 14px; padding: 14px; font-size: 13px; }
+  .scqa p { margin: 6px 0; }
+  .scqa b.k { color: #1d4ed8; }
+  .passos { counter-reset: p; list-style: none; margin: 10px 0; }
+  .passos li { counter-increment: p; display: flex; gap: 10px; padding: 7px 0; font-size: 13px; align-items: baseline; }
+  .passos li::before { content: counter(p); background: #2563eb; color: #fff; min-width: 22px; height: 22px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 12px; font-weight: bold; }
+  .aprnav { display: flex; justify-content: space-between; align-items: center; margin-top: 18px; gap: 8px; }
+  .aprnav .dots { display: flex; gap: 5px; }
+  .aprnav .dots span { width: 8px; height: 8px; border-radius: 50%; background: #cbd5e1; cursor: pointer; }
+  .aprnav .dots span.on { background: #2563eb; }
+  details.acc { border: 1px solid #e2e8f0; border-radius: 10px; padding: 8px 12px; margin: 8px 0; background: #fff; }
+  details.acc summary { font-size: 12.5px; font-weight: bold; color: #1d4ed8; cursor: pointer; }
+  .disclaimer { font-size: 10.5px; color: #94a3b8; margin-top: 14px; line-height: 1.45; }
+  .qrwrap { text-align: center; margin: 10px 0; }
+  .qrwrap svg { width: 150px; height: 150px; }
+  .regime-expl { font-size: 12.5px; background: #faf5ff; border: 1px solid #e9d5ff; color: #581c87; border-radius: 12px; padding: 12px 14px; margin: 10px 0; }
+  .regime-expl b { color: #6b21a8; }
+  .parambox { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 12px; margin-bottom: 14px; }
+  .parambox h3 { margin-top: 0; }
+  .grid3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+  @media (max-width:520px){ .grid3 { grid-template-columns: 1fr 1fr; } }
+  .autoteste { font-size: 12px; }
+  .autoteste .t-ok { color: #15803d; }
+  .autoteste .t-fail { color: #b91c1c; font-weight: bold; }
+  .chip { display: inline-block; font-size: 10.5px; font-weight: bold; border-radius: 999px; padding: 2px 9px; margin: 2px 3px 2px 0; }
+  .chip.verde { background: #dcfce7; color: #166534; }
+  .chip.azul { background: #dbeafe; color: #1e40af; }
+
+  /* ===== V2: impressão A4 ===== */
+  #printdoc { display: none; }
+  @media print {
+    body { background: #fff; padding: 0; }
+    body > .container { display: none; }
+    #printdoc { display: block; font-size: 12px; color: #111; }
+    .ppage { page-break-after: always; padding: 10mm 2mm; }
+    .ppage:last-child { page-break-after: auto; }
+    .noprint { display: none !important; }
+  }
+  #printdoc .pcapa { text-align: center; padding-top: 40mm; }
+  #printdoc .pcapa h1 { font-size: 26px; margin: 8px 0; }
+  #printdoc .pcapa .sub { font-size: 14px; color: #475569; }
+  #printdoc h2 { font-size: 17px; border-bottom: 2px solid #2563eb; padding-bottom: 4px; margin: 14px 0 10px; }
+  #printdoc .prodape { font-size: 9.5px; color: #64748b; border-top: 1px solid #e2e8f0; margin-top: 12px; padding-top: 6px; }
+</style>
+</head>
+<body>
+<div class="container" id="app"></div>
+<div id="printdoc"></div>
+
+<script>
+// ============================================================
+// MOTOR BNB — VALIDADO 100% contra planilha original (10/10 cenários exatos)
+// ============================================================
+const FERIADOS = new Map();
+(function(){
+  const H=[[2017,12,25,2],[2018,1,1,2],[2018,2,12,2],[2018,2,13,2],[2018,3,30,2],[2018,4,21,1],[2018,5,1,2],[2018,5,31,2],[2018,9,7,2],[2018,10,12,2],[2018,11,2,2],[2018,11,15,2],[2018,12,25,2],[2019,1,1,2],[2019,3,4,2],[2019,3,5,2],[2019,4,19,2],[2019,4,21,1],[2019,5,1,2],[2019,6,20,2],[2019,9,7,1],[2019,10,12,1],[2019,11,2,1],[2019,11,15,2],[2019,12,25,2],[2020,1,1,2],[2020,2,24,2],[2020,2,25,2],[2020,4,10,2],[2020,4,21,2],[2020,5,1,2],[2020,6,11,2],[2020,9,7,2],[2020,10,12,2],[2020,11,2,2],[2020,11,15,1],[2020,12,25,2],[2021,1,1,2],[2021,2,15,2],[2021,2,16,2],[2021,4,2,2],[2021,4,21,2],[2021,5,1,1],[2021,6,3,2],[2021,9,7,2],[2021,10,12,2],[2021,11,2,2],[2021,11,15,2],[2021,12,25,1],[2022,1,1,1],[2022,2,28,2],[2022,3,1,2],[2022,4,15,2],[2022,4,21,2],[2022,5,1,1],[2022,6,16,2],[2022,9,7,2],[2022,10,12,2],[2022,11,2,2],[2022,11,15,2],[2022,12,25,1],[2023,1,1,1],[2023,2,20,2],[2023,2,21,2],[2023,4,7,2],[2023,4,21,2],[2023,5,1,2],[2023,6,8,2],[2023,9,7,2],[2023,10,12,2],[2023,11,2,2],[2023,11,15,2],[2023,12,25,2],[2024,1,1,2],[2024,2,12,2],[2024,2,13,2],[2024,3,29,2],[2024,4,21,1],[2024,5,1,2],[2024,5,30,2],[2024,9,7,1],[2024,10,12,1],[2024,11,2,1],[2024,11,15,2],[2024,12,25,2],[2025,1,1,2],[2025,3,3,2],[2025,3,4,2],[2025,4,18,2],[2025,4,21,2],[2025,5,1,2],[2025,6,19,2],[2025,9,7,1],[2025,10,12,1],[2025,11,2,1],[2025,11,15,1],[2025,12,25,2],[2026,1,1,2],[2026,2,16,2],[2026,2,17,2],[2026,4,3,2],[2026,4,21,2],[2026,5,1,2],[2026,6,4,2],[2026,9,7,2],[2026,10,12,2],[2026,11,2,2],[2026,11,15,1],[2026,12,25,2],[2027,1,1,2],[2027,2,8,2],[2027,2,9,2],[2027,3,26,2],[2027,4,21,2],[2027,5,1,1],[2027,5,27,2],[2027,9,7,2],[2027,10,12,2],[2027,11,2,2],[2027,11,15,2],[2027,12,25,1],[2028,1,1,1],[2028,2,28,2],[2028,2,29,2],[2028,4,14,2],[2028,4,21,2],[2028,5,1,2],[2028,6,15,2],[2028,9,7,2],[2028,10,12,2],[2028,11,2,2],[2028,11,15,2],[2028,12,25,2],[2029,1,1,2],[2029,2,19,2],[2029,2,20,2],[2029,4,6,2],[2029,4,21,1],[2029,5,1,2],[2029,6,7,2],[2029,9,7,2],[2029,10,12,2],[2029,11,2,2],[2029,11,15,2],[2029,12,25,2],[2030,1,1,2],[2030,2,11,2],[2030,2,12,2],[2030,3,29,2],[2030,4,21,1],[2030,5,1,2],[2030,5,30,2],[2030,9,7,1],[2030,10,12,1],[2030,11,2,1],[2030,11,15,2],[2030,12,25,2],[2031,1,1,2],[2031,3,3,2],[2031,3,4,2],[2031,4,18,2],[2031,4,21,2],[2031,5,1,2],[2031,6,19,2],[2031,9,7,1],[2031,10,12,1],[2031,11,2,1],[2031,11,15,1],[2031,12,25,2],[2032,1,1,2],[2032,2,9,2],[2032,2,10,2],[2032,3,26,2],[2032,4,21,2],[2032,5,1,1],[2032,5,27,2],[2032,9,7,2],[2032,10,12,2],[2032,11,2,2],[2032,11,15,2],[2032,12,25,1],[2033,1,1,1],[2033,2,28,2],[2033,3,1,2],[2033,4,15,2],[2033,4,21,2],[2033,5,1,1],[2033,6,16,2],[2033,9,7,2],[2033,10,12,2],[2033,11,2,2],[2033,11,15,2],[2033,12,25,1],[2034,1,1,1],[2034,2,20,2],[2034,2,21,2],[2034,4,7,2],[2034,4,21,2],[2034,5,1,2],[2034,6,8,2],[2034,9,7,2],[2034,10,12,2],[2034,11,2,2],[2034,11,15,2],[2034,12,25,2],[2035,1,1,2],[2035,2,5,2],[2035,2,6,2],[2035,3,23,2],[2035,4,21,1],[2035,5,1,2],[2035,5,24,2],[2035,9,7,2],[2035,10,12,2],[2035,11,2,2],[2035,11,15,2],[2035,12,25,2],[2036,1,1,2],[2036,2,25,2],[2036,2,26,2],[2036,4,11,2],[2036,4,21,2],[2036,5,1,2],[2036,6,12,2],[2036,9,7,1],[2036,10,12,1],[2036,11,2,1],[2036,11,15,1],[2036,12,25,2],[2037,1,1,2],[2037,2,16,2],[2037,2,17,2],[2037,4,3,2],[2037,4,21,2],[2037,5,1,2],[2037,6,4,2],[2037,9,7,2],[2037,10,12,2],[2037,11,2,2],[2037,11,15,1],[2037,12,25,2],[2038,1,1,2],[2038,3,8,2],[2038,3,9,2],[2038,4,23,2],[2038,4,21,2],[2038,5,1,1],[2038,6,24,2],[2038,9,7,2],[2038,10,12,2],[2038,11,2,2],[2038,11,15,2],[2038,12,25,1],[2039,1,1,1],[2039,2,21,2],[2039,2,22,2],[2039,4,8,2],[2039,4,21,2],[2039,5,1,1],[2039,6,9,2],[2039,9,7,2],[2039,10,12,2],[2039,11,2,2],[2039,11,15,2],[2039,12,25,1],[2040,1,1,1],[2040,2,13,2],[2040,2,14,2],[2040,3,30,2],[2040,4,21,1],[2040,5,1,2],[2040,5,31,2],[2040,9,7,2],[2040,10,12,2],[2040,11,2,2],[2040,11,15,2],[2040,12,25,2],[2041,1,1,2],[2041,3,4,2],[2041,3,5,2],[2041,4,19,2],[2041,4,21,1],[2041,5,1,2],[2041,6,20,2],[2041,9,7,1],[2041,10,12,1],[2041,11,2,1],[2041,11,15,2],[2041,12,25,2],[2042,1,1,2],[2042,2,17,2],[2042,2,18,2],[2042,4,4,2],[2042,4,21,2],[2042,5,1,2],[2042,6,5,2],[2042,9,7,1],[2042,10,12,1],[2042,11,2,1],[2042,11,15,1],[2042,12,25,2],[2043,1,1,2],[2043,2,9,2],[2043,2,10,2],[2043,3,27,2],[2043,4,21,2],[2043,5,1,2],[2043,5,28,2],[2043,9,7,2],[2043,10,12,2],[2043,11,2,2],[2043,11,15,1],[2043,12,25,2],[2044,1,1,2],[2044,2,29,2],[2044,3,1,2],[2044,4,15,2],[2044,4,21,2],[2044,5,1,1],[2044,6,16,2],[2044,9,7,2],[2044,10,12,2],[2044,11,2,2],[2044,11,15,2],[2044,12,25,1],[2045,1,1,1],[2045,2,20,2],[2045,2,21,2],[2045,4,7,2],[2045,4,21,2],[2045,5,1,2],[2045,6,8,2],[2045,9,7,2],[2045,10,12,2],[2045,11,2,2],[2045,11,15,2],[2045,12,25,2],[2046,1,1,2],[2046,2,5,2],[2046,2,6,2],[2046,3,23,2],[2046,4,21,1],[2046,5,1,2],[2046,5,24,2],[2046,9,7,2],[2046,10,12,2],[2046,11,2,2],[2046,11,15,2],[2046,12,25,2],[2047,1,1,2],[2047,2,25,2],[2047,2,26,2],[2047,4,12,2],[2047,4,21,1],[2047,5,1,2],[2047,6,13,2],[2047,9,7,1],[2047,10,12,1],[2047,11,2,1],[2047,11,15,2],[2047,12,25,2],[2048,1,1,2],[2048,2,17,2],[2048,2,18,2],[2048,4,3,2],[2048,4,21,2],[2048,5,1,2],[2048,6,4,2],[2048,9,7,2],[2048,10,12,2],[2048,11,2,2],[2048,11,15,1],[2048,12,25,2],[2049,1,1,2],[2049,3,8,2],[2049,3,9,2],[2049,4,23,2],[2049,4,21,2],[2049,5,1,1],[2049,6,24,2],[2049,9,7,2],[2049,10,12,2],[2049,11,2,2],[2049,11,15,2],[2049,12,25,1],[2050,1,1,1],[2050,2,21,2],[2050,2,22,2],[2050,4,8,2],[2050,4,21,2],[2050,5,1,1],[2050,6,9,2],[2050,9,7,2],[2050,10,12,2],[2050,11,2,2],[2050,11,15,2],[2050,12,25,1],[2051,1,1,1],[2051,2,13,2],[2051,2,14,2],[2051,3,31,2],[2051,4,21,2],[2051,5,1,2],[2051,6,1,2],[2051,9,7,2],[2051,10,12,2],[2051,11,2,2],[2051,11,15,2],[2051,12,25,2],[2052,1,1,2],[2052,3,4,2],[2052,3,5,2],[2052,4,19,2],[2052,4,21,1],[2052,5,1,2],[2052,6,20,2],[2052,9,7,1],[2052,10,12,1],[2052,11,2,1],[2052,11,15,2],[2052,12,25,2],[2053,1,1,2],[2053,2,17,2],[2053,2,18,2],[2053,4,4,2],[2053,4,21,2],[2053,5,1,2],[2053,6,5,2],[2053,9,7,1],[2053,10,12,1],[2053,11,2,1],[2053,11,15,1],[2053,12,25,2],[2054,1,1,2],[2054,2,9,2],[2054,2,10,2],[2054,3,27,2],[2054,4,21,2],[2054,5,1,2],[2054,5,28,2],[2054,9,7,2],[2054,10,12,2],[2054,11,2,2],[2054,11,15,1],[2054,12,25,2],[2055,1,1,2],[2055,3,1,2],[2055,3,2,2],[2055,4,16,2],[2055,4,21,2],[2055,5,1,1],[2055,6,17,2],[2055,9,7,2],[2055,10,12,2],[2055,11,2,2],[2055,11,15,2],[2055,12,25,1],[2056,1,1,1],[2056,2,14,2],[2056,2,15,2],[2056,3,31,2],[2056,4,21,2],[2056,5,1,2],[2056,6,1,2],[2056,9,7,2],[2056,10,12,2],[2056,11,2,2],[2056,11,15,2],[2056,12,25,2],[2057,1,1,2],[2057,3,5,2],[2057,3,6,2],[2057,4,20,2],[2057,4,21,1],[2057,5,1,2],[2057,6,21,2],[2057,9,7,2],[2057,10,12,2],[2057,11,2,2],[2057,11,15,2],[2057,12,25,2],[2058,1,1,2],[2058,2,25,2],[2058,2,26,2],[2058,4,12,2],[2058,4,21,1],[2058,5,1,2],[2058,6,13,2],[2058,9,7,1],[2058,10,12,1],[2058,11,2,1],[2058,11,15,2],[2058,12,25,2],[2059,1,1,2],[2059,2,10,2],[2059,2,11,2],[2059,3,28,2],[2059,4,21,2],[2059,5,1,2],[2059,5,29,2],[2059,9,7,1],[2059,10,12,1],[2059,11,2,1],[2059,11,15,1],[2059,12,25,2],[2060,1,1,2],[2060,3,1,2],[2060,3,2,2],[2060,4,16,2],[2060,4,21,2],[2060,5,1,1],[2060,6,17,2],[2060,9,7,2],[2060,10,12,2],[2060,11,2,2],[2060,11,15,2],[2060,12,25,1]];
+  H.forEach(([y,m,d,cfg])=>FERIADOS.set(new Date(y,m-1,d).getTime(),cfg));
+})();
+const isWeekend=d=>d.getDay()===0||d.getDay()===6;
+const holCfg=d=>FERIADOS.get(new Date(d.getFullYear(),d.getMonth(),d.getDate()).getTime())||0;
+function networkDays(s,e){if(!s||!e||s>e)return 0;let c=0;const cur=new Date(s.getFullYear(),s.getMonth(),s.getDate());const end=new Date(e.getFullYear(),e.getMonth(),e.getDate());while(cur<=end){if(!isWeekend(cur)&&!holCfg(cur))c++;cur.setDate(cur.getDate()+1);}return c;}
+function ajFlag(d){if(isWeekend(d))return 2;if(holCfg(d)===2)return 2;return 1;}
+function amDays(p,c){if(!p||!c||c<=p)return 0;const nd=networkDays(p,c);return ajFlag(c)===2?nd:nd-1;}
+function edate(d,m){const y=d.getFullYear()+Math.floor((d.getMonth()+m)/12);const mo=((d.getMonth()+m)%12+12)%12;const ld=new Date(y,mo+1,0).getDate();return new Date(y,mo,Math.min(d.getDate(),ld));}
+function eomonth(d,m){const y=d.getFullYear()+Math.floor((d.getMonth()+m)/12);const mo=((d.getMonth()+m)%12+12)%12;return new Date(y,mo+1,0);}
+const r2=v=>v>=0?Number((v+1e-12).toFixed(2)):-Number((-v+1e-12).toFixed(2));
+const r6=v=>Number((v+1e-15).toFixed(6));
+const parseDate=s=>{if(!s)return null;const p=s.split('-');return new Date(+p[0],+p[1]-1,+p[2]);};
+const fmt=v=>(v||0).toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2});
+const fmtPct=v=>(v*100).toFixed(4)+'%';
+const fmtDate=d=>d?String(d.getDate()).padStart(2,'0')+'/'+String(d.getMonth()+1).padStart(2,'0')+'/'+d.getFullYear():'';
+const sameDay=(a,b)=>a&&b&&a.getFullYear()===b.getFullYear()&&a.getMonth()===b.getMonth()&&a.getDate()===b.getDate();
+const PERIOD_M={'MENSAL':1,'BIMESTRAL':2,'TRIMESTRAL':3,'SEMESTRAL':6,'ANUAL':12};
+
+function xirr(cfs,dts,guess=0.1){if(!cfs.length)return 0;const d0=dts[0],diffs=dts.map(d=>(d-d0)/(365*864e5));let rate=guess;
+for(let it=0;it<300;it++){let f=0,df=0;for(let i=0;i<cfs.length;i++){const t=diffs[i],base=1+rate;if(base<=0)continue;f+=cfs[i]/Math.pow(base,t);df-=t*cfs[i]/Math.pow(base,t+1);}
+if(Math.abs(df)<1e-14)break;const nr=rate-f/df;if(Math.abs(nr-rate)<1e-13)return nr;rate=nr;if(!isFinite(rate)||rate<-0.99)rate=guess*0.5;}return rate;}
+
+function runSim(p){
+  const C4=p.data0, valor=p.valor;
+  const dia = p.dia || (C4.getDate()>=29 ? 28 : C4.getDate());
+  const ts=p.taxaSem, tc=p.taxaCom;
+  const prazo=p.prazoAmort, car=p.carencia, prazoTotal=prazo+car;
+  const pp=p.periodPrinc||'MENSAL', pc=p.periodCar||'TRIMESTRAL';
+  const iguais=p.parcelasIguais, reemb=p.reembolso||{};
+
+  // Data-base (P15)
+  let base;
+  if(C4.getDate()<=dia){const ld=new Date(C4.getFullYear(),C4.getMonth()+1,0).getDate();base=new Date(C4.getFullYear(),C4.getMonth(),Math.min(dia,ld));}
+  else{const nx=edate(C4,1);const ld=new Date(nx.getFullYear(),nx.getMonth()+1,0).getDate();base=new Date(nx.getFullYear(),nx.getMonth(),Math.min(dia,ld));}
+
+  // 1ª prestação, vencimento, qtd
+  let data1a, qtdPrest;
+  if(pp==='PARCELA ÚNICA'){data1a=edate(base,prazoTotal);qtdPrest=1;}
+  else{const pm=PERIOD_M[pp]||1;data1a=edate(base,car+pm);qtdPrest=Math.floor(prazo/pm);}
+  const venc=edate(base,prazoTotal);
+  const D7=qtdPrest, K9=r2(valor/D7);
+  const J4=edate(data1a,-1);
+
+  // CÁLCULO DESEMB
+  const cd=[];
+  p.desembolsos.filter(d=>d.valor>0&&d.data).forEach(({data:dstr,valor:C})=>{
+    const B=(dstr instanceof Date)?dstr:new Date(dstr+'T00:00:00');
+    if(B>venc)return;
+    const D=B.getDate(), eom0=eomonth(B,0);
+    let F;
+    if(D===dia)F=new Date(B);
+    else{const cand=new Date(B);cand.setDate(B.getDate()+(dia-D));F=cand>eom0?eom0:cand;}
+    const AD=Math.round((F-B)/864e5);
+    const eom1=eomonth(B,1);
+    const W_=new Date(eom1.getFullYear(),eom1.getMonth(),Math.min(dia,eom1.getDate()));
+    const Xd=W_>eom1?eom1:W_;
+    const G=AD>0?F:Xd;
+    const H=sameDay(F,B)?new Date(B):G;
+    let I=0;
+    if(B<=venc){const nd=networkDays(B,H);I=ajFlag(H)===2?nd:nd-1;if(sameDay(H,B)&&ajFlag(H)!==2)I=0;}
+    const Pv=I>0?r2((r6(Math.pow(1+ts,I/252))-1)*C):0;
+    const Qv=I>0?r2((r6(Math.pow(1+tc,I/252))-1)*C):0;
+    let AE;
+    if(sameDay(B,C4))AE=C;else if(sameDay(B,venc))AE=C;else if(D===dia)AE=0;else AE=C;
+    cd.push({B,C,H,I,P:Pv,Q:Qv,AE});
+  });
+  const sumCD=(f,dt)=>cd.reduce((s,x)=>s+(sameDay(x.H,dt)?x[f]:0),0);
+
+  // MEMÓRIA CÁLCULO
+  let O=0,Pb=0,Q=0,R=0,S=0,X=valor,AOp=0,AUp=0,prev=C4;
+  let totJ=0,totK=0,totL=0;
+  const totalDesembAlloc=cd.reduce((s,x)=>s+x.C,0);
+  let cumDesemb=0;
+  const rows=[];
+  for(let m=0;m<=prazoTotal;m++){
+    const Cd=m===0?new Date(base):edate(base,m);
+    const AM=Cd>prev?amDays(prev,Cd):0;
+    const Dm=sumCD('C',Cd), Em=sumCD('P',Cd), Fm=sumCD('Q',Cd);
+    const Gm=r2((r6(Math.pow(1+ts,AM/252))-1)*R)+Em;
+    const Hm=r2((r6(Math.pow(1+tc,AM/252))-1)*S)+Fm;
+    const AT=sameDay(Cd,data1a)?1:0;
+    let AO;
+    if(AOp+1>D7)AO=0;else if(AT===1)AO=1;else if(AOp>0)AO=AOp+1;else AO=0;
+    const AU=AO;
+    const Bm=AU!==AUp?AU:0;
+    let Im=0;
+    if(!iguais&&Bm>0&&Bm<=D7)Im=reemb[Bm]||0;
+    let T;
+    if(Cd>venc||Bm===0)T=0;
+    else if(sameDay(Cd,venc))T=X;
+    else if(iguais)T=K9;
+    else if(Im>0)T=Im;
+    else T=X/((D7+1)-Bm);
+    const Wm=(T!==0&&X!==0)?T/X:0;
+    const Um=sumCD('AE',Cd);
+    let Jm;
+    if(sameDay(Cd,venc))Jm=Q+Um;
+    else Jm=r2((Q+Um)*Wm);
+    let BB=0;
+    if(pc!=='NENHUMA'){
+      const gate=(Cd<=J4)&&(AU===0);
+      const div=PERIOD_M[pc]||3;
+      BB=(gate&&m%div===0)?1:0;
+    }
+    let Km,Lm;
+    if(data1a>Cd){Km=(O+Gm)*BB;Lm=(Pb+Hm)*BB;}
+    else if(Jm===0){Km=0;Lm=0;}
+    else{Km=O+Gm;Lm=Pb+Hm;}
+    O=O+Gm-Km;Pb=Pb+Hm-Lm;Q=Q+Dm-Jm;R=O+Q;S=Pb+Q;
+    if(T>0)X=X-T;
+    if(Jm>0)totJ+=Jm;if(Km>0)totK+=Km;if(Lm>0)totL+=Lm;
+    rows.push({mes:m,seq:Bm,data:Cd,disbValor:Dm,amd:AM,juroMensalSem:Gm,juroPagoSem:Km,juroPagoCom:Lm,
+      principal:Jm,totalSem:Jm+Km,totalCom:Jm+Lm,bonus:Km-Lm,saldoPrinc:Math.max(Q,0),
+      isGrace:Cd<data1a&&m>0,isAmort:Cd>=data1a});
+    prev=Cd;AOp=AO;AUp=AU;cumDesemb+=Dm;
+    if(Q<=0.01&&Cd>=data1a&&cumDesemb>=totalDesembAlloc-0.01)break;
+  }
+
+  // CET (metodologia Anexo CET da planilha): desembolsos nas datas REAIS (+),
+  // custos totais na 1ª data de desembolso (−), prestações em TODAS as datas com pagamento (INCLUINDO mês 0).
+  // Planilha usa prestações SEM bônus; calculamos também COM bônus (para taxas diferenciadas).
+  const custosTotal=p.custos.reduce((s,c)=>s+c.valor,0);
+  const buildFlow=(campo)=>{
+    const fm=new Map();const addF=(d,v)=>{const k=new Date(d.getFullYear(),d.getMonth(),d.getDate()).getTime();fm.set(k,(fm.get(k)||0)+v);};
+    const vd=p.desembolsos.filter(d=>d.valor>0&&d.data).map(d=>({data:(d.data instanceof Date)?d.data:new Date(d.data+'T00:00:00'),valor:d.valor})).filter(d=>d.data<=venc);
+    vd.forEach(({data,valor})=>addF(data,valor));
+    if(vd.length){const fd=vd.reduce((mn,d)=>d.data<mn?d.data:mn,vd[0].data);addF(fd,-custosTotal);}
+    rows.forEach(s=>{const prest=s[campo];if(prest>0.001)addF(s.data,-prest);});
+    const keys=[...fm.keys()].sort((a,b)=>a-b);
+    return {cfs:keys.map(k=>fm.get(k)),dts:keys.map(k=>new Date(k))};
+  };
+  const fSem=buildFlow('totalSem');
+  const cetAnual=fSem.cfs.length>2?xirr(fSem.cfs,fSem.dts,0.1):0;           // = planilha (sem bônus)
+  const fCom=buildFlow('totalCom');
+  const cetAnualComBonus=fCom.cfs.length>2?xirr(fCom.cfs,fCom.dts,0.1):0;   // com bônus de adimplência
+
+  const amortRows=rows.filter(s=>s.principal>0.001);
+  return {rows,sched:rows,cd,
+    disbDetail:cd.map(x=>({dtLib:x.B,valor:x.C,alloc:x.H,busDays:x.I,juroSem:x.P})),
+    qtdPrest:D7,data1a,venc,base,dia,
+    totalJurosSem:Math.round(totK*100)/100,totalJurosCom:Math.round(totL*100)/100,
+    totalPrincipal:Math.round(totJ*100)/100,totalBonus:Math.round((totK-totL)*100)/100,
+    mediaPrestCom:amortRows.length?amortRows.reduce((s,r)=>s+r.totalCom,0)/amortRows.length:0,
+    cetAnual,cetMensal:Math.pow(1+cetAnual,1/12)-1,
+    cetAnualComBonus,cetMensalComBonus:Math.pow(1+cetAnualComBonus,1/12)-1,custosTotal};
+}
+
+// ============================================================
+// V2 — ESTADO, HELPERS E SETTERS
+// (o motor acima é byte-idêntico ao validado; nada abaixo o altera)
+// ============================================================
+const esc = s => String(s==null?'':s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const fmt0 = v => (v||0).toLocaleString('pt-BR',{maximumFractionDigits:0});
+const fmtC = v => { // compacto: R$ 1,2 mi
+  const a=Math.abs(v||0);
+  if(a>=1e9) return (v/1e9).toLocaleString('pt-BR',{maximumFractionDigits:2})+' bi';
+  if(a>=1e6) return (v/1e6).toLocaleString('pt-BR',{maximumFractionDigits:2})+' mi';
+  if(a>=1e3) return (v/1e3).toLocaleString('pt-BR',{maximumFractionDigits:0})+' mil';
+  return fmt0(v);
+};
+const fmtPct1 = v => (v*100).toLocaleString('pt-BR',{minimumFractionDigits:1,maximumFractionDigits:1})+'%';
+const fmtPct2 = v => (v*100).toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2})+'%';
+const hoje = () => new Date();
+const fmtBi = v => String(v).replace('.',',');
+
+// ---- Defaults técnicos (idênticos ao simulador validado) + camada comercial ----
+const DEF = {
+  step: 0, viewTab: 'resumo', mode: 'tecnico', tela: 1,
+  dataContratacao:'2026-03-05', valorFin:'15000000', diaAniv:'5',
+  taxaSem:'9.4776', taxaCom:'8.056', prazoAmort:'120', carencia:'24',
+  periodPrinc:'MENSAL', periodCar:'TRIMESTRAL', parcelasIguais:'SIM', reembolso:{},
+  desembolsos:[{data:'2026-03-05',valor:2800000},{data:'2026-06-24',valor:4020000},{data:'2027-09-24',valor:1250000},{data:'2027-12-24',valor:1250000},{data:'2028-03-05',valor:4820000},{data:'2028-06-05',valor:860000},{data:'',valor:0},{data:'',valor:0},{data:'',valor:0},{data:'',valor:0}],
+  custos:[{nome:'Tarifa de análise',valor:187500},{nome:'Custo cartório/avaliação',valor:25000},{nome:'Seguro prestamista',valor:300000},{nome:'Outros custos 1',valor:0},{nome:'Outros custos 2',valor:0}],
+  cliente:{ empresa:'', cidade:'', uf:'', porte:'pequena', semiarido:false,
+    regime:'lucro_real', acimaAdicional:true, sudeneAplica:false, sudeneNovo:true,
+    margemInc:250000, valorAplicado:0, pctCDI:100, prazoAplic:'720+', contrapartida:0,
+    descProjeto:'nova planta industrial' },
+  mercado:{ dataBase:'02/07/2026', selic:14.25, cdi:14.15, ipca:4.72,
+    bndes:16.0, pronampe:20.25, mediaPJ:25.3, giroMes:2.9,
+    iofFixo:0.38, iofDia:0.0082, fneIsentoIOF:true,
+    fneOrcamento:52.6, fnePrioritarios:62, incc:8.0 },
+  flags:{ depIncluir:true, depMaq:60, depObras:40, depTurnos:1, iofComparativo:true },
+  apr:{ consultorNome:'', consultorContato:'', validadeDias:30, cenario:'provavel',
+    multCons:0.7, multOtim:1.2, proximosPassos:'Aprovar este estudo|Reunir a documentação e o projeto|Protocolar a proposta no BNB|Análise e comitê de crédito' }
+};
+let S = JSON.parse(JSON.stringify(DEF));
+
+function calc(){
+  try {
+    return runSim({data0:parseDate(S.dataContratacao),valor:+S.valorFin,dia:+S.diaAniv,taxaSem:+S.taxaSem/100,taxaCom:+S.taxaCom/100,prazoAmort:+S.prazoAmort,carencia:+S.carencia,periodPrinc:S.periodPrinc,periodCar:S.periodCar,parcelasIguais:S.parcelasIguais==='SIM',reembolso:S.reembolso||{},desembolsos:S.desembolsos,custos:S.custos});
+  } catch(e){ console.error(e); return null; }
+}
+
+function validar(){
+  const errs=[];
+  const car=+S.carencia, pa=+S.prazoAmort, tot=car+pa;
+  if(tot>360)errs.push('Prazo total ('+tot+'m) excede 360 meses — a planilha oficial do BNB exibe "prazo total>360m".');
+  if(S.periodPrinc!=='PARCELA ÚNICA'){const pm=PERIOD_M[S.periodPrinc]||1;if(pa%pm!==0)errs.push('Prazo de amortização ('+pa+'m) não é múltiplo da periodicidade do principal ('+S.periodPrinc+' = '+pm+'m) — a planilha exibe "erro periodicidade".');}
+  if(S.periodCar!=='NENHUMA'&&car>0){const pc=PERIOD_M[S.periodCar]||3;if(car%pc!==0)errs.push('AJUSTAR CARÊNCIA: '+car+'m não é múltiplo da periodicidade de juros na carência ('+S.periodCar+' = '+pc+'m) — mesma validação da planilha oficial do BNB.');}
+  if(S.parcelasIguais==='NÃO'&&(!S.reembolso||Object.keys(S.reembolso).length===0))errs.push('Parcelas diferenciadas (NÃO) exigem a tabela de reembolso preenchida. Use SIM por enquanto.');
+  return errs;
+}
+
+// Setters — onchange (não perde foco a cada tecla, ao contrário do oninput+render)
+function set(k,v){ S[k]=v; render(); }
+function setD(path,v){ // caminho aninhado: setD('cliente.regime','simples')
+  const p=path.split('.'); let o=S;
+  for(let i=0;i<p.length-1;i++)o=o[p[i]];
+  const leaf=p[p.length-1];
+  if(typeof o[leaf]==='number')v=+v;
+  if(typeof o[leaf]==='boolean')v=(v===true||v==='true'||v==='1'||v===1);
+  o[leaf]=v; render();
+}
+function setDesemb(i,f,v){ S.desembolsos[i][f]=f==='valor'?+v:v; render(); }
+function setCusto(i,f,v){ S.custos[i][f]=f==='valor'?+v:v; render(); }
+function liveHint(id,txt){ const el=document.getElementById(id); if(el)el.textContent=txt; }
+
+// ============================================================
+// V2 — MOTOR FISCAL POR REGIME (fórmulas verificadas, data-base 02/07/2026)
+// Lucro Real: juros dedutíveis (34%/24%); aplicação a ~37,07% (34% + PIS/COFINS 4,65% dedutível)
+// SUDENE: benefício NÃO alcança receita financeira; juros em 2 camadas (34% até rec.fin.; excedente 17,125%/15,25%)
+// Presumido: juros sem escudo; aplicação somada 100% à base (24–34%); PIS/COFINS zero (cumulativo)
+// Simples: juros sem escudo; DAS inalterado; aplicação IRRF definitivo 22,5%→15%
+// ============================================================
+const IRRF_SIMPLES = {'180-':0.225,'360':0.20,'720':0.175,'720+':0.15};
+
+function fiscal(){
+  const c = S.cliente;
+  const f = { regime:c.regime, escudoBase:0, escudoExced:0, cargaAplic:0, sudene:false, labels:{} };
+  if(c.regime==='lucro_real'){
+    f.escudoBase = c.acimaAdicional ? 0.34 : 0.24;
+    f.cargaAplic = c.acimaAdicional ? 0.3707 : (0.24 + 0.0465*(1-0.24)); // 34%/24% + PIS/COFINS 4,65% dedutível
+    f.sudene = !!c.sudeneAplica;
+    f.escudoExced = c.sudeneNovo ? (0.25*(1-0.675)+0.09) : (0.25*(1-0.75)+0.09); // 17,125% | 15,25%
+    f.labels.regime = 'Lucro Real' + (f.sudene ? ' + SUDENE' : '');
+  } else if(c.regime==='presumido'){
+    f.escudoBase = 0;
+    f.cargaAplic = c.acimaAdicional ? 0.34 : 0.24; // adição integral à base do IRPJ/CSLL
+    f.labels.regime = 'Lucro Presumido';
+  } else {
+    f.escudoBase = 0;
+    f.cargaAplic = IRRF_SIMPLES[c.prazoAplic] ?? 0.15; // IRRF exclusivo/definitivo
+    f.labels.regime = 'Simples Nacional';
+  }
+  // escudo fiscal do mês sobre juros pagos (SUDENE em 2 camadas contra a receita financeira do mês)
+  f.escudoMes = (juros, rendBrutoMes) => {
+    if(c.regime!=='lucro_real' || juros<=0) return 0;
+    if(!f.sudene) return juros*f.escudoBase;
+    const dentro = Math.min(juros, Math.max(rendBrutoMes,0));
+    return dentro*0.34 + (juros-dentro)*f.escudoExced;
+  };
+  f.escudoSimples = juros => (c.regime==='lucro_real' && juros>0) ? juros*f.escudoBase : 0;
+  f.rendLiq  = r => r*(1-f.cargaAplic);
+  f.custoLiq = i => i*(1-f.escudoBase);
+  f.breakEven = r => c.regime==='lucro_real' ? r*(1-f.cargaAplic)/(1-f.escudoBase) : r*(1-f.cargaAplic);
+  return f;
+}
+
+const iofPct = () => S.mercado.fneIsentoIOF ? 0 : (S.mercado.iofFixo + S.mercado.iofDia*365)/100; // teto p/ >365d
+const custoRealFNE = R => (1+R.cetAnualComBonus)/(1+S.mercado.ipca/100)-1;
+const taxaAplicBruta = () => (S.mercado.cdi/100)*((+S.cliente.pctCDI||100)/100);
+
+// ============================================================
+// V2 — DOIS MUNDOS: pagar à vista (descapitalizar) × financiar FNE mantendo o caixa aplicado
+// Grade mensal = cronograma real do runSim. Simplificações documentadas:
+// rendimento composto à taxa anual LÍQUIDA; desembolsos na data de alocação do cronograma;
+// IOF pelo teto de 365 dias quando habilitado.
+// ============================================================
+function doisMundos(R, ovr){
+  const f = fiscal();
+  const m = S.mercado;
+  const rBruta = (ovr&&ovr.rBruta!=null) ? ovr.rBruta : taxaAplicBruta();
+  const rLiq = f.rendLiq(rBruta);
+  const mLiq = Math.pow(1+rLiq,1/12)-1;
+  const mBruta = Math.pow(1+rBruta,1/12)-1;
+  const totalProjeto = R.cd.reduce((s,x)=>s+x.C,0);
+  const capInformado = +S.cliente.valorAplicado||0;
+  const cap = Math.max(capInformado, totalProjeto);
+  const avisoCapital = capInformado>0 && capInformado<totalProjeto;
+  const tIOF = (ovr&&ovr.iof!=null) ? ovr.iof : iofPct()/100;
+  let a=cap, b=cap, custosLancados=false, escudoTotal=0;
+  const pts=[{data:R.rows[0].data, a, b}];
+  // fluxos do mês 0 (desembolso na contratação)
+  const fluxoMes = (row, primeiro) => {
+    if(row.disbValor>0){
+      a -= row.disbValor;
+      if(tIOF>0) b -= row.disbValor*tIOF;
+      if(!custosLancados){ b -= R.custosTotal; custosLancados=true; }
+    }
+    if(row.totalCom>0){
+      const rendB = primeiro?0:b>0?b*mBruta:0;
+      const escudo = f.escudoMes(row.juroPagoCom, rendB);
+      escudoTotal += escudo;
+      b -= (row.totalCom - escudo);
+    }
+  };
+  fluxoMes(R.rows[0], true);
+  pts[0].a=a; pts[0].b=b;
+  for(let i=1;i<R.rows.length;i++){
+    const row=R.rows[i];
+    a = a*(1+mLiq);
+    b = b*(1+mLiq);
+    fluxoMes(row,false);
+    pts.push({data:row.data, a, b});
+  }
+  // agregação anual p/ tabela
+  const anos=[]; let anoAtual=null;
+  pts.forEach(p=>{ const y=p.data.getFullYear();
+    if(anoAtual!==y){ anos.push({ano:y, a:p.a, b:p.b, delta:p.b-p.a}); anoAtual=y; }
+    else { const u=anos[anos.length-1]; u.a=p.a; u.b=p.b; u.delta=p.b-p.a; }
+  });
+  const deltaFinal = b-a;
+  return {pts, anos, deltaFinal, cap, avisoCapital, rBruta, rLiq, escudoTotal, totalProjeto};
+}
+
+// ============================================================
+// V2 — KPIs DO PROJETO (payback caixa, TIR desalavancada × custo FNE, VPL, parcela/dia)
+// Margem incremental começa no mês seguinte ao último desembolso (planta operando).
+// Depreciação (só Lucro Real, opcional) entra AQUI — não no Dois Mundos (o ativo existe nos 2 mundos).
+// ============================================================
+function kpis(R){
+  const f=fiscal(), c=S.cliente, ap=S.apr, fl=S.flags;
+  const mult = ap.cenario==='conservador'?+ap.multCons: ap.cenario==='otimista'?+ap.multOtim:1;
+  const margem = (+c.margemInc||0)*mult;
+  let lastDisbIdx=0; R.rows.forEach((row,i)=>{ if(row.disbValor>0)lastDisbIdx=i; });
+  const V=+S.valorFin;
+  const escudoDepAno = (c.regime==='lucro_real'&&fl.depIncluir)
+    ? V*((fl.depMaq/100)*0.10*(+fl.depTurnos||1) + (fl.depObras/100)*0.04)*f.escudoBase : 0;
+  const depMes=escudoDepAno/12;
+  let cum = -((+c.contrapartida||0) + R.custosTotal), payback=null;
+  const serie=[{data:R.rows[0].data, v:cum}];
+  R.rows.forEach((row,i)=>{ if(i===0)return;
+    let fx=0;
+    if(i>lastDisbIdx && margem>0) fx += margem + depMes;
+    if(row.totalCom>0) fx -= (row.totalCom - f.escudoSimples(row.juroPagoCom));
+    cum+=fx; serie.push({data:row.data, v:cum});
+    if(payback===null && cum>=0) payback=i;
+  });
+  const cfs=[],dts=[];
+  R.rows.forEach((row,i)=>{
+    if(row.disbValor>0){cfs.push(-row.disbValor);dts.push(row.data);}
+    if(i>lastDisbIdx && margem>0){cfs.push(margem);dts.push(row.data);}
+  });
+  const tir = (margem>0 && cfs.length>2) ? xirr(cfs,dts,0.15) : null;
+  const d0=R.rows[0].data, tx=R.cetAnualComBonus;
+  let vpl=0;
+  R.rows.forEach((row,i)=>{ let cf=0;
+    if(row.disbValor>0)cf-=row.disbValor;
+    if(i>lastDisbIdx && margem>0)cf+=margem;
+    if(cf!==0){const t=(row.data-d0)/(365*864e5); vpl+=cf/Math.pow(1+tx,t);}
+  });
+  return {margem, mult, payback, paybackAnos: payback!=null?payback/12:null, tir, vpl,
+    escudoDepAno, parcelaDia:R.mediaPrestCom/30, pctMargem: margem>0?R.mediaPrestCom/margem:null,
+    serie, opStartIdx:lastDisbIdx+1, opStartData:R.rows[Math.min(lastDisbIdx+1,R.rows.length-1)].data};
+}
+
+// 3 pacotes (compromise effect) — estimativas proporcionais à operação configurada
+function pacotes(R){
+  const V=+S.valorFin, tot=R.totalPrincipal+R.totalJurosCom;
+  return [
+    {key:'essencial', nome:'Essencial', f:0.8, desc:'Núcleo do projeto', star:false},
+    {key:'recomendado', nome:'Recomendado', f:1, desc:'Projeto completo — prazo e carência máximos', star:true},
+    {key:'expansao', nome:'Expansão total', f:4/3, desc:'+ capital de giro associado (até 1/3)', star:false}
+  ].map(p=>({...p, valor:V*p.f, parcela:R.mediaPrestCom*p.f, total:tot*p.f}));
+}
+
+function custoEsperar(R){
+  const margemProv=(+S.cliente.margemInc||0);
+  const receita12=margemProv*12;
+  const obra=+S.valorFin*(S.mercado.incc/100);
+  return {receita12, obra, total:receita12+obra};
+}
+
+// Sensibilidade (tornado) sobre a vantagem de financiar — 3 alavancas
+function tornado(R, base){
+  const rB=taxaAplicBruta();
+  const mk=(lbl, lo, hi)=>({lbl, lo:lo-base, hi:hi-base});
+  const cdiLo=doisMundos(R,{rBruta:rB-0.02}).deltaFinal, cdiHi=doisMundos(R,{rBruta:rB+0.02}).deltaFinal;
+  const iofOn=doisMundos(R,{iof:(S.mercado.iofFixo+S.mercado.iofDia*365)/100/100}).deltaFinal;
+  const cLo=Math.min(cdiLo,cdiHi), cHi=Math.max(cdiLo,cdiHi);
+  const semBonusFator = R.totalJurosSem>0 ? (R.totalPrincipal+R.totalJurosSem)/(R.totalPrincipal+R.totalJurosCom) : 1;
+  const perdaBonus = base - R.totalBonus; // sem pagar em dia, perde o bônus
+  return [
+    mk('CDI da aplicação ±2 p.p.', cLo, cHi),
+    mk('Perder o bônus de adimplência', perdaBonus, base),
+    mk('IOF na linha (se incidir)', iofOn, base)
+  ];
+}
+
+// ============================================================
+// V2 — GRÁFICOS SVG (zero dependências, offline)
+// ============================================================
+const SVGW=640;
+function svgOpen(h){ return `<svg viewBox="0 0 ${SVGW} ${h}" xmlns="http://www.w3.org/2000/svg" role="img">`; }
+
+// Barras horizontais genéricas (régua de ancoragem, TIR × custo)
+function svgHBars(rows, opts){
+  const o=Object.assign({h:36, gap:10, fmtv:v=>fmtPct1(v), max:null}, opts||{});
+  const max=o.max ?? Math.max(...rows.map(r=>r.val))*1.12;
+  const H=rows.length*(o.h+o.gap)+8;
+  const LW=190, BW=SVGW-LW-96;
+  let s=svgOpen(H);
+  rows.forEach((r,i)=>{
+    const y=4+i*(o.h+o.gap);
+    const w=Math.max(6, r.val/max*BW);
+    s+=`<text x="${LW-8}" y="${y+o.h/2+4}" text-anchor="end" font-size="13" font-weight="${r.bold?'800':'500'}" fill="#334155">${esc(r.lbl)}</text>`;
+    s+=`<rect x="${LW}" y="${y}" width="${w}" height="${o.h}" rx="7" fill="${r.color}" opacity="${r.bold?1:.82}"/>`;
+    s+=`<text x="${LW+w+8}" y="${y+o.h/2+5}" font-size="14" font-weight="800" fill="${r.bold?r.color:'#334155'}">${o.fmtv(r.val)}</text>`;
+  });
+  return s+'</svg>';
+}
+
+// Dois Mundos — patrimônio A (à vista) × B (financia) com faixa de carência e cruzamento
+function svgDoisMundos(dm, R){
+  const H=300, PL=64, PR=14, PT=16, PB=34, W=SVGW-PL-PR, IH=H-PT-PB;
+  const pts=dm.pts, n=pts.length;
+  const vals=pts.flatMap(p=>[p.a,p.b]);
+  let lo=Math.min(...vals), hi=Math.max(...vals); const pad=(hi-lo)*0.06||1; lo-=pad; hi+=pad;
+  const X=i=>PL+i/(n-1)*W, Y=v=>PT+(hi-v)/(hi-lo)*IH;
+  let s=svgOpen(H);
+  // faixa de carência
+  const idxCar=pts.findIndex(p=>p.data>=R.data1a);
+  if(idxCar>1){
+    s+=`<rect x="${PL}" y="${PT}" width="${X(idxCar)-PL}" height="${IH}" fill="#fefce8"/>`;
+    s+=`<text x="${(PL+X(idxCar))/2}" y="${PT+14}" text-anchor="middle" font-size="11" fill="#a16207">carência: obra/ramp-up</text>`;
+  }
+  // grid + eixo Y (4 linhas)
+  for(let g=0;g<=3;g++){ const v=lo+(hi-lo)*g/3, y=Y(v);
+    s+=`<line x1="${PL}" y1="${y}" x2="${SVGW-PR}" y2="${y}" stroke="#e2e8f0" stroke-width="1"/>`;
+    s+=`<text x="${PL-6}" y="${y+4}" text-anchor="end" font-size="10" fill="#94a3b8">${fmtC(v)}</text>`;
+  }
+  // área entre curvas (vantagem)
+  let poly=pts.map((p,i)=>`${X(i)},${Y(p.b)}`).join(' ');
+  for(let i=n-1;i>=0;i--) poly+=` ${X(i)},${Y(pts[i].a)}`;
+  s+=`<polygon points="${poly}" fill="#16a34a" opacity=".12"/>`;
+  const line=(k,color)=>`<polyline points="${pts.map((p,i)=>`${X(i)},${Y(p[k])}`).join(' ')}" fill="none" stroke="${color}" stroke-width="3" stroke-linejoin="round"/>`;
+  s+=line('a','#dc2626')+line('b','#16a34a');
+  // rótulos finais
+  const pf=pts[n-1];
+  s+=`<circle cx="${X(n-1)}" cy="${Y(pf.b)}" r="4" fill="#16a34a"/><circle cx="${X(n-1)}" cy="${Y(pf.a)}" r="4" fill="#dc2626"/>`;
+  // datas eixo X (início/meio/fim)
+  [0,Math.floor((n-1)/2),n-1].forEach(i=>{
+    s+=`<text x="${X(i)}" y="${H-10}" text-anchor="${i===0?'start':i===n-1?'end':'middle'}" font-size="10" fill="#64748b">${pts[i].data.getFullYear()}</text>`;
+  });
+  // legenda
+  s+=`<rect x="${PL}" y="${H-30}" width="12" height="4" fill="#dc2626"/><text x="${PL+16}" y="${H-25}" font-size="10.5" fill="#7f1d1d">paga à vista (descapitaliza)</text>`;
+  s+=`<rect x="${PL+185}" y="${H-30}" width="12" height="4" fill="#16a34a"/><text x="${PL+201}" y="${H-25}" font-size="10.5" fill="#14532d">financia FNE (caixa aplicado)</text>`;
+  return s+'</svg>';
+}
+
+// Payback — caixa acumulado do projeto cruzando o zero
+function svgPayback(kp, R){
+  const H=260, PL=64, PR=14, PT=14, PB=30, W=SVGW-PL-PR, IH=H-PT-PB;
+  const pts=kp.serie, n=pts.length;
+  let lo=Math.min(...pts.map(p=>p.v)), hi=Math.max(...pts.map(p=>p.v)); const pad=(hi-lo)*0.06||1; lo-=pad; hi+=pad;
+  const X=i=>PL+i/(n-1)*W, Y=v=>PT+(hi-v)/(hi-lo)*IH;
+  let s=svgOpen(H);
+  const idxCar=R.rows.findIndex(r=>r.data>=R.data1a);
+  if(idxCar>1) s+=`<rect x="${PL}" y="${PT}" width="${X(idxCar)-PL}" height="${IH}" fill="#fefce8"/>`;
+  const y0=Y(0);
+  s+=`<line x1="${PL}" y1="${y0}" x2="${SVGW-PR}" y2="${y0}" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4 3"/>`;
+  s+=`<text x="${SVGW-PR}" y="${y0-5}" text-anchor="end" font-size="10" fill="#64748b">zero a zero</text>`;
+  // área positiva verde / negativa vermelha
+  s+=`<polyline points="${pts.map((p,i)=>`${X(i)},${Y(p.v)}`).join(' ')}" fill="none" stroke="#2563eb" stroke-width="3" stroke-linejoin="round"/>`;
+  if(kp.payback!=null){
+    s+=`<circle cx="${X(kp.payback)}" cy="${Y(0)}" r="6" fill="#16a34a" stroke="#fff" stroke-width="2"/>`;
+    s+=`<text x="${X(kp.payback)}" y="${Y(0)-12}" text-anchor="middle" font-size="12" font-weight="800" fill="#15803d">aqui o projeto já se pagou (${(kp.payback/12).toLocaleString('pt-BR',{maximumFractionDigits:1})} anos)</text>`;
+  }
+  [0,Math.floor((n-1)/2),n-1].forEach(i=>{
+    s+=`<text x="${X(i)}" y="${H-8}" text-anchor="${i===0?'start':i===n-1?'end':'middle'}" font-size="10" fill="#64748b">${pts[i].data.getFullYear()}</text>`;
+  });
+  for(let g=0;g<=3;g++){ const v=lo+(hi-lo)*g/3;
+    s+=`<text x="${PL-6}" y="${Y(v)+4}" text-anchor="end" font-size="10" fill="#94a3b8">${fmtC(v)}</text>`;
+  }
+  return s+'</svg>';
+}
+
+// Waterfall — formação do custo líquido do dinheiro
+function svgWaterfall(R, escudoTotal){
+  const juros=R.totalJurosSem, bonus=R.totalBonus, esc_=Math.max(escudoTotal,0);
+  const liquido=juros-bonus-esc_;
+  const steps=[
+    {lbl:'Juros contratuais', v:juros, tipo:'base', cor:'#64748b'},
+    {lbl:'− Bônus adimplência', v:-bonus, tipo:'menos', cor:'#16a34a'},
+    {lbl:'− Economia de IR', v:-esc_, tipo:'menos', cor:'#0ea5e9'},
+    {lbl:'Custo líquido', v:liquido, tipo:'total', cor:'#1d4ed8'}
+  ];
+  const H=250, PL=20, PT=18, PB=52, IH=H-PT-PB, W=SVGW-PL*2;
+  const max=juros*1.06;
+  const bw=Math.min(120, W/steps.length*0.6), gap=(W-bw*steps.length)/(steps.length-1);
+  let s=svgOpen(H), run=0;
+  const Y=v=>PT+(max-v)/max*IH;
+  steps.forEach((st,i)=>{
+    const x=PL+i*(bw+gap);
+    let y,hgt,top;
+    if(st.tipo==='base'){ y=Y(st.v); hgt=Y(0)-y; run=st.v; top=st.v; }
+    else if(st.tipo==='menos'){ const novo=run+st.v; y=Y(run); hgt=Y(novo)-y; top=run; run=novo; }
+    else { y=Y(st.v); hgt=Y(0)-y; top=st.v; }
+    s+=`<rect x="${x}" y="${y}" width="${bw}" height="${Math.max(hgt,3)}" rx="6" fill="${st.cor}" opacity="${st.tipo==='menos'?.9:1}"/>`;
+    if(i<steps.length-1) s+=`<line x1="${x+bw}" y1="${Y(run)}" x2="${x+bw+gap}" y2="${Y(run)}" stroke="#cbd5e1" stroke-dasharray="3 3"/>`;
+    s+=`<text x="${x+bw/2}" y="${y-6}" text-anchor="middle" font-size="11.5" font-weight="800" fill="#334155">${st.tipo==='menos'?'−':''}R$ ${fmtC(Math.abs(st.v))}</text>`;
+    s+=`<text x="${x+bw/2}" y="${H-34}" text-anchor="middle" font-size="10.5" fill="#64748b">${esc(st.lbl).replace('− ','')}</text>`;
+  });
+  s+=`<text x="${PL}" y="${H-10}" font-size="10" fill="#94a3b8">Juros totais sem bônus → o que efetivamente pesa no bolso ao longo de todo o contrato</text>`;
+  return s+'</svg>';
+}
+
+// Tornado — sensibilidade da vantagem de financiar
+function svgTornado(items, base){
+  const H=items.length*44+40;
+  const mid=SVGW/2+60, maxAbs=Math.max(...items.flatMap(t=>[Math.abs(t.lo),Math.abs(t.hi)]),1)*1.1;
+  const SC=(SVGW/2-90)/maxAbs;
+  let s=svgOpen(H);
+  s+=`<line x1="${mid}" y1="8" x2="${mid}" y2="${H-26}" stroke="#94a3b8" stroke-width="1.5"/>`;
+  items.forEach((t,i)=>{
+    const y=14+i*44;
+    const x1=mid+Math.min(t.lo,0)*SC, w1=Math.abs(Math.min(t.lo,0))*SC;
+    const w2=Math.max(t.hi,0)*SC;
+    if(w1>0.5)s+=`<rect x="${x1}" y="${y}" width="${w1}" height="22" rx="5" fill="#f97316"/>`;
+    if(w2>0.5)s+=`<rect x="${mid}" y="${y}" width="${w2}" height="22" rx="5" fill="#16a34a"/>`;
+    s+=`<text x="8" y="${y+15}" font-size="11.5" fill="#334155">${esc(t.lbl)}</text>`;
+    if(Math.abs(t.lo)>1)s+=`<text x="${x1-4}" y="${y+15}" text-anchor="end" font-size="10.5" fill="#9a3412">${t.lo<0?'−':'+'}R$ ${fmtC(Math.abs(t.lo))}</text>`;
+    if(Math.abs(t.hi)>1)s+=`<text x="${mid+w2+4}" y="${y+15}" font-size="10.5" fill="#14532d">+R$ ${fmtC(Math.abs(t.hi))}</text>`;
+  });
+  s+=`<text x="${mid}" y="${H-8}" text-anchor="middle" font-size="10" fill="#94a3b8">impacto sobre a vantagem-base de financiar (R$ ${fmtC(base)})</text>`;
+  return s+'</svg>';
+}
+
+// ============================================================
+// V2 — LINK PRÉ-PREENCHIDO (hash base64url) + QR CODE embutido
+// QR: byte mode, ECC L, versões 1–9 (até 232 bytes), máscara 0 — implementação própria, sem libs.
+// ============================================================
+const HASH_ESCALAR=['dataContratacao','valorFin','diaAniv','taxaSem','taxaCom','prazoAmort','carencia','periodPrinc','periodCar','parcelasIguais'];
+const HASH_GRUPO=['cliente','mercado','flags','apr'];
+function encodeEstado(){
+  const diff={};
+  HASH_ESCALAR.forEach(k=>{ if(String(S[k])!==String(DEF[k])) diff[k]=S[k]; });
+  HASH_GRUPO.forEach(g=>{ const d={};
+    Object.keys(S[g]).forEach(k=>{ if(JSON.stringify(S[g][k])!==JSON.stringify(DEF[g][k])) d[k]=S[g][k]; });
+    if(Object.keys(d).length) diff[g]=d; });
+  if(JSON.stringify(S.desembolsos)!==JSON.stringify(DEF.desembolsos))
+    diff.d9=S.desembolsos.filter(x=>x.data||x.valor>0).map(x=>[x.data,x.valor]); // compacto
+  if(JSON.stringify(S.custos)!==JSON.stringify(DEF.custos))
+    diff.c9=S.custos.filter(x=>x.valor>0||x.nome).map(x=>[x.nome,x.valor]);
+  const json=JSON.stringify(diff);
+  return btoa(unescape(encodeURIComponent(json))).replace(/\+/g,'-').replace(/\//g,'_').replace(/=+$/,'');
+}
+function decodeEstado(b64){
+  try{
+    const json=decodeURIComponent(escape(atob(b64.replace(/-/g,'+').replace(/_/g,'/'))));
+    const diff=JSON.parse(json);
+    HASH_ESCALAR.forEach(k=>{ if(k in diff) S[k]=diff[k]; });
+    HASH_GRUPO.forEach(g=>{ if(diff[g]&&typeof diff[g]==='object') Object.assign(S[g],diff[g]); });
+    if(Array.isArray(diff.d9)){ S.desembolsos=Array.from({length:10},(_,i)=>diff.d9[i]?{data:diff.d9[i][0],valor:+diff.d9[i][1]||0}:{data:'',valor:0}); }
+    if(Array.isArray(diff.c9)){ S.custos=diff.c9.map(x=>({nome:String(x[0]),valor:+x[1]||0}));
+      while(S.custos.length<5)S.custos.push({nome:'Outros custos',valor:0}); }
+    return true;
+  }catch(e){ console.warn('hash inválido',e); return false; }
+}
+function linkAtual(){
+  const base=location.href.split('#')[0];
+  return base+'#d='+encodeEstado();
+}
+function copiarLink(){
+  const url=linkAtual();
+  const done=()=>{ const el=document.getElementById('copiado'); if(el){el.textContent='✅ Link copiado!'; setTimeout(()=>{el.textContent='';},2500);} };
+  if(navigator.clipboard&&navigator.clipboard.writeText){ navigator.clipboard.writeText(url).then(done).catch(()=>prompt('Copie o link:',url)); }
+  else prompt('Copie o link:',url);
+}
+
+// ---------- QR encoder ----------
+const QR_CAP={1:19,2:34,3:55,4:80,5:108,6:136,7:156,8:194,9:232};       // data codewords (ECC L)
+const QR_EC ={1:7,2:10,3:15,4:20,5:26,6:18,7:20,8:24,9:30};             // ec codewords POR BLOCO
+const QR_NB ={1:1,2:1,3:1,4:1,5:1,6:2,7:2,8:2,9:2};                     // nº de blocos
+const QR_ALIGN={2:[6,18],3:[6,22],4:[6,26],5:[6,30],6:[6,34],7:[6,22,38],8:[6,24,42],9:[6,26,46]};
+const GF_EXP=new Array(512), GF_LOG=new Array(256);
+(function(){ let x=1; for(let i=0;i<255;i++){ GF_EXP[i]=x; GF_LOG[x]=i; x<<=1; if(x&0x100)x^=0x11d; } for(let i=255;i<512;i++)GF_EXP[i]=GF_EXP[i-255]; })();
+const gmul=(a,b)=>(a===0||b===0)?0:GF_EXP[GF_LOG[a]+GF_LOG[b]];
+function rsGen(n){ let g=[1]; for(let i=0;i<n;i++){ const ng=new Array(g.length+1).fill(0);
+  for(let j=0;j<g.length;j++){ ng[j]^=g[j]; ng[j+1]^=gmul(g[j],GF_EXP[i]); } g=ng; } return g; }
+function rsEncode(data,n){ const g=rsGen(n), res=data.concat(new Array(n).fill(0));
+  for(let i=0;i<data.length;i++){ const c=res[i]; if(c===0)continue;
+    for(let j=0;j<g.length;j++)res[i+j]^=gmul(g[j],c); }
+  return res.slice(data.length); }
+function bch(val,poly,bits){ // divisão polinomial binária → val<<bits | resto
+  const msb=(x)=>{let m=0;while(x>>m)m++;return m;};
+  let d=val<<bits, pm=msb(poly);
+  while(msb(d)>=pm){ d^=poly<<(msb(d)-pm); }
+  return (val<<bits)|d; }
+function qrMatrix(text){
+  const bytes=[]; const enc=new TextEncoder().encode(text); enc.forEach(b=>bytes.push(b));
+  let v=null; for(let i=1;i<=9;i++){ if(bytes.length+2<=QR_CAP[i]){ v=i; break; } }
+  if(!v)return null;
+  const cap=QR_CAP[v], nb=QR_NB[v], ecn=QR_EC[v], size=17+4*v;
+  // bitstream
+  const bits=[]; const put=(val,n)=>{ for(let i=n-1;i>=0;i--)bits.push((val>>i)&1); };
+  put(4,4); put(bytes.length,8); bytes.forEach(b=>put(b,8));
+  const totalBits=cap*8;
+  put(0,Math.min(4,totalBits-bits.length));
+  while(bits.length%8)bits.push(0);
+  const pads=[0xEC,0x11]; let pi=0;
+  while(bits.length<totalBits){ put(pads[pi%2],8); pi++; }
+  const data=[]; for(let i=0;i<bits.length;i+=8){ let b=0; for(let j=0;j<8;j++)b=(b<<1)|bits[i+j]; data.push(b); }
+  // blocos + interleave
+  const per=cap/nb, blocks=[], ecs=[];
+  for(let b=0;b<nb;b++){ const d=data.slice(b*per,(b+1)*per); blocks.push(d); ecs.push(rsEncode(d,ecn)); }
+  const seq=[];
+  for(let i=0;i<per;i++)for(let b=0;b<nb;b++)seq.push(blocks[b][i]);
+  for(let i=0;i<ecn;i++)for(let b=0;b<nb;b++)seq.push(ecs[b][i]);
+  // matriz
+  const M=Array.from({length:size},()=>new Array(size).fill(null)); // null=livre p/ dados
+  const setF=(r,c,val)=>{ if(r>=0&&r<size&&c>=0&&c<size)M[r][c]=val; };
+  const finder=(r,c)=>{ for(let i=-1;i<8;i++)for(let j=-1;j<8;j++){ const rr=r+i,cc=c+j;
+    if(rr<0||rr>=size||cc<0||cc>=size)continue;
+    const on=(i>=0&&i<=6&&j>=0&&j<=6)&&(i===0||i===6||j===0||j===6||(i>=2&&i<=4&&j>=2&&j<=4));
+    M[rr][cc]=on?1:0; } };
+  finder(0,0); finder(0,size-7); finder(size-7,0);
+  for(let i=8;i<size-8;i++){ if(M[6][i]===null)M[6][i]=(i%2===0)?1:0; if(M[i][6]===null)M[i][6]=(i%2===0)?1:0; }
+  (QR_ALIGN[v]||[]).forEach(r=>{(QR_ALIGN[v]||[]).forEach(c=>{
+    // pula apenas os 3 cantos que sobrepõem finders
+    if((r<=8&&c<=8)||(r<=8&&c>=size-9)||(r>=size-9&&c<=8))return;
+    for(let i=-2;i<=2;i++)for(let j=-2;j<=2;j++)
+      setF(r+i,c+j,(Math.max(Math.abs(i),Math.abs(j))!==1)?1:0);
+  });});
+  M[size-8][8]=1; // dark module
+  // reservar áreas de formato
+  for(let i=0;i<9;i++){ if(M[8][i]===null)M[8][i]=0; if(M[i][8]===null)M[i][8]=0; }
+  for(let i=size-8;i<size;i++){ if(M[8][i]===null)M[8][i]=0; if(M[i][8]===null)M[i][8]=0; }
+  if(v>=7){ for(let i=0;i<6;i++)for(let j=size-11;j<size-8;j++){ M[i][j]=0; M[j][i]=0; } }
+  // dados em zigue-zague com máscara 0
+  let bi=0; const dataBits=[]; seq.forEach(b=>{ for(let i=7;i>=0;i--)dataBits.push((b>>i)&1); });
+  let col=size-1, up=true;
+  while(col>0){
+    if(col===6)col--;
+    for(let k=0;k<size;k++){
+      const r=up?size-1-k:k;
+      for(const c of [col,col-1]){
+        if(M[r][c]!==null)continue;
+        let bit=bi<dataBits.length?dataBits[bi]:0; bi++;
+        if((r+c)%2===0)bit^=1; // máscara 0
+        M[r][c]=bit;
+      }
+    }
+    col-=2; up=!up;
+  }
+  // formato (ECC L='01', máscara 0='000') — BCH(15,5) gerador 0x537, XOR 0x5412
+  const fmt=bch(0b01000,0b10100110111,10)^0b101010000010010;
+  const fb=i=>(fmt>>(14-i))&1; // sequência b14→b0: b14 em (8,0) e em (size-1,8)
+  for(let i=0;i<6;i++)M[8][i]=fb(i);
+  M[8][7]=fb(6); M[8][8]=fb(7); M[7][8]=fb(8);
+  for(let i=9;i<15;i++)M[14-i][8]=fb(i);
+  for(let i=0;i<7;i++)M[size-1-i][8]=fb(i);
+  for(let i=7;i<15;i++)M[8][size-15+i]=fb(i);
+  // versão (v>=7) — BCH(18,6) gerador 0x1F25
+  if(v>=7){ const vi=bch(v,0b1111100100101,12);
+    for(let i=0;i<18;i++){ const bit=(vi>>i)&1;
+      M[Math.floor(i/3)][size-11+(i%3)]=bit;
+      M[size-11+(i%3)][Math.floor(i/3)]=bit; }
+  }
+  return M;
+}
+function qrSVG(text){
+  const M=qrMatrix(text);
+  if(!M)return null;
+  const size=M.length, Q=4, T=size+Q*2;
+  let s=`<svg viewBox="0 0 ${T} ${T}" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges"><rect width="${T}" height="${T}" fill="#fff"/>`;
+  for(let r=0;r<size;r++)for(let c=0;c<size;c++)if(M[r][c]===1)s+=`<rect x="${c+Q}" y="${r+Q}" width="1" height="1" fill="#000"/>`;
+  return s+'</svg>';
+}
+
+// ============================================================
+// V2 — RENDER: dispatcher + modo técnico (wizard preservado) + parâmetros
+// ============================================================
+function render(){
+  let h = `<div class="header"><div class="icon">🏦</div><div><h1>Proposta FNE · Simulador BNB</h1><p>Metodologia exata do Banco do Nordeste · dias úteis/252 · CET completo na tela</p></div></div>`;
+  h += `<div class="modenav">
+    <button class="${S.mode==='tecnico'?'active':''}" onclick="set('mode','tecnico')">🛠 Simulação técnica</button>
+    <button class="${S.mode==='apresentacao'?'active':''}" onclick="set('mode','apresentacao')">🎯 Apresentação</button>
+    <button class="${S.mode==='parametros'?'active':''}" onclick="set('mode','parametros')">⚙️ Perfil & Parâmetros</button>
+  </div>`;
+  h += `<div class="databadge">Dados de mercado: data-base ${esc(S.mercado.dataBase)} · valores indicativos — condições finais definidas pelo BNB</div>`;
+  if(S.mode==='tecnico') h+=renderTecnico();
+  else if(S.mode==='apresentacao') h+=renderApresentacao();
+  else h+=renderParametros();
+  document.getElementById('app').innerHTML = h;
+}
+
+function renderTecnico(){
+  const R = calc();
+  const totalDesemb = S.desembolsos.reduce((s,d)=>s+d.valor,0);
+  const custosTotal = S.custos.reduce((s,c)=>s+c.valor,0);
+  let h='';
+  if(S.step<4){
+    const names=['Operação','Prazos','Desembolsos','Custos CET'];
+    h+=`<div class="progress">`;
+    names.forEach((n,i)=>{h+=`<div class="seg"><div class="bar ${i<=S.step?'active':''}"></div><div class="lbl ${i===S.step?'active':''}">${n}</div></div>`;});
+    h+=`</div>`;
+  }
+  h+=`<div class="body">`;
+  if(S.step===0){
+    h+=`<h2>📋 Passo 1: Dados da Operação</h2>
+    <div class="field"><label>Data da Contratação</label><input type="date" value="${S.dataContratacao}" onchange="set('dataContratacao',this.value)"></div>
+    <div class="field"><label>Valor do Financiamento (R$)</label><input type="number" value="${S.valorFin}" oninput="liveHint('hintVF','= R$ '+fmt(+this.value))" onchange="set('valorFin',this.value)"><div class="hint" id="hintVF">= R$ ${fmt(+S.valorFin)}</div></div>
+    <div class="grid2">
+      <div class="field"><label>Taxa SEM bônus (% a.a.)</label><input type="number" step="0.0001" value="${S.taxaSem}" onchange="set('taxaSem',this.value)"></div>
+      <div class="field"><label>Taxa COM bônus (% a.a.)</label><input type="number" step="0.0001" value="${S.taxaCom}" onchange="set('taxaCom',this.value)"></div>
+    </div>
+    <div class="infobox">💡 As duas taxas são independentes (como na planilha). Para o CET pela taxa cheia, coloque as duas iguais.</div>
+    <div class="field"><label>Dia de Aniversário dos Pagamentos</label><input type="number" min="1" max="28" value="${S.diaAniv}" onchange="set('diaAniv',this.value)"></div>
+    <div class="btns"><span></span><button class="btn primary" onclick="set('step',1)">Próximo →</button></div>`;
+  }
+  else if(S.step===1){
+    h+=`<h2>📅 Passo 2: Prazos e Periodicidade</h2>
+    <div class="grid2">
+      <div class="field"><label>Prazo de Amortização (meses)</label><input type="number" value="${S.prazoAmort}" onchange="set('prazoAmort',this.value)"></div>
+      <div class="field"><label>Carência (meses)</label><input type="number" value="${S.carencia}" onchange="set('carencia',this.value)"></div>
+    </div>
+    <div class="field"><label>Periodicidade do Principal</label><select onchange="set('periodPrinc',this.value)">${['MENSAL','BIMESTRAL','TRIMESTRAL','SEMESTRAL','ANUAL','PARCELA ÚNICA'].map(o=>`<option ${o===S.periodPrinc?'selected':''}>${o}</option>`).join('')}</select></div>
+    <div class="field"><label>Periodicidade de Juros na Carência</label><select onchange="set('periodCar',this.value)">${['MENSAL','BIMESTRAL','TRIMESTRAL','SEMESTRAL','ANUAL','NENHUMA'].map(o=>`<option ${o===S.periodCar?'selected':''}>${o}</option>`).join('')}</select></div>
+    <div class="field"><label>Parcelas de Principal Iguais?</label><select onchange="set('parcelasIguais',this.value)"><option ${S.parcelasIguais==='SIM'?'selected':''}>SIM</option><option ${S.parcelasIguais==='NÃO'?'selected':''}>NÃO</option></select></div>
+    <div class="summary">
+      <div class="row"><span>Prazo total:</span><b>${+S.prazoAmort + +S.carencia} meses</b></div>
+      <div class="row"><span>Qtd. prestações:</span><b>${R?R.qtdPrest:'-'}</b></div>
+      <div class="row"><span>1ª prestação:</span><b>${R?fmtDate(R.data1a):'-'}</b></div>
+      <div class="row"><span>Vencimento final:</span><b>${R?fmtDate(R.venc):'-'}</b></div>
+    </div>
+    ${(()=>{const errs=validar();return errs.length?`<div style="background:#fef2f2;border:1px solid #fecaca;border-radius:8px;padding:12px 14px;margin-top:12px">${errs.map(e=>`<div style="color:#b91c1c;font-size:13px;margin:4px 0">⚠️ ${e}</div>`).join('')}</div>`:'';})()}
+    <div class="btns"><button class="btn gray" onclick="set('step',0)">← Voltar</button><button class="btn primary" onclick="set('step',2)">Próximo →</button></div>`;
+  }
+  else if(S.step===2){
+    h+=`<h2>💰 Passo 3: Esquema de Desembolso</h2><div class="note">Datas e valores de cada liberação</div>`;
+    S.desembolsos.forEach((d,i)=>{
+      h+=`<div class="desemb-row"><span class="num">${i+1}</span><input type="date" value="${d.data}" onchange="setDesemb(${i},'data',this.value)"><input type="number" placeholder="Valor R$" value="${d.valor||''}" onchange="setDesemb(${i},'valor',this.value)" class="r"></div>`;
+    });
+    const ok=Math.abs(totalDesemb-+S.valorFin)<1;
+    h+=`<div class="valid ${ok?'ok':'err'}">Total: R$ ${fmt(totalDesemb)} ${ok?'✅ OK':`❌ Diferença de R$ ${fmt(Math.abs(totalDesemb-+S.valorFin))}`}</div>
+    <div class="btns"><button class="btn gray" onclick="set('step',1)">← Voltar</button><button class="btn primary" onclick="set('step',3)">Próximo →</button></div>`;
+  }
+  else if(S.step===3){
+    h+=`<h2>📊 Passo 4: Custos para CET</h2><div class="note">Custos da operação (campos azuis)</div>`;
+    S.custos.forEach((c,i)=>{
+      h+=`<div class="cost-row"><input class="plain" value="${esc(c.nome)}" onchange="setCusto(${i},'nome',this.value)"><input class="blue" type="number" value="${c.valor||''}" onchange="setCusto(${i},'valor',this.value)"></div>`;
+    });
+    h+=`<div class="summary" style="margin-top:12px"><span>Custos totais:</span> <b>R$ ${fmt(custosTotal)}</b></div>
+    ${(()=>{const errs=validar();return errs.length?`<div style="background:#fef2f2;border:1px solid #fecaca;border-radius:8px;padding:12px 14px;margin-top:12px">${errs.map(e=>`<div style="color:#b91c1c;font-size:13px;margin:4px 0">⚠️ ${e}</div>`).join('')}<div style="color:#7f1d1d;font-size:12px;margin-top:6px">Corrija no Passo 2 para simular.</div></div>`:'';})()}
+    <div class="btns"><button class="btn gray" onclick="set('step',2)">← Voltar</button>${validar().length?`<button class="btn primary" disabled style="opacity:.45;cursor:not-allowed">🚀 SIMULAR</button>`:`<button class="btn primary" onclick="set('step',4)">🚀 SIMULAR</button>`}</div>`;
+  }
+  else if(S.step===4 && R){
+    h+=`<div class="editbar"><h2>📊 Resultado</h2><div><button class="link" onclick="set('step',0)">✏️ Editar dados</button> <button class="btn green" style="padding:8px 14px;font-size:13px" onclick="S.mode='apresentacao';S.tela=1;render()">🎯 Apresentar ao cliente</button></div></div>
+    <div class="cards">
+      <div class="card blue"><div class="t">Valor Financiado</div><div class="v">R$ ${fmt(+S.valorFin)}</div></div>
+      <div class="card green"><div class="t">Média Prestação c/Bônus</div><div class="v">R$ ${fmt(R.mediaPrestCom)}</div></div>
+      <div class="card purple"><div class="t">Total Juros c/Bônus</div><div class="v">R$ ${fmt(R.totalJurosCom)}</div></div>
+      <div class="card orange"><div class="t">CET ao ano (taxa cheia)</div><div class="v">${fmtPct(R.cetAnual)}</div></div>
+    </div>
+    <div class="detail">
+      <div class="row"><span>Taxa sem bônus:</span><b>${S.taxaSem}% a.a.</b></div>
+      <div class="row"><span>Taxa com bônus:</span><b>${S.taxaCom}% a.a.</b></div>
+      <div class="row"><span>Carência / Amortização:</span><b>${S.carencia}m / ${S.prazoAmort}m</b></div>
+      <div class="row"><span>Total juros SEM bônus:</span><b>R$ ${fmt(R.totalJurosSem)}</b></div>
+      <div class="row"><span>Total juros COM bônus:</span><b>R$ ${fmt(R.totalJurosCom)}</b></div>
+      <div class="row"><span>Total a pagar (c/bônus):</span><b style="color:#15803d">R$ ${fmt(R.totalPrincipal+R.totalJurosCom)}</b></div>
+      <div class="row"><span>Economia com bônus:</span><b style="color:#15803d">R$ ${fmt(R.totalBonus)}</b></div>
+      <div class="row"><span>CET a.a. — prestações taxa cheia (= planilha BNB):</span><b>${fmtPct(R.cetAnual)}</b></div>
+      <div class="row"><span>CET mensal (taxa cheia):</span><b>${fmtPct(R.cetMensal)}</b></div>
+      <div class="row"><span>CET a.a. — com bônus de adimplência:</span><b style="color:#15803d">${fmtPct(R.cetAnualComBonus)}</b></div>
+      <div class="row"><span>CET mensal (com bônus):</span><b style="color:#15803d">${fmtPct(R.cetMensalComBonus)}</b></div>
+    </div>
+    <div class="tabs">
+      ${[['resumo','📋 Resumo'],['tabela','📊 Tabela'],['memoria','🔢 Memória'],['desemb','💰 Desemb.']].map(([id,l])=>`<button class="tab ${S.viewTab===id?'active':''}" onclick="set('viewTab','${id}')">${l}</button>`).join('')}
+    </div>`;
+    if(S.viewTab==='resumo'){
+      h+=`<h3>Pagamentos na Carência</h3><table><thead class="th-yellow"><tr><th style="text-align:left">DATA</th><th class="r">JUROS c/BÔNUS</th></tr></thead><tbody>`;
+      R.sched.filter(s=>s.isGrace&&s.juroPagoCom>0.01).forEach(s=>{h+=`<tr style="border-bottom:1px solid #eee"><td>${fmtDate(s.data)}</td><td class="r">${fmt(s.juroPagoCom)}</td></tr>`;});
+      h+=`</tbody></table><h3>Primeiras 12 Prestações</h3><table><thead class="th-blue"><tr><th>#</th><th>DATA</th><th class="r">PRINCIPAL</th><th class="r">JUROS</th><th class="r">TOTAL</th></tr></thead><tbody>`;
+      R.sched.filter(s=>s.isAmort&&s.seq<=12&&s.principal>0.001).forEach(s=>{h+=`<tr style="border-bottom:1px solid #eee"><td class="c">${s.seq}</td><td>${fmtDate(s.data)}</td><td class="r">${fmt(s.principal)}</td><td class="r">${fmt(s.juroPagoCom)}</td><td class="r"><b>${fmt(s.totalCom)}</b></td></tr>`;});
+      h+=`</tbody></table>`;
+    }
+    else if(S.viewTab==='tabela'){
+      h+=`<div class="scroll"><table><thead class="blue"><tr><th>SEQ</th><th>DATA</th><th class="r">PRINCIPAL</th><th class="r">JUROS</th><th class="r">S/BÔNUS</th><th class="r">C/BÔNUS</th><th class="r">BÔNUS</th></tr></thead><tbody>`;
+      h+=`<tr class="tot"><td colspan="2">TOTAIS</td><td class="r">${fmt(R.totalPrincipal)}</td><td class="r">${fmt(R.totalJurosSem)}</td><td class="r">${fmt(R.totalPrincipal+R.totalJurosSem)}</td><td class="r">${fmt(R.totalPrincipal+R.totalJurosCom)}</td><td class="r">${fmt(R.totalBonus)}</td></tr>`;
+      R.sched.filter(s=>s.mes>0&&s.totalSem>0.01).forEach(s=>{h+=`<tr class="${s.isGrace?'grace':''}" style="border-bottom:1px solid #eee"><td class="c">${s.isGrace?'C'+s.mes:s.seq}</td><td>${fmtDate(s.data)}</td><td class="r">${s.principal>0.01?fmt(s.principal):'-'}</td><td class="r">${s.juroPagoSem>0.01?fmt(s.juroPagoSem):'-'}</td><td class="r">${fmt(s.totalSem)}</td><td class="r" style="color:#1d4ed8"><b>${fmt(s.totalCom)}</b></td><td class="r" style="color:#16a34a">${s.bonus>0.01?fmt(s.bonus):'-'}</td></tr>`;});
+      h+=`</tbody></table></div>`;
+    }
+    else if(S.viewTab==='memoria'){
+      h+=`<div class="note">Juros = Saldo Total × ((1 + taxa)^(dias úteis/252) − 1). Saldo Total inclui juros acumulados na carência.</div><div class="scroll"><table><thead class="purple"><tr><th>MÊS</th><th>DATA</th><th>D.U.</th><th class="r">DESEMB</th><th class="r">JURO MÊS</th><th class="r">JURO PAGO</th><th class="r">PRINC.</th><th class="r">SALDO</th></tr></thead><tbody>`;
+      R.sched.filter(s=>s.saldoPrinc>0||s.mes===0||s.totalSem>0).forEach(s=>{h+=`<tr class="${s.disbValor>0?'disb':s.isGrace?'grace':''}" style="border-bottom:1px solid #eee"><td class="c">${s.mes}</td><td>${fmtDate(s.data)}</td><td class="c" style="color:#9ca3af">${s.amd||''}</td><td class="r" style="color:#15803d">${s.disbValor>0?fmt(s.disbValor):''}</td><td class="r">${s.juroMensalSem>0.01?fmt(s.juroMensalSem):''}</td><td class="r" style="color:#dc2626">${s.juroPagoSem>0.01?fmt(s.juroPagoSem):''}</td><td class="r" style="color:#1d4ed8">${s.principal>0.01?fmt(s.principal):''}</td><td class="r"><b>${fmt(s.saldoPrinc)}</b></td></tr>`;});
+      h+=`</tbody></table></div>`;
+    }
+    else if(S.viewTab==='desemb'){
+      h+=`<table><thead class="amber"><tr><th>#</th><th>LIBERAÇÃO</th><th class="r">VALOR</th><th>ALOCAÇÃO</th><th class="c">D.U.</th><th class="r">JUROS</th></tr></thead><tbody>`;
+      R.disbDetail.forEach((d,i)=>{h+=`<tr style="border-bottom:1px solid #eee"><td class="c">${i+1}</td><td>${fmtDate(d.dtLib)}</td><td class="r">${fmt(d.valor)}</td><td>${fmtDate(d.alloc)}</td><td class="c">${d.busDays}</td><td class="r">${fmt(d.juroSem)}</td></tr>`;});
+      h+=`</tbody></table>`;
+    }
+  }
+  h+=`</div>`;
+  return h;
+}
+
+// ---------- Perfil & Parâmetros ----------
+function inp(path,val,opts){ const o=opts||{}; return `<input type="${o.type||'number'}" step="${o.step||'any'}" class="${o.cls||'plain'}" value="${esc(val)}" onchange="setD('${path}',this.value)">`; }
+function chk(path,val,lbl){ return `<label style="display:flex;gap:8px;align-items:center;font-weight:500"><input type="checkbox" style="width:auto" ${val?'checked':''} onchange="setD('${path}',this.checked)"> ${lbl}</label>`; }
+function renderParametros(){
+  const c=S.cliente, m=S.mercado, fl=S.flags, ap=S.apr;
+  let h=`<div class="body">`;
+  h+=`<h2>⚙️ Perfil do cliente & Parâmetros</h2><div class="note">Tudo aqui alimenta a Apresentação. Números de mercado são editáveis — atualize-os e ajuste a data-base.</div>`;
+  h+=`<div class="parambox"><h3>👤 Cliente e projeto</h3>
+    <div class="grid2">
+      <div class="field"><label>Empresa</label>${inp('cliente.empresa',c.empresa,{type:'text'})}</div>
+      <div class="field"><label>Cidade/UF</label><div style="display:flex;gap:6px">${inp('cliente.cidade',c.cidade,{type:'text'})}<input type="text" class="plain" style="width:64px" maxlength="2" value="${esc(c.uf)}" onchange="setD('cliente.uf',this.value.toUpperCase())"></div></div>
+    </div>
+    <div class="field"><label>Descrição do projeto (aparece nos textos)</label>${inp('cliente.descProjeto',c.descProjeto,{type:'text'})}</div>
+    <div class="grid3">
+      <div class="field"><label>Porte</label><select class="plain" onchange="setD('cliente.porte',this.value)">${['micro','pequena','média','grande'].map(o=>`<option ${o===c.porte?'selected':''}>${o}</option>`).join('')}</select></div>
+      <div class="field"><label>Regime tributário</label><select class="plain" onchange="setD('cliente.regime',this.value)"><option value="simples" ${c.regime==='simples'?'selected':''}>Simples Nacional</option><option value="presumido" ${c.regime==='presumido'?'selected':''}>Lucro Presumido</option><option value="lucro_real" ${c.regime==='lucro_real'?'selected':''}>Lucro Real</option></select></div>
+      <div class="field"><label>Margem nova do projeto (R$/mês)</label>${inp('cliente.margemInc',c.margemInc)}</div>
+    </div>
+    <div class="grid3">
+      <div class="field"><label>Capital hoje aplicado (R$)</label>${inp('cliente.valorAplicado',c.valorAplicado)}<div class="hint">se menor que o projeto, a comparação usa o valor do projeto</div></div>
+      <div class="field"><label>Rendimento (% do CDI)</label>${inp('cliente.pctCDI',c.pctCDI)}</div>
+      <div class="field"><label>Contrapartida própria (R$)</label>${inp('cliente.contrapartida',c.contrapartida)}</div>
+    </div>
+    <div class="grid2" style="margin-top:6px">
+      ${chk('cliente.semiarido',c.semiarido,'Município no semiárido (bônus de 25%)')}
+      ${chk('cliente.acimaAdicional',c.acimaAdicional,'Lucro acima de R$ 20 mil/mês (adicional IRPJ) ')}
+    </div>
+    ${c.regime==='lucro_real'?`<div class="grid2" style="margin-top:6px">
+      ${chk('cliente.sudeneAplica',c.sudeneAplica,'Projeto com incentivo SUDENE (redução IRPJ)')}
+      ${c.sudeneAplica?`<label style="display:flex;gap:8px;align-items:center;font-weight:500"><input type="checkbox" style="width:auto" ${c.sudeneNovo?'checked':''} onchange="setD('cliente.sudeneNovo',this.checked)"> Projeto novo (67,5%) — desmarque se aprovado até 2025 (75%)</label>`:''}
+    </div>`:''}
+    ${c.regime==='simples'?`<div class="field" style="margin-top:6px"><label>Prazo médio da aplicação (IRRF definitivo)</label><select class="plain" onchange="setD('cliente.prazoAplic',this.value)"><option value="180-" ${c.prazoAplic==='180-'?'selected':''}>até 180 dias (22,5%)</option><option value="360" ${c.prazoAplic==='360'?'selected':''}>181–360 dias (20%)</option><option value="720" ${c.prazoAplic==='720'?'selected':''}>361–720 dias (17,5%)</option><option value="720+" ${c.prazoAplic==='720+'?'selected':''}>acima de 720 dias (15%)</option></select></div>`:''}
+  </div>`;
+  h+=`<div class="parambox"><h3>📈 Mercado (data-base editável)</h3>
+    <div class="grid3">
+      <div class="field"><label>Data-base</label>${inp('mercado.dataBase',m.dataBase,{type:'text'})}</div>
+      <div class="field"><label>Selic (% a.a.)</label>${inp('mercado.selic',m.selic)}</div>
+      <div class="field"><label>CDI (% a.a.)</label>${inp('mercado.cdi',m.cdi)}</div>
+      <div class="field"><label>IPCA 12m (%)</label>${inp('mercado.ipca',m.ipca)}</div>
+      <div class="field"><label>BNDES típico (% a.a.)</label>${inp('mercado.bndes',m.bndes)}</div>
+      <div class="field"><label>Pronampe (% a.a.)</label>${inp('mercado.pronampe',m.pronampe)}</div>
+      <div class="field"><label>Crédito PJ médio (% a.a.)</label>${inp('mercado.mediaPJ',m.mediaPJ)}</div>
+      <div class="field"><label>Giro bancário (% a.m.)</label>${inp('mercado.giroMes',m.giroMes)}</div>
+      <div class="field"><label>INCC estimado (% a.a.)</label>${inp('mercado.incc',m.incc)}</div>
+      <div class="field"><label>Orçamento FNE (R$ bi)</label>${inp('mercado.fneOrcamento',m.fneOrcamento)}</div>
+      <div class="field"><label>% p/ portes prioritários</label>${inp('mercado.fnePrioritarios',m.fnePrioritarios)}</div>
+    </div>
+    <div class="grid3" style="margin-top:4px">
+      <div class="field"><label>IOF fixo (%)</label>${inp('mercado.iofFixo',m.iofFixo)}</div>
+      <div class="field"><label>IOF diário (%)</label>${inp('mercado.iofDia',m.iofDia)}</div>
+      <div class="field" style="align-self:end">${chk('mercado.fneIsentoIOF',m.fneIsentoIOF,'Linha FNE isenta de IOF (confirme na sua linha)')}</div>
+    </div>
+  </div>`;
+  h+=`<div class="parambox"><h3>🧩 Módulos</h3>
+    <div class="grid2">${chk('flags.depIncluir',fl.depIncluir,'Depreciação como escudo fiscal (Lucro Real)')}${chk('flags.iofComparativo',fl.iofComparativo,'Mostrar IOF no comparativo de mercado')}</div>
+    ${fl.depIncluir?`<div class="grid3" style="margin-top:6px">
+      <div class="field"><label>% máquinas (10%/ano)</label>${inp('flags.depMaq',fl.depMaq)}</div>
+      <div class="field"><label>% obras (4%/ano)</label>${inp('flags.depObras',fl.depObras)}</div>
+      <div class="field"><label>Turnos (1 / 1,5 / 2)</label><select class="plain" onchange="setD('flags.depTurnos',this.value)">${[1,1.5,2].map(o=>`<option ${o==fl.depTurnos?'selected':''}>${o}</option>`).join('')}</select></div>
+    </div>`:''}
+  </div>`;
+  h+=`<div class="parambox"><h3>🎤 Apresentação</h3>
+    <div class="grid2">
+      <div class="field"><label>Apresentador (nome)</label>${inp('apr.consultorNome',ap.consultorNome,{type:'text'})}</div>
+      <div class="field"><label>Contato</label>${inp('apr.consultorContato',ap.consultorContato,{type:'text'})}</div>
+      <div class="field"><label>Validade da proposta (dias)</label>${inp('apr.validadeDias',ap.validadeDias)}</div>
+      <div class="field"><label>Cenários (multiplicadores)</label><div style="display:flex;gap:6px">${inp('apr.multCons',ap.multCons)}${inp('apr.multOtim',ap.multOtim)}</div><div class="hint">conservador · otimista</div></div>
+    </div>
+    <div class="field"><label>Próximos passos (separe com |)</label>${inp('apr.proximosPassos',ap.proximosPassos,{type:'text'})}</div>
+  </div>`;
+  h+=`<div class="parambox"><h3>🧪 Autoteste (regressão do motor + fórmulas fiscais)</h3>
+    <button class="btn primary" onclick="runAutoteste()">Rodar autoteste</button>
+    <div class="autoteste" id="autoteste"></div>
+    <div class="note" style="margin-top:8px">O teste de regressão roda o cenário-padrão e compara com os valores validados contra a planilha oficial do BNB.</div>
+  </div>`;
+  h+=`<div class="disclaimer">Este material é um estudo indicativo para apoio à decisão. Não constitui oferta de crédito, promessa de contratação nem aconselhamento tributário. Condições finais (taxas, prazos, garantias, enquadramento) são definidas pelo Banco do Nordeste na análise da proposta. Efeitos fiscais dependem da situação de cada empresa — valide com o contador. Rotina anual: atualizar taxas da Programação FNE/Resolução CMN vigente, CDI, IPCA e comparativos, ajustando a data-base acima.</div>`;
+  h+=`</div>`;
+  return h;
+}
+
+// ---------- Autoteste ----------
+const GOLD = { qtdPrest:120, data1a:'05/04/2028', venc:'05/03/2038', totalJurosSem:8047998.84,
+  totalJurosCom:6881903.91, totalPrincipal:15000000, totalBonus:1166094.93, mediaPrestCom:173756.15,
+  cetAnual:0.10407309, cetAnualComBonus:0.08929488, custosTotal:512500,
+  p1Principal:117833.33, p1Juros:95968.18, p1Total:213801.51, pUltTotal:125955.89,
+  carenciaQtd:8, carencia1:53888.64, carenciaSoma:1031165.98, numRows:145 };
+function runAutoteste(){
+  const out=[]; const ok=(nome,got,want,tol)=>{ const pass=Math.abs(got-want)<=(tol??0.011);
+    out.push(`<div class="${pass?'t-ok':'t-fail'}">${pass?'✅':'❌'} ${nome}: ${got} ${pass?'':' (esperado '+want+')'}</div>`); };
+  // 1) regressão do motor no cenário-padrão
+  const bak=JSON.stringify(S);
+  ['dataContratacao','valorFin','diaAniv','taxaSem','taxaCom','prazoAmort','carencia','periodPrinc','periodCar','parcelasIguais','reembolso','desembolsos','custos'].forEach(k=>{ S[k]=JSON.parse(JSON.stringify(DEF[k])); });
+  const R=calc();
+  try{
+    ok('qtdPrest',R.qtdPrest,GOLD.qtdPrest,0);
+    out.push(`<div class="${fmtDate(R.data1a)===GOLD.data1a?'t-ok':'t-fail'}">${fmtDate(R.data1a)===GOLD.data1a?'✅':'❌'} 1ª prestação: ${fmtDate(R.data1a)}</div>`);
+    out.push(`<div class="${fmtDate(R.venc)===GOLD.venc?'t-ok':'t-fail'}">${fmtDate(R.venc)===GOLD.venc?'✅':'❌'} vencimento: ${fmtDate(R.venc)}</div>`);
+    ok('totalJurosSem',R.totalJurosSem,GOLD.totalJurosSem); ok('totalJurosCom',R.totalJurosCom,GOLD.totalJurosCom);
+    ok('totalPrincipal',R.totalPrincipal,GOLD.totalPrincipal); ok('totalBonus',R.totalBonus,GOLD.totalBonus);
+    ok('mediaPrestCom',Math.round(R.mediaPrestCom*100)/100,GOLD.mediaPrestCom);
+    ok('CET taxa cheia',R.cetAnual,GOLD.cetAnual,1e-7); ok('CET c/ bônus',R.cetAnualComBonus,GOLD.cetAnualComBonus,1e-7);
+    const fa=R.sched.find(s=>s.isAmort&&s.principal>0.001); const am=R.sched.filter(s=>s.principal>0.001);
+    ok('1ª parcela total',fa.totalCom,GOLD.p1Total); ok('última parcela total',am[am.length-1].totalCom,GOLD.pUltTotal);
+    const gp=R.sched.filter(s=>s.isGrace&&s.juroPagoCom>0.01);
+    ok('pagtos na carência',gp.length,GOLD.carenciaQtd,0); ok('1º juro carência',gp[0].juroPagoCom,GOLD.carencia1);
+    ok('linhas do cronograma',R.sched.length,GOLD.numRows,0);
+  }catch(e){ out.push(`<div class="t-fail">❌ exceção: ${esc(e.message)}</div>`); }
+  const rest=JSON.parse(bak); Object.keys(rest).forEach(k=>{ S[k]=rest[k]; }); // restaura por mutação (mantém referências)
+  // 2) fórmulas fiscais (r = 14,15%)
+  const bak2=JSON.stringify(S.cliente); const r=0.1415;
+  S.cliente.regime='lucro_real'; S.cliente.acimaAdicional=true; S.cliente.sudeneAplica=false;
+  ok('break-even Lucro Real',fiscal().breakEven(r),0.13492,0.0006);
+  S.cliente.sudeneAplica=true; S.cliente.sudeneNovo=true; ok('SUDENE escudo excedente (novo)',fiscal().escudoExced,0.17125,1e-6);
+  S.cliente.sudeneNovo=false; ok('SUDENE escudo excedente (75%)',fiscal().escudoExced,0.1525,1e-6);
+  S.cliente.regime='presumido'; ok('break-even Presumido 34%',fiscal().breakEven(r),0.09339,1e-5);
+  S.cliente.acimaAdicional=false; ok('break-even Presumido 24%',fiscal().breakEven(r),0.10754,1e-5);
+  S.cliente.regime='simples'; S.cliente.prazoAplic='720+'; ok('break-even Simples >720d',fiscal().breakEven(r),0.120275,1e-5);
+  S.cliente=JSON.parse(bak2);
+  // 3) dois mundos: monotonia no CDI
+  const R2=calc();
+  if(R2){ const dLo=doisMundos(R2,{rBruta:0.10}).deltaFinal, dHi=doisMundos(R2,{rBruta:0.16}).deltaFinal;
+    out.push(`<div class="${dHi>dLo?'t-ok':'t-fail'}">${dHi>dLo?'✅':'❌'} Dois Mundos: vantagem cresce com o CDI (${fmtC(dLo)} → ${fmtC(dHi)})</div>`); }
+  // 4) QR: gera matriz válida
+  const q=qrMatrix('https://exemplo.com/#d=teste');
+  out.push(`<div class="${q&&q.length>=21?'t-ok':'t-fail'}">${q&&q.length>=21?'✅':'❌'} QR: matriz ${q?q.length+'×'+q.length:'falhou'}</div>`);
+  document.getElementById('autoteste').innerHTML=out.join('');
+}
+
+// ============================================================
+// V2 — MODO APRESENTAÇÃO (5 telas) + DOCUMENTO DE IMPRESSÃO
+// ============================================================
+function irTela(n){ S.tela=Math.max(1,Math.min(5,n)); render(); }
+function nomeEmpresa(){ return S.cliente.empresa||'Sua empresa'; }
+
+// ---------- fragmentos reutilizados (tela + impressão) ----------
+function fragRegua(){
+  const taxaFNE=+S.taxaCom, m=S.mercado;
+  const rows=[
+    {lbl:'Crédito PJ médio (BCB)', val:m.mediaPJ, color:'#dc2626'},
+    {lbl:'Pronampe (Selic + 6%)', val:m.pronampe, color:'#ea580c'},
+    {lbl:'BNDES (TLP + spreads)', val:m.bndes, color:'#d97706'},
+    {lbl:'FNE (com bônus)', val:taxaFNE, color:'#16a34a', bold:true}
+  ];
+  return svgHBars(rows,{fmtv:v=>v.toLocaleString('pt-BR',{maximumFractionDigits:2})+'% a.a.', max:m.mediaPJ*1.14});
+}
+function fragKPIs(R,kp){
+  const pb = kp.paybackAnos!=null ? kp.paybackAnos.toLocaleString('pt-BR',{maximumFractionDigits:1})+' anos' : '—';
+  const pm = kp.pctMargem!=null ? fmtPct1(kp.pctMargem)+' da margem nova' : '—';
+  const tir = kp.tir!=null ? fmtPct1(kp.tir)+' vs '+fmtPct1(R.cetAnualComBonus) : '—';
+  const vpl = kp.margem>0 ? 'R$ '+fmtC(kp.vpl) : '—';
+  return `<div class="kpirow">
+    <div class="kpi destaque"><div class="v">${pb}</div><div class="t">Payback do projeto</div></div>
+    <div class="kpi"><div class="v">${pm}</div><div class="t">Peso da parcela</div></div>
+    <div class="kpi"><div class="v">${tir}</div><div class="t">Retorno × custo do dinheiro</div></div>
+    <div class="kpi"><div class="v">${vpl}</div><div class="t">Valor criado (VPL)</div></div>
+  </div>`;
+}
+function fragSCQA(R,kp,dm){
+  const c=S.cliente, anos=((+S.prazoAmort)+(+S.carencia))/12;
+  return `<div class="scqa">
+    <p><b class="k">Situação.</b> ${esc(nomeEmpresa())} avalia investir em ${esc(c.descProjeto||'um novo projeto')}${c.cidade?' em '+esc(c.cidade)+(c.uf?'/'+esc(c.uf):''):''}, um investimento de R$ ${fmt(+S.valorFin)}.</p>
+    <p><b class="k">Complicação.</b> Usar caixa próprio descapitaliza a empresa${kp.margem>0?` e cada mês sem o projeto deixa de gerar R$ ${fmtC(kp.margem/kp.mult)} de margem`:''}; o orçamento FNE é anual e finito (R$ ${fmtBi(S.mercado.fneOrcamento)} bi no ano).</p>
+    <p><b class="k">Questão.</b> Como investir agora sem sacrificar a liquidez?</p>
+    <p><b class="k">Resposta.</b> Financiar pelo FNE a ${(+S.taxaCom).toLocaleString('pt-BR')}% a.a. (com bônus de adimplência), em ${anos.toLocaleString('pt-BR',{maximumFractionDigits:1})} anos com ${(+S.carencia)/12} de carência, mantendo o caixa aplicado — vantagem financeira estimada de <b>R$ ${fmtC(dm.deltaFinal)}</b> no prazo total${kp.paybackAnos!=null?`, com o projeto se pagando em ~${kp.paybackAnos.toLocaleString('pt-BR',{maximumFractionDigits:1})} anos`:''}.</p>
+  </div>`;
+}
+function fragMundos(R,dm,f){
+  const c=S.cliente, aF=dm.pts[dm.pts.length-1];
+  const liExtra = f.regime==='lucro_real'
+    ? `<li>💚 Economia de IR sobre os juros: <b>R$ ${fmtC(dm.escudoTotal)}</b></li>`
+    : `<li>💚 O empréstimo não gera nenhum imposto novo</li>`;
+  return `<div class="mundos">
+    <div class="mundo a"><h4>🔴 Mundo A — pagar à vista</h4><ul>
+      <li>Paga <b>R$ ${fmtC(dm.totalProjeto)}</b> do caixa ao longo da obra</li>
+      <li>Esse dinheiro deixa de render ~${fmtPct1(dm.rLiq)} a.a. líquidos</li>
+      <li>Liquidez comprometida para oportunidades e crises</li>
+      <li>Patrimônio financeiro ao final: <b>R$ ${fmtC(aF.a)}</b></li></ul></div>
+    <div class="mundo b"><h4>🟢 Mundo B — financiar FNE</h4><ul>
+      <li>Caixa continua aplicado a ${c.pctCDI}% do CDI</li>
+      <li>Parcelas saem ao longo de ${((+S.prazoAmort)+(+S.carencia))/12} anos, já com bônus</li>
+      ${liExtra}
+      <li>Patrimônio financeiro ao final: <b>R$ ${fmtC(aF.b)}</b></li></ul></div>
+  </div>`;
+}
+function fragRegimeExpl(R,f,dm){
+  const c=S.cliente, be=f.breakEven(dm.rBruta), taxa=+S.taxaCom/100;
+  const okTaxa = taxa<=be;
+  let t='';
+  if(c.regime==='lucro_real'&&f.sudene){
+    t=`<b>Lucro Real + SUDENE:</b> cada R$ 100 de juros do FNE reduzem até R$ 34 de IRPJ/CSLL (dedução plena enquanto couberem nas receitas financeiras; o excedente ainda desconta ${fmtPct1(f.escudoExced)}). Importante: o benefício SUDENE <b>não alcança</b> o rendimento de aplicações — que segue tributado em ~37%. Ou seja: <b>aplicar não tem incentivo; investir no projeto tem.</b>`;
+  } else if(c.regime==='lucro_real'){
+    t=`<b>Lucro Real:</b> os juros do financiamento são dedutíveis — cada R$ 100 de juros devolvem até R$ ${Math.round(f.escudoBase*100)} em IRPJ/CSLL. Já o rendimento da sua aplicação é tributado em ~${fmtPct1(f.cargaAplic)} (IR/CSLL + PIS/COFINS). O custo líquido da dívida cai para ~${fmtPct2(taxa*(1-f.escudoBase))} a.a.`;
+  } else if(c.regime==='presumido'){
+    t=`<b>Lucro Presumido:</b> os juros não geram dedução — mas o empréstimo também não gera nenhum tributo. Sua aplicação, ao contrário, é somada <b>integralmente</b> à base do IRPJ/CSLL (carga de ~${fmtPct1(f.cargaAplic)} sobre o rendimento). Financiar preserva o caixa; aplicar preserva o rendimento — e a taxa FNE fica abaixo do seu ponto de equilíbrio.`;
+  } else {
+    t=`<b>Simples Nacional:</b> o empréstimo não entra no DAS (não é receita) e sua aplicação paga só IRRF definitivo de ${fmtPct1(f.cargaAplic)}. É o regime em que aplicar é mais eficiente — e <b>mesmo assim</b> a taxa FNE desta proposta fica abaixo do ponto de equilíbrio.`;
+  }
+  return `<div class="regime-expl">${t}</div>
+  <div class="caixabox">📐 <b>Regra de decisão no seu regime (${esc(f.labels.regime)}):</b> financiar compensa sempre que a taxa efetiva for menor que <b>${fmtPct2(be)} a.a.</b> A taxa desta proposta, com bônus: <b>${(+S.taxaCom).toLocaleString('pt-BR')}% a.a.</b> ${okTaxa?'✅':'⚠️ acima do equilíbrio — avalie com o contador'}</div>
+  <div class="caixabox">📉 <b>Custo real da dívida</b> (descontando IPCA de ${S.mercado.ipca}%): <b>${fmtPct2(custoRealFNE(R))} a.a.</b> — referência: o próprio Tesouro paga IPCA + ~7,5% na NTN-B. Sua parcela é fixa; sua receita acompanha os preços.</div>`;
+}
+function fragTabelaAnual(dm){
+  let t=`<table><thead class="th-blue"><tr><th>ANO</th><th class="r">PAGA À VISTA</th><th class="r">FINANCIA FNE</th><th class="r">VANTAGEM</th></tr></thead><tbody>`;
+  dm.anos.forEach(a=>{ t+=`<tr style="border-bottom:1px solid #eee"><td>${a.ano}</td><td class="r">${fmtC(a.a)}</td><td class="r">${fmtC(a.b)}</td><td class="r" style="color:#15803d"><b>${a.delta>=0?'+':''}${fmtC(a.delta)}</b></td></tr>`; });
+  return t+`</tbody></table>`;
+}
+function fragSemaforo(f){
+  const m=S.mercado, taxaFNE=(+S.taxaCom).toLocaleString('pt-BR',{maximumFractionDigits:2});
+  const escudoCell = f.regime==='lucro_real' ? `<span class="dot g"></span>dedutível (34%)` : `<span class="dot y"></span>sem dedução (regime)`;
+  const iofRow = S.flags.iofComparativo ? `<tr><td>IOF</td><td><span class="dot ${m.fneIsentoIOF?'g':'y'}"></span>${m.fneIsentoIOF?'isento*':'incide'}</td><td><span class="dot y"></span>incide</td><td><span class="dot y"></span>conforme linha</td><td><span class="dot r"></span>incide (~3,4%)</td><td>—</td></tr>` : '';
+  return `<div style="overflow-x:auto"><table class="semaforo"><thead><tr><th>Critério</th><th>FNE/BNB</th><th>Pronampe</th><th>BNDES</th><th>Banco (média)</th><th>Caixa próprio</th></tr></thead><tbody>
+    <tr><td>Custo ao ano</td><td><span class="dot g"></span><b>${taxaFNE}% fixo</b></td><td><span class="dot y"></span>${m.pronampe}% pós</td><td><span class="dot y"></span>~${m.bndes}% (IPCA+)</td><td><span class="dot r"></span>${m.mediaPJ}%</td><td><span class="dot r"></span>perde o rendimento</td></tr>
+    <tr><td>Prazo máximo</td><td><span class="dot g"></span>12 anos (34 infra)</td><td><span class="dot y"></span>8 anos</td><td><span class="dot g"></span>10–20 anos</td><td><span class="dot r"></span>1–5 anos</td><td>—</td></tr>
+    <tr><td>Carência</td><td><span class="dot g"></span>até 4 anos (8 infra)</td><td><span class="dot y"></span>até 24m</td><td><span class="dot y"></span>conforme projeto</td><td><span class="dot r"></span>rara</td><td>—</td></tr>
+    <tr><td>Preserva a liquidez</td><td><span class="dot g"></span>sim</td><td><span class="dot g"></span>sim</td><td><span class="dot g"></span>sim</td><td><span class="dot g"></span>sim</td><td><span class="dot r"></span><b>não — descapitaliza</b></td></tr>
+    <tr><td>Efeito fiscal dos juros</td><td>${escudoCell}</td><td>${escudoCell}</td><td>${escudoCell}</td><td>${escudoCell}</td><td><span class="dot r"></span>nenhum</td></tr>
+    <tr><td>Limite de valor</td><td><span class="dot g"></span>o projeto (até 100%)</td><td><span class="dot r"></span>R$ 500 mil</td><td><span class="dot g"></span>alto</td><td><span class="dot y"></span>limite bancário</td><td>seu caixa</td></tr>
+    <tr><td>Onde perde</td><td>exige projeto/garantias</td><td>vence em burocracia (tickets pequenos)</td><td>processo mais longo</td><td>rapidez</td><td>sem análise de crédito</td></tr>
+  </tbody>${iofRow?`<tbody>${iofRow}</tbody>`:''}</table></div>
+  <div class="note">*Isenção de IOF: confirme na linha contratada. Comparativo com dados médios editáveis (Parâmetros) — data-base ${esc(m.dataBase)}.</div>`;
+}
+function fragSudeneDep(kp){
+  const c=S.cliente; let h='';
+  if(c.regime==='lucro_real'&&c.sudeneAplica){
+    const pctTxt=c.sudeneNovo?'67,5%':'75%';
+    h+=`<div class="caixabox">🏭 <b>Incentivo SUDENE:</b> indústria em Lucro Real na área da SUDENE pode obter <b>redução de ${pctTxt} do IRPJ</b> sobre o lucro da exploração por 10 anos (projetos aprovados até 2025 mantêm 75%; novos, 67,5% — LC 224/2025) + reinvestimento de 30% do IRPJ via BNB. Protocolos até 31/12/2028. Este benefício vale para o <b>lucro do projeto</b> — não para rendimento de aplicação: mais um motivo para investir em vez de aplicar.</div>`;
+  }
+  if(c.regime==='lucro_real'&&S.flags.depIncluir&&kp.escudoDepAno>0){
+    h+=`<div class="caixabox">🧾 <b>Depreciação do imobilizado:</b> além dos juros, a depreciação do investimento reduz o IRPJ/CSLL — economia estimada de <b>R$ ${fmtC(kp.escudoDepAno)}/ano</b> (${S.flags.depMaq}% máquinas a 10% a.a.${+S.flags.depTurnos>1?' ×'+S.flags.depTurnos+' turnos':''} + ${S.flags.depObras}% obras a 4% a.a.). Vale nos dois cenários — por isso entra no payback do projeto, não na comparação financiar × à vista. Confirme com o contador.</div>`;
+  }
+  return h;
+}
+function fragEspera(R){
+  const ce=custoEsperar(R), m=S.mercado;
+  return `<div class="esperabox"><div class="v">R$ ${fmtC(ce.total)}</div>
+  <div><b>Custo estimado de adiar 12 meses:</b> R$ ${fmtC(ce.receita12)} de margem não capturada + obra ~${m.incc}% mais cara (INCC ≈ R$ ${fmtC(ce.obra)}). A dotação do FNE é anual e finita (R$ ${fmtBi(m.fneOrcamento)} bi no ano${S.cliente.porte==='micro'||S.cliente.porte==='pequena'?`, ${m.fnePrioritarios}% reservados a portes prioritários`:''}) e as condições são redefinidas a cada ano. <b>Esta análise custa R$ 0.</b></div></div>`;
+}
+function fragPassos(){
+  const passos=(S.apr.proximosPassos||'').split('|').filter(Boolean);
+  return `<ol class="passos">${passos.map(p=>`<li>${esc(p.trim())}</li>`).join('')}</ol>`;
+}
+
+// ---------- telas ----------
+function renderApresentacao(){
+  const errs=validar(), R=calc();
+  if(!R||errs.length){
+    return `<div class="apr"><div class="avisobox">⚠️ Complete a simulação técnica antes de apresentar${errs.length?': '+esc(errs[0]):''}.</div>
+    <button class="btn primary" onclick="set('mode','tecnico')">Ir para a simulação técnica</button></div>`;
+  }
+  const f=fiscal(), dm=doisMundos(R), kp=kpis(R), c=S.cliente, m=S.mercado;
+  const anoRef=(parseDate(S.dataContratacao)||hoje()).getFullYear();
+  let h=`<div class="apr">`;
+  if(S.tela===1){
+    const prio=(c.porte==='micro'||c.porte==='pequena');
+    h+=`<div class="hero">
+      <div class="pill">✓ Análise preliminar de enquadramento</div>
+      <h2>${esc(nomeEmpresa())}, seu projeto se enquadra nas condições FNE ${anoRef}</h2>
+      <div class="sub">${esc(c.descProjeto||'Projeto de investimento')}${c.cidade?' · '+esc(c.cidade)+(c.uf?'/'+esc(c.uf):''):''}</div>
+      <div class="checklist">
+        <div>✅ Município na área de atuação (SUDENE — 2.074 municípios)</div>
+        <div>✅ Setor e finalidade financiáveis pelo FNE</div>
+        <div>${prio?`✅ Porte prioritário — ${m.fnePrioritarios}% do orçamento reservado ao seu grupo`:`✅ Orçamento ${anoRef}: R$ ${fmtBi(m.fneOrcamento)} bi disponíveis`}</div>
+        <div>✅ Até 12 anos de prazo, com carência para construir e maturar</div>
+        ${c.semiarido?'<div>⭐ Semiárido: direito ao <b>bônus máximo de 25%</b> sobre os juros</div>':''}
+      </div>
+      <div class="svgtitle" style="text-align:left">Quanto custa dinheiro para empresa hoje (% a.a.):</div>
+      <div class="svgbox">${fragRegua()}</div>
+      <div class="note">Taxas médias de mercado editáveis em Parâmetros · data-base ${esc(m.dataBase)}. FNE: recursos do Fundo Constitucional (CF/1988), operados pelo Banco do Nordeste, com bônus de adimplência por pontualidade.</div>
+      <button class="btn green" style="width:100%;margin-top:8px;font-size:16px;padding:14px" onclick="irTela(2)">Ver minha simulação →</button>
+      <div class="disclaimer">Estudo indicativo — o enquadramento final é definido pelo BNB na análise da proposta.</div>
+    </div>`;
+  }
+  else if(S.tela===2){
+    const gp=R.sched.filter(s=>s.isGrace&&s.juroPagoCom>0.01);
+    const mediaCar=gp.length?gp.reduce((s,x)=>s+x.juroPagoCom,0)/gp.length:0;
+    h+=`<h2>Os números, sem letra miúda</h2>
+    <div class="sub"><span class="chip verde">CET completo na tela — padrão Banco Central</span> <span class="chip azul">Metodologia exata BNB (dias úteis/252)</span></div>
+    <div class="bignum"><div class="t">Sua parcela média (com bônus de adimplência)</div>
+      <div class="v">R$ ${fmt0(R.mediaPrestCom)}<span style="font-size:18px;color:#64748b">/mês</span></div>
+      <div class="d">≈ R$ ${fmt0(kp.parcelaDia)}/dia · na carência (${(+S.carencia)/12} anos) você paga só os juros — média de R$ ${fmt0(mediaCar)} por período</div></div>
+    ${kp.margem>0?`<div class="fraseouro">🏭 <b>A fábrica paga a fábrica:</b> margem nova projetada de R$ ${fmt0(kp.margem)}/mês; parcela média de R$ ${fmt0(R.mediaPrestCom)} (${kp.pctMargem!=null?fmtPct1(kp.pctMargem):''}). Sobram R$ ${fmt0(Math.max(kp.margem-R.mediaPrestCom,0))}/mês — e o seu caixa atual nem entra nessa conta.</div>`:''}
+    <div class="kpirow">
+      <div class="kpi"><div class="v">R$ ${fmtC(+S.valorFin)}</div><div class="t">Você investe</div></div>
+      <div class="kpi"><div class="v">R$ ${fmtC(R.totalPrincipal+R.totalJurosCom)}</div><div class="t">Devolve ao todo (c/ bônus)</div></div>
+      <div class="kpi"><div class="v">${fmtPct2(R.cetAnualComBonus)}</div><div class="t">CET a.a. c/ bônus</div></div>
+      <div class="kpi"><div class="v">${((+S.prazoAmort)+(+S.carencia))/12} anos</div><div class="t">Prazo total (${(+S.carencia)/12} de carência)</div></div>
+    </div>
+    <div class="fraseouro" style="border-color:#f59e0b;background:#fffbeb;color:#78350f">🎁 <b>Sua taxa: ${(+S.taxaCom).toLocaleString('pt-BR')}% a.a. com pontualidade</b> (${(+S.taxaSem).toLocaleString('pt-BR')}% sem o bônus). Pagando em dia, a economia de <b>R$ ${fmtC(R.totalBonus)}</b> é sua. Não a perca.</div>
+    <div class="svgtitle">De onde vem — e para onde vai — o custo do dinheiro:</div>
+    <div class="svgbox">${svgWaterfall(R,dm.escudoTotal)}</div>
+    <details class="acc"><summary>Ver cronograma detalhado (primeiras 12 parcelas)</summary>
+      <table style="margin-top:8px"><thead class="th-blue"><tr><th>#</th><th>DATA</th><th class="r">PRINCIPAL</th><th class="r">JUROS</th><th class="r">TOTAL</th></tr></thead><tbody>
+      ${R.sched.filter(s=>s.isAmort&&s.seq<=12&&s.principal>0.001).map(s=>`<tr style="border-bottom:1px solid #eee"><td class="c">${s.seq}</td><td>${fmtDate(s.data)}</td><td class="r">${fmt(s.principal)}</td><td class="r">${fmt(s.juroPagoCom)}</td><td class="r"><b>${fmt(s.totalCom)}</b></td></tr>`).join('')}
+      </tbody></table><div class="note">Cronograma completo e memória de cálculo no modo Simulação técnica.</div></details>
+    <div class="disclaimer">CET taxa cheia: ${fmtPct2(R.cetAnual)} a.a. · custos incluídos: R$ ${fmt(R.custosTotal)} · valores indicativos.</div>`;
+  }
+  else if(S.tela===3){
+    h+=`<h2>A pergunta certa não é "quanto custa o financiamento?"</h2>
+    <div class="sub">É: <b>quanto custa usar o SEU dinheiro?</b> Seu caixa rende ~${fmtPct1(dm.rBruta)} bruto (${c.pctCDI}% do CDI). Usar dinheiro próprio é pegar emprestado de você mesmo — à taxa mais cara.</div>
+    ${dm.avisoCapital?`<div class="avisobox">ℹ️ O capital informado (R$ ${fmtC(+c.valorAplicado)}) é menor que o projeto; para a comparação, consideramos capital próprio igual ao valor do projeto (R$ ${fmtC(dm.totalProjeto)}).</div>`:''}
+    ${fragMundos(R,dm,f)}
+    <div class="deltafinal"><div class="t">Vantagem financeira de financiar mantendo o caixa aplicado — no prazo total</div><div class="v">+ R$ ${fmtC(dm.deltaFinal)}</div><div class="t">já descontados juros, custos${S.mercado.fneIsentoIOF?'':', IOF'} e impostos de cada mundo</div></div>
+    <div class="svgbox">${svgDoisMundos(dm,R)}</div>
+    ${fragRegimeExpl(R,f,dm)}
+    <details class="acc"><summary>Tabela ano a ano</summary>${fragTabelaAnual(dm)}</details>
+    <div class="fraseouro">💡 Financiar não é se endividar. É contratar o dinheiro mais barato disponível no país para não gastar o mais caro — o seu. E caixa preservado é seguro: fornecedor à vista com desconto, estoque na baixa, 6 meses de folga se o mercado virar.</div>
+    <div class="disclaimer">Comparação com rendimento líquido de impostos por regime e parcelas com bônus; simplificações: rendimento composto à taxa anual líquida; desembolsos nas datas de alocação do cronograma. Confirme os efeitos fiscais com o contador.</div>`;
+  }
+  else if(S.tela===4){
+    const pcs=pacotes(R), sel=S.apr.pacote||'recomendado';
+    h+=`<h2>Escolha o tamanho do passo</h2><div class="sub">Três formas de estruturar o mesmo projeto — a do meio é a mais escolhida.</div>
+    <div class="pacotes">${pcs.map(p=>`
+      <div class="pacote ${sel===p.key?'sel':''}" onclick="S.apr.pacote='${p.key}';render()">
+        ${p.star?'<div class="star">★ RECOMENDADO — o mais escolhido</div>':''}
+        <h4>${p.nome}</h4>
+        <div class="pv">R$ ${fmtC(p.valor)}</div>
+        <div class="pd">parcela média R$ ${fmt0(p.parcela)}/mês</div>
+        <div class="pd">${esc(p.desc)}</div>
+      </div>`).join('')}</div>
+    <div class="note">Proposta detalhada = pacote Recomendado (a operação configurada). Essencial e Expansão são estimativas proporcionais — o giro associado pode chegar a 1/3 do investimento (40% para empresas lideradas por mulheres).</div>
+    <h3>Como o FNE se compara — sem esconder onde cada um ganha</h3>
+    ${fragSemaforo(f)}
+    ${fragSudeneDep(kp)}
+    <div class="caixabox">🏦 <b>Por que dá para confiar:</b> recursos do Fundo Constitucional de Financiamento do Nordeste (CF/1988), operados pelo Banco do Nordeste — maior banco de desenvolvimento regional da América Latina. Orçamento ${anoRef}: R$ ${fmtBi(m.fneOrcamento)} bi. Del credere do banco já embutido na taxa — sem spread surpresa.</div>`;
+  }
+  else if(S.tela===5){
+    const cen=S.apr.cenario;
+    h+=`<h2>Página de decisão</h2>
+    <div class="sub">${esc(nomeEmpresa())} · ${esc(c.descProjeto||'projeto de investimento')} · validade: ${S.apr.validadeDias} dias (data-base ${esc(m.dataBase)})</div>
+    ${fragSCQA(R,kp,dm)}
+    ${fragKPIs(R,kp)}
+    <div class="cenpills">
+      <button class="${cen==='conservador'?'active':''}" onclick="S.apr.cenario='conservador';render()">Conservador (${Math.round(+S.apr.multCons*100)}%)</button>
+      <button class="${cen==='provavel'?'active':''}" onclick="S.apr.cenario='provavel';render()">Provável</button>
+      <button class="${cen==='otimista'?'active':''}" onclick="S.apr.cenario='otimista';render()">Otimista (${Math.round(+S.apr.multOtim*100)}%)</button>
+    </div>
+    ${cen==='conservador'&&kp.pctMargem!=null?`<div class="fraseouro">🛡️ <b>Mesmo com ${Math.round((1-+S.apr.multCons)*100)}% menos margem</b>, a parcela consome ${fmtPct1(kp.pctMargem)} do lucro incremental — o projeto continua de pé.</div>`:''}
+    ${kp.margem>0?`<div class="svgtitle">Caixa acumulado do projeto (cenário ${cen}):</div><div class="svgbox">${svgPayback(kp,R)}</div>`:`<div class="avisobox">Informe a margem mensal do projeto em Parâmetros para ver payback, TIR e VPL.</div>`}
+    <details class="acc"><summary>E se? — sensibilidade da vantagem de financiar</summary><div class="svgbox">${svgTornado(tornado(R,dm.deltaFinal),dm.deltaFinal)}</div></details>
+    ${fragEspera(R)}
+    <h3>Próximos passos</h3>
+    ${fragPassos()}
+    ${S.apr.consultorNome?`<div class="caixabox">📞 <b>${esc(S.apr.consultorNome)}</b>${S.apr.consultorContato?' · '+esc(S.apr.consultorContato):''}</div>`:''}
+    <div class="btns" style="gap:8px;flex-wrap:wrap">
+      <button class="btn primary" onclick="imprimirProposta()">🖨️ Imprimir / PDF</button>
+      <button class="btn gray" onclick="copiarLink()">🔗 Copiar link da simulação</button>
+      <span id="copiado" style="align-self:center;font-size:12px;color:#15803d;font-weight:bold"></span>
+    </div>
+    ${(()=>{ if(!/^https?:/.test(location.protocol))return '<div class="note" style="margin-top:8px">Para gerar QR escaneável, hospede este arquivo em um link (ex.: GitHub Pages) — o botão de link já funciona.</div>';
+      const q=qrSVG(linkAtual()); return q?`<div class="qrwrap">${q}<div class="note">📱 Aponte a câmera: abre esta simulação viva, com os dados do cliente</div></div>`:'<div class="note">Link longo demais para QR — use o botão Copiar link.</div>'; })()}
+    <div class="disclaimer">Estudo indicativo, não é oferta de crédito. Condições finais definidas pelo BNB na análise (garantias, enquadramento, encargos da Programação FNE vigente). Efeitos fiscais: confirme com o contador. Números de mercado com data-base ${esc(m.dataBase)}.</div>`;
+  }
+  // navegação
+  h+=`<div class="aprnav noprint">
+    <button class="btn gray" ${S.tela===1?'style="visibility:hidden"':''} onclick="irTela(${S.tela-1})">← Anterior</button>
+    <div class="dots">${[1,2,3,4,5].map(n=>`<span class="${S.tela===n?'on':''}" onclick="irTela(${n})"></span>`).join('')}</div>
+    <button class="btn ${S.tela===5?'gray':'primary'}" onclick="${S.tela===5?`set('mode','tecnico')`:`irTela(${S.tela+1})`}">${S.tela===5?'Concluir':'Próxima →'}</button>
+  </div></div>`;
+  return h;
+}
+
+// ---------- impressão ----------
+function imprimirProposta(){
+  const errs=validar(), R=calc();
+  if(!R||errs.length){ alert('Complete a simulação técnica antes de imprimir.'); return; }
+  const f=fiscal(), dm=doisMundos(R), kp=kpis(R), c=S.cliente, m=S.mercado;
+  const dt=new Date(), dstr=fmtDate(dt);
+  const rodape=n=>`<div class="prodape">Estudo indicativo · data-base ${esc(m.dataBase)} · metodologia BNB (dias úteis/252, CET conforme planilha oficial) · emitido em ${dstr} · pág. ${n}</div>`;
+  let h='';
+  h+=`<div class="ppage pcapa">
+    <div style="font-size:13px;color:#2563eb;font-weight:bold">PROPOSTA DE INVESTIMENTO · FNE / BANCO DO NORDESTE</div>
+    <h1>${esc(nomeEmpresa())}</h1>
+    <div class="sub">${esc(c.descProjeto||'Projeto de investimento')}${c.cidade?' · '+esc(c.cidade)+(c.uf?'/'+esc(c.uf):''):''}</div>
+    <div style="margin-top:26px;font-size:20px;font-weight:800">R$ ${fmt(+S.valorFin)}</div>
+    <div class="sub">${((+S.prazoAmort)+(+S.carencia))/12} anos · ${(+S.carencia)/12} de carência · taxa ${(+S.taxaCom).toLocaleString('pt-BR')}% a.a. com bônus</div>
+    <div style="margin-top:34px;font-size:12px;color:#475569">Emitida em ${dstr} · validade ${S.apr.validadeDias} dias${S.apr.consultorNome?`<br>Apresentação: ${esc(S.apr.consultorNome)}${S.apr.consultorContato?' · '+esc(S.apr.consultorContato):''}`:''}</div>
+  </div>`;
+  h+=`<div class="ppage"><h2>1. Decisão em uma página</h2>${fragSCQA(R,kp,dm)}${fragKPIs(R,kp)}${fragEspera(R)}
+    <h2>Próximos passos</h2>${fragPassos()}
+    <div style="margin-top:22px;font-size:12px">De acordo para iniciar: ____________________________________ &nbsp;&nbsp; Data: ____/____/______</div>${rodape(2)}</div>`;
+  const gp=R.sched.filter(s=>s.isGrace&&s.juroPagoCom>0.01);
+  h+=`<div class="ppage"><h2>2. A operação em números</h2>
+    <div class="kpirow">
+      <div class="kpi"><div class="v">R$ ${fmt0(R.mediaPrestCom)}</div><div class="t">Parcela média c/ bônus</div></div>
+      <div class="kpi"><div class="v">R$ ${fmtC(R.totalPrincipal+R.totalJurosCom)}</div><div class="t">Total a devolver</div></div>
+      <div class="kpi"><div class="v">${fmtPct2(R.cetAnualComBonus)}</div><div class="t">CET a.a. c/ bônus</div></div>
+      <div class="kpi"><div class="v">${fmtPct2(R.cetAnual)}</div><div class="t">CET a.a. taxa cheia</div></div>
+    </div>
+    <p style="font-size:12px;margin:6px 0">Taxas: ${(+S.taxaCom).toLocaleString('pt-BR')}% a.a. com bônus de adimplência (${(+S.taxaSem).toLocaleString('pt-BR')}% sem) · economia por pontualidade: <b>R$ ${fmt(R.totalBonus)}</b> · custos incluídos no CET: R$ ${fmt(R.custosTotal)} · ${gp.length} pagamentos de juros na carência (média R$ ${fmt0(gp.length?gp.reduce((s,x)=>s+x.juroPagoCom,0)/gp.length:0)}).</p>
+    <div class="svgbox">${svgWaterfall(R,dm.escudoTotal)}</div>
+    <h2>Primeiras 12 parcelas</h2>
+    <table><thead class="th-blue"><tr><th>#</th><th>DATA</th><th class="r">PRINCIPAL</th><th class="r">JUROS</th><th class="r">TOTAL</th></tr></thead><tbody>
+    ${R.sched.filter(s=>s.isAmort&&s.seq<=12&&s.principal>0.001).map(s=>`<tr><td class="c">${s.seq}</td><td>${fmtDate(s.data)}</td><td class="r">${fmt(s.principal)}</td><td class="r">${fmt(s.juroPagoCom)}</td><td class="r"><b>${fmt(s.totalCom)}</b></td></tr>`).join('')}
+    </tbody></table>${rodape(3)}</div>`;
+  h+=`<div class="ppage"><h2>3. Financiar × usar o próprio caixa</h2>
+    ${fragMundos(R,dm,f)}
+    <div class="deltafinal"><div class="t">Vantagem de financiar mantendo o caixa aplicado</div><div class="v">+ R$ ${fmtC(dm.deltaFinal)}</div></div>
+    <div class="svgbox">${svgDoisMundos(dm,R)}</div>
+    ${fragRegimeExpl(R,f,dm)}
+    ${fragTabelaAnual(dm)}${rodape(4)}</div>`;
+  h+=`<div class="ppage"><h2>4. Comparativo de fontes & premissas</h2>
+    ${fragSemaforo(f)}
+    ${fragSudeneDep(kp)}
+    <h2>Premissas</h2>
+    <p style="font-size:11.5px">Selic ${m.selic}% · CDI ${m.cdi}% · IPCA 12m ${m.ipca}% · aplicação do cliente: ${c.pctCDI}% do CDI · regime: ${esc(f.labels.regime)} · cenário de margem: ${esc(S.apr.cenario)} · INCC ${m.incc}% · IOF ${m.fneIsentoIOF?'isento na linha (confirmar)':'incluído'} · data-base ${esc(m.dataBase)}.</p>
+    <p style="font-size:11.5px">Este estudo é indicativo e não constitui oferta de crédito nem aconselhamento tributário; condições finais definidas pelo Banco do Nordeste na análise da proposta (Programação FNE vigente, garantias e enquadramento). Efeitos fiscais dependem da apuração de cada empresa — valide com o contador.</p>
+    ${(()=>{ if(!/^https?:/.test(location.protocol))return '';
+      const q=qrSVG(linkAtual()); return q?`<div class="qrwrap">${q}<div style="font-size:10.5px;color:#64748b">Simulação viva: aponte a câmera</div></div>`:''; })()}
+    ${rodape(5)}</div>`;
+  document.getElementById('printdoc').innerHTML=h;
+  window.print();
+}
+
+// ---------- init ----------
+(function(){
+  if(location.hash&&location.hash.startsWith('#d=')) decodeEstado(location.hash.slice(3));
+  render();
+})();
+</script>
+</body>
+</html>
