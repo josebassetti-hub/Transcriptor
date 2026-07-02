@@ -1,0 +1,38 @@
+{
+  "id": "estetica_sp",
+  "titulo": "Fornecedores B2B para clínicas de estética e salões — Estado de São Paulo",
+  "contexto": "Estudo para cliente que vende software de gestão por assinatura a clínicas de estética e salões de beleza e avalia entrada/expansão no Estado de São Paulo.",
+  "cnaes": [
+    { "codigo": "9602-5/01", "descricao": "Cabeleireiros, manicure e pedicure" },
+    { "codigo": "9602-5/02", "descricao": "Atividades de estética e outros serviços de cuidados com a beleza" }
+  ],
+  "regiao": { "nivel": "UF", "codigo_ibge": "35", "sigla": "SP", "nome": "São Paulo" },
+  "cnpj_extracao": "2026-06 (demonstração)",
+  "icp": {
+    "descricao": "Estabelecimentos ativos há 2+ anos, porte ME ou EPP (exclui MEI, cuja disposição a pagar por software é baixa, e grandes redes, atendidas por venda direta)",
+    "portes": ["ME", "EPP"],
+    "faixas_idade": ["2-5", "5-10", "10+"],
+    "ticket_medio_anual_brl": 3600,
+    "racional_ticket": "Assinatura de R$ 300/mês — parâmetro informado pelo usuário na geração do relatório"
+  },
+  "captura": { "pessimista": 0.01, "base": 0.03, "otimista": 0.06, "horizonte_anos": 5 },
+  "topdown": {
+    "agregado_sidra": {
+      "agregado": "DEMO-PAS",
+      "periodos": "2019|2020|2021|2022|2023",
+      "variavel": "receita-bruta",
+      "localidade": "N1[all]",
+      "fator_unidade": 1000,
+      "fixture": "ibge_pas_software_gestao.json",
+      "citacao": "IBGE — Pesquisa Anual de Serviços (PAS), receita bruta de serviços de TI recorte gestão para setor de beleza (agregado de demonstração; em produção: tabela SIDRA curada por setor)"
+    },
+    "participacao_segmento": 0.6,
+    "racional_segmento": "Fração da receita nacional do produto atribuível ao segmento estética/beleza (curadoria por setor; demonstração)",
+    "participacao_regiao": 0.32,
+    "racional_regiao": "Participação de SP no mercado nacional, proxy pela participação de SP nos estabelecimentos ativos do CNAE (base CNPJ)"
+  },
+  "series_bcb": [
+    { "codigo": 432, "nome": "Meta Selic (% a.a.)", "ultimos": 24 },
+    { "codigo": 433, "nome": "IPCA — variação mensal (%)", "ultimos": 24 }
+  ]
+}

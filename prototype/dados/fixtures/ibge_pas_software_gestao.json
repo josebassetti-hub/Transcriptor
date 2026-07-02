@@ -1,0 +1,24 @@
+[
+  {
+    "id": "receita-bruta",
+    "variavel": "Receita bruta de serviços — DADOS DE DEMONSTRAÇÃO (formato real da API de agregados v3 do IBGE)",
+    "unidade": "Mil Reais",
+    "resultados": [
+      {
+        "classificacoes": [],
+        "series": [
+          {
+            "localidade": { "id": "1", "nivel": { "id": "N1", "nome": "Brasil" }, "nome": "Brasil" },
+            "serie": {
+              "2019": "320000",
+              "2020": "348000",
+              "2021": "412000",
+              "2022": "486000",
+              "2023": "560000"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
