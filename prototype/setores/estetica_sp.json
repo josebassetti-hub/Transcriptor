@@ -1,7 +1,7 @@
 {
   "id": "estetica_sp",
-  "titulo": "Fornecedores B2B para clínicas de estética e salões — Estado de São Paulo",
-  "contexto": "Estudo para cliente que vende software de gestão por assinatura a clínicas de estética e salões de beleza e avalia entrada/expansão no Estado de São Paulo.",
+  "titulo": "Mercado de serviços de estética e beleza — Estado de São Paulo",
+  "contexto": "Estudo para cliente que avalia investir em uma rede de clínicas de estética/salões no Estado de São Paulo: tamanho do mercado, dinâmica competitiva e objetivo de receita em 5 anos.",
   "cnaes": [
     { "codigo": "9602-5/01", "descricao": "Cabeleireiros, manicure e pedicure" },
     { "codigo": "9602-5/02", "descricao": "Atividades de estética e outros serviços de cuidados com a beleza" }
@@ -9,25 +9,26 @@
   "regiao": { "nivel": "UF", "codigo_ibge": "35", "sigla": "SP", "nome": "São Paulo" },
   "cnpj_extracao": "2026-06 (demonstração)",
   "icp": {
-    "descricao": "Estabelecimentos ativos há 2+ anos, porte ME ou EPP (exclui MEI, cuja disposição a pagar por software é baixa, e grandes redes, atendidas por venda direta)",
+    "descricao": "Estabelecimentos formais ativos há 2+ anos, porte ME ou EPP (núcleo profissionalizado do mercado endereçável; exclui MEI, cauda informal, e grandes redes)",
     "portes": ["ME", "EPP"],
     "faixas_idade": ["2-5", "5-10", "10+"],
-    "ticket_medio_anual_brl": 3600,
-    "racional_ticket": "Assinatura de R$ 300/mês — parâmetro informado pelo usuário na geração do relatório"
+    "ticket_medio_anual_brl": 220000,
+    "racional_ticket": "Receita média anual estimada por estabelecimento ME/EPP do setor — premissa a calibrar dividindo a receita setorial da PAS pelo nº de empresas do CEMPRE"
   },
-  "captura": { "pessimista": 0.01, "base": 0.03, "otimista": 0.06, "horizonte_anos": 5 },
+  "captura": { "pessimista": 0.002, "base": 0.005, "otimista": 0.01, "horizonte_anos": 5 },
   "topdown": {
     "agregado_sidra": {
-      "agregado": "DEMO-PAS",
-      "periodos": "2019|2020|2021|2022|2023",
-      "variavel": "receita-bruta",
+      "agregado": "2577",
+      "periodos": "-6",
+      "variavel": "643",
       "localidade": "N1[all]",
+      "classificacao": "12355[106834]",
       "fator_unidade": 1000,
-      "fixture": "ibge_pas_software_gestao.json",
-      "citacao": "IBGE — Pesquisa Anual de Serviços (PAS), receita bruta de serviços de TI recorte gestão para setor de beleza (agregado de demonstração; em produção: tabela SIDRA curada por setor)"
+      "fixture": "ibge_pas_servicos_pessoais.json",
+      "citacao": "IBGE — Pesquisa Anual de Serviços (PAS), tabela SIDRA 2577, variável 643 (Receita operacional líquida, mil R$), recorte 2.4 Serviços pessoais"
     },
-    "participacao_segmento": 0.6,
-    "racional_segmento": "Fração da receita nacional do produto atribuível ao segmento estética/beleza (curadoria por setor; demonstração)",
+    "participacao_segmento": 0.5,
+    "racional_segmento": "Fração de estética/beleza dentro do grupo 'Serviços pessoais' da PAS (que também inclui lavanderias, atividades funerárias etc.) — premissa curada, a refinar com a abertura por classe da PAS",
     "participacao_regiao": 0.32,
     "racional_regiao": "Participação de SP no mercado nacional, proxy pela participação de SP nos estabelecimentos ativos do CNAE (base CNPJ)"
   },

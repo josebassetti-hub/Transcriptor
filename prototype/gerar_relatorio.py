@@ -71,7 +71,7 @@ def gerar(config: dict, modo: str) -> str:
         f"{R.brl(td['sam'])} pelo recorte top-down da receita setorial oficial e "
         f"{R.brl(bu['sam'])} pelo bottom-up sobre o censo de {R.inteiro(bu['n_icp'])} "
         f"empresas-alvo da base CNPJ. No cenário-base de captura "
-        f"({R.pct(bu['cenarios']['base']['taxa'], 0)} em {bu['horizonte_anos']} anos), o "
+        f"({R.pct(bu['cenarios']['base']['taxa'])} em {bu['horizonte_anos']} anos), o "
         f"objetivo de receita anual (SOM) é {R.brl(som_base)}.</p>",
     ))
 
@@ -137,11 +137,11 @@ def gerar(config: dict, modo: str) -> str:
             ("SAM", (td["sam"] + bu["sam"]) / 2,
              f"média das metodologias (divergência {R.pct(tri['divergencia'])})"),
             ("SOM", som_base,
-             f"cenário-base: {R.pct(cen['base']['taxa'],0)} de captura em {bu['horizonte_anos']} anos"),
+             f"cenário-base: {R.pct(cen['base']['taxa'])} de captura em {bu['horizonte_anos']} anos"),
         ]),
         R.tabela(
             ["Cenário", "Taxa de captura", "SOM anual"],
-            [(n.capitalize(), R.pct(c["taxa"], 0), R.brl(c["som"])) for n, c in cen.items()],
+            [(n.capitalize(), R.pct(c["taxa"]), R.brl(c["som"])) for n, c in cen.items()],
         ),
     ))
 

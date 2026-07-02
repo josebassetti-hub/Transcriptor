@@ -1,0 +1,31 @@
+[
+  {
+    "id": "643",
+    "variavel": "Receita operacional líquida — DADOS DE DEMONSTRAÇÃO (formato real da resposta da tabela 2577, recorte 2.4 Serviços pessoais; em rede aberta os valores vêm ao vivo da API)",
+    "unidade": "Mil Reais",
+    "resultados": [
+      {
+        "classificacoes": [
+          {
+            "id": "12355",
+            "nome": "Grupos e classes de atividades",
+            "categoria": { "106834": "2.4 Serviços pessoais" }
+          }
+        ],
+        "series": [
+          {
+            "localidade": { "id": "1", "nivel": { "id": "N1", "nome": "Brasil" }, "nome": "Brasil" },
+            "serie": {
+              "2018": "36100000",
+              "2019": "38500000",
+              "2020": "33200000",
+              "2021": "37900000",
+              "2022": "43400000",
+              "2023": "47800000"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

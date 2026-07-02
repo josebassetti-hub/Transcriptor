@@ -47,7 +47,7 @@ META_URL = "https://servicodados.ibge.gov.br/api/v3/agregados/{id}/metadados"
 # Palavras-chave do setor-piloto: o script varre as classificações das tabelas
 # procurando categorias cujo nome contenha algum destes termos, e imprime os
 # códigos exatos para colar na configuração do setor.
-PALAVRAS_CHAVE = ["cabeleireir", "beleza", "estetica", "servicos pessoais", "outros servicos"]
+PALAVRAS_CHAVE = ["cabeleireir", "beleza", "estetica", "servicos pessoais"]
 
 
 def baixar(url: str):
@@ -131,7 +131,7 @@ def main():
                 print(f"          variavel {v['id']}: {v['nome'][:80]}")
             if categorias_setor:
                 print("          >> categorias do setor encontradas:")
-                for cid, catid, nome in categorias_setor[:10]:
+                for cid, catid, nome in categorias_setor:
                     print(f"             classificacao={cid} categoria={catid}: {nome[:70]}")
                     print(f"             (parametro: classificacao={cid}[{catid}])")
         except Exception as exc:
