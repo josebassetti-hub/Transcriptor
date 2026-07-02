@@ -10,6 +10,7 @@ O relatório final usa a proveniência para exibir o selo de fonte de cada núme
 e o aviso de dados de demonstração quando qualquer fixture for usada.
 """
 
+import gzip
 import json
 import time
 import urllib.request
@@ -61,7 +62,10 @@ class ClienteHTTP:
             return json.loads(chave.read_text())
         req = urllib.request.Request(url, headers={"User-Agent": "prototipo-pesquisa-mercado/0.1"})
         with urllib.request.urlopen(req, timeout=TIMEOUT_S) as resp:
-            dados = json.loads(resp.read().decode("utf-8"))
+            bruto = resp.read()
+        if bruto[:2] == b"\x1f\x8b":  # algumas respostas do IBGE chegam gzipadas
+            bruto = gzip.decompress(bruto)
+        dados = json.loads(bruto.decode("utf-8"))
         chave.write_text(json.dumps(dados, ensure_ascii=False))
         return dados
 

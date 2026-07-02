@@ -23,6 +23,9 @@ def receita_setorial(cliente, cfg_topdown: dict):
         f"{BASE}/agregados/{ag['agregado']}/periodos/{ag['periodos']}/"
         f"variaveis/{ag['variavel']}?localidades={ag['localidade']}"
     )
+    if ag.get("classificacao"):
+        # recorte de atividade/CNAE, ex.: "12354[118012]" (descoberto via testar_fontes.py)
+        url += f"&classificacao={ag['classificacao']}"
     bruto, prov = cliente.buscar_json(url, fixture=ag["fixture"])
     serie = _extrair_serie(bruto)
     fator = ag.get("fator_unidade", 1)  # ex.: 1000 quando a unidade é "mil reais"

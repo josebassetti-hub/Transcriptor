@@ -18,9 +18,11 @@ Se aparecer erro de certificado SSL (comum no Python do macOS):
   - Ou instale certifi: python3 -m pip install certifi
 """
 
+import gzip
 import json
 import ssl
 import sys
+import unicodedata
 import urllib.request
 from pathlib import Path
 
@@ -42,10 +44,35 @@ TABELAS_CANDIDATAS = [2577, 6449, 993]
 META_URL = "https://servicodados.ibge.gov.br/api/v3/agregados/{id}/metadados"
 
 
+# Palavras-chave do setor-piloto: o script varre as classificações das tabelas
+# procurando categorias cujo nome contenha algum destes termos, e imprime os
+# códigos exatos para colar na configuração do setor.
+PALAVRAS_CHAVE = ["cabeleireir", "beleza", "estetica", "servicos pessoais", "outros servicos"]
+
+
 def baixar(url: str):
     req = urllib.request.Request(url, headers={"User-Agent": "prototipo-pesquisa-mercado/0.1"})
-    with urllib.request.urlopen(req, timeout=30) as resp:
-        return json.loads(resp.read().decode("utf-8"))
+    with urllib.request.urlopen(req, timeout=60) as resp:
+        bruto = resp.read()
+    if bruto[:2] == b"\x1f\x8b":  # respostas grandes do IBGE vêm gzipadas
+        bruto = gzip.decompress(bruto)
+    return json.loads(bruto.decode("utf-8"))
+
+
+def _normalizar(texto: str) -> str:
+    s = unicodedata.normalize("NFD", texto.lower())
+    return "".join(ch for ch in s if unicodedata.category(ch) != "Mn")
+
+
+def buscar_categorias(meta: dict):
+    """Retorna [(classificacao_id, categoria_id, nome)] cujo nome bate com o setor."""
+    achados = []
+    for c in meta.get("classificacoes", []):
+        for cat in c.get("categorias", []):
+            nome_norm = _normalizar(str(cat.get("nome", "")))
+            if any(p in nome_norm for p in PALAVRAS_CHAVE):
+                achados.append((c["id"], cat["id"], cat["nome"]))
+    return achados
 
 
 def main():
@@ -87,16 +114,26 @@ def main():
                 }
                 for c in meta.get("classificacoes", [])
             ]
+            categorias_setor = buscar_categorias(meta)
             resultado["tabelas"][tid] = {
                 "nome": meta.get("nome"),
                 "periodo": meta.get("periodicidade", {}),
                 "niveis_territoriais": meta.get("nivelTerritorial", {}),
                 "variaveis": variaveis,
                 "classificacoes": classificacoes,
+                "categorias_do_setor": [
+                    {"classificacao": cid, "categoria": catid, "nome": nome}
+                    for cid, catid, nome in categorias_setor
+                ],
             }
             print(f"  [OK]    Tabela {tid}: {meta.get('nome','')[:90]}")
             for v in variaveis[:6]:
                 print(f"          variavel {v['id']}: {v['nome'][:80]}")
+            if categorias_setor:
+                print("          >> categorias do setor encontradas:")
+                for cid, catid, nome in categorias_setor[:10]:
+                    print(f"             classificacao={cid} categoria={catid}: {nome[:70]}")
+                    print(f"             (parametro: classificacao={cid}[{catid}])")
         except Exception as exc:
             falhas += 1
             print(f"  [ERRO]  Tabela {tid}: {exc}")
