@@ -1,0 +1,35 @@
+[
+  {
+    "id": "2585",
+    "variavel": "Número de empresas e outras organizações — DADOS DE DEMONSTRAÇÃO (formato real da tabela 6449)",
+    "unidade": "Unidades",
+    "resultados": [
+      {
+        "classificacoes": [
+          {
+            "id": "12762",
+            "nome": "Classificação Nacional de Atividades Econômicas (CNAE 2.0)",
+            "categoria": {
+              "117885": "96.02-5 Cabeleireiros e outras atividades de tratamento de beleza"
+            }
+          }
+        ],
+        "series": [
+          {
+            "localidade": {
+              "id": "35",
+              "nivel": {
+                "id": "N3",
+                "nome": "Unidade da Federação"
+              },
+              "nome": "São Paulo"
+            },
+            "serie": {
+              "2021": "31400"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

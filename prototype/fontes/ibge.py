@@ -43,3 +43,21 @@ def _extrair_serie(resposta) -> dict:
             continue
         out[periodo] = float(valor)
     return dict(sorted(out.items()))
+
+
+def contagem_empresas(cliente, cfg: dict):
+    """Nº oficial de empresas (CEMPRE) para a classe CNAE/região configuradas.
+
+    Retorna (ano, valor, proveniencia) do período mais recente disponível.
+    """
+    url = (
+        f"{BASE}/agregados/{cfg['agregado']}/periodos/{cfg['periodos']}/"
+        f"variaveis/{cfg['variavel']}?localidades={cfg['localidade']}"
+        f"&classificacao={cfg['classificacao']}"
+    )
+    bruto, prov = cliente.buscar_json(url, fixture=cfg["fixture"])
+    serie = _extrair_serie(bruto)
+    ano = max(serie)
+    prov["fonte"] = cfg["citacao"]
+    prov["url"] = url
+    return ano, serie[ano], prov

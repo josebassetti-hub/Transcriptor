@@ -42,6 +42,9 @@ def gerar(config: dict, modo: str) -> str:
     linhas_cnpj, prov_cnpj = cnpj.agregados(config, demo=(modo != "live"))
     contagem = cnpj.contar_icp(linhas_cnpj, config["icp"])
     din, _ = cnpj.dinamica(config, demo=(modo != "live"))
+    cempre = None
+    if config.get("bottomup_validacao"):
+        cempre = ibge.contagem_empresas(cliente, config["bottomup_validacao"])
 
     # ---- compute -------------------------------------------------------------
     td = sizing.top_down(receita, config["topdown"])
@@ -113,8 +116,7 @@ def gerar(config: dict, modo: str) -> str:
         R.selo_fonte(prov_ibge),
     ))
 
-    s.append(secao(
-        "5. Tamanho de mercado — bottom-up (censo CNPJ)",
+    blocos_bu = [
         f"<p>O universo do CNAE na região tem <b>{R.inteiro(contagem['universo'])}</b> "
         f"estabelecimentos ativos; o recorte de ICP resulta em <b>{R.inteiro(bu['n_icp'])}</b> "
         f"empresas-alvo. Com ticket médio anual de {R.brl(bu['ticket'])}, o SAM bottom-up é "
@@ -126,7 +128,19 @@ def gerar(config: dict, modo: str) -> str:
         f'<p class="premissas">Premissas: {bu["premissas"]["icp"]}. '
         f'Ticket: {bu["premissas"]["racional_ticket"]}.</p>',
         R.selo_fonte(prov_cnpj),
-    ))
+    ]
+    if cempre:
+        ano_c, qtd_c, prov_c = cempre
+        blocos_bu.append(
+            f"<p><b>Validação cruzada (fonte oficial independente):</b> o CEMPRE do IBGE "
+            f"registra <b>{R.inteiro(qtd_c)}</b> empresas da classe 96.02-5 em "
+            f"{config['regiao']['nome']} ({ano_c}). A contagem do CEMPRE segue metodologia "
+            "própria (empresas, não estabelecimentos, e cobertura parcial de MEIs), servindo "
+            "como referência de ordem de grandeza para o recorte formal (ME/EPP) usado no "
+            "bottom-up.</p>"
+        )
+        blocos_bu.append(R.selo_fonte(prov_c))
+    s.append(secao("5. Tamanho de mercado — bottom-up (censo CNPJ)", *blocos_bu))
 
     cen = bu["cenarios"]
     s.append(secao(

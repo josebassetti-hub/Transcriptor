@@ -3,19 +3,42 @@
   "titulo": "Mercado de serviços de estética e beleza — Estado de São Paulo",
   "contexto": "Estudo para cliente que avalia investir em uma rede de clínicas de estética/salões no Estado de São Paulo: tamanho do mercado, dinâmica competitiva e objetivo de receita em 5 anos.",
   "cnaes": [
-    { "codigo": "9602-5/01", "descricao": "Cabeleireiros, manicure e pedicure" },
-    { "codigo": "9602-5/02", "descricao": "Atividades de estética e outros serviços de cuidados com a beleza" }
+    {
+      "codigo": "9602-5/01",
+      "descricao": "Cabeleireiros, manicure e pedicure"
+    },
+    {
+      "codigo": "9602-5/02",
+      "descricao": "Atividades de estética e outros serviços de cuidados com a beleza"
+    }
   ],
-  "regiao": { "nivel": "UF", "codigo_ibge": "35", "sigla": "SP", "nome": "São Paulo" },
+  "regiao": {
+    "nivel": "UF",
+    "codigo_ibge": "35",
+    "sigla": "SP",
+    "nome": "São Paulo"
+  },
   "cnpj_extracao": "2026-06 (demonstração)",
   "icp": {
     "descricao": "Estabelecimentos formais ativos há 2+ anos, porte ME ou EPP (núcleo profissionalizado do mercado endereçável; exclui MEI, cauda informal, e grandes redes)",
-    "portes": ["ME", "EPP"],
-    "faixas_idade": ["2-5", "5-10", "10+"],
+    "portes": [
+      "ME",
+      "EPP"
+    ],
+    "faixas_idade": [
+      "2-5",
+      "5-10",
+      "10+"
+    ],
     "ticket_medio_anual_brl": 220000,
     "racional_ticket": "Receita média anual estimada por estabelecimento ME/EPP do setor — premissa a calibrar dividindo a receita setorial da PAS pelo nº de empresas do CEMPRE"
   },
-  "captura": { "pessimista": 0.002, "base": 0.005, "otimista": 0.01, "horizonte_anos": 5 },
+  "captura": {
+    "pessimista": 0.002,
+    "base": 0.005,
+    "otimista": 0.01,
+    "horizonte_anos": 5
+  },
   "topdown": {
     "agregado_sidra": {
       "agregado": "2577",
@@ -33,7 +56,24 @@
     "racional_regiao": "Participação de SP no mercado nacional, proxy pela participação de SP nos estabelecimentos ativos do CNAE (base CNPJ)"
   },
   "series_bcb": [
-    { "codigo": 432, "nome": "Meta Selic (% a.a.)", "ultimos": 24 },
-    { "codigo": 433, "nome": "IPCA — variação mensal (%)", "ultimos": 24 }
-  ]
+    {
+      "codigo": 432,
+      "nome": "Meta Selic (% a.a.)",
+      "ultimos": 24
+    },
+    {
+      "codigo": 433,
+      "nome": "IPCA — variação mensal (%)",
+      "ultimos": 24
+    }
+  ],
+  "bottomup_validacao": {
+    "agregado": "6449",
+    "periodos": "-1",
+    "variavel": "2585",
+    "localidade": "N3[35]",
+    "classificacao": "12762[117885]",
+    "fixture": "ibge_cempre_9602_sp.json",
+    "citacao": "IBGE — CEMPRE (Cadastro Central de Empresas), tabela SIDRA 6449, variável 2585 (nº de empresas e outras organizações), classe 96.02-5 Cabeleireiros e outras atividades de tratamento de beleza, São Paulo"
+  }
 }
