@@ -241,13 +241,22 @@ def gerar(config: dict, modo: str) -> str:
     anos_d = [a for a, _, _ in serie_foco]
     blocos_din = []
     if tem_dim:
+        saldo = sum(ab - fe for _, ab, fe in serie_foco)
+        leitura_saldo = (
+            f"saldo líquido de <b>{'+' if saldo >= 0 else '−'}{R.inteiro(abs(saldo))}</b> no "
+            "período — a base formal está em "
+            + ("expansão" if saldo >= 0 else "contração (parte relevante tende a ser limpeza "
+               "cadastral de empresas dormentes pela Receita, coerente com a baixa adesão ao "
+               "Simples observada na seção 5)")
+        )
         blocos_din.append(
             f"<p>Recorte relevante ao ICP (empresas <b>não-MEI</b>): entre {anos_d[0]} e "
             f"{anos_d[-1]}, foram {R.inteiro(sum(ab for _, ab, _ in serie_foco))} aberturas e "
-            f"{R.inteiro(sum(fe for _, _, fe in serie_foco))} fechamentos/inaptidões. O fluxo "
-            f"de MEIs ({R.inteiro(sum(ab for _, ab, _ in serie_mei))} aberturas no período) "
-            "domina o setor, mas está fora do perfil de cliente-alvo e aparece apenas na "
-            "tabela detalhada.</p>"
+            f"{R.inteiro(sum(fe for _, _, fe in serie_foco))} fechamentos/inaptidões — "
+            f"{leitura_saldo}. O fluxo de MEIs "
+            f"({R.inteiro(sum(ab for _, ab, _ in serie_mei))} aberturas no período) domina o "
+            "setor, mas está fora do perfil de cliente-alvo e aparece apenas na tabela "
+            "detalhada.</p>"
         )
     else:
         blocos_din.append(
