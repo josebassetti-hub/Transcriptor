@@ -39,9 +39,12 @@ def gerar(config: dict, modo: str) -> str:
         bcb.serie_sgs(cliente, s["codigo"], s["nome"], s["ultimos"])
         for s in config["series_bcb"]
     ]
-    linhas_cnpj, prov_cnpj = cnpj.agregados(config, demo=(modo != "live"))
+    # os CSVs de CNPJ passam a contar como dado real quando o usuário os
+    # substitui pelos agregados da Base dos Dados e marca cnpj_origem: "real"
+    cnpj_demo = config.get("cnpj_origem", "demo") != "real"
+    linhas_cnpj, prov_cnpj = cnpj.agregados(config, demo=cnpj_demo)
     contagem = cnpj.contar_icp(linhas_cnpj, config["icp"])
-    din, _ = cnpj.dinamica(config, demo=(modo != "live"))
+    din, _ = cnpj.dinamica(config, demo=cnpj_demo)
     cempre = None
     if config.get("bottomup_validacao"):
         cempre = ibge.contagem_empresas(cliente, config["bottomup_validacao"])
@@ -194,6 +197,8 @@ def gerar(config: dict, modo: str) -> str:
         "gerado_em": time.strftime("%d/%m/%Y %H:%M UTC", time.gmtime()),
     }
     provs = [prov_ibge, prov_cnpj] + [prov for _, prov in series_macro]
+    if cempre:
+        provs.append(cempre[2])
     tem_demo = any(p["origem"] == "fixture" for p in provs)
     return R.montar(s, meta, tem_demo=tem_demo)
 
