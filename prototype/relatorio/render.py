@@ -36,12 +36,18 @@ def pct(v: float, casas=1) -> str:
 
 
 def selo_fonte(prov: dict) -> str:
+    import html as _html
     demo = prov["origem"] == "fixture"
     classe = "fonte demo" if demo else "fonte"
     rotulo = "DEMONSTRAÇÃO — " if demo else ""
+    motivo = (
+        f' · motivo do fallback: {_html.escape(prov["motivo"])}'
+        if demo and prov.get("motivo")
+        else ""
+    )
     return (
         f'<p class="{classe}">Fonte: {rotulo}{prov.get("fonte", "")} · '
-        f'<a href="{prov["url"]}">{prov["url"]}</a> · consulta: {prov["consultado_em"]}</p>'
+        f'<a href="{prov["url"]}">{prov["url"]}</a> · consulta: {prov["consultado_em"]}{motivo}</p>'
     )
 
 
