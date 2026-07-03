@@ -19,7 +19,7 @@
     "nome": "São Paulo"
   },
   "cnpj_extracao": "2026-06 (Base dos Dados, br_me_cnpj)",
-  "cnpj_origem": "demo",
+  "cnpj_origem": "real",
   "icp": {
     "descricao": "Estabelecimentos formais ativos há 2+ anos, porte ME ou EPP (núcleo profissionalizado do mercado endereçável; exclui MEI, cauda informal, e grandes redes)",
     "portes": [
