@@ -107,3 +107,29 @@ def triangulacao(sam_topdown: float, sam_bottomup: float) -> dict:
             "participação de segmento (top-down) e de ticket médio (bottom-up) antes de usar."
         ),
     }
+
+
+def por_atividade(sam_total: float, receita_alvo_total: float, atividades: list,
+                  concorrencia: dict | None) -> list:
+    """Dimensionamento multi-CNAE: para cada atividade do estudo, o SAM da
+    atividade (premissa participacao_sam sobre o SAM total), a receita-alvo
+    pelo mix do cliente (peso_receita) e o share implícito — o teste de
+    realismo do plano por atividade (docs/metodologia-v3.md, seção 4).
+    """
+    linhas = []
+    for atv in atividades:
+        sam_atv = sam_total * atv["participacao_sam"]
+        receita_alvo = receita_alvo_total * atv["peso_receita"]
+        conc = (concorrencia or {}).get(atv["cnae"])
+        linhas.append({
+            "cnae": atv["cnae"],
+            "descricao": atv["descricao"],
+            "peso_receita": atv["peso_receita"],
+            "participacao_sam": atv["participacao_sam"],
+            "sam_atividade": sam_atv,
+            "receita_alvo": receita_alvo,
+            "share_implicito": receita_alvo / sam_atv if sam_atv else 0.0,
+            "concorrentes_principal": conc[0] if conc else None,
+            "concorrentes_secundaria": conc[1] if conc else None,
+        })
+    return linhas

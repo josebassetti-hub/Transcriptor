@@ -78,5 +78,19 @@
     "classificacao": "12762[117885]",
     "fixture": "ibge_cempre_9602_sp.json",
     "citacao": "IBGE — CEMPRE (Cadastro Central de Empresas), tabela SIDRA 6449, variável 2585 (nº de empresas e outras organizações), classe 96.02-5 Cabeleireiros e outras atividades de tratamento de beleza, São Paulo"
-  }
+  },
+  "atividades": [
+    {
+      "cnae": "9602-5/01",
+      "descricao": "Cabeleireiros, manicure e pedicure",
+      "peso_receita": 0.6,
+      "participacao_sam": 0.7
+    },
+    {
+      "cnae": "9602-5/02",
+      "descricao": "Estética e cuidados com a beleza",
+      "peso_receita": 0.4,
+      "participacao_sam": 0.3
+    }
+  ]
 }

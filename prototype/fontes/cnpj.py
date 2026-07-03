@@ -12,13 +12,18 @@ Unidades (pós-auditoria, docs/auditoria-numeros-piloto.md):
 O esquema antigo (coluna única qtd_ativas) é aceito como fallback, valendo pelas
 duas medidas.
 
-Esquema de dados/cnpj_agregados_demo.csv:
-  cnae, uf, porte (MEI|ME|EPP|DEMAIS), faixa_idade (0-2|2-5|5-10|10+),
-  qtd_empresas, qtd_estabelecimentos
+Esquemas (v3; leitores aceitam os anteriores como fallback):
+  cnpj_agregados_demo.csv: cnae, uf, [regime], porte, faixa_idade,
+                           qtd_empresas, qtd_estabelecimentos
+  cnpj_dinamica_demo.csv:  ano, [regime], [porte|segmento], aberturas, fechamentos
+  cnpj_redes_demo.csv:     cnae, uf, faixa_unidades (1|2-5|6+),
+                           qtd_empresas, qtd_estabelecimentos   (opcional)
+  cnpj_atividades_demo.csv: cnae, empresas_principal,
+                           empresas_somente_secundaria           (opcional)
 
-Esquema de dados/cnpj_dinamica_demo.csv:
-  ano, segmento (MEI|NAO_MEI), aberturas, fechamentos
-  (fallback antigo sem a coluna segmento = TOTAL)
+Regime: MEI|SIMPLES|FORA_SIMPLES (Presumido x Real é sigilo fiscal — ver
+docs/metodologia-v3.md). Quando o CSV não traz a coluna, regime = N/D e as
+visões por regime ficam ocultas no relatório (nada é inventado).
 """
 
 import csv
@@ -53,10 +58,12 @@ def agregados(config: dict, demo: bool = True):
     filtradas = []
     for l in linhas:
         if l["cnae"] in cnaes and l["uf"] == uf:
-            # fallback do esquema antigo (qtd_ativas única)
+            # fallbacks dos esquemas anteriores
             emp = int(l.get("qtd_empresas") or l.get("qtd_ativas", 0))
             est = int(l.get("qtd_estabelecimentos") or l.get("qtd_ativas", 0))
-            filtradas.append({**l, "qtd_empresas": emp, "qtd_estabelecimentos": est})
+            regime = l.get("regime") or ("MEI" if l["porte"] == "MEI" else "N/D")
+            filtradas.append({**l, "qtd_empresas": emp, "qtd_estabelecimentos": est,
+                              "regime": regime})
     extracao = config.get("cnpj_extracao", "desconhecida")
     return filtradas, _proveniencia(demo, extracao)
 
@@ -68,24 +75,72 @@ def contar_icp(linhas, icp: dict) -> dict:
     universo_empresas = sum(l["qtd_empresas"] for l in linhas)
     universo_estab = sum(l["qtd_estabelecimentos"] for l in linhas)
     por_porte = {}
+    por_regime = {}
     n_icp = 0
     for l in linhas:
         por_porte[l["porte"]] = por_porte.get(l["porte"], 0) + l["qtd_empresas"]
+        por_regime[l["regime"]] = por_regime.get(l["regime"], 0) + l["qtd_empresas"]
         if l["porte"] in portes_ok and l["faixa_idade"] in faixas_ok:
             n_icp += l["qtd_empresas"]
+    tem_regime = set(por_regime) - {"MEI", "N/D"} != set()
     return {
         "n_icp": n_icp,
         "universo_empresas": universo_empresas,
         "universo_estabelecimentos": universo_estab,
         "por_porte": por_porte,
+        "por_regime": por_regime if tem_regime else None,
     }
 
 
 def dinamica(config: dict, demo: bool = True):
-    """Aberturas x fechamentos por ano e segmento (MEI|NAO_MEI|TOTAL)."""
+    """Aberturas x fechamentos por ano, com regime/porte quando disponíveis.
+
+    Retorna lista de dicts {ano, regime, porte, aberturas, fechamentos}.
+    Fallbacks: esquema com `segmento` (MEI|NAO_MEI) vira regime; esquema
+    antigo sem dimensão vira regime=TOTAL.
+    """
     linhas = _ler_csv("cnpj_dinamica_demo.csv")
-    serie = [
-        (l["ano"], l.get("segmento", "TOTAL"), int(l["aberturas"]), int(l["fechamentos"]))
-        for l in linhas
-    ]
+    serie = []
+    for l in linhas:
+        regime = l.get("regime") or l.get("segmento") or "TOTAL"
+        serie.append({
+            "ano": l["ano"],
+            "regime": regime,
+            "porte": l.get("porte", "N/D"),
+            "aberturas": int(l["aberturas"]),
+            "fechamentos": int(l["fechamentos"]),
+        })
     return serie, _proveniencia(demo, config.get("cnpj_extracao", "desconhecida"))
+
+
+def redes(config: dict):
+    """Distribuição de empresas por nº de estabelecimentos na região (consulta D).
+
+    Retorna None se o CSV ainda não existir — a seção fica oculta.
+    """
+    caminho = DIR_DADOS / "cnpj_redes_demo.csv"
+    if not caminho.exists():
+        return None
+    linhas = _ler_csv("cnpj_redes_demo.csv")
+    cnaes = {c["codigo"] for c in config["cnaes"]}
+    agg = {}
+    for l in linhas:
+        if l["cnae"] in cnaes:
+            faixa = l["faixa_unidades"]
+            emp, est = agg.get(faixa, (0, 0))
+            agg[faixa] = (emp + int(l["qtd_empresas"]), est + int(l["qtd_estabelecimentos"]))
+    return agg or None
+
+
+def atividades_concorrencia(config: dict):
+    """Concorrentes por atividade: principal + só-secundária (consulta E).
+
+    Retorna {cnae: (principal, somente_secundaria)} ou None se ainda sem dados.
+    """
+    caminho = DIR_DADOS / "cnpj_atividades_demo.csv"
+    if not caminho.exists():
+        return None
+    return {
+        l["cnae"]: (int(l["empresas_principal"]), int(l["empresas_somente_secundaria"]))
+        for l in _ler_csv("cnpj_atividades_demo.csv")
+    }

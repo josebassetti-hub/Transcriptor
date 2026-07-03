@@ -48,6 +48,8 @@ def gerar(config: dict, modo: str) -> str:
     cempre = None
     if config.get("bottomup_validacao"):
         cempre = ibge.contagem_empresas(cliente, config["bottomup_validacao"])
+    dist_redes = cnpj.redes(config)
+    conc_atividades = cnpj.atividades_concorrencia(config)
 
     # ---- compute -------------------------------------------------------------
     td = sizing.top_down(receita, config["topdown"])
@@ -147,6 +149,39 @@ def gerar(config: dict, modo: str) -> str:
         f'Atividade efetiva: {bu["premissas"]["racional_atividade"]}</p>',
         R.selo_fonte(prov_cnpj),
     ]
+    if contagem.get("por_regime"):
+        blocos_bu.append(
+            "<p><b>Estrutura tributária</b> (dado público distingue MEI e Simples; "
+            "Lucro Presumido × Lucro Real é sigilo fiscal e aparece agrupado como "
+            "&quot;Fora do Simples&quot; — proxy por porte em docs/metodologia-v3.md):</p>"
+        )
+        rotulos_regime = {"MEI": "MEI", "SIMPLES": "Simples Nacional",
+                          "FORA_SIMPLES": "Fora do Simples (Presumido/Real)"}
+        blocos_bu.append(R.grafico_barras_h(
+            sorted(((rotulos_regime.get(k, k), v) for k, v in contagem["por_regime"].items()),
+                   key=lambda kv: -kv[1]),
+            "empresas ativas",
+        ))
+    if dist_redes:
+        ordem = ["1", "2-5", "6+"]
+        total_emp_r = sum(e for e, _ in dist_redes.values())
+        est_redes = sum(est for f, (_, est) in dist_redes.items() if f != "1")
+        total_est_r = sum(est for _, est in dist_redes.values())
+        blocos_bu.append(
+            f"<p><b>Redes e filiais (força dos players):</b> filiais localizadas na região "
+            f"contam como cobertura do mercado local, mesmo com sede fora dela. "
+            f"{R.pct(est_redes / total_est_r)} dos estabelecimentos pertencem a empresas "
+            "com mais de uma unidade na região:</p>"
+        )
+        blocos_bu.append(R.grafico_barras_h(
+            [(f"{f} unidade(s)", dist_redes[f][0]) for f in ordem if f in dist_redes],
+            "empresas",
+        ))
+        blocos_bu.append(R.tabela(
+            ["Unidades na região", "Empresas", "Estabelecimentos"],
+            [(f, R.inteiro(dist_redes[f][0]), R.inteiro(dist_redes[f][1]))
+             for f in ordem if f in dist_redes],
+        ))
     if cempre:
         ano_c, qtd_c, prov_c = cempre
         blocos_bu.append(
@@ -188,33 +223,51 @@ def gerar(config: dict, modo: str) -> str:
     ))
 
     # 7. Dinâmica do mercado
-    segmentos = {seg for _, seg, _, _ in din}
-    tem_split = "NAO_MEI" in segmentos
-    foco = "NAO_MEI" if tem_split else ("TOTAL" if "TOTAL" in segmentos else sorted(segmentos)[0])
-    serie_foco = [(a, ab, fe) for a, seg, ab, fe in din if seg == foco]
+    regimes_din = {d["regime"] for d in din}
+    tem_dim = regimes_din - {"TOTAL"} != set()
+    def _serie_anual(filtro):
+        agg = {}
+        for d in din:
+            if filtro(d):
+                ab, fe = agg.get(d["ano"], (0, 0))
+                agg[d["ano"]] = (ab + d["aberturas"], fe + d["fechamentos"])
+        return sorted((a, ab, fe) for a, (ab, fe) in agg.items())
+    if tem_dim:
+        serie_foco = _serie_anual(lambda d: d["regime"] != "MEI")
+        serie_mei = _serie_anual(lambda d: d["regime"] == "MEI")
+    else:
+        serie_foco = _serie_anual(lambda d: True)
+        serie_mei = []
     anos_d = [a for a, _, _ in serie_foco]
     blocos_din = []
-    if tem_split:
-        tot_mei = sum(ab for _, seg, ab, _ in din if seg == "MEI")
+    if tem_dim:
         blocos_din.append(
             f"<p>Recorte relevante ao ICP (empresas <b>não-MEI</b>): entre {anos_d[0]} e "
             f"{anos_d[-1]}, foram {R.inteiro(sum(ab for _, ab, _ in serie_foco))} aberturas e "
             f"{R.inteiro(sum(fe for _, _, fe in serie_foco))} fechamentos/inaptidões. O fluxo "
-            f"de MEIs ({R.inteiro(tot_mei)} aberturas no período) domina o setor, mas está "
-            "fora do perfil de cliente-alvo e é mostrado apenas como contexto.</p>"
+            f"de MEIs ({R.inteiro(sum(ab for _, ab, _ in serie_mei))} aberturas no período) "
+            "domina o setor, mas está fora do perfil de cliente-alvo e aparece apenas na "
+            "tabela detalhada.</p>"
         )
     else:
         blocos_din.append(
             f"<p>Entre {anos_d[0]} e {anos_d[-1]}, o CNAE registrou "
             f"{R.inteiro(sum(ab for _, ab, _ in serie_foco))} aberturas na região, com saldo "
             "líquido positivo. Atenção: a maior parte dessas aberturas é de MEIs, que estão "
-            "fora do ICP — a série separada por segmento (consulta B2) refina esta leitura.</p>"
+            "fora do ICP — a série separada por regime e porte (consulta B3) refina esta "
+            "leitura.</p>"
         )
     blocos_din.append(R.grafico_barras_pares(
         anos_d, [ab for _, ab, _ in serie_foco], [fe for _, _, fe in serie_foco],
-        ["Aberturas" + (" (não-MEI)" if tem_split else ""),
-         "Fechamentos" + (" (não-MEI)" if tem_split else "")],
+        ["Aberturas" + (" (não-MEI)" if tem_dim else ""),
+         "Fechamentos" + (" (não-MEI)" if tem_dim else "")],
     ))
+    if tem_dim:
+        blocos_din.append(R.tabela(
+            ["Ano", "Regime", "Porte", "Aberturas", "Fechamentos"],
+            [(d["ano"], d["regime"], d["porte"], R.inteiro(d["aberturas"]),
+              R.inteiro(d["fechamentos"])) for d in din],
+        ))
     fes = [fe for _, _, fe in serie_foco]
     if len(fes) >= 3 and fes[-1] < 0.7 * (sum(fes[:-1]) / len(fes[:-1])):
         blocos_din.append(
@@ -224,6 +277,39 @@ def gerar(config: dict, modo: str) -> str:
         )
     blocos_din.append(R.selo_fonte(prov_cnpj))
     s.append(secao("7. Dinâmica do mercado-alvo", *blocos_din))
+
+    # 7b. Dimensionamento por atividade (estudos multi-CNAE com mix de receita)
+    if config.get("atividades"):
+        sam_medio = (td["sam"] + bu["sam"]) / 2
+        linhas_atv = sizing.por_atividade(sam_medio, som_base, config["atividades"],
+                                          conc_atividades)
+        corpo_atv = [(
+            "<p>Cada atividade é dimensionada como um mercado próprio; a receita-alvo é "
+            "distribuída pelo mix do plano do cliente e o <b>share implícito</b> por "
+            "atividade testa o realismo do plano (metodologia em docs/metodologia-v3.md). "
+            "Concorrentes por atividade contam CNAE principal e secundário, sem dupla "
+            "contagem.</p>"
+        )]
+        cab = ["Atividade", "Mix de receita", "SAM da atividade", "Receita-alvo (SOM)",
+               "Share implícito", "Concorrentes (principal / +secundária)"]
+        linhas_tab = []
+        for l in linhas_atv:
+            conc_txt = (
+                f"{R.inteiro(l['concorrentes_principal'])} / +{R.inteiro(l['concorrentes_secundaria'])}"
+                if l["concorrentes_principal"] is not None else "aguardando consulta E"
+            )
+            linhas_tab.append((
+                f"{l['cnae']} — {l['descricao']}", R.pct(l["peso_receita"], 0),
+                R.brl(l["sam_atividade"]), R.brl(l["receita_alvo"]),
+                R.pct(l["share_implicito"], 2), conc_txt,
+            ))
+        corpo_atv.append(R.tabela(cab, linhas_tab))
+        corpo_atv.append(
+            '<p class="premissas">Premissa participacao_sam por atividade declarada no '
+            'arquivo do setor; share implícito = receita-alvo da atividade ÷ SAM da '
+            'atividade.</p>'
+        )
+        s.append(secao("7b. Dimensionamento por atividade e projeção de receita", *corpo_atv))
 
     # 8. Limitações e fontes
     s.append(secao(
@@ -241,6 +327,8 @@ def gerar(config: dict, modo: str) -> str:
         "de baixas no cadastro).</li>"
         "<li>A faixa de idade é do estabelecimento; empresas com matriz e filiais de idades "
         "distintas podem aparecer em mais de uma faixa (efeito marginal).</li>"
+        "<li>Lucro Presumido e Lucro Real não são distinguíveis em dados públicos (sigilo "
+        "fiscal) — aparecem agrupados como Fora do Simples.</li>"
         "</ul>",
     ))
 
