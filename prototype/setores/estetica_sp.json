@@ -30,8 +30,8 @@
       "5-10",
       "10+"
     ],
-    "ticket_medio_anual_brl": 220000,
-    "racional_ticket": "Receita média anual estimada por estabelecimento ME/EPP do setor — premissa a calibrar dividindo a receita setorial da PAS pelo nº de empresas do CEMPRE"
+    "ticket_medio_anual_brl": 280000,
+    "racional_ticket": "Receita média anual por estabelecimento ME/EPP, calibrada com dados oficiais: receita de serviços pessoais (PAS 2023: R$ 25,9 bi) x 50% beleza / ~40 mil empresas formais da classe 96.02-5 no Brasil (CEMPRE) ~= R$ 320 mil; ajustada para baixo por excluir grandes redes"
   },
   "captura": {
     "pessimista": 0.002,
@@ -57,8 +57,8 @@
   },
   "series_bcb": [
     {
-      "codigo": 432,
-      "nome": "Meta Selic (% a.a.)",
+      "codigo": 4189,
+      "nome": "Selic acumulada no mês anualizada (% a.a.)",
       "ultimos": 24
     },
     {

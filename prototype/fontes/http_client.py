@@ -11,6 +11,7 @@ e o aviso de dados de demonstração quando qualquer fixture for usada.
 """
 
 import gzip
+import hashlib
 import json
 import time
 import urllib.request
@@ -48,6 +49,7 @@ class ClienteHTTP:
             except Exception as exc:
                 if self.modo == "live":
                     raise FonteIndisponivel(f"{url}: {exc}") from exc
+                print(f"[aviso] fonte ao vivo indisponível, usando fixture {fixture}: {exc}")
         dados = self._fixture(fixture)
         self.usou_fixture = True
         return dados, {
@@ -57,10 +59,13 @@ class ClienteHTTP:
         }
 
     def _live(self, url: str):
-        chave = DIR_CACHE / (str(abs(hash(url))) + ".json")
+        chave = DIR_CACHE / (hashlib.md5(url.encode()).hexdigest() + ".json")
         if chave.exists() and time.time() - chave.stat().st_mtime < CACHE_TTL_S:
             return json.loads(chave.read_text())
-        req = urllib.request.Request(url, headers={"User-Agent": "prototipo-pesquisa-mercado/0.1"})
+        req = urllib.request.Request(url, headers={
+            "User-Agent": "prototipo-pesquisa-mercado/0.1",
+            "Accept": "application/json",
+        })
         with urllib.request.urlopen(req, timeout=TIMEOUT_S) as resp:
             bruto = resp.read()
         if bruto[:2] == b"\x1f\x8b":  # algumas respostas do IBGE chegam gzipadas
