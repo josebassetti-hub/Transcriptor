@@ -74,7 +74,7 @@ def bottom_up(n_icp: int, icp: dict, captura: dict) -> dict:
     }
 
 
-def sensibilidade(n_icp: int, taxas=(0.15, 0.25, 0.40), tickets=(150000, 280000, 360000)):
+def sensibilidade(n_icp: int, taxas=(0.15, 0.31, 0.45), tickets=(120000, 180000, 280000)):
     """Matriz de sensibilidade do SAM bottom-up: taxa de atividade x ticket.
 
     Evita que o dimensionamento dependa de um par pontual de premissas — o
