@@ -40,9 +40,16 @@ def top_down(serie_receita: dict, cfg_topdown: dict) -> dict:
 
 
 def bottom_up(n_icp: int, icp: dict, captura: dict) -> dict:
-    """SAM e SOM a partir do censo de empresas-alvo."""
+    """SAM e SOM a partir do censo de empresas-alvo.
+
+    taxa_atividade: fração dos cadastros ICP efetivamente operantes como
+    negócio (CNPJ ativo != empresa operante — a razão CEMPRE/cadastro do
+    setor ancora o intervalo plausível). Default 1.0 (sem desconto).
+    """
     ticket = icp["ticket_medio_anual_brl"]
-    sam = n_icp * ticket
+    taxa_atividade = icp.get("taxa_atividade", 1.0)
+    n_operantes = round(n_icp * taxa_atividade)
+    sam = n_operantes * ticket
     cenarios = {
         nome: {"taxa": taxa, "som": sam * taxa}
         for nome, taxa in (
@@ -53,6 +60,8 @@ def bottom_up(n_icp: int, icp: dict, captura: dict) -> dict:
     }
     return {
         "n_icp": n_icp,
+        "n_operantes": n_operantes,
+        "taxa_atividade": taxa_atividade,
         "ticket": ticket,
         "sam": sam,
         "cenarios": cenarios,
@@ -60,6 +69,7 @@ def bottom_up(n_icp: int, icp: dict, captura: dict) -> dict:
         "premissas": {
             "icp": icp["descricao"],
             "racional_ticket": icp["racional_ticket"],
+            "racional_atividade": icp.get("racional_atividade", ""),
         },
     }
 

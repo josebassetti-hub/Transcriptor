@@ -65,7 +65,7 @@ def gerar(config: dict, modo: str) -> str:
             (f"TAM Brasil ({td['ano_base']}, top-down)", R.brl(td["tam"])),
             ("SAM " + config["regiao"]["sigla"] + " (triangulado)", R.brl((td["sam"] + bu["sam"]) / 2)),
             (f"SOM base em {bu['horizonte_anos']} anos", R.brl(som_base)),
-            ("Empresas-alvo (ICP, censo CNPJ)", R.inteiro(bu["n_icp"])),
+            ("Empresas-alvo operantes (ICP)", R.inteiro(bu["n_operantes"])),
             ("CAGR do mercado (série oficial)", R.pct(td["cagr"]) if td["cagr"] else "n/d"),
         ]
     )
@@ -75,8 +75,9 @@ def gerar(config: dict, modo: str) -> str:
         "<p>O dimensionamento por duas metodologias independentes chega a valores "
         f"próximos (divergência de {R.pct(tri['divergencia'])}): "
         f"{R.brl(td['sam'])} pelo recorte top-down da receita setorial oficial e "
-        f"{R.brl(bu['sam'])} pelo bottom-up sobre o censo de {R.inteiro(bu['n_icp'])} "
-        f"empresas-alvo da base CNPJ. No cenário-base de captura "
+        f"{R.brl(bu['sam'])} pelo bottom-up sobre o censo da base CNPJ "
+        f"({R.inteiro(bu['n_icp'])} cadastros ICP, {R.inteiro(bu['n_operantes'])} operantes "
+        f"pela premissa de atividade). No cenário-base de captura "
         f"({R.pct(bu['cenarios']['base']['taxa'])} em {bu['horizonte_anos']} anos), o "
         f"objetivo de receita anual (SOM) é {R.brl(som_base)}.</p>",
     ))
@@ -122,14 +123,17 @@ def gerar(config: dict, modo: str) -> str:
     blocos_bu = [
         f"<p>O universo do CNAE na região tem <b>{R.inteiro(contagem['universo'])}</b> "
         f"estabelecimentos ativos; o recorte de ICP resulta em <b>{R.inteiro(bu['n_icp'])}</b> "
-        f"empresas-alvo. Com ticket médio anual de {R.brl(bu['ticket'])}, o SAM bottom-up é "
-        f"<b>{R.brl(bu['sam'])}</b>.</p>",
+        f"cadastros. Aplicando a premissa de atividade efetiva de "
+        f"{R.pct(bu['taxa_atividade'], 0)}, chega-se a <b>{R.inteiro(bu['n_operantes'])}</b> "
+        f"empresas-alvo operantes. Com ticket médio anual de {R.brl(bu['ticket'])}, o SAM "
+        f"bottom-up é <b>{R.brl(bu['sam'])}</b>.</p>",
         R.grafico_barras_h(
             sorted(contagem["por_porte"].items(), key=lambda kv: -kv[1]),
             "estabelecimentos ativos",
         ),
         f'<p class="premissas">Premissas: {bu["premissas"]["icp"]}. '
-        f'Ticket: {bu["premissas"]["racional_ticket"]}.</p>',
+        f'Ticket: {bu["premissas"]["racional_ticket"]}. '
+        f'Atividade efetiva: {bu["premissas"]["racional_atividade"]}</p>',
         R.selo_fonte(prov_cnpj),
     ]
     if cempre:
