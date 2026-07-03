@@ -34,7 +34,8 @@
     "ticket_medio_anual_brl": 180000,
     "racional_ticket": "Ancorado no ticket implícito das fontes oficiais: SAM top-down (PAS x premissas) ÷ empresas operantes (ICP optante do Simples) ~= R$ 167 mil/ano; usado R$ 180 mil (viés de subdeclaração fiscal); sensibilidade na seção 6",
     "taxa_atividade": 0.31,
-    "racional_atividade": "MEDIDO (consulta A3): 30,8% do ICP (24.738 de 80.371 empresas ME/EPP com 2+ anos) é optante do Simples Nacional — para serviços, empresas operantes quase sempre optam pelo Simples, então a adesão é usada como proxy de operação real; MEs fora do Simples são majoritariamente cascas dormentes. Piso de referência: CEMPRE 2021 (12,9 mil empresas)."
+    "racional_atividade": "MEDIDO (consulta A3): 30,8% do ICP (24.738 de 80.371 empresas ME/EPP com 2+ anos) é optante do Simples Nacional — para serviços, empresas operantes quase sempre optam pelo Simples, então a adesão é usada como proxy de operação real; MEs fora do Simples são majoritariamente cascas dormentes. Piso de referência: CEMPRE 2021 (12,9 mil empresas).",
+    "empresas_somente_cnae_secundario": 132608
   },
   "captura": {
     "pessimista": 0.002,

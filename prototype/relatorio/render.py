@@ -146,9 +146,9 @@ def grafico_barras_pares(rotulos, serie_a, serie_b, nomes):
     return _svg(w, h, legenda + "".join(corpo))
 
 
-def grafico_barras_h(pares, titulo_valor):
+def grafico_barras_h(pares, titulo_valor, esq=88):
     """Barras horizontais simples (1 série) com rótulos diretos."""
-    w, alt, gap, esq = 760, 30, 10, 88
+    w, alt, gap = 760, 30, 10
     h = 12 + len(pares) * (alt + gap)
     v_max = max(v for _, v in pares)
     corpo = []

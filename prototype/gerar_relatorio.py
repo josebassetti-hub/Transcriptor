@@ -128,8 +128,10 @@ def gerar(config: dict, modo: str) -> str:
     if n_sec:
         nota_secundaria = (
             f"<p>Nota metodológica: além dessas, <b>{R.inteiro(n_sec)}</b> empresas têm o "
-            "CNAE do setor apenas como atividade secundária e não entram na contagem — o "
-            "dimensionamento pelo CNAE principal é, portanto, a faixa conservadora.</p>"
+            "CNAE do setor apenas como atividade secundária e não entram na contagem "
+            "(somatório por CNAE — uma empresa com os dois códigos como secundários conta "
+            "duas vezes; detalhe por atividade na seção 7b). O dimensionamento pelo CNAE "
+            "principal é, portanto, a faixa conservadora.</p>"
         )
     blocos_bu = [
         f"<p>O universo do CNAE na região tem <b>{R.inteiro(contagem['universo_empresas'])}</b> "
@@ -155,12 +157,13 @@ def gerar(config: dict, modo: str) -> str:
             "Lucro Presumido × Lucro Real é sigilo fiscal e aparece agrupado como "
             "&quot;Fora do Simples&quot; — proxy por porte em docs/metodologia-v3.md):</p>"
         )
-        rotulos_regime = {"MEI": "MEI", "SIMPLES": "Simples Nacional",
-                          "FORA_SIMPLES": "Fora do Simples (Presumido/Real)"}
+        rotulos_regime = {"MEI": "MEI", "SIMPLES": "Simples",
+                          "FORA_SIMPLES": "Fora do Simples"}
         blocos_bu.append(R.grafico_barras_h(
             sorted(((rotulos_regime.get(k, k), v) for k, v in contagem["por_regime"].items()),
                    key=lambda kv: -kv[1]),
             "empresas ativas",
+            esq=140,
         ))
     if dist_redes:
         ordem = ["1", "2-5", "6+"]
@@ -174,8 +177,9 @@ def gerar(config: dict, modo: str) -> str:
             "com mais de uma unidade na região:</p>"
         )
         blocos_bu.append(R.grafico_barras_h(
-            [(f"{f} unidade(s)", dist_redes[f][0]) for f in ordem if f in dist_redes],
+            [(f"{f} unid.", dist_redes[f][0]) for f in ordem if f in dist_redes],
             "empresas",
+            esq=110,
         ))
         blocos_bu.append(R.tabela(
             ["Unidades na região", "Empresas", "Estabelecimentos"],
