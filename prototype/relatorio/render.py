@@ -112,7 +112,7 @@ def grafico_linhas(series, unidade):
             f'<circle cx="{ux:.1f}" cy="{uy:.1f}" r="4" fill="{cor}">'
             f"<title>{nome} — último: {pontos[-1][1]:.2f} {unidade}</title></circle>"
             f'<text x="{ux+9:.1f}" y="{uy+4:.1f}" class="rotulo" fill="{cor}">'
-            f"{nome.split('—')[0].split('(')[0].strip()} {pontos[-1][1]:.2f}</text>"
+            f"{nome.split()[0]} {pontos[-1][1]:.2f}</text>"
         )
     return _svg(w, h, "".join(corpo))
 

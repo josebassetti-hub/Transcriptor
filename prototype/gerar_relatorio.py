@@ -53,6 +53,7 @@ def gerar(config: dict, modo: str) -> str:
     td = sizing.top_down(receita, config["topdown"])
     bu = sizing.bottom_up(contagem["n_icp"], config["icp"], config["captura"])
     tri = sizing.triangulacao(td["sam"], bu["sam"])
+    sens = sizing.sensibilidade(bu["n_icp"])
     som_base = bu["cenarios"]["base"]["som"]
 
     # ---- write + render ------------------------------------------------------
@@ -120,16 +121,26 @@ def gerar(config: dict, modo: str) -> str:
         R.selo_fonte(prov_ibge),
     ))
 
+    nota_secundaria = ""
+    n_sec = config["icp"].get("empresas_somente_cnae_secundario")
+    if n_sec:
+        nota_secundaria = (
+            f"<p>Nota metodológica: além dessas, <b>{R.inteiro(n_sec)}</b> empresas têm o "
+            "CNAE do setor apenas como atividade secundária e não entram na contagem — o "
+            "dimensionamento pelo CNAE principal é, portanto, a faixa conservadora.</p>"
+        )
     blocos_bu = [
-        f"<p>O universo do CNAE na região tem <b>{R.inteiro(contagem['universo'])}</b> "
-        f"estabelecimentos ativos; o recorte de ICP resulta em <b>{R.inteiro(bu['n_icp'])}</b> "
-        f"cadastros. Aplicando a premissa de atividade efetiva de "
+        f"<p>O universo do CNAE na região tem <b>{R.inteiro(contagem['universo_empresas'])}</b> "
+        f"empresas ativas ({R.inteiro(contagem['universo_estabelecimentos'])} estabelecimentos, "
+        f"contando filiais); o recorte de ICP resulta em <b>{R.inteiro(bu['n_icp'])}</b> "
+        f"empresas cadastradas. Aplicando a premissa de atividade efetiva de "
         f"{R.pct(bu['taxa_atividade'], 0)}, chega-se a <b>{R.inteiro(bu['n_operantes'])}</b> "
         f"empresas-alvo operantes. Com ticket médio anual de {R.brl(bu['ticket'])}, o SAM "
         f"bottom-up é <b>{R.brl(bu['sam'])}</b>.</p>",
+        nota_secundaria,
         R.grafico_barras_h(
             sorted(contagem["por_porte"].items(), key=lambda kv: -kv[1]),
-            "estabelecimentos ativos",
+            "empresas ativas",
         ),
         f'<p class="premissas">Premissas: {bu["premissas"]["icp"]}. '
         f'Ticket: {bu["premissas"]["racional_ticket"]}. '
@@ -164,21 +175,55 @@ def gerar(config: dict, modo: str) -> str:
             ["Cenário", "Taxa de captura", "SOM anual"],
             [(n.capitalize(), R.pct(c["taxa"]), R.brl(c["som"])) for n, c in cen.items()],
         ),
+        "<p>Sensibilidade do SAM bottom-up às duas premissas mais incertas "
+        "(taxa de atividade efetiva × ticket médio) — o valor usado no relatório "
+        "está no centro da matriz:</p>",
+        R.tabela(
+            ["Taxa de atividade \\ Ticket"] + [R.brl(t) for t in sens["tickets"]],
+            [
+                [R.pct(taxa, 0)] + [R.brl(v) for v in linha]
+                for taxa, linha in zip(sens["taxas"], sens["matriz"])
+            ],
+        ),
     ))
 
     # 7. Dinâmica do mercado
-    anos_d = [a for a, _, _ in din]
-    s.append(secao(
-        "7. Dinâmica do mercado-alvo",
-        f"<p>Entre {anos_d[0]} e {anos_d[-1]}, as aberturas anuais de estabelecimentos do CNAE "
-        f"na região cresceram de {R.inteiro(din[0][1])} para {R.inteiro(din[-1][1])}, mantendo "
-        "saldo líquido positivo em todos os anos — sinal de expansão da base de clientes "
-        "potenciais do produto.</p>",
-        R.grafico_barras_pares(
-            anos_d, [a for _, a, _ in din], [f for _, _, f in din], ["Aberturas", "Fechamentos"]
-        ),
-        R.selo_fonte(prov_cnpj),
+    segmentos = {seg for _, seg, _, _ in din}
+    tem_split = "NAO_MEI" in segmentos
+    foco = "NAO_MEI" if tem_split else ("TOTAL" if "TOTAL" in segmentos else sorted(segmentos)[0])
+    serie_foco = [(a, ab, fe) for a, seg, ab, fe in din if seg == foco]
+    anos_d = [a for a, _, _ in serie_foco]
+    blocos_din = []
+    if tem_split:
+        tot_mei = sum(ab for _, seg, ab, _ in din if seg == "MEI")
+        blocos_din.append(
+            f"<p>Recorte relevante ao ICP (empresas <b>não-MEI</b>): entre {anos_d[0]} e "
+            f"{anos_d[-1]}, foram {R.inteiro(sum(ab for _, ab, _ in serie_foco))} aberturas e "
+            f"{R.inteiro(sum(fe for _, _, fe in serie_foco))} fechamentos/inaptidões. O fluxo "
+            f"de MEIs ({R.inteiro(tot_mei)} aberturas no período) domina o setor, mas está "
+            "fora do perfil de cliente-alvo e é mostrado apenas como contexto.</p>"
+        )
+    else:
+        blocos_din.append(
+            f"<p>Entre {anos_d[0]} e {anos_d[-1]}, o CNAE registrou "
+            f"{R.inteiro(sum(ab for _, ab, _ in serie_foco))} aberturas na região, com saldo "
+            "líquido positivo. Atenção: a maior parte dessas aberturas é de MEIs, que estão "
+            "fora do ICP — a série separada por segmento (consulta B2) refina esta leitura.</p>"
+        )
+    blocos_din.append(R.grafico_barras_pares(
+        anos_d, [ab for _, ab, _ in serie_foco], [fe for _, _, fe in serie_foco],
+        ["Aberturas" + (" (não-MEI)" if tem_split else ""),
+         "Fechamentos" + (" (não-MEI)" if tem_split else "")],
     ))
+    fes = [fe for _, _, fe in serie_foco]
+    if len(fes) >= 3 and fes[-1] < 0.7 * (sum(fes[:-1]) / len(fes[:-1])):
+        blocos_din.append(
+            f"<p>Nota: os fechamentos de {anos_d[-1]} estão bem abaixo da média dos anos "
+            "anteriores — provável atraso de registro de baixas no cadastro (o número tende a "
+            "ser revisado para cima), e não melhora real do setor.</p>"
+        )
+    blocos_din.append(R.selo_fonte(prov_cnpj))
+    s.append(secao("7. Dinâmica do mercado-alvo", *blocos_din))
 
     # 8. Limitações e fontes
     s.append(secao(
@@ -190,6 +235,12 @@ def gerar(config: dict, modo: str) -> str:
         "<li>As participações de segmento e região do top-down são premissas curadas por setor "
         "e devem ser revisadas com o cliente.</li>"
         "<li>Este protótipo não inclui share de varejo (Nielsen/Kantar) nem pesquisa primária.</li>"
+        "<li>Empresas com o CNAE do setor apenas como atividade secundária não entram na "
+        "contagem principal (faixa conservadora; ver nota na seção 5).</li>"
+        "<li>Fechamentos do último ano tendem a ser revisados para cima (atraso de registro "
+        "de baixas no cadastro).</li>"
+        "<li>A faixa de idade é do estabelecimento; empresas com matriz e filiais de idades "
+        "distintas podem aparecer em mais de uma faixa (efeito marginal).</li>"
         "</ul>",
     ))
 

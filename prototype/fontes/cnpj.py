@@ -6,13 +6,19 @@ abertos (https://dadosabertos.rfb.gov.br/CNPJ/) ou consultados na Base dos Dados
 consulta a base bruta em tempo de geração: só estas tabelas agregadas, pequenas
 o bastante para o Postgres do Supabase.
 
-No protótipo, os agregados vêm de CSVs em dados/ (rotulados como demonstração).
+Unidades (pós-auditoria, docs/auditoria-numeros-piloto.md):
+- qtd_empresas: CNPJs-base distintos (uma rede com filiais conta 1) — usado no ICP.
+- qtd_estabelecimentos: pontos de atendimento (cada filial conta 1).
+O esquema antigo (coluna única qtd_ativas) é aceito como fallback, valendo pelas
+duas medidas.
 
 Esquema de dados/cnpj_agregados_demo.csv:
-  cnae, uf, porte (MEI|ME|EPP|DEMAIS), faixa_idade (0-2|2-5|5-10|10+), qtd_ativas
+  cnae, uf, porte (MEI|ME|EPP|DEMAIS), faixa_idade (0-2|2-5|5-10|10+),
+  qtd_empresas, qtd_estabelecimentos
 
 Esquema de dados/cnpj_dinamica_demo.csv:
-  ano, aberturas, fechamentos
+  ano, segmento (MEI|NAO_MEI), aberturas, fechamentos
+  (fallback antigo sem a coluna segmento = TOTAL)
 """
 
 import csv
@@ -44,30 +50,42 @@ def agregados(config: dict, demo: bool = True):
     linhas = _ler_csv("cnpj_agregados_demo.csv")
     cnaes = {c["codigo"] for c in config["cnaes"]}
     uf = config["regiao"]["sigla"]
-    filtradas = [l for l in linhas if l["cnae"] in cnaes and l["uf"] == uf]
+    filtradas = []
+    for l in linhas:
+        if l["cnae"] in cnaes and l["uf"] == uf:
+            # fallback do esquema antigo (qtd_ativas única)
+            emp = int(l.get("qtd_empresas") or l.get("qtd_ativas", 0))
+            est = int(l.get("qtd_estabelecimentos") or l.get("qtd_ativas", 0))
+            filtradas.append({**l, "qtd_empresas": emp, "qtd_estabelecimentos": est})
     extracao = config.get("cnpj_extracao", "desconhecida")
     return filtradas, _proveniencia(demo, extracao)
 
 
 def contar_icp(linhas, icp: dict) -> dict:
-    """Conta empresas-alvo (ICP) e devolve o detalhamento usado no relatório."""
+    """Conta empresas-alvo (ICP, em EMPRESAS) e o universo nas duas unidades."""
     faixas_ok = set(icp["faixas_idade"])
     portes_ok = set(icp["portes"])
-    total_universo = sum(int(l["qtd_ativas"]) for l in linhas)
+    universo_empresas = sum(l["qtd_empresas"] for l in linhas)
+    universo_estab = sum(l["qtd_estabelecimentos"] for l in linhas)
     por_porte = {}
     n_icp = 0
     for l in linhas:
-        por_porte[l["porte"]] = por_porte.get(l["porte"], 0) + int(l["qtd_ativas"])
+        por_porte[l["porte"]] = por_porte.get(l["porte"], 0) + l["qtd_empresas"]
         if l["porte"] in portes_ok and l["faixa_idade"] in faixas_ok:
-            n_icp += int(l["qtd_ativas"])
-    return {"n_icp": n_icp, "universo": total_universo, "por_porte": por_porte}
+            n_icp += l["qtd_empresas"]
+    return {
+        "n_icp": n_icp,
+        "universo_empresas": universo_empresas,
+        "universo_estabelecimentos": universo_estab,
+        "por_porte": por_porte,
+    }
 
 
 def dinamica(config: dict, demo: bool = True):
-    """Aberturas x fechamentos por ano para os CNAEs/UF do setor."""
+    """Aberturas x fechamentos por ano e segmento (MEI|NAO_MEI|TOTAL)."""
     linhas = _ler_csv("cnpj_dinamica_demo.csv")
     serie = [
-        (l["ano"], int(l["aberturas"]), int(l["fechamentos"]))
+        (l["ano"], l.get("segmento", "TOTAL"), int(l["aberturas"]), int(l["fechamentos"]))
         for l in linhas
     ]
     return serie, _proveniencia(demo, config.get("cnpj_extracao", "desconhecida"))

@@ -74,6 +74,23 @@ def bottom_up(n_icp: int, icp: dict, captura: dict) -> dict:
     }
 
 
+def sensibilidade(n_icp: int, taxas=(0.15, 0.25, 0.40), tickets=(150000, 280000, 360000)):
+    """Matriz de sensibilidade do SAM bottom-up: taxa de atividade x ticket.
+
+    Evita que o dimensionamento dependa de um par pontual de premissas — o
+    relatório mostra o intervalo inteiro (auditoria: ticket próximo do teto
+    de faturamento de ME e taxa de atividade são as premissas mais sensíveis).
+    """
+    return {
+        "taxas": list(taxas),
+        "tickets": list(tickets),
+        "matriz": [
+            [round(n_icp * taxa) * ticket for ticket in tickets]
+            for taxa in taxas
+        ],
+    }
+
+
 def triangulacao(sam_topdown: float, sam_bottomup: float) -> dict:
     maior, menor = max(sam_topdown, sam_bottomup), min(sam_topdown, sam_bottomup)
     divergencia = (maior - menor) / maior if maior else 0.0

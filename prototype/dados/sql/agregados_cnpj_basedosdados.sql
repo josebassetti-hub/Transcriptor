@@ -1,28 +1,14 @@
 -- ============================================================================
--- Agregados de CNPJ via Base dos Dados (BigQuery) — 2 consultas, A e B.
--- Cada uma produz EXATAMENTE o esquema do CSV correspondente do protótipo:
---   A -> dados/cnpj_agregados_demo.csv  (cnae,uf,porte,faixa_idade,qtd_ativas)
---   B -> dados/cnpj_dinamica_demo.csv   (ano,aberturas,fechamentos)
--- Rode uma de cada vez, exporte como CSV e substitua o conteúdo dos arquivos.
---
--- Antes de rodar, confira a estimativa de dados processados no canto superior
--- direito do editor do BigQuery (deve ficar em poucos GB — dentro do nível
--- gratuito de 1 TB/mês). Para espiar as tabelas sem custo, use a aba
--- "Visualizar" (Preview) da tabela, NUNCA um "SELECT *".
---
--- Observações de esquema (podem variar entre versões do datalake):
---   * As tabelas são particionadas pela coluna `data` (data da extração da
---     RFB); o filtro `data = ultima.d` pega só a extração mais recente.
---     Se a sua versão não tiver essa coluna, remova as referências a `ultima`.
---   * situacao_cadastral: '02'/'2' = ativa; '04'/'4' = inapta; '08'/'8' = baixada.
---   * porte (tabela empresas): '01' = ME, '03' = EPP, '05'/demais = DEMAIS.
---   * MEI vem da tabela `simples` (coluna opcao_mei).
--- Em caso de erro de nome de coluna, copie a mensagem e as colunas mostradas
--- na aba "Esquema" da tabela — o ajuste é pontual.
+-- Consultas v2 (pós-auditoria: docs/auditoria-numeros-piloto.md)
+-- Rode UMA de cada vez no BigQuery e cole/exporte o resultado:
+--   A2 -> dados/cnpj_agregados_demo.csv  (cnae,uf,porte,faixa_idade,qtd_empresas,qtd_estabelecimentos)
+--   C  -> nº para o campo icp.empresas_somente_cnae_secundario do JSON do setor
+--   B2 -> dados/cnpj_dinamica_demo.csv   (ano,segmento,aberturas,fechamentos)
 -- ============================================================================
 
 -- ---------------------------------------------------------------------------
--- CONSULTA A — agregado por CNAE x UF x porte x faixa de idade
+-- CONSULTA A2 — empresas E estabelecimentos por CNAE x porte x faixa de idade
+-- (corrige a unidade: DISTINCT cnpj_basico conta EMPRESAS; filiais não inflam)
 -- ---------------------------------------------------------------------------
 WITH ultima AS (
   SELECT MAX(data) AS d FROM `basedosdados.br_me_cnpj.estabelecimentos`
@@ -45,9 +31,9 @@ emp AS (
   WHERE emp.data = ultima.d
 ),
 mei AS (
-  SELECT s.cnpj_basico, s.opcao_mei
-  FROM `basedosdados.br_me_cnpj.simples` s, ultima
-  WHERE s.data = ultima.d
+  SELECT s.cnpj_basico, MAX(s.opcao_mei) = 1 AS opcao_mei
+  FROM `basedosdados.br_me_cnpj.simples` s
+  GROUP BY 1
 )
 SELECT
   CASE estab.cnae7
@@ -67,7 +53,8 @@ SELECT
     WHEN estab.idade < 10 THEN '5-10'
     ELSE '10+'
   END AS faixa_idade,
-  COUNT(*) AS qtd_ativas
+  COUNT(DISTINCT estab.cnpj_basico) AS qtd_empresas,
+  COUNT(*) AS qtd_estabelecimentos
 FROM estab
 LEFT JOIN emp USING (cnpj_basico)
 LEFT JOIN mei USING (cnpj_basico)
@@ -75,31 +62,75 @@ GROUP BY 1, 2, 3, 4
 ORDER BY 1, 3, 4;
 
 -- ---------------------------------------------------------------------------
--- CONSULTA B — aberturas e fechamentos por ano (rode separadamente)
+-- CONSULTA C — empresas com 9602-5 APENAS como CNAE secundário
+-- (mede a subcontagem do filtro por CNAE principal; sem dupla contagem:
+--  DISTINCT cnpj_basico e exclusão de quem já entra pelo principal)
 -- ---------------------------------------------------------------------------
 -- WITH ultima AS (
 --   SELECT MAX(data) AS d FROM `basedosdados.br_me_cnpj.estabelecimentos`
 -- ),
+-- pelo_principal AS (
+--   SELECT DISTINCT e.cnpj_basico
+--   FROM `basedosdados.br_me_cnpj.estabelecimentos` e, ultima
+--   WHERE e.data = ultima.d
+--     AND e.situacao_cadastral IN ('02', '2')
+--     AND e.cnae_fiscal_principal IN ('9602501', '9602502')
+--     AND e.sigla_uf = 'SP'
+-- ),
+-- pela_secundaria AS (
+--   SELECT DISTINCT e.cnpj_basico
+--   FROM `basedosdados.br_me_cnpj.estabelecimentos` e, ultima
+--   WHERE e.data = ultima.d
+--     AND e.situacao_cadastral IN ('02', '2')
+--     AND e.sigla_uf = 'SP'
+--     AND REGEXP_CONTAINS(COALESCE(e.cnae_fiscal_secundaria, ''), r'960250[12]')
+-- )
+-- SELECT COUNT(*) AS empresas_somente_cnae_secundario
+-- FROM pela_secundaria s
+-- WHERE s.cnpj_basico NOT IN (SELECT cnpj_basico FROM pelo_principal);
+
+-- ---------------------------------------------------------------------------
+-- CONSULTA B2 — aberturas e fechamentos por ano, separados MEI x não-MEI
+-- (a maior parte do fluxo de aberturas é MEI, que está fora do ICP — separar
+--  evita a leitura enganosa de "66 mil clientes potenciais novos por ano")
+-- ---------------------------------------------------------------------------
+-- WITH ultima AS (
+--   SELECT MAX(data) AS d FROM `basedosdados.br_me_cnpj.estabelecimentos`
+-- ),
+-- mei AS (
+--   SELECT s.cnpj_basico, MAX(s.opcao_mei) = 1 AS opcao_mei
+--   FROM `basedosdados.br_me_cnpj.simples` s
+--   GROUP BY 1
+-- ),
 -- base AS (
---   SELECT e.data_inicio_atividade, e.data_situacao_cadastral, e.situacao_cadastral
+--   SELECT
+--     e.cnpj_basico, e.data_inicio_atividade,
+--     e.data_situacao_cadastral, e.situacao_cadastral
 --   FROM `basedosdados.br_me_cnpj.estabelecimentos` e, ultima
 --   WHERE e.data = ultima.d
 --     AND e.cnae_fiscal_principal IN ('9602501', '9602502')
 --     AND e.sigla_uf = 'SP'
 -- ),
+-- cls AS (
+--   SELECT base.*,
+--          IF(COALESCE(m.opcao_mei, FALSE), 'MEI', 'NAO_MEI') AS segmento
+--   FROM base LEFT JOIN mei m USING (cnpj_basico)
+-- ),
 -- ab AS (
---   SELECT EXTRACT(YEAR FROM data_inicio_atividade) AS ano, COUNT(*) AS aberturas
---   FROM base GROUP BY 1
+--   SELECT segmento, EXTRACT(YEAR FROM data_inicio_atividade) AS ano,
+--          COUNT(*) AS aberturas
+--   FROM cls GROUP BY 1, 2
 -- ),
 -- fe AS (
---   SELECT EXTRACT(YEAR FROM data_situacao_cadastral) AS ano, COUNT(*) AS fechamentos
---   FROM base
+--   SELECT segmento, EXTRACT(YEAR FROM data_situacao_cadastral) AS ano,
+--          COUNT(*) AS fechamentos
+--   FROM cls
 --   WHERE situacao_cadastral IN ('04', '4', '08', '8')
---   GROUP BY 1
+--   GROUP BY 1, 2
 -- )
--- SELECT ano,
+-- SELECT ano, segmento,
 --        COALESCE(ab.aberturas, 0) AS aberturas,
 --        COALESCE(fe.fechamentos, 0) AS fechamentos
--- FROM ab FULL JOIN fe USING (ano)
+-- FROM ab FULL JOIN fe USING (segmento, ano)
 -- WHERE ano BETWEEN 2021 AND EXTRACT(YEAR FROM CURRENT_DATE()) - 1
--- ORDER BY ano;
+-- ORDER BY ano, segmento;
