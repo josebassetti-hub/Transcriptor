@@ -38,26 +38,39 @@ class ClienteHTTP:
 
     def buscar_json(self, url: str, fixture: str):
         """Retorna (dados, proveniencia). `fixture` é o nome do arquivo em dados/fixtures."""
+        return self.buscar_json_variantes([url], fixture)
+
+    def buscar_json_variantes(self, urls: list, fixture: str):
+        """Tenta cada variante de URL (com 1 nova tentativa cada) antes de cair
+        para a fixture — APIs públicas como a do BCB têm instabilidade/limite de
+        requisições intermitentes, então uma variante alternativa ou uma segunda
+        tentativa costuma resolver."""
+        erros = []
         if self.modo != "fixture":
-            try:
-                dados = self._live(url)
-                return dados, {
-                    "origem": "live",
-                    "url": url,
-                    "consultado_em": time.strftime("%Y-%m-%d %H:%M UTC", time.gmtime()),
-                }
-            except Exception as exc:
-                if self.modo == "live":
-                    raise FonteIndisponivel(f"{url}: {exc}") from exc
-                print(f"[aviso] fonte ao vivo indisponível, usando fixture {fixture}: {exc}")
-                motivo = f"{type(exc).__name__}: {exc}"
+            for url in urls:
+                for tentativa in (1, 2):
+                    try:
+                        dados = self._live(url)
+                        return dados, {
+                            "origem": "live",
+                            "url": url,
+                            "consultado_em": time.strftime("%Y-%m-%d %H:%M UTC", time.gmtime()),
+                        }
+                    except Exception as exc:
+                        erros.append(f"{type(exc).__name__}: {exc}")
+                        if tentativa == 1:
+                            time.sleep(1.5)
+            if self.modo == "live":
+                raise FonteIndisponivel(f"{urls[0]}: {'; '.join(erros)}")
+            print(f"[aviso] fonte ao vivo indisponível, usando fixture {fixture}: {erros[-1]}")
+            motivo = "; ".join(dict.fromkeys(erros))[:300]
         else:
             motivo = "modo fixture selecionado"
         dados = self._fixture(fixture)
         self.usou_fixture = True
         return dados, {
             "origem": "fixture",
-            "url": url,
+            "url": urls[0],
             "consultado_em": "dados de demonstração (fixture)",
             "motivo": motivo,
         }
@@ -67,7 +80,7 @@ class ClienteHTTP:
         if chave.exists() and time.time() - chave.stat().st_mtime < CACHE_TTL_S:
             return json.loads(chave.read_text())
         req = urllib.request.Request(url, headers={
-            "User-Agent": "prototipo-pesquisa-mercado/0.1",
+            "User-Agent": "Mozilla/5.0 (compatible; prototipo-pesquisa-mercado/0.1)",
             "Accept": "application/json",
         })
         with urllib.request.urlopen(req, timeout=TIMEOUT_S) as resp:
