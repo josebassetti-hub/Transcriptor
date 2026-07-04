@@ -39,7 +39,7 @@ TESTES_CONEXAO = [
 #   2577 — PAS: receita operacional líquida, nº de empresas etc., por atividade CNAE 2.0
 #   6449 — CEMPRE: empresas por seção/divisão/grupo/CLASSE da CNAE 2.0 (série até 2021)
 #    993 — CEMPRE: empresas por seção CNAE, faixas de pessoal, ano de fundação
-TABELAS_CANDIDATAS = [2577, 6449, 993]
+TABELAS_CANDIDATAS = [2577, 6449, 993, 2611]
 
 META_URL = "https://servicodados.ibge.gov.br/api/v3/agregados/{id}/metadados"
 
@@ -47,7 +47,7 @@ META_URL = "https://servicodados.ibge.gov.br/api/v3/agregados/{id}/metadados"
 # Palavras-chave do setor-piloto: o script varre as classificações das tabelas
 # procurando categorias cujo nome contenha algum destes termos, e imprime os
 # códigos exatos para colar na configuração do setor.
-PALAVRAS_CHAVE = ["cabeleireir", "beleza", "estetica", "servicos pessoais"]
+PALAVRAS_CHAVE = ["cabeleireir", "beleza", "estetica", "servicos pessoais", "familias", "total"]
 
 
 def baixar(url: str):

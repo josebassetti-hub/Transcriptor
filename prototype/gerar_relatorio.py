@@ -19,7 +19,7 @@ import time
 from pathlib import Path
 
 from fontes.http_client import ClienteHTTP
-from fontes import ibge, bcb, cnpj
+from fontes import ibge, bcb, cnpj, pnad
 from calculos import sizing
 from relatorio import render as R
 
@@ -49,6 +49,7 @@ def gerar(config: dict, modo: str) -> str:
     if config.get("bottomup_validacao"):
         cempre = ibge.contagem_empresas(cliente, config["bottomup_validacao"])
     dist_redes = cnpj.redes(config)
+    informal = pnad.informalidade(config)
     conc_atividades = cnpj.atividades_concorrencia(config)
 
     # ---- compute -------------------------------------------------------------
@@ -324,13 +325,36 @@ def gerar(config: dict, modo: str) -> str:
         )
         s.append(secao("7b. Dimensionamento por atividade e projeção de receita", *corpo_atv))
 
+    # 7c. Mercado informal (labor input method) — quando a consulta F existir
+    if informal:
+        fator = config.get("informalidade_fator_produtividade", 0.5)
+        piso = informal["receita_informal_piso"]
+        teto = piso / fator
+        total_trab = informal["n_informal"] + informal["n_formal"]
+        s.append(secao(
+            "7c. Mercado informal (labor input method)",
+            f"<p>Pela PNAD Contínua ({informal['referencia']}), o setor tem "
+            f"<b>{R.inteiro(informal['n_informal'])}</b> trabalhadores informais (sem CNPJ/"
+            f"carteira) e {R.inteiro(informal['n_formal'])} formais na região — "
+            f"{R.pct(informal['n_informal']/total_trab)} de informalidade ocupacional. "
+            f"Receita anual estimada do mercado informal: entre <b>{R.brl(piso)}</b> "
+            f"(piso: soma dos rendimentos declarados) e <b>{R.brl(teto)}</b> (teto: piso ÷ "
+            f"fator de produtividade {R.pct(fator, 0)} [premissa declarada]). Este valor é "
+            "ADICIONAL ao mercado formal dimensionado nas seções 4–6.</p>",
+            R.grafico_barras_h(
+                [("Informais", informal["n_informal"]), ("Formais", informal["n_formal"])],
+                "trabalhadores", esq=110,
+            ),
+            R.selo_fonte(informal["proveniencia"]),
+        ))
+
     # 8. Limitações e fontes
     s.append(secao(
         "8. Limitações declaradas",
         "<ul>"
         "<li>CNPJ ativo não significa empresa operante; o recorte por situação cadastral, idade "
         "e porte mitiga, mas não elimina, a superestimação do universo.</li>"
-        "<li>A informalidade do setor não é capturada pela base CNPJ.</li>"
+        "<li>A informalidade do setor não é capturada pela base CNPJ" + (" (dimensionada na seção 7c via PNAD Contínua)." if informal else " — mensurável via PNAD Contínua (consulta F; ver docs/plano-fechamento-lacunas.md).") + "</li>"
         "<li>As participações de segmento e região do top-down são premissas curadas por setor "
         "e devem ser revisadas com o cliente.</li>"
         "<li>Este protótipo não inclui share de varejo (Nielsen/Kantar) nem pesquisa primária.</li>"
