@@ -35,6 +35,16 @@ def gerar(config: dict, modo: str) -> str:
 
     # ---- collect -------------------------------------------------------------
     receita, prov_ibge = ibge.receita_setorial(cliente, config["topdown"])
+    prov_segmento = None
+    if config["topdown"].get("segmento_dado"):
+        # a fração do segmento vem da PAS 2611 (dado), substituindo a premissa
+        fracao, ano_frac, prov_segmento = ibge.fracao_segmento(
+            cliente, config["topdown"]["segmento_dado"])
+        config["topdown"]["participacao_segmento"] = fracao
+        config["topdown"]["racional_segmento"] = (
+            f"DADO (PAS Tab. 2611, {ano_frac}): receita de cabeleireiros/tratamento de beleza "
+            f"÷ receita de serviços pessoais = {fracao:.1%}"
+        )
     series_macro = [
         bcb.serie_sgs(cliente, s["codigo"], s["nome"], s["ultimos"])
         for s in config["series_bcb"]
@@ -119,9 +129,11 @@ def gerar(config: dict, modo: str) -> str:
         f"e da região ({R.pct(td['premissas']['participacao_regiao'],0)}), o SAM top-down de "
         f"{config['regiao']['nome']} é <b>{R.brl(td['sam'])}</b>.</p>",
         R.tabela(["Ano", "Receita (R$)"], [(a, R.brl(receita[a])) for a in anos]),
-        f'<p class="premissas">Premissas: segmento — {td["premissas"]["racional_segmento"]}; '
-        f'região — {td["premissas"]["racional_regiao"]}.</p>',
+        f'<p class="premissas">{"Segmento (DADO oficial)" if prov_segmento else "Premissas: segmento"} — '
+        f'{td["premissas"]["racional_segmento"]}; '
+        f'região (premissa) — {td["premissas"]["racional_regiao"]}.</p>',
         R.selo_fonte(prov_ibge),
+        R.selo_fonte(prov_segmento) if prov_segmento else "",
     ))
 
     nota_secundaria = ""

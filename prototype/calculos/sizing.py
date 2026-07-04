@@ -109,8 +109,7 @@ def triangulacao(sam_topdown: float, sam_bottomup: float) -> dict:
     }
 
 
-def por_atividade(sam_total: float, receita_alvo_total: float, atividades: list,
-                  concorrencia: dict | None) -> list:
+def por_atividade(sam_total, receita_alvo_total, atividades, concorrencia=None):
     """Dimensionamento multi-CNAE: para cada atividade do estudo, o SAM da
     atividade (premissa participacao_sam sobre o SAM total), a receita-alvo
     pelo mix do cliente (peso_receita) e o share implícito — o teste de

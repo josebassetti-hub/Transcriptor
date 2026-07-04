@@ -57,7 +57,18 @@
     "participacao_segmento": 0.5,
     "racional_segmento": "Fração de estética/beleza dentro do grupo 'Serviços pessoais' da PAS (que também inclui lavanderias, atividades funerárias etc.) — premissa curada, a refinar com a abertura por classe da PAS",
     "participacao_regiao": 0.32,
-    "racional_regiao": "Participação de SP no mercado nacional, proxy pela participação de SP nos estabelecimentos ativos do CNAE (base CNPJ)"
+    "racional_regiao": "Participação de SP no mercado nacional, proxy pela participação de SP nos estabelecimentos ativos do CNAE (base CNPJ)",
+    "segmento_dado": {
+      "agregado": "2611",
+      "periodos": "-1",
+      "variavel": "639",
+      "localidade": "N1[all]",
+      "classificacao_setor": "12356[106910]",
+      "classificacao_total": "12356[106908]",
+      "fixture_setor": "ibge_pas2611_beleza.json",
+      "fixture_total": "ibge_pas2611_pessoais.json",
+      "citacao": "IBGE — PAS, tabela SIDRA 2611, variável 639 (receita bruta de prestação de serviços): 2.4.2 Cabeleireiros e outros serviços de tratamento de beleza ÷ 2.4 Serviços pessoais"
+    }
   },
   "series_bcb": [
     {

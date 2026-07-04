@@ -61,3 +61,30 @@ def contagem_empresas(cliente, cfg: dict):
     prov["fonte"] = cfg["citacao"]
     prov["url"] = url
     return ano, serie[ano], prov
+
+
+def fracao_segmento(cliente, cfg: dict):
+    """Fração do segmento lida da PAS 2611 (receita do setor ÷ receita do grupo).
+
+    Substitui a premissa manual de participação do segmento por dado oficial —
+    docs/plano-fechamento-lacunas.md, lacuna 3. Retorna (fracao, ano, prov).
+    """
+    def _consulta(classificacao, fixture):
+        url = (
+            f"{BASE}/agregados/{cfg['agregado']}/periodos/{cfg['periodos']}/"
+            f"variaveis/{cfg['variavel']}?localidades={cfg['localidade']}"
+            f"&classificacao={classificacao}"
+        )
+        bruto, prov = cliente.buscar_json(url, fixture=fixture)
+        return _extrair_serie(bruto), prov
+
+    serie_setor, prov = _consulta(cfg["classificacao_setor"], cfg["fixture_setor"])
+    serie_total, prov_total = _consulta(cfg["classificacao_total"], cfg["fixture_total"])
+    anos_comuns = sorted(set(serie_setor) & set(serie_total))
+    ano = anos_comuns[-1]
+    fracao = serie_setor[ano] / serie_total[ano]
+    prov["fonte"] = cfg["citacao"]
+    if prov_total["origem"] == "fixture":
+        prov["origem"] = prov_total["origem"]
+        prov.setdefault("motivo", prov_total.get("motivo"))
+    return fracao, ano, prov

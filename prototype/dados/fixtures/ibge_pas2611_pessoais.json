@@ -1,0 +1,35 @@
+[
+ {
+  "id": "639",
+  "variavel": "Receita bruta - prestação de serviços — DADOS DE DEMONSTRAÇÃO (formato real da tabela 2611)",
+  "unidade": "Mil Reais",
+  "resultados": [
+   {
+    "classificacoes": [
+     {
+      "id": "12356",
+      "nome": "Grupos e classes de atividades",
+      "categoria": {
+       "106908": "2.4 Serviços pessoais"
+      }
+     }
+    ],
+    "series": [
+     {
+      "localidade": {
+       "id": "1",
+       "nivel": {
+        "id": "N1",
+        "nome": "Brasil"
+       },
+       "nome": "Brasil"
+      },
+      "serie": {
+       "2022": "24100000"
+      }
+     }
+    ]
+   }
+  ]
+ }
+]
