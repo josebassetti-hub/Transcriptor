@@ -68,6 +68,10 @@ def gerar(config: dict, modo: str) -> str:
     tri = sizing.triangulacao(td["sam"], bu["sam"])
     sens = sizing.sensibilidade(bu["n_icp"])
     som_base = bu["cenarios"]["base"]["som"]
+    usa_bu_central = config.get("sam_central") == "bottom_up"
+    sam_central = bu["sam"] if usa_bu_central else (td["sam"] + bu["sam"]) / 2
+    rotulo_sam = ("SAM " + config["regiao"]["sigla"]
+                  + (" (bottom-up; PAS = piso)" if usa_bu_central else " (triangulado)"))
 
     # ---- write + render ------------------------------------------------------
     s = []
@@ -77,7 +81,7 @@ def gerar(config: dict, modo: str) -> str:
         f'<div class="kpi"><b>{v}</b><span>{k}</span></div>'
         for k, v in [
             (f"TAM Brasil ({td['ano_base']}, top-down)", R.brl(td["tam"])),
-            ("SAM " + config["regiao"]["sigla"] + " (triangulado)", R.brl((td["sam"] + bu["sam"]) / 2)),
+            (rotulo_sam, R.brl(sam_central)),
             (f"SOM base em {bu['horizonte_anos']} anos", R.brl(som_base)),
             ("Empresas-alvo operantes (ICP)", R.inteiro(bu["n_operantes"])),
             ("CAGR do mercado (série oficial)", R.pct(td["cagr"]) if td["cagr"] else "n/d"),
@@ -262,9 +266,11 @@ def gerar(config: dict, modo: str) -> str:
         *blocos_anc,
         R.grafico_funil([
             ("TAM", td["tam"], f"Brasil, top-down, {td['ano_base']}"),
-            ("SAM", (td["sam"] + bu["sam"]) / 2,
-             f"média das metodologias (divergência {R.pct(tri['divergencia'])})"
-             + ("" if tri["convergente"] else " — usar com cautela; ver diagnóstico acima")),
+            ("SAM", sam_central,
+             ("bottom-up ME/EPP; top-down PAS como piso (ver diagnóstico acima)"
+              if usa_bu_central else
+              f"média das metodologias (divergência {R.pct(tri['divergencia'])})"
+              + ("" if tri["convergente"] else " — usar com cautela; ver diagnóstico acima"))),
             ("SOM", som_base,
              f"cenário-base: {R.pct(cen['base']['taxa'])} de captura em {bu['horizonte_anos']} anos"),
         ]),
@@ -351,7 +357,7 @@ def gerar(config: dict, modo: str) -> str:
 
     # 7b. Dimensionamento por atividade (estudos multi-CNAE com mix de receita)
     if config.get("atividades"):
-        sam_medio = (td["sam"] + bu["sam"]) / 2
+        sam_medio = sam_central
         linhas_atv = sizing.por_atividade(sam_medio, som_base, config["atividades"],
                                           conc_atividades)
         corpo_atv = [(
