@@ -86,8 +86,12 @@ def gerar(config: dict, modo: str) -> str:
     s.append(secao(
         "1. Sumário executivo",
         f'<div class="kpis">{kpis}</div>',
-        "<p>O dimensionamento por duas metodologias independentes chega a valores "
-        f"próximos (divergência de {R.pct(tri['divergencia'])}): "
+        ("<p>O dimensionamento por duas metodologias independentes chega a valores "
+         f"próximos (divergência de {R.pct(tri['divergencia'])}): "
+         if tri["convergente"] else
+         "<p>As duas metodologias divergem de forma relevante "
+         f"(divergência de {R.pct(tri['divergencia'])} — ver diagnóstico na seção 6): ")
+        + 
         f"{R.brl(td['sam'])} pelo recorte top-down da receita setorial oficial e "
         f"{R.brl(bu['sam'])} pelo bottom-up sobre o censo da base CNPJ "
         f"({R.inteiro(bu['n_icp'])} cadastros ICP, {R.inteiro(bu['n_operantes'])} operantes "
@@ -213,13 +217,54 @@ def gerar(config: dict, modo: str) -> str:
     s.append(secao("5. Tamanho de mercado — bottom-up (censo CNPJ)", *blocos_bu))
 
     cen = bu["cenarios"]
+    blocos_anc = []
+    if informal:
+        labor_share = config.get("labor_share", 0.55)
+        formal_labor = informal["n_formal"] * 3724.24 if False else None
+        rend_formal = None
+        # rendimento formal vem do CSV da PNAD (linha FORMAL)
+        import csv as _csv
+        from fontes.pnad import ARQ as _ARQ
+        for l in _csv.DictReader(open(_ARQ, encoding="utf-8")):
+            if l["uf"] == config["regiao"]["sigla"] and l["categoria"] == "FORMAL":
+                rend_formal = float(l["rendimento_medio_mensal"])
+        if rend_formal:
+            mercado_labor = informal["n_formal"] * rend_formal * 12 / labor_share
+            blocos_anc.append(
+                "<p><b>Diagnóstico por três âncoras independentes</b> (setores intensivos em "
+                "MEI, como beleza, são subcapturados pelo universo da PAS — a âncora "
+                "trabalhista dimensiona o mercado formal TOTAL):</p>"
+            )
+            blocos_anc.append(R.tabela(
+                ["Âncora", "O que mede", "Valor (SP/ano)"],
+                [
+                    ("Top-down PAS", "receita formal do universo de pesquisa do IBGE "
+                     "(≈ empresas do CEMPRE) — PISO do segmento corporativo", R.brl(td["sam"])),
+                    ("Bottom-up CNPJ", "empresas ME/EPP operantes × ticket "
+                     "(exclui MEI)", R.brl(bu["sam"])),
+                    ("Labor-input (PNAD)", f"{R.inteiro(informal['n_formal'])} trabalhadores "
+                     f"formais × rendimento × 12 ÷ participação do trabalho "
+                     f"({R.pct(labor_share, 0)} [premissa]) — mercado formal TOTAL, "
+                     "inclusive MEI", R.brl(mercado_labor)),
+                ],
+            ))
+            if not tri["convergente"] and mercado_labor > td["sam"] * 3:
+                blocos_anc.append(
+                    "<p>Leitura: a âncora trabalhista é múltiplas vezes maior que o top-down "
+                    "da PAS — indício forte de que a PAS cobre apenas a fatia corporativa "
+                    "deste setor. Para setores assim, o top-down preferencial é o lado da "
+                    "demanda (POF) ou o labor-input; o valor da PAS deve ser lido como piso, "
+                    "não como o mercado.</p>"
+                )
     s.append(secao(
         "6. Triangulação e cenários (TAM/SAM/SOM)",
         f"<p>{tri['leitura']}</p>",
+        *blocos_anc,
         R.grafico_funil([
             ("TAM", td["tam"], f"Brasil, top-down, {td['ano_base']}"),
             ("SAM", (td["sam"] + bu["sam"]) / 2,
-             f"média das metodologias (divergência {R.pct(tri['divergencia'])})"),
+             f"média das metodologias (divergência {R.pct(tri['divergencia'])})"
+             + ("" if tri["convergente"] else " — usar com cautela; ver diagnóstico acima")),
             ("SOM", som_base,
              f"cenário-base: {R.pct(cen['base']['taxa'])} de captura em {bu['horizonte_anos']} anos"),
         ]),
