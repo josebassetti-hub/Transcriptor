@@ -42,7 +42,7 @@ TESTES_CONEXAO = [
 #   2611 — PAS: receita por atividade em serviços prestados às famílias
 #   3615/6726 — POF: despesa média mensal familiar por tipo de despesa (demanda)
 #   6797 — PNAD-C: domicílios (para converter despesa familiar em mercado)
-TABELAS_CANDIDATAS = [2577, 6449, 993, 2611, 3615, 6726, 6797]
+TABELAS_CANDIDATAS = [3615, 4712, 6578]
 
 META_URL = "https://servicodados.ibge.gov.br/api/v3/agregados/{id}/metadados"
 
@@ -50,7 +50,7 @@ META_URL = "https://servicodados.ibge.gov.br/api/v3/agregados/{id}/metadados"
 # Palavras-chave do setor-piloto: o script varre as classificações das tabelas
 # procurando categorias cujo nome contenha algum destes termos, e imprime os
 # códigos exatos para colar na configuração do setor.
-PALAVRAS_CHAVE = ["cabeleireir", "beleza", "estetica", "manicur", "servicos pessoais", "familias", "total"]
+PALAVRAS_CHAVE = ["cabeleireir", "manicur", "domicilio", "total"]
 
 
 def baixar(url: str):

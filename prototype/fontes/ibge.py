@@ -88,3 +88,28 @@ def fracao_segmento(cliente, cfg: dict):
         prov["origem"] = prov_total["origem"]
         prov.setdefault("motivo", prov_total.get("motivo"))
     return fracao, ano, prov
+
+
+def demanda_pof(cliente, cfg: dict):
+    """Top-down de DEMANDA: despesa familiar com o setor (POF) x domicílios.
+
+    Para setores MEI-intensivos, o lado da demanda enxerga o mercado inteiro
+    (formal + informal) — docs/plano-fechamento-lacunas.md, lacuna 3/4.
+    Retorna dict com despesa mensal por família, ano da POF e proveniências.
+    """
+    total_mensal = 0.0
+    ano_pof = None
+    provs = []
+    for cat in cfg["categorias"]:
+        url = (
+            f"{BASE}/agregados/{cfg['agregado']}/periodos/{cfg['periodos']}/"
+            f"variaveis/{cfg['variavel']}?localidades={cfg['localidade']}"
+            f"&classificacao={cat['classificacao']}"
+        )
+        bruto, prov = cliente.buscar_json(url, fixture=cat["fixture"])
+        serie = _extrair_serie(bruto)
+        ano_pof = max(serie)
+        total_mensal += serie[ano_pof]
+        prov["fonte"] = cat["nome"] + " — " + cfg["citacao"]
+        provs.append(prov)
+    return {"despesa_mensal_familia": total_mensal, "ano_pof": ano_pof, "provs": provs}

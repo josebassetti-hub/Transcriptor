@@ -1,0 +1,35 @@
+[
+ {
+  "id": "2253",
+  "variavel": "Despesa monetária média mensal familiar — DADOS DE DEMONSTRAÇÃO (formato real da tabela 3615)",
+  "unidade": "Reais",
+  "resultados": [
+   {
+    "classificacoes": [
+     {
+      "id": "12190",
+      "nome": "Tipos de despesa",
+      "categoria": {
+       "103601": "2.1.10.2 Manicuro e pedicuro"
+      }
+     }
+    ],
+    "series": [
+     {
+      "localidade": {
+       "id": "1",
+       "nivel": {
+        "id": "N1",
+        "nome": "Brasil"
+       },
+       "nome": "Brasil"
+      },
+      "serie": {
+       "2018": "8.4"
+      }
+     }
+    ]
+   }
+  ]
+ }
+]
