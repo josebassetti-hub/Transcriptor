@@ -58,6 +58,34 @@ def gerar(config: dict, modo: str) -> str:
     cempre = None
     if config.get("bottomup_validacao"):
         cempre = ibge.contagem_empresas(cliente, config["bottomup_validacao"])
+    # região: de premissa única para triangulação de pesos públicos (mediana)
+    regiao_pesos = []
+    rm = config["topdown"].get("regiao_medida")
+    if rm:
+        regiao_pesos.append({"rotulo": "CNPJ", "valor": rm["cnpj_share"],
+                             "prov": None, "racional": rm["racional_cnpj"]})
+        if rm.get("cempre_brasil") and cempre:
+            ano_br, qtd_br, prov_br = ibge.contagem_empresas(
+                cliente, rm["cempre_brasil"])
+            if qtd_br:
+                regiao_pesos.append({
+                    "rotulo": "CEMPRE {}".format(ano_br),
+                    "valor": cempre[1] / qtd_br, "prov": prov_br,
+                    "racional": "empresas da classe na UF ÷ Brasil (IBGE)"})
+        rais = cnpj.rais_regiao(config)
+        if rais:
+            regiao_pesos.append({
+                "rotulo": "RAIS {}".format(rais["ano"]),
+                "valor": rais["share"], "prov": rais["proveniencia"],
+                "racional": "vínculos formais da subclasse na UF ÷ Brasil"})
+    if len(regiao_pesos) >= 2:
+        vals = sorted(p["valor"] for p in regiao_pesos)
+        n = len(vals)
+        mediana = vals[n // 2] if n % 2 else (vals[n // 2 - 1] + vals[n // 2]) / 2
+        config["topdown"]["participacao_regiao"] = mediana
+        config["topdown"]["racional_regiao"] = (
+            "DADO (mediana de {} pesos públicos independentes — "
+            "detalhe nesta seção)".format(n))
     dist_redes = cnpj.redes(config)
     informal = pnad.informalidade(config)
     demanda = None
@@ -138,8 +166,8 @@ def gerar(config: dict, modo: str) -> str:
 
     # 4-6. Tamanho de mercado
     anos = sorted(receita)
-    s.append(secao(
-        "4. Tamanho de mercado — top-down",
+    regiao_dado = len(regiao_pesos) >= 2
+    blocos_td = [
         f"<p>A receita nacional do setor somou <b>{R.brl(td['tam'])}</b> em {td['ano_base']}"
         + (f", com CAGR de <b>{R.pct(td['cagr'])}</b> desde {anos[0]}" if td["cagr"] else "")
         + f". Aplicando a participação do segmento ({R.pct(td['premissas']['participacao_segmento'],0)}) "
@@ -148,10 +176,26 @@ def gerar(config: dict, modo: str) -> str:
         R.tabela(["Ano", "Receita (R$)"], [(a, R.brl(receita[a])) for a in anos]),
         f'<p class="premissas">{"Segmento (DADO oficial)" if prov_segmento else "Premissas: segmento"} — '
         f'{td["premissas"]["racional_segmento"]}; '
-        f'região (premissa) — {td["premissas"]["racional_regiao"]}.</p>',
-        R.selo_fonte(prov_ibge),
-        R.selo_fonte(prov_segmento) if prov_segmento else "",
-    ))
+        f'região ({"DADO triangulado" if regiao_dado else "premissa"}) — '
+        f'{td["premissas"]["racional_regiao"]}.</p>',
+    ]
+    if regiao_dado:
+        blocos_td.append(
+            "<p><b>Participação regional triangulada</b> — pesos públicos "
+            "independentes (a mediana entra no SAM; o intervalo mostra a "
+            "incerteza da chave regional):</p>"
+        )
+        blocos_td.append(R.tabela(
+            ["Peso", "Participação de " + config["regiao"]["sigla"], "Base"],
+            [(p["rotulo"], R.pct(p["valor"]), p["racional"]) for p in regiao_pesos],
+        ))
+    blocos_td.append(R.selo_fonte(prov_ibge))
+    if prov_segmento:
+        blocos_td.append(R.selo_fonte(prov_segmento))
+    for p in regiao_pesos:
+        if p["prov"]:
+            blocos_td.append(R.selo_fonte(p["prov"]))
+    s.append(secao("4. Tamanho de mercado — top-down", *blocos_td))
 
     nota_secundaria = ""
     n_sec = config["icp"].get("empresas_somente_cnae_secundario")
@@ -385,39 +429,79 @@ def gerar(config: dict, modo: str) -> str:
             "anteriores — provável atraso de registro de baixas no cadastro (o número tende a "
             "ser revisado para cima), e não melhora real do setor.</p>"
         )
+    revisao = cnpj.fator_revisao()
+    if revisao:
+        blocos_din.append(
+            f"<p><b>Lag de baixas medido:</b> entre as extrações {revisao['de']} e "
+            f"{revisao['para']}, os fechamentos de {revisao['ano']} foram revisados em "
+            f"{revisao['fator'] - 1:+.1%} — fator aplicável como correção de leitura do "
+            "último ano da série.</p>"
+        )
+    else:
+        blocos_din.append(
+            '<p class="premissas">Monitoramento do lag de baixas: a extração '
+            f'{config.get("cnpj_extracao", "atual")[:7]} está arquivada como base '
+            "(dados/vintages/); o fator de revisão dos fechamentos passa a ser medido a cada "
+            "nova extração mensal. Referência externa de fluxo: Mapa de Empresas — boletim "
+            "quadrimestral oficial de aberturas, baixas e tempo de baixa (Ministério do "
+            "Empreendedorismo; não cobre MEI) · "
+            "https://www.gov.br/empresas-e-negocios/pt-br/mapa-de-empresas</p>"
+        )
     blocos_din.append(R.selo_fonte(prov_cnpj))
     s.append(secao("7. Dinâmica do mercado-alvo", *blocos_din))
 
     # 7b. Dimensionamento por atividade (estudos multi-CNAE com mix de receita)
     if config.get("atividades"):
         sam_medio = sam_central
+        expansao = None
+        if config["icp"].get("peso_receita_secundaria") and conc_atividades:
+            expansao = {
+                "taxa_atividade": config["icp"].get("taxa_atividade", 1.0),
+                "ticket": config["icp"]["ticket_medio_anual_brl"],
+                "peso_secundaria": config["icp"]["peso_receita_secundaria"],
+            }
         linhas_atv = sizing.por_atividade(sam_medio, som_base, config["atividades"],
-                                          conc_atividades)
+                                          conc_atividades, expansao)
         corpo_atv = [(
             "<p>Cada atividade é dimensionada como um mercado próprio; a receita-alvo é "
             "distribuída pelo mix do plano do cliente e o <b>share implícito</b> por "
             "atividade testa o realismo do plano (metodologia em docs/metodologia-v3.md). "
             "Concorrentes por atividade contam CNAE principal e secundário, sem dupla "
-            "contagem.</p>"
+            "contagem."
+            + (" O SAM é publicado como <b>faixa</b>: conservador (só CNAE principal) ↔ "
+               "expandido (somando as empresas com o CNAE apenas como atividade "
+               "secundária, ponderadas pelo mix de receita)." if expansao else "")
+            + "</p>"
         )]
-        cab = ["Atividade", "Mix de receita", "SAM da atividade", "Receita-alvo (SOM)",
-               "Share implícito", "Concorrentes (principal / +secundária)"]
+        tem_exp = expansao and any(l["sam_expandido"] for l in linhas_atv)
+        cab = ["Atividade", "Mix de receita",
+               ("SAM (conservador ↔ expandido)" if tem_exp else "SAM da atividade"),
+               "Receita-alvo (SOM)",
+               ("Share implícito (cons. ↔ exp.)" if tem_exp else "Share implícito"),
+               "Concorrentes (principal / +secundária)"]
         linhas_tab = []
         for l in linhas_atv:
             conc_txt = (
                 f"{R.inteiro(l['concorrentes_principal'])} / +{R.inteiro(l['concorrentes_secundaria'])}"
                 if l["concorrentes_principal"] is not None else "aguardando consulta E"
             )
+            sam_txt = R.brl(l["sam_atividade"])
+            share_txt = R.pct(l["share_implicito"], 2)
+            if l["sam_expandido"]:
+                sam_txt += f" ↔ {R.brl(l['sam_expandido'])}"
+                share_txt += f" ↔ {R.pct(l['share_expandido'], 2)}"
             linhas_tab.append((
                 f"{l['cnae']} — {l['descricao']}", R.pct(l["peso_receita"], 0),
-                R.brl(l["sam_atividade"]), R.brl(l["receita_alvo"]),
-                R.pct(l["share_implicito"], 2), conc_txt,
+                sam_txt, R.brl(l["receita_alvo"]), share_txt, conc_txt,
             ))
         corpo_atv.append(R.tabela(cab, linhas_tab))
         corpo_atv.append(
             '<p class="premissas">Premissa participacao_sam por atividade declarada no '
             'arquivo do setor; share implícito = receita-alvo da atividade ÷ SAM da '
-            'atividade.</p>'
+            'atividade.'
+            + (f' Expansão por CNAE secundário: {config["icp"].get("racional_secundaria", "")}'
+               if expansao else '')
+            + '</p>'
         )
         s.append(secao("7b. Dimensionamento por atividade e projeção de receita", *corpo_atv))
 
@@ -444,25 +528,71 @@ def gerar(config: dict, modo: str) -> str:
             R.selo_fonte(informal["proveniencia"]),
         ))
 
-    # 8. Limitações e fontes
+    # 8. Limitações e fontes — a lista reflete o que já foi fechado com dado
+    # (plano e benchmark de mercado: docs/plano-fechamento-lacunas.md)
+    itens_lim = [
+        "CNPJ ativo não significa empresa operante; a adesão ao Simples é usada como proxy "
+        "MEDIDO de operação, mas o score multi-sinal (snapshots, presença viva, IE) da "
+        "Onda 2 do plano de lacunas ainda não está ativo.",
+        "A informalidade do setor não é capturada pela base CNPJ"
+        + (" (dimensionada na seção 7c via PNAD Contínua)." if informal
+           else " — mensurável via PNAD Contínua (consulta F)."),
+    ]
+    if regiao_dado:
+        itens_lim.append(
+            "As participações do top-down deixaram de ser premissas: segmento é DADO "
+            "(PAS 2611) e região é triangulação de pesos públicos (seção 4) — a revisão "
+            "com o cliente segue recomendada para recortes fora do padrão."
+        )
+    else:
+        itens_lim.append(
+            "As participações de segmento e região do top-down são premissas curadas por "
+            "setor e devem ser revisadas com o cliente."
+        )
+    itens_lim.append(
+        "Este protótipo não inclui share de varejo (Nielsen/Kantar) nem pesquisa primária "
+        "— o caminho mapeado é alt-data (ICVA/Índice Stone) e survey embutido "
+        "(plano de lacunas, Onda 3)."
+    )
+    if config["icp"].get("peso_receita_secundaria") and conc_atividades:
+        itens_lim.append(
+            "Empresas com o CNAE apenas como atividade secundária: publicadas como FAIXA "
+            "na seção 7b (conservador ↔ expandido, ponderação pelo mix de receita "
+            "[premissa declarada])."
+        )
+    else:
+        itens_lim.append(
+            "Empresas com o CNAE do setor apenas como atividade secundária não entram na "
+            "contagem principal (faixa conservadora; ver nota na seção 5)."
+        )
+    itens_lim.append(
+        "Fechamentos do último ano tendem a ser revisados para cima (atraso de registro "
+        "de baixas)"
+        + ("; o fator de revisão já é medido entre extrações arquivadas (seção 7)."
+           if revisao else
+           "; a medição do fator de revisão entre extrações mensais foi iniciada "
+           "(dados/vintages/, seção 7).")
+    )
+    if config.get("cnpj_idade_matriz"):
+        itens_lim.append(
+            "Idade da empresa medida pelo estabelecimento matriz (consulta A4) — a faixa "
+            "etária reflete a empresa, não cada filial."
+        )
+    else:
+        itens_lim.append(
+            "A faixa de idade é do estabelecimento; empresas com matriz e filiais de idades "
+            "distintas podem aparecer em mais de uma faixa (efeito marginal — a consulta A4 "
+            "corrige pela idade da matriz)."
+        )
+    itens_lim.append(
+        "Lucro Presumido e Lucro Real não são distinguíveis em dados públicos (sigilo "
+        "fiscal) — aparecem agrupados como Fora do Simples; abrir essa dimensão exige "
+        "enriquecimento pago por CNPJ (inferência via NF-e/Sintegra de vendors), mapeado "
+        "como add-on."
+    )
     s.append(secao(
         "8. Limitações declaradas",
-        "<ul>"
-        "<li>CNPJ ativo não significa empresa operante; o recorte por situação cadastral, idade "
-        "e porte mitiga, mas não elimina, a superestimação do universo.</li>"
-        "<li>A informalidade do setor não é capturada pela base CNPJ" + (" (dimensionada na seção 7c via PNAD Contínua)." if informal else " — mensurável via PNAD Contínua (consulta F; ver docs/plano-fechamento-lacunas.md).") + "</li>"
-        "<li>As participações de segmento e região do top-down são premissas curadas por setor "
-        "e devem ser revisadas com o cliente.</li>"
-        "<li>Este protótipo não inclui share de varejo (Nielsen/Kantar) nem pesquisa primária.</li>"
-        "<li>Empresas com o CNAE do setor apenas como atividade secundária não entram na "
-        "contagem principal (faixa conservadora; ver nota na seção 5).</li>"
-        "<li>Fechamentos do último ano tendem a ser revisados para cima (atraso de registro "
-        "de baixas no cadastro).</li>"
-        "<li>A faixa de idade é do estabelecimento; empresas com matriz e filiais de idades "
-        "distintas podem aparecer em mais de uma faixa (efeito marginal).</li>"
-        "<li>Lucro Presumido e Lucro Real não são distinguíveis em dados públicos (sigilo "
-        "fiscal) — aparecem agrupados como Fora do Simples.</li>"
-        "</ul>",
+        "<ul>" + "".join(f"<li>{i}</li>" for i in itens_lim) + "</ul>",
     ))
 
     meta = {
@@ -475,6 +605,9 @@ def gerar(config: dict, modo: str) -> str:
     provs = [prov_ibge, prov_cnpj] + [prov for _, prov in series_macro]
     if cempre:
         provs.append(cempre[2])
+    for p in regiao_pesos:
+        if p["prov"]:
+            provs.append(p["prov"])
     tem_demo = any(p["origem"] == "fixture" for p in provs)
     return R.montar(s, meta, tem_demo=tem_demo)
 

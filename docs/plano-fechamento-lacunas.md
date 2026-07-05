@@ -182,3 +182,58 @@ viram intervalos com dado.
 confirmações, concentrados nas lacunas 1–2; lacunas 3–4 com fontes citadas e verificação pendente).
 Documentos relacionados: `auditoria-numeros-piloto.md`, `metodologia-v3.md`,
 `especificacao-produto-mvp.md`.*
+
+---
+
+# Parte 2 — as limitações 5–8 (pesquisa 05/07/2026)
+
+As auditorias do piloto acrescentaram 4 limitações às 4 originais. Benchmark e fechamento:
+
+## Limitação 5 — CNAE secundário fora da contagem principal
+
+- **Mercado:** plataformas de prospecção B2B ([Econodata](https://www.econodata.com.br/consulta-cnae),
+  Speedio, Casa dos Dados) tratam o filtro por CNAE secundário como recurso padrão — para LISTAS.
+  Para SIZING, nenhum player publica método; o correto é ponderar pela receita da atividade.
+- **Fechado na ferramenta:** a seção 7b publica o SAM por atividade como **faixa** — conservador
+  (só CNAE principal) ↔ expandido (empresas só-secundárias × taxa de atividade × ticket × peso de
+  receita 15% [premissa do mix 40/15, declarada]). Dados da consulta E.
+
+## Limitação 6 — lag de registro de baixas (fechamentos revisados para cima)
+
+- **Mercado:** vendors de dados cadastrais mantêm *vintages* (fotografias mensais) e medem a
+  revisão entre elas; a estatística oficial de fluxo é o
+  [Mapa de Empresas](https://www.gov.br/empresas-e-negocios/pt-br/mapa-de-empresas) (boletim
+  quadrimestral: aberturas, baixas, tempo de baixa; não cobre MEI).
+- **Fechado na ferramenta:** extração 2026-06 arquivada em `dados/vintages/`; `cnpj.fator_revisao()`
+  compara a extração mais antiga com a mais nova e o relatório passa a exibir o fator medido
+  ("fechamentos de X revisados em +Y%"). Selo de referência ao Mapa de Empresas na seção 7.
+
+## Limitação 7 — faixa de idade por estabelecimento (matriz × filiais)
+
+- **Mercado:** padrão D&B/"year founded" — a idade da EMPRESA é a do estabelecimento matriz.
+- **Fechado na ferramenta:** consulta **A4** (mesmo agregado da A3, com
+  `MIN(data_inicio_atividade)` da matriz como idade da empresa). Flag `cnpj_idade_matriz` no JSON
+  do setor troca o texto da limitação quando o CSV vier da A4.
+
+## Limitação 8 — Lucro Presumido × Lucro Real (sigilo fiscal)
+
+- **Confirmado:** não existe consulta pública ([Contabilizei](https://www.contabilizei.com.br/contabilizei-responde/como-consultar-o-regime-tributario-de-uma-empresa/),
+  [Oobj](https://oobj.com.br/bc/como-consultar-regime-tributario-empresa/)) — só Simples/MEI são
+  públicos. Vendors ([dbdireto](https://dbdireto.com.br/consulta-regime-tributario/), BigDataCorp)
+  vendem o regime inferido via NF-e (campo CRT), Sintegra/regime de apuração estadual e códigos
+  de DARF.
+- **Na ferramenta:** dado público = proxy por porte (declarado, docs/metodologia-v3.md), grupo
+  "Fora do Simples". Add-on de produto: enriquecimento pago por CNPJ para estudos premium.
+
+## Status consolidado das 8 limitações
+
+| # | Limitação | Status |
+|---|---|---|
+| 1 | CNPJ ativo ≠ operante | MITIGADA (proxy Simples MEDIDO 30,8%); score multi-sinal = Onda 2 |
+| 2 | Informalidade | **FECHADA** (seção 7c, PNAD labor input) |
+| 3 | Segmento e região premissas | **FECHADA** (PAS 2611 + triangulação regional CNPJ/CEMPRE/RAIS) |
+| 4 | Share varejo / pesquisa primária | ABERTA por natureza (alt-data + survey = Onda 3; painéis pagos) |
+| 5 | CNAE secundário | **FECHADA** (faixa conservador ↔ expandido na 7b) |
+| 6 | Lag de baixas | EM MEDIÇÃO (vintages iniciados; fator automático na 2ª extração) |
+| 7 | Idade matriz × filial | **FECHADA** (consulta A4 — aguarda 1 rodada no BigQuery) |
+| 8 | Presumido × Real | LIMITE LEGAL (proxy por porte declarado; add-on pago mapeado) |

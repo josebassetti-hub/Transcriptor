@@ -35,8 +35,11 @@
     "racional_ticket": "Ancorado no ticket implícito das fontes oficiais: SAM top-down (PAS x premissas) ÷ empresas operantes (ICP optante do Simples) ~= R$ 167 mil/ano; usado R$ 180 mil (viés de subdeclaração fiscal); sensibilidade na seção 6",
     "taxa_atividade": 0.31,
     "racional_atividade": "MEDIDO (consulta A3): 30,8% do ICP (24.738 de 80.371 empresas ME/EPP com 2+ anos) é optante do Simples Nacional — para serviços, empresas operantes quase sempre optam pelo Simples, então a adesão é usada como proxy de operação real; MEs fora do Simples são majoritariamente cascas dormentes. Piso de referência: CEMPRE 2021 (12,9 mil empresas).",
-    "empresas_somente_cnae_secundario": 132608
+    "empresas_somente_cnae_secundario": 132608,
+    "peso_receita_secundaria": 0.15,
+    "racional_secundaria": "Mix de receita do estudo multi-CNAE (40% principal + 15% por secundário): empresa com o CNAE só como atividade secundária fatura ~15% dele [premissa declarada]"
   },
+  "cnpj_idade_matriz": false,
   "captura": {
     "pessimista": 0.002,
     "base": 0.005,
@@ -58,6 +61,19 @@
     "racional_segmento": "Fração de estética/beleza dentro do grupo 'Serviços pessoais' da PAS (que também inclui lavanderias, atividades funerárias etc.) — premissa curada, a refinar com a abertura por classe da PAS",
     "participacao_regiao": 0.32,
     "racional_regiao": "Participação de SP no mercado nacional, proxy pela participação de SP nos estabelecimentos ativos do CNAE (base CNPJ)",
+    "regiao_medida": {
+      "cnpj_share": 0.32,
+      "racional_cnpj": "participação de SP nos estabelecimentos ativos do CNAE (base CNPJ)",
+      "cempre_brasil": {
+        "agregado": "6449",
+        "periodos": "-1",
+        "variavel": "2585",
+        "localidade": "N1[all]",
+        "classificacao": "12762[117885]",
+        "fixture": "ibge_cempre_9602_br.json",
+        "citacao": "IBGE — CEMPRE, tabela SIDRA 6449, variável 2585 (nº de empresas e outras organizações), classe 96.02-5, Brasil"
+      }
+    },
     "segmento_dado": {
       "agregado": "2611",
       "periodos": "-1",

@@ -1,0 +1,22 @@
+[
+  {
+    "id": "2585",
+    "variavel": "Número de empresas e outras organizações — DADOS DE DEMONSTRAÇÃO (formato real da tabela 6449, Brasil)",
+    "unidade": "Unidades",
+    "resultados": [
+      {
+        "series": [
+          {
+            "localidade": {
+              "id": "1",
+              "nome": "Brasil"
+            },
+            "serie": {
+              "2021": "42000"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

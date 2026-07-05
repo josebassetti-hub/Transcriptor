@@ -109,25 +109,40 @@ def triangulacao(sam_topdown: float, sam_bottomup: float) -> dict:
     }
 
 
-def por_atividade(sam_total, receita_alvo_total, atividades, concorrencia=None):
+def por_atividade(sam_total, receita_alvo_total, atividades, concorrencia=None,
+                  expansao=None):
     """Dimensionamento multi-CNAE: para cada atividade do estudo, o SAM da
     atividade (premissa participacao_sam sobre o SAM total), a receita-alvo
     pelo mix do cliente (peso_receita) e o share implícito — o teste de
     realismo do plano por atividade (docs/metodologia-v3.md, seção 4).
+
+    expansao ({taxa_atividade, ticket, peso_secundaria}): quando presente e há
+    contagem de concorrentes só-secundários, calcula também o SAM EXPANDIDO da
+    atividade — o conservador (só CNAE principal) mais a receita atribuível às
+    empresas com o CNAE apenas como atividade secundária, ponderada pelo mix
+    de receita (a limitação de CNAE secundário vira faixa publicada).
     """
     linhas = []
     for atv in atividades:
         sam_atv = sam_total * atv["participacao_sam"]
         receita_alvo = receita_alvo_total * atv["peso_receita"]
         conc = (concorrencia or {}).get(atv["cnae"])
+        sam_expandido = None
+        if conc and expansao:
+            adicional = (conc[1] * expansao["taxa_atividade"]
+                         * expansao["ticket"] * expansao["peso_secundaria"])
+            sam_expandido = sam_atv + adicional
         linhas.append({
             "cnae": atv["cnae"],
             "descricao": atv["descricao"],
             "peso_receita": atv["peso_receita"],
             "participacao_sam": atv["participacao_sam"],
             "sam_atividade": sam_atv,
+            "sam_expandido": sam_expandido,
             "receita_alvo": receita_alvo,
             "share_implicito": receita_alvo / sam_atv if sam_atv else 0.0,
+            "share_expandido": (receita_alvo / sam_expandido
+                                if sam_expandido else None),
             "concorrentes_principal": conc[0] if conc else None,
             "concorrentes_secundaria": conc[1] if conc else None,
         })

@@ -144,3 +144,70 @@ def atividades_concorrencia(config: dict):
         l["cnae"]: (int(l["empresas_principal"]), int(l["empresas_somente_secundaria"]))
         for l in _ler_csv("cnpj_atividades_demo.csv")
     }
+
+
+def rais_regiao(config: dict):
+    """Peso regional pela RAIS (consulta G): vínculos formais da subclasse por UF.
+
+    Participação da região = vínculos da UF ÷ soma de todas as UFs. Retorna
+    None enquanto o CSV não existir (o peso fica fora da triangulação).
+    """
+    caminho = DIR_DADOS / "rais_regiao_demo.csv"
+    if not caminho.exists():
+        return None
+    linhas = _ler_csv("rais_regiao_demo.csv")
+    uf = config["regiao"]["sigla"]
+    ano = max(l["ano"] for l in linhas)
+    total = sum(int(l["vinculos"]) for l in linhas if l["ano"] == ano)
+    da_uf = sum(int(l["vinculos"]) for l in linhas
+                if l["ano"] == ano and l["sigla_uf"] == uf)
+    if not total:
+        return None
+    return {
+        "ano": ano,
+        "vinculos_uf": da_uf,
+        "vinculos_total": total,
+        "share": da_uf / total,
+        "proveniencia": {
+            "origem": "live",
+            "fonte": ("Ministério do Trabalho — RAIS (vínculos ativos da subclasse "
+                      f"CNAE, via Base dos Dados), ano {ano}"),
+            "url": "https://basedosdados.org/dataset/br-me-rais",
+            "consultado_em": config.get("cnpj_extracao", "consulta G"),
+        },
+    }
+
+
+def fator_revisao():
+    """Revisão dos fechamentos entre extrações mensais arquivadas (vintages).
+
+    Compara a extração mais antiga e a mais nova em dados/vintages/ para o ano
+    mais recente comum: fechamentos sobem entre extrações porque baixas são
+    registradas com atraso. Retorna None com menos de 2 extrações.
+    """
+    pasta = DIR_DADOS / "vintages"
+    arquivos = sorted(pasta.glob("cnpj_dinamica_*.csv")) if pasta.exists() else []
+    if len(arquivos) < 2:
+        return None
+
+    def _fech_por_ano(caminho):
+        agg = {}
+        with open(caminho, newline="", encoding="utf-8") as fh:
+            for l in csv.DictReader(fh):
+                agg[l["ano"]] = agg.get(l["ano"], 0) + int(l["fechamentos"])
+        return agg
+
+    antiga, nova = arquivos[0], arquivos[-1]
+    fe_antiga, fe_nova = _fech_por_ano(antiga), _fech_por_ano(nova)
+    comuns = sorted(set(fe_antiga) & set(fe_nova))
+    if not comuns:
+        return None
+    ano = comuns[-1]
+    if not fe_antiga[ano]:
+        return None
+    return {
+        "ano": ano,
+        "fator": fe_nova[ano] / fe_antiga[ano],
+        "de": antiga.stem.replace("cnpj_dinamica_", ""),
+        "para": nova.stem.replace("cnpj_dinamica_", ""),
+    }
