@@ -14,6 +14,7 @@ import gzip
 import hashlib
 import json
 import time
+import urllib.error
 import urllib.request
 from pathlib import Path
 
@@ -83,8 +84,23 @@ class ClienteHTTP:
             "User-Agent": "Mozilla/5.0 (compatible; prototipo-pesquisa-mercado/0.1)",
             "Accept": "application/json",
         })
-        with urllib.request.urlopen(req, timeout=TIMEOUT_S) as resp:
-            bruto = resp.read()
+        try:
+            with urllib.request.urlopen(req, timeout=TIMEOUT_S) as resp:
+                bruto = resp.read()
+        except urllib.error.HTTPError as exc:
+            # APIs do IBGE explicam o problema no corpo do erro (ex.: parâmetro
+            # inválido) — sem isso o diagnóstico do 400/500 fica às cegas
+            corpo = b""
+            try:
+                corpo = exc.read()
+            except Exception:
+                pass
+            if corpo[:2] == b"\x1f\x8b":
+                corpo = gzip.decompress(corpo)
+            detalhe = corpo.decode("utf-8", "replace").strip()[:300]
+            raise FonteIndisponivel(
+                f"HTTP {exc.code} ({exc.reason}): {detalhe}" if detalhe
+                else f"HTTP {exc.code} ({exc.reason})")
         if bruto[:2] == b"\x1f\x8b":  # algumas respostas do IBGE chegam gzipadas
             bruto = gzip.decompress(bruto)
         dados = json.loads(bruto.decode("utf-8"))
