@@ -111,6 +111,23 @@ def _extrair_apisidra(resposta):
     return dict(sorted(valores.items()))
 
 
+def domicilios(cliente, cfg: dict):
+    """Nº de domicílios particulares permanentes ocupados (Censo 2022, tab. 4712).
+
+    Converte a despesa média mensal familiar (POF) em mercado total de demanda.
+    Retorna (ano, valor, proveniencia) do período mais recente disponível.
+    """
+    url = (
+        f"{BASE}/agregados/{cfg['agregado']}/periodos/{cfg['periodos']}/"
+        f"variaveis/{cfg['variavel']}?localidades={cfg['localidade']}"
+    )
+    bruto, prov = cliente.buscar_json(url, fixture=cfg["fixture"])
+    serie = _extrair_serie(bruto)
+    ano = max(serie)
+    prov["fonte"] = cfg["citacao"]
+    return ano, serie[ano], prov
+
+
 def demanda_pof(cliente, cfg: dict):
     """Top-down de DEMANDA: despesa familiar com o setor (POF) x domicílios.
 
@@ -131,16 +148,22 @@ def demanda_pof(cliente, cfg: dict):
             f"variaveis/{cfg['variavel']}?localidades={cfg['localidade']}"
             f"&classificacao={cat['classificacao']}"
         )
+        # A API clássica exige TODAS as dimensões da tabela no caminho (a 3615
+        # tem também "classes de rendimento" — o total vai em
+        # sidra_dimensoes_fixas) e não aceita query string: JSON já é o padrão.
+        dims_fixas = ""
+        for dim in cfg.get("sidra_dimensoes_fixas", []):
+            d_cls, d_cat = dim.replace("]", "").split("[")
+            dims_fixas += f"/c{d_cls}/{d_cat}"
         url_sidra = (
             f"https://apisidra.ibge.gov.br/values/t/{cfg['agregado']}/n1/all/"
-            f"v/{cfg['variavel']}/p/last/c{cls_id}/{cat_id}?formato=json"
+            f"v/{cfg['variavel']}/p/last/c{cls_id}/{cat_id}{dims_fixas}"
         )
         bruto, prov = cliente.buscar_json_variantes([url_v3, url_sidra],
                                                     fixture=cat["fixture"])
-        if isinstance(bruto, list) and bruto and isinstance(bruto[0], dict)                 and "V" not in bruto[0] and any("V" in l for l in bruto[1:2]):
-            serie = _extrair_apisidra(bruto)
-        elif isinstance(bruto, list) and bruto and "resultados" in bruto[0]:
-            serie = _extrair_serie(bruto)
+        if isinstance(bruto, list) and bruto and isinstance(bruto[0], dict) \
+                and "resultados" in bruto[0]:
+            serie = _extrair_serie(bruto)  # formato da API de agregados v3
         else:
             serie = _extrair_apisidra(bruto)
         ano_pof = max(serie)

@@ -125,9 +125,16 @@
       }
     ],
     "citacao": "IBGE — POF, tabela SIDRA 3615, variável 2253 (despesa monetária média mensal familiar)",
+    "sidra_dimensoes_fixas": [
+      "540[17777]"
+    ],
     "domicilios": {
-      "valor": 14000000,
-      "fonte": "DEMONSTRAÇÃO — nº de domicílios de SP a substituir pelo Censo 2022/PNAD-C (descoberta em andamento)"
+      "agregado": "4712",
+      "periodos": "-1",
+      "variavel": "381",
+      "localidade": "N3[35]",
+      "fixture": "ibge_censo_domicilios_sp.json",
+      "citacao": "IBGE — Censo Demográfico 2022, tabela SIDRA 4712, variável 381 (domicílios particulares permanentes ocupados), São Paulo"
     },
     "nota_regional": "Despesa média nacional aplicada aos domicílios de SP (SP tende a gastar acima da média — âncora conservadora; premissa declarada)"
   }

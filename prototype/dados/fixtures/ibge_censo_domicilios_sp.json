@@ -1,0 +1,22 @@
+[
+  {
+    "id": "4712",
+    "variavel": "Domicílios particulares permanentes ocupados",
+    "unidade": "Unidades",
+    "resultados": [
+      {
+        "series": [
+          {
+            "localidade": {
+              "id": "35",
+              "nome": "São Paulo"
+            },
+            "serie": {
+              "2022": "14000000"
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
