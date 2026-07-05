@@ -90,24 +90,59 @@ def fracao_segmento(cliente, cfg: dict):
     return fracao, ano, prov
 
 
+def _extrair_apisidra(resposta):
+    """Extrai (ano, valor) do formato da API SIDRA clássica (apisidra.ibge.gov.br).
+
+    A resposta é uma lista: a primeira linha é o cabeçalho {chave: rótulo};
+    as demais trazem "V" (valor) e as dimensões D*N. O ano é a chave cujo
+    rótulo no cabeçalho é "Ano" (ou similar)."""
+    cabecalho, linhas = resposta[0], resposta[1:]
+    chave_ano = None
+    for k, rotulo in cabecalho.items():
+        if k.endswith("N") and str(rotulo).lower().startswith("ano"):
+            chave_ano = k
+    valores = {}
+    for l in linhas:
+        v = l.get("V")
+        if v in ("...", "-", "..", None):
+            continue
+        ano = l.get(chave_ano, "?") if chave_ano else "?"
+        valores[str(ano)[:4]] = float(v)
+    return dict(sorted(valores.items()))
+
+
 def demanda_pof(cliente, cfg: dict):
     """Top-down de DEMANDA: despesa familiar com o setor (POF) x domicílios.
 
     Para setores MEI-intensivos, o lado da demanda enxerga o mercado inteiro
     (formal + informal) — docs/plano-fechamento-lacunas.md, lacuna 3/4.
+    Tabelas antigas da POF retornam HTTP 500 na API de agregados v3, então o
+    conector tenta também a API SIDRA clássica (apisidra.ibge.gov.br), que
+    serve as mesmas tabelas em outro formato.
     Retorna dict com despesa mensal por família, ano da POF e proveniências.
     """
     total_mensal = 0.0
     ano_pof = None
     provs = []
     for cat in cfg["categorias"]:
-        url = (
+        cls_id, cat_id = cat["classificacao"].replace("]", "").split("[")
+        url_v3 = (
             f"{BASE}/agregados/{cfg['agregado']}/periodos/{cfg['periodos']}/"
             f"variaveis/{cfg['variavel']}?localidades={cfg['localidade']}"
             f"&classificacao={cat['classificacao']}"
         )
-        bruto, prov = cliente.buscar_json(url, fixture=cat["fixture"])
-        serie = _extrair_serie(bruto)
+        url_sidra = (
+            f"https://apisidra.ibge.gov.br/values/t/{cfg['agregado']}/n1/all/"
+            f"v/{cfg['variavel']}/p/last/c{cls_id}/{cat_id}?formato=json"
+        )
+        bruto, prov = cliente.buscar_json_variantes([url_v3, url_sidra],
+                                                    fixture=cat["fixture"])
+        if isinstance(bruto, list) and bruto and isinstance(bruto[0], dict)                 and "V" not in bruto[0] and any("V" in l for l in bruto[1:2]):
+            serie = _extrair_apisidra(bruto)
+        elif isinstance(bruto, list) and bruto and "resultados" in bruto[0]:
+            serie = _extrair_serie(bruto)
+        else:
+            serie = _extrair_apisidra(bruto)
         ano_pof = max(serie)
         total_mensal += serie[ano_pof]
         prov["fonte"] = cat["nome"] + " — " + cfg["citacao"]
