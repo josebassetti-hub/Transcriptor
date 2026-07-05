@@ -65,6 +65,10 @@ def gerar(config: dict, modo: str) -> str:
         demanda = ibge.demanda_pof(cliente, config["topdown_demanda"])
         demanda["domicilios"] = ibge.domicilios(
             cliente, config["topdown_demanda"]["domicilios"])
+        # inflator integral: IPCA acumulado desde o ano de referência da POF
+        demanda["ipca_pof"] = bcb.serie_sgs_periodo(
+            cliente, 433, "IPCA — variação mensal (%)",
+            "15/01/{}".format(str(demanda["ano_pof"])[:4]))
     conc_atividades = cnpj.atividades_concorrencia(config)
 
     # ---- compute -------------------------------------------------------------
@@ -267,19 +271,19 @@ def gerar(config: dict, modo: str) -> str:
                 )
     if demanda:
         cfg_d = config["topdown_demanda"]
-        # inflator parcial com os meses de IPCA já coletados (janela declarada)
-        ipca_pontos = series_macro[1][0] if len(series_macro) > 1 else []
+        ipca_pontos, prov_ipca = demanda["ipca_pof"]
         fator_ipca = 1.0
         for _, v in ipca_pontos:
             fator_ipca *= 1 + v / 100
+        ano_pof4 = str(demanda["ano_pof"])[:4]
         ano_dom, n_dom, prov_dom = demanda["domicilios"]
         mercado_demanda = (demanda["despesa_mensal_familia"] * 12 * n_dom * fator_ipca)
         blocos_anc.append(
             f"<p><b>Âncora de demanda (POF):</b> despesa média mensal familiar com o setor de "
             f"{R.brl(demanda['despesa_mensal_familia'])} (POF {demanda['ano_pof']}) × "
-            f"{R.inteiro(n_dom)} domicílios (Censo {ano_dom}) × 12, corrigida pelo IPCA da "
-            f"janela coletada "
-            f"(fator {fator_ipca:.2f}, {len(ipca_pontos)} meses [parcial — janela declarada]) "
+            f"{R.inteiro(n_dom)} domicílios (Censo {ano_dom}) × 12, corrigida pelo IPCA "
+            f"acumulado desde jan/{ano_pof4} "
+            f"(fator {fator_ipca:.2f}, {len(ipca_pontos)} meses) "
             f"= <b>{R.brl(mercado_demanda)}</b>/ano. O lado da demanda enxerga o mercado "
             "inteiro (formal + informal), mas a POF tende a subdeclarar despesas pessoais — "
             "ler como piso da demanda. "
@@ -288,6 +292,7 @@ def gerar(config: dict, modo: str) -> str:
         for prov_d in demanda["provs"]:
             blocos_anc.append(R.selo_fonte(prov_d))
         blocos_anc.append(R.selo_fonte(prov_dom))
+        blocos_anc.append(R.selo_fonte(prov_ipca))
     s.append(secao(
         "6. Triangulação e cenários (TAM/SAM/SOM)",
         f"<p>{tri['leitura']}</p>",

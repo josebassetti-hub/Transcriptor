@@ -32,3 +32,27 @@ def serie_sgs(cliente, codigo: int, nome: str, ultimos: int = 24):
     pontos = [(p["data"][3:], float(p["valor"])) for p in bruto][-ultimos:]
     prov["fonte"] = f"Banco Central do Brasil — SGS série {codigo} ({nome})"
     return pontos, prov
+
+
+def serie_sgs_periodo(cliente, codigo: int, nome: str, inicio: str):
+    """Série completa desde `inicio` ('DD/MM/AAAA') até hoje — usada para
+    acumular o IPCA desde o ano de referência da POF (inflator integral,
+    substituindo a janela parcial de 24 meses do panorama macro).
+
+    Retorna (pontos: list[(data 'MM/AAAA', float)], proveniencia)."""
+    hoje = _dt.date.today()
+    urls = [
+        (
+            f"{BASE}/bcdata.sgs.{codigo}/dados?formato=json"
+            f"&dataInicial={inicio}&dataFinal={hoje:%d/%m/%Y}"
+        ),
+        f"{BASE}/bcdata.sgs.{codigo}/dados?dataInicial={inicio}&dataFinal={hoje:%d/%m/%Y}",
+    ]
+    bruto, prov = cliente.buscar_json_variantes(
+        urls, fixture=f"bcb_{codigo}_historico.json")
+    pontos = [(p["data"][3:], float(p["valor"])) for p in bruto]
+    prov["fonte"] = (
+        f"Banco Central do Brasil — SGS série {codigo} ({nome}), "
+        f"série desde {inicio}"
+    )
+    return pontos, prov
