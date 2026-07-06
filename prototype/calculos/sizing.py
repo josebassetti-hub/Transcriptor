@@ -109,6 +109,35 @@ def triangulacao(sam_topdown: float, sam_bottomup: float) -> dict:
     }
 
 
+def mercado_enderecavel(valores_por_cidade, municipios):
+    """Consolidação ponderada de estudos multi-cidade (modelo gravitacional
+    Reilly/Huff, padrão de área de influência no varejo): cada cidade é um
+    mercado SEPARADO (100% local) e a loja disputa só a fração dada pelo
+    fator de acesso do anel — a soma simples é apenas o teto teórico.
+
+    valores_por_cidade: {nome: valor local (frota, R$ etc.)}
+    municipios: [{nome, anel, fator_acesso: {min, base, max}}, ...]
+    Retorna {linhas: [...], totais: {teto, min, base, max}}.
+    """
+    idx = {m["nome"]: m for m in municipios}
+    linhas = []
+    totais = {"teto": 0.0, "min": 0.0, "base": 0.0, "max": 0.0}
+    for nome, valor in sorted(valores_por_cidade.items(), key=lambda kv: -kv[1]):
+        m = idx.get(nome, {})
+        f = m.get("fator_acesso", {"min": 1.0, "base": 1.0, "max": 1.0})
+        linhas.append({
+            "cidade": nome,
+            "anel": m.get("anel", "—"),
+            "valor_local": valor,
+            "fator": f,
+            "enderecavel": valor * f["base"],
+        })
+        totais["teto"] += valor
+        for k in ("min", "base", "max"):
+            totais[k] += valor * f[k]
+    return {"linhas": linhas, "totais": totais}
+
+
 def por_atividade(sam_total, receita_alvo_total, atividades, concorrencia=None,
                   expansao=None):
     """Dimensionamento multi-CNAE: para cada atividade do estudo, o SAM da

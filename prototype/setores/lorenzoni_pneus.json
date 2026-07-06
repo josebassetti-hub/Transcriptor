@@ -32,29 +32,60 @@
     "municipios": [
       {
         "nome": "São Gabriel da Palha",
-        "anel": "núcleo"
+        "anel": "núcleo",
+        "fator_acesso": {
+          "min": 1.0,
+          "base": 1.0,
+          "max": 1.0
+        }
       },
       {
         "nome": "Vila Valério",
-        "anel": "anel 1"
+        "anel": "anel 1",
+        "fator_acesso": {
+          "min": 0.4,
+          "base": 0.5,
+          "max": 0.6
+        }
       },
       {
         "nome": "São Domingos do Norte",
-        "anel": "anel 1"
+        "anel": "anel 1",
+        "fator_acesso": {
+          "min": 0.4,
+          "base": 0.5,
+          "max": 0.6
+        }
       },
       {
         "nome": "Águia Branca",
-        "anel": "anel 1"
+        "anel": "anel 1",
+        "fator_acesso": {
+          "min": 0.35,
+          "base": 0.45,
+          "max": 0.55
+        }
       },
       {
         "nome": "Nova Venécia",
-        "anel": "anel 2"
+        "anel": "anel 2",
+        "fator_acesso": {
+          "min": 0.03,
+          "base": 0.06,
+          "max": 0.1
+        }
       },
       {
         "nome": "Colatina",
-        "anel": "anel 2"
+        "anel": "anel 2",
+        "fator_acesso": {
+          "min": 0.02,
+          "base": 0.04,
+          "max": 0.08
+        }
       }
-    ]
+    ],
+    "racional_fatores": "Fatores de acesso por cidade [PREMISSA DECLARADA, modelo gravitacional Reilly/Huff]: cada cidade é um mercado separado e a loja disputa só uma fração dele — 100% no núcleo (a loja está lá); 40–60% nos vizinhos pequenos do anel 1 (sem oferta especializada própria relevante, presença comercial já existente da empresa); 2–10% nos polos do anel 2 (Nova Venécia e Colatina têm oferta própria e retêm seu mercado — Colatina, o maior polo, recebe o menor fator). A calibrar com a densidade de concorrentes por cidade (consulta A4 municipal) e validar com a empresa; sensibilidade mín/base/máx exibida"
   },
   "cnpj_prefixo": "pneus",
   "cnpj_extracao": "aguardando consultas (Base dos Dados, br_me_cnpj)",

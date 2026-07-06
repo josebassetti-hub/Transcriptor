@@ -81,7 +81,7 @@ ORDER BY nome;
 --   SELECT MAX(data) AS d FROM `basedosdados.br_me_cnpj.estabelecimentos`
 -- ),
 -- estab AS (
---   SELECT e.cnpj_basico, e.cnae_fiscal_principal AS cnae7,
+--   SELECT e.cnpj_basico, e.cnae_fiscal_principal AS cnae7, e.id_municipio,
 --          e.data_inicio_atividade
 --   FROM `basedosdados.br_me_cnpj.estabelecimentos` e, ultima
 --   WHERE e.data = ultima.d
@@ -110,7 +110,7 @@ ORDER BY nome;
 --   GROUP BY s.cnpj_basico
 -- ),
 -- com_idade AS (
---   SELECT estab.cnpj_basico, estab.cnae7,
+--   SELECT estab.cnpj_basico, estab.cnae7, estab.id_municipio,
 --          DATE_DIFF(CURRENT_DATE(),
 --                    COALESCE(matriz.inicio_empresa, estab.data_inicio_atividade),
 --                    YEAR) AS idade
@@ -122,6 +122,8 @@ ORDER BY nome;
 --     WHEN '4520004' THEN '4520-0/04' WHEN '4520005' THEN '4520-0/05'
 --     WHEN '4520006' THEN '4520-0/06' END AS cnae,
 --   'ES' AS uf,
+--   (SELECT nome FROM `basedosdados.br_bd_diretorios_brasil.municipio` d
+--    WHERE d.id_municipio = com_idade.id_municipio) AS municipio,
 --   CASE WHEN COALESCE(tributo.eh_mei, FALSE) THEN 'MEI'
 --        WHEN COALESCE(tributo.eh_simples, FALSE) THEN 'SIMPLES'
 --        ELSE 'FORA_SIMPLES' END AS regime,
@@ -136,8 +138,10 @@ ORDER BY nome;
 -- FROM com_idade
 -- LEFT JOIN emp USING (cnpj_basico)
 -- LEFT JOIN tributo USING (cnpj_basico)
--- GROUP BY 1, 2, 3, 4, 5
--- ORDER BY 1, 3, 4, 5;
+-- GROUP BY 1, 2, 3, 4, 5, 6
+-- ORDER BY 3, 1, 4, 5, 6;
+-- (a coluna municipio permite medir a densidade de concorrentes POR CIDADE,
+--  que calibra os fatores de acesso do modelo gravitacional)
 
 -- ---------------------------------------------------------------------------
 -- CONSULTA B3 — dinâmica na ÁREA (mesma estrutura da B3 das oficinas, com o

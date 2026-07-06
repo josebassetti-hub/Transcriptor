@@ -190,13 +190,48 @@ def gerar(config: dict, modo: str) -> str:
                 f"<b>Conversão em demanda:</b> {dd.get('conversao', 'ver metodologia')}.</p>"
             )
             blocos_dd.append(R.grafico_barras_h(tipos[:6], "veículos", esq=140))
-            if frota_info.get("por_municipio"):
-                aneis = {m["nome"]: m.get("anel", "")
-                         for m in config["regiao"].get("municipios", [])}
+            munis = config["regiao"].get("municipios", [])
+            if frota_info.get("por_municipio") and any("fator_acesso" in m for m in munis):
+                # cada cidade é um mercado SEPARADO; a consolidação é ponderada
+                # pelo fator de acesso (Reilly/Huff) — nunca soma simples
+                me = sizing.mercado_enderecavel(frota_info["por_municipio"], munis)
+                frota_info["enderecavel"] = me
+                linhas_me = [
+                    (l["cidade"], l["anel"], R.inteiro(l["valor_local"]),
+                     f'{R.pct(l["fator"]["min"], 0)}–{R.pct(l["fator"]["base"], 0)}'
+                     f'–{R.pct(l["fator"]["max"], 0)}',
+                     R.inteiro(round(l["enderecavel"])))
+                    for l in me["linhas"]
+                ]
+                t = me["totais"]
+                linhas_me.append((
+                    "CONSOLIDADO", "ponderado",
+                    R.inteiro(round(t["teto"])) + " (teto teórico)",
+                    "", "<b>" + R.inteiro(round(t["base"])) + "</b>",
+                ))
                 blocos_dd.append(
-                    "<p>Frota por cidade da área de influência (o anel indica a "
-                    "proximidade comercial — fator de captura decrescente, premissa "
-                    "declarada na seção 6):</p>"
+                    "<p><b>Mercado por cidade e consolidação ponderada:</b> cada cidade "
+                    "é um mercado próprio (frota local = 100% daquela cidade); a loja "
+                    "disputa apenas a fração dada pelo fator de acesso. A soma simples "
+                    f"({R.inteiro(round(t['teto']))} veículos) é só o TETO TEÓRICO — o "
+                    "que alimenta o dimensionamento é a <b>frota endereçável "
+                    f"consolidada: {R.inteiro(round(t['base']))} veículos</b> "
+                    f"(intervalo {R.inteiro(round(t['min']))}–{R.inteiro(round(t['max']))} "
+                    "pela sensibilidade dos fatores).</p>"
+                )
+                blocos_dd.append(R.tabela(
+                    ["Cidade", "Anel", "Frota local (100%)",
+                     "Fator de acesso (mín–base–máx)", "Frota endereçável"],
+                    linhas_me,
+                ))
+                blocos_dd.append(
+                    '<p class="premissas">'
+                    + config["regiao"].get("racional_fatores", "") + "</p>"
+                )
+            elif frota_info.get("por_municipio"):
+                aneis = {m["nome"]: m.get("anel", "") for m in munis}
+                blocos_dd.append(
+                    "<p>Frota por cidade da área de influência:</p>"
                 )
                 blocos_dd.append(R.tabela(
                     ["Cidade", "Anel", "Frota"],
