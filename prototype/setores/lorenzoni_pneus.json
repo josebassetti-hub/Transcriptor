@@ -135,17 +135,17 @@
   },
   "topdown": {
     "agregado_sidra": {
-      "agregado": "3014",
+      "agregado": "1399",
       "periodos": "-6",
       "variavel": "643",
       "localidade": "N1[all]",
-      "classificacao": "11070[90131]",
+      "classificacao": "11065[106635]|319[104029]",
       "fator_unidade": 1000,
       "fixture": "ibge_pac_receita_div45.json",
-      "citacao": "IBGE — Pesquisa Anual de Comércio (PAC), tabela SIDRA 3014, variável 643 (receita operacional líquida, mil R$), recorte 2.2 Peças para veículos (grupo 45.3)"
+      "citacao": "IBGE — Pesquisa Anual de Comércio (PAC), tabela SIDRA 1399, variável 643 (receita operacional líquida, mil R$), divisão Comércio de veículos, peças e motocicletas, todas as faixas de pessoal"
     },
-    "participacao_segmento": 1.0,
-    "racional_segmento": "DADO (PAC 3014): o recorte da consulta já é o grupo \"2.2 Peças para veículos\" — receita medida diretamente, sem proxy. O grupo inclui autopeças além de pneus (viés para cima declarado; o mix por linha da seção 7b reparte o SAM entre as atividades do estudo)",
+    "participacao_segmento": 0.685,
+    "racional_segmento": "substituído pela fração medida na PAC 1403",
     "participacao_regiao": 0.000382,
     "racional_regiao": "DADO (SENATRAN 2025-10, consultas H/H2): frota ENDEREÇÁVEL da área (49.023 veículos, consolidação ponderada da seção 3b) ÷ frota do Brasil (128.170.305) = 0,038% — a chave regional é medida pelo próprio driver do setor, sem premissa intermediária; intervalo 0,034%–0,044% pela sensibilidade dos fatores de acesso",
     "regiao_medida": {
@@ -158,6 +158,18 @@
         "fixture": "ibge_cempre_4530_br.json",
         "citacao": "IBGE — CEMPRE, tabela SIDRA 6449, variável 2585, classe 45.30-7, Brasil"
       }
+    },
+    "segmento_dado": {
+      "agregado": "1403",
+      "periodos": "-1",
+      "variavel": "310",
+      "localidade": "N1[all]",
+      "classificacao_setor": "11070[90131]",
+      "classificacao_total": "11070[106699]",
+      "fixture_setor": "ibge_pac1403_pecas.json",
+      "fixture_total": "ibge_pac1403_div45.json",
+      "citacao": "IBGE — PAC, tabela SIDRA 1403, variável 310 (nº de empresas comerciais): 2.2 Peças para veículos ÷ 2. Comércio de veículos, peças e motocicletas",
+      "racional_modelo": "DADO-PROXY (PAC 1403, {ano}): participação de 'peças para veículos' na divisão 45 medida por Nº DE EMPRESAS = {fracao:.1%} — proxy de contagem declarado (a receita por grupo não é publicada na série atual); recorte inclui autopeças além de pneus, declarado"
     }
   },
   "series_bcb": [
