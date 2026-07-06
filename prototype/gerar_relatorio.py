@@ -119,8 +119,9 @@ def gerar(config: dict, modo: str) -> str:
     som_base = bu["cenarios"]["base"]["som"]
     usa_bu_central = config.get("sam_central") == "bottom_up"
     sam_central = bu["sam"] if usa_bu_central else (td["sam"] + bu["sam"]) / 2
+    detalhe_sam = config.get("rotulo_sam_detalhe", "bottom-up; PAS = piso")
     rotulo_sam = ("SAM " + config["regiao"].get("apelido", config["regiao"]["sigla"])
-                  + (" (bottom-up; PAS = piso)" if usa_bu_central else " (triangulado)"))
+                  + (f" ({detalhe_sam})" if usa_bu_central else " (triangulado)"))
 
     # ---- write + render ------------------------------------------------------
     s = []
@@ -441,7 +442,8 @@ def gerar(config: dict, modo: str) -> str:
         R.grafico_funil([
             ("TAM", td["tam"], f"Brasil, top-down, {td['ano_base']}"),
             ("SAM", sam_central,
-             ("bottom-up ME/EPP; top-down PAS como piso (ver diagnóstico acima)"
+             (config.get("rotulo_sam_funil",
+                        "bottom-up ME/EPP; top-down PAS como piso (ver diagnóstico acima)")
               if usa_bu_central else
               f"média das metodologias (divergência {R.pct(tri['divergencia'])})"
               + ("" if tri["convergente"] else " — usar com cautela; ver diagnóstico acima"))),

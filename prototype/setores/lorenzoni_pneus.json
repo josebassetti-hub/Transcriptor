@@ -229,5 +229,7 @@
     "escopo_texto": "no Espírito Santo — estado inteiro, referência de ordem de grandeza (o CEMPRE não publica classes CNAE por município)"
   },
   "sam_central": "bottom_up",
-  "racional_sam_central": "O top-down herda o viés do proxy de fração do segmento (concessionárias distorcem a receita da divisão 45), então é tratado como TETO; o SAM central é o bottom-up local (concorrentes reais da área × ticket), a leitura mais fiel de um mercado municipal"
+  "racional_sam_central": "O top-down herda o viés do proxy de fração do segmento (concessionárias distorcem a receita da divisão 45), então é tratado como TETO; o SAM central é o bottom-up local (concorrentes reais da área × ticket), a leitura mais fiel de um mercado municipal",
+  "rotulo_sam_detalhe": "bottom-up local; top-down PAC = teto",
+  "rotulo_sam_funil": "bottom-up local (concorrentes reais × ticket); top-down PAC como TETO (viés do proxy de fração declarado — ver diagnóstico)"
 }
