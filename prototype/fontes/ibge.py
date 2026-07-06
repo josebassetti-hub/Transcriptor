@@ -26,6 +26,23 @@ def receita_setorial(cliente, cfg_topdown: dict):
     if ag.get("classificacao"):
         # recorte de atividade/CNAE, ex.: "12354[118012]" (descoberto via testar_fontes.py)
         url += f"&classificacao={ag['classificacao']}"
+    elif ag.get("recorte_pendente"):
+        # Sem o recorte, a consulta ao vivo traria a receita do agregado
+        # INTEIRO com selo de dado vivo — número real do recorte errado é
+        # pior que demonstração. Fica na fixture até a descoberta.
+        bruto = cliente._fixture(ag["fixture"])
+        cliente.usou_fixture = True
+        prov = {
+            "origem": "fixture",
+            "url": url,
+            "consultado_em": "dados de demonstração (fixture)",
+            "motivo": ("recorte de atividade pendente de descoberta "
+                       "(rode testar_fontes.py e cole a saída no chat)"),
+            "fonte": ag["citacao"],
+        }
+        serie = _extrair_serie(bruto)
+        fator = ag.get("fator_unidade", 1)
+        return {ano: valor * fator for ano, valor in serie.items()}, prov
     bruto, prov = cliente.buscar_json(url, fixture=ag["fixture"])
     serie = _extrair_serie(bruto)
     fator = ag.get("fator_unidade", 1)  # ex.: 1000 quando a unidade é "mil reais"

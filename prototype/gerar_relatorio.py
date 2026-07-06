@@ -466,10 +466,15 @@ def gerar(config: dict, modo: str) -> str:
             "último ano da série.</p>"
         )
     else:
+        estado_vintage = (
+            "o arquivamento de extrações (vintages) começa na primeira carga real"
+            if cnpj_demo else
+            f'a extração {config.get("cnpj_extracao", "atual").split(" ")[0]} está '
+            "arquivada como base (dados/vintages/)"
+        )
         blocos_din.append(
-            '<p class="premissas">Monitoramento do lag de baixas: a extração '
-            f'{config.get("cnpj_extracao", "atual")[:7]} está arquivada como base '
-            "(dados/vintages/); o fator de revisão dos fechamentos passa a ser medido a cada "
+            f'<p class="premissas">Monitoramento do lag de baixas: {estado_vintage}; '
+            "o fator de revisão dos fechamentos passa a ser medido a cada "
             "nova extração mensal. Referência externa de fluxo: Mapa de Empresas — boletim "
             "quadrimestral oficial de aberturas, baixas e tempo de baixa (Ministério do "
             "Empreendedorismo; não cobre MEI) · "

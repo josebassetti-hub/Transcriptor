@@ -65,6 +65,7 @@
       "variavel": "643",
       "localidade": "N1[all]",
       "classificacao": "",
+      "recorte_pendente": true,
       "fator_unidade": 1000,
       "fixture": "ibge_pas_manutencao_demo.json",
       "citacao": "IBGE — Pesquisa Anual de Serviços (PAS), tabela SIDRA 2577, variável 643 (receita operacional líquida) — recorte de manutenção e reparação de veículos A CONFIRMAR via testar_fontes.py oficinas"
