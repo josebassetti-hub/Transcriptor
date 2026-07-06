@@ -102,7 +102,7 @@
   "driver_demanda": {
     "arquetipo": "b2c_frota",
     "csv_frota": "pneus_frota_demo.csv",
-    "frota_origem": "demo",
+    "frota_origem": "real",
     "descricao": "Quem compra: donos de veículos da área de influência — pneus e manutenção rápida são função direta da frota circulante (e, na região, da frota agro-cafeeira: caminhonetes e utilitários dos produtores). Arquétipo B2C-Frota (docs/drivers-demanda.md) em recorte MUNICIPAL; base contável = frota SENATRAN por município.",
     "conversao": "frota da área × gasto médio anual por veículo com manutenção e acessórios (POF ÷ frota nacional), com fator de captura decrescente por anel de proximidade [premissa declarada]"
   },

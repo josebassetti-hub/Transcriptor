@@ -1,19 +1,101 @@
 referencia,municipio,tipo,quantidade
-2026-05 (DEMO),São Gabriel da Palha,automovel,9000
-2026-05 (DEMO),São Gabriel da Palha,motocicleta,7000
-2026-05 (DEMO),São Gabriel da Palha,caminhonete/camioneta/utilitario,4000
-2026-05 (DEMO),Vila Valério,automovel,2700
-2026-05 (DEMO),Vila Valério,motocicleta,2100
-2026-05 (DEMO),Vila Valério,caminhonete/camioneta/utilitario,1200
-2026-05 (DEMO),São Domingos do Norte,automovel,1800
-2026-05 (DEMO),São Domingos do Norte,motocicleta,1400
-2026-05 (DEMO),São Domingos do Norte,caminhonete/camioneta/utilitario,800
-2026-05 (DEMO),Águia Branca,automovel,2025
-2026-05 (DEMO),Águia Branca,motocicleta,1575
-2026-05 (DEMO),Águia Branca,caminhonete/camioneta/utilitario,900
-2026-05 (DEMO),Nova Venécia,automovel,13500
-2026-05 (DEMO),Nova Venécia,motocicleta,10500
-2026-05 (DEMO),Nova Venécia,caminhonete/camioneta/utilitario,6000
-2026-05 (DEMO),Colatina,automovel,33750
-2026-05 (DEMO),Colatina,motocicleta,26250
-2026-05 (DEMO),Colatina,caminhonete/camioneta/utilitario,15000
+2025-10,Colatina,automovel,36501
+2025-10,Colatina,motocicleta,21569
+2025-10,Colatina,caminhonete,9110
+2025-10,Colatina,motoneta,8557
+2025-10,Colatina,caminhao,3095
+2025-10,Colatina,camioneta,2769
+2025-10,Colatina,reboque,1587
+2025-10,Colatina,utilitario,1302
+2025-10,Colatina,onibus,744
+2025-10,Colatina,semi-reboque,565
+2025-10,Colatina,caminhao trator,492
+2025-10,Colatina,micro-onibus,254
+2025-10,Colatina,ciclomotor,148
+2025-10,Colatina,outros,101
+2025-10,Colatina,trator rodas,58
+2025-10,Colatina,triciclo,50
+2025-10,Colatina,trator esteira,2
+2025-10,Colatina,side-car,1
+2025-10,Nova Venécia,automovel,11506
+2025-10,Nova Venécia,motocicleta,11332
+2025-10,Nova Venécia,caminhonete,4322
+2025-10,Nova Venécia,motoneta,4117
+2025-10,Nova Venécia,caminhao,1334
+2025-10,Nova Venécia,camioneta,766
+2025-10,Nova Venécia,reboque,435
+2025-10,Nova Venécia,utilitario,279
+2025-10,Nova Venécia,onibus,226
+2025-10,Nova Venécia,semi-reboque,222
+2025-10,Nova Venécia,caminhao trator,173
+2025-10,Nova Venécia,micro-onibus,87
+2025-10,Nova Venécia,outros,19
+2025-10,Nova Venécia,triciclo,19
+2025-10,Nova Venécia,ciclomotor,17
+2025-10,Nova Venécia,trator rodas,12
+2025-10,Nova Venécia,side-car,1
+2025-10,São Domingos do Norte,motocicleta,2344
+2025-10,São Domingos do Norte,automovel,2040
+2025-10,São Domingos do Norte,caminhonete,943
+2025-10,São Domingos do Norte,motoneta,854
+2025-10,São Domingos do Norte,caminhao,376
+2025-10,São Domingos do Norte,semi-reboque,156
+2025-10,São Domingos do Norte,camioneta,119
+2025-10,São Domingos do Norte,onibus,95
+2025-10,São Domingos do Norte,caminhao trator,77
+2025-10,São Domingos do Norte,reboque,76
+2025-10,São Domingos do Norte,utilitario,43
+2025-10,São Domingos do Norte,micro-onibus,21
+2025-10,São Domingos do Norte,ciclomotor,4
+2025-10,São Domingos do Norte,triciclo,3
+2025-10,São Domingos do Norte,trator rodas,3
+2025-10,São Domingos do Norte,outros,1
+2025-10,São Gabriel da Palha,motocicleta,9397
+2025-10,São Gabriel da Palha,automovel,8616
+2025-10,São Gabriel da Palha,motoneta,5427
+2025-10,São Gabriel da Palha,caminhonete,2868
+2025-10,São Gabriel da Palha,caminhao,1051
+2025-10,São Gabriel da Palha,camioneta,509
+2025-10,São Gabriel da Palha,reboque,296
+2025-10,São Gabriel da Palha,onibus,258
+2025-10,São Gabriel da Palha,utilitario,234
+2025-10,São Gabriel da Palha,semi-reboque,135
+2025-10,São Gabriel da Palha,caminhao trator,125
+2025-10,São Gabriel da Palha,micro-onibus,64
+2025-10,São Gabriel da Palha,trator rodas,24
+2025-10,São Gabriel da Palha,outros,13
+2025-10,São Gabriel da Palha,ciclomotor,7
+2025-10,São Gabriel da Palha,triciclo,6
+2025-10,São Gabriel da Palha,side-car,1
+2025-10,Vila Valério,motocicleta,6333
+2025-10,Vila Valério,automovel,3377
+2025-10,Vila Valério,caminhonete,1864
+2025-10,Vila Valério,motoneta,1464
+2025-10,Vila Valério,caminhao,633
+2025-10,Vila Valério,camioneta,196
+2025-10,Vila Valério,onibus,155
+2025-10,Vila Valério,reboque,145
+2025-10,Vila Valério,utilitario,138
+2025-10,Vila Valério,micro-onibus,50
+2025-10,Vila Valério,caminhao trator,41
+2025-10,Vila Valério,semi-reboque,39
+2025-10,Vila Valério,trator rodas,13
+2025-10,Vila Valério,outros,7
+2025-10,Vila Valério,triciclo,3
+2025-10,Vila Valério,ciclomotor,3
+2025-10,Águia Branca,motocicleta,3161
+2025-10,Águia Branca,automovel,2159
+2025-10,Águia Branca,motoneta,1010
+2025-10,Águia Branca,caminhonete,917
+2025-10,Águia Branca,caminhao,289
+2025-10,Águia Branca,camioneta,125
+2025-10,Águia Branca,onibus,101
+2025-10,Águia Branca,reboque,73
+2025-10,Águia Branca,semi-reboque,49
+2025-10,Águia Branca,micro-onibus,42
+2025-10,Águia Branca,utilitario,40
+2025-10,Águia Branca,caminhao trator,40
+2025-10,Águia Branca,outros,10
+2025-10,Águia Branca,trator rodas,7
+2025-10,Águia Branca,ciclomotor,6
+2025-10,Águia Branca,triciclo,5
