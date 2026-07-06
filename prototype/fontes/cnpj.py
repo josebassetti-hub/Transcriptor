@@ -173,7 +173,7 @@ def rais_regiao(config: dict):
             "fonte": ("Ministério do Trabalho — RAIS (vínculos ativos da subclasse "
                       f"CNAE, via Base dos Dados), ano {ano}"),
             "url": "https://basedosdados.org/dataset/br-me-rais",
-            "consultado_em": config.get("cnpj_extracao", "consulta G"),
+            "consultado_em": f"consulta G no BigQuery (RAIS {ano})",
         },
     }
 
