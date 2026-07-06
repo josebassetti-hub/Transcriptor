@@ -119,7 +119,7 @@
       "10+"
     ],
     "ticket_medio_anual_brl": 500000,
-    "racional_ticket": "DEMONSTRAÇÃO — a ancorar no ticket implícito na primeira geração ao vivo: SAM top-down (PAC × fração de peças × chave regional medida 0,038%) ÷ 129 operantes locais, como nos pilotos anteriores",
+    "racional_ticket": "PREMISSA DECLARADA, calibrada por três referências: (i) piso — demanda B2C das famílias da área pela POF (~R$ 600/veículo/ano × 49 mil veículos endereçáveis ≈ R$ 30 mi, só pessoas físicas); (ii) topo local — a própria Lorenzoni fatura R$ 2,3 mi/ano em 300 m² (informação do plano de negócio da empresa, declarada); (iii) mix local de 128 operantes entre lojas de pneus (ticket alto) e serviços rápidos (ticket menor). R$ 500 mil/ano como média local; sensibilidade na seção 6; a validar com a empresa",
     "taxa_atividade": 0.65,
     "racional_atividade": "MEDIDO (consulta A4 municipal, idade pela matriz): 65,5% do ICP local (129 de 197 empresas ME/EPP com 2+ anos na área) é optante do Simples Nacional — proxy de operação real validado nos pilotos anteriores (interior tem adesão ainda maior que capitais: 65% aqui vs 56% na reparação em SP)",
     "empresas_somente_cnae_secundario": 1443,
@@ -162,14 +162,14 @@
     "segmento_dado": {
       "agregado": "1403",
       "periodos": "-1",
-      "variavel": "310",
+      "variavel": "312",
       "localidade": "N1[all]",
       "classificacao_setor": "11070[90131]",
       "classificacao_total": "11070[106699]",
       "fixture_setor": "ibge_pac1403_pecas.json",
       "fixture_total": "ibge_pac1403_div45.json",
-      "citacao": "IBGE — PAC, tabela SIDRA 1403, variável 310 (nº de empresas comerciais): 2.2 Peças para veículos ÷ 2. Comércio de veículos, peças e motocicletas",
-      "racional_modelo": "DADO-PROXY (PAC 1403, {ano}): participação de 'peças para veículos' na divisão 45 medida por Nº DE EMPRESAS = {fracao:.1%} — proxy de contagem declarado (a receita por grupo não é publicada na série atual); recorte inclui autopeças além de pneus, declarado"
+      "citacao": "IBGE — PAC, tabela SIDRA 1403, variável 312 (pessoal ocupado): 2.2 Peças para veículos ÷ 2. Comércio de veículos, peças e motocicletas",
+      "racional_modelo": "DADO-PROXY (PAC 1403, {ano}): participação de 'peças para veículos' na divisão 45 medida por PESSOAL OCUPADO = {fracao:.1%} — proxy declarado (a receita por grupo não é publicada na série atual; pessoal pondera o tamanho das empresas, mas ainda superestima peças, pois a receita por empregado de concessionária é maior — top-down lido como TETO)"
     }
   },
   "series_bcb": [
@@ -227,5 +227,7 @@
     "citacao": "IBGE — CEMPRE, tabela SIDRA 6449, variável 2585 (nº de empresas), classe 45.30-7 Comércio de peças e acessórios para veículos (inclui pneus; mais larga que a subclasse de pneus, declarado), Espírito Santo",
     "rotulo_classe": "45.30-7 (ES)",
     "escopo_texto": "no Espírito Santo — estado inteiro, referência de ordem de grandeza (o CEMPRE não publica classes CNAE por município)"
-  }
+  },
+  "sam_central": "bottom_up",
+  "racional_sam_central": "O top-down herda o viés do proxy de fração do segmento (concessionárias distorcem a receita da divisão 45), então é tratado como TETO; o SAM central é o bottom-up local (concorrentes reais da área × ticket), a leitura mais fiel de um mercado municipal"
 }
