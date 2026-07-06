@@ -65,12 +65,11 @@ TEMAS = {
         "palavras": ["manutencao", "reparacao", "veicul", "automo", "total"],
     },
     "pneus": {
-        # Comércio varejista de pneus = PAC (Pesquisa Anual de Comércio), não
-        # PAS: 1403/1407 = PAC receita/dados gerais por atividade; 2577 = PAS
-        # (serviços rápidos, 7.1); 6449 = CEMPRE (classes 4530-7 e 4520-0);
-        # 6715 = POF (despesa das famílias com manutenção/pneus)
-        "tabelas": [1403, 1407, 2577, 6449, 6715],
-        "palavras": ["pneu", "pecas", "veicul", "manutencao", "comercio", "total"],
+        # PAC 3014/3013 = resultados por divisão/grupo/CLASSE (a 1407 tem a
+        # dimensão 'UF de atuação' e devolve '..' para receita na divisão 45);
+        # 3014 pode dar a receita do grupo 45.3 Peças DIRETAMENTE
+        "tabelas": [3014, 3013],
+        "palavras": ["pecas", "veicul", "pneu", "total"],
     },
 }
 
@@ -157,7 +156,7 @@ def main():
                 ],
             }
             print(f"  [OK]    Tabela {tid}: {meta.get('nome','')[:90]}")
-            for v in variaveis[:6]:
+            for v in variaveis[:14]:
                 print(f"          variavel {v['id']}: {v['nome'][:80]}")
             if categorias_setor:
                 print("          >> categorias do setor encontradas:")
