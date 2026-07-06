@@ -1,0 +1,74 @@
+{
+  "_doc": "Biblioteca curada: divisão/grupo CNAE -> arquétipo de driver de demanda (metodologia em docs/drivers-demanda.md). O JSON do setor pode sobrescrever. Fórmula universal: demanda = base contável x penetração/frequência x valor, tudo com fonte.",
+  "arquetipos": {
+    "b2c_populacao_domicilios": {
+      "nome": "B2C — População/Domicílios",
+      "base": "domicílios e população da região, por faixa de renda",
+      "fontes": ["Censo 2022 (SIDRA 4712)", "PNAD-C rendimento", "POF despesa por categoria (SIDRA 6715)"],
+      "conversao": "domicílios x despesa média mensal familiar com a categoria (POF) x 12 x inflator IPCA"
+    },
+    "b2c_frota": {
+      "nome": "B2C — Frota de veículos",
+      "base": "frota registrada no município/UF, por tipo e ano de fabricação (idade)",
+      "fontes": ["SENATRAN — frota mensal por UF x município x ano de fabricação", "Base dos Dados (BigQuery)"],
+      "conversao": "frota x gasto médio anual com manutenção por veículo (POF, grupo transporte), com a idade da frota como multiplicador declarado"
+    },
+    "b2c_saude": {
+      "nome": "B2C — Saúde",
+      "base": "população por faixa etária + beneficiários de planos de saúde",
+      "fontes": ["Censo/projeções IBGE", "ANS dados abertos (beneficiários por município)", "CNES"],
+      "conversao": "população-alvo x cobertura privada x gasto médio (POF saúde / ANS)"
+    },
+    "b2c_educacao": {
+      "nome": "B2C — Educação",
+      "base": "população em idade escolar + matrículas existentes",
+      "fontes": ["Censo", "INEP (censo escolar/sinopses)"],
+      "conversao": "população-alvo x taxa de matrícula na rede privada x mensalidade média (POF educação)"
+    },
+    "b2b_tecido_empresarial": {
+      "nome": "B2B — Tecido empresarial",
+      "base": "empresas por porte/CNAE na região + fluxo de novas + âncoras (maiores empregadores) + massa salarial",
+      "fontes": ["base CNPJ (BigQuery)", "RAIS", "Mapa de Empresas (fluxo)"],
+      "conversao": "empresas-alvo x taxa de contratação do serviço x ticket médio; âncoras como leitura qualitativa com fonte"
+    },
+    "b2b_agro": {
+      "nome": "B2B — Agro",
+      "base": "área plantada/valor da produção + rebanho",
+      "fontes": ["PAM (SIDRA 1612/5457)", "PPM (SIDRA 3939)", "Censo Agro"],
+      "conversao": "hectares/cabeças x custo do insumo por unidade x participação do fornecedor-alvo"
+    },
+    "fluxo_turismo": {
+      "nome": "Fluxo/Turismo",
+      "base": "passageiros/visitantes + leitos + população flutuante",
+      "fontes": ["ANAC dados abertos", "CADASTUR"],
+      "conversao": "visitantes x permanência média x gasto diário (declarar fonte; ocupação hoteleira = parceria)"
+    },
+    "b2g_institucional": {
+      "nome": "B2G/Institucional",
+      "base": "orçamento público executado por função + licitações da região",
+      "fontes": ["SICONFI/Tesouro", "PNCP dados abertos"],
+      "conversao": "execução na função-alvo x fatia endereçável (histórico de licitações)"
+    }
+  },
+  "mapa_cnae": {
+    "10": "b2c_populacao_domicilios",
+    "41": "b2g_institucional",
+    "42": "b2g_institucional",
+    "45.2": "b2c_frota",
+    "45.3": "b2c_frota",
+    "46.61": "b2b_agro",
+    "46.83": "b2b_agro",
+    "47": "b2c_populacao_domicilios",
+    "52": "b2b_tecido_empresarial",
+    "55": "fluxo_turismo",
+    "56": "b2c_populacao_domicilios",
+    "62": "b2b_tecido_empresarial",
+    "68": "b2b_tecido_empresarial",
+    "69": "b2b_tecido_empresarial",
+    "73": "b2b_tecido_empresarial",
+    "75": "b2c_populacao_domicilios",
+    "85": "b2c_educacao",
+    "86": "b2c_saude",
+    "96": "b2c_populacao_domicilios"
+  }
+}

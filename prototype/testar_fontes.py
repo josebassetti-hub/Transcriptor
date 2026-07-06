@@ -54,6 +54,18 @@ META_URL = "https://servicodados.ibge.gov.br/api/v3/agregados/{id}/metadados"
 # códigos exatos para colar na configuração do setor.
 PALAVRAS_CHAVE = ["cabeleireir", "manicur", "total"]
 
+# Temas de descoberta por setor-piloto: `python3 testar_fontes.py oficinas`
+# troca as tabelas candidatas e as palavras-chave da varredura.
+TEMAS = {
+    "oficinas": {
+        # 2577 = PAS receita por atividade (procurar manutenção/reparação de
+        # veículos); 6715 = POF (procurar a despesa das famílias com
+        # manutenção de veículo); 6449 = CEMPRE (nº de empresas da classe)
+        "tabelas": [2577, 6715, 6449],
+        "palavras": ["manutencao", "reparacao", "veicul", "automo", "total"],
+    },
+}
+
 # Variações da consulta POF na API SIDRA clássica (apisidra.ibge.gov.br) para
 # descobrir a sintaxe aceita — a API explica o motivo do erro no corpo da
 # resposta, que esta seção imprime.
@@ -96,6 +108,12 @@ def buscar_categorias(meta: dict):
 
 
 def main():
+    global TABELAS_CANDIDATAS, PALAVRAS_CHAVE
+    if len(sys.argv) > 1 and sys.argv[1] in TEMAS:
+        tema = TEMAS[sys.argv[1]]
+        TABELAS_CANDIDATAS = tema["tabelas"]
+        PALAVRAS_CHAVE = tema["palavras"]
+        print(f"[tema: {sys.argv[1]}]")
     resultado = {"conexao": {}, "tabelas": {}}
     falhas = 0
 

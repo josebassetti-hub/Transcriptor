@@ -40,6 +40,10 @@
     "racional_secundaria": "Mix de receita do estudo multi-CNAE (40% principal + 15% por secundário): empresa com o CNAE só como atividade secundária fatura ~15% dele [premissa declarada]"
   },
   "cnpj_idade_matriz": true,
+  "driver_demanda": {
+    "arquetipo": "b2c_populacao_domicilios",
+    "descricao": "Quem compra: famílias/pessoas físicas da região — serviços de beleza são consumo recorrente das famílias (arquétipo B2C População/Domicílios, docs/drivers-demanda.md). A base contável é o nº de domicílios; a conversão em demanda usa a despesa média familiar com a categoria medida pela POF."
+  },
   "captura": {
     "pessimista": 0.002,
     "base": 0.005,

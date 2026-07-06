@@ -1,0 +1,109 @@
+{
+  "id": "oficinas_sp",
+  "titulo": "Mercado de manutenção e reparação de veículos — Estado de São Paulo",
+  "contexto": "Estudo para cliente que avalia investir em uma rede de oficinas mecânicas no Estado de São Paulo: tamanho do mercado, dinâmica competitiva e objetivo de receita em 5 anos. Segundo setor-piloto — exercita o arquétipo de demanda B2C-Frota (docs/drivers-demanda.md).",
+  "cnaes": [
+    {
+      "codigo": "4520-0/01",
+      "descricao": "Serviços de manutenção e reparação mecânica de veículos automotores"
+    },
+    {
+      "codigo": "4520-0/02",
+      "descricao": "Serviços de lanternagem ou funilaria e pintura de veículos automotores"
+    },
+    {
+      "codigo": "4520-0/03",
+      "descricao": "Serviços de manutenção e reparação elétrica de veículos automotores"
+    }
+  ],
+  "regiao": {
+    "nivel": "UF",
+    "codigo_ibge": "35",
+    "sigla": "SP",
+    "nome": "São Paulo"
+  },
+  "cnpj_prefixo": "oficinas",
+  "cnpj_extracao": "aguardando consultas (Base dos Dados, br_me_cnpj)",
+  "cnpj_origem": "demo",
+  "cnpj_idade_matriz": false,
+  "pnad_csv": "oficinas_pnad_demo.csv",
+  "pnad_fonte": "IBGE — PNAD Contínua (microdados via Base dos Dados), ocupação COD 7231 (mecânicos e reparadores de veículos a motor), classificação formal/informal pela posse de CNPJ (V4019) e carteira assinada; labor input method OECD/IMF/ILO",
+  "rais_csv": "oficinas_rais_demo.csv",
+  "driver_demanda": {
+    "arquetipo": "b2c_frota",
+    "csv_frota": "oficinas_frota_demo.csv",
+    "frota_origem": "demo",
+    "descricao": "Quem compra: donos de veículos da região — a demanda por manutenção é função direta da frota circulante e da sua idade (frota mais velha = mais manutenção). Arquétipo B2C-Frota (docs/drivers-demanda.md); base contável = frota registrada no SENATRAN.",
+    "conversao": "frota × gasto médio anual com manutenção por veículo (POF, grupo transporte — categoria em descoberta) com a idade da frota como multiplicador declarado"
+  },
+  "icp": {
+    "descricao": "Oficinas formais ativas há 2+ anos, porte ME ou EPP (núcleo profissionalizado; exclui MEI e grandes concessionárias/redes)",
+    "portes": [
+      "ME",
+      "EPP"
+    ],
+    "faixas_idade": [
+      "2-5",
+      "5-10",
+      "10+"
+    ],
+    "ticket_medio_anual_brl": 360000,
+    "racional_ticket": "DEMONSTRAÇÃO — a ancorar no ticket implícito (SAM top-down ÷ empresas operantes) quando as consultas A4/PAS estiverem carregadas, como no piloto de estética",
+    "taxa_atividade": 0.5,
+    "racional_atividade": "DEMONSTRAÇÃO — a medir na consulta A4 pela adesão ao Simples (proxy de operação real, metodologia validada no piloto de estética)"
+  },
+  "captura": {
+    "pessimista": 0.002,
+    "base": 0.005,
+    "otimista": 0.01,
+    "horizonte_anos": 5
+  },
+  "topdown": {
+    "agregado_sidra": {
+      "agregado": "2577",
+      "periodos": "-6",
+      "variavel": "643",
+      "localidade": "N1[all]",
+      "classificacao": "",
+      "fator_unidade": 1000,
+      "fixture": "ibge_pas_manutencao_demo.json",
+      "citacao": "IBGE — Pesquisa Anual de Serviços (PAS), tabela SIDRA 2577, variável 643 (receita operacional líquida) — recorte de manutenção e reparação de veículos A CONFIRMAR via testar_fontes.py oficinas"
+    },
+    "participacao_segmento": 1.0,
+    "racional_segmento": "DEMONSTRAÇÃO — se a categoria descoberta na PAS já for exatamente manutenção/reparação de veículos, a participação é 1,0 (sem recorte); confirmar na descoberta",
+    "participacao_regiao": 0.3,
+    "racional_regiao": "DEMONSTRAÇÃO — a triangular como no piloto (CNPJ, CEMPRE SP÷BR, RAIS) quando as consultas estiverem carregadas"
+  },
+  "series_bcb": [
+    {
+      "codigo": 4189,
+      "nome": "Selic acumulada no mês anualizada (% a.a.)",
+      "ultimos": 24
+    },
+    {
+      "codigo": 433,
+      "nome": "IPCA — variação mensal (%)",
+      "ultimos": 24
+    }
+  ],
+  "atividades": [
+    {
+      "cnae": "4520-0/01",
+      "descricao": "Manutenção e reparação mecânica",
+      "peso_receita": 0.6,
+      "participacao_sam": 0.65
+    },
+    {
+      "cnae": "4520-0/02",
+      "descricao": "Lanternagem, funilaria e pintura",
+      "peso_receita": 0.25,
+      "participacao_sam": 0.22
+    },
+    {
+      "cnae": "4520-0/03",
+      "descricao": "Manutenção e reparação elétrica",
+      "peso_receita": 0.15,
+      "participacao_sam": 0.13
+    }
+  ]
+}

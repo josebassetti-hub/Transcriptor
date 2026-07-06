@@ -1,0 +1,27 @@
+[
+ {
+  "id": "643",
+  "variavel": "Receita operacional líquida — DADOS DE DEMONSTRAÇÃO (recorte de manutenção/reparação a confirmar)",
+  "unidade": "Mil Reais",
+  "resultados": [
+   {
+    "series": [
+     {
+      "localidade": {
+       "id": "1",
+       "nome": "Brasil"
+      },
+      "serie": {
+       "2018": "52000000",
+       "2019": "55000000",
+       "2020": "48000000",
+       "2021": "58000000",
+       "2022": "67000000",
+       "2023": "74000000"
+      }
+     }
+    ]
+   }
+  ]
+ }
+]

@@ -19,7 +19,7 @@ import time
 from pathlib import Path
 
 from fontes.http_client import ClienteHTTP
-from fontes import ibge, bcb, cnpj, pnad
+from fontes import ibge, bcb, cnpj, pnad, frota
 from calculos import sizing
 from relatorio import render as R
 
@@ -98,6 +98,7 @@ def gerar(config: dict, modo: str) -> str:
             cliente, 433, "IPCA — variação mensal (%)",
             "15/01/{}".format(str(demanda["ano_pof"])[:4]))
     conc_atividades = cnpj.atividades_concorrencia(config)
+    frota_info = frota.frota_regiao(config)
 
     # ---- compute -------------------------------------------------------------
     td = sizing.top_down(receita, config["topdown"])
@@ -163,6 +164,34 @@ def gerar(config: dict, modo: str) -> str:
         "juros (custo de capital e crédito ao consumo dos clientes finais) e inflação.</p>",
         *graficos_macro,
     ))
+
+    # 3b. Quem compra — driver de demanda por arquétipo (docs/drivers-demanda.md):
+    # demanda = base contável x penetração/frequência x valor, tudo com fonte
+    dd = config.get("driver_demanda")
+    if dd:
+        blocos_dd = [f"<p>{dd['descricao']}</p>"]
+        if dd.get("arquetipo") == "b2c_populacao_domicilios" and demanda:
+            ano_dom_dd, n_dom_dd, prov_dom_dd = demanda["domicilios"]
+            blocos_dd.append(
+                f"<p><b>Base contável:</b> <b>{R.inteiro(n_dom_dd)}</b> domicílios "
+                f"particulares ocupados na região (Censo {ano_dom_dd}). "
+                f"<b>Conversão em demanda:</b> despesa média mensal familiar com o setor "
+                f"de {R.brl(demanda['despesa_mensal_familia'])} (POF {demanda['ano_pof']}), "
+                "corrigida pela inflação — a âncora completa está na seção 6 "
+                "(triangulação).</p>"
+            )
+            blocos_dd.append(R.selo_fonte(prov_dom_dd))
+        elif dd.get("arquetipo") == "b2c_frota" and frota_info:
+            tipos = sorted(frota_info["por_tipo"].items(), key=lambda kv: -kv[1])
+            blocos_dd.append(
+                f"<p><b>Base contável:</b> <b>{R.inteiro(frota_info['total'])}</b> "
+                f"veículos registrados na região (SENATRAN, {frota_info['referencia']}). "
+                f"<b>Conversão em demanda:</b> {dd.get('conversao', 'ver metodologia')}.</p>"
+            )
+            blocos_dd.append(R.grafico_barras_h(tipos[:6], "veículos", esq=140))
+            blocos_dd.append(R.selo_fonte(frota_info["proveniencia"]))
+        if len(blocos_dd) > 1:
+            s.append(secao("3b. Quem compra — o driver de demanda da região", *blocos_dd))
 
     # 4-6. Tamanho de mercado
     anos = sorted(receita)
@@ -281,8 +310,7 @@ def gerar(config: dict, modo: str) -> str:
         rend_formal = None
         # rendimento formal vem do CSV da PNAD (linha FORMAL)
         import csv as _csv
-        from fontes.pnad import ARQ as _ARQ
-        for l in _csv.DictReader(open(_ARQ, encoding="utf-8")):
+        for l in _csv.DictReader(open(pnad.arquivo(config), encoding="utf-8")):
             if l["uf"] == config["regiao"]["sigla"] and l["categoria"] == "FORMAL":
                 rend_formal = float(l["rendimento_medio_mensal"])
         if rend_formal:
@@ -429,7 +457,7 @@ def gerar(config: dict, modo: str) -> str:
             "anteriores — provável atraso de registro de baixas no cadastro (o número tende a "
             "ser revisado para cima), e não melhora real do setor.</p>"
         )
-    revisao = cnpj.fator_revisao()
+    revisao = cnpj.fator_revisao(config.get("cnpj_prefixo", "cnpj"))
     if revisao:
         blocos_din.append(
             f"<p><b>Lag de baixas medido:</b> entre as extrações {revisao['de']} e "

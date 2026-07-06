@@ -17,13 +17,25 @@ from pathlib import Path
 RAIZ = Path(__file__).resolve().parent.parent
 ARQ = RAIZ / "dados" / "pnad_informalidade_demo.csv"
 
+FONTE_DEFAULT = (
+    "IBGE — PNAD Contínua (microdados via Base dos Dados), ocupações COD 5141 "
+    "(cabeleireiros) e 5142 (esteticistas/manicures), classificação formal/informal "
+    "pela posse de CNPJ (V4019) e carteira assinada; labor input method OECD/IMF/ILO"
+)
+
+
+def arquivo(config: dict) -> Path:
+    """CSV da PNAD do setor (cada setor-piloto tem o seu, via `pnad_csv`)."""
+    return RAIZ / "dados" / config.get("pnad_csv", "pnad_informalidade_demo.csv")
+
 
 def informalidade(config: dict):
     """Retorna dict com contagens e rendimento, ou None se ainda sem dados."""
-    if not ARQ.exists():
+    arq = arquivo(config)
+    if not arq.exists():
         return None
     uf = config["regiao"]["sigla"]
-    linhas = [l for l in csv.DictReader(open(ARQ, encoding="utf-8")) if l["uf"] == uf]
+    linhas = [l for l in csv.DictReader(open(arq, encoding="utf-8")) if l["uf"] == uf]
     if not linhas:
         return None
     ref = max((l["ano"], l["trimestre"]) for l in linhas)
@@ -43,11 +55,7 @@ def informalidade(config: dict):
         "receita_informal_piso": piso,
         "proveniencia": {
             "origem": "live",
-            "fonte": (
-                "IBGE — PNAD Contínua (microdados via Base dos Dados), ocupações COD 5141 "
-                "(cabeleireiros) e 5142 (esteticistas/manicures), classificação formal/informal "
-                "pela posse de CNPJ (V4019) e carteira assinada; labor input method OECD/IMF/ILO"
-            ),
+            "fonte": config.get("pnad_fonte", FONTE_DEFAULT),
             "url": "https://basedosdados.org/dataset/br-ibge-pnadc",
             "consultado_em": f"PNAD-C {ref[0]} T{ref[1]}",
         },

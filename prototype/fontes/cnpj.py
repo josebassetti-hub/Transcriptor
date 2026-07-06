@@ -38,6 +38,12 @@ def _ler_csv(nome: str):
         return list(csv.DictReader(fh))
 
 
+def _arq_setor(config: dict, sufixo: str) -> str:
+    """Nome do CSV do setor: cada setor-piloto tem seus próprios arquivos de
+    dados via `cnpj_prefixo` (default 'cnpj', o piloto de estética)."""
+    return "{}_{}_demo.csv".format(config.get("cnpj_prefixo", "cnpj"), sufixo)
+
+
 def _proveniencia(demo: bool, extracao: str):
     return {
         "origem": "fixture" if demo else "live",
@@ -52,7 +58,7 @@ def _proveniencia(demo: bool, extracao: str):
 
 def agregados(config: dict, demo: bool = True):
     """Retorna (linhas, proveniencia) dos agregados filtrados por CNAE+UF do setor."""
-    linhas = _ler_csv("cnpj_agregados_demo.csv")
+    linhas = _ler_csv(_arq_setor(config, "agregados"))
     cnaes = {c["codigo"] for c in config["cnaes"]}
     uf = config["regiao"]["sigla"]
     filtradas = []
@@ -99,7 +105,7 @@ def dinamica(config: dict, demo: bool = True):
     Fallbacks: esquema com `segmento` (MEI|NAO_MEI) vira regime; esquema
     antigo sem dimensão vira regime=TOTAL.
     """
-    linhas = _ler_csv("cnpj_dinamica_demo.csv")
+    linhas = _ler_csv(_arq_setor(config, "dinamica"))
     serie = []
     for l in linhas:
         regime = l.get("regime") or l.get("segmento") or "TOTAL"
@@ -118,10 +124,10 @@ def redes(config: dict):
 
     Retorna None se o CSV ainda não existir — a seção fica oculta.
     """
-    caminho = DIR_DADOS / "cnpj_redes_demo.csv"
+    caminho = DIR_DADOS / _arq_setor(config, "redes")
     if not caminho.exists():
         return None
-    linhas = _ler_csv("cnpj_redes_demo.csv")
+    linhas = _ler_csv(_arq_setor(config, "redes"))
     cnaes = {c["codigo"] for c in config["cnaes"]}
     agg = {}
     for l in linhas:
@@ -137,12 +143,12 @@ def atividades_concorrencia(config: dict):
 
     Retorna {cnae: (principal, somente_secundaria)} ou None se ainda sem dados.
     """
-    caminho = DIR_DADOS / "cnpj_atividades_demo.csv"
+    caminho = DIR_DADOS / _arq_setor(config, "atividades")
     if not caminho.exists():
         return None
     return {
         l["cnae"]: (int(l["empresas_principal"]), int(l["empresas_somente_secundaria"]))
-        for l in _ler_csv("cnpj_atividades_demo.csv")
+        for l in _ler_csv(_arq_setor(config, "atividades"))
     }
 
 
@@ -152,10 +158,11 @@ def rais_regiao(config: dict):
     Participação da região = vínculos da UF ÷ soma de todas as UFs. Retorna
     None enquanto o CSV não existir (o peso fica fora da triangulação).
     """
-    caminho = DIR_DADOS / "rais_regiao_demo.csv"
+    nome = config.get("rais_csv", "rais_regiao_demo.csv")
+    caminho = DIR_DADOS / nome
     if not caminho.exists():
         return None
-    linhas = _ler_csv("rais_regiao_demo.csv")
+    linhas = _ler_csv(nome)
     uf = config["regiao"]["sigla"]
     ano = max(l["ano"] for l in linhas)
     total = sum(int(l["vinculos"]) for l in linhas if l["ano"] == ano)
@@ -178,7 +185,7 @@ def rais_regiao(config: dict):
     }
 
 
-def fator_revisao():
+def fator_revisao(prefixo: str = "cnpj"):
     """Revisão dos fechamentos entre extrações mensais arquivadas (vintages).
 
     Compara a extração mais antiga e a mais nova em dados/vintages/ para o ano
@@ -186,7 +193,7 @@ def fator_revisao():
     registradas com atraso. Retorna None com menos de 2 extrações.
     """
     pasta = DIR_DADOS / "vintages"
-    arquivos = sorted(pasta.glob("cnpj_dinamica_*.csv")) if pasta.exists() else []
+    arquivos = sorted(pasta.glob(prefixo + "_dinamica_*.csv")) if pasta.exists() else []
     if len(arquivos) < 2:
         return None
 
@@ -208,6 +215,6 @@ def fator_revisao():
     return {
         "ano": ano,
         "fator": fe_nova[ano] / fe_antiga[ano],
-        "de": antiga.stem.replace("cnpj_dinamica_", ""),
-        "para": nova.stem.replace("cnpj_dinamica_", ""),
+        "de": antiga.stem.replace(prefixo + "_dinamica_", ""),
+        "para": nova.stem.replace(prefixo + "_dinamica_", ""),
     }
