@@ -95,8 +95,8 @@
   },
   "cnpj_prefixo": "pneus",
   "cnpj_extracao": "aguardando consultas (Base dos Dados, br_me_cnpj)",
-  "cnpj_origem": "demo",
-  "cnpj_idade_matriz": false,
+  "cnpj_origem": "real",
+  "cnpj_idade_matriz": true,
   "pnad_csv": "pneus_pnad_demo.csv",
   "rais_csv": "pneus_rais_demo.csv",
   "driver_demanda": {
