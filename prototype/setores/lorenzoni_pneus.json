@@ -104,7 +104,8 @@
     "csv_frota": "pneus_frota_demo.csv",
     "frota_origem": "real",
     "descricao": "Quem compra: donos de veículos da área de influência — pneus e manutenção rápida são função direta da frota circulante (e, na região, da frota agro-cafeeira: caminhonetes e utilitários dos produtores). Arquétipo B2C-Frota (docs/drivers-demanda.md) em recorte MUNICIPAL; base contável = frota SENATRAN por município.",
-    "conversao": "frota da área × gasto médio anual por veículo com manutenção e acessórios (POF ÷ frota nacional), com fator de captura decrescente por anel de proximidade [premissa declarada]"
+    "conversao": "frota da área × gasto médio anual por veículo com manutenção e acessórios (POF ÷ frota nacional), com fator de captura decrescente por anel de proximidade [premissa declarada]",
+    "contexto_regional": "Contexto regional (SENATRAN 2025-10, consulta H2): a frota endereçável equivale a 1,9% da frota do Espírito Santo (2.619.686 veículos) e 0,038% da do Brasil (128.170.305)"
   },
   "icp": {
     "descricao": "Concorrentes formais ativos há 2+ anos, porte ME ou EPP, nos CNAEs do estudo e na área de influência (o universo competitivo local da nova sede)",
@@ -142,8 +143,8 @@
     },
     "participacao_segmento": 0.5,
     "racional_segmento": "substituído pela fração medida na PAC 1403",
-    "participacao_regiao": 0.0005,
-    "racional_regiao": "DEMONSTRAÇÃO — chave regional em DOIS estágios declarados: Brasil → ES (CEMPRE/RAIS, como nos pilotos) → área de influência (frota da área ÷ frota do ES, SENATRAN); a medir nas consultas H/H2/G",
+    "participacao_regiao": 0.000382,
+    "racional_regiao": "DADO (SENATRAN 2025-10, consultas H/H2): frota ENDEREÇÁVEL da área (49.023 veículos, consolidação ponderada da seção 3b) ÷ frota do Brasil (128.170.305) = 0,038% — a chave regional é medida pelo próprio driver do setor, sem premissa intermediária; intervalo 0,034%–0,044% pela sensibilidade dos fatores de acesso",
     "segmento_dado": {
       "agregado": "1403",
       "periodos": "-1",

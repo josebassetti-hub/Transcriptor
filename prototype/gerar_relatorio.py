@@ -230,6 +230,8 @@ def gerar(config: dict, modo: str) -> str:
                     '<p class="premissas">'
                     + config["regiao"].get("racional_fatores", "") + "</p>"
                 )
+                if dd.get("contexto_regional"):
+                    blocos_dd.append(f"<p>{dd['contexto_regional']}.</p>")
             elif frota_info.get("por_municipio"):
                 aneis = {m["nome"]: m.get("anel", "") for m in munis}
                 blocos_dd.append(
