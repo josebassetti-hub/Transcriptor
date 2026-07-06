@@ -125,20 +125,42 @@
   },
   "topdown": {
     "agregado_sidra": {
-      "agregado": "1403",
+      "agregado": "1407",
       "periodos": "-6",
-      "variavel": "0",
+      "variavel": "866",
       "localidade": "N1[all]",
-      "classificacao": "",
-      "recorte_pendente": true,
+      "classificacao": "11066[106644]",
       "fator_unidade": 1000,
-      "fixture": "ibge_pac_pneus_demo.json",
-      "citacao": "IBGE — Pesquisa Anual de Comércio (PAC): receita de revenda do comércio varejista de peças/pneus — tabela, variável e recorte A CONFIRMAR via testar_fontes.py pneus"
+      "fixture": "ibge_pac_receita_div45.json",
+      "citacao": "IBGE — Pesquisa Anual de Comércio (PAC), tabela SIDRA 1407, variável 866 (receita bruta de revenda de mercadorias, mil R$), recorte 2. Comércio de veículos, peças e motocicletas (divisão 45)"
     },
-    "participacao_segmento": 1.0,
-    "racional_segmento": "DEMONSTRAÇÃO — depende da categoria descoberta na PAC (se o recorte for mais largo que pneus, a fração será medida ou declarada)",
+    "participacao_segmento": 0.5,
+    "racional_segmento": "substituído pela fração medida na PAC 1403",
     "participacao_regiao": 0.0005,
-    "racional_regiao": "DEMONSTRAÇÃO — chave regional em DOIS estágios declarados: Brasil → ES (CEMPRE/RAIS, como nos pilotos) → área de influência (frota da área ÷ frota do ES, SENATRAN); a medir nas consultas H/H2/G"
+    "racional_regiao": "DEMONSTRAÇÃO — chave regional em DOIS estágios declarados: Brasil → ES (CEMPRE/RAIS, como nos pilotos) → área de influência (frota da área ÷ frota do ES, SENATRAN); a medir nas consultas H/H2/G",
+    "segmento_dado": {
+      "agregado": "1403",
+      "periodos": "-1",
+      "variavel": "310",
+      "localidade": "N1[all]",
+      "classificacao_setor": "11070[90131]",
+      "classificacao_total": "11070[106699]",
+      "fixture_setor": "ibge_pac1403_pecas.json",
+      "fixture_total": "ibge_pac1403_div45.json",
+      "citacao": "IBGE — PAC, tabela SIDRA 1403, variável 310 (nº de empresas comerciais): 2.2 Peças para veículos ÷ 2. Comércio de veículos, peças e motocicletas",
+      "racional_modelo": "DADO-PROXY (PAC 1403, {ano}): participação de 'peças para veículos' na divisão 45 medida por Nº DE EMPRESAS = {fracao:.1%} — proxy de contagem declarado (a PAC não abre a receita por grupo); recorte inclui autopeças além de pneus, declarado"
+    },
+    "regiao_medida": {
+      "cempre_brasil": {
+        "agregado": "6449",
+        "periodos": "-1",
+        "variavel": "2585",
+        "localidade": "N1[all]",
+        "classificacao": "12762[117371]",
+        "fixture": "ibge_cempre_4530_br.json",
+        "citacao": "IBGE — CEMPRE, tabela SIDRA 6449, variável 2585, classe 45.30-7, Brasil"
+      }
+    }
   },
   "series_bcb": [
     {
@@ -184,5 +206,15 @@
       "participacao_sam": 0.04
     }
   ],
-  "racional_atividades": "Pesos do mix = premissa curada a partir da ESTRUTURA de linhas do plano de negócio (pneus como âncora + serviços correlatos), sem usar os valores em R$ do estudo manual (não verificados); a calibrar com a empresa"
+  "racional_atividades": "Pesos do mix = premissa curada a partir da ESTRUTURA de linhas do plano de negócio (pneus como âncora + serviços correlatos), sem usar os valores em R$ do estudo manual (não verificados); a calibrar com a empresa",
+  "bottomup_validacao": {
+    "agregado": "6449",
+    "periodos": "-1",
+    "variavel": "2585",
+    "localidade": "N3[32]",
+    "classificacao": "12762[117371]",
+    "fixture": "ibge_cempre_4530_es.json",
+    "citacao": "IBGE — CEMPRE, tabela SIDRA 6449, variável 2585 (nº de empresas), classe 45.30-7 Comércio de peças e acessórios para veículos (inclui pneus; mais larga que a subclasse de pneus, declarado), Espírito Santo",
+    "rotulo_classe": "45.30-7 (ES)"
+  }
 }

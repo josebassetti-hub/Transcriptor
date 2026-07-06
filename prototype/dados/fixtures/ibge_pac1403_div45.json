@@ -1,0 +1,22 @@
+[
+ {
+  "id": "310",
+  "variavel": "Nº de empresas (divisão 45) — DADOS DE DEMONSTRAÇÃO",
+  "unidade": "Unidades",
+  "resultados": [
+   {
+    "series": [
+     {
+      "localidade": {
+       "id": "1",
+       "nome": "demo"
+      },
+      "serie": {
+       "2023": "300000"
+      }
+     }
+    ]
+   }
+  ]
+ }
+]

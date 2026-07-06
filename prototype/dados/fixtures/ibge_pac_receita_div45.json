@@ -1,0 +1,27 @@
+[
+ {
+  "id": "866",
+  "variavel": "Receita bruta de revenda (divisão 45) — DADOS DE DEMONSTRAÇÃO",
+  "unidade": "Mil Reais",
+  "resultados": [
+   {
+    "series": [
+     {
+      "localidade": {
+       "id": "1",
+       "nome": "demo"
+      },
+      "serie": {
+       "2018": "300000000",
+       "2019": "320000000",
+       "2020": "290000000",
+       "2021": "360000000",
+       "2022": "410000000",
+       "2023": "450000000"
+      }
+     }
+    ]
+   }
+  ]
+ }
+]

@@ -1,0 +1,22 @@
+[
+ {
+  "id": "2585",
+  "variavel": "Nº de empresas (45.30-7, ES) — DADOS DE DEMONSTRAÇÃO",
+  "unidade": "Unidades",
+  "resultados": [
+   {
+    "series": [
+     {
+      "localidade": {
+       "id": "1",
+       "nome": "demo"
+      },
+      "serie": {
+       "2021": "1500"
+      }
+     }
+    ]
+   }
+  ]
+ }
+]
