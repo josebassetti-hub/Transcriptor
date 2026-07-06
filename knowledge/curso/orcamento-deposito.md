@@ -25,7 +25,7 @@ Fonte: `Orçamento depósito.xlsx` (Drive) — extração completa.
 Estrutura-modelo de orçamento: materiais (com % do total) + mão de obra em homens-dia.
 Custo/m² implícito: 19.765/40 = 494,13 R$/m² (referência para validação de orçamentos).
 
-## Tabela auxiliar de preços de gado (na mesma planilha) — [PROVÁVEL, conferir nos vídeos]
+## Tabela auxiliar de preços de gado (na mesma planilha) — CONFIRMADO como tabela de preços
 
 Números soltos ao lado do orçamento, aparentam ser a régua de preços pecuários:
 
@@ -37,7 +37,8 @@ Números soltos ao lado do orçamento, aparentam ser a régua de preços pecuár
 | Garrote | 1 | 300 | 2.100,00 |
 | Garrota | 1,3 | 390 | 2.730,00 |
 
-Leituras plausíveis: arroba do boi = R$ 300; vaca vale 85% da arroba (R$ 255) → 14 arrobas
-= 3.570; garrote 7 arrobas × 300 = 2.100; garrota 7 × 390 = 2.730. Bezerro 1.500 (5 × 300).
-Aparece também um fator solto `0,004` sem rótulo — [INCERTO]. **Todos estes números têm
-selo PROVÁVEL/INCERTO até o vídeo confirmar o cálculo.**
+**CONFIRMADO por triangulação** (engines/rebanho_leite.py + tests): estes preços de venda
+(vaca/matriz 3.570, garrota 2.730, garrote 2.100, bezerro 1.500) combinados com leite a
+**R$ 2,30/L** reproduzem AO CENTAVO as receitas do relatório de bovinocultura
+(228.474,00 no Ano 1; 336.222,00 no Ano 2). A DERIVAÇÃO por arroba (boi R$ 300/@, vaca
+85%, 14@ etc.) segue [PROVÁVEL]; o fator solto `0,004` segue [INCERTO].

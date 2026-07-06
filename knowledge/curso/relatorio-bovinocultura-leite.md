@@ -64,7 +64,19 @@ não uma regra de manejo. Confirmar nos vídeos.)
 | Custo anual rebanho | 26.443,56 | 43.020,12 | 43.020,12 | 45.782,88 | 45.388,20 |
 | Utilizando custo padrão | Sim | | | | |
 
-## Fórmulas deduzidas (validar nos vídeos e no binário)
+## Fórmulas CONFIRMADAS por triangulação (engines/rebanho_leite.py, 15 testes verdes)
+
+- **Leite** = round(matrizes × parição 70%) lactantes × 12 L × 270 dias — bate anos 2,3,5
+  ao litro (arredondamento half-up: 35,7→36; 33,6→34; 36,4→36). Ano 1 (formação): média
+  de matrizes sem arredondar lactantes (35 × 0,7 = 24,5 → 79.380 L) [PROVÁVEL].
+- **Preço do leite = R$ 2,30/L** e preços de venda (matriz 3.570, garrota 2.730, garrote
+  2.100, bezerro 1.500 — a tabela do orçamento!) reproduzem as receitas ao centavo:
+  Ano 1 = 79.380×2,30 + 3×3.570 + 3×2.730 + 18×1.500 = 228.474,00 ✓
+  Ano 2 = 116.640×2,30 + 4×3.570 + 9×2.730 + 1×2.100 + 18×1.500 = 336.222,00 ✓
+- **Custo de mão de obra = R$ 394,68/cabeça/ano** (= 26% × salário mínimo 1.518 —
+  interpretação do rótulo "CABEÇA/OPER.=1518" [PROVÁVEL]; valor bate os 5 anos ✓).
+
+## Fórmulas ainda deduzidas (validar nos vídeos e no binário)
 
 1. **Leite (L/ano) = matrizes em lactação × produção/dia × dias de ordenha**
    Ano 2: 116.640 = 36 × 12 × 270 → 36 lactantes ≈ 51 matrizes × 70% parição ✓
