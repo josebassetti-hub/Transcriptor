@@ -94,7 +94,7 @@
     "racional_fatores": "Fatores de acesso por cidade [modelo gravitacional Reilly/Huff; premissa declarada CALIBRADA pela densidade competitiva medida na consulta A4]: 100% no núcleo; 35–60% no anel 1 — Vila Valério, Águia Branca e São Domingos do Norte têm as MENORES densidades de oferta própria da área (2,2–2,5 empresas do setor por mil veículos), confirmando dependência do polo; 2–10% no anel 2 — Colatina tem a MAIOR densidade (4,2/mil veículos, 364 empresas) e Nova Venécia 3,3/mil, ou seja, retêm seu mercado com oferta local forte. Referência do núcleo: São Gabriel da Palha 3,0/mil (87 empresas). A validar com a empresa"
   },
   "cnpj_prefixo": "pneus",
-  "cnpj_extracao": "aguardando consultas (Base dos Dados, br_me_cnpj)",
+  "cnpj_extracao": "2026-07 (Base dos Dados, br_me_cnpj)",
   "cnpj_origem": "real",
   "cnpj_idade_matriz": true,
   "pnad_csv": "pneus_pnad_demo.csv",
@@ -225,6 +225,7 @@
     "classificacao": "12762[117371]",
     "fixture": "ibge_cempre_4530_es.json",
     "citacao": "IBGE — CEMPRE, tabela SIDRA 6449, variável 2585 (nº de empresas), classe 45.30-7 Comércio de peças e acessórios para veículos (inclui pneus; mais larga que a subclasse de pneus, declarado), Espírito Santo",
-    "rotulo_classe": "45.30-7 (ES)"
+    "rotulo_classe": "45.30-7 (ES)",
+    "escopo_texto": "no Espírito Santo — estado inteiro, referência de ordem de grandeza (o CEMPRE não publica classes CNAE por município)"
   }
 }

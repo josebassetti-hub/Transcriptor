@@ -262,7 +262,7 @@ def gerar(config: dict, modo: str) -> str:
         f"<p>A receita nacional do setor somou <b>{R.brl(td['tam'])}</b> em {td['ano_base']}"
         + (f", com CAGR de <b>{R.pct(td['cagr'])}</b> desde {anos[0]}" if td["cagr"] else "")
         + f". Aplicando a participação do segmento ({R.pct(td['premissas']['participacao_segmento'],0)}) "
-        f"e da região ({R.pct(td['premissas']['participacao_regiao'],0)}), o SAM top-down de "
+        f"e da região ({R.pct(td['premissas']['participacao_regiao'], 0 if td['premissas']['participacao_regiao'] >= 0.01 else 3)}), o SAM top-down de "
         f"{config['regiao']['nome']} é <b>{R.brl(td['sam'])}</b>.</p>",
         R.tabela(["Ano", "Receita (R$)"], [(a, R.brl(receita[a])) for a in anos]),
         f'<p class="premissas">{"Segmento (DADO oficial)" if prov_segmento else "Premissas: segmento"} — '
@@ -356,8 +356,9 @@ def gerar(config: dict, modo: str) -> str:
         blocos_bu.append(
             f"<p><b>Validação cruzada (fonte oficial independente):</b> o CEMPRE do IBGE "
             f"registra <b>{R.inteiro(qtd_c)}</b> empresas da classe "
-            f"{config['bottomup_validacao'].get('rotulo_classe', 'CNAE do setor')} em "
-            f"{config['regiao']['nome']} ({ano_c}). A contagem do CEMPRE segue metodologia "
+            f"{config['bottomup_validacao'].get('rotulo_classe', 'CNAE do setor')} "
+            f"{config['bottomup_validacao'].get('escopo_texto', 'em ' + config['regiao']['nome'])} "
+            f"({ano_c}). A contagem do CEMPRE segue metodologia "
             "própria (empresas, não estabelecimentos, e cobertura parcial de MEIs), servindo "
             "como referência de ordem de grandeza para o recorte formal (ME/EPP) usado no "
             "bottom-up.</p>"
