@@ -37,7 +37,8 @@
           "min": 1.0,
           "base": 1.0,
           "max": 1.0
-        }
+        },
+        "codigo_ibge": "3204708"
       },
       {
         "nome": "Vila Valério",
@@ -46,7 +47,8 @@
           "min": 0.4,
           "base": 0.5,
           "max": 0.6
-        }
+        },
+        "codigo_ibge": "3205176"
       },
       {
         "nome": "São Domingos do Norte",
@@ -55,7 +57,8 @@
           "min": 0.4,
           "base": 0.5,
           "max": 0.6
-        }
+        },
+        "codigo_ibge": "3204658"
       },
       {
         "nome": "Águia Branca",
@@ -64,7 +67,8 @@
           "min": 0.35,
           "base": 0.45,
           "max": 0.55
-        }
+        },
+        "codigo_ibge": "3200136"
       },
       {
         "nome": "Nova Venécia",
@@ -73,7 +77,8 @@
           "min": 0.03,
           "base": 0.06,
           "max": 0.1
-        }
+        },
+        "codigo_ibge": "3203908"
       },
       {
         "nome": "Colatina",
@@ -82,7 +87,8 @@
           "min": 0.02,
           "base": 0.04,
           "max": 0.08
-        }
+        },
+        "codigo_ibge": "3201506"
       }
     ],
     "racional_fatores": "Fatores de acesso por cidade [PREMISSA DECLARADA, modelo gravitacional Reilly/Huff]: cada cidade é um mercado separado e a loja disputa só uma fração dele — 100% no núcleo (a loja está lá); 40–60% nos vizinhos pequenos do anel 1 (sem oferta especializada própria relevante, presença comercial já existente da empresa); 2–10% nos polos do anel 2 (Nova Venécia e Colatina têm oferta própria e retêm seu mercado — Colatina, o maior polo, recebe o menor fator). A calibrar com a densidade de concorrentes por cidade (consulta A4 municipal) e validar com a empresa; sensibilidade mín/base/máx exibida"
