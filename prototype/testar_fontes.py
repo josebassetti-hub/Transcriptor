@@ -65,13 +65,14 @@ TEMAS = {
         "palavras": ["manutencao", "reparacao", "veicul", "automo", "total"],
     },
     "pneus": {
-        # Série ATUAL da PAC com receita por divisão/grupo/CLASSE (varejo):
-        # 2712 = receita bruta de revenda; 2698 = receita líquida. Ambas têm a
-        # dimensão 'formas de comercialização' — precisamos da categoria Total
-        # (lição da 1407: dimensão não especificada devolve '..'). As 3014/3013
-        # são série encerrada em 2007; a 1407 suprime receita por divisão.
-        "tabelas": [2712, 2698],
-        "palavras": ["pecas", "veicul", "pneu", "total"],
+        # Receita ATUAL (até 2023) da divisão 45: 1399/2701 = receita
+        # operacional líquida segundo a DIVISÃO de comércio x faixas de
+        # pessoal (usar faixa Total). O recorte de 'peças' vem da fração
+        # medida na 1403 (68,5%, contagem-proxy, já ao vivo).
+        # Becos documentados: 1407 suprime receita por divisão; 3014/3013 =
+        # série encerrada 2007; 2712/2698 = só varejo (sem divisão 45).
+        "tabelas": [1399, 2701],
+        "palavras": ["veicul", "pecas", "total"],
     },
 }
 
