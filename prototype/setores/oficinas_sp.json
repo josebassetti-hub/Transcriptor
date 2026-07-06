@@ -34,7 +34,7 @@
     "csv_frota": "oficinas_frota_demo.csv",
     "frota_origem": "demo",
     "descricao": "Quem compra: donos de veículos da região — a demanda por manutenção é função direta da frota circulante e da sua idade (frota mais velha = mais manutenção). Arquétipo B2C-Frota (docs/drivers-demanda.md); base contável = frota registrada no SENATRAN.",
-    "conversao": "frota × gasto médio anual com manutenção por veículo (POF, grupo transporte — categoria em descoberta) com a idade da frota como multiplicador declarado"
+    "conversao": "frota × gasto médio anual com manutenção por veículo (POF 2017-2018, categoria 2.1.4.4 Manutenção e acessórios — âncora completa na seção 6), com a idade da frota como leitura qualitativa"
   },
   "icp": {
     "descricao": "Oficinas formais ativas há 2+ anos, porte ME ou EPP (núcleo profissionalizado; exclui MEI e grandes concessionárias/redes)",
@@ -64,16 +64,26 @@
       "periodos": "-6",
       "variavel": "643",
       "localidade": "N1[all]",
-      "classificacao": "",
-      "recorte_pendente": true,
+      "classificacao": "12355[106861]",
       "fator_unidade": 1000,
       "fixture": "ibge_pas_manutencao_demo.json",
-      "citacao": "IBGE — Pesquisa Anual de Serviços (PAS), tabela SIDRA 2577, variável 643 (receita operacional líquida) — recorte de manutenção e reparação de veículos A CONFIRMAR via testar_fontes.py oficinas"
+      "citacao": "IBGE — Pesquisa Anual de Serviços (PAS), tabela SIDRA 2577, variável 643 (receita operacional líquida, mil R$), recorte 7.1 Manutenção e reparação de veículos"
     },
     "participacao_segmento": 1.0,
-    "racional_segmento": "DEMONSTRAÇÃO — se a categoria descoberta na PAS já for exatamente manutenção/reparação de veículos, a participação é 1,0 (sem recorte); confirmar na descoberta",
+    "racional_segmento": "DADO (PAS 2577, categoria 106861): a categoria \"7.1 Manutenção e reparação de veículos\" corresponde ao setor do estudo, sem recorte adicional — pode incluir reparação de motocicletas (45.43), leve viés para cima, declarado",
     "participacao_regiao": 0.3,
-    "racional_regiao": "DEMONSTRAÇÃO — a triangular como no piloto (CNPJ, CEMPRE SP÷BR, RAIS) quando as consultas estiverem carregadas"
+    "racional_regiao": "DEMONSTRAÇÃO — a triangular como no piloto (CNPJ, CEMPRE SP÷BR, RAIS) quando as consultas estiverem carregadas",
+    "regiao_medida": {
+      "cempre_brasil": {
+        "agregado": "6449",
+        "periodos": "-1",
+        "variavel": "2585",
+        "localidade": "N1[all]",
+        "classificacao": "12762[117369]",
+        "fixture": "ibge_cempre_4520_br.json",
+        "citacao": "IBGE — CEMPRE, tabela SIDRA 6449, variável 2585 (nº de empresas), classe 45.20-0 Manutenção e reparação de veículos automotores, Brasil"
+      }
+    }
   },
   "series_bcb": [
     {
@@ -106,5 +116,40 @@
       "peso_receita": 0.15,
       "participacao_sam": 0.13
     }
-  ]
+  ],
+  "bottomup_validacao": {
+    "agregado": "6449",
+    "periodos": "-1",
+    "variavel": "2585",
+    "localidade": "N3[35]",
+    "classificacao": "12762[117369]",
+    "fixture": "ibge_cempre_4520_sp.json",
+    "citacao": "IBGE — CEMPRE (Cadastro Central de Empresas), tabela SIDRA 6449, variável 2585 (nº de empresas e outras organizações), classe 45.20-0 Manutenção e reparação de veículos automotores, São Paulo"
+  },
+  "topdown_demanda": {
+    "agregado": "6715",
+    "periodos": "-1",
+    "variavel": "1201",
+    "localidade": "N1[all]",
+    "categorias": [
+      {
+        "nome": "Manutenção e acessórios (veículo próprio)",
+        "classificacao": "12190[8011]",
+        "fixture": "ibge_pof_manutencao_veiculo.json"
+      }
+    ],
+    "citacao": "IBGE — POF 2017-2018, tabela SIDRA 6715, variável 1201 (despesa monetária e não monetária média mensal familiar)",
+    "sidra_dimensoes_fixas": [
+      "339[7999]"
+    ],
+    "domicilios": {
+      "agregado": "4712",
+      "periodos": "-1",
+      "variavel": "381",
+      "localidade": "N3[35]",
+      "fixture": "ibge_censo_domicilios_sp.json",
+      "citacao": "IBGE — Censo Demográfico 2022, tabela SIDRA 4712, variável 381 (domicílios particulares permanentes ocupados), São Paulo"
+    },
+    "nota_regional": "Despesa média nacional aplicada aos domicílios de SP. A média da POF é sobre TODAS as famílias (com e sem veículo), então multiplicar por todos os domicílios é consistente; a categoria inclui acessórios além de serviços de oficina (viés para cima, declarado)"
+  }
 }

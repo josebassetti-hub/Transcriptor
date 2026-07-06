@@ -1,0 +1,22 @@
+[
+ {
+  "id": "2585",
+  "variavel": "Número de empresas (classe 45.20-0, Brasil) — DADOS DE DEMONSTRAÇÃO",
+  "unidade": "Unidades",
+  "resultados": [
+   {
+    "series": [
+     {
+      "localidade": {
+       "id": "1",
+       "nome": "demo"
+      },
+      "serie": {
+       "2021": "100000"
+      }
+     }
+    ]
+   }
+  ]
+ }
+]

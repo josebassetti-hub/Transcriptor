@@ -66,22 +66,6 @@ TEMAS = {
     },
 }
 
-# Variações da consulta POF na API SIDRA clássica (apisidra.ibge.gov.br) para
-# descobrir a sintaxe aceita — a API explica o motivo do erro no corpo da
-# resposta, que esta seção imprime.
-_SIDRA = "https://apisidra.ibge.gov.br/values"
-POF_APISIDRA_VARIANTES = [
-    ("atual (p/last + 2 classificacoes)",
-     f"{_SIDRA}/t/3615/n1/all/v/2253/p/last/c12190/103600/c540/17777"),
-    ("periodo 'last 1'",
-     f"{_SIDRA}/t/3615/n1/all/v/2253/p/last%201/c12190/103600/c540/17777"),
-    ("sem classes de rendimento",
-     f"{_SIDRA}/t/3615/n1/all/v/2253/p/last/c12190/103600"),
-    ("todos os periodos",
-     f"{_SIDRA}/t/3615/n1/all/v/2253/p/all/c12190/103600/c540/17777"),
-]
-
-
 def baixar(url: str):
     req = urllib.request.Request(url, headers={"User-Agent": "prototipo-pesquisa-mercado/0.1"})
     with urllib.request.urlopen(req, timeout=60) as resp:
@@ -176,29 +160,6 @@ def main():
             falhas += 1
             print(f"  [ERRO]  Tabela {tid}: {exc}")
             resultado["tabelas"][tid] = f"erro: {exc}"
-
-    print("\n== 3. POF — teste direto da API SIDRA clássica (tabela 3615) ==")
-    resultado["pof_apisidra"] = {}
-    for nome, url in POF_APISIDRA_VARIANTES:
-        try:
-            dados = baixar(url)
-            amostra = dados[1] if isinstance(dados, list) and len(dados) > 1 else dados
-            print(f"  [OK]    {nome}")
-            print(f"          {json.dumps(amostra, ensure_ascii=False)[:220]}")
-            resultado["pof_apisidra"][nome] = {"url": url, "amostra": amostra}
-        except urllib.error.HTTPError as exc:
-            try:
-                corpo = exc.read()
-                if corpo[:2] == b"\x1f\x8b":
-                    corpo = gzip.decompress(corpo)
-                detalhe = corpo.decode("utf-8", "replace").strip()[:300]
-            except Exception:
-                detalhe = ""
-            print(f"  [ERRO]  {nome}: HTTP {exc.code} — {detalhe or exc.reason}")
-            resultado["pof_apisidra"][nome] = f"HTTP {exc.code}: {detalhe}"
-        except Exception as exc:
-            print(f"  [ERRO]  {nome}: {exc}")
-            resultado["pof_apisidra"][nome] = f"erro: {exc}"
 
     SAIDA.mkdir(exist_ok=True)
     destino = SAIDA / "descoberta_fontes.json"

@@ -62,8 +62,9 @@ def gerar(config: dict, modo: str) -> str:
     regiao_pesos = []
     rm = config["topdown"].get("regiao_medida")
     if rm:
-        regiao_pesos.append({"rotulo": "CNPJ", "valor": rm["cnpj_share"],
-                             "prov": None, "racional": rm["racional_cnpj"]})
+        if rm.get("cnpj_share") is not None:
+            regiao_pesos.append({"rotulo": "CNPJ", "valor": rm["cnpj_share"],
+                                 "prov": None, "racional": rm["racional_cnpj"]})
         if rm.get("cempre_brasil") and cempre:
             ano_br, qtd_br, prov_br = ibge.contagem_empresas(
                 cliente, rm["cempre_brasil"])

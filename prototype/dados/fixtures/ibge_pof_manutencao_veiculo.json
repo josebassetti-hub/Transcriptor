@@ -1,0 +1,22 @@
+[
+ {
+  "id": "1201",
+  "variavel": "Despesa média mensal familiar (manutenção de veículo) — DADOS DE DEMONSTRAÇÃO",
+  "unidade": "Reais",
+  "resultados": [
+   {
+    "series": [
+     {
+      "localidade": {
+       "id": "1",
+       "nome": "demo"
+      },
+      "serie": {
+       "2018": "90.0"
+      }
+     }
+    ]
+   }
+  ]
+ }
+]
