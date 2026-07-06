@@ -24,8 +24,10 @@ def receita_setorial(cliente, cfg_topdown: dict):
         f"variaveis/{ag['variavel']}?localidades={ag['localidade']}"
     )
     if ag.get("classificacao"):
-        # recorte de atividade/CNAE, ex.: "12354[118012]" (descoberto via testar_fontes.py)
-        url += f"&classificacao={ag['classificacao']}"
+        # recorte de atividade/CNAE, ex.: "12354[118012]" (descoberto via
+        # testar_fontes.py); o separador | de classificações múltiplas precisa
+        # ir URL-codificado (%7C) — cru, o servidor do IBGE descarta o filtro
+        url += "&classificacao=" + ag["classificacao"].replace("|", "%7C")
     elif ag.get("recorte_pendente"):
         # Sem o recorte, a consulta ao vivo traria a receita do agregado
         # INTEIRO com selo de dado vivo — número real do recorte errado é
