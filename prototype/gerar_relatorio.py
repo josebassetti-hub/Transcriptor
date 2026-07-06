@@ -294,7 +294,8 @@ def gerar(config: dict, modo: str) -> str:
         ano_c, qtd_c, prov_c = cempre
         blocos_bu.append(
             f"<p><b>Validação cruzada (fonte oficial independente):</b> o CEMPRE do IBGE "
-            f"registra <b>{R.inteiro(qtd_c)}</b> empresas da classe 96.02-5 em "
+            f"registra <b>{R.inteiro(qtd_c)}</b> empresas da classe "
+            f"{config['bottomup_validacao'].get('rotulo_classe', 'CNAE do setor')} em "
             f"{config['regiao']['nome']} ({ano_c}). A contagem do CEMPRE segue metodologia "
             "própria (empresas, não estabelecimentos, e cobertura parcial de MEIs), servindo "
             "como referência de ordem de grandeza para o recorte formal (ME/EPP) usado no "
@@ -366,9 +367,14 @@ def gerar(config: dict, modo: str) -> str:
             blocos_anc.append(R.selo_fonte(prov_d))
         blocos_anc.append(R.selo_fonte(prov_dom))
         blocos_anc.append(R.selo_fonte(prov_ipca))
+    ressalva_demo = (
+        " <b>Atenção:</b> o lado bottom-up ainda usa dados de demonstração — a "
+        "leitura de convergência/divergência só vale após a carga real do CNPJ."
+        if cnpj_demo else ""
+    )
     s.append(secao(
         "6. Triangulação e cenários (TAM/SAM/SOM)",
-        f"<p>{tri['leitura']}</p>",
+        f"<p>{tri['leitura']}{ressalva_demo}</p>",
         *blocos_anc,
         R.grafico_funil([
             ("TAM", td["tam"], f"Brasil, top-down, {td['ano_base']}"),

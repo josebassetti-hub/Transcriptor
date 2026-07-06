@@ -124,7 +124,8 @@
     "localidade": "N3[35]",
     "classificacao": "12762[117369]",
     "fixture": "ibge_cempre_4520_sp.json",
-    "citacao": "IBGE — CEMPRE (Cadastro Central de Empresas), tabela SIDRA 6449, variável 2585 (nº de empresas e outras organizações), classe 45.20-0 Manutenção e reparação de veículos automotores, São Paulo"
+    "citacao": "IBGE — CEMPRE (Cadastro Central de Empresas), tabela SIDRA 6449, variável 2585 (nº de empresas e outras organizações), classe 45.20-0 Manutenção e reparação de veículos automotores, São Paulo",
+    "rotulo_classe": "45.20-0"
   },
   "topdown_demanda": {
     "agregado": "6715",

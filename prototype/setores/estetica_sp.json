@@ -109,7 +109,8 @@
     "localidade": "N3[35]",
     "classificacao": "12762[117885]",
     "fixture": "ibge_cempre_9602_sp.json",
-    "citacao": "IBGE — CEMPRE (Cadastro Central de Empresas), tabela SIDRA 6449, variável 2585 (nº de empresas e outras organizações), classe 96.02-5 Cabeleireiros e outras atividades de tratamento de beleza, São Paulo"
+    "citacao": "IBGE — CEMPRE (Cadastro Central de Empresas), tabela SIDRA 6449, variável 2585 (nº de empresas e outras organizações), classe 96.02-5 Cabeleireiros e outras atividades de tratamento de beleza, São Paulo",
+    "rotulo_classe": "96.02-5"
   },
   "atividades": [
     {
