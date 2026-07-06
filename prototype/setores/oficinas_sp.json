@@ -32,7 +32,7 @@
   "driver_demanda": {
     "arquetipo": "b2c_frota",
     "csv_frota": "oficinas_frota_demo.csv",
-    "frota_origem": "demo",
+    "frota_origem": "real",
     "descricao": "Quem compra: donos de veículos da região — a demanda por manutenção é função direta da frota circulante e da sua idade (frota mais velha = mais manutenção). Arquétipo B2C-Frota (docs/drivers-demanda.md); base contável = frota registrada no SENATRAN.",
     "conversao": "frota × gasto médio anual com manutenção por veículo (POF 2017-2018, categoria 2.1.4.4 Manutenção e acessórios — âncora completa na seção 6), com a idade da frota como leitura qualitativa"
   },
