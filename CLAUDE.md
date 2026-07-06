@@ -87,3 +87,30 @@ carimbo de tempo em tudo, professor = fonte canônica).
 
 - Branch de trabalho: `claude/rural-credit-automation-j4fn5s` (única — não criar outras).
 - Commits em português descrevendo a fase (ex.: "Fase 0: ...").
+
+## ESTADO ATUAL (2026-07-06) — leia isto primeiro em sessão nova
+
+- ✅ Fase 0 (fundação), 0b (correções da revisão) e 3.1 (motores financeiro/leite/regras,
+  15 testes verdes + 1 xfail) CONCLUÍDAS. Histórico LGPD-limpo (não reintroduzir CPFs).
+- ⏳ PRÓXIMA AÇÃO = Fase 1 (Rota A). O usuário JÁ liberou os domínios na política de rede
+  do ambiente (drive.google.com, drive.usercontent.google.com, *.googleapis.com,
+  huggingface.co, cdn-lfs.huggingface.co, *.hf.co) e JÁ compartilhou a pasta do curso por
+  link — mas a liberação só vale para sessões criadas DEPOIS dela (a sessão anterior ficou
+  presa na política antiga).
+- Sequência da Fase 1 (detalhes em knowledge/PLANO.md):
+  1. Testar rede: `curl -sI https://drive.google.com` (esperar 3xx/200; 000 = ainda
+     bloqueado → avisar o usuário para conferir a política e recriar a sessão).
+  2. `pip install --user gdown faster-whisper imageio-ffmpeg openpyxl oletools pillow imagehash numpy pytest`
+     (container novo não herda os pacotes da sessão anterior).
+  3. Baixar BINÁRIOS primeiro: `python3 pipeline/download_drive.py` (baixa binários médios
+     e vídeos; IDs já no script). Confirmar se existe `1.mov` na pasta compartilhada
+     (usuário nunca respondeu; listar com gdown --folder se preciso).
+  4. Dissecar binários (tarefa pendente): Automatizador XLSM via openpyxl+olevba; formato
+     .INVRUR → knowledge/automatizador-estrutura.md; decide gate de escrita (plano v2).
+  5. Piloto 2.mov: extrair_audio_frames.py → transcrever.py (blocos retomáveis, commit por
+     bloco, lock) → auditoria do usuário (3 trechos + 5 pares de frames) → demais vídeos
+     um a um (apagar .mov após gate de integridade).
+  6. Durante jobs longos: send_later encadeado (~45 min) para commitar parciais e retomar
+     se o processo morrer (lock em materiais/transcricao.lock).
+- Fase 2 segue OBRIGATORIAMENTE knowledge/PROTOCOLO-EXTRACAO.md (síncrona, lotes de visão
+  de 20–50 pares, manifesto JSONL, commit por lote).
