@@ -37,16 +37,24 @@ def gerar(config: dict, modo: str) -> str:
     receita, prov_ibge = ibge.receita_setorial(cliente, config["topdown"])
     prov_segmento = None
     if config["topdown"].get("segmento_dado"):
-        # a fração do segmento vem da PAS 2611 (dado), substituindo a premissa
-        fracao, ano_frac, prov_segmento = ibge.fracao_segmento(
-            cliente, config["topdown"]["segmento_dado"])
-        config["topdown"]["participacao_segmento"] = fracao
-        modelo = config["topdown"]["segmento_dado"].get(
-            "racional_modelo",
-            "DADO (PAS Tab. 2611, {ano}): receita de cabeleireiros/tratamento de beleza "
-            "÷ receita de serviços pessoais = {fracao:.1%}")
-        config["topdown"]["racional_segmento"] = modelo.format(
-            ano=ano_frac, fracao=fracao)
+        # a fração do segmento vem de tabela oficial (dado), substituindo a
+        # premissa; se a consulta ao vivo vier sem valores, mantém a premissa
+        # declarada em vez de quebrar
+        try:
+            fracao, ano_frac, prov_segmento = ibge.fracao_segmento(
+                cliente, config["topdown"]["segmento_dado"])
+            config["topdown"]["participacao_segmento"] = fracao
+            modelo = config["topdown"]["segmento_dado"].get(
+                "racional_modelo",
+                "DADO (PAS Tab. 2611, {ano}): receita de cabeleireiros/tratamento "
+                "de beleza ÷ receita de serviços pessoais = {fracao:.1%}")
+            config["topdown"]["racional_segmento"] = modelo.format(
+                ano=ano_frac, fracao=fracao)
+        except Exception as exc:
+            prov_segmento = None
+            config["topdown"]["racional_segmento"] = (
+                config["topdown"].get("racional_segmento", "premissa declarada")
+                + f" [fração medida indisponível na consulta ao vivo: {exc}]")
     series_macro = [
         bcb.serie_sgs(cliente, s["codigo"], s["nome"], s["ultimos"])
         for s in config["series_bcb"]

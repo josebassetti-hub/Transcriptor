@@ -45,6 +45,20 @@ def receita_setorial(cliente, cfg_topdown: dict):
         return {ano: valor * fator for ano, valor in serie.items()}, prov
     bruto, prov = cliente.buscar_json(url, fixture=ag["fixture"])
     serie = _extrair_serie(bruto)
+    if not serie:
+        # resposta ao vivo sem nenhum valor (períodos vazios/sigilo/recorte
+        # errado): cair para a fixture com o motivo declarado — nunca quebrar
+        bruto = cliente._fixture(ag["fixture"])
+        cliente.usou_fixture = True
+        serie = _extrair_serie(bruto)
+        prov = {
+            "origem": "fixture",
+            "url": url,
+            "consultado_em": "dados de demonstração (fixture)",
+            "motivo": ("a consulta ao vivo respondeu SEM VALORES (períodos vazios "
+                       "ou sigilo) — recorte a revisar; cole a resposta da URL do "
+                       "selo no chat para diagnóstico"),
+        }
     fator = ag.get("fator_unidade", 1)  # ex.: 1000 quando a unidade é "mil reais"
     serie = {ano: valor * fator for ano, valor in serie.items()}
     prov["fonte"] = ag["citacao"]
@@ -98,6 +112,8 @@ def fracao_segmento(cliente, cfg: dict):
     serie_setor, prov = _consulta(cfg["classificacao_setor"], cfg["fixture_setor"])
     serie_total, prov_total = _consulta(cfg["classificacao_total"], cfg["fixture_total"])
     anos_comuns = sorted(set(serie_setor) & set(serie_total))
+    if not anos_comuns:
+        raise ValueError("fracao_segmento: consultas sem ano em comum ou sem valores")
     ano = anos_comuns[-1]
     fracao = serie_setor[ano] / serie_total[ano]
     prov["fonte"] = cfg["citacao"]
