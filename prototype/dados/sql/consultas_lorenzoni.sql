@@ -1,0 +1,161 @@
+-- ============================================================================
+-- Consultas do 3º piloto: LORENZONI PNEUS — área de influência de
+-- São Gabriel da Palha/ES (sede + Vila Valério, São Domingos do Norte,
+-- Águia Branca, Nova Venécia, Colatina). PRIMEIRO ESTUDO MUNICIPAL.
+-- Rode UMA por vez no BigQuery e cole o resultado no chat. Destinos:
+--   0  -> códigos IBGE dos municípios (conferência)
+--   H  -> dados/pneus_frota_demo.csv (frota por município e tipo — o driver)
+--   H2 -> frota total ES e Brasil (chave regional em dois estágios)
+--   A4 -> dados/pneus_agregados_demo.csv (concorrentes por CNAE x regime x porte x idade)
+--   B3 -> dados/pneus_dinamica_demo.csv
+--   E  -> dados/pneus_atividades_demo.csv
+--   G  -> dados/pneus_rais_demo.csv (RAIS por UF, peso ES no Brasil)
+-- CNAEs do estudo: 4530705 (pneus), 4520001, 4520004, 4520005, 4520006.
+-- ============================================================================
+
+-- ---------------------------------------------------------------------------
+-- CONSULTA 0 — códigos IBGE dos municípios da área (conferência do recorte)
+-- ---------------------------------------------------------------------------
+SELECT id_municipio, nome
+FROM `basedosdados.br_bd_diretorios_brasil.municipio`
+WHERE sigla_uf = 'ES'
+  AND nome IN ('São Gabriel da Palha', 'Vila Valério', 'São Domingos do Norte',
+               'Águia Branca', 'Nova Venécia', 'Colatina')
+ORDER BY nome;
+
+-- ---------------------------------------------------------------------------
+-- CONSULTA H — FROTA POR MUNICÍPIO x TIPO (o driver de demanda municipal)
+-- ---------------------------------------------------------------------------
+-- WITH mun AS (
+--   SELECT id_municipio, nome
+--   FROM `basedosdados.br_bd_diretorios_brasil.municipio`
+--   WHERE sigla_uf = 'ES'
+--     AND nome IN ('São Gabriel da Palha', 'Vila Valério', 'São Domingos do Norte',
+--                  'Águia Branca', 'Nova Venécia', 'Colatina')
+-- ),
+-- ultimo AS (
+--   SELECT MAX(ano) AS ano FROM `basedosdados.br_denatran_frota.municipio_tipo`
+-- )
+-- SELECT f.ano, MAX(f.mes) AS mes, m.nome AS municipio, f.tipo_veiculo,
+--        SUM(f.quantidade) AS quantidade
+-- FROM `basedosdados.br_denatran_frota.municipio_tipo` f
+-- JOIN mun m USING (id_municipio), ultimo
+-- WHERE f.ano = ultimo.ano
+--   AND f.mes = (SELECT MAX(mes)
+--                FROM `basedosdados.br_denatran_frota.municipio_tipo` x, ultimo
+--                WHERE x.ano = ultimo.ano)
+-- GROUP BY f.ano, m.nome, f.tipo_veiculo
+-- ORDER BY m.nome, quantidade DESC;
+
+-- ---------------------------------------------------------------------------
+-- CONSULTA H2 — frota total do ES e do Brasil (chave regional em 2 estágios:
+-- Brasil -> ES -> área; a frota da área vem da consulta H)
+-- ---------------------------------------------------------------------------
+-- WITH ultimo AS (
+--   SELECT MAX(ano) AS ano FROM `basedosdados.br_denatran_frota.municipio_tipo`
+-- ),
+-- mes_ref AS (
+--   SELECT MAX(mes) AS mes
+--   FROM `basedosdados.br_denatran_frota.municipio_tipo` x, ultimo
+--   WHERE x.ano = ultimo.ano
+-- )
+-- SELECT 'ES' AS escopo, SUM(f.quantidade) AS frota
+-- FROM `basedosdados.br_denatran_frota.municipio_tipo` f, ultimo, mes_ref
+-- WHERE f.ano = ultimo.ano AND f.mes = mes_ref.mes AND f.sigla_uf = 'ES'
+-- UNION ALL
+-- SELECT 'BR', SUM(f.quantidade)
+-- FROM `basedosdados.br_denatran_frota.municipio_tipo` f, ultimo, mes_ref
+-- WHERE f.ano = ultimo.ano AND f.mes = mes_ref.mes;
+
+-- ---------------------------------------------------------------------------
+-- CONSULTA A4 — concorrentes na ÁREA por CNAE x regime x porte x idade (matriz)
+-- ---------------------------------------------------------------------------
+-- WITH mun AS (
+--   SELECT id_municipio
+--   FROM `basedosdados.br_bd_diretorios_brasil.municipio`
+--   WHERE sigla_uf = 'ES'
+--     AND nome IN ('São Gabriel da Palha', 'Vila Valério', 'São Domingos do Norte',
+--                  'Águia Branca', 'Nova Venécia', 'Colatina')
+-- ),
+-- ultima AS (
+--   SELECT MAX(data) AS d FROM `basedosdados.br_me_cnpj.estabelecimentos`
+-- ),
+-- estab AS (
+--   SELECT e.cnpj_basico, e.cnae_fiscal_principal AS cnae7,
+--          e.data_inicio_atividade
+--   FROM `basedosdados.br_me_cnpj.estabelecimentos` e, ultima
+--   WHERE e.data = ultima.d
+--     AND e.situacao_cadastral IN ('02', '2')
+--     AND e.cnae_fiscal_principal IN ('4530705','4520001','4520004','4520005','4520006')
+--     AND e.id_municipio IN (SELECT id_municipio FROM mun)
+-- ),
+-- matriz AS (
+--   SELECT m.cnpj_basico, MIN(m.data_inicio_atividade) AS inicio_empresa
+--   FROM `basedosdados.br_me_cnpj.estabelecimentos` m, ultima
+--   WHERE m.data = ultima.d
+--     AND CAST(m.identificador_matriz_filial AS STRING) = '1'
+--     AND m.cnpj_basico IN (SELECT cnpj_basico FROM estab)
+--   GROUP BY m.cnpj_basico
+-- ),
+-- emp AS (
+--   SELECT emp.cnpj_basico, emp.porte
+--   FROM `basedosdados.br_me_cnpj.empresas` emp, ultima
+--   WHERE emp.data = ultima.d
+-- ),
+-- tributo AS (
+--   SELECT s.cnpj_basico,
+--          MAX(s.opcao_mei) = 1 AS eh_mei,
+--          MAX(s.opcao_simples) = 1 AS eh_simples
+--   FROM `basedosdados.br_me_cnpj.simples` s
+--   GROUP BY s.cnpj_basico
+-- ),
+-- com_idade AS (
+--   SELECT estab.cnpj_basico, estab.cnae7,
+--          DATE_DIFF(CURRENT_DATE(),
+--                    COALESCE(matriz.inicio_empresa, estab.data_inicio_atividade),
+--                    YEAR) AS idade
+--   FROM estab LEFT JOIN matriz USING (cnpj_basico)
+-- )
+-- SELECT
+--   CASE com_idade.cnae7
+--     WHEN '4530705' THEN '4530-7/05' WHEN '4520001' THEN '4520-0/01'
+--     WHEN '4520004' THEN '4520-0/04' WHEN '4520005' THEN '4520-0/05'
+--     WHEN '4520006' THEN '4520-0/06' END AS cnae,
+--   'ES' AS uf,
+--   CASE WHEN COALESCE(tributo.eh_mei, FALSE) THEN 'MEI'
+--        WHEN COALESCE(tributo.eh_simples, FALSE) THEN 'SIMPLES'
+--        ELSE 'FORA_SIMPLES' END AS regime,
+--   CASE WHEN COALESCE(tributo.eh_mei, FALSE) THEN 'MEI'
+--        WHEN emp.porte IN ('01', '1') THEN 'ME'
+--        WHEN emp.porte IN ('03', '3') THEN 'EPP'
+--        ELSE 'DEMAIS' END AS porte,
+--   CASE WHEN com_idade.idade < 2 THEN '0-2' WHEN com_idade.idade < 5 THEN '2-5'
+--        WHEN com_idade.idade < 10 THEN '5-10' ELSE '10+' END AS faixa_idade,
+--   COUNT(DISTINCT com_idade.cnpj_basico) AS qtd_empresas,
+--   COUNT(*) AS qtd_estabelecimentos
+-- FROM com_idade
+-- LEFT JOIN emp USING (cnpj_basico)
+-- LEFT JOIN tributo USING (cnpj_basico)
+-- GROUP BY 1, 2, 3, 4, 5
+-- ORDER BY 1, 3, 4, 5;
+
+-- ---------------------------------------------------------------------------
+-- CONSULTA B3 — dinâmica na ÁREA (mesma estrutura da B3 das oficinas, com o
+-- filtro `id_municipio IN (SELECT id_municipio FROM mun)` e os CNAEs acima)
+-- ---------------------------------------------------------------------------
+
+-- ---------------------------------------------------------------------------
+-- CONSULTA E — concorrência por atividade na ÁREA (principal x só-secundária;
+-- mesma estrutura da E das oficinas, com filtro municipal e os CNAEs acima)
+-- ---------------------------------------------------------------------------
+
+-- ---------------------------------------------------------------------------
+-- CONSULTA G — RAIS: vínculos das subclasses por UF (peso ES no Brasil,
+-- estágio 1 da chave regional)
+-- ---------------------------------------------------------------------------
+-- SELECT ano, sigla_uf, SUM(quantidade_vinculos_ativos) AS vinculos
+-- FROM `basedosdados.br_me_rais.microdados_estabelecimentos`
+-- WHERE cnae_2_subclasse IN ('4530705','4520001','4520004','4520005','4520006')
+--   AND ano = 2024
+-- GROUP BY ano, sigla_uf
+-- ORDER BY vinculos DESC;

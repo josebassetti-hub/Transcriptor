@@ -64,6 +64,14 @@ TEMAS = {
         "tabelas": [2577, 6715, 6449],
         "palavras": ["manutencao", "reparacao", "veicul", "automo", "total"],
     },
+    "pneus": {
+        # Comércio varejista de pneus = PAC (Pesquisa Anual de Comércio), não
+        # PAS: 1403/1407 = PAC receita/dados gerais por atividade; 2577 = PAS
+        # (serviços rápidos, 7.1); 6449 = CEMPRE (classes 4530-7 e 4520-0);
+        # 6715 = POF (despesa das famílias com manutenção/pneus)
+        "tabelas": [1403, 1407, 2577, 6449, 6715],
+        "palavras": ["pneu", "pecas", "veicul", "manutencao", "comercio", "total"],
+    },
 }
 
 def baixar(url: str):

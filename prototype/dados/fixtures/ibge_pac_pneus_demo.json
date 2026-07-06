@@ -1,0 +1,27 @@
+[
+ {
+  "id": "PAC",
+  "variavel": "Receita de revenda — DADOS DE DEMONSTRAÇÃO (recorte da PAC a confirmar)",
+  "unidade": "Mil Reais",
+  "resultados": [
+   {
+    "series": [
+     {
+      "localidade": {
+       "id": "1",
+       "nome": "Brasil"
+      },
+      "serie": {
+       "2018": "30000000",
+       "2019": "32000000",
+       "2020": "29000000",
+       "2021": "36000000",
+       "2022": "41000000",
+       "2023": "45000000"
+      }
+     }
+    ]
+   }
+  ]
+ }
+]

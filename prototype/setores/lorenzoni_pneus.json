@@ -1,0 +1,157 @@
+{
+  "id": "lorenzoni_pneus",
+  "titulo": "Mercado de pneus e serviços automotivos rápidos — área de influência de São Gabriel da Palha (ES)",
+  "contexto": "Estudo para a Lorenzoni Pneus (revenda de pneus em expansão para nova sede de 1.800 m² em São Gabriel da Palha/ES): tamanho do mercado local de pneus + serviços rápidos + estética automotiva na área de influência (cidade-sede e vizinhas), concorrência real e teste de realismo da meta de receita. Terceiro piloto — primeiro estudo em nível MUNICIPAL do motor. Contexto declarado (informação da empresa, não medida): carteira ~80% pessoas físicas / 20% empresas; região agro-cafeeira (Cooabriel) com frota intensa de caminhonetes e utilitários.",
+  "cnaes": [
+    {
+      "codigo": "4530-7/05",
+      "descricao": "Comércio a varejo de pneumáticos e câmaras-de-ar (linha-âncora)"
+    },
+    {
+      "codigo": "4520-0/01",
+      "descricao": "Manutenção mecânica (freios e suspensão)"
+    },
+    {
+      "codigo": "4520-0/04",
+      "descricao": "Alinhamento e balanceamento"
+    },
+    {
+      "codigo": "4520-0/05",
+      "descricao": "Lavagem, lubrificação e polimento (troca de óleo e estética automotiva)"
+    },
+    {
+      "codigo": "4520-0/06",
+      "descricao": "Borracharia"
+    }
+  ],
+  "regiao": {
+    "nivel": "municipios",
+    "sigla": "ES",
+    "apelido": "área SGP+5",
+    "nome": "área de influência de São Gabriel da Palha (ES): sede + 5 municípios vizinhos",
+    "municipios": [
+      {
+        "nome": "São Gabriel da Palha",
+        "anel": "núcleo"
+      },
+      {
+        "nome": "Vila Valério",
+        "anel": "anel 1"
+      },
+      {
+        "nome": "São Domingos do Norte",
+        "anel": "anel 1"
+      },
+      {
+        "nome": "Águia Branca",
+        "anel": "anel 1"
+      },
+      {
+        "nome": "Nova Venécia",
+        "anel": "anel 2"
+      },
+      {
+        "nome": "Colatina",
+        "anel": "anel 2"
+      }
+    ]
+  },
+  "cnpj_prefixo": "pneus",
+  "cnpj_extracao": "aguardando consultas (Base dos Dados, br_me_cnpj)",
+  "cnpj_origem": "demo",
+  "cnpj_idade_matriz": false,
+  "pnad_csv": "pneus_pnad_demo.csv",
+  "rais_csv": "pneus_rais_demo.csv",
+  "driver_demanda": {
+    "arquetipo": "b2c_frota",
+    "csv_frota": "pneus_frota_demo.csv",
+    "frota_origem": "demo",
+    "descricao": "Quem compra: donos de veículos da área de influência — pneus e manutenção rápida são função direta da frota circulante (e, na região, da frota agro-cafeeira: caminhonetes e utilitários dos produtores). Arquétipo B2C-Frota (docs/drivers-demanda.md) em recorte MUNICIPAL; base contável = frota SENATRAN por município.",
+    "conversao": "frota da área × gasto médio anual por veículo com manutenção e acessórios (POF ÷ frota nacional), com fator de captura decrescente por anel de proximidade [premissa declarada]"
+  },
+  "icp": {
+    "descricao": "Concorrentes formais ativos há 2+ anos, porte ME ou EPP, nos CNAEs do estudo e na área de influência (o universo competitivo local da nova sede)",
+    "portes": [
+      "ME",
+      "EPP"
+    ],
+    "faixas_idade": [
+      "2-5",
+      "5-10",
+      "10+"
+    ],
+    "ticket_medio_anual_brl": 500000,
+    "racional_ticket": "DEMONSTRAÇÃO — a ancorar no ticket implícito (SAM top-down ÷ operantes locais) quando as consultas municipais estiverem carregadas, como nos pilotos anteriores",
+    "taxa_atividade": 0.56,
+    "racional_atividade": "DEMONSTRAÇÃO — a medir na consulta A4 municipal pela adesão ao Simples; ponto de partida = 56% medido no setor de reparação de veículos em SP (piloto 2), a substituir pelo valor local"
+  },
+  "captura": {
+    "pessimista": 0.1,
+    "base": 0.2,
+    "otimista": 0.35,
+    "horizonte_anos": 5,
+    "racional": "Cenários de share LOCAL (mercado municipal, não estadual): a empresa é a principal revenda Michelin da cidade com estrutura múltipla dos concorrentes — capturas de 10–35% do SAM local são o intervalo plausível declarado; o share implícito da meta é testado na seção 7b"
+  },
+  "topdown": {
+    "agregado_sidra": {
+      "agregado": "1403",
+      "periodos": "-6",
+      "variavel": "0",
+      "localidade": "N1[all]",
+      "classificacao": "",
+      "recorte_pendente": true,
+      "fator_unidade": 1000,
+      "fixture": "ibge_pac_pneus_demo.json",
+      "citacao": "IBGE — Pesquisa Anual de Comércio (PAC): receita de revenda do comércio varejista de peças/pneus — tabela, variável e recorte A CONFIRMAR via testar_fontes.py pneus"
+    },
+    "participacao_segmento": 1.0,
+    "racional_segmento": "DEMONSTRAÇÃO — depende da categoria descoberta na PAC (se o recorte for mais largo que pneus, a fração será medida ou declarada)",
+    "participacao_regiao": 0.0005,
+    "racional_regiao": "DEMONSTRAÇÃO — chave regional em DOIS estágios declarados: Brasil → ES (CEMPRE/RAIS, como nos pilotos) → área de influência (frota da área ÷ frota do ES, SENATRAN); a medir nas consultas H/H2/G"
+  },
+  "series_bcb": [
+    {
+      "codigo": 4189,
+      "nome": "Selic acumulada no mês anualizada (% a.a.)",
+      "ultimos": 24
+    },
+    {
+      "codigo": 433,
+      "nome": "IPCA — variação mensal (%)",
+      "ultimos": 24
+    }
+  ],
+  "atividades": [
+    {
+      "cnae": "4530-7/05",
+      "descricao": "Pneus e câmaras (comércio, linha-âncora)",
+      "peso_receita": 0.6,
+      "participacao_sam": 0.6
+    },
+    {
+      "cnae": "4520-0/01",
+      "descricao": "Freios e suspensão",
+      "peso_receita": 0.12,
+      "participacao_sam": 0.14
+    },
+    {
+      "cnae": "4520-0/04",
+      "descricao": "Alinhamento e balanceamento",
+      "peso_receita": 0.1,
+      "participacao_sam": 0.08
+    },
+    {
+      "cnae": "4520-0/05",
+      "descricao": "Óleo, lubrificação e estética automotiva",
+      "peso_receita": 0.15,
+      "participacao_sam": 0.14
+    },
+    {
+      "cnae": "4520-0/06",
+      "descricao": "Borracharia",
+      "peso_receita": 0.03,
+      "participacao_sam": 0.04
+    }
+  ],
+  "racional_atividades": "Pesos do mix = premissa curada a partir da ESTRUTURA de linhas do plano de negócio (pneus como âncora + serviços correlatos), sem usar os valores em R$ do estudo manual (não verificados); a calibrar com a empresa"
+}

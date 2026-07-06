@@ -109,7 +109,7 @@ def gerar(config: dict, modo: str) -> str:
     som_base = bu["cenarios"]["base"]["som"]
     usa_bu_central = config.get("sam_central") == "bottom_up"
     sam_central = bu["sam"] if usa_bu_central else (td["sam"] + bu["sam"]) / 2
-    rotulo_sam = ("SAM " + config["regiao"]["sigla"]
+    rotulo_sam = ("SAM " + config["regiao"].get("apelido", config["regiao"]["sigla"])
                   + (" (bottom-up; PAS = piso)" if usa_bu_central else " (triangulado)"))
 
     # ---- write + render ------------------------------------------------------
@@ -190,6 +190,20 @@ def gerar(config: dict, modo: str) -> str:
                 f"<b>Conversão em demanda:</b> {dd.get('conversao', 'ver metodologia')}.</p>"
             )
             blocos_dd.append(R.grafico_barras_h(tipos[:6], "veículos", esq=140))
+            if frota_info.get("por_municipio"):
+                aneis = {m["nome"]: m.get("anel", "")
+                         for m in config["regiao"].get("municipios", [])}
+                blocos_dd.append(
+                    "<p>Frota por cidade da área de influência (o anel indica a "
+                    "proximidade comercial — fator de captura decrescente, premissa "
+                    "declarada na seção 6):</p>"
+                )
+                blocos_dd.append(R.tabela(
+                    ["Cidade", "Anel", "Frota"],
+                    [(mun, aneis.get(mun, "—"), R.inteiro(q))
+                     for mun, q in sorted(frota_info["por_municipio"].items(),
+                                          key=lambda kv: -kv[1])],
+                ))
             blocos_dd.append(R.selo_fonte(frota_info["proveniencia"]))
         if len(blocos_dd) > 1:
             s.append(secao("3b. Quem compra — o driver de demanda da região", *blocos_dd))

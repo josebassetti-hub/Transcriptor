@@ -31,17 +31,23 @@ def frota_regiao(config: dict):
     if not caminho.exists():
         return None
     por_tipo = {}
+    por_municipio = {}
     referencia = None
     with open(caminho, newline="", encoding="utf-8") as fh:
         for l in csv.DictReader(fh):
             referencia = max(referencia or l["referencia"], l["referencia"])
             por_tipo[l["tipo"]] = por_tipo.get(l["tipo"], 0) + int(l["quantidade"])
+            # estudos municipais trazem a coluna opcional `municipio`
+            mun = (l.get("municipio") or "").strip()
+            if mun:
+                por_municipio[mun] = por_municipio.get(mun, 0) + int(l["quantidade"])
     if not por_tipo:
         return None
     demo = dd.get("frota_origem", "demo") != "real"
     return {
         "total": sum(por_tipo.values()),
         "por_tipo": por_tipo,
+        "por_municipio": por_municipio or None,
         "referencia": referencia,
         "proveniencia": {
             "origem": "fixture" if demo else "live",
