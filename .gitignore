@@ -1,0 +1,13 @@
+# Materiais brutos do curso (direitos autorais do professor; grandes) — fora do git.
+# Só materiais/ é ignorado; knowledge/frames/ e demais saídas derivadas SÃO commitadas.
+materiais/
+*.mov
+*.mp4
+*.wav
+*.opus
+# Python
+__pycache__/
+*.pyc
+.venv/
+# SO
+.DS_Store
