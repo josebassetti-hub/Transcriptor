@@ -65,10 +65,12 @@ TEMAS = {
         "palavras": ["manutencao", "reparacao", "veicul", "automo", "total"],
     },
     "pneus": {
-        # PAC 3014/3013 = resultados por divisão/grupo/CLASSE (a 1407 tem a
-        # dimensão 'UF de atuação' e devolve '..' para receita na divisão 45);
-        # 3014 pode dar a receita do grupo 45.3 Peças DIRETAMENTE
-        "tabelas": [3014, 3013],
+        # Série ATUAL da PAC com receita por divisão/grupo/CLASSE (varejo):
+        # 2712 = receita bruta de revenda; 2698 = receita líquida. Ambas têm a
+        # dimensão 'formas de comercialização' — precisamos da categoria Total
+        # (lição da 1407: dimensão não especificada devolve '..'). As 3014/3013
+        # são série encerrada em 2007; a 1407 suprime receita por divisão.
+        "tabelas": [2712, 2698],
         "palavras": ["pecas", "veicul", "pneu", "total"],
     },
 }
