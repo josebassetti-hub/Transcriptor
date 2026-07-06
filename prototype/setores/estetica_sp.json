@@ -121,6 +121,7 @@
       "participacao_sam": 0.3
     }
   ],
+  "nota_emprego_formal": "DADO (RAIS 2010–2024, consulta G1, Brasil): estabelecimentos com vínculo formal em cabeleireiros (9602-5/01) foram de 35,9 mil para 57,2 mil (+59% em 14 anos, com vale na pandemia), enquanto em estética (9602-5/02) mais que quadruplicaram (12,3 mil → 50,8 mil, crescimento em todos os anos exceto 2022) — o crescimento do setor está na estética, confirmado pelo lado do emprego formal",
   "sam_central": "bottom_up",
   "racional_sam_central": "Setor MEI-intensivo: a PAS subcaptura o universo (diagnóstico de três âncoras, seção 6), então o SAM central é o bottom-up ME/EPP; o top-down PAS é tratado como piso corporativo",
   "topdown_demanda": {

@@ -495,6 +495,11 @@ def gerar(config: dict, modo: str) -> str:
                 sam_txt, R.brl(l["receita_alvo"]), share_txt, conc_txt,
             ))
         corpo_atv.append(R.tabela(cab, linhas_tab))
+        if config.get("nota_emprego_formal"):
+            corpo_atv.append(
+                f"<p><b>Dinâmica por atividade no emprego formal:</b> "
+                f"{config['nota_emprego_formal']}.</p>"
+            )
         corpo_atv.append(
             '<p class="premissas">Premissa participacao_sam por atividade declarada no '
             'arquivo do setor; share implícito = receita-alvo da atividade ÷ SAM da '
