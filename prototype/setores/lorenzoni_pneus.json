@@ -121,7 +121,10 @@
     "ticket_medio_anual_brl": 500000,
     "racional_ticket": "DEMONSTRAÇÃO — a ancorar no ticket implícito na primeira geração ao vivo: SAM top-down (PAC × fração de peças × chave regional medida 0,038%) ÷ 129 operantes locais, como nos pilotos anteriores",
     "taxa_atividade": 0.65,
-    "racional_atividade": "MEDIDO (consulta A4 municipal, idade pela matriz): 65,5% do ICP local (129 de 197 empresas ME/EPP com 2+ anos na área) é optante do Simples Nacional — proxy de operação real validado nos pilotos anteriores (interior tem adesão ainda maior que capitais: 65% aqui vs 56% na reparação em SP)"
+    "racional_atividade": "MEDIDO (consulta A4 municipal, idade pela matriz): 65,5% do ICP local (129 de 197 empresas ME/EPP com 2+ anos na área) é optante do Simples Nacional — proxy de operação real validado nos pilotos anteriores (interior tem adesão ainda maior que capitais: 65% aqui vs 56% na reparação em SP)",
+    "empresas_somente_cnae_secundario": 1443,
+    "peso_receita_secundaria": 0.15,
+    "racional_secundaria": "Mix de receita multi-CNAE validado nos pilotos (empresa com o CNAE só como atividade secundária fatura ~15% dele [premissa declarada]). Caso extremo local: só 24 empresas da área têm pneus como atividade PRINCIPAL, mas 448 o têm como secundária (postos, autopeças, mecânicas) — a concorrência real da linha-âncora é 19x a visível"
   },
   "captura": {
     "pessimista": 0.1,
