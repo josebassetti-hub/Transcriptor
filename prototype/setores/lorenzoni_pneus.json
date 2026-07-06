@@ -139,10 +139,10 @@
       "periodos": "-6",
       "variavel": "866",
       "localidade": "N1[all]",
-      "classificacao": "11066[106644]",
+      "classificacao": "11066[106644]|12354[106802]",
       "fator_unidade": 1000,
       "fixture": "ibge_pac_receita_div45.json",
-      "citacao": "IBGE — Pesquisa Anual de Comércio (PAC), tabela SIDRA 1407, variável 866 (receita bruta de revenda de mercadorias, mil R$), recorte 2. Comércio de veículos, peças e motocicletas (divisão 45)"
+      "citacao": "IBGE — Pesquisa Anual de Comércio (PAC), tabela SIDRA 1407, variável 866 (receita bruta de revenda de mercadorias, mil R$), recorte 2. Comércio de veículos, peças e motocicletas (divisão 45), empresas com atuação no Brasil"
     },
     "participacao_segmento": 0.5,
     "racional_segmento": "substituído pela fração medida na PAC 1403",
