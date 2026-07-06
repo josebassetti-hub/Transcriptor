@@ -47,8 +47,8 @@
       "5-10",
       "10+"
     ],
-    "ticket_medio_anual_brl": 350000,
-    "racional_ticket": "Ancorado no ticket implícito das fontes oficiais: SAM top-down (PAS, recorte 7.1) ÷ empresas operantes (ICP optante do Simples) ~= R$ 348 mil/ano; usado R$ 350 mil. Nota: a participação regional (30%) ainda é premissa até a consulta G — o ticket será refinado com ela; sensibilidade na seção 6",
+    "ticket_medio_anual_brl": 300000,
+    "racional_ticket": "Ancorado no ticket implícito das fontes oficiais: SAM top-down (PAS, recorte 7.1, com a participação regional MEDIDA de 24% — mediana CEMPRE×RAIS) ÷ empresas operantes (ICP optante do Simples) ~= R$ 283 mil/ano; usado R$ 300 mil (viés de subdeclaração fiscal, mesma calibração do piloto de estética); sensibilidade na seção 6",
     "taxa_atividade": 0.56,
     "racional_atividade": "MEDIDO (consulta A4, idade pela matriz): 56,2% do ICP (22.218 de 39.559 empresas ME/EPP com 2+ anos) é optante do Simples Nacional — proxy de operação real (metodologia do piloto de estética). Validação forte: os 22.218 operantes ficam a 4% do CEMPRE 2021 (21.373 empresas da classe 45.20-0 em SP) — as duas medições independentes convergem",
     "empresas_somente_cnae_secundario": 110129,

@@ -426,8 +426,9 @@ def gerar(config: dict, modo: str) -> str:
             f"saldo líquido de <b>{'+' if saldo >= 0 else '−'}{R.inteiro(abs(saldo))}</b> no "
             "período — a base formal está em "
             + ("expansão" if saldo >= 0 else "contração (parte relevante tende a ser limpeza "
-               "cadastral de empresas dormentes pela Receita, coerente com a baixa adesão ao "
-               "Simples observada na seção 5)")
+               "cadastral de empresas dormentes pela Receita"
+               + (", coerente com a baixa adesão ao Simples observada na seção 5"
+                  if config["icp"].get("taxa_atividade", 1.0) < 0.4 else "") + ")")
         )
         blocos_din.append(
             f"<p>Recorte relevante ao ICP (empresas <b>não-MEI</b>): entre {anos_d[0]} e "
