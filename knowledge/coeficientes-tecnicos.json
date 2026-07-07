@@ -1,0 +1,113 @@
+{
+  "_schema": {
+    "descricao": "Base OPERACIONAL de coeficientes técnicos da fábrica. APPEND-ONLY: nunca sobrescrever um valor — atualização vira novo registro em 'historico' com data. Fixtures congelados dos exemplos do professor ficam em tests/fixtures/ (imutáveis, para golden tests).",
+    "campos": {
+      "valor": "número, na unidade_canonica",
+      "unidade_canonica": "ex.: L/vaca/dia, R$/L, R$/cabeca/ano, fracao (0-1), dias",
+      "abrangencia": "onde o valor vale (atividade/região/tecnologia). Uso FORA da abrangência é bloqueado pelo Revisor sem aval humano",
+      "fonte": "doc do curso OU video+mmss OU cotação externa com URL/data",
+      "selo": "CONFIRMADO | PROVAVEL | INCERTO (mesma escala do PROTOCOLO-EXTRACAO.md)",
+      "vigencia": "data_base do valor e validade sugerida (cotações envelhecem)",
+      "historico": "registros anteriores, do mais novo para o mais antigo"
+    }
+  },
+  "leite.paricao": {
+    "valor": 0.70,
+    "unidade_canonica": "fracao",
+    "abrangencia": "bovinocultura de leite, manejo do exemplo do curso (BA); rebanhos melhorados podem usar 75-80% — confirmar nos vídeos",
+    "fonte": "Evolução rebanho de leite.pdf (indicadores técnicos, anos 1-12)",
+    "selo": "CONFIRMADO",
+    "vigencia": {"data_base": "2026-06-05", "validade": "estrutural (rever por caso)"},
+    "historico": []
+  },
+  "leite.producao_leite_dia": {
+    "valor": 12.0,
+    "unidade_canonica": "L/vaca/dia",
+    "abrangencia": "leite, nível tecnológico do exemplo do curso; varia fortemente com genética/alimentação — dimensionar por caso",
+    "fonte": "Evolução rebanho de leite.pdf (indicadores técnicos)",
+    "selo": "CONFIRMADO",
+    "vigencia": {"data_base": "2026-06-05", "validade": "estrutural (rever por caso)"},
+    "historico": []
+  },
+  "leite.periodo_ordenha_dias": {
+    "valor": 270,
+    "unidade_canonica": "dias/ano",
+    "abrangencia": "leite, exemplo do curso",
+    "fonte": "Evolução rebanho de leite.pdf (indicadores técnicos)",
+    "selo": "CONFIRMADO",
+    "vigencia": {"data_base": "2026-06-05", "validade": "estrutural"},
+    "historico": []
+  },
+  "leite.preco_litro": {
+    "valor": 2.30,
+    "unidade_canonica": "R$/L",
+    "abrangencia": "COTAÇÃO do exemplo (BA, 2026-06). Preço de mercado: SEMPRE recotar por região/data em projeto real",
+    "fonte": "triangulação relatorio-bovinocultura-leite.md × receitas (confirmada ao centavo)",
+    "selo": "CONFIRMADO",
+    "vigencia": {"data_base": "2026-06-05", "validade": "90 dias (cotação)"},
+    "historico": []
+  },
+  "gado.preco_matriz": {
+    "valor": 3570.0,
+    "unidade_canonica": "R$/cabeca",
+    "abrangencia": "COTAÇÃO do exemplo (BA, 2026-06); recotar em projeto real",
+    "fonte": "Orçamento depósito.xlsx (tabela auxiliar) — confirmada por triangulação com receitas",
+    "selo": "CONFIRMADO",
+    "vigencia": {"data_base": "2026-05-30", "validade": "90 dias (cotação)"},
+    "historico": []
+  },
+  "gado.preco_garrota": {
+    "valor": 2730.0,
+    "unidade_canonica": "R$/cabeca",
+    "abrangencia": "COTAÇÃO do exemplo (BA, 2026-06); recotar em projeto real",
+    "fonte": "Orçamento depósito.xlsx — confirmada por triangulação",
+    "selo": "CONFIRMADO",
+    "vigencia": {"data_base": "2026-05-30", "validade": "90 dias (cotação)"},
+    "historico": []
+  },
+  "gado.preco_garrote": {
+    "valor": 2100.0,
+    "unidade_canonica": "R$/cabeca",
+    "abrangencia": "COTAÇÃO do exemplo (BA, 2026-06); recotar em projeto real",
+    "fonte": "Orçamento depósito.xlsx — confirmada por triangulação",
+    "selo": "CONFIRMADO",
+    "vigencia": {"data_base": "2026-05-30", "validade": "90 dias (cotação)"},
+    "historico": []
+  },
+  "gado.preco_bezerro": {
+    "valor": 1500.0,
+    "unidade_canonica": "R$/cabeca",
+    "abrangencia": "COTAÇÃO do exemplo (BA, 2026-06); recotar em projeto real",
+    "fonte": "Orçamento depósito.xlsx — confirmada por triangulação",
+    "selo": "CONFIRMADO",
+    "vigencia": {"data_base": "2026-05-30", "validade": "90 dias (cotação)"},
+    "historico": []
+  },
+  "pecuaria.custo_mao_de_obra_cabeca_ano": {
+    "valor": 394.68,
+    "unidade_canonica": "R$/cabeca/ano",
+    "abrangencia": "custo-padrão da ferramenta do professor (flag 'utilizando custo padrão: Sim'); interpretação 26% × salário mínimo 1.518 é PROVAVEL",
+    "fonte": "Evolução rebanho de leite.pdf — valor reproduz os 5 anos do exemplo ao centavo",
+    "selo": "CONFIRMADO",
+    "vigencia": {"data_base": "2026-06-05", "validade": "atualizar com salário mínimo vigente"},
+    "historico": []
+  },
+  "geral.taxa_conservacao_bens": {
+    "valor": 0.025,
+    "unidade_canonica": "fracao a.a. sobre valor dos bens",
+    "abrangencia": "regra fixa da ferramenta do professor (todos os projetos)",
+    "fonte": "Custos e despesas.pdf (rótulo literal '2,5% s/ Total')",
+    "selo": "CONFIRMADO",
+    "vigencia": {"data_base": "2026-06-05", "validade": "estrutural"},
+    "historico": []
+  },
+  "geral.taxa_impostos_terra_nua": {
+    "valor": 0.002,
+    "unidade_canonica": "fracao a.a. sobre valor da terra nua",
+    "abrangencia": "regra fixa da ferramenta do professor (todos os projetos)",
+    "fonte": "Custos e despesas.pdf (rótulo literal '0,2% sobre o valor total da terra nua')",
+    "selo": "CONFIRMADO",
+    "vigencia": {"data_base": "2026-06-05", "validade": "estrutural"},
+    "historico": []
+  }
+}

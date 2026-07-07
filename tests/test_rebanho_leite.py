@@ -11,7 +11,9 @@ from engines.rebanho_leite import (  # noqa: E402
     leite_litros_ano_transicao, receita_total_ano, vacas_em_lactacao,
 )
 
-IND = IndicadoresLeite()
+# Fixture CONGELADO do exemplo do professor — nunca atualizar com cotações novas
+IND = IndicadoresLeite.de_json(
+    str(Path(__file__).resolve().parent / "fixtures" / "exemplo-professor-leite.json"))
 
 
 def test_leite_anos_estaveis():

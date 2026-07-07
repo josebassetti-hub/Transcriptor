@@ -119,6 +119,28 @@ ao resultado final:
 
 1. Passo a passo executável por módulo (gaveta 1 consolidada) → `knowledge/manual-metodologia/`
 2. Documento de conhecimento decisório (gaveta 2 consolidada) → `knowledge/manual-metodologia/`
+   (inclui `principios-decisorios.md`: heurísticas do professor com citação)
 3. `knowledge/descartes.md` (gaveta 3, rastreável)
 4. `knowledge/fontes-citadas.md` (Etapa 0)
-5. `knowledge/coeficientes-tecnicos.json` (números do curso, com vídeo+tempo de origem)
+5. `knowledge/coeficientes-tecnicos.json` (base OPERACIONAL, append-only, schema no próprio
+   arquivo) — fixtures congelados dos exemplos ficam em `tests/fixtures/` (goldens imutáveis)
+6. `knowledge/anti-escopo.md` revisado (o que o curso NÃO cobriu — fora dele o agente não
+   extrapola: pesquisa/cota/pergunta)
+7. `knowledge/casos/` — cada exemplo do professor vira um caso (template no README; sempre
+   pseudonimizado)
+
+## Memória total por vídeo (plano v2.1 — o que fica commitado no git)
+
+| Artefato | Caminho | Conteúdo |
+|---|---|---|
+| Transcrição integral | `transcricoes/<video>.md` (+ blocos/) | toda a fala, ⚠️ nos trechos de baixa confiança |
+| Tabela-mestra | `frames/<video>-tabela-mestra.md` | todo evento de tela com tempo/estado/dependências |
+| Manifesto de frames | `frames/<video>-manifesto.jsonl` | 1 linha/frame: tempo, papel a/d, phash, mantido/descartado+motivo; cabeçalho com versões pinadas (ffmpeg, thresholds) — regeneração VERIFICÁVEL |
+| Contact sheets | `frames/<video>-contatos/` | miniaturas com timestamp para navegar a aula sem o vídeo |
+| Frames-evidência | `frames/<video>-evidencias/` | pares antes/depois em resolução plena de TODO item PROVÁVEL/INCERTO (o que o usuário julga; CONFIRMADO dispensa) |
+| Notas de entendimento | `frames/<video>-notas.md` | "caderno do aluno": contexto e conexões — TODA nota com mm:ss + selo (sem exceção) |
+| Descartes | `descartes.md` | gaveta 3 com tempo e motivo |
+
+Frames full-res completos e áudio ficam FORA do git (materiais/, efêmero) — regeneráveis
+por script determinístico a partir dos vídeos no Drive (cópia-mestra do próprio usuário,
+owner verificado) e conferíveis pelo manifesto.

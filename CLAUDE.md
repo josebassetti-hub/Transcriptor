@@ -7,10 +7,17 @@ crédito rural para o Banco do Nordeste (BNB/FNE) e a transforma em uma fábrica
 operada por agentes: o usuário fornece os dados do cliente, os agentes calculam, preenchem
 as planilhas e entregam o pacote pronto para revisão humana e protocolo no banco.
 
-O plano completo e aprovado está em `knowledge/PLANO.md`. Leia-o antes de qualquer trabalho.
+O plano completo e aprovado está em `knowledge/PLANO.md` (v2 + adições v2.1). Leia-o antes
+de qualquer trabalho. **`knowledge/INDICE.md` é o mapa da base de conhecimento** ("que
+pergunta → qual arquivo") — consulte-o antes de procurar às cegas.
 A extração de conhecimento dos vídeos segue OBRIGATORIAMENTE o `knowledge/PROTOCOLO-EXTRACAO.md`
 (protocolo do usuário: pares antes/depois, 3 gavetas, escala de confiança, tabela-mestra,
-carimbo de tempo em tudo, professor = fonte canônica).
+carimbo de tempo em tudo, professor = fonte canônica; + memória total v2.1: manifesto,
+contact sheets, frames-evidência de PROVÁVEL/INCERTO, notas com mm:ss+selo).
+Coeficientes: fórmulas nos engines/, valores na base operacional
+`knowledge/coeficientes-tecnicos.json` (append-only) via `engines/coeficientes.py`;
+goldens usam fixtures congelados em `tests/fixtures/`. Fora de abrangência = bloquear
+(ver `knowledge/anti-escopo.md`).
 
 ## Idioma e usuário
 

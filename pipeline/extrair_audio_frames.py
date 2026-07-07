@@ -20,10 +20,12 @@ Saídas:
   materiais/frames/<video>/f_HHMMSS.CC_a.jpg  (antes) / _d.jpg (depois) / _s.jpg (segurança)
 """
 import glob
+import json
 import os
 import re
 import subprocess
 import sys
+import time
 from concurrent.futures import ThreadPoolExecutor
 
 import imagehash
@@ -143,21 +145,53 @@ def extrair_frames(video: str, pasta: str, gatilho: float) -> None:
 
     # dedup: duplicata só se phash E diferença de pixels concordarem (ver LIMIAR_PIXEL)
     arquivos = sorted(glob.glob(os.path.join(pasta, "f_*.jpg")))
-    ultimo_hash, ultima_matriz, removidos = None, None, 0
+    registros = []
+    ultimo_hash, ultima_matriz, ultimo_mantido, removidos = None, None, None, 0
     for arq in arquivos:
         img = Image.open(arq)
         h = imagehash.phash(img)
         matriz = np.asarray(img.convert("L").resize((64, 64)), dtype=np.int16)
+        nome_arq = os.path.basename(arq)
+        reg = {"arquivo": nome_arq, "phash": str(h), "mantido": True,
+               "classificacao": None, "motivo_descarte": None}
         if ultimo_hash is not None and h - ultimo_hash <= DIST_HASH:
             frac_dif = float(np.mean(np.abs(matriz - ultima_matriz) > 10))
             if frac_dif < LIMIAR_PIXEL:
                 os.remove(arq)
                 removidos += 1
+                reg["mantido"] = False
+                reg["motivo_descarte"] = f"idêntico a {ultimo_mantido} (tela estática)"
+                registros.append(reg)
                 continue
-        ultimo_hash, ultima_matriz = h, matriz
+        ultimo_hash, ultima_matriz, ultimo_mantido = h, matriz, nome_arq
+        registros.append(reg)
     mantidos = len(arquivos) - removidos
+
+    # manifesto verificável (plano v2.1): commitado em knowledge/frames/
+    nome_video = os.path.basename(pasta)
+    dir_manif = os.path.join(RAIZ, "knowledge", "frames")
+    os.makedirs(dir_manif, exist_ok=True)
+    manifesto = os.path.join(dir_manif, f"{nome_video}-manifesto.jsonl")
+    versao_ffmpeg = rodar(["-version"]).stdout.splitlines()
+    cabecalho = {
+        "tipo": "config", "video": nome_video,
+        "gerado_em": time.strftime("%Y-%m-%d %H:%M:%S"),
+        "ffmpeg": (versao_ffmpeg[0] if versao_ffmpeg else "?"),
+        "gatilho_cena": gatilho, "recuo_antes_s": RECUO_ANTES,
+        "avanco_depois_s": AVANCO_DEPOIS, "janela_rajada_s": JANELA_RAJADA,
+        "seguranca_s": SEGURANCA_SEG, "dist_hash": DIST_HASH,
+        "limiar_pixel": LIMIAR_PIXEL,
+        "mudancas_brutas": len(tempos), "apos_colapso": len(mudancas),
+        "frames_planejados": len(plano), "mantidos": mantidos,
+        "descartados_dedup": removidos, "falhas_extracao": falhas,
+    }
+    with open(manifesto, "w", encoding="utf-8") as f:
+        f.write(json.dumps(cabecalho, ensure_ascii=False) + "\n")
+        for reg in registros:
+            f.write(json.dumps(reg, ensure_ascii=False) + "\n")
+
     print(f"  frames OK: {mantidos} únicos ({removidos} duplicados removidos, "
-          f"{falhas} falhas) em {pasta}")
+          f"{falhas} falhas) em {pasta}; manifesto: {manifesto}")
 
 
 def processar(video: str, gatilho: float) -> None:

@@ -7,48 +7,47 @@ selo de confiança do protocolo:
   CONFIRMADO  = reproduz os números do exemplo ao centavo;
   PROVÁVEL    = hipótese que bate no exemplo mas com regra deduzida, confirmar nos vídeos.
 
+SEPARAÇÃO DE COEFICIENTES (plano v2.1):
+  - Este módulo guarda só as FÓRMULAS (gerais). Nenhum preço/índice fica em código.
+  - Golden tests carregam o fixture CONGELADO tests/fixtures/exemplo-professor-leite.json.
+  - Projetos reais carregam valores da base operacional via engines/coeficientes.py
+    (append-only, com abrangência/vigência) — atualizar cotação lá NÃO altera os goldens.
+
 A EVOLUÇÃO do rebanho (transições entre categorias ano a ano, com arredondamentos) ainda
 NÃO está modelada — depende dos vídeos (ver test xfail). Por ora o motor recebe a
 composição anual como entrada e calcula produção/receita/custo.
 """
+import json
+import math
 from dataclasses import dataclass, field
-
-# Preços do exemplo do curso (CONFIRMADO por triangulação orçamento×receitas; os valores
-# são parâmetro do projeto real — cotar por região na operação)
-PRECOS_PADRAO = {
-    "matriz": 3_570.0,     # vaca (85% da arroba do boi a R$300 × 14@ — leitura provável)
-    "garrota": 2_730.0,
-    "garrote": 2_100.0,
-    "bezerro": 1_500.0,
-    "bezerra": 1_500.0,
-    "novilha": 0.0,        # sem venda no exemplo; preço a definir por cotação
-    "novilho": 0.0,
-    "touro": 0.0,
-}
-PRECO_LEITE_PADRAO = 2.30          # R$/litro (CONFIRMADO no exemplo)
-SALARIO_MINIMO_PADRAO = 1_518.0    # vigente na data do curso
-FATOR_MAO_DE_OBRA = 0.26           # R$/cabeça/ano = 26% do SM (PROVÁVEL: 394,68 no exemplo)
 
 
 @dataclass
 class IndicadoresLeite:
-    """Indicadores técnicos (defaults = exemplo do curso, anos 1–12)."""
-    paricao: float = 0.70
-    producao_leite_dia: float = 12.0     # L/vaca em lactação/dia
-    periodo_ordenha_dias: int = 270
-    relacao_touro_vaca: int = 30
-    mortalidade_bezerros: float = 0.06
-    mortalidade_garrotes: float = 0.03
-    mortalidade_adultos: float = 0.02
-    preco_leite: float = PRECO_LEITE_PADRAO
-    precos: dict = field(default_factory=lambda: dict(PRECOS_PADRAO))
-    salario_minimo: float = SALARIO_MINIMO_PADRAO
+    """Indicadores técnicos e preços de um projeto de leite (sem defaults embutidos —
+    carregar de fixture congelado nos testes ou da base operacional em produção)."""
+    paricao: float
+    producao_leite_dia: float          # L/vaca em lactação/dia
+    periodo_ordenha_dias: int
+    relacao_touro_vaca: int
+    mortalidade_bezerros: float
+    mortalidade_garrotes: float
+    mortalidade_adultos: float
+    preco_leite: float                 # R$/L
+    salario_minimo: float
+    fator_mao_de_obra: float           # R$/cabeça/ano = fator × salário mínimo
+    precos: dict = field(default_factory=dict)   # R$/cabeça por categoria
+
+    @classmethod
+    def de_json(cls, caminho: str) -> "IndicadoresLeite":
+        dados = json.load(open(caminho, encoding="utf-8"))
+        campos = {k: v for k, v in dados.items() if not k.startswith("_")}
+        return cls(**campos)
 
 
 def vacas_em_lactacao(matrizes: int, ind: IndicadoresLeite) -> int:
     """CONFIRMADO (anos 2+ do exemplo): lactantes = round(matrizes × parição).
     round half-up: 35,7→36 (ano 2 ✓); 33,6→34 (ano 3 ✓); 36,4→36 (ano 5 ✓)."""
-    import math
     return int(math.floor(matrizes * ind.paricao + 0.5))
 
 
@@ -68,7 +67,7 @@ def custo_mao_de_obra(total_cabecas: int, ind: IndicadoresLeite) -> float:
     """CONFIRMADO no valor (R$ 394,68/cabeça/ano reproduz os 5 anos do exemplo ao
     centavo); PROVÁVEL na interpretação (394,68 = 26% × salário mínimo 1.518 — rótulo
     'SAL. PECUARIA - CABEÇA/OPER.=1518' no relatório)."""
-    return round(total_cabecas * ind.salario_minimo * FATOR_MAO_DE_OBRA, 2)
+    return round(total_cabecas * ind.salario_minimo * ind.fator_mao_de_obra, 2)
 
 
 def receita_vendas(vendas_por_categoria: dict, ind: IndicadoresLeite) -> float:

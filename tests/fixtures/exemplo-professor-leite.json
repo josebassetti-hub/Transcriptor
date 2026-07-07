@@ -1,0 +1,24 @@
+{
+  "_descricao": "FIXTURE CONGELADO do exemplo de bovinocultura de leite do professor (Cliente-exemplo A.P.M., Cruz das Almas-BA). NUNCA atualizar com cotações novas — é a referência imutável dos golden tests. Valores operacionais/atualizáveis vivem em knowledge/coeficientes-tecnicos.json.",
+  "_fonte": "knowledge/curso/relatorio-bovinocultura-leite.md + orcamento-deposito.md (triangulação confirmada em engines/rebanho_leite.py)",
+  "paricao": 0.70,
+  "producao_leite_dia": 12.0,
+  "periodo_ordenha_dias": 270,
+  "relacao_touro_vaca": 30,
+  "mortalidade_bezerros": 0.06,
+  "mortalidade_garrotes": 0.03,
+  "mortalidade_adultos": 0.02,
+  "preco_leite": 2.30,
+  "salario_minimo": 1518.0,
+  "fator_mao_de_obra": 0.26,
+  "precos": {
+    "matriz": 3570.0,
+    "garrota": 2730.0,
+    "garrote": 2100.0,
+    "bezerro": 1500.0,
+    "bezerra": 1500.0,
+    "novilha": 0.0,
+    "novilho": 0.0,
+    "touro": 0.0
+  }
+}
