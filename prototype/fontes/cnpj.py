@@ -74,6 +74,28 @@ def agregados(config: dict, demo: bool = True):
     return filtradas, _proveniencia(demo, extracao)
 
 
+def empresas_por_municipio(config: dict):
+    """Empresas ativas do setor por município (estudos municipais).
+
+    Soma qtd_empresas de TODOS os regimes e portes, inclusive MEI — é a base
+    das densidades competitivas (empresas ÷ frota × 1.000) que calibram os
+    fatores de acesso. Retorna {municipio: qtd} ou None quando o CSV de
+    agregados não tem a coluna `municipio` (setores por UF ficam intactos).
+    """
+    linhas = _ler_csv(_arq_setor(config, "agregados"))
+    if not linhas or "municipio" not in linhas[0]:
+        return None
+    cnaes = {c["codigo"] for c in config["cnaes"]}
+    uf = config["regiao"]["sigla"]
+    agg = {}
+    for l in linhas:
+        mun = (l.get("municipio") or "").strip()
+        if l["cnae"] in cnaes and l["uf"] == uf and mun:
+            emp = int(l.get("qtd_empresas") or l.get("qtd_ativas", 0))
+            agg[mun] = agg.get(mun, 0) + emp
+    return agg or None
+
+
 def contar_icp(linhas, icp: dict) -> dict:
     """Conta empresas-alvo (ICP, em EMPRESAS) e o universo nas duas unidades."""
     faixas_ok = set(icp["faixas_idade"])

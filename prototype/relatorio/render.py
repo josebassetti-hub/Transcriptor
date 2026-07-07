@@ -220,6 +220,17 @@ font-variant-numeric:tabular-nums}
 details{margin-top:10px;color:var(--ink2)}summary{cursor:pointer;font-size:.85rem}
 .premissas{font-size:.85rem;color:var(--ink2);border-left:3px solid var(--grade);
 padding-left:12px;margin:12px 0 0}
+.memoria{border-top:1px solid var(--grade);padding-top:14px;margin-top:18px}
+.memoria h3{font-size:.98rem;margin:0 0 4px}
+.memoria .classif{font-size:.7rem;font-weight:600;color:var(--ink2);
+border:1px solid var(--grade);border-radius:6px;padding:1px 7px;vertical-align:middle}
+.formula{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+font-size:.82rem;color:var(--ink2)}
+p.formula{margin:4px 0}
+a.memref{font-size:.72em;vertical-align:super;color:var(--mudo);text-decoration:none}
+.memoria td{word-break:break-word}
+.memoria pre{overflow-x:auto;font-size:.72rem;background:var(--pagina);
+padding:10px;border-radius:8px}
 footer{color:var(--mudo);font-size:.8rem;margin-top:28px}
 """
 

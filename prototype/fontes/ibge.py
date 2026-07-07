@@ -100,7 +100,9 @@ def fracao_segmento(cliente, cfg: dict):
     """Fração do segmento lida da PAS 2611 (receita do setor ÷ receita do grupo).
 
     Substitui a premissa manual de participação do segmento por dado oficial —
-    docs/plano-fechamento-lacunas.md, lacuna 3. Retorna (fracao, ano, prov).
+    docs/plano-fechamento-lacunas.md, lacuna 3. Retorna (fracao, ano, prov,
+    detalhe); `detalhe` traz numerador/denominador e as URLs das duas
+    consultas, para a memória de cálculo mostrar a substituição exata.
     """
     def _consulta(classificacao, fixture):
         url = (
@@ -122,7 +124,14 @@ def fracao_segmento(cliente, cfg: dict):
     if prov_total["origem"] == "fixture":
         prov["origem"] = prov_total["origem"]
         prov.setdefault("motivo", prov_total.get("motivo"))
-    return fracao, ano, prov
+    detalhe = {
+        "ano": ano,
+        "numerador": serie_setor[ano],
+        "denominador": serie_total[ano],
+        "url_setor": prov.get("url"),
+        "url_total": prov_total.get("url"),
+    }
+    return fracao, ano, prov, detalhe
 
 
 def _extrair_apisidra(resposta):

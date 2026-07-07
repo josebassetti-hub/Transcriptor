@@ -22,6 +22,7 @@ from fontes.http_client import ClienteHTTP
 from fontes import ibge, bcb, cnpj, pnad, frota
 from calculos import sizing
 from relatorio import render as R
+from relatorio.memoria import Memoria
 
 RAIZ = Path(__file__).resolve().parent
 
@@ -30,18 +31,31 @@ def secao(titulo, *blocos):
     return f"<section><h2>{titulo}</h2>" + "".join(blocos) + "</section>"
 
 
+def _num(v):
+    """Número completo com separador de milhar — a memória de cálculo mostra a
+    substituição exata, não o valor abreviado ("R$ 1,2 bi") do corpo."""
+    return f"{v:,.0f}".replace(",", ".")
+
+
+def _dec(v, casas=2):
+    return f"{v:.{casas}f}".replace(".", ",")
+
+
 def gerar(config: dict, modo: str) -> str:
     cliente = ClienteHTTP(modo)
+    mem = Memoria()
+    m_consol = None  # verbete municipal, citado pela chave regional quando existe
 
     # ---- collect -------------------------------------------------------------
     receita, prov_ibge = ibge.receita_setorial(cliente, config["topdown"])
     prov_segmento = None
+    det_frac = None
     if config["topdown"].get("segmento_dado"):
         # a fração do segmento vem de tabela oficial (dado), substituindo a
         # premissa; se a consulta ao vivo vier sem valores, mantém a premissa
         # declarada em vez de quebrar
         try:
-            fracao, ano_frac, prov_segmento = ibge.fracao_segmento(
+            fracao, ano_frac, prov_segmento, det_frac = ibge.fracao_segmento(
                 cliente, config["topdown"]["segmento_dado"])
             config["topdown"]["participacao_segmento"] = fracao
             modelo = config["topdown"]["segmento_dado"].get(
@@ -52,6 +66,7 @@ def gerar(config: dict, modo: str) -> str:
                 ano=ano_frac, fracao=fracao)
         except Exception as exc:
             prov_segmento = None
+            det_frac = None
             config["topdown"]["racional_segmento"] = (
                 config["topdown"].get("racional_segmento", "premissa declarada")
                 + f" [fração medida indisponível na consulta ao vivo: {exc}]")
@@ -64,6 +79,7 @@ def gerar(config: dict, modo: str) -> str:
     cnpj_demo = config.get("cnpj_origem", "demo") != "real"
     linhas_cnpj, prov_cnpj = cnpj.agregados(config, demo=cnpj_demo)
     contagem = cnpj.contar_icp(linhas_cnpj, config["icp"])
+    emp_mun = cnpj.empresas_por_municipio(config)
     din, _ = cnpj.dinamica(config, demo=cnpj_demo)
     cempre = None
     if config.get("bottomup_validacao"):
@@ -152,6 +168,10 @@ def gerar(config: dict, modo: str) -> str:
         f"pela premissa de atividade). No cenário-base de captura "
         f"({R.pct(bu['cenarios']['base']['taxa'])} em {bu['horizonte_anos']} anos), o "
         f"objetivo de receita anual (SOM) é {R.brl(som_base)}.</p>",
+        '<p class="premissas">A conta completa de cada número deste estudo — '
+        "fórmula, entradas, substituição numérica e links de verificação — está "
+        'no <a href="#memoria-calculo">Anexo — Memória de cálculo</a>, no fim '
+        "do relatório.</p>",
     ))
 
     # 2. Metodologia
@@ -207,18 +227,132 @@ def gerar(config: dict, modo: str) -> str:
                 # pelo fator de acesso (Reilly/Huff) — nunca soma simples
                 me = sizing.mercado_enderecavel(frota_info["por_municipio"], munis)
                 frota_info["enderecavel"] = me
-                linhas_me = [
-                    (l["cidade"], l["anel"], R.inteiro(l["valor_local"]),
-                     f'{R.pct(l["fator"]["min"], 0)}–{R.pct(l["fator"]["base"], 0)}'
-                     f'–{R.pct(l["fator"]["max"], 0)}',
-                     R.inteiro(round(l["enderecavel"])))
-                    for l in me["linhas"]
-                ]
                 t = me["totais"]
+                # densidade competitiva MEDIDA por cidade (empresas do setor,
+                # todos os regimes e portes, ÷ frota × 1.000) — o dado que
+                # calibrou os fatores de acesso deixa de viver só no racional
+                dens_mun = {}
+                if emp_mun:
+                    for l in me["linhas"]:
+                        emp_cid = emp_mun.get(l["cidade"])
+                        if emp_cid is not None and l["valor_local"]:
+                            dens_mun[l["cidade"]] = (
+                                emp_cid, emp_cid / l["valor_local"] * 1000)
+                m_dens = None
+                if dens_mun:
+                    m_dens = mem.registrar(
+                        "Densidade competitiva por cidade",
+                        "DADO",
+                        "densidade = empresas ativas do setor na cidade ÷ frota "
+                        "da cidade × 1.000",
+                        [{"nome": l["cidade"],
+                          "valor": ("{} empresas ÷ {} veículos × 1.000 = {}/mil"
+                                    .format(R.inteiro(dens_mun[l["cidade"]][0]),
+                                            R.inteiro(l["valor_local"]),
+                                            _dec(dens_mun[l["cidade"]][1], 1))
+                                    if l["cidade"] in dens_mun
+                                    else "n/d (cidade sem linha na consulta A4)"),
+                          "fonte": "consultas A4 (empresas) e H (frota)"}
+                         for l in me["linhas"]],
+                        "por cidade (coluna Valor acima)",
+                        "coluna Densidade da tabela da seção 3b",
+                        racional=("Empresas de TODOS os regimes e portes (inclusive "
+                                  "MEI) dos CNAEs do estudo — mede a oferta local "
+                                  "total, que retém o mercado da própria cidade."),
+                        provs=[prov_cnpj, frota_info["proveniencia"]],
+                        sql_ref="CONSULTAS A4 e H",
+                    )
+                entradas_fat = []
+                for l in me["linhas"]:
+                    e_fat = {"nome": "{} ({})".format(l["cidade"], l["anel"]),
+                             "valor": "{}–{}–{}".format(
+                                 R.pct(l["fator"]["min"], 0),
+                                 R.pct(l["fator"]["base"], 0),
+                                 R.pct(l["fator"]["max"], 0))}
+                    if m_dens:
+                        e_fat["ref"] = m_dens
+                    entradas_fat.append(e_fat)
+                m_fatores = mem.registrar(
+                    "Fatores de acesso por cidade (modelo gravitacional)",
+                    "PREMISSA DECLARADA",
+                    "fator de acesso = fração do mercado local que a loja disputa "
+                    "(mín–base–máx por cidade)",
+                    entradas_fat,
+                    "",
+                    "intervalos por cidade (acima)",
+                    racional=config["regiao"].get("racional_fatores", ""),
+                )
+                refs_cidades = []
+                for l in me["linhas"]:
+                    f = l["fator"]
+                    cod = mem.registrar(
+                        "Frota endereçável — " + l["cidade"],
+                        "DADO × PREMISSA",
+                        "endereçável = frota local × fator de acesso (mín/base/máx)",
+                        [{"nome": "frota local ({})".format(frota_info["referencia"]),
+                          "valor": R.inteiro(l["valor_local"]),
+                          "fonte": "SENATRAN, consulta H",
+                          "url": frota_info["proveniencia"].get("url")},
+                         {"nome": "fator de acesso ({})".format(l["anel"]),
+                          "valor": "{}–{}–{}".format(R.pct(f["min"], 0),
+                                                     R.pct(f["base"], 0),
+                                                     R.pct(f["max"], 0)),
+                          "ref": m_fatores}],
+                        "{fr} × {fmin} = {emin}; {fr} × {fbase} = {ebase}; "
+                        "{fr} × {fmax} = {emax}".format(
+                            fr=R.inteiro(l["valor_local"]),
+                            fmin=R.pct(f["min"], 0),
+                            emin=R.inteiro(round(l["enderecavel_min"])),
+                            fbase=R.pct(f["base"], 0),
+                            ebase=R.inteiro(round(l["enderecavel"])),
+                            fmax=R.pct(f["max"], 0),
+                            emax=R.inteiro(round(l["enderecavel_max"]))),
+                        "{} veículos (base)".format(
+                            R.inteiro(round(l["enderecavel"]))),
+                        sql_ref="CONSULTA H",
+                    )
+                    refs_cidades.append(cod)
+                m_consol = mem.registrar(
+                    "Frota endereçável consolidada — "
+                    + config["regiao"].get("apelido", config["regiao"]["sigla"]),
+                    "DERIVADO",
+                    "consolidado = Σ (frota endereçável de cada cidade); a soma "
+                    "simples das frotas locais é só o teto teórico",
+                    [{"nome": l["cidade"],
+                      "valor": R.inteiro(round(l["enderecavel"])), "ref": cod}
+                     for l, cod in zip(me["linhas"], refs_cidades)],
+                    " + ".join(R.inteiro(round(l["enderecavel"]))
+                               for l in me["linhas"]),
+                    "{} veículos (base; mín {}, máx {}; teto teórico {})".format(
+                        R.inteiro(round(t["base"])), R.inteiro(round(t["min"])),
+                        R.inteiro(round(t["max"])), R.inteiro(round(t["teto"]))),
+                )
+                dens_completa = dens_mun and len(dens_mun) == len(me["linhas"])
+                linhas_me = []
+                for l in me["linhas"]:
+                    emp_dens = dens_mun.get(l["cidade"])
+                    linhas_me.append((
+                        l["cidade"], l["anel"], R.inteiro(l["valor_local"]),
+                        R.inteiro(emp_dens[0]) if emp_dens else "n/d",
+                        _dec(emp_dens[1], 1) if emp_dens else "n/d",
+                        f'{R.pct(l["fator"]["min"], 0)}–{R.pct(l["fator"]["base"], 0)}'
+                        f'–{R.pct(l["fator"]["max"], 0)}',
+                        "{}–<b>{}</b>–{}".format(
+                            R.inteiro(round(l["enderecavel_min"])),
+                            R.inteiro(round(l["enderecavel"])),
+                            R.inteiro(round(l["enderecavel_max"]))),
+                    ))
+                soma_emp = sum(v[0] for v in dens_mun.values())
                 linhas_me.append((
                     "CONSOLIDADO", "ponderado",
                     R.inteiro(round(t["teto"])) + " (teto teórico)",
-                    "", "<b>" + R.inteiro(round(t["base"])) + "</b>",
+                    R.inteiro(soma_emp) if dens_completa else "n/d",
+                    (_dec(soma_emp / t["teto"] * 1000, 1)
+                     if dens_completa and t["teto"] else "—"),
+                    "",
+                    "{}–<b>{}</b>–{}".format(
+                        R.inteiro(round(t["min"])), R.inteiro(round(t["base"])),
+                        R.inteiro(round(t["max"]))),
                 ))
                 blocos_dd.append(
                     "<p><b>Mercado por cidade e consolidação ponderada:</b> cada cidade "
@@ -228,16 +362,20 @@ def gerar(config: dict, modo: str) -> str:
                     "que alimenta o dimensionamento é a <b>frota endereçável "
                     f"consolidada: {R.inteiro(round(t['base']))} veículos</b> "
                     f"(intervalo {R.inteiro(round(t['min']))}–{R.inteiro(round(t['max']))} "
-                    "pela sensibilidade dos fatores).</p>"
+                    "pela sensibilidade dos fatores)." + mem.ref(m_consol) + "</p>"
                 )
                 blocos_dd.append(R.tabela(
-                    ["Cidade", "Anel", "Frota local (100%)",
-                     "Fator de acesso (mín–base–máx)", "Frota endereçável"],
+                    ["Cidade", "Anel", "Frota local (100%)", "Empresas do setor",
+                     "Densidade (emp./mil veíc.)",
+                     "Fator de acesso (mín–base–máx)",
+                     "Frota endereçável (mín–base–máx)"],
                     linhas_me,
                 ))
                 blocos_dd.append(
                     '<p class="premissas">'
-                    + config["regiao"].get("racional_fatores", "") + "</p>"
+                    + config["regiao"].get("racional_fatores", "")
+                    + (mem.ref(m_dens) if m_dens else "")
+                    + mem.ref(m_fatores) + "</p>"
                 )
                 if dd.get("contexto_regional"):
                     blocos_dd.append(f"<p>{dd['contexto_regional']}.</p>")
@@ -259,17 +397,138 @@ def gerar(config: dict, modo: str) -> str:
     # 4-6. Tamanho de mercado
     anos = sorted(receita)
     regiao_dado = len(regiao_pesos) >= 2
+
+    # ---- memória de cálculo: cadeia top-down ---------------------------------
+    ag_td = config["topdown"]["agregado_sidra"]
+    fator_un = ag_td.get("fator_unidade", 1)
+    m_tam = mem.registrar(
+        "TAM Brasil — receita nacional do setor ({})".format(td["ano_base"]),
+        "DADO",
+        "TAM = receita do último ano da série oficial × fator de unidade da tabela",
+        [{"nome": "receita {} (na unidade da tabela)".format(td["ano_base"]),
+          "valor": _num(td["tam"] / fator_un),
+          "fonte": ag_td["citacao"], "url": prov_ibge.get("url")},
+         {"nome": "fator de unidade", "valor": _num(fator_un),
+          "fonte": ("tabela publicada em mil R$" if fator_un == 1000
+                    else "unidade da tabela")},
+         {"nome": "tabela navegável", "valor": "SIDRA {}".format(ag_td["agregado"]),
+          "url": "https://sidra.ibge.gov.br/tabela/{}".format(ag_td["agregado"])}],
+        "{} × {}".format(_num(td["tam"] / fator_un), _num(fator_un)),
+        R.brl(td["tam"]),
+        provs=[prov_ibge],
+    )
+    m_cagr = None
+    if td["cagr"] is not None and len(anos) >= 2:
+        v0, v1 = receita[anos[0]], receita[anos[-1]]
+        n_anos = int(anos[-1]) - int(anos[0])
+        m_cagr = mem.registrar(
+            "CAGR do mercado ({}–{})".format(anos[0], anos[-1]),
+            "DADO",
+            "CAGR = (receita final ÷ receita inicial)^(1 ÷ nº de anos) − 1",
+            [{"nome": "receita {}".format(anos[0]), "valor": "R$ " + _num(v0),
+              "ref": m_tam},
+             {"nome": "receita {}".format(anos[-1]), "valor": "R$ " + _num(v1),
+              "ref": m_tam},
+             {"nome": "nº de anos", "valor": str(n_anos)}],
+            "({} ÷ {})^(1/{}) − 1".format(_num(v1), _num(v0), n_anos),
+            R.pct(td["cagr"]),
+        )
+    rac_seg = td["premissas"]["racional_segmento"]
+    if rac_seg.startswith("DADO-PROXY"):
+        classif_seg = "DADO-PROXY"
+    elif rac_seg.startswith("DADO"):
+        classif_seg = "DADO"
+    else:
+        classif_seg = "PREMISSA DECLARADA"
+    part_seg = td["premissas"]["participacao_segmento"]
+    if det_frac:
+        cfg_seg = config["topdown"]["segmento_dado"]
+        m_frac = mem.registrar(
+            "Fração do segmento no setor ({})".format(det_frac["ano"]),
+            classif_seg,
+            "fração = valor do segmento ÷ valor do total, na tabela oficial",
+            [{"nome": "segmento (numerador)", "valor": _num(det_frac["numerador"]),
+              "fonte": cfg_seg["citacao"], "url": det_frac.get("url_setor")},
+             {"nome": "total (denominador)",
+              "valor": _num(det_frac["denominador"]),
+              "url": det_frac.get("url_total")},
+             {"nome": "tabela navegável",
+              "valor": "SIDRA {}".format(cfg_seg["agregado"]),
+              "url": "https://sidra.ibge.gov.br/tabela/{}".format(
+                  cfg_seg["agregado"])}],
+            "{} ÷ {}".format(_num(det_frac["numerador"]),
+                             _num(det_frac["denominador"])),
+            R.pct(part_seg),
+            racional=rac_seg,
+            provs=[prov_segmento] if prov_segmento else [],
+        )
+    else:
+        m_frac = mem.registrar(
+            "Fração do segmento no setor",
+            classif_seg,
+            "participação do segmento aplicada sobre o TAM (valor declarado "
+            "no estudo)",
+            [{"nome": "participação do segmento", "valor": R.pct(part_seg)}],
+            "",
+            R.pct(part_seg),
+            racional=rac_seg,
+        )
+    part_reg = td["premissas"]["participacao_regiao"]
+    pct_chave = R.pct(part_reg, 1 if part_reg >= 0.01 else 4)
+    if regiao_dado:
+        vals_reg = sorted(p["valor"] for p in regiao_pesos)
+        m_chave = mem.registrar(
+            "Chave regional — participação de {} no Brasil".format(
+                config["regiao"]["sigla"]),
+            "DADO",
+            "chave = mediana dos pesos públicos independentes (detalhe na seção 4)",
+            [{"nome": p["rotulo"], "valor": R.pct(p["valor"]),
+              "fonte": p["racional"], "url": (p["prov"] or {}).get("url")}
+             for p in regiao_pesos],
+            "mediana de {{{}}}".format("; ".join(R.pct(v) for v in vals_reg)),
+            pct_chave,
+        )
+    else:
+        rac_reg = td["premissas"]["racional_regiao"]
+        entradas_reg = [{"nome": "participação da região", "valor": pct_chave}]
+        if m_consol:
+            entradas_reg.append({"nome": "frota endereçável consolidada",
+                                 "valor": "ver verbete", "ref": m_consol})
+        m_chave = mem.registrar(
+            "Chave regional — participação da área no Brasil",
+            "DADO" if rac_reg.startswith("DADO") else "PREMISSA DECLARADA",
+            "chave regional declarada no estudo (a conta está no racional abaixo)",
+            entradas_reg,
+            "",
+            pct_chave,
+            racional=rac_reg,
+            sql_ref="CONSULTAS H e H2 (frota)" if m_consol else None,
+        )
+    m_sam_td = mem.registrar(
+        "SAM top-down — {}".format(config["regiao"]["nome"]),
+        "DERIVADO",
+        "SAM top-down = TAM × fração do segmento × chave regional",
+        [{"nome": "TAM", "valor": R.brl(td["tam"]), "ref": m_tam},
+         {"nome": "fração do segmento", "valor": R.pct(part_seg), "ref": m_frac},
+         {"nome": "chave regional", "valor": pct_chave, "ref": m_chave}],
+        "{} × {} × {}".format(_num(td["tam"]), R.pct(part_seg), pct_chave),
+        R.brl(td["sam"]),
+    )
+
     blocos_td = [
         f"<p>A receita nacional do setor somou <b>{R.brl(td['tam'])}</b> em {td['ano_base']}"
-        + (f", com CAGR de <b>{R.pct(td['cagr'])}</b> desde {anos[0]}" if td["cagr"] else "")
+        + mem.ref(m_tam)
+        + (f", com CAGR de <b>{R.pct(td['cagr'])}</b> desde {anos[0]}" + mem.ref(m_cagr)
+           if td["cagr"] else "")
         + f". Aplicando a participação do segmento ({R.pct(td['premissas']['participacao_segmento'],0)}) "
         f"e da região ({R.pct(td['premissas']['participacao_regiao'], 0 if td['premissas']['participacao_regiao'] >= 0.01 else 3)}), o SAM top-down de "
-        f"{config['regiao']['nome']} é <b>{R.brl(td['sam'])}</b>.</p>",
+        f"{config['regiao']['nome']} é <b>{R.brl(td['sam'])}</b>." + mem.ref(m_sam_td)
+        + "</p>",
         R.tabela(["Ano", "Receita (R$)"], [(a, R.brl(receita[a])) for a in anos]),
         f'<p class="premissas">{"Segmento (DADO oficial)" if prov_segmento else "Premissas: segmento"} — '
-        f'{td["premissas"]["racional_segmento"]}; '
+        f'{td["premissas"]["racional_segmento"]};{mem.ref(m_frac)} '
         f'região ({"DADO triangulado" if regiao_dado else "premissa"}) — '
-        f'{td["premissas"]["racional_regiao"]}.</p>',
+        f'{td["premissas"]["racional_regiao"]}.{mem.ref(m_chave)}</p>',
     ]
     if regiao_dado:
         blocos_td.append(
@@ -299,22 +558,81 @@ def gerar(config: dict, modo: str) -> str:
             "duas vezes; detalhe por atividade na seção 7b). O dimensionamento pelo CNAE "
             "principal é, portanto, a faixa conservadora.</p>"
         )
+    # ---- memória de cálculo: cadeia bottom-up --------------------------------
+    rac_atv = bu["premissas"]["racional_atividade"]
+    m_icp = mem.registrar(
+        "ICP — empresas-alvo cadastradas",
+        "DADO",
+        "ICP = universo do CNAE na região filtrado por porte e faixa de idade",
+        [{"nome": "universo (empresas ativas)",
+          "valor": R.inteiro(contagem["universo_empresas"]),
+          "fonte": prov_cnpj.get("fonte"), "url": prov_cnpj.get("url")},
+         {"nome": "portes aceitos", "valor": ", ".join(config["icp"]["portes"])},
+         {"nome": "faixas de idade aceitas (anos)",
+          "valor": ", ".join(config["icp"]["faixas_idade"])}],
+        "filtro sobre o agregado por CNAE × regime × porte × idade (consulta A4)",
+        R.inteiro(bu["n_icp"]) + " empresas",
+        racional=bu["premissas"]["icp"],
+        provs=[prov_cnpj],
+        sql_ref="CONSULTA A4",
+    )
+    m_taxa = mem.registrar(
+        "Taxa de atividade efetiva",
+        "DADO-PROXY" if rac_atv.startswith("MEDIDO") else "PREMISSA DECLARADA",
+        "taxa = fração do ICP efetivamente operante (proxy: adesão ao Simples "
+        "Nacional, medida no próprio agregado)",
+        [{"nome": "taxa aplicada", "valor": R.pct(bu["taxa_atividade"], 1)}],
+        "",
+        R.pct(bu["taxa_atividade"], 1),
+        racional=rac_atv,
+        sql_ref="CONSULTA A4 (coluna regime)",
+    )
+    m_oper = mem.registrar(
+        "Empresas-alvo operantes",
+        "DERIVADO",
+        "operantes = ICP × taxa de atividade (arredondado)",
+        [{"nome": "ICP", "valor": R.inteiro(bu["n_icp"]), "ref": m_icp},
+         {"nome": "taxa de atividade", "valor": R.pct(bu["taxa_atividade"], 1),
+          "ref": m_taxa}],
+        "{} × {}".format(R.inteiro(bu["n_icp"]), R.pct(bu["taxa_atividade"], 1)),
+        R.inteiro(bu["n_operantes"]) + " empresas",
+    )
+    m_ticket = mem.registrar(
+        "Ticket médio anual por empresa",
+        "PREMISSA DECLARADA",
+        "receita média anual de uma empresa operante do ICP",
+        [{"nome": "ticket", "valor": "R$ " + _num(bu["ticket"])}],
+        "",
+        R.brl(bu["ticket"]),
+        racional=bu["premissas"]["racional_ticket"],
+    )
+    m_sam_bu = mem.registrar(
+        "SAM bottom-up",
+        "DERIVADO",
+        "SAM bottom-up = empresas operantes × ticket médio anual",
+        [{"nome": "operantes", "valor": R.inteiro(bu["n_operantes"]),
+          "ref": m_oper},
+         {"nome": "ticket", "valor": "R$ " + _num(bu["ticket"]), "ref": m_ticket}],
+        "{} × {}".format(R.inteiro(bu["n_operantes"]), _num(bu["ticket"])),
+        R.brl(bu["sam"]),
+    )
+
     blocos_bu = [
         f"<p>O universo do CNAE na região tem <b>{R.inteiro(contagem['universo_empresas'])}</b> "
         f"empresas ativas ({R.inteiro(contagem['universo_estabelecimentos'])} estabelecimentos, "
         f"contando filiais); o recorte de ICP resulta em <b>{R.inteiro(bu['n_icp'])}</b> "
-        f"empresas cadastradas. Aplicando a premissa de atividade efetiva de "
+        f"empresas cadastradas.{mem.ref(m_icp)} Aplicando a premissa de atividade efetiva de "
         f"{R.pct(bu['taxa_atividade'], 0)}, chega-se a <b>{R.inteiro(bu['n_operantes'])}</b> "
-        f"empresas-alvo operantes. Com ticket médio anual de {R.brl(bu['ticket'])}, o SAM "
-        f"bottom-up é <b>{R.brl(bu['sam'])}</b>.</p>",
+        f"empresas-alvo operantes.{mem.ref(m_oper)} Com ticket médio anual de {R.brl(bu['ticket'])}, o SAM "
+        f"bottom-up é <b>{R.brl(bu['sam'])}</b>.{mem.ref(m_sam_bu)}</p>",
         nota_secundaria,
         R.grafico_barras_h(
             sorted(contagem["por_porte"].items(), key=lambda kv: -kv[1]),
             "empresas ativas",
         ),
         f'<p class="premissas">Premissas: {bu["premissas"]["icp"]}. '
-        f'Ticket: {bu["premissas"]["racional_ticket"]}. '
-        f'Atividade efetiva: {bu["premissas"]["racional_atividade"]}</p>',
+        f'Ticket: {bu["premissas"]["racional_ticket"]}.{mem.ref(m_ticket)} '
+        f'Atividade efetiva: {bu["premissas"]["racional_atividade"]}{mem.ref(m_taxa)}</p>',
         R.selo_fonte(prov_cnpj),
     ]
     if contagem.get("por_regime"):
@@ -354,6 +672,29 @@ def gerar(config: dict, modo: str) -> str:
         ))
     if cempre:
         ano_c, qtd_c, prov_c = cempre
+        cfg_val = config["bottomup_validacao"]
+        m_cempre = mem.registrar(
+            "Validação cruzada — CEMPRE (IBGE)",
+            "DADO",
+            "comparação de ordem de grandeza: operantes do bottom-up vs "
+            "contagem oficial do CEMPRE (escopos declarados podem diferir)",
+            [{"nome": "operantes (bottom-up)",
+              "valor": R.inteiro(bu["n_operantes"]), "ref": m_oper},
+             {"nome": "CEMPRE {} — classe {}".format(
+                 ano_c, cfg_val.get("rotulo_classe", "CNAE do setor")),
+              "valor": R.inteiro(qtd_c),
+              "fonte": cfg_val["citacao"], "url": prov_c.get("url")},
+             {"nome": "tabela navegável",
+              "valor": "SIDRA {}".format(cfg_val["agregado"]),
+              "url": "https://sidra.ibge.gov.br/tabela/{}".format(
+                  cfg_val["agregado"])}],
+            "{} (medido) vs {} (CEMPRE)".format(
+                R.inteiro(bu["n_operantes"]), R.inteiro(qtd_c)),
+            "referência de ordem de grandeza",
+            racional=cfg_val.get(
+                "escopo_texto", "em " + config["regiao"]["nome"]),
+            provs=[prov_c],
+        )
         blocos_bu.append(
             f"<p><b>Validação cruzada (fonte oficial independente):</b> o CEMPRE do IBGE "
             f"registra <b>{R.inteiro(qtd_c)}</b> empresas da classe "
@@ -362,7 +703,7 @@ def gerar(config: dict, modo: str) -> str:
             f"({ano_c}). A contagem do CEMPRE segue metodologia "
             "própria (empresas, não estabelecimentos, e cobertura parcial de MEIs), servindo "
             "como referência de ordem de grandeza para o recorte formal (ME/EPP) usado no "
-            "bottom-up.</p>"
+            f"bottom-up.{mem.ref(m_cempre)}</p>"
         )
         blocos_bu.append(R.selo_fonte(prov_c))
     s.append(secao("5. Tamanho de mercado — bottom-up (censo CNPJ)", *blocos_bu))
@@ -380,6 +721,27 @@ def gerar(config: dict, modo: str) -> str:
                 rend_formal = float(l["rendimento_medio_mensal"])
         if rend_formal:
             mercado_labor = informal["n_formal"] * rend_formal * 12 / labor_share
+            m_labor = mem.registrar(
+                "Âncora labor-input (PNAD)",
+                "DADO × PREMISSA",
+                "mercado formal total = trabalhadores formais × rendimento médio "
+                "mensal × 12 ÷ participação do trabalho na receita",
+                [{"nome": "trabalhadores formais",
+                  "valor": R.inteiro(informal["n_formal"]),
+                  "fonte": informal["proveniencia"].get("fonte"),
+                  "url": informal["proveniencia"].get("url")},
+                 {"nome": "rendimento médio mensal",
+                  "valor": "R$ " + _num(rend_formal),
+                  "fonte": "PNAD Contínua (consulta F), categoria FORMAL"},
+                 {"nome": "participação do trabalho (labor share)",
+                  "valor": R.pct(labor_share, 0) + " [premissa]"}],
+                "{} × {} × 12 ÷ {}".format(
+                    R.inteiro(informal["n_formal"]), _num(rend_formal),
+                    R.pct(labor_share, 0)),
+                R.brl(mercado_labor),
+                provs=[informal["proveniencia"]],
+                sql_ref="CONSULTA F (PNAD)",
+            )
             blocos_anc.append(
                 "<p><b>Diagnóstico por três âncoras independentes</b> (setores intensivos em "
                 "MEI, como beleza, são subcapturados pelo universo da PAS — a âncora "
@@ -389,13 +751,14 @@ def gerar(config: dict, modo: str) -> str:
                 ["Âncora", "O que mede", "Valor (SP/ano)"],
                 [
                     ("Top-down PAS", "receita formal do universo de pesquisa do IBGE "
-                     "(≈ empresas do CEMPRE) — PISO do segmento corporativo", R.brl(td["sam"])),
+                     "(≈ empresas do CEMPRE) — PISO do segmento corporativo",
+                     R.brl(td["sam"]) + mem.ref(m_sam_td)),
                     ("Bottom-up CNPJ", "empresas ME/EPP operantes × ticket "
-                     "(exclui MEI)", R.brl(bu["sam"])),
+                     "(exclui MEI)", R.brl(bu["sam"]) + mem.ref(m_sam_bu)),
                     ("Labor-input (PNAD)", f"{R.inteiro(informal['n_formal'])} trabalhadores "
                      f"formais × rendimento × 12 ÷ participação do trabalho "
                      f"({R.pct(labor_share, 0)} [premissa]) — mercado formal TOTAL, "
-                     "inclusive MEI", R.brl(mercado_labor)),
+                     "inclusive MEI", R.brl(mercado_labor) + mem.ref(m_labor)),
                 ],
             ))
             if not tri["convergente"] and mercado_labor > td["sam"] * 3:
@@ -415,13 +778,39 @@ def gerar(config: dict, modo: str) -> str:
         ano_pof4 = str(demanda["ano_pof"])[:4]
         ano_dom, n_dom, prov_dom = demanda["domicilios"]
         mercado_demanda = (demanda["despesa_mensal_familia"] * 12 * n_dom * fator_ipca)
+        m_pof = mem.registrar(
+            "Âncora de demanda (POF × domicílios × IPCA)",
+            "DADO",
+            "demanda anual = despesa média mensal familiar × 12 × domicílios × "
+            "fator IPCA acumulado desde a POF",
+            [{"nome": "despesa mensal familiar (POF {})".format(demanda["ano_pof"]),
+              "valor": "R$ " + _dec(demanda["despesa_mensal_familia"], 2),
+              "fonte": cfg_d["citacao"],
+              "url": demanda["provs"][0].get("url") if demanda["provs"] else None},
+             {"nome": "domicílios (Censo {})".format(ano_dom),
+              "valor": R.inteiro(n_dom),
+              "fonte": cfg_d["domicilios"]["citacao"],
+              "url": prov_dom.get("url")},
+             {"nome": "fator IPCA ({} meses desde jan/{})".format(
+                 len(ipca_pontos), ano_pof4),
+              "valor": _dec(fator_ipca, 2),
+              "fonte": "produto de (1 + variação mensal ÷ 100), BCB SGS 433",
+              "url": prov_ipca.get("url")}],
+            "{} × 12 × {} × {}".format(
+                _dec(demanda["despesa_mensal_familia"], 2), _num(n_dom),
+                _dec(fator_ipca, 2)),
+            R.brl(mercado_demanda),
+            racional=cfg_d["nota_regional"],
+            provs=demanda["provs"] + [prov_dom, prov_ipca],
+        )
         blocos_anc.append(
             f"<p><b>Âncora de demanda (POF):</b> despesa média mensal familiar com o setor de "
             f"{R.brl(demanda['despesa_mensal_familia'])} (POF {demanda['ano_pof']}) × "
             f"{R.inteiro(n_dom)} domicílios (Censo {ano_dom}) × 12, corrigida pelo IPCA "
             f"acumulado desde jan/{ano_pof4} "
             f"(fator {fator_ipca:.2f}, {len(ipca_pontos)} meses) "
-            f"= <b>{R.brl(mercado_demanda)}</b>/ano. O lado da demanda enxerga o mercado "
+            f"= <b>{R.brl(mercado_demanda)}</b>/ano.{mem.ref(m_pof)} O lado da demanda "
+            "enxerga o mercado "
             "inteiro (formal + informal), mas a POF tende a subdeclarar despesas pessoais — "
             "ler como piso da demanda. "
             f"Nota regional: {cfg_d['nota_regional']}.</p>"
@@ -430,6 +819,67 @@ def gerar(config: dict, modo: str) -> str:
             blocos_anc.append(R.selo_fonte(prov_d))
         blocos_anc.append(R.selo_fonte(prov_dom))
         blocos_anc.append(R.selo_fonte(prov_ipca))
+    # ---- memória de cálculo: SAM central, triangulação, SOM e sensibilidade --
+    if usa_bu_central:
+        m_sam_central = mem.registrar(
+            "SAM central do estudo",
+            "DERIVADO",
+            "SAM central = SAM bottom-up ({})".format(detalhe_sam),
+            [{"nome": "SAM bottom-up (central)", "valor": R.brl(bu["sam"]),
+              "ref": m_sam_bu},
+             {"nome": "SAM top-down (referência)", "valor": R.brl(td["sam"]),
+              "ref": m_sam_td}],
+            "",
+            R.brl(sam_central),
+            racional=config.get("racional_sam_central", ""),
+        )
+    else:
+        m_sam_central = mem.registrar(
+            "SAM central do estudo",
+            "DERIVADO",
+            "SAM central = média simples das duas metodologias",
+            [{"nome": "SAM top-down", "valor": R.brl(td["sam"]), "ref": m_sam_td},
+             {"nome": "SAM bottom-up", "valor": R.brl(bu["sam"]), "ref": m_sam_bu}],
+            "({} + {}) ÷ 2".format(_num(td["sam"]), _num(bu["sam"])),
+            R.brl(sam_central),
+        )
+    tri_maior = max(td["sam"], bu["sam"])
+    tri_menor = min(td["sam"], bu["sam"])
+    m_tri = mem.registrar(
+        "Triangulação das metodologias",
+        "DERIVADO",
+        "divergência = (maior − menor) ÷ maior",
+        [{"nome": "SAM top-down", "valor": R.brl(td["sam"]), "ref": m_sam_td},
+         {"nome": "SAM bottom-up", "valor": R.brl(bu["sam"]), "ref": m_sam_bu}],
+        "({} − {}) ÷ {}".format(_num(tri_maior), _num(tri_menor), _num(tri_maior)),
+        R.pct(tri["divergencia"]),
+    )
+    m_som = mem.registrar(
+        "SOM por cenário de captura ({} anos)".format(bu["horizonte_anos"]),
+        "PREMISSA DECLARADA",
+        "SOM = SAM bottom-up × taxa de captura do cenário",
+        [{"nome": "SAM bottom-up", "valor": R.brl(bu["sam"]), "ref": m_sam_bu}]
+        + [{"nome": "cenário " + nome,
+            "valor": "{} × {} = {}".format(_num(bu["sam"]), R.pct(c["taxa"]),
+                                           R.brl(c["som"]))}
+           for nome, c in cen.items()],
+        "por cenário (acima)",
+        R.brl(som_base) + " (cenário-base)",
+        racional=config["captura"].get("racional", ""),
+    )
+    m_sens = mem.registrar(
+        "Matriz de sensibilidade do SAM bottom-up",
+        "DERIVADO",
+        "célula = round(ICP × taxa da linha) × ticket da coluna",
+        [{"nome": "ICP", "valor": R.inteiro(bu["n_icp"]), "ref": m_icp},
+         {"nome": "grade de taxas de atividade",
+          "valor": ", ".join(R.pct(x, 0) for x in sens["taxas"])},
+         {"nome": "grade de tickets",
+          "valor": ", ".join("R$ " + _num(x) for x in sens["tickets"])}],
+        "grade completa na tabela da seção 6",
+        "ver matriz",
+    )
+
     ressalva_demo = (
         " <b>Atenção:</b> o lado bottom-up ainda usa dados de demonstração — a "
         "leitura de convergência/divergência só vale após a carga real do CNPJ."
@@ -437,7 +887,7 @@ def gerar(config: dict, modo: str) -> str:
     )
     s.append(secao(
         "6. Triangulação e cenários (TAM/SAM/SOM)",
-        f"<p>{tri['leitura']}{ressalva_demo}</p>",
+        f"<p>{tri['leitura']}{mem.ref(m_tri)}{ressalva_demo}</p>",
         *blocos_anc,
         R.grafico_funil([
             ("TAM", td["tam"], f"Brasil, top-down, {td['ano_base']}"),
@@ -452,11 +902,13 @@ def gerar(config: dict, modo: str) -> str:
         ]),
         R.tabela(
             ["Cenário", "Taxa de captura", "SOM anual"],
-            [(n.capitalize(), R.pct(c["taxa"]), R.brl(c["som"])) for n, c in cen.items()],
+            [(n.capitalize(), R.pct(c["taxa"]),
+              R.brl(c["som"]) + (mem.ref(m_som) if n == "base" else ""))
+             for n, c in cen.items()],
         ),
         "<p>Sensibilidade do SAM bottom-up às duas premissas mais incertas "
         "(taxa de atividade efetiva × ticket médio) — o valor usado no relatório "
-        "está no centro da matriz:</p>",
+        f"está no centro da matriz:{mem.ref(m_sens)}</p>",
         R.tabela(
             ["Taxa de atividade \\ Ticket"] + [R.brl(t) for t in sens["tickets"]],
             [
@@ -567,6 +1019,37 @@ def gerar(config: dict, modo: str) -> str:
             }
         linhas_atv = sizing.por_atividade(sam_medio, som_base, config["atividades"],
                                           conc_atividades, expansao)
+        entradas_atv = []
+        for l in linhas_atv:
+            v_atv = "{} × {} = {}".format(
+                _num(sam_medio), R.pct(l["participacao_sam"], 0),
+                R.brl(l["sam_atividade"]))
+            if l["sam_expandido"]:
+                v_atv += " ↔ expandido {}".format(R.brl(l["sam_expandido"]))
+            entradas_atv.append({"nome": l["cnae"] + " — " + l["descricao"],
+                                 "valor": v_atv, "ref": m_sam_central})
+        if expansao:
+            entradas_atv.append({
+                "nome": "expansão por CNAE secundário (por atividade)",
+                "valor": "+ empresas só-secundárias × {} × {} × {}".format(
+                    R.pct(expansao["taxa_atividade"], 1),
+                    "R$ " + _num(expansao["ticket"]),
+                    R.pct(expansao["peso_secundaria"], 0)),
+                "fonte": "contagens da consulta E (principal / só-secundária)"})
+        m_atv = mem.registrar(
+            "SAM por atividade e share implícito",
+            "PREMISSA DECLARADA",
+            "SAM da atividade = SAM central × participação da atividade; "
+            "expandido = + (empresas só-secundárias × taxa de atividade × "
+            "ticket × peso secundário); share implícito = receita-alvo ÷ SAM "
+            "da atividade",
+            entradas_atv,
+            "por atividade (acima)",
+            "ver tabela da seção 7b",
+            racional=config.get("racional_atividades",
+                                "pesos declarados no arquivo do setor"),
+            sql_ref="CONSULTA E" if conc_atividades else None,
+        )
         corpo_atv = [(
             "<p>Cada atividade é dimensionada como um mercado próprio; a receita-alvo é "
             "distribuída pelo mix do plano do cliente e o <b>share implícito</b> por "
@@ -611,7 +1094,7 @@ def gerar(config: dict, modo: str) -> str:
             'atividade.'
             + (f' Expansão por CNAE secundário: {config["icp"].get("racional_secundaria", "")}'
                if expansao else '')
-            + '</p>'
+            + mem.ref(m_atv) + '</p>'
         )
         s.append(secao("7b. Dimensionamento por atividade e projeção de receita", *corpo_atv))
 
@@ -621,6 +1104,24 @@ def gerar(config: dict, modo: str) -> str:
         piso = informal["receita_informal_piso"]
         teto = piso / fator
         total_trab = informal["n_informal"] + informal["n_formal"]
+        m_inf = mem.registrar(
+            "Mercado informal (labor input method)",
+            "DADO × PREMISSA",
+            "piso = soma dos rendimentos anuais declarados dos informais; "
+            "teto = piso ÷ fator de produtividade",
+            [{"nome": "trabalhadores informais",
+              "valor": R.inteiro(informal["n_informal"]),
+              "fonte": informal["proveniencia"].get("fonte"),
+              "url": informal["proveniencia"].get("url")},
+             {"nome": "piso (rendimentos declarados × 12)",
+              "valor": "R$ " + _num(piso)},
+             {"nome": "fator de produtividade",
+              "valor": R.pct(fator, 0) + " [premissa]"}],
+            "teto = {} ÷ {}".format(_num(piso), R.pct(fator, 0)),
+            "{} (piso) a {} (teto)".format(R.brl(piso), R.brl(teto)),
+            provs=[informal["proveniencia"]],
+            sql_ref="CONSULTA F (PNAD)",
+        )
         s.append(secao(
             "7c. Mercado informal (labor input method)",
             f"<p>Pela PNAD Contínua ({informal['referencia']}), o setor tem "
@@ -630,7 +1131,7 @@ def gerar(config: dict, modo: str) -> str:
             f"Receita anual estimada do mercado informal: entre <b>{R.brl(piso)}</b> "
             f"(piso: soma dos rendimentos declarados) e <b>{R.brl(teto)}</b> (teto: piso ÷ "
             f"fator de produtividade {R.pct(fator, 0)} [premissa declarada]). Este valor é "
-            "ADICIONAL ao mercado formal dimensionado nas seções 4–6.</p>",
+            f"ADICIONAL ao mercado formal dimensionado nas seções 4–6.{mem.ref(m_inf)}</p>",
             R.grafico_barras_h(
                 [("Informais", informal["n_informal"]), ("Formais", informal["n_formal"])],
                 "trabalhadores", esq=110,
@@ -704,6 +1205,18 @@ def gerar(config: dict, modo: str) -> str:
         "8. Limitações declaradas",
         "<ul>" + "".join(f"<li>{i}</li>" for i in itens_lim) + "</ul>",
     ))
+
+    # Anexo — memória de cálculo: verbetes registrados ao longo do pipeline +
+    # SQLs de reprodução das consultas BigQuery declarados no config do setor
+    sql_blocos = []
+    for caminho in config.get("sql_arquivos", []):
+        arq_sql = RAIZ / caminho
+        if arq_sql.exists():
+            sql_blocos.append((arq_sql.name, caminho,
+                               arq_sql.read_text(encoding="utf-8")))
+    anexo = mem.render_anexo(sql_blocos)
+    if anexo:
+        s.append(anexo)
 
     meta = {
         "titulo": config["titulo"],

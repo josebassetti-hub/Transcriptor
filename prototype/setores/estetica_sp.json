@@ -18,6 +18,10 @@
     "sigla": "SP",
     "nome": "São Paulo"
   },
+  "sql_arquivos": [
+    "dados/sql/agregados_cnpj_basedosdados.sql",
+    "dados/sql/pnad_informalidade_basedosdados.sql"
+  ],
   "cnpj_extracao": "2026-06 (Base dos Dados, br_me_cnpj)",
   "cnpj_origem": "real",
   "icp": {

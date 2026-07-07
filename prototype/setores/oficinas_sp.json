@@ -23,6 +23,9 @@
     "nome": "São Paulo"
   },
   "cnpj_prefixo": "oficinas",
+  "sql_arquivos": [
+    "dados/sql/consultas_oficinas_sp.sql"
+  ],
   "cnpj_extracao": "2026-07 (Base dos Dados, br_me_cnpj)",
   "cnpj_origem": "real",
   "cnpj_idade_matriz": true,

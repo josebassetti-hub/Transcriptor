@@ -131,6 +131,8 @@ def mercado_enderecavel(valores_por_cidade, municipios):
             "valor_local": valor,
             "fator": f,
             "enderecavel": valor * f["base"],
+            "enderecavel_min": valor * f["min"],
+            "enderecavel_max": valor * f["max"],
         })
         totais["teto"] += valor
         for k in ("min", "base", "max"):
