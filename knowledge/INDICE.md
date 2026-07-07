@@ -29,6 +29,8 @@ todo número tem selo (CONFIRMADO/PROVÁVEL/INCERTO) e origem (vídeo+mm:ss ou d
 | Casos já resolvidos (professor + reais) | `casos/` | raciocínio por analogia; pseudonimizado |
 | Onde cotar preços de mercado | `mercado/fontes-cotacao.md` | com data de cada cotação |
 | Como decidir como o professor decide | `manual-metodologia/principios-decisorios.md` | heurísticas com citação (Fase 2) |
+| Passo a passo completo da análise de vídeos (do bruto ao auditável) | `manual-metodologia/passo-a-passo-analista.md` | 29 passos em 6 etapas; roteiro da analista (Fase 1-2) |
+| Qual modelo usar em cada etapa? | `PLANO.md` (Adendo v2.2) | leitura de números/síntese = topo de linha, nunca menos |
 | Estrutura da ferramenta do professor | `automatizador-estrutura.md` | após dissecação (Fase 1) |
 | Configurar Excel para as planilhas do professor | `curso/tutorial-configuracao-excel.md` | Excel legado/macros |
 

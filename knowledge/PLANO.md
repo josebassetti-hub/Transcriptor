@@ -247,3 +247,37 @@ dissolve com configuração.
 3. Schema do coeficientes JSON validado com os coeficientes já extraídos do leite
    (parição 70%, 12 L/dia, 270 dias, R$ 2,30/L, 394,68/cabeça) sem violar o teste LGPD.
 4. pytest continua 15 verdes + 1 xfail (nada quebrado).
+
+---
+
+# Adendo v2.2 — Política de modelos por etapa (pergunta do usuário, respondida com a
+referência oficial de modelos/preços consultada em 2026-07-07)
+
+Preços por 1M tokens (entrada/saída): Haiku 4.5 $1/$5 · Sonnet 5 $3/$15 (promo $2/$10 até
+2026-08-31) · Opus 4.8 $5/$25 · Fable 5 $10/$50. Em assinatura (Pro/Max), a mesma ordem
+vale para a velocidade com que o limite de uso é consumido. Visão de alta resolução
+(2576px, leitura fina de tela): Opus 4.7+ e Sonnet 5 têm; Haiku 4.5 não.
+
+**Princípio: gastar modelo caro onde o erro custa caro; modelo barato onde o PROCESSO
+corrige erro barato** (selos de confiança, evidências commitadas, golden tests e auditoria
+humana já blindam o pipeline contra erro pontual de classificação — mas NÃO contra erro de
+leitura de número, que contamina a base na origem).
+
+| Etapa | Quem executa | Modelo | Racional |
+|---|---|---|---|
+| Transcrição das ~10h de áudio | faster-whisper local (NÃO é Claude) | n/a | grátis, roda no container; Claude só revisa/corrige com hotwords e triagem |
+| Frames, manifesto, contact sheets, dedup | Python/ffmpeg determinístico | n/a | sem modelo |
+| Classificação da transcrição em gavetas (lotes grandes de texto) | subagentes | **Sonnet 5** (Haiku 4.5 só para triagem bruta de "conversa fiada" óbvia) | tarefa com rubrica clara do protocolo; regra: na dúvida → escala para o modelo da sessão; "na dúvida não descartar" já protege |
+| **Leitura de frames (células, números BR, barra de fórmulas) + tabela-mestra** | sessão principal / subagentes síncronos | **Fable 5 (sessão atual) ou Opus 4.8 — nunca menos** | passo mais crítico: número mal lido em vídeo comprimido vira erro na fonte; percepção fina é força do topo da linha |
+| Síntese (manual, princípios decisórios, coeficientes) | sessão principal | Fable 5 / Opus 4.8 | julgamento e generalização |
+| Motores, código, testes | sessão | Fable 5 (atual; paridade provada na 1ª execução) | qualidade de engenharia |
+| Produção por cliente (Fase 5, para sempre) | sessão do usuário | **Opus 4.8 como padrão** (Fable 5 para caso atípico/difícil) | golden tests + agente Revisor + revisão humana seguram a qualidade; metade do custo do Fable |
+
+Implementação: os subagentes aceitam override de modelo (sonnet/haiku) por chamada — a
+skill /novo-projeto e os prompts da Fase 2 declaram o modelo por lote conforme a tabela.
+A sessão paralela da Fase 1 usa o modelo selecionado nela (seletor de modelo da sessão) —
+recomendação ao usuário: manter o padrão atual para o piloto; o custo dominante da Fase
+1-2 é a leitura de frames, e é justamente onde não se economiza.
+
+Roteiro operacional completo da analista (consolidação de tudo acima em 29 passos):
+`knowledge/manual-metodologia/passo-a-passo-analista.md`.
