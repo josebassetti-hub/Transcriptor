@@ -71,6 +71,14 @@ O protótipo JÁ aplica a fórmula para um caso: a âncora de demanda do piloto 
 
 - Usar população total quando o driver é um recorte (frota, empresas, faixa etária) —
   superestima e não explica nada.
+- **Assumir o recorte do driver quando ele abrange vários sub-mercados** (lição do 3º
+  piloto/Lorenzoni): a frota tem 18 tipos e a empresa atendia só carros e linha leve —
+  contar motos e caminhões dobrava a base. Antes de dimensionar, SEMPRE perguntar ao
+  cliente: (a) quais TIPOS/segmentos do driver ele atende (no b2c_frota:
+  `driver_demanda.tipos_atendidos` no config, premissa declarada com verbete na
+  memória de cálculo); (b) quais CIDADES ele realmente atende — área de influência
+  geográfica ≠ área comercial declarada (Colatina e Nova Venécia saíram do estudo por
+  decisão da empresa, não por distância).
 - Importar "índices de potencial" comerciais sem licença — IPC Maps é benchmark citável
   de metodologia, não fonte de dados da ferramenta.
 - Inventar taxa de penetração: sem dado, publicar como premissa declarada + sensibilidade.

@@ -56,13 +56,26 @@ def _proveniencia(demo: bool, extracao: str):
     }
 
 
+def _municipios_config(config: dict):
+    """Nomes dos municípios do recorte atual (vazio = estudo por UF)."""
+    return {m["nome"] for m in config["regiao"].get("municipios", [])}
+
+
 def agregados(config: dict, demo: bool = True):
-    """Retorna (linhas, proveniencia) dos agregados filtrados por CNAE+UF do setor."""
+    """Retorna (linhas, proveniencia) dos agregados filtrados por CNAE+UF do
+    setor. Em estudos municipais, linhas de cidades fora do recorte ATUAL do
+    config não contam — o CSV pode ter sido colado com uma área maior e o
+    recorte encolher depois (ex.: cliente declara que não atende uma cidade),
+    sem precisar re-rodar a consulta."""
     linhas = _ler_csv(_arq_setor(config, "agregados"))
     cnaes = {c["codigo"] for c in config["cnaes"]}
     uf = config["regiao"]["sigla"]
+    municipios_ok = _municipios_config(config)
     filtradas = []
     for l in linhas:
+        mun = (l.get("municipio") or "").strip()
+        if mun and municipios_ok and mun not in municipios_ok:
+            continue
         if l["cnae"] in cnaes and l["uf"] == uf:
             # fallbacks dos esquemas anteriores
             emp = int(l.get("qtd_empresas") or l.get("qtd_ativas", 0))
@@ -87,13 +100,50 @@ def empresas_por_municipio(config: dict):
         return None
     cnaes = {c["codigo"] for c in config["cnaes"]}
     uf = config["regiao"]["sigla"]
+    municipios_ok = _municipios_config(config)
     agg = {}
     for l in linhas:
         mun = (l.get("municipio") or "").strip()
+        if municipios_ok and mun not in municipios_ok:
+            continue
         if l["cnae"] in cnaes and l["uf"] == uf and mun:
             emp = int(l.get("qtd_empresas") or l.get("qtd_ativas", 0))
             agg[mun] = agg.get(mun, 0) + emp
     return agg or None
+
+
+def funil_por_municipio(linhas, icp: dict):
+    """Funil bottom-up por cidade (estudos municipais): universo, ICP e
+    optantes do Simples dentro do ICP, mais a composição por CNAE (com nº de
+    MEIs) — a transparência que evita ler "87 empresas" como "87 lojas".
+
+    `linhas` já vem filtrado por agregados() (CNAE, UF e recorte municipal).
+    Retorna None quando as linhas não têm municipio. Estrutura:
+      {municipio: {"universo": n, "icp": n, "icp_simples": n,
+                   "por_cnae": {cnae: {"universo": n, "mei": n}}}}
+    """
+    if not linhas or "municipio" not in linhas[0]:
+        return None
+    faixas_ok = set(icp["faixas_idade"])
+    portes_ok = set(icp["portes"])
+    funil = {}
+    for l in linhas:
+        mun = (l.get("municipio") or "").strip()
+        if not mun:
+            continue
+        f = funil.setdefault(mun, {"universo": 0, "icp": 0, "icp_simples": 0,
+                                   "por_cnae": {}})
+        emp = l["qtd_empresas"]
+        f["universo"] += emp
+        pc = f["por_cnae"].setdefault(l["cnae"], {"universo": 0, "mei": 0})
+        pc["universo"] += emp
+        if l["regime"] == "MEI":
+            pc["mei"] += emp
+        if l["porte"] in portes_ok and l["faixa_idade"] in faixas_ok:
+            f["icp"] += emp
+            if l["regime"] == "SIMPLES":
+                f["icp_simples"] += emp
+    return funil or None
 
 
 def contar_icp(linhas, icp: dict) -> dict:

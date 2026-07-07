@@ -1,14 +1,20 @@
 -- ============================================================================
--- Consultas do 3º piloto: LORENZONI PNEUS — área de influência de
+-- Consultas do 3º piloto: LORENZONI PNEUS — área REALMENTE ATENDIDA de
 -- São Gabriel da Palha/ES (sede + Vila Valério, São Domingos do Norte,
--- Águia Branca, Nova Venécia, Colatina). PRIMEIRO ESTUDO MUNICIPAL.
+-- Águia Branca). PRIMEIRO ESTUDO MUNICIPAL.
+-- RECORTE ATUALIZADO (decisão da empresa): Colatina e Nova Venécia SAÍRAM do
+-- estudo; o driver de frota conta só os tipos atendidos (automóvel,
+-- caminhonete, camioneta, utilitário — motos e caminhões fora).
 -- Rode UMA por vez no BigQuery e cole o resultado no chat. Destinos:
 --   0  -> códigos IBGE dos municípios (conferência)
---   H  -> dados/pneus_frota_demo.csv (frota por município e tipo — o driver)
+--   H  -> dados/pneus_frota_demo.csv (frota por município e tipo — o driver;
+--         a colada em 2025-10 já serve: o motor filtra cidades e tipos)
 --   H2 -> frota total ES e Brasil (chave regional em dois estágios)
---   A4 -> dados/pneus_agregados_demo.csv (concorrentes por CNAE x regime x porte x idade)
---   B3 -> dados/pneus_dinamica_demo.csv
---   E  -> dados/pneus_atividades_demo.csv
+--   H3 -> frota do ES e do BRASIL POR TIPO (para remedir a chave regional no
+--         MESMO recorte de tipos atendidos — pendência atual do estudo)
+--   A4 -> dados/pneus_agregados_demo.csv (a colada já serve: tem municipio)
+--   B3 -> dados/pneus_dinamica_demo.csv (RE-RODAR: a colada cobria 6 cidades)
+--   E  -> dados/pneus_atividades_demo.csv (RE-RODAR: a colada cobria 6 cidades)
 --   G  -> dados/pneus_rais_demo.csv (RAIS por UF, peso ES no Brasil)
 -- CNAEs do estudo: 4530705 (pneus), 4520001, 4520004, 4520005, 4520006.
 -- ============================================================================
@@ -20,7 +26,7 @@ SELECT id_municipio, nome
 FROM `basedosdados.br_bd_diretorios_brasil.municipio`
 WHERE sigla_uf = 'ES'
   AND nome IN ('São Gabriel da Palha', 'Vila Valério', 'São Domingos do Norte',
-               'Águia Branca', 'Nova Venécia', 'Colatina')
+               'Águia Branca')
 ORDER BY nome;
 
 -- ---------------------------------------------------------------------------
@@ -31,7 +37,7 @@ ORDER BY nome;
 --   FROM `basedosdados.br_bd_diretorios_brasil.municipio`
 --   WHERE sigla_uf = 'ES'
 --     AND nome IN ('São Gabriel da Palha', 'Vila Valério', 'São Domingos do Norte',
---                  'Águia Branca', 'Nova Venécia', 'Colatina')
+--                  'Águia Branca')
 -- ),
 -- ultimo AS (
 --   SELECT MAX(ano) AS ano FROM `basedosdados.br_denatran_frota.municipio_tipo`
@@ -68,6 +74,30 @@ ORDER BY nome;
 -- WHERE f.ano = ultimo.ano AND f.mes = mes_ref.mes;
 
 -- ---------------------------------------------------------------------------
+-- CONSULTA H3 — frota do ES e do BRASIL POR TIPO DE VEÍCULO
+-- (remede a chave regional no MESMO recorte de tipos atendidos pela empresa:
+--  automóvel, caminhonete, camioneta, utilitário; cole o resultado no chat)
+-- ---------------------------------------------------------------------------
+WITH ultimo AS (
+  SELECT MAX(ano) AS ano FROM `basedosdados.br_denatran_frota.municipio_tipo`
+),
+mes_ref AS (
+  SELECT MAX(mes) AS mes
+  FROM `basedosdados.br_denatran_frota.municipio_tipo` x, ultimo
+  WHERE x.ano = ultimo.ano
+)
+SELECT 'BR' AS escopo, f.tipo_veiculo, SUM(f.quantidade) AS quantidade
+FROM `basedosdados.br_denatran_frota.municipio_tipo` f, ultimo, mes_ref
+WHERE f.ano = ultimo.ano AND f.mes = mes_ref.mes
+GROUP BY f.tipo_veiculo
+UNION ALL
+SELECT 'ES', f.tipo_veiculo, SUM(f.quantidade)
+FROM `basedosdados.br_denatran_frota.municipio_tipo` f, ultimo, mes_ref
+WHERE f.ano = ultimo.ano AND f.mes = mes_ref.mes AND f.sigla_uf = 'ES'
+GROUP BY f.tipo_veiculo
+ORDER BY escopo, quantidade DESC;
+
+-- ---------------------------------------------------------------------------
 -- CONSULTA A4 — concorrentes na ÁREA por CNAE x regime x porte x idade (matriz)
 -- ---------------------------------------------------------------------------
 -- WITH mun AS (
@@ -75,7 +105,7 @@ ORDER BY nome;
 --   FROM `basedosdados.br_bd_diretorios_brasil.municipio`
 --   WHERE sigla_uf = 'ES'
 --     AND nome IN ('São Gabriel da Palha', 'Vila Valério', 'São Domingos do Norte',
---                  'Águia Branca', 'Nova Venécia', 'Colatina')
+--                  'Águia Branca')
 -- ),
 -- ultima AS (
 --   SELECT MAX(data) AS d FROM `basedosdados.br_me_cnpj.estabelecimentos`

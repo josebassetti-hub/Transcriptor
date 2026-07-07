@@ -22,7 +22,15 @@ DIR_DADOS = RAIZ / "dados"
 
 def frota_regiao(config: dict):
     """Frota da região por tipo. Retorna dict {total, por_tipo, referencia,
-    proveniencia} ou None se o CSV do setor ainda não existir."""
+    proveniencia} ou None se o CSV do setor ainda não existir.
+
+    `driver_demanda.tipos_atendidos` (lista de tipos, nomes da consulta H)
+    restringe o driver ao mercado que a empresa realmente atende — quando o
+    driver abrange vários sub-mercados (motos, caminhões...), o recorte é
+    decisão do cliente e deve ser PERGUNTADO, nunca assumido. Com o filtro,
+    total/por_tipo/por_municipio contam só os tipos atendidos; `total_geral`
+    e `excluidos` ficam disponíveis para o relatório declarar o que saiu.
+    """
     dd = config.get("driver_demanda") or {}
     nome = dd.get("csv_frota")
     if not nome:
@@ -30,22 +38,36 @@ def frota_regiao(config: dict):
     caminho = DIR_DADOS / nome
     if not caminho.exists():
         return None
+    tipos_ok = set(dd.get("tipos_atendidos") or [])
+    municipios_ok = {m["nome"] for m in config["regiao"].get("municipios", [])}
     por_tipo = {}
     por_municipio = {}
+    total_geral = 0
+    excluidos = {}
     referencia = None
     with open(caminho, newline="", encoding="utf-8") as fh:
         for l in csv.DictReader(fh):
-            referencia = max(referencia or l["referencia"], l["referencia"])
-            por_tipo[l["tipo"]] = por_tipo.get(l["tipo"], 0) + int(l["quantidade"])
-            # estudos municipais trazem a coluna opcional `municipio`
+            # estudos municipais trazem a coluna opcional `municipio`; linhas
+            # de cidades fora do recorte atual do config não contam
             mun = (l.get("municipio") or "").strip()
+            if mun and municipios_ok and mun not in municipios_ok:
+                continue
+            referencia = max(referencia or l["referencia"], l["referencia"])
+            q = int(l["quantidade"])
+            total_geral += q
+            if tipos_ok and l["tipo"] not in tipos_ok:
+                excluidos[l["tipo"]] = excluidos.get(l["tipo"], 0) + q
+                continue
+            por_tipo[l["tipo"]] = por_tipo.get(l["tipo"], 0) + q
             if mun:
-                por_municipio[mun] = por_municipio.get(mun, 0) + int(l["quantidade"])
+                por_municipio[mun] = por_municipio.get(mun, 0) + q
     if not por_tipo:
         return None
     demo = dd.get("frota_origem", "demo") != "real"
     return {
         "total": sum(por_tipo.values()),
+        "total_geral": total_geral,
+        "excluidos": excluidos or None,
         "por_tipo": por_tipo,
         "por_municipio": por_municipio or None,
         "referencia": referencia,

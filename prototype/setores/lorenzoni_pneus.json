@@ -1,7 +1,7 @@
 {
   "id": "lorenzoni_pneus",
   "titulo": "Mercado de pneus e serviços automotivos rápidos — área de influência de São Gabriel da Palha (ES)",
-  "contexto": "Estudo para a Lorenzoni Pneus (revenda de pneus em expansão para nova sede de 1.800 m² em São Gabriel da Palha/ES): tamanho do mercado local de pneus + serviços rápidos + estética automotiva na área de influência (cidade-sede e vizinhas), concorrência real e teste de realismo da meta de receita. Terceiro piloto — primeiro estudo em nível MUNICIPAL do motor. Contexto declarado (informação da empresa, não medida): carteira ~80% pessoas físicas / 20% empresas; região agro-cafeeira (Cooabriel) com frota intensa de caminhonetes e utilitários.",
+  "contexto": "Estudo para a Lorenzoni Pneus (revenda de pneus em expansão para nova sede de 1.800 m² em São Gabriel da Palha/ES): tamanho do mercado local de pneus + serviços rápidos + estética automotiva na área REALMENTE ATENDIDA (São Gabriel da Palha + Vila Valério, São Domingos do Norte e Águia Branca — Colatina e Nova Venécia excluídas por decisão da empresa, que não atende clientes de lá), concorrência real e teste de realismo da meta de receita. Terceiro piloto — primeiro estudo em nível MUNICIPAL do motor. Contexto declarado (informação da empresa, não medida): carteira ~80% pessoas físicas / 20% empresas; região agro-cafeeira (Cooabriel) com frota intensa de caminhonetes e utilitários; atende carros e linha leve (motos e caminhões fora do estudo).",
   "cnaes": [
     {
       "codigo": "4530-7/05",
@@ -27,8 +27,8 @@
   "regiao": {
     "nivel": "municipios",
     "sigla": "ES",
-    "apelido": "área SGP+5",
-    "nome": "área de influência de São Gabriel da Palha (ES): sede + 5 municípios vizinhos",
+    "apelido": "área SGP+3",
+    "nome": "área realmente atendida de São Gabriel da Palha (ES): sede + 3 municípios vizinhos (recorte declarado pela empresa)",
     "municipios": [
       {
         "nome": "São Gabriel da Palha",
@@ -69,29 +69,9 @@
           "max": 0.55
         },
         "codigo_ibge": "3200136"
-      },
-      {
-        "nome": "Nova Venécia",
-        "anel": "anel 2",
-        "fator_acesso": {
-          "min": 0.03,
-          "base": 0.06,
-          "max": 0.1
-        },
-        "codigo_ibge": "3203908"
-      },
-      {
-        "nome": "Colatina",
-        "anel": "anel 2",
-        "fator_acesso": {
-          "min": 0.02,
-          "base": 0.04,
-          "max": 0.08
-        },
-        "codigo_ibge": "3201506"
       }
     ],
-    "racional_fatores": "Fatores de acesso por cidade [modelo gravitacional Reilly/Huff; premissa declarada CALIBRADA pela densidade competitiva medida na consulta A4]: 100% no núcleo; 35–60% no anel 1 — Vila Valério, Águia Branca e São Domingos do Norte têm as MENORES densidades de oferta própria da área (2,2–2,5 empresas do setor por mil veículos), confirmando dependência do polo; 2–10% no anel 2 — Colatina tem a MAIOR densidade (4,2/mil veículos, 364 empresas) e Nova Venécia 3,3/mil, ou seja, retêm seu mercado com oferta local forte. Referência do núcleo: São Gabriel da Palha 3,0/mil (87 empresas). A validar com a empresa"
+    "racional_fatores": "Fatores de acesso por cidade [modelo gravitacional Reilly/Huff; premissa declarada CALIBRADA pela densidade competitiva medida na consulta A4, sobre a frota dos tipos atendidos]: 100% no núcleo; 35–60% no anel 1 — Vila Valério (6,1 empresas do setor por mil veículos atendíveis), São Domingos do Norte (5,7) e Águia Branca (5,6) têm densidade de oferta própria menor que a do núcleo (São Gabriel da Palha, 7,1/mil, 87 empresas), confirmando dependência do polo. Colatina e Nova Venécia foram EXCLUÍDAS do estudo por decisão da empresa (não atende clientes de lá) — deixaram de ser anel 2. A validar com a empresa"
   },
   "cnpj_prefixo": "pneus",
   "sql_arquivos": [
@@ -106,9 +86,16 @@
     "arquetipo": "b2c_frota",
     "csv_frota": "pneus_frota_demo.csv",
     "frota_origem": "real",
-    "descricao": "Quem compra: donos de veículos da área de influência — pneus e manutenção rápida são função direta da frota circulante (e, na região, da frota agro-cafeeira: caminhonetes e utilitários dos produtores). Arquétipo B2C-Frota (docs/drivers-demanda.md) em recorte MUNICIPAL; base contável = frota SENATRAN por município.",
-    "conversao": "frota da área × gasto médio anual por veículo com manutenção e acessórios (POF ÷ frota nacional), com fator de captura decrescente por anel de proximidade [premissa declarada]",
-    "contexto_regional": "Contexto regional (SENATRAN 2025-10, consulta H2): a frota endereçável equivale a 1,9% da frota do Espírito Santo (2.619.686 veículos) e 0,038% da do Brasil (128.170.305)"
+    "tipos_atendidos": [
+      "automovel",
+      "caminhonete",
+      "camioneta",
+      "utilitario"
+    ],
+    "racional_tipos": "DECISÃO DA EMPRESA (declarada pelo cliente): atende carros e linha leve — automóvel, caminhonete, camioneta e utilitário. Motocicletas, motonetas e caminhões estão FORA do estudo. A confirmar com a empresa: reboques/semirreboques e ônibus (excluídos por ora). Lição de método: quando o driver abrange vários sub-mercados, o recorte é sempre perguntado ao cliente, nunca assumido",
+    "descricao": "Quem compra: donos de veículos de passeio e linha leve da área realmente atendida — pneus e manutenção rápida são função direta da frota circulante (e, na região, da frota agro-cafeeira: caminhonetes e utilitários dos produtores). Arquétipo B2C-Frota (docs/drivers-demanda.md) em recorte MUNICIPAL; base contável = frota SENATRAN por município, somente dos tipos que a empresa atende.",
+    "conversao": "frota ATENDÍVEL da área × gasto médio anual por veículo com manutenção e acessórios (POF ÷ frota nacional), com fator de captura decrescente por anel de proximidade [premissa declarada]",
+    "contexto_regional": "Contexto regional: a chave frota-da-área ÷ frota-do-Brasil está em recorte antigo (todos os tipos) — A ATUALIZAR com a consulta H3 (frota ES/BR por tipo), para medir a participação no MESMO recorte de tipos atendidos"
   },
   "icp": {
     "descricao": "Concorrentes formais ativos há 2+ anos, porte ME ou EPP, nos CNAEs do estudo e na área de influência (o universo competitivo local da nova sede)",
@@ -122,12 +109,11 @@
       "10+"
     ],
     "ticket_medio_anual_brl": 500000,
-    "racional_ticket": "PREMISSA DECLARADA, calibrada por três referências: (i) piso — demanda B2C das famílias da área pela POF (~R$ 600/veículo/ano × 49 mil veículos endereçáveis ≈ R$ 30 mi, só pessoas físicas); (ii) topo local — a própria Lorenzoni fatura R$ 2,3 mi/ano em 300 m² (informação do plano de negócio da empresa, declarada); (iii) mix local de 128 operantes entre lojas de pneus (ticket alto) e serviços rápidos (ticket menor). R$ 500 mil/ano como média local; sensibilidade na seção 6; a validar com a empresa",
-    "taxa_atividade": 0.65,
-    "racional_atividade": "MEDIDO (consulta A4 municipal, idade pela matriz): 65,5% do ICP local (129 de 197 empresas ME/EPP com 2+ anos na área) é optante do Simples Nacional — proxy de operação real validado nos pilotos anteriores (interior tem adesão ainda maior que capitais: 65% aqui vs 56% na reparação em SP)",
-    "empresas_somente_cnae_secundario": 1443,
+    "racional_ticket": "PREMISSA DECLARADA, calibrada por três referências: (i) piso — demanda B2C das famílias da área pela POF (~R$ 600/veículo/ano × ~24 mil veículos atendíveis ≈ R$ 14,5 mi, só pessoas físicas); (ii) topo local — a própria Lorenzoni fatura R$ 2,3 mi/ano em 300 m² (informação do plano de negócio da empresa, declarada); (iii) mix local de ~29 concorrentes-equivalentes entre lojas de pneus (7 no núcleo, ticket alto) e serviços rápidos (ticket menor). R$ 500 mil/ano como média local; sensibilidade na seção 6; a validar com a empresa",
+    "taxa_atividade": 0.725,
+    "racional_atividade": "MEDIDO (consulta A4 municipal, idade pela matriz, área SGP+3): 72,5% do ICP local (37 de 51 empresas ME/EPP com 2+ anos nas 4 cidades atendidas) é optante do Simples Nacional — proxy de operação real validado nos pilotos anteriores (interior tem adesão ainda maior que capitais: 72% aqui vs 56% na reparação em SP)",
     "peso_receita_secundaria": 0.15,
-    "racional_secundaria": "Mix de receita multi-CNAE validado nos pilotos (empresa com o CNAE só como atividade secundária fatura ~15% dele [premissa declarada]). Caso extremo local: só 24 empresas da área têm pneus como atividade PRINCIPAL, mas 448 o têm como secundária (postos, autopeças, mecânicas) — a concorrência real da linha-âncora é 19x a visível"
+    "racional_secundaria": "Mix de receita multi-CNAE validado nos pilotos (empresa com o CNAE só como atividade secundária fatura ~15% dele [premissa declarada]). Os totais por atividade da área SGP+3 aguardam a consulta E re-rodada no novo recorte de 4 cidades (a anterior cobria 6 — recorte errado é pior que ausente)"
   },
   "captura": {
     "pessimista": 0.1,
@@ -150,7 +136,7 @@
     "participacao_segmento": 0.685,
     "racional_segmento": "substituído pela fração medida na PAC 1403",
     "participacao_regiao": 0.000382,
-    "racional_regiao": "DADO (SENATRAN 2025-10, consultas H/H2): frota ENDEREÇÁVEL da área (49.023 veículos, consolidação ponderada da seção 3b) ÷ frota do Brasil (128.170.305) = 0,038% — a chave regional é medida pelo próprio driver do setor, sem premissa intermediária; intervalo 0,034%–0,044% pela sensibilidade dos fatores de acesso",
+    "racional_regiao": "A ATUALIZAR (recorte novo): o valor 0,038% foi medido no recorte ANTIGO (6 cidades, todos os tipos de veículo: 49.023 ÷ 128.170.305, consultas H/H2). Com a área SGP+3 e o filtro de tipos atendidos, rode a consulta H3 (frota ES/BR por tipo) e cole no chat para remedir a chave no mesmo recorte. O top-down já é tratado apenas como TETO — a leitura central (bottom-up) não depende desta chave",
     "regiao_medida": {
       "cempre_brasil": {
         "agregado": "6449",

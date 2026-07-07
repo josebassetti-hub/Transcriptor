@@ -129,7 +129,22 @@ def gerar(config: dict, modo: str) -> str:
 
     # ---- compute -------------------------------------------------------------
     td = sizing.top_down(receita, config["topdown"])
-    bu = sizing.bottom_up(contagem["n_icp"], config["icp"], config["captura"])
+    # bottom-up ponderado (estudos municipais): concorrente de cidade-satélite
+    # disputa o mesmo mercado que a loja só na fração do fator de acesso, então
+    # o ICP que alimenta o SAM é o ENDEREÇÁVEL = Σ (ICP da cidade × fator base)
+    funil_mun = cnpj.funil_por_municipio(linhas_cnpj, config["icp"])
+    munis_cfg = config["regiao"].get("municipios", [])
+    fatores_mun = {m["nome"]: m["fator_acesso"]
+                   for m in munis_cfg if "fator_acesso" in m}
+    icp_enderecavel = None
+    if funil_mun and fatores_mun:
+        icp_enderecavel = sum(
+            f["icp"] * fatores_mun.get(mun, {"base": 1.0})["base"]
+            for mun, f in funil_mun.items())
+    bu = sizing.bottom_up(
+        round(icp_enderecavel) if icp_enderecavel is not None
+        else contagem["n_icp"],
+        config["icp"], config["captura"])
     tri = sizing.triangulacao(td["sam"], bu["sam"])
     sens = sizing.sensibilidade(bu["n_icp"])
     som_base = bu["cenarios"]["base"]["som"]
@@ -214,11 +229,48 @@ def gerar(config: dict, modo: str) -> str:
             )
             blocos_dd.append(R.selo_fonte(prov_dom_dd))
         elif dd.get("arquetipo") == "b2c_frota" and frota_info:
+            # recorte de tipos atendidos: quando o driver abrange vários
+            # sub-mercados (motos, caminhões...), o recorte é DECISÃO DO
+            # CLIENTE, declarada no config — nunca assumida
+            m_tipos = None
+            if dd.get("tipos_atendidos"):
+                exc = frota_info.get("excluidos") or {}
+                exc_top = sorted(exc.items(), key=lambda kv: -kv[1])
+                n_exc = frota_info["total_geral"] - frota_info["total"]
+                m_tipos = mem.registrar(
+                    "Tipos de veículo atendidos (recorte do driver)",
+                    "PREMISSA DECLARADA",
+                    "frota atendível = frota total da área − tipos que a "
+                    "empresa não atende (decisão do cliente)",
+                    [{"nome": "tipos atendidos: "
+                              + ", ".join(dd["tipos_atendidos"]),
+                      "valor": R.inteiro(frota_info["total"]) + " veículos"},
+                     {"nome": "excluídos do estudo ({} tipos)".format(len(exc)),
+                      "valor": "; ".join("{} {}".format(R.inteiro(q), tp)
+                                         for tp, q in exc_top[:6])
+                               + ("; …" if len(exc_top) > 6 else "")},
+                     {"nome": "frota total da área (todos os tipos)",
+                      "valor": R.inteiro(frota_info["total_geral"]),
+                      "fonte": "SENATRAN, consulta H",
+                      "url": frota_info["proveniencia"].get("url")}],
+                    "{} − {}".format(R.inteiro(frota_info["total_geral"]),
+                                     R.inteiro(n_exc)),
+                    R.inteiro(frota_info["total"]) + " veículos atendíveis",
+                    racional=dd.get("racional_tipos", ""),
+                    provs=[frota_info["proveniencia"]],
+                    sql_ref="CONSULTA H",
+                )
             tipos = sorted(frota_info["por_tipo"].items(), key=lambda kv: -kv[1])
             blocos_dd.append(
                 f"<p><b>Base contável:</b> <b>{R.inteiro(frota_info['total'])}</b> "
-                f"veículos registrados na região (SENATRAN, {frota_info['referencia']}). "
-                f"<b>Conversão em demanda:</b> {dd.get('conversao', 'ver metodologia')}.</p>"
+                + ("veículos ATENDÍVEIS" if m_tipos else "veículos registrados")
+                + f" na região (SENATRAN, {frota_info['referencia']})."
+                + (f" Ficam fora do estudo, por decisão da empresa, "
+                   f"{R.inteiro(frota_info['total_geral'] - frota_info['total'])} "
+                   f"veículos de tipos não atendidos (motocicletas, caminhões "
+                   f"etc.).{mem.ref(m_tipos)}" if m_tipos else "")
+                + f" <b>Conversão em demanda:</b> "
+                f"{dd.get('conversao', 'ver metodologia')}.</p>"
             )
             blocos_dd.append(R.grafico_barras_h(tipos[:6], "veículos", esq=140))
             munis = config["regiao"].get("municipios", [])
@@ -571,11 +623,81 @@ def gerar(config: dict, modo: str) -> str:
          {"nome": "faixas de idade aceitas (anos)",
           "valor": ", ".join(config["icp"]["faixas_idade"])}],
         "filtro sobre o agregado por CNAE × regime × porte × idade (consulta A4)",
-        R.inteiro(bu["n_icp"]) + " empresas",
+        R.inteiro(contagem["n_icp"]) + " empresas",
         racional=bu["premissas"]["icp"],
         provs=[prov_cnpj],
         sql_ref="CONSULTA A4",
     )
+    m_comp = None
+    m_funil_v = None
+    m_icp_end = None
+    if funil_mun:
+        cidades_ord = sorted(funil_mun.items(), key=lambda kv: -kv[1]["universo"])
+        m_comp = mem.registrar(
+            "Composição do universo por cidade e atividade",
+            "DADO",
+            "universo da cidade = empresas ativas dos CNAEs do estudo, todos "
+            "os regimes e portes (inclusive MEI) — NÃO ler como lojas da "
+            "linha-âncora; a abertura por CNAE está na tabela da seção 5",
+            [{"nome": mun,
+              "valor": "{} empresas; maior linha: {} ({} empresas)".format(
+                  R.inteiro(f["universo"]),
+                  max(f["por_cnae"].items(),
+                      key=lambda kv: kv[1]["universo"])[0],
+                  R.inteiro(max(pc["universo"]
+                                for pc in f["por_cnae"].values()))),
+              "fonte": "consulta A4 (coluna municipio)"}
+             for mun, f in cidades_ord],
+            "detalhe por CNAE × cidade na tabela da seção 5",
+            R.inteiro(contagem["universo_empresas"]) + " empresas no total",
+            provs=[prov_cnpj],
+            sql_ref="CONSULTA A4",
+        )
+        m_funil_v = mem.registrar(
+            "Funil bottom-up por cidade",
+            "DADO",
+            "por cidade: universo → ICP (porte e idade) → optantes do Simples "
+            "no ICP (proxy de operação)",
+            [{"nome": mun,
+              "valor": "universo {} → ICP {} → Simples {}".format(
+                  R.inteiro(f["universo"]), R.inteiro(f["icp"]),
+                  R.inteiro(f["icp_simples"])),
+              "ref": m_comp}
+             for mun, f in cidades_ord],
+            "consolidado: universo {} → ICP {} → Simples {} (taxa medida {})".format(
+                R.inteiro(sum(f["universo"] for _, f in cidades_ord)),
+                R.inteiro(sum(f["icp"] for _, f in cidades_ord)),
+                R.inteiro(sum(f["icp_simples"] for _, f in cidades_ord)),
+                R.pct(sum(f["icp_simples"] for _, f in cidades_ord)
+                      / max(1, sum(f["icp"] for _, f in cidades_ord)), 1)),
+            "ver tabela da seção 5",
+            sql_ref="CONSULTA A4",
+        )
+        if icp_enderecavel is not None:
+            m_icp_end = mem.registrar(
+                "ICP endereçável (ponderado pelos fatores de acesso)",
+                "DERIVADO",
+                "ICP endereçável = Σ (ICP da cidade × fator de acesso base) — "
+                "concorrente de cidade-satélite disputa o mesmo mercado que a "
+                "loja só na fração do fator; contá-lo em 100% superestimaria "
+                "o SAM local",
+                [{"nome": mun,
+                  "valor": "{} × {} = {}".format(
+                      R.inteiro(f["icp"]),
+                      R.pct(fatores_mun.get(mun, {"base": 1.0})["base"], 0),
+                      _dec(f["icp"]
+                           * fatores_mun.get(mun, {"base": 1.0})["base"], 1)),
+                  "ref": m_funil_v}
+                 for mun, f in sorted(funil_mun.items(),
+                                      key=lambda kv: -kv[1]["icp"])],
+                " + ".join(
+                    _dec(f["icp"] * fatores_mun.get(mun, {"base": 1.0})["base"], 1)
+                    for mun, f in sorted(funil_mun.items(),
+                                         key=lambda kv: -kv[1]["icp"])),
+                "{} concorrentes-equivalentes (ICP real da área: {})".format(
+                    R.inteiro(round(icp_enderecavel)),
+                    R.inteiro(contagem["n_icp"])),
+            )
     m_taxa = mem.registrar(
         "Taxa de atividade efetiva",
         "DADO-PROXY" if rac_atv.startswith("MEDIDO") else "PREMISSA DECLARADA",
@@ -590,8 +712,11 @@ def gerar(config: dict, modo: str) -> str:
     m_oper = mem.registrar(
         "Empresas-alvo operantes",
         "DERIVADO",
-        "operantes = ICP × taxa de atividade (arredondado)",
-        [{"nome": "ICP", "valor": R.inteiro(bu["n_icp"]), "ref": m_icp},
+        "operantes = ICP {} × taxa de atividade (arredondado)".format(
+            "endereçável" if m_icp_end else ""),
+        [{"nome": "ICP" + (" endereçável" if m_icp_end else ""),
+          "valor": R.inteiro(bu["n_icp"]),
+          "ref": m_icp_end if m_icp_end else m_icp},
          {"nome": "taxa de atividade", "valor": R.pct(bu["taxa_atividade"], 1),
           "ref": m_taxa}],
         "{} × {}".format(R.inteiro(bu["n_icp"]), R.pct(bu["taxa_atividade"], 1)),
@@ -617,15 +742,88 @@ def gerar(config: dict, modo: str) -> str:
         R.brl(bu["sam"]),
     )
 
+    if m_icp_end:
+        frase_icp = (
+            f"o recorte de ICP resulta em <b>{R.inteiro(contagem['n_icp'])}</b> "
+            f"empresas cadastradas nas cidades do estudo;{mem.ref(m_icp)} "
+            f"ponderando cada cidade pelo fator de acesso (seção 3b), o "
+            f"<b>ICP endereçável</b> é <b>{R.inteiro(bu['n_icp'])}</b> "
+            f"concorrentes-equivalentes.{mem.ref(m_icp_end)}"
+        )
+    else:
+        frase_icp = (
+            f"o recorte de ICP resulta em <b>{R.inteiro(bu['n_icp'])}</b> "
+            f"empresas cadastradas.{mem.ref(m_icp)}"
+        )
     blocos_bu = [
         f"<p>O universo do CNAE na região tem <b>{R.inteiro(contagem['universo_empresas'])}</b> "
         f"empresas ativas ({R.inteiro(contagem['universo_estabelecimentos'])} estabelecimentos, "
-        f"contando filiais); o recorte de ICP resulta em <b>{R.inteiro(bu['n_icp'])}</b> "
-        f"empresas cadastradas.{mem.ref(m_icp)} Aplicando a premissa de atividade efetiva de "
+        f"contando filiais); {frase_icp} Aplicando a premissa de atividade efetiva de "
         f"{R.pct(bu['taxa_atividade'], 0)}, chega-se a <b>{R.inteiro(bu['n_operantes'])}</b> "
         f"empresas-alvo operantes.{mem.ref(m_oper)} Com ticket médio anual de {R.brl(bu['ticket'])}, o SAM "
         f"bottom-up é <b>{R.brl(bu['sam'])}</b>.{mem.ref(m_sam_bu)}</p>",
         nota_secundaria,
+    ]
+    if funil_mun:
+        desc_cnae = {c["codigo"]: c["descricao"] for c in config["cnaes"]}
+        cidades_ord = sorted(funil_mun.items(), key=lambda kv: -kv[1]["universo"])
+        # (a) composição por CNAE × cidade — o universo NÃO é "lojas da
+        # linha-âncora": abre o que cada cidade realmente tem em cada linha
+        linhas_comp = []
+        for mun, f in cidades_ord:
+            for cn, pc in sorted(f["por_cnae"].items(),
+                                 key=lambda kv: -kv[1]["universo"]):
+                linhas_comp.append((
+                    mun, "{} — {}".format(cn, desc_cnae.get(cn, "")),
+                    R.inteiro(pc["universo"]), R.inteiro(pc["mei"])))
+        blocos_bu.append(
+            "<p><b>Composição da concorrência por cidade e atividade</b> — o "
+            "universo soma as empresas ativas de TODAS as linhas do estudo, "
+            "inclusive MEIs (borracharias, lava-jatos, mecânicas de bairro); a "
+            "abertura abaixo evita ler o total como lojas da linha-âncora:"
+            f"{mem.ref(m_comp)}</p>"
+        )
+        blocos_bu.append(R.tabela(
+            ["Cidade", "Atividade (CNAE principal)", "Empresas ativas",
+             "das quais MEI"],
+            linhas_comp,
+        ))
+        # (b) funil bottom-up por cidade + consolidação ponderada
+        tem_fator = icp_enderecavel is not None
+        linhas_funil = []
+        for mun, f in sorted(funil_mun.items(), key=lambda kv: -kv[1]["icp"]):
+            fat = (fatores_mun.get(mun, {"base": 1.0})["base"]
+                   if tem_fator else None)
+            linhas_funil.append((
+                mun, R.inteiro(f["universo"]), R.inteiro(f["icp"]),
+                R.inteiro(f["icp_simples"]),
+                R.pct(fat, 0) if fat is not None else "—",
+                _dec(f["icp"] * fat, 1) if fat is not None else "—"))
+        tot_uni = sum(f["universo"] for _, f in cidades_ord)
+        tot_icp = sum(f["icp"] for _, f in cidades_ord)
+        tot_sim = sum(f["icp_simples"] for _, f in cidades_ord)
+        linhas_funil.append((
+            "CONSOLIDADO", R.inteiro(tot_uni), R.inteiro(tot_icp),
+            R.inteiro(tot_sim), "ponderado",
+            "<b>{}</b>".format(R.inteiro(round(icp_enderecavel)))
+            if tem_fator else "—"))
+        blocos_bu.append(
+            "<p><b>Funil bottom-up por cidade:</b> universo → ICP (porte e "
+            "idade) → optantes do Simples no ICP (proxy de operação"
+            + (", taxa medida de {}".format(R.pct(tot_sim / tot_icp, 1))
+               if tot_icp else "")
+            + ")"
+            + (" → ICP endereçável pelo fator de acesso — a última coluna é o "
+               "que alimenta o SAM" if tem_fator else "")
+            + f".{mem.ref(m_funil_v)}</p>"
+        )
+        blocos_bu.append(R.tabela(
+            ["Cidade", "Universo (todas as linhas)", "ICP (ME/EPP, 2+ anos)",
+             "das quais no Simples", "Fator de acesso (base)",
+             "ICP endereçável"],
+            linhas_funil,
+        ))
+    blocos_bu += [
         R.grafico_barras_h(
             sorted(contagem["por_porte"].items(), key=lambda kv: -kv[1]),
             "empresas ativas",
@@ -1003,6 +1201,13 @@ def gerar(config: dict, modo: str) -> str:
             "quadrimestral oficial de aberturas, baixas e tempo de baixa (Ministério do "
             "Empreendedorismo; não cobre MEI) · "
             "https://www.gov.br/empresas-e-negocios/pt-br/mapa-de-empresas</p>"
+        )
+    if config["regiao"].get("municipios"):
+        blocos_din.append(
+            '<p class="premissas">Nota de recorte: a consulta B3 (dinâmica) é '
+            "agregada por área no BigQuery e não guarda a cidade — confirme que "
+            "a lista de cidades da última execução confere com o recorte atual "
+            "do estudo (consultas em dados/sql/).</p>"
         )
     blocos_din.append(R.selo_fonte(prov_cnpj))
     s.append(secao("7. Dinâmica do mercado-alvo", *blocos_din))
