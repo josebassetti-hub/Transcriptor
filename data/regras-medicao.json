@@ -1,0 +1,321 @@
+{
+ "meta": {
+  "fonte": "Cadernos Técnicos DER-ES",
+  "cadernos": [
+   "05 – PAREDES E PAINÉIS"
+  ]
+ },
+ "regras": {
+  "050112": {
+   "d": "Elemento vazado de concreto (Cobogó) 40 x 40 x 10 cm, tipo reto, assentados com argamassa de cimento e areia peneirada no traço 1:3, espessura das juntas 15 mm, preparo manual",
+   "u": "m2",
+   "caderno": "05 – PAREDES E PAINÉIS",
+   "atualizacao": "11/2024",
+   "aplicacao": "Em paredes internas e externas, em que se deseje permitir a passagem de iluminação e ventilação permanente.",
+   "incluidos": "Fornecimento, preparo e transporte da argamassa, considerando perdas por consumo e transporte interno do canteiro até o local da aplicação, inclusive fornecimento e assentamento dos elementos vazados de concreto e execução do rejuntamento entre eles.",
+   "criterio": "m2 (metro quadrado) Pela área real de cobogós assentados, obtida em apenas uma das faces do plano de assentamento.",
+   "normas": [
+    "NBR 5712:2006 – Bloco vazado modular de concreto.",
+    "NBR 7173:2006 – Blocos vazados de concreto simples para alvenaria sem função estrutural.",
+    "NBR 7184:2006 - Blocos vazados de concreto simples para alvenaria – Determinação de",
+    "NR18 - Condições e meio ambiente de trabalho na indústria da construção -18.13 - Medidas"
+   ]
+  },
+  "050115": {
+   "d": "Alvenaria de embasamento com pedra de mão (rachão) empregando argamassa de cimento e areia traço 1:3, preparo manual",
+   "u": "m2",
+   "caderno": "05 – PAREDES E PAINÉIS",
+   "atualizacao": "11/2024",
+   "aplicacao": "Geralmente utilizada em muros de divisão e em pequenos muros de arrimo (do tipo “por gravidade”).",
+   "incluidos": "Fornecimento e transporte das pedras e da argamassa, considerando perdas por consumo e transporte interno do canteiro até o local da aplicação, preparo da argamassa e elevação da alvenaria, inclusive seleção (separação das peças apropriadas, maiores e menores) e umedecimento das pedras.",
+   "criterio": "m2 (metro quadrado) Pela área real de alvenaria de pedra efetivamente executada.",
+   "normas": [
+    "NBR 7225:2009 – Materiais de pedra e agregados naturais.",
+    "NBR 11682:2006 – Estabilidade de encostas.",
+    "NBR 5732:1991 – Cimento Portland Comum.",
+    "NBR 7220:1987 - Agregado - Determinação de impurezas orgânicas húmicas em agregado",
+    "NR18 - Condições e meio ambiente de trabalho na indústria da construção -18.13 - Medidas"
+   ]
+  },
+  "050122": {
+   "d": "Elemento vazado de concreto (Cobogó) 20 x 20 x 10cm, tipo cruzeta, assentado com argamassa de cimento, cal hidratada e areia no traço 1:0,5:5, espessura das juntas de 15mm, preparo manual",
+   "u": "m2",
+   "caderno": "05 – PAREDES E PAINÉIS",
+   "atualizacao": "11/2024",
+   "aplicacao": "Em paredes internas e externas, em que se deseje permitir a passagem de iluminação e ventilação permanente.",
+   "incluidos": "Fornecimento dos elementos vazados de concreto e dos materiais para preparo da argamassa, considerando transporte e perdas por consumo e transporte interno do canteiro até o local da aplicação, inclusive assentamento dos cobogós de concreto e execução do rejuntamento entre eles.",
+   "criterio": "m2 (metro quadrado) Pela área real de cobogós assentados, obtida em apenas uma das faces do plano de assentamento.",
+   "normas": [
+    "NBR 5712:2006 – Bloco vazado modular de concreto.",
+    "NBR 7173:2006 – Blocos vazados de concreto simples para alvenaria sem função estrutural.",
+    "NBR 7184:2006 - Blocos vazados de concreto simples para alvenaria – Determinação de",
+    "NR18 - Condições e meio ambiente de trabalho na indústria da construção -18.13 - Medidas"
+   ]
+  },
+  "050205": {
+   "d": "Divisória sanitária de granito cinza andorinha esp. 3 cm, assentada com argamassa de cimento e areia no traço 1:3",
+   "u": "m2",
+   "caderno": "05 – PAREDES E PAINÉIS",
+   "atualizacao": "11/2024",
+   "aplicacao": "Em divisórias para sanitários e vestiários, para separação de baias (box) de vasos sanitários, mictórios (tapa-vistas), chuveiros, etc.",
+   "incluidos": "Fornecimento das peças de granito e argamassa de assentamento, considerando perdas por consumo e transporte interno do canteiro até o local de assentamento, inclusive preparo da argamassa, execução de rasgos na alvenaria e no piso, assentamento e limpeza da divisória de granito.",
+   "criterio": "m2 (metro quadrado) Pela área efetiva de divisória de granito instalada.",
+   "normas": [
+    "NBR 15844/2010 – Rochas para revestimento – Requisitos para granitos."
+   ]
+  },
+  "050206": {
+   "d": "Divisória sanitária de granito cinza andorinha esp. 3 cm, fixada com cantoneira de ferro cromado",
+   "u": "m2",
+   "caderno": "05 – PAREDES E PAINÉIS",
+   "atualizacao": "11/2024",
+   "aplicacao": "Em divisórias para sanitários e vestiários, para separação de baias (box) de vasos sanitários, mictórios (tapa-vistas), chuveiros, etc.",
+   "incluidos": "Fornecimento das peças de granito, cantoneiras e parafusos em ferro cromado, inclusive execução de furos, parafusamento, chumbamento e limpeza da divisória de granito.",
+   "criterio": "m2 (metro quadrado) Pela área efetiva de divisória de granito instalada.",
+   "normas": [
+    "NBR 15844/2010 – Rochas para revestimento – Requisitos para granitos."
+   ]
+  },
+  "050208": {
+   "d": "Assentamento de divisória sanitária de mármore ou granito com 3 cm de espessura, empregando argamassa de cimento e areia no traço 1:3, exclusive fornecimento da divisória",
+   "u": "m2",
+   "caderno": "05 – PAREDES E PAINÉIS",
+   "atualizacao": "11/2024",
+   "aplicacao": "Em divisórias para sanitários e vestiários, para separação de baias (box) de vasos sanitários, mictórios (tapa-vistas), chuveiros, etc.",
+   "incluidos": "Fornecimento de argamassa de assentamento, considerando perdas por consumo e transporte interno do canteiro até o local de assentamento, inclusive preparo da argamassa, execução de rasgos na alvenaria e no piso, assentamento e limpeza da divisória de mármore ou granito.",
+   "criterio": "m2 (metro quadrado) Pela área efetiva de divisória de mármore ou granito instalada.",
+   "normas": [
+    "NBR 15844/2010 – Rochas para revestimento – Requisitos para granitos."
+   ]
+  },
+  "050212": {
+   "d": "Fornecimento e montagem de sistema de divisórias modulares tipo MD-1 (Alta/Painel/Painel), espessura de 35mm, painéis em chapa duraplac, pintura melamínica e protegidas por resina de brilho mate, cor: Cinza, miolo em estrutura celular (colméia), estrutura em perfil de aço na cor: preta",
+   "u": "m2",
+   "caderno": "05 – PAREDES E PAINÉIS",
+   "atualizacao": "11/2024",
+   "aplicacao": "Separação de ambientes em blocos administrativos e salas de reuniões.",
+   "incluidos": "Fornecimento e montagem do sistema de divisórias modulares (serviço terceirizado), inclusive montantes, rodapés e niveladores. Limpeza das divisórias e do local de montagem, inclusive remoção de materiais excedentes e inaproveitáveis.",
+   "criterio": "m2 (metro quadrado) Pela área real de divisória instalada.",
+   "normas": [
+    "NBR 10636:2022 - Paredes divisórias sem função estrutural - determinação da resistência ao",
+    "NBR 11673:1990 - Divisórias leves internas moduladas - perfis metálicos.",
+    "NBR 11674:2015 - Divisórias leves internas moduladas - determinação das dimensões e do",
+    "NBR 11675:2016 - Divisórias leves internas moduladas - verificação da resistência a impactos.",
+    "NBR 11676:2015 - Divisórias leves internas moduladas - verificação do comportamento dos",
+    "NBR 11677:2015 - Divisórias leves internas moduladas - determinação da isolação sonora."
+   ]
+  },
+  "050213": {
+   "d": "Fornecimento e montagem de porta para divisórias sem visor, espessura de 35mm, painéis em chapa duraplac, pintura melamínica e protegidas por resina de brilho mate, cor: Cinza, miolo em estrutura celular (Colméia), estrutura em perfis de aço na cor: preta, inclusive dobradiça e fechadura tubular",
+   "u": "und",
+   "caderno": "05 – PAREDES E PAINÉIS",
+   "atualizacao": "11/2024",
+   "aplicacao": "Porta para divisórias de ambientes em blocos administrativos e salas de reuniões.",
+   "incluidos": "Fornecimento e montagem de porta para divisórias, inclusive fechadura e dobradiças (serviço terceirizado). Limpeza da porta e ferragens, inclusive remoção de materiais excedentes e inaproveitáveis.",
+   "criterio": "und (unidade) Por unidade instalada (porta).",
+   "normas": [
+    "NBR 10636:2022 - Paredes divisórias sem função estrutural - determinação da resistência ao",
+    "NBR 11673:1990 - Divisórias leves internas moduladas - perfis metálicos.",
+    "NBR 11674:2015 - Divisórias leves internas moduladas - determinação das dimensões e do",
+    "NBR 11675:2016 - Divisórias leves internas moduladas - verificação da resistência a impactos.",
+    "NBR 11676:2015 - Divisórias leves internas moduladas - verificação do comportamento dos",
+    "NBR 11677:2015 - Divisórias leves internas moduladas - determinação da isolação sonora.",
+    "NBR 7178:1997 – Dobradiças de Abas – Especificação e desempenho."
+   ]
+  },
+  "050301": {
+   "d": "Verga/contraverga reta de concreto armado moldada in loco 10 x 5 cm, Fck = 15 MPa, inclusive forma, armação e desforma, comprimento inferior a 2.0 metros",
+   "u": "m",
+   "caderno": "05 – PAREDES E PAINÉIS",
+   "atualizacao": "11/2024",
+   "aplicacao": "Empregada acima das aberturas de paredes, como janelas e portas (verga). Pode ser posicionada também na parte inferior, abaixo da janela ou da abertura (contraverga).",
+   "incluidos": "Fornecimento, preparo, transporte e aplicação do concreto, considerando perdas por consumo e transporte interno do canteiro até o local da aplicação; fornecimento e montagem de fôrma de madeira, inclusive corte, transporte até o local de montagem, escoramento e desforma; fornecimento e colocação de armadura na fôrma, inclusive corte, dobra e transporte até o local de montagem.",
+   "criterio": "m (metro) Pelo comprimento de verga e contraverga executadas.",
+   "normas": [
+    "NBR 8545:1984 - Execução de alvenaria sem função estrutural de tijolos e blocos cerâmicos.",
+    "NBR 7480:2022 - Aço destinado às armaduras para estruturas de concreto armado -",
+    "NBR 7203:1982 – Madeira serrada e beneficiada.",
+    "Decreto Estadual nº 1.941- R, de 18 de Outubro de 2007 - utilização de produtos e",
+    "NBR 12655:2022 - Concreto de cimento Portland - Preparo, controle, recebimento e aceitação",
+    "NBR 5732:1991 – Cimento Portland Comum.",
+    "NBR 7220:1987 - Agregado - Determinação de impurezas orgânicas húmicas em agregado",
+    "NBR 7211:2005 - Agregados para concreto - Especificação"
+   ]
+  },
+  "050303": {
+   "d": "Verga/contraverga curva de concreto armado 10 x 5 cm, Fck = 15 MPa, inclusive forma, armação e desforma, comprimento inferior a 2.0 metros",
+   "u": "m",
+   "caderno": "05 – PAREDES E PAINÉIS",
+   "atualizacao": "11/2024",
+   "aplicacao": "Empregada acima das aberturas de paredes, como janelas e portas (verga). Pode ser posicionada também na parte inferior, abaixo da janela ou da abertura (contraverga).",
+   "incluidos": "Fornecimento, preparo, transporte e aplicação do concreto, considerando perdas por consumo e transporte interno do canteiro até o local da aplicação; fornecimento e montagem de fôrma de madeira, inclusive corte, transporte até o local de montagem, escoramento e desforma; fornecimento e colocação de armadura na fôrma, inclusive corte, dobra e transporte até o local de montagem.",
+   "criterio": "m (metro) Pelo comprimento de verga e contraverga executadas.",
+   "normas": [
+    "NBR 8545:1984 - Execução de alvenaria sem função estrutural de tijolos e blocos cerâmicos.",
+    "NBR 7480:2022 - Aço destinado às armaduras para estruturas de concreto armado -",
+    "NBR 7203:1982 – Madeira serrada e beneficiada.",
+    "Decreto Estadual nº 1.941- R, de 18 de Outubro de 2007 - utilização de produtos e",
+    "NBR 12655:2022 - Concreto de cimento Portland - Preparo, controle, recebimento e aceitação",
+    "NBR 5732:1991 – Cimento Portland Comum.",
+    "NBR 7220:1987 - Agregado - Determinação de impurezas orgânicas húmicas em agregado",
+    "NBR 7211:2005 - Agregados para concreto - Especificação"
+   ]
+  },
+  "050501": {
+   "d": "Alvenaria de blocos de concreto estrutural 14x19x39cm cheios \"Classe B\", com resistência mínima à compressão 15MPa, assentados c/ argamassa de cimento e areia média no traço 1:4, preparo com betoneira, esp. juntas 10mm e esp. da parede s/ revestimento 14cm",
+   "u": "m2",
+   "caderno": "05 – PAREDES E PAINÉIS",
+   "atualizacao": "11/2024",
+   "aplicacao": "Paredes internas ou externas, muros de arrimo e outros elementos com função estrutural, de acordo com a NBR 15961.",
+   "incluidos": "Fornecimento, preparo, transporte, aplicação da argamassa de assentamento e do concreto para enchimento dos blocos (grauteamento), considerando perdas por consumo e transporte interno do canteiro até o local da aplicação; inclusive fornecimento, transporte e assentamento dos blocos vazados de concreto simples e blocos complementares (considerando eventuais perdas), limpeza e remoção de poeira e materiais diversos depositados sobre a laje, marcação e elevação da alvenaria, umedecimento dos blocos (caso necessário), execução de visitas para lançamento e adensamento do graute, colocação de escadas ou montagem das plataformas de trabalho e guarda-corpos.",
+   "criterio": "m2 (metro quadrado) Pela área de alvenaria executada, subtraindo-se apenas a área que exceder, em cada vão, a 2 m2 (metros quadrados). Vãos com áreas inferiores ou iguais a 2 m2, não serão descontados.",
+   "normas": [
+    "NBR 15961-1:2011 - Alvenaria estrutural - Blocos de concreto - Parte 1: Projeto.",
+    "NBR 12655:2022 - Concreto de cimento Portland - Preparo, controle, recebimento e aceitação",
+    "NBR 5732:1991 – Cimento Portland Comum.",
+    "NBR 7220:1987 - Agregado - Determinação de impurezas orgânicas húmicas em agregado",
+    "NBR 7211:2005 - Agregados para concreto - Especificação",
+    "NR18 - Condições e meio ambiente de trabalho na indústria da construção -18.13 - Medidas"
+   ]
+  },
+  "050502": {
+   "d": "Alvenaria de blocos de concreto estrutural 19x19x39cm cheios \"Classe B\", com resistência mínima à compressão 15MPa, assentados c/ argamassa de cimento e areia média no traço 1:4, preparo com betoneira, esp. juntas 10mm e esp. da parede s/ revestimento 19cm",
+   "u": "m2",
+   "caderno": "05 – PAREDES E PAINÉIS",
+   "atualizacao": "11/2024",
+   "aplicacao": "Paredes internas ou externas, muros de arrimo e outros elementos com função estrutural, de acordo com a NBR 15961.",
+   "incluidos": "Fornecimento, preparo, transporte, aplicação da argamassa de assentamento e do concreto para enchimento dos blocos (grauteamento), considerando perdas por consumo e transporte interno do canteiro até o local da aplicação; inclusive fornecimento, transporte e assentamento dos blocos vazados de concreto simples e blocos complementares (considerando eventuais perdas), limpeza e remoção de poeira e materiais diversos depositados sobre a laje, marcação e elevação da alvenaria, umedecimento dos blocos (caso necessário), execução de visitas para lançamento e adensamento do graute, colocação de escadas ou montagem das plataformas de trabalho e guarda-corpos.",
+   "criterio": "m2 (metro quadrado) Pela área de alvenaria executada, subtraindo-se apenas a área que exceder, em cada vão, a 2 m2 (metros quadrados). Vãos com áreas inferiores ou iguais a 2 m2, não serão descontados.",
+   "normas": [
+    "NBR 15961-1:2011 - Alvenaria estrutural - Blocos de concreto - Parte 1: Projeto.",
+    "NBR 12655:2022 - Concreto de cimento Portland - Preparo, controle, recebimento e aceitação",
+    "NBR 5732:1991 – Cimento Portland Comum.",
+    "NBR 7220:1987 - Agregado - Determinação de impurezas orgânicas húmicas em agregado",
+    "NBR 7211:2005 - Agregados para concreto - Especificação",
+    "NR18 - Condições e meio ambiente de trabalho na indústria da construção -18.13 - Medidas"
+   ]
+  },
+  "050503": {
+   "d": "Alvenaria de blocos de concreto estrutural 9x19x39cm cheios \"Classe B\", com resistência mínima à compressão 15MPa, assentados c/ argamassa de cimento e areia média no traço 1:4, preparo com betoneira, esp. juntas 10mm e esp. da parede s/ revestimento 9cm",
+   "u": "m2",
+   "caderno": "05 – PAREDES E PAINÉIS",
+   "atualizacao": "11/2024",
+   "aplicacao": "Paredes internas ou externas, muros de arrimo e outros elementos com função estrutural, de acordo com a NBR 15961.",
+   "incluidos": "Fornecimento, preparo, transporte, aplicação da argamassa de assentamento e do concreto para enchimento dos blocos (grauteamento), considerando perdas por consumo e transporte interno do canteiro até o local da aplicação; inclusive fornecimento, transporte e assentamento dos blocos vazados de concreto simples e blocos complementares (considerando eventuais perdas), limpeza e remoção de poeira e materiais diversos depositados sobre a laje, marcação e elevação da alvenaria, umedecimento dos blocos (caso necessário), execução de visitas para lançamento e adensamento do graute, colocação de escadas ou montagem das plataformas de trabalho e guarda-corpos.",
+   "criterio": "m2 (metro quadrado) Pela área de alvenaria executada, subtraindo-se apenas a área que exceder, em cada vão, a 2 m2 (metros quadrados). Vãos com áreas inferiores ou iguais a 2 m2, não serão descontados.",
+   "normas": [
+    "NBR 15961-1:2011 - Alvenaria estrutural - Blocos de concreto - Parte 1: Projeto.",
+    "NBR 12655:2022 - Concreto de cimento Portland - Preparo, controle, recebimento e aceitação",
+    "NBR 5732:1991 – Cimento Portland Comum.",
+    "NBR 7220:1987 - Agregado - Determinação de impurezas orgânicas húmicas em agregado",
+    "NBR 7211:2005 - Agregados para concreto - Especificação",
+    "NR18 - Condições e meio ambiente de trabalho na indústria da construção -18.13 - Medidas"
+   ]
+  },
+  "050601": {
+   "d": "Alvenaria de vedação com blocos de concreto 9x19x39cm, c/ resistência mínimo a compressão de 3 MPa, assentados c/ argamassa de cimento, cal hidratada CH1 e areia no traço 1:0,5:8, preparo com betoneira, esp. juntas 10mm e esp. da parede s/ revestimento 9cm",
+   "u": "m2",
+   "caderno": "05 – PAREDES E PAINÉIS",
+   "atualizacao": "11/2024",
+   "aplicacao": "Paredes internas ou externas, fechamentos de divisa, caixas de passagem para instalações (elétricas, telefonia e hidrossanitárias) e outros elementos sem função estrutural.",
+   "incluidos": "Fornecimento, preparo, transporte e aplicação da argamassa de assentamento dos blocos, considerando perdas por consumo e transporte interno do canteiro até o local da aplicação; inclusive fornecimento, transporte e assentamento dos blocos vazados de concreto simples e blocos complementares (considerando eventuais perdas), limpeza e remoção de poeira e materiais diversos depositados sobre a laje, marcação e elevação da alvenaria, umedecimento dos blocos (caso necessário), colocação de escadas ou montagem das plataformas de trabalho e guarda-corpos.",
+   "criterio": "m2 (metro quadrado) Pela área de alvenaria executada, subtraindo-se apenas a área que exceder, em cada vão, a 2 m2 (metros quadrados). Vãos com áreas inferiores ou iguais a 2 m2, não serão descontados.",
+   "normas": [
+    "NBR 6136:2016 - Blocos vazados de concreto simples para alvenaria – Requisitos.",
+    "NBR 5732:1991 – Cimento Portland Comum.",
+    "NBR 7220:1987 - Agregado - Determinação de impurezas orgânicas húmicas em agregado",
+    "NR18 - Condições e meio ambiente de trabalho na indústria da construção -18.13 - Medidas"
+   ]
+  },
+  "050602": {
+   "d": "Alvenaria de vedação com blocos de concreto 14x19x39cm, c/ resistência mínimo a compressão de 3 MPa, assentados c/ argamassa de cimento, cal hidratada CH1 e areia no traço 1:0,5:8, preparo com betoneira, esp. juntas 10mm e esp. da parede s/ revestimento 14cm",
+   "u": "m2",
+   "caderno": "05 – PAREDES E PAINÉIS",
+   "atualizacao": "11/2024",
+   "aplicacao": "Paredes internas ou externas, fechamentos de divisa, caixas de passagem para instalações (elétricas, telefonia e hidrossanitárias) e outros elementos sem função estrutural.",
+   "incluidos": "Fornecimento, preparo, transporte e aplicação da argamassa de assentamento dos blocos, considerando perdas por consumo e transporte interno do canteiro até o local da aplicação; inclusive fornecimento, transporte e assentamento dos blocos vazados de concreto simples e blocos complementares (considerando eventuais perdas), limpeza e remoção de poeira e materiais diversos depositados sobre a laje, marcação e elevação da alvenaria, umedecimento dos blocos (caso necessário), colocação de escadas ou montagem das plataformas de trabalho e guarda-corpos.",
+   "criterio": "m2 (metro quadrado) Pela área de alvenaria executada, subtraindo-se apenas a área que exceder, em cada vão, a 2 m2 (metros quadrados). Vãos com áreas inferiores ou iguais a 2 m2, não serão descontados.",
+   "normas": [
+    "NBR 6136:2016 - Blocos vazados de concreto simples para alvenaria – Requisitos.",
+    "NBR 5732:1991 – Cimento Portland Comum.",
+    "NBR 7220:1987 - Agregado - Determinação de impurezas orgânicas húmicas em agregado",
+    "NR18 - Condições e meio ambiente de trabalho na indústria da construção -18.13 - Medidas"
+   ]
+  },
+  "050603": {
+   "d": "Alvenaria de vedação com blocos de concreto 19x19x39cm, c/ resistência mínimo a compressão de 3 MPa, assentados c/ argamassa de cimento, cal hidratada CH1 e areia no traço 1:0,5:8, preparo com betoneira, esp. juntas 10mm e esp. da parede s/ revestimento 19cm",
+   "u": "m2",
+   "caderno": "05 – PAREDES E PAINÉIS",
+   "atualizacao": "11/2024",
+   "aplicacao": "Paredes internas ou externas, fechamentos de divisa, caixas de passagem para instalações (elétricas, telefonia e hidrossanitárias) e outros elementos sem função estrutural.",
+   "incluidos": "Fornecimento, preparo, transporte e aplicação da argamassa de assentamento dos blocos, considerando perdas por consumo e transporte interno do canteiro até o local da aplicação; inclusive fornecimento, transporte e assentamento dos blocos vazados de concreto simples e blocos complementares (considerando eventuais perdas), limpeza e remoção de poeira e materiais diversos depositados sobre a laje, marcação e elevação da alvenaria, umedecimento dos blocos (caso necessário), colocação de escadas ou montagem das plataformas de trabalho e guarda-corpos.",
+   "criterio": "m2 (metro quadrado) Pela área de alvenaria executada, subtraindo-se apenas a área que exceder, em cada vão, a 2 m2 (metros quadrados). Vãos com áreas inferiores ou iguais a 2 m2, não serão descontados.",
+   "normas": [
+    "NBR 6136:2016 - Blocos vazados de concreto simples para alvenaria – Requisitos.",
+    "NBR 5732:1991 – Cimento Portland Comum.",
+    "NBR 7220:1987 - Agregado - Determinação de impurezas orgânicas húmicas em agregado",
+    "NR18 - Condições e meio ambiente de trabalho na indústria da construção -18.13 - Medidas"
+   ]
+  },
+  "050605": {
+   "d": "Alvenaria de vedação com blocos cerâmicos furados 9x19x19cm, assentados c/ argamassa de cimento, cal hidratada CH1 e areia no traço 1:0,5:8, preparo com betoneira, juntas 10mm e esp. das paredes s/revestimento, 9cm (bloco comprado na praça de Vitória, posto obra)",
+   "u": "m2",
+   "caderno": "05 – PAREDES E PAINÉIS",
+   "atualizacao": "11/2024",
+   "aplicacao": "Paredes internas ou externas, muros de fechamento e divisa, muretas de base para alambrado e gradis, platibanda, base de apoio para bancadas, caixas de passagem para instalações (elétrica e telefonia), padrão de entrada de água, muretas de medição, etc.",
+   "incluidos": "Fornecimento, preparo, transporte e aplicação da argamassa de assentamento dos blocos, considerando perdas por consumo e transporte interno do canteiro até o local da aplicação; inclusive fornecimento (blocos adquiridos na praça de Vitória e posto obra), transporte e assentamento dos blocos cerâmicos (considerando eventuais perdas), limpeza e remoção de poeira e materiais diversos depositados sobre a laje, marcação e elevação da alvenaria, umedecimento dos blocos, colocação de escadas ou montagem das plataformas de trabalho e guarda-corpos.",
+   "criterio": "m2 (metro quadrado) Pela área de alvenaria executada, subtraindo-se apenas a área que exceder, em cada vão, a 2 m2 (metros quadrados). Vãos com áreas inferiores ou iguais a 2 m2, não serão descontados.",
+   "normas": [
+    "NBR 15270-1:2005 - Componentes cerâmicos - Parte 1: Blocos cerâmicos para alvenaria de",
+    "NBR 5732:1991 – Cimento Portland Comum.",
+    "NBR 7220:1987 - Agregado - Determinação de impurezas orgânicas húmicas em agregado",
+    "NR18 - Condições e meio ambiente de trabalho na indústria da construção -18.13 - Medidas"
+   ]
+  },
+  "050606": {
+   "d": "Alvenaria de vedação com blocos cerâmicos furados 9x19x19cm, assentados c/ argamassa de cimento, cal hidratada CH1 e areia no traço 1:0,5:8, preparo com betoneira, juntas 10mm e esp. das paredes s/revestimento, 9cm (bloco comprado na fábrica, posto obra)",
+   "u": "m2",
+   "caderno": "05 – PAREDES E PAINÉIS",
+   "atualizacao": "11/2024",
+   "aplicacao": "Paredes internas ou externas, muros de fechamento e divisa, muretas de base para alambrado e gradis, platibanda, base de apoio para bancadas, caixas de passagem para instalações (elétrica e telefonia), padrão de entrada de água, muretas de medição, etc.",
+   "incluidos": "Fornecimento, preparo, transporte e aplicação da argamassa de assentamento dos blocos, considerando perdas por consumo e transporte interno do canteiro até o local da aplicação; inclusive fornecimento (blocos adquiridos na fábrica e posto obra), transporte e assentamento dos blocos cerâmicos (considerando eventuais perdas), limpeza e remoção de poeira e materiais diversos depositados sobre a laje, marcação e elevação da alvenaria, umedecimento dos blocos, colocação de escadas ou montagem das plataformas de trabalho e guarda-corpos.",
+   "criterio": "m2 (metro quadrado) Pela área de alvenaria executada, subtraindo-se apenas a área que exceder, em cada vão, a 2 m2 (metros quadrados). Vãos com áreas inferiores ou iguais a 2 m2, não serão descontados.",
+   "normas": [
+    "NBR 15270-1:2005 - Componentes cerâmicos - Parte 1: Blocos cerâmicos para alvenaria de",
+    "NBR 5732:1991 – Cimento Portland Comum.",
+    "NBR 7220:1987 - Agregado - Determinação de impurezas orgânicas húmicas em agregado",
+    "NR18 - Condições e meio ambiente de trabalho na indústria da construção -18.13 - Medidas"
+   ]
+  },
+  "050607": {
+   "d": "Alvenaria de vedação com blocos cerâmicos furados 9x19x19cm, assentados c/ argamassa de cimento, cal hidratada CH1 e areia no traço 1:0,5:8, preparo com betoneira, juntas 10mm e esp. das paredes s/revestimento, 19cm, bloco deitado (bloco comprado praça de Vitória, posto obra)",
+   "u": "m2",
+   "caderno": "05 – PAREDES E PAINÉIS",
+   "atualizacao": "11/2024",
+   "aplicacao": "Paredes internas ou externas, muros de fechamento e divisa, muretas de base para alambrado e gradis, platibanda, base de apoio para bancadas, caixas de passagem para instalações (elétrica e telefonia), padrão de entrada de água, muretas de medição, etc.",
+   "incluidos": "Fornecimento, preparo, transporte e aplicação da argamassa de assentamento dos blocos, considerando perdas por consumo e transporte interno do canteiro até o local da aplicação; inclusive fornecimento (blocos adquiridos na praça de Vitória e posto obra), transporte e assentamento dos blocos cerâmicos (considerando eventuais perdas), limpeza e remoção de poeira e materiais diversos depositados sobre a laje, marcação e elevação da alvenaria, umedecimento dos blocos, colocação de escadas ou montagem das plataformas de trabalho e guarda-corpos.",
+   "criterio": "m2 (metro quadrado) Pela área de alvenaria executada, subtraindo-se apenas a área que exceder, em cada vão, a 2 m2 (metros quadrados). Vãos com áreas inferiores ou iguais a 2 m2, não serão descontados.",
+   "normas": [
+    "NBR 15270-1:2005 - Componentes cerâmicos - Parte 1: Blocos cerâmicos para alvenaria de",
+    "NBR 5732:1991 – Cimento Portland Comum.",
+    "NBR 7220:1987 - Agregado - Determinação de impurezas orgânicas húmicas em agregado",
+    "NR18 - Condições e meio ambiente de trabalho na indústria da construção -18.13 - Medidas"
+   ]
+  },
+  "050608": {
+   "d": "Alvenaria de vedação com blocos cerâmicos furados 9x19x19cm, assentados c/ argamassa de cimento, cal hidratada CH1 e areia no traço 1:0,5:8, preparo com betoneira, juntas 10mm e esp. das paredes s/revestimento, 19cm, bloco deitado (bloco comprado fábrica, posto obra)",
+   "u": "m2",
+   "caderno": "05 – PAREDES E PAINÉIS",
+   "atualizacao": "11/2024",
+   "aplicacao": "Paredes internas ou externas, muros de fechamento e divisa, muretas de base para alambrado e gradis, platibanda, base de apoio para bancadas, caixas de passagem para instalações (elétrica e telefonia), padrão de entrada de água, muretas de medição, etc.",
+   "incluidos": "Fornecimento, preparo, transporte e aplicação da argamassa de assentamento dos blocos, considerando perdas por consumo e transporte interno do canteiro até o local da aplicação; inclusive fornecimento (blocos adquiridos na fábrica e posto obra), transporte e assentamento dos blocos cerâmicos (considerando eventuais perdas), limpeza e remoção de poeira e materiais diversos depositados sobre a laje, marcação e elevação da alvenaria, umedecimento dos blocos, colocação de escadas ou montagem das plataformas de trabalho e guarda-corpos.",
+   "criterio": "m2 (metro quadrado) Pela área de alvenaria executada, subtraindo-se apenas a área que exceder, em cada vão, a 2 m2 (metros quadrados). Vãos com áreas inferiores ou iguais a 2 m2, não serão descontados.",
+   "normas": [
+    "NBR 15270-1:2005 - Componentes cerâmicos - Parte 1: Blocos cerâmicos para alvenaria de",
+    "NBR 5732:1991 – Cimento Portland Comum.",
+    "NBR 7220:1987 - Agregado - Determinação de impurezas orgânicas húmicas em agregado",
+    "NR18 - Condições e meio ambiente de trabalho na indústria da construção -18.13 - Medidas"
+   ]
+  }
+ }
+}
