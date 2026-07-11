@@ -1398,7 +1398,10 @@ async function init(){
   // refresh ao voltar de background
   document.addEventListener("visibilitychange",()=>{ if(document.visibilityState==="visible" && S.sess) ensureFreshToken(); });
 }
-window.addEventListener("DOMContentLoaded", init);
+// Inicia mesmo se a página já terminou de carregar (ex.: htmlpreview/embeds injetam
+// o HTML após o DOMContentLoaded já ter disparado).
+if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
+else init();
 // expõe funções puras para testes headless
 window.__dx={ makeSSEParser, mdRender, splitSections, checklistFromMd, mergeChecklist, extractJson,
   fallbackQueries, buildRefs, needsRefresh, dedupeFontes, makeThrottle, esc, runAutoteste,
