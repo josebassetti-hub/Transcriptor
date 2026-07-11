@@ -1,0 +1,1408 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<title>Diagnóstico · Pesquisa Clínica</title>
+<style>
+/* =========================================================================
+   Diagnóstico · Pesquisa Clínica — app de apoio ao diagnóstico médico
+   Single-file, vanilla, sem frameworks/CDN. Abre no navegador do PC/celular.
+   ========================================================================= */
+
+/* ---- 1. Base / mobile-first --------------------------------------------- */
+* { box-sizing: border-box; }
+:root{
+  --azul:#2563eb; --azul-esc:#1e40af; --azul-cl:#dbeafe;
+  --verde:#166534; --verde-cl:#dcfce7;
+  --vermelho:#b91c1c; --vermelho-cl:#fee2e2;
+  --ambar:#92400e; --ambar-cl:#fef3c7;
+  --cinza:#475569; --cinza-cl:#f1f5f9; --borda:#e2e8f0;
+  --texto:#0f172a; --fundo:#f8fafc;
+  --radius:12px;
+}
+html,body{ margin:0; padding:0; }
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  color:var(--texto); background:var(--fundo);
+  font-size:15px; line-height:1.5;
+  padding-bottom:64px; /* espaço p/ disclaimer fixo */
+  -webkit-text-size-adjust:100%;
+}
+.container{ max-width:820px; margin:0 auto; padding:14px 14px 24px; }
+h1{ font-size:20px; margin:0 0 4px; }
+h2{ font-size:16px; margin:18px 0 8px; }
+h3{ font-size:14px; margin:12px 0 6px; color:var(--cinza); }
+a{ color:var(--azul); }
+p{ margin:8px 0; }
+small{ color:var(--cinza); }
+
+.topbar{ display:flex; align-items:center; gap:10px; margin-bottom:12px; flex-wrap:wrap; }
+.topbar .brand{ font-weight:800; font-size:17px; color:var(--azul-esc); }
+.topbar .brand small{ font-weight:600; color:var(--cinza); }
+.topbar .spacer{ flex:1; }
+
+.card{ background:#fff; border:1px solid var(--borda); border-radius:var(--radius); padding:14px; margin:10px 0; box-shadow:0 1px 2px rgba(15,23,42,.04); }
+.card h2:first-child{ margin-top:0; }
+
+.btn{ display:inline-flex; align-items:center; gap:6px; justify-content:center;
+  font:inherit; font-weight:600; cursor:pointer; border:1px solid var(--borda);
+  background:#fff; color:var(--texto); border-radius:10px; padding:10px 14px; text-decoration:none; }
+.btn:hover{ background:var(--cinza-cl); }
+.btn.primary{ background:var(--azul); color:#fff; border-color:var(--azul); }
+.btn.primary:hover{ background:var(--azul-esc); }
+.btn.ghost{ background:transparent; border-color:transparent; color:var(--azul); }
+.btn.danger{ color:var(--vermelho); border-color:var(--vermelho-cl); }
+.btn.danger:hover{ background:var(--vermelho-cl); }
+.btn.wide{ width:100%; }
+.btn:disabled{ opacity:.5; cursor:not-allowed; }
+.btnrow{ display:flex; gap:8px; flex-wrap:wrap; }
+
+label{ display:block; font-weight:600; font-size:13px; margin:10px 0 4px; }
+input,select,textarea{ width:100%; font:inherit; padding:10px 11px; border:1px solid var(--borda);
+  border-radius:10px; background:#fff; color:var(--texto); }
+input:focus,select,textarea:focus{ outline:2px solid var(--azul-cl); border-color:var(--azul); }
+textarea{ min-height:64px; resize:vertical; }
+.hint{ font-size:12px; color:var(--cinza); margin-top:3px; }
+.grid2{ display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+@media (max-width:560px){ .grid2{ grid-template-columns:1fr; } }
+
+.chip{ display:inline-block; font-size:11px; font-weight:700; border-radius:999px; padding:2px 9px; margin:2px 4px 2px 0; }
+.chip.azul{ background:var(--azul-cl); color:var(--azul-esc); }
+.chip.verde{ background:var(--verde-cl); color:var(--verde); }
+.chip.ambar{ background:var(--ambar-cl); color:var(--ambar); }
+.chip.vermelho{ background:var(--vermelho-cl); color:var(--vermelho); }
+.chip.cinza{ background:var(--cinza-cl); color:var(--cinza); }
+
+.toast{ position:fixed; left:50%; transform:translateX(-50%); bottom:76px; z-index:60;
+  background:#0f172a; color:#fff; padding:10px 16px; border-radius:10px; font-size:13px;
+  box-shadow:0 6px 20px rgba(0,0,0,.25); max-width:90%; }
+.toast.err{ background:var(--vermelho); }
+.toast.ok{ background:var(--verde); }
+
+/* ---- 2. App-specific ---------------------------------------------------- */
+.disclaimer{ position:fixed; left:0; right:0; bottom:0; z-index:50;
+  background:#0f172a; color:#e2e8f0; font-size:11.5px; line-height:1.35;
+  padding:8px 12px; text-align:center; }
+.disclaimer b{ color:#fff; }
+
+.banner{ border-radius:10px; padding:10px 12px; margin:10px 0; font-size:13px; }
+.banner.ambar{ background:var(--ambar-cl); color:var(--ambar); border:1px solid #fde68a; }
+.banner.vermelho{ background:var(--vermelho-cl); color:var(--vermelho); border:1px solid #fecaca; }
+.banner.azul{ background:var(--azul-cl); color:var(--azul-esc); border:1px solid #bfdbfe; }
+
+/* Stepper de progresso */
+.stepper{ display:flex; flex-direction:column; gap:8px; margin:8px 0; }
+.step{ display:flex; align-items:flex-start; gap:10px; }
+.step .dot{ width:22px; height:22px; border-radius:50%; flex:0 0 22px; display:flex;
+  align-items:center; justify-content:center; font-size:12px; font-weight:800;
+  background:var(--cinza-cl); color:var(--cinza); border:2px solid var(--borda); }
+.step.ativo .dot{ background:var(--azul); color:#fff; border-color:var(--azul); }
+.step.feito .dot{ background:var(--verde); color:#fff; border-color:var(--verde); }
+.step .txt{ flex:1; }
+.step .txt .nome{ font-weight:600; font-size:14px; }
+.step .txt .sub{ font-size:12px; color:var(--cinza); }
+.logbox{ background:#0b1220; color:#cbd5e1; font-family:ui-monospace,SFMono-Regular,Menlo,monospace;
+  font-size:11.5px; border-radius:10px; padding:10px; margin-top:8px; max-height:150px; overflow:auto; }
+.logbox div{ white-space:pre-wrap; }
+.stream{ background:#fff; border:1px solid var(--borda); border-radius:10px; padding:12px;
+  margin-top:10px; max-height:340px; overflow:auto; }
+
+/* Relatório */
+.rel h2{ border-bottom:2px solid var(--azul-cl); padding-bottom:4px; scroll-margin-top:12px; }
+.rel .secao{ margin:6px 0 4px; }
+.rel table{ border-collapse:collapse; width:100%; font-size:13px; margin:8px 0; display:block; overflow-x:auto; }
+.rel th,.rel td{ border:1px solid var(--borda); padding:6px 8px; text-align:left; vertical-align:top; }
+.rel th{ background:var(--cinza-cl); }
+.rel ul{ margin:6px 0; padding-left:20px; }
+.rel li{ margin:3px 0; }
+.rel code{ background:var(--cinza-cl); padding:1px 5px; border-radius:5px; font-size:12.5px; }
+.cita{ display:inline-block; font-size:11px; font-weight:700; background:var(--azul-cl);
+  color:var(--azul-esc); border-radius:6px; padding:0 5px; text-decoration:none; }
+.cita:hover{ background:#bfdbfe; }
+.dosewarn{ background:var(--ambar-cl); border-left:3px solid #f59e0b; padding:2px 6px; border-radius:4px; }
+.redflag{ border-left:4px solid var(--vermelho); background:var(--vermelho-cl); padding:8px 12px; border-radius:0 8px 8px 0; }
+.evlim{ color:var(--ambar); font-weight:600; }
+
+/* Navegação por seções (chips) */
+.secnav{ display:flex; gap:6px; overflow-x:auto; padding:6px 0; margin-bottom:6px; -webkit-overflow-scrolling:touch; }
+.secnav a{ flex:0 0 auto; font-size:11.5px; font-weight:600; padding:5px 10px; border-radius:999px;
+  background:var(--cinza-cl); color:var(--cinza); text-decoration:none; white-space:nowrap; }
+.secnav a:hover{ background:var(--azul-cl); color:var(--azul-esc); }
+
+/* Checklist interativo */
+.chk{ margin:6px 0; }
+.chkhead{ display:flex; align-items:center; gap:8px; }
+.chkitem{ display:flex; align-items:flex-start; gap:8px; padding:6px 8px; border:1px solid var(--borda);
+  border-radius:8px; margin:4px 0; background:#fff; cursor:pointer; }
+.chkitem input{ width:auto; margin-top:2px; }
+.chkitem.feito span{ text-decoration:line-through; color:var(--cinza); }
+.progressbar{ height:8px; background:var(--cinza-cl); border-radius:999px; overflow:hidden; margin:6px 0; }
+.progressbar i{ display:block; height:100%; background:var(--verde); width:0; transition:width .2s; }
+
+/* Histórico */
+.histitem{ display:flex; align-items:center; gap:10px; padding:10px 12px; border:1px solid var(--borda);
+  border-radius:10px; margin:6px 0; background:#fff; cursor:pointer; }
+.histitem:hover{ background:var(--cinza-cl); }
+.histitem .d{ flex:1; min-width:0; }
+.histitem .d .t{ font-weight:700; }
+.histitem .d .s{ font-size:12px; color:var(--cinza); }
+
+.center{ text-align:center; }
+.muted{ color:var(--cinza); }
+.hidden{ display:none !important; }
+.spin{ display:inline-block; width:16px; height:16px; border:2px solid var(--azul-cl);
+  border-top-color:var(--azul); border-radius:50%; animation:sp 0.7s linear infinite; vertical-align:middle; }
+@keyframes sp{ to{ transform:rotate(360deg); } }
+
+.t-ok{ color:var(--verde); font-family:ui-monospace,monospace; font-size:12px; }
+.t-fail{ color:var(--vermelho); font-weight:700; font-family:ui-monospace,monospace; font-size:12px; }
+
+/* ---- 3. Impressão A4 (padrão do simulador) ------------------------------ */
+#printdoc{ display:none; }
+@page{ size:A4; margin:14mm; }
+@media print{
+  body{ background:#fff; padding:0; }
+  body > .container, .disclaimer, .toast, .noprint{ display:none !important; }
+  #printdoc{ display:block; color:#111; font-size:12px; }
+  #printdoc h1{ font-size:22px; margin:0 0 6px; }
+  #printdoc h2{ font-size:15px; border-bottom:2px solid #2563eb; padding-bottom:3px; margin:14px 0 8px; page-break-after:avoid; }
+  #printdoc .meta{ font-size:11px; color:#475569; margin-bottom:8px; }
+  #printdoc table{ border-collapse:collapse; width:100%; font-size:11px; }
+  #printdoc th,#printdoc td{ border:1px solid #cbd5e1; padding:4px 6px; text-align:left; }
+  #printdoc li,#printdoc tr,#printdoc .redflag{ break-inside:avoid; }
+  #printdoc .rodape{ font-size:9.5px; color:#64748b; border-top:1px solid #e2e8f0; margin-top:14px; padding-top:6px; }
+  #printdoc .cita{ background:none; color:#1e40af; }
+}
+</style>
+</head>
+<body>
+<div class="container" id="app"></div>
+<div id="printdoc"></div>
+<div class="disclaimer">⚕️ <b>Apoio à decisão para médicos</b> — não substitui o julgamento clínico. Confira sempre doses e condutas em fonte oficial / bulário.</div>
+
+<script>
+"use strict";
+/* =========================================================================
+   1. CONFIG
+   ========================================================================= */
+// Supabase: valores padrão podem ser sobrescritos em Configurações (localStorage).
+// A anon key é pública por design; a segurança real é a RLS no banco.
+const SB_DEFAULT_URL = "";      // ex.: https://xxxx.supabase.co  (preencha em Configurações)
+const SB_DEFAULT_KEY = "";      // anon/publishable key
+
+const MODELOS = {
+  padrao:  { id:"claude-sonnet-5", nome:"Sonnet 5 (rápido, padrão)" },
+  profundo:{ id:"claude-opus-4-8", nome:"Opus 4.8 (mais profundo)" }
+};
+const PROFUNDIDADES = {
+  rapida:  { nome:"Rápida",  modelo:"claude-sonnet-5", effort:"medium", max_tokens:12000, artigos:6  },
+  padrao:  { nome:"Padrão",  modelo:"claude-sonnet-5", effort:"high",   max_tokens:20000, artigos:10 },
+  profunda:{ nome:"Profunda",modelo:"claude-opus-4-8", effort:"high",   max_tokens:32000, artigos:14 }
+};
+const STORAGE = {
+  sess:"dx.session", apikey:"dx.apikey", modelo:"dx.modelo", prof:"dx.prof",
+  fontes:"dx.fontes", sburl:"dx.sb_url", sbkey:"dx.sb_key", anthbase:"dx.anthropic_base", draft:"dx.draft"
+};
+const ANTH_VERSION = "2023-06-01";
+
+// 13 seções canônicas do relatório (heading exato do markdown).
+const SECOES = [
+  {k:"visao",     t:"Visão geral da doença"},
+  {k:"criterios", t:"Critérios diagnósticos e escores validados"},
+  {k:"anamnese",  t:"Anamnese completa — perguntas que não podem faltar"},
+  {k:"exame",     t:"Exame físico direcionado"},
+  {k:"exames",    t:"Exames complementares recomendados"},
+  {k:"alarme",    t:"🚩 Sinais de alarme (red flags)"},
+  {k:"difs",      t:"Diagnósticos diferenciais que não podem ser esquecidos"},
+  {k:"cruzamento",t:"Cruzamento com o paciente e aproximação diagnóstica"},
+  {k:"checklist", t:"Checklist de verificação"},
+  {k:"tratamento",t:"Tratamento"},
+  {k:"monitor",   t:"Monitoramento e sinais de piora"},
+  {k:"armadilhas",t:"Armadilhas comuns de diagnóstico"},
+  {k:"referencias",t:"Referências"}
+];
+
+// Fontes de dados diretas (chamáveis do navegador). "host" agrupa o throttle.
+const EUTILS = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/";
+const PM_TOOL = "diagnostico-transcriptor";
+const PM_EMAIL = "josebassetti@gmail.com";
+const FONTES_DEF = [
+  {id:"pubmed",       nome:"PubMed",             tipo:"literatura",  host:"ncbi", ativo:true},
+  {id:"europepmc",    nome:"Europe PMC",         tipo:"literatura",  host:"ebi",  ativo:true},
+  {id:"bookshelf",    nome:"NCBI Bookshelf/StatPearls", tipo:"resumo", host:"ncbi", ativo:true},
+  {id:"omim",         nome:"OMIM (hereditárias)",tipo:"genetica",   host:"ncbi", ativo:true},
+  {id:"medgen",       nome:"MedGen (fenótipos)", tipo:"genetica",   host:"ncbi", ativo:true},
+  {id:"openfda",      nome:"openFDA (bulas)",    tipo:"medicamento",host:"fda",  ativo:true},
+  {id:"clinicaltrials",nome:"ClinicalTrials.gov",tipo:"ensaio",     host:"ctgov",ativo:true},
+  {id:"medlineplus",  nome:"MedlinePlus",        tipo:"consumidor", host:"mlp",  ativo:true}
+];
+
+/* =========================================================================
+   2. STATE
+   ========================================================================= */
+const S = {
+  tela:"login",
+  sess:null,            // {access_token, refresh_token, expires_at, user:{id,email}}
+  cfg:{ apikey:"", modelo:MODELOS.padrao.id, prof:"padrao", fontes:{}, sburl:SB_DEFAULT_URL, sbkey:SB_DEFAULT_KEY, anthbase:"" },
+  form: emptyForm(),
+  hist:[],
+  atual:null,           // pesquisa aberta {id?, doenca, paciente, estrategia, fontes, relatorio, checklist, modelo, profundidade, status}
+  pipe:null,            // {fase, passos[], logs[], estrategia, bundle, texto, status, erro, cancelar}
+  busy:false
+};
+function emptyForm(){
+  return { doenca:"", iniciais:"", idade:"", sexo:"", gestante:"nao",
+    queixa:"", sintomas:"", comorbidades:"", medicamentos:"", alergias:"", exames:"" };
+}
+
+/* =========================================================================
+   3. UTIL
+   ========================================================================= */
+function esc(s){ return String(s==null?"":s)
+  .replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")
+  .replace(/"/g,"&quot;").replace(/'/g,"&#39;"); }
+function uid(){ return "x"+Math.abs(hashStr(String(nowMs())+":"+cnt())).toString(36); }
+let _c=0; function cnt(){ return _c++; }
+function nowMs(){ return (new Date()).getTime(); }
+function hashStr(s){ let h=0; for(let i=0;i<s.length;i++){ h=(h*31+s.charCodeAt(i))|0; } return h; }
+function fmtDataHora(iso){ if(!iso) return ""; const d=new Date(iso);
+  const p=n=>String(n).padStart(2,"0");
+  return `${p(d.getDate())}/${p(d.getMonth()+1)}/${d.getFullYear()} ${p(d.getHours())}:${p(d.getMinutes())}`; }
+function sleep(ms){ return new Promise(r=>setTimeout(r,ms)); }
+function debounce(fn,ms){ let t; return function(){ const a=arguments,c=this; clearTimeout(t); t=setTimeout(()=>fn.apply(c,a),ms); }; }
+
+let _toastT=null;
+function toast(msg,tipo){ let el=document.getElementById("toast"); if(el) el.remove();
+  el=document.createElement("div"); el.id="toast"; el.className="toast"+(tipo?(" "+tipo):"");
+  el.textContent=msg; document.body.appendChild(el);
+  clearTimeout(_toastT); _toastT=setTimeout(()=>{ if(el) el.remove(); }, tipo==="err"?5000:2600); }
+
+// fetch com timeout via AbortController; retorna {ok,status,json,text,headers}
+async function fetchX(url,opts,timeoutMs){
+  opts=opts||{}; timeoutMs=timeoutMs||20000;
+  const ctrl=new AbortController(); const to=setTimeout(()=>ctrl.abort(), timeoutMs);
+  try{
+    const r=await fetch(url,Object.assign({signal:ctrl.signal},opts));
+    const txt=await r.text(); let js=null; try{ js=txt?JSON.parse(txt):null; }catch(e){}
+    return { ok:r.ok, status:r.status, json:js, text:txt, headers:r.headers };
+  } finally{ clearTimeout(to); }
+}
+
+/* =========================================================================
+   4. AUTH (Supabase GoTrue via REST)
+   ========================================================================= */
+function sbUrl(){ return (S.cfg.sburl||"").replace(/\/+$/,""); }
+function sbConfigured(){ return !!(sbUrl() && S.cfg.sbkey); }
+function authHeaders(withBearer){
+  const h={ "apikey":S.cfg.sbkey, "Content-Type":"application/json" };
+  if(withBearer && S.sess && S.sess.access_token) h["Authorization"]="Bearer "+S.sess.access_token;
+  return h;
+}
+function saveSession(sess){ S.sess=sess; try{ localStorage.setItem(STORAGE.sess, JSON.stringify(sess)); }catch(e){} }
+function loadSession(){ try{ const s=localStorage.getItem(STORAGE.sess); S.sess=s?JSON.parse(s):null; }catch(e){ S.sess=null; } }
+function clearSession(){ S.sess=null; try{ localStorage.removeItem(STORAGE.sess); }catch(e){} }
+
+// pura (autotestada): true quando faltam < 60s para expirar (ou sem expiry)
+function needsRefresh(expiresAtSec, nowMsArg){
+  if(!expiresAtSec) return true;
+  const restanteMs = expiresAtSec*1000 - nowMsArg;
+  return restanteMs < 60000;
+}
+function normSession(js){
+  // GoTrue devolve expires_at (unix s) ou expires_in; normaliza.
+  const exp = js.expires_at ? js.expires_at : Math.floor(nowMs()/1000) + (js.expires_in||3600);
+  return { access_token:js.access_token, refresh_token:js.refresh_token, expires_at:exp,
+    user: js.user ? {id:js.user.id, email:js.user.email} : (S.sess?S.sess.user:null) };
+}
+async function sbSignup(email,pw){
+  const r=await fetchX(sbUrl()+"/auth/v1/signup",{ method:"POST", headers:authHeaders(false),
+    body:JSON.stringify({email,password:pw}) });
+  if(r.json && r.json.access_token){ saveSession(normSession(r.json)); return {ok:true}; }
+  if(r.status===200 && r.json && r.json.user && !r.json.access_token)
+    return {ok:false, msg:"Conta criada. Confirme o e-mail enviado e depois faça login."};
+  const code=r.json && (r.json.error_code||r.json.msg||r.json.error_description||r.json.error);
+  if(code && /already/i.test(code)) return {ok:false, msg:"E-mail já cadastrado — use Entrar."};
+  return {ok:false, msg:"Não foi possível cadastrar: "+(code||("HTTP "+r.status))};
+}
+async function sbLogin(email,pw){
+  const r=await fetchX(sbUrl()+"/auth/v1/token?grant_type=password",{ method:"POST",
+    headers:authHeaders(false), body:JSON.stringify({email,password:pw}) });
+  if(r.json && r.json.access_token){ saveSession(normSession(r.json)); return {ok:true}; }
+  const code=r.json && (r.json.error_code||r.json.msg||r.json.error_description||r.json.error);
+  if(code && /email_not_confirmed/i.test(code)) return {ok:false, msg:"Confirme o e-mail antes de entrar."};
+  if(code && /invalid/i.test(code)) return {ok:false, msg:"E-mail ou senha incorretos."};
+  return {ok:false, msg:"Falha no login: "+(code||("HTTP "+r.status))};
+}
+let _refreshP=null; // single-flight
+async function sbRefresh(){
+  if(_refreshP) return _refreshP;
+  _refreshP=(async()=>{
+    if(!S.sess||!S.sess.refresh_token) return false;
+    const r=await fetchX(sbUrl()+"/auth/v1/token?grant_type=refresh_token",{ method:"POST",
+      headers:authHeaders(false), body:JSON.stringify({refresh_token:S.sess.refresh_token}) });
+    if(r.json && r.json.access_token){ saveSession(normSession(r.json)); return true; }
+    clearSession(); return false;
+  })();
+  try{ return await _refreshP; } finally{ _refreshP=null; }
+}
+async function ensureFreshToken(){
+  if(!S.sess) return false;
+  if(needsRefresh(S.sess.expires_at, nowMs())) return await sbRefresh();
+  return true;
+}
+async function sbLogout(){
+  try{ if(S.sess) await fetchX(sbUrl()+"/auth/v1/logout",{ method:"POST", headers:authHeaders(true) },6000); }catch(e){}
+  clearSession(); S.hist=[]; S.atual=null; irTela("login");
+}
+
+/* =========================================================================
+   5. DATA (PostgREST)
+   ========================================================================= */
+async function sbFetch(path,opts){
+  await ensureFreshToken();
+  const url=sbUrl()+"/rest/v1/"+path;
+  let r=await fetchX(url, Object.assign({headers:authHeaders(true)},opts||{}), 20000);
+  if(r.status===401){ // 1 refresh forçado + retry
+    const ok=await sbRefresh();
+    if(ok){ r=await fetchX(url, Object.assign({headers:authHeaders(true)},opts||{}), 20000); }
+    if(r.status===401){ clearSession(); irTela("login"); }
+  }
+  return r;
+}
+async function dbInsert(row){
+  const r=await sbFetch("pesquisas",{ method:"POST",
+    headers:Object.assign(authHeaders(true),{ "Prefer":"return=representation" }),
+    body:JSON.stringify(row) });
+  if(r.ok && Array.isArray(r.json) && r.json[0]) return r.json[0];
+  throw new Error("Falha ao salvar (HTTP "+r.status+")");
+}
+async function dbList(){
+  const sel="id,doenca,paciente,criado_em,status,modelo,profundidade";
+  const r=await sbFetch("pesquisas?select="+encodeURIComponent(sel)+"&order=criado_em.desc&limit=50",{method:"GET"});
+  return (r.ok && Array.isArray(r.json)) ? r.json : [];
+}
+async function dbGet(id){
+  const r=await sbFetch("pesquisas?id=eq."+encodeURIComponent(id)+"&select=*",{method:"GET"});
+  return (r.ok && Array.isArray(r.json) && r.json[0]) ? r.json[0] : null;
+}
+async function dbDelete(id){
+  const r=await sbFetch("pesquisas?id=eq."+encodeURIComponent(id),{method:"DELETE"});
+  return r.ok;
+}
+const dbPatchChecklist=debounce(async function(id,checklist){
+  try{
+    await sbFetch("pesquisas?id=eq."+encodeURIComponent(id),{ method:"PATCH",
+      headers:Object.assign(authHeaders(true),{ "Prefer":"return=minimal" }),
+      body:JSON.stringify({checklist}) });
+  }catch(e){ toast("Checklist não sincronizado","err"); }
+},800);
+
+/* =========================================================================
+   6. FONTES (registry + throttle por host)
+   ========================================================================= */
+// Fila de throttle por host: garante espaçamento mínimo entre requests ao mesmo host.
+function makeThrottle(getNow, schedule){
+  getNow = getNow || nowMs;
+  schedule = schedule || ((fn,ms)=>setTimeout(fn,ms));
+  const ultimo={};
+  return function run(host, minMs, task){
+    return new Promise((resolve,reject)=>{
+      const agora=getNow();
+      const prev=ultimo[host]||0;
+      const espera=Math.max(0, prev+minMs-agora);
+      ultimo[host]=Math.max(agora, prev+minMs);
+      schedule(()=>{ Promise.resolve().then(task).then(resolve,reject); }, espera);
+    });
+  };
+}
+const throttle = makeThrottle();
+const HOST_MIN = { ncbi:340, ebi:200, fda:120, ctgov:120, mlp:150 };
+
+function euParams(extra){
+  return "&tool="+PM_TOOL+"&email="+encodeURIComponent(PM_EMAIL)+(extra||"");
+}
+async function euSearch(db,term,retmax,reldate){
+  const q=EUTILS+"esearch.fcgi?db="+db+"&retmode=json&sort=relevance&retmax="+(retmax||8)
+    +"&datetype=pdat&reldate="+(reldate||1825)+"&term="+encodeURIComponent(term)+euParams();
+  const r=await throttle("ncbi",HOST_MIN.ncbi,()=>fetchX(q,{},15000));
+  return (r.json && r.json.esearchresult && r.json.esearchresult.idlist) ? r.json.esearchresult.idlist : [];
+}
+async function euSummary(db,ids){
+  if(!ids.length) return {};
+  const q=EUTILS+"esummary.fcgi?db="+db+"&retmode=json&id="+ids.join(",")+euParams();
+  const r=await throttle("ncbi",HOST_MIN.ncbi,()=>fetchX(q,{},15000));
+  return (r.json && r.json.result) ? r.json.result : {};
+}
+// pura (autotestada): monta refs a partir do JSON de esummary do PubMed
+function buildRefs(resultJson, tipoFonte){
+  const uids=(resultJson && resultJson.uids)||[];
+  return uids.map(id=>{
+    const it=resultJson[id]||{};
+    const autor=(it.authors&&it.authors[0]&&it.authors[0].name)?(it.authors[0].name+" et al."):"";
+    const ano=(it.pubdate||"").slice(0,4);
+    const doi=(it.articleids||[]).filter(a=>a.idtype==="doi").map(a=>a.value)[0]||"";
+    const tipoPub=(it.pubtype&&it.pubtype[0])||"";
+    return { pmid:id, id:id, titulo:it.title||"", revista:it.fulljournalname||it.source||"",
+      autor:autor, ano:ano, doi:doi, tipoPub:tipoPub, fonte:(tipoFonte||"PubMed"),
+      url:"https://pubmed.ncbi.nlm.nih.gov/"+id+"/", resumo:"" };
+  });
+}
+// pura (autotestada): queries determinísticas de fallback
+function fallbackQueries(doenca){
+  const d=String(doenca||"").trim();
+  const base=d.replace(/\s+/g,"+");
+  return [
+    { objetivo:"diretrizes", term:'"'+d+'"[tiab] AND (guideline[pt] OR practice guideline[pt]) AND (english[la] OR portuguese[la])', retmax:4 },
+    { objetivo:"revisoes_sistematicas", term:'"'+d+'"[tiab] AND (systematic review[pt] OR meta-analysis[pt]) AND (english[la] OR portuguese[la])', retmax:4 },
+    { objetivo:"tratamento", term:'"'+d+'"[tiab] AND (therapy[sh] OR treatment[tiab]) AND (english[la] OR portuguese[la])', retmax:4 }
+  ].map(q=>({objetivo:q.objetivo, term:q.term, retmax:q.retmax, _base:base}));
+}
+
+// Europe PMC — 1 chamada REST, JSON com abstract embutido
+async function epmcSearch(term,retmax){
+  const q="https://www.ebi.ac.uk/europepmc/webservices/rest/search?query="+encodeURIComponent(term)
+    +"&format=json&pageSize="+(retmax||8)+"&resultType=core";
+  const r=await throttle("ebi",HOST_MIN.ebi,()=>fetchX(q,{},15000));
+  const list=(r.json && r.json.resultList && r.json.resultList.result)||[];
+  return list.map(it=>({
+    id:it.id||it.pmid||"", pmid:it.pmid||"", fonte:"EuropePMC",
+    titulo:it.title||"", revista:(it.journalInfo&&it.journalInfo.journal&&it.journalInfo.journal.title)||it.source||"",
+    autor:it.authorString||"", ano:(it.pubYear||""), doi:it.doi||"", tipoPub:(it.pubType||""),
+    resumo:(it.abstractText||"").replace(/<[^>]+>/g,"").slice(0,1600),
+    url: it.pmid?("https://pubmed.ncbi.nlm.nih.gov/"+it.pmid+"/"):("https://europepmc.org/article/"+(it.source||"MED")+"/"+(it.id||"")) }));
+}
+// openFDA — bula (label)
+async function fdaLabel(farmaco){
+  const q="https://api.fda.gov/drug/label.json?search="+encodeURIComponent('openfda.generic_name:"'+farmaco+'" OR openfda.brand_name:"'+farmaco+'"')+"&limit=1";
+  const r=await throttle("fda",HOST_MIN.fda,()=>fetchX(q,{},15000));
+  const res=(r.json && r.json.results && r.json.results[0])||null;
+  if(!res) return null;
+  const pick=(k)=>Array.isArray(res[k])?res[k].join(" ").slice(0,1200):"";
+  const nome=(res.openfda&&(res.openfda.generic_name||res.openfda.brand_name)||[farmaco])[0];
+  const partes=[];
+  ["indications_and_usage","dosage_and_administration","contraindications","warnings_and_cautions","drug_interactions"].forEach(k=>{
+    const v=pick(k); if(v) partes.push(k.replace(/_/g," ")+": "+v);
+  });
+  return { id:nome, fonte:"openFDA", titulo:"Bula (FDA): "+nome, revista:"FDA label", autor:"", ano:"", doi:"",
+    tipoPub:"bula", resumo:partes.join("\n").slice(0,1600),
+    url:"https://www.accessdata.fda.gov/scripts/cder/daf/index.cfm" };
+}
+// ClinicalTrials.gov v2
+async function ctgovSearch(cond,retmax){
+  const q="https://clinicaltrials.gov/api/v2/studies?query.cond="+encodeURIComponent(cond)
+    +"&pageSize="+(retmax||5)+"&fields=NCTId,BriefTitle,OverallStatus,Phase,StudyType";
+  const r=await throttle("ctgov",HOST_MIN.ctgov,()=>fetchX(q,{},15000));
+  const st=(r.json && r.json.studies)||[];
+  return st.map(s=>{
+    const p=s.protocolSection||{}; const idm=p.identificationModule||{}; const stt=p.statusModule||{}; const des=p.designModule||{};
+    const nct=idm.nctId||"";
+    return { id:nct, fonte:"ClinicalTrials", titulo:idm.briefTitle||"", revista:"ClinicalTrials.gov",
+      autor:"", ano:"", doi:"", tipoPub:((des.phases&&des.phases.join("/"))||des.studyType||"ensaio"),
+      resumo:("Status: "+(stt.overallStatus||"")+". Tipo: "+(des.studyType||"")+".").slice(0,400),
+      url: nct?("https://clinicaltrials.gov/study/"+nct):"https://clinicaltrials.gov" };
+  });
+}
+// MedlinePlus (EN/ES)
+async function mlpSearch(term){
+  const q="https://wsearch.nlm.nih.gov/ws/query?db=healthTopicsSpanish&term="+encodeURIComponent(term)+"&retmax=2";
+  const r=await throttle("mlp",HOST_MIN.mlp,()=>fetchX(q,{},12000));
+  const out=[]; try{
+    const doc=new DOMParser().parseFromString(r.text||"","text/xml");
+    doc.querySelectorAll("document").forEach(d=>{
+      const g=(n)=>{ const el=d.querySelector('content[name="'+n+'"]'); return el?el.textContent.replace(/<[^>]+>/g,""):""; };
+      out.push({ id:d.getAttribute("url")||"", fonte:"MedlinePlus", titulo:g("title")||term,
+        revista:"MedlinePlus (ES)", autor:"", ano:"", doi:"", tipoPub:"consumidor",
+        resumo:(g("FullSummary")||g("snippet")||"").slice(0,900), url:d.getAttribute("url")||"https://medlineplus.gov/spanish/" });
+    });
+  }catch(e){}
+  return out;
+}
+
+// pura (autotestada): dedupe por DOI/PMID/URL preservando ordem
+function dedupeFontes(itens){
+  const vis=new Set(); const out=[];
+  for(const it of itens){
+    const chave=(it.doi&&("doi:"+it.doi.toLowerCase()))||(it.pmid&&("pmid:"+it.pmid))||(it.id&&(it.fonte+":"+it.id))||("t:"+(it.titulo||"").slice(0,40).toLowerCase());
+    if(vis.has(chave)) continue; vis.add(chave); out.push(it);
+  }
+  return out;
+}
+
+// Executa TODAS as fontes ativas. ctx = {doenca_en, sinonimos, medicamentos_foco, queries_literatura, termo_ensaio, eh_rara}
+async function coletarFontes(ctx, prof, ativos, onLog){
+  const cap=(PROFUNDIDADES[prof]||PROFUNDIDADES.padrao).artigos;
+  const bundle={ literatura:[], resumos:[], medicamentos:[], ensaios:[], genetica:[], consumidor:[], usadas:[], falhas:[] };
+  const termo=(ctx.doenca_en||ctx.doenca||"").trim();
+  const queries=(ctx.queries_literatura&&ctx.queries_literatura.length)?ctx.queries_literatura:fallbackQueries(termo);
+
+  const jobs=[];
+  const roda=(id, fn)=>{ if(ativos[id]===false) return; jobs.push((async()=>{
+    try{ await fn(); bundle.usadas.push(id); onLog&&onLog("✓ "+id); }
+    catch(e){ bundle.falhas.push(id); onLog&&onLog("✗ "+id+" ("+(e.message||"erro")+")"); }
+  })()); };
+
+  roda("pubmed", async()=>{
+    let ids=[];
+    for(const q of queries){ const r=await euSearch("pubmed", q.term, q.retmax||4, 1825); ids=ids.concat(r); }
+    if(!ids.length){ for(const q of queries){ const r=await euSearch("pubmed", q.term, q.retmax||4, 3650); ids=ids.concat(r); } }
+    ids=Array.from(new Set(ids)).slice(0, cap);
+    const sum=await euSummary("pubmed", ids);
+    bundle.literatura=bundle.literatura.concat(buildRefs(sum,"PubMed"));
+  });
+  roda("europepmc", async()=>{
+    const r=await epmcSearch(termo+" AND (systematic review OR guideline OR diagnosis)", Math.min(cap,8));
+    bundle.literatura=bundle.literatura.concat(r);
+  });
+  roda("bookshelf", async()=>{
+    const ids=await euSearch("books", termo, 4, 3650);
+    const sum=await euSummary("books", ids);
+    (sum.uids||[]).forEach(id=>{ const it=sum[id]||{}; bundle.resumos.push({ id:id, fonte:"Bookshelf",
+      titulo:it.title||"", revista:"NCBI Bookshelf", autor:"", ano:(it.pubdate||"").slice(0,4), doi:"", tipoPub:"resumo",
+      resumo:"", url:"https://www.ncbi.nlm.nih.gov/books/"+id+"/" }); });
+  });
+  if(ctx.eh_rara){
+    roda("omim", async()=>{ const ids=await euSearch("omim", termo, 3, 3650); const sum=await euSummary("omim", ids);
+      (sum.uids||[]).forEach(id=>{ const it=sum[id]||{}; bundle.genetica.push({ id:id, fonte:"OMIM", titulo:it.title||"",
+        revista:"OMIM", autor:"", ano:"", doi:"", tipoPub:"genética", resumo:(it.oid||""), url:"https://www.omim.org/entry/"+id }); }); });
+    roda("medgen", async()=>{ const ids=await euSearch("medgen", termo, 3, 3650); const sum=await euSummary("medgen", ids);
+      (sum.uids||[]).forEach(id=>{ const it=sum[id]||{}; bundle.genetica.push({ id:id, fonte:"MedGen", titulo:it.title||it.name||"",
+        revista:"MedGen", autor:"", ano:"", doi:"", tipoPub:"fenótipo", resumo:(it.definition&&it.definition.text)||"", url:"https://www.ncbi.nlm.nih.gov/medgen/"+id }); }); });
+  }
+  roda("openfda", async()=>{
+    const meds=(ctx.medicamentos_foco||[]).slice(0,4);
+    for(const m of meds){ const lab=await fdaLabel(m); if(lab) bundle.medicamentos.push(lab); }
+  });
+  roda("clinicaltrials", async()=>{ bundle.ensaios=await ctgovSearch(termo, Math.min(cap,5)); });
+  roda("medlineplus", async()=>{ bundle.consumidor=await mlpSearch(ctx.doenca||termo); });
+
+  await Promise.all(jobs);
+  bundle.literatura=dedupeFontes(bundle.literatura).slice(0, cap);
+  return bundle;
+}
+
+/* =========================================================================
+   7. ANTHROPIC (browser-direct + SSE)
+   ========================================================================= */
+function anthBase(){ return (S.cfg.anthbase||"https://api.anthropic.com").replace(/\/+$/,""); }
+function anthHeaders(){
+  return { "content-type":"application/json", "x-api-key":S.cfg.apikey,
+    "anthropic-version":ANTH_VERSION, "anthropic-dangerous-direct-browser-access":"true" };
+}
+// pura (autotestada): parser SSE incremental. feed(chunk)->[{event,data}]
+function makeSSEParser(){
+  let buf="";
+  return { feed(chunk){
+    buf += chunk; buf = buf.replace(/\r\n/g,"\n");
+    const eventos=[]; let idx;
+    while((idx=buf.indexOf("\n\n"))>=0){
+      const bloco=buf.slice(0,idx); buf=buf.slice(idx+2);
+      let ev=null; const datas=[];
+      bloco.split("\n").forEach(l=>{
+        if(l.indexOf("event:")===0) ev=l.slice(6).trim();
+        else if(l.indexOf("data:")===0) datas.push(l.slice(5).trim());
+      });
+      if(datas.length){ let d=null; try{ d=JSON.parse(datas.join("\n")); }catch(e){ d=null; }
+        eventos.push({ event:ev||(d&&d.type)||null, data:d }); }
+      else if(ev) eventos.push({ event:ev, data:null });
+    }
+    return eventos;
+  }};
+}
+// pura (autotestada): extrai JSON tolerante (fences, prosa em volta)
+function extractJson(txt){
+  if(!txt) return null;
+  let s=String(txt).replace(/```json/gi,"```");
+  const fence=s.match(/```\s*([\s\S]*?)```/); if(fence) s=fence[1];
+  try{ return JSON.parse(s.trim()); }catch(e){}
+  const ini=s.indexOf("{"); if(ini<0) return null;
+  let dep=0;
+  for(let i=ini;i<s.length;i++){ const c=s[i]; if(c==="{")dep++; else if(c==="}"){ dep--; if(dep===0){
+    try{ return JSON.parse(s.slice(ini,i+1)); }catch(e){ return null; } } } }
+  return null;
+}
+async function anthMsg(body,timeoutMs){
+  const r=await fetchX(anthBase()+"/v1/messages",{ method:"POST", headers:anthHeaders(), body:JSON.stringify(body) }, timeoutMs||60000);
+  if(!r.ok){ const m=(r.json&&r.json.error&&r.json.error.message)||("HTTP "+r.status); const e=new Error(m); e.status=r.status; throw e; }
+  const bloco=(r.json&&r.json.content||[]).filter(b=>b.type==="text").map(b=>b.text).join("");
+  return { texto:bloco, stop:r.json&&r.json.stop_reason, usage:r.json&&r.json.usage };
+}
+// streaming: onDelta(text), retorna {texto, stop}
+async function anthStream(body, onDelta, signal){
+  const res=await fetch(anthBase()+"/v1/messages",{ method:"POST", headers:anthHeaders(),
+    body:JSON.stringify(Object.assign({stream:true},body)), signal });
+  if(!res.ok){ let js=null; try{ js=JSON.parse(await res.text()); }catch(e){}
+    const m=(js&&js.error&&js.error.message)||("HTTP "+res.status); const e=new Error(m); e.status=res.status; throw e; }
+  const reader=res.body.getReader(); const dec=new TextDecoder(); const parser=makeSSEParser();
+  let texto=""; let stop=null; let curType=null;
+  for(;;){
+    const {done,value}=await reader.read(); if(done) break;
+    for(const ev of parser.feed(dec.decode(value,{stream:true}))){
+      const d=ev.data; if(!d) continue;
+      if(d.type==="content_block_start"){ curType=d.content_block&&d.content_block.type; }
+      else if(d.type==="content_block_delta"){
+        if(d.delta&&d.delta.type==="text_delta"){ texto+=d.delta.text; onDelta&&onDelta(d.delta.text, texto); }
+        /* thinking_delta ignorado */ }
+      else if(d.type==="message_delta"){ if(d.delta&&d.delta.stop_reason) stop=d.delta.stop_reason; }
+      else if(ev.event==="error"){ throw new Error((d.error&&d.error.message)||"erro no stream"); }
+    }
+  }
+  return { texto, stop };
+}
+
+/* =========================================================================
+   8. PIPELINE
+   ========================================================================= */
+const ESQUEMA_ESTRATEGIA = { type:"object", additionalProperties:false,
+  required:["doenca_en","sinonimos","eh_rara","medicamentos_foco","queries_literatura","termo_ensaio"],
+  properties:{
+    doenca_en:{type:"string"},
+    sinonimos:{type:"array", items:{type:"string"}},
+    eh_rara:{type:"boolean"},
+    medicamentos_foco:{type:"array", items:{type:"string"}},
+    termo_ensaio:{type:"string"},
+    queries_literatura:{type:"array", items:{ type:"object", additionalProperties:false,
+      required:["objetivo","term","retmax"],
+      properties:{ objetivo:{type:"string", enum:["diretrizes","revisoes_sistematicas","diagnostico","tratamento"]},
+        term:{type:"string"}, retmax:{type:"integer"} } }}
+  }};
+
+function promptSistemaEstrategia(){
+  return "Você é um bibliotecário médico especialista em estratégias de busca PubMed. "
+    +"Dada uma doença suspeita e dados do paciente, produza uma estratégia de busca. "
+    +"Gere de 2 a 4 queries PubMed combinando termos MeSH e [tiab], com filtros de tipo de publicação "
+    +"(guideline[pt] OR practice guideline[pt]; systematic review[pt] OR meta-analysis[pt]) e sempre "
+    +"AND (english[la] OR portuguese[la]). Não inclua filtro de data no term. "
+    +"Marque eh_rara=true se a doença for rara/genética. Em medicamentos_foco liste os fármacos em uso do paciente "
+    +"e os prováveis do tratamento (nomes em inglês para consulta de bula). Responda apenas no formato estruturado.";
+}
+function promptSistemaSintese(comFontes){
+  const cab="Você é um médico-pesquisador que apoia OUTRO médico na investigação diagnóstica e no tratamento. "
+    +"O público é técnico. Escreva em português (pt-BR), em markdown, com EXATAMENTE estas 13 seções '## ' nesta ordem:\n"
+    +SECOES.map(s=>"## "+s.t).join("\n")+"\n\n";
+  const regras=[
+    "Objetivo duplo: (1) não deixar passar NADA no diagnóstico; (2) tratar minimizando riscos.",
+    "Na 'Anamnese completa' liste EXAUSTIVAMENTE as perguntas de alto rendimento — o que o médico pode esquecer.",
+    "Em 'Cruzamento com o paciente' monte uma tabela markdown com colunas: Achado esperado | Dado do paciente | Status. "
+      +"Status ∈ presente / ausente / não avaliado / não perguntado, usando SOMENTE os dados do formulário. "
+      +"Depois liste as lacunas priorizadas por impacto diagnóstico (o que ainda falta pedir/perguntar) e uma "
+      +"aproximação diagnóstica calibrada (a favor, contra, próximo melhor passo, o que confirmaria/excluiria). "
+      +"Nunca invente dados que o médico não forneceu.",
+    "Em 'Checklist de verificação' use SOMENTE linhas '- [ ] ' (10 a 20 itens acionáveis).",
+    "Toda menção a medicamento termina com '— confira dose no bulário/fonte oficial'.",
+    "No 'Tratamento' cruze os medicamentos em uso do paciente (interações — marque 'confirme') e ajuste por idade, "
+      +"comorbidades, gestação e função renal/hepática.",
+    "Afirmação sem suporte nas fontes recuperadas deve ser marcada '⚠️ evidência limitada'.",
+    "Em 'Referências' liste '- [PMID n] Autor et al. Título. Revista, ano.' apenas para itens realmente usados.",
+    "Não repita identificadores do paciente além das iniciais. Sem preâmbulo fora das seções."
+  ];
+  const fontesRegra = comFontes
+    ? "Cite SOMENTE as fontes fornecidas, inline no formato [PMID 12345678], [NCT01234567], [Bookshelf], [openFDA: <fármaco>] ou [EuropePMC id]."
+    : "MODO SEM FONTES: as buscas na literatura falharam. NÃO cite PMIDs nem invente referências. Em 'Referências' escreva 'Sem verificação na literatura nesta execução — confirme em fonte oficial.'";
+  return cab+fontesRegra+"\nRegras:\n- "+regras.join("\n- ");
+}
+function promptUsuario(form, bundle){
+  const g=(l,v)=>v?(l+": "+v+"\n"):"";
+  let u="DOENÇA SUSPEITA: "+form.doenca+"\n\nPACIENTE (identificado apenas por iniciais):\n"
+    +g("Iniciais",form.iniciais)+g("Idade",form.idade)+g("Sexo",form.sexo)
+    +g("Gestante",form.gestante==="sim"?"sim":"")+g("Queixa principal",form.queixa)
+    +g("Sintomas",form.sintomas)+g("Comorbidades",form.comorbidades)
+    +g("Medicamentos em uso",form.medicamentos)+g("Alergias",form.alergias)
+    +g("Exames já realizados",form.exames);
+  if(bundle){
+    const linhas=[];
+    const push=(arr,rot)=>{ (arr||[]).forEach(it=>{ if(!it.titulo && !it.resumo) return;
+      const tag=it.pmid?("PMID "+it.pmid):(it.id?(it.fonte+" "+it.id):it.fonte);
+      linhas.push("["+tag+"] "+it.titulo+" — "+(it.revista||rot)+(it.ano?(", "+it.ano):"")+(it.tipoPub?(" ("+it.tipoPub+")"):"")
+        +(it.resumo?("\n  Resumo: "+it.resumo):"")); }); };
+    push(bundle.literatura,"literatura"); push(bundle.resumos,"resumo");
+    push(bundle.genetica,"genética"); push(bundle.medicamentos,"bula"); push(bundle.ensaios,"ensaio");
+    if(linhas.length) u+="\n\nFONTES RECUPERADAS (use apenas estas para citar):\n"+linhas.join("\n");
+    else u+="\n\n(Nenhuma fonte recuperada — modo sem fontes.)";
+  }
+  return u;
+}
+
+function novoPipe(){
+  return { fase:"estrategia", passos:[
+    {k:"normalizar",nome:"Normalizar termo (MeSH)"},
+    {k:"estrategia",nome:"Estratégia de busca (IA)"},
+    {k:"fontes",nome:"Consultar todas as fontes"},
+    {k:"sintese",nome:"Síntese do relatório (IA)"},
+    {k:"salvar",nome:"Salvar"}
+  ], logs:[], estrategia:null, bundle:null, texto:"", status:"concluida", erro:null, cancelar:false, feito:{} };
+}
+function plog(msg){ if(!S.pipe) return; S.pipe.logs.push(msg); pintarProgresso(); }
+function pfase(k){ if(!S.pipe) return; S.pipe.feito[S.pipe.fase]=true; S.pipe.fase=k; pintarProgresso(); }
+
+async function runPesquisa(form){
+  S.pipe=novoPipe(); S.busy=true; irTela("progresso");
+  const prof=S.cfg.prof||"padrao"; const cfgP=PROFUNDIDADES[prof]||PROFUNDIDADES.padrao;
+  const modelo = (S.cfg.modelo===MODELOS.profundo.id||prof==="profunda") ? cfgP.modelo : S.cfg.modelo;
+  const ativos={}; FONTES_DEF.forEach(f=>{ ativos[f.id] = S.cfg.fontes[f.id]!==false; });
+  try{
+    // 1) normalização MeSH (best-effort, não bloqueia)
+    let doenca_en=form.doenca;
+    try{ pfase("normalizar"); const ids=await euSearch("mesh", form.doenca, 1, 3650);
+      if(ids.length){ const sum=await euSummary("mesh", ids); const it=sum[ids[0]]; if(it&&it.ds_meshterms&&it.ds_meshterms[0]) doenca_en=it.ds_meshterms[0]; }
+      plog("Termo canônico: "+doenca_en);
+    }catch(e){ plog("MeSH indisponível — seguindo com o termo original"); }
+
+    // 2) estratégia (IA, estruturada)
+    pfase("estrategia");
+    let ctx=null;
+    if(S.cfg.apikey){
+      try{
+        const body={ model:S.cfg.modelo, max_tokens:1500, thinking:{type:"disabled"},
+          output_config:{ format:{ type:"json_schema", schema:ESQUEMA_ESTRATEGIA } },
+          system:promptSistemaEstrategia(),
+          messages:[{role:"user", content:promptUsuario(form,null)}] };
+        const r=await anthMsg(body, 45000);
+        ctx=extractJson(r.texto);
+        if(ctx) plog("Estratégia: "+(ctx.queries_literatura?ctx.queries_literatura.length:0)+" queries"+(ctx.eh_rara?" · rara/genética":""));
+      }catch(e){ plog("Estratégia via IA falhou ("+e.message+") — usando fallback"); }
+    } else { plog("Sem chave de API — usando busca padrão"); }
+    if(!ctx) ctx={ doenca_en:doenca_en, sinonimos:[], eh_rara:false, medicamentos_foco:medsDoForm(form),
+      queries_literatura:fallbackQueries(doenca_en), termo_ensaio:doenca_en };
+    ctx.doenca=form.doenca; if(!ctx.doenca_en) ctx.doenca_en=doenca_en;
+    if(!ctx.medicamentos_foco||!ctx.medicamentos_foco.length) ctx.medicamentos_foco=medsDoForm(form);
+    S.pipe.estrategia=ctx;
+
+    // 3) fan-out em todas as fontes ativas
+    pfase("fontes");
+    const bundle=await coletarFontes(ctx, prof, ativos, plog);
+    S.pipe.bundle=bundle;
+    const totalFontes=bundle.literatura.length+bundle.resumos.length+bundle.genetica.length+bundle.medicamentos.length+bundle.ensaios.length;
+    const comFontes = totalFontes>0;
+    if(!comFontes){ S.pipe.status="sem_fontes"; plog("Nenhuma fonte respondeu — relatório sem verificação na literatura"); }
+    else plog(totalFontes+" itens de "+bundle.usadas.length+" fontes");
+
+    // 4) síntese (streaming)
+    pfase("sintese");
+    if(!S.cfg.apikey) throw new Error("Configure sua chave de API Anthropic para gerar o relatório.");
+    const ctrl=new AbortController(); S.pipe._abort=ctrl;
+    const body={ model:modelo, max_tokens:cfgP.max_tokens, output_config:{ effort:cfgP.effort },
+      system:promptSistemaSintese(comFontes),
+      messages:[{role:"user", content:promptUsuario(form,bundle)}] };
+    let ultimo=0;
+    const r=await anthStream(body,(_d,acc)=>{ S.pipe.texto=acc; const t=nowMs();
+      if(t-ultimo>120){ ultimo=t; pintarProgresso(); } }, ctrl.signal);
+    S.pipe.texto=r.texto;
+    if(r.stop==="max_tokens") S.pipe.texto+="\n\n> ⚠️ Relatório truncado (limite de tokens). Aumente a profundidade se necessário.";
+
+    // 5) montar pesquisa e salvar
+    pfase("salvar");
+    const checklist=checklistFromMd(splitSections(S.pipe.texto).checklist||"");
+    const fontesUsadas=[].concat(bundle.literatura,bundle.resumos,bundle.genetica,bundle.medicamentos,bundle.ensaios)
+      .map(x=>({tipo:x.tipoPub||"", fonte:x.fonte, titulo:x.titulo, ano:x.ano, url:x.url, id:x.pmid||x.id||""}));
+    const pesquisa={ doenca:form.doenca, paciente:pacienteObj(form), estrategia:ctx,
+      fontes:fontesUsadas, relatorio:S.pipe.texto, checklist:checklist,
+      modelo:modelo, profundidade:prof, status:S.pipe.status };
+    if(sbConfigured() && S.sess){
+      try{ const salvo=await dbInsert(pesquisa); pesquisa.id=salvo.id; pesquisa.criado_em=salvo.criado_em; plog("Salvo na nuvem"); }
+      catch(e){ plog("Não foi possível salvar na nuvem: "+e.message); }
+    }
+    S.pipe.feito.salvar=true;
+    S.atual=pesquisa; S.busy=false;
+    if(sbConfigured()&&S.sess){ try{ S.hist=await dbList(); }catch(e){} }
+    irTela("relatorio");
+  }catch(e){
+    S.busy=false; S.pipe.erro=e.message||"erro"; pintarProgresso();
+    toast("Erro: "+S.pipe.erro,"err");
+  }
+}
+function medsDoForm(form){
+  return String(form.medicamentos||"").split(/[,;\n]+/).map(s=>s.trim()).filter(Boolean).slice(0,6);
+}
+function pacienteObj(form){
+  return { iniciais:form.iniciais, idade:form.idade, sexo:form.sexo, gestante:form.gestante,
+    queixa:form.queixa, sintomas:form.sintomas, comorbidades:form.comorbidades,
+    medicamentos:form.medicamentos, alergias:form.alergias, exames:form.exames };
+}
+
+/* =========================================================================
+   9. REPORT MODEL (puras — autotestadas)
+   ========================================================================= */
+// escapa HTML PRIMEIRO, depois aplica markdown → HTML seguro
+function mdRender(md){
+  const linhas=String(md==null?"":md).split("\n");
+  let html=""; let i=0; let emUL=false;
+  const fechaUL=()=>{ if(emUL){ html+="</ul>"; emUL=false; } };
+  const inline=(t)=>{
+    t=esc(t);
+    // citações tipadas → links / chips
+    t=t.replace(/\[PMID\s*(\d+)\]/g,(m,n)=>'<a class="cita" target="_blank" rel="noopener" href="https://pubmed.ncbi.nlm.nih.gov/'+n+'/">PMID '+n+'</a>');
+    t=t.replace(/\[(NCT\d{6,})\]/g,(m,n)=>'<a class="cita" target="_blank" rel="noopener" href="https://clinicaltrials.gov/study/'+n+'">'+n+'</a>');
+    t=t.replace(/\[(openFDA:[^\]]+)\]/g,(m,x)=>'<span class="cita">'+x+'</span>');
+    t=t.replace(/\[(EuropePMC[^\]]*)\]/g,(m,x)=>'<span class="cita">'+x+'</span>');
+    t=t.replace(/\[(Bookshelf[^\]]*)\]/g,(m,x)=>'<span class="cita">'+x+'</span>');
+    t=t.replace(/`([^`]+)`/g,"<code>$1</code>");
+    t=t.replace(/\*\*([^*]+)\*\*/g,"<strong>$1</strong>");
+    t=t.replace(/(^|[^*])\*([^*]+)\*(?!\*)/g,"$1<em>$2</em>");
+    t=t.replace(/⚠️\s*evid[êe]ncia limitada[^<.]*/gi,m=>'<span class="evlim">'+m+'</span>');
+    t=t.replace(/—\s*confira dose[^<.]*/gi,m=>'<span class="dosewarn">'+m+'</span>');
+    return t;
+  };
+  while(i<linhas.length){
+    let l=linhas[i];
+    // tabela markdown
+    if(/^\s*\|.*\|\s*$/.test(l) && i+1<linhas.length && /^\s*\|?[\s:\-|]+\|?\s*$/.test(linhas[i+1])){
+      fechaUL();
+      const head=l.trim().replace(/^\||\|$/g,"").split("|").map(c=>c.trim());
+      i+=2; let body="";
+      while(i<linhas.length && /^\s*\|.*\|\s*$/.test(linhas[i])){
+        const cels=linhas[i].trim().replace(/^\||\|$/g,"").split("|").map(c=>c.trim());
+        body+="<tr>"+cels.map(c=>"<td>"+inline(c)+"</td>").join("")+"</tr>"; i++;
+      }
+      html+="<table><thead><tr>"+head.map(c=>"<th>"+inline(c)+"</th>").join("")+"</tr></thead><tbody>"+body+"</tbody></table>";
+      continue;
+    }
+    let m;
+    if((m=l.match(/^###\s+(.*)/))){ fechaUL(); html+="<h3>"+inline(m[1])+"</h3>"; }
+    else if((m=l.match(/^##\s+(.*)/))){ fechaUL(); html+="<h2>"+inline(m[1])+"</h2>"; }
+    else if((m=l.match(/^#\s+(.*)/))){ fechaUL(); html+="<h2>"+inline(m[1])+"</h2>"; }
+    else if((m=l.match(/^\s*[-*]\s+\[( |x|X)\]\s+(.*)/))){ // checkbox → item de lista (render estático)
+      if(!emUL){ html+="<ul>"; emUL=true; }
+      const mk=m[1].toLowerCase()==="x"?"☑":"☐";
+      html+="<li>"+mk+" "+inline(m[2])+"</li>";
+    }
+    else if((m=l.match(/^\s*[-*]\s+(.*)/))){ if(!emUL){ html+="<ul>"; emUL=true; } html+="<li>"+inline(m[1])+"</li>"; }
+    else if(l.trim()===""){ fechaUL(); }
+    else { fechaUL(); html+="<p>"+inline(l)+"</p>"; }
+    i++;
+  }
+  fechaUL();
+  return html;
+}
+// separa por heading '## ' tolerante; devolve {chave:markdownDaSecao}
+function splitSections(md){
+  const out={}; const linhas=String(md||"").split("\n");
+  let atual=null; let buf=[];
+  const salva=()=>{ if(atual){ out[atual]=(buf.join("\n")).trim(); } };
+  const achaChave=(titulo)=>{
+    const norm=s=>s.toLowerCase().replace(/[🚩#]/g,"").replace(/[^a-z0-9à-ú ]/gi,"").trim();
+    const t=norm(titulo);
+    let best=null,bestScore=0;
+    SECOES.forEach(s=>{ const st=norm(s.t);
+      let score=0; if(t===st) score=100; else if(t&&(st.indexOf(t)>=0||t.indexOf(st)>=0)) score=50;
+      else { const a=st.split(" "), b=new Set(t.split(" ")); score=a.filter(w=>b.has(w)).length; }
+      if(score>bestScore){ bestScore=score; best=s.k; } });
+    return bestScore>0?best:("_"+t.slice(0,20));
+  };
+  for(const l of linhas){
+    const m=l.match(/^##\s+(.*)/);
+    if(m){ salva(); atual=achaChave(m[1]); buf=[]; }
+    else if(atual){ buf.push(l); }
+  }
+  salva();
+  return out;
+}
+// checklist a partir do markdown da seção → [{i,texto,feito}]
+function checklistFromMd(secaoMd){
+  const out=[]; let i=0;
+  String(secaoMd||"").split("\n").forEach(l=>{
+    const m=l.match(/^\s*[-*]\s+\[( |x|X)\]\s+(.*)/);
+    if(m){ out.push({ i:i++, texto:m[2].trim(), feito:m[1].toLowerCase()==="x" }); }
+  });
+  return out;
+}
+// mescla estados 'feito' salvos por índice+texto
+function mergeChecklist(itens, salvos){
+  if(!salvos||!salvos.length) return itens;
+  const byTxt={}; salvos.forEach(s=>{ byTxt[(s.i)+"|"+s.texto]=s.feito; });
+  return itens.map(it=>{ const k=it.i+"|"+it.texto; return (k in byTxt)?Object.assign({},it,{feito:byTxt[k]}):it; });
+}
+
+/* =========================================================================
+   10. VIEWS
+   ========================================================================= */
+const app=()=>document.getElementById("app");
+function irTela(t){ S.tela=t; render(); window.scrollTo(0,0); }
+function render(){
+  const el=app(); if(!el) return;
+  if(S.tela==="login") el.innerHTML=vLogin();
+  else if(S.tela==="home") el.innerHTML=vHome();
+  else if(S.tela==="form") el.innerHTML=vForm();
+  else if(S.tela==="progresso") el.innerHTML=vProgresso();
+  else if(S.tela==="relatorio") el.innerHTML=vRelatorio();
+  else if(S.tela==="config") el.innerHTML=vConfig();
+  ligarEventos();
+}
+function topbar(sub){
+  return '<div class="topbar"><div class="brand">🩺 Diagnóstico <small>· pesquisa clínica</small></div>'
+    +'<div class="spacer"></div>'
+    +(S.sess?('<button class="btn ghost" data-go="home">Início</button>'):'')
+    +'<button class="btn ghost" data-go="config">⚙️</button></div>'
+    +(sub?('<div class="muted" style="margin:-6px 0 8px">'+esc(sub)+'</div>'):'');
+}
+
+function vLogin(){
+  const semSB = !sbConfigured();
+  return topbar()
+    +'<div class="card"><h1>Entrar</h1>'
+    +'<p class="muted">Apoio à decisão para médicos. Faça login para salvar seu histórico de pesquisas na nuvem.</p>'
+    +(semSB?'<div class="banner ambar">Supabase ainda não configurado. Você pode <b>usar sem login</b> (sem histórico) ou preencher a conexão em ⚙️ Configurações.</div>':'')
+    +'<label>E-mail</label><input id="li_email" type="email" autocomplete="username" placeholder="voce@exemplo.com">'
+    +'<label>Senha</label><input id="li_pw" type="password" autocomplete="current-password" placeholder="••••••••">'
+    +'<div class="btnrow" style="margin-top:12px">'
+    +'<button class="btn primary" id="li_entrar"'+(semSB?" disabled":"")+'>Entrar</button>'
+    +'<button class="btn" id="li_cad"'+(semSB?" disabled":"")+'>Cadastrar</button>'
+    +'</div>'
+    +'<div style="margin-top:14px"><button class="btn ghost wide" id="li_sem">Usar sem login →</button></div>'
+    +'</div>';
+}
+function vHome(){
+  const nome=S.sess&&S.sess.user?S.sess.user.email:"convidado";
+  let hist="";
+  if(S.hist&&S.hist.length){
+    hist=S.hist.map(h=>('<div class="histitem" data-open="'+esc(h.id)+'">'
+      +'<div class="d"><div class="t">'+esc(h.doenca)+'</div>'
+      +'<div class="s">'+esc((h.paciente&&h.paciente.iniciais)||"—")+' · '+esc(fmtDataHora(h.criado_em))
+      +(h.status==="sem_fontes"?' · <span class="chip ambar">sem fontes</span>':'')+'</div></div>'
+      +'<div>›</div></div>')).join("");
+  } else if(S.sess){ hist='<p class="muted">Nenhuma pesquisa ainda.</p>'; }
+  return topbar("Olá, "+nome)
+    +'<div class="card">'
+    +'<button class="btn primary wide" data-go="form">➕ Nova pesquisa</button>'
+    +'<div style="margin-top:10px"><button class="btn wide" id="ex_mm">📋 Exemplo — Mieloma Múltiplo (preencher formulário)</button></div>'
+    +'<div style="margin-top:8px"><button class="btn ghost wide" id="ex_mm_prev">👁️ Ver relatório-amostra (offline, sem chave)</button></div>'
+    +'</div>'
+    +'<div class="card"><h2>Histórico</h2>'
+    +(S.sess?'':'<div class="banner azul">Você está sem login — o histórico não é salvo. Entre para guardar suas pesquisas.</div>')
+    +hist+'</div>';
+}
+function campo(l,id,val,ph,tipo){
+  return '<label>'+esc(l)+'</label>'+(tipo==="area"
+    ?('<textarea id="'+id+'" placeholder="'+esc(ph||"")+'">'+esc(val||"")+'</textarea>')
+    :('<input id="'+id+'" value="'+esc(val||"")+'" placeholder="'+esc(ph||"")+'">'));
+}
+function vForm(){
+  const f=S.form;
+  return topbar("Nova pesquisa")
+    +'<div class="card">'
+    +campo("Doença suspeita *","f_doenca",f.doenca,"ex.: Mieloma múltiplo")
+    +'<div class="banner azul" style="margin-top:10px">🔒 LGPD: identifique o paciente <b>apenas por iniciais/código</b>. Não digite nome completo.</div>'
+    +'<div class="grid2">'
+    +campo("Iniciais/código","f_iniciais",f.iniciais,"ex.: J.B.")
+    +campo("Idade","f_idade",f.idade,"ex.: 68 anos")
+    +'</div>'
+    +'<div class="grid2">'
+    +'<div><label>Sexo</label><select id="f_sexo">'+opt(["","Masculino","Feminino"],f.sexo)+'</select></div>'
+    +'<div><label>Gestante</label><select id="f_gestante">'+opt2([["nao","Não / N/A"],["sim","Sim"]],f.gestante)+'</select></div>'
+    +'</div>'
+    +campo("Queixa principal","f_queixa",f.queixa,"motivo da consulta","area")
+    +campo("Sintomas / história","f_sintomas",f.sintomas,"início, evolução, associados…","area")
+    +campo("Comorbidades","f_comorbidades",f.comorbidades,"ex.: HAS, DM2, DRC","area")
+    +campo("Medicamentos em uso","f_medicamentos",f.medicamentos,"separe por vírgula","area")
+    +campo("Alergias","f_alergias",f.alergias,"ex.: penicilina")
+    +campo("Exames já realizados","f_exames",f.exames,"resultados relevantes","area")
+    +'<div class="btnrow" style="margin-top:14px">'
+    +'<button class="btn primary" id="f_ir">🔎 Pesquisar em todas as fontes</button>'
+    +'<button class="btn ghost" data-go="home">Cancelar</button></div>'
+    +(!S.cfg.apikey?'<div class="banner ambar" style="margin-top:10px">⚠️ Configure sua chave de API Anthropic em ⚙️ para gerar o relatório.</div>':'')
+    +'</div>';
+}
+function opt(arr,sel){ return arr.map(o=>'<option'+(o===sel?" selected":"")+'>'+esc(o)+'</option>').join(""); }
+function opt2(pairs,sel){ return pairs.map(p=>'<option value="'+esc(p[0])+'"'+(p[0]===sel?" selected":"")+'>'+esc(p[1])+'</option>').join(""); }
+
+function vProgresso(){
+  const p=S.pipe; if(!p) return topbar()+'<div class="card">…</div>';
+  const passos=p.passos.map(s=>{
+    const st = p.feito[s.k]?"feito":(p.fase===s.k?"ativo":"");
+    const ic = p.feito[s.k]?"✓":(p.fase===s.k?(p.erro?"!":'<span class="spin"></span>'):"·");
+    return '<div class="step '+st+'"><div class="dot">'+ic+'</div><div class="txt"><div class="nome">'+esc(s.nome)+'</div></div></div>';
+  }).join("");
+  let logs=""; if(p.logs.length) logs='<div class="logbox">'+p.logs.map(l=>'<div>'+esc(l)+'</div>').join("")+'</div>';
+  let stream=""; if(p.fase==="sintese"&&p.texto){ stream='<div class="stream rel">'+mdRender(p.texto)+'</div>'; }
+  let err=""; if(p.erro){ err='<div class="banner vermelho">Erro: '+esc(p.erro)+'</div>'
+    +'<div class="btnrow"><button class="btn" id="pg_retry">Tentar novamente</button><button class="btn ghost" data-go="form">Voltar</button></div>'; }
+  return topbar("Pesquisando: "+esc(S.form.doenca))
+    +'<div class="card"><div class="stepper">'+passos+'</div>'+logs+err+'</div>'
+    +(stream?('<div class="card"><h2>Relatório (ao vivo)</h2>'+stream+'</div>'):'');
+}
+
+function vRelatorio(){
+  const r=S.atual; if(!r) return topbar()+'<div class="card">Sem relatório.</div>';
+  const secoes=splitSections(r.relatorio);
+  const nav='<div class="secnav noprint">'+SECOES.filter(s=>secoes[s.k]).map(s=>'<a href="#sec_'+s.k+'">'+esc(s.t.replace("🚩 ",""))+'</a>').join("")+'</div>';
+  let body="";
+  SECOES.forEach(s=>{
+    if(!secoes[s.k]) return;
+    if(s.k==="checklist"){ body+='<h2 id="sec_'+s.k+'">'+esc(s.t)+'</h2>'+renderChecklist(); return; }
+    const cls = s.k==="alarme"?' redflag':'';
+    body+='<h2 id="sec_'+s.k+'">'+esc(s.t)+'</h2><div class="secao'+cls+'">'+mdRender(secoes[s.k])+'</div>';
+  });
+  const banner = r.status==="sem_fontes"
+    ? '<div class="banner ambar">Relatório gerado <b>sem verificação na literatura</b> (fontes indisponíveis nesta execução). Confirme tudo em fonte oficial.</div>' : '';
+  const fontesCount=(r.fontes||[]).length;
+  return topbar("Relatório")
+    +'<div class="card">'
+    +'<h1>'+esc(r.doenca)+'</h1>'
+    +'<div>'+chip("azul",(r.paciente&&r.paciente.iniciais)||"paciente")
+      +chip("cinza",(r.paciente&&r.paciente.idade)||"")+chip("cinza",(r.paciente&&r.paciente.sexo)||"")
+      +chip("verde",fontesCount+" fontes")+chip("cinza",(PROFUNDIDADES[r.profundidade]||{}).nome||r.profundidade)+'</div>'
+    +banner
+    +'<div class="btnrow noprint" style="margin:10px 0">'
+    +'<button class="btn primary" id="rp_print">🖨️ Imprimir / PDF</button>'
+    +'<button class="btn" data-go="form">➕ Nova</button>'
+    +(r.id?'<button class="btn danger" id="rp_del">🗑️ Excluir</button>':'')
+    +'<button class="btn ghost" data-go="home">Início</button></div>'
+    +nav
+    +'<div class="rel">'+body+'</div>'
+    +'</div>';
+}
+function chip(cor,txt){ return txt?('<span class="chip '+cor+'">'+esc(txt)+'</span>'):''; }
+function renderChecklist(){
+  const r=S.atual; const itens=r.checklist||[];
+  if(!itens.length) return '<p class="muted">—</p>';
+  const feitos=itens.filter(x=>x.feito).length;
+  const pct=Math.round(feitos/itens.length*100);
+  let h='<div class="chk"><div class="chkhead"><b>'+feitos+'/'+itens.length+' verificados</b></div>'
+    +'<div class="progressbar"><i style="width:'+pct+'%"></i></div>';
+  itens.forEach(it=>{
+    h+='<label class="chkitem'+(it.feito?" feito":"")+'"><input type="checkbox" data-chk="'+it.i+'"'+(it.feito?" checked":"")+'><span>'+esc(it.texto)+'</span></label>';
+  });
+  return h+'</div>';
+}
+
+function vConfig(){
+  const fontesHtml=FONTES_DEF.map(f=>{
+    const on=S.cfg.fontes[f.id]!==false;
+    return '<label class="chkitem" style="cursor:pointer"><input type="checkbox" data-fonte="'+f.id+'"'+(on?" checked":"")+'><span><b>'+esc(f.nome)+'</b> <span class="chip cinza">'+esc(f.tipo)+'</span></span></label>';
+  }).join("");
+  return topbar("Configurações")
+    +'<div class="card"><h2>Chave de API (Anthropic)</h2>'
+    +'<p class="muted">Sua chave fica só neste dispositivo (localStorage). Recomendado criar uma chave com limite de gasto.</p>'
+    +'<label>API key</label><input id="c_key" type="password" value="'+esc(S.cfg.apikey)+'" placeholder="sk-ant-...">'
+    +'<div class="grid2">'
+    +'<div><label>Modelo padrão</label><select id="c_modelo">'
+      +opt2([[MODELOS.padrao.id,MODELOS.padrao.nome],[MODELOS.profundo.id,MODELOS.profundo.nome]],S.cfg.modelo)+'</select></div>'
+    +'<div><label>Profundidade</label><select id="c_prof">'
+      +opt2(Object.keys(PROFUNDIDADES).map(k=>[k,PROFUNDIDADES[k].nome]),S.cfg.prof)+'</select></div>'
+    +'</div></div>'
+    +'<div class="card"><h2>Fontes de dados</h2>'
+    +'<p class="muted">Toda pesquisa consulta todas as fontes ligadas. Desligue as que gerarem ruído para a sua prática.</p>'
+    +fontesHtml+'</div>'
+    +'<div class="card"><h2>Nuvem (Supabase)</h2>'
+    +'<p class="muted">Login e histórico. Só a anon key (pública) fica no app; a segurança é a RLS no banco.</p>'
+    +'<label>Project URL</label><input id="c_sburl" value="'+esc(S.cfg.sburl)+'" placeholder="https://xxxx.supabase.co">'
+    +'<label>Anon / publishable key</label><input id="c_sbkey" type="password" value="'+esc(S.cfg.sbkey)+'" placeholder="eyJ...">'
+    +'</div>'
+    +'<div class="card"><h2>Avançado</h2>'
+    +'<label>Base da API Anthropic (testes)</label><input id="c_anthbase" value="'+esc(S.cfg.anthbase)+'" placeholder="https://api.anthropic.com">'
+    +'</div>'
+    +'<div class="card"><div class="btnrow">'
+    +'<button class="btn primary" id="c_salvar">Salvar</button>'
+    +(S.sess?'<button class="btn" id="c_sair">Sair da conta</button>':'')
+    +'</div></div>'
+    +'<div class="card"><h2>Autoteste (sem rede)</h2>'
+    +'<button class="btn" id="c_teste">Rodar autoteste</button>'
+    +'<div id="autoteste" style="margin-top:10px"></div></div>'
+    +'<div class="center muted" style="font-size:11px">Diagnóstico · apoio à decisão · não substitui julgamento clínico.</div>';
+}
+
+/* ---- eventos ------------------------------------------------------------- */
+function ligarEventos(){
+  document.querySelectorAll("[data-go]").forEach(b=>b.onclick=()=>irTela(b.getAttribute("data-go")));
+  const on=(id,fn)=>{ const el=document.getElementById(id); if(el) el.onclick=fn; };
+
+  if(S.tela==="login"){
+    on("li_entrar",async()=>{ await autenticar(false); });
+    on("li_cad",async()=>{ await autenticar(true); });
+    on("li_sem",()=>{ S.sess=null; irTela("home"); });
+  }
+  if(S.tela==="home"){
+    document.querySelectorAll("[data-open]").forEach(el=>el.onclick=()=>abrirPesquisa(el.getAttribute("data-open")));
+    on("ex_mm",()=>{ S.form=exemploMM(); irTela("form"); });
+    on("ex_mm_prev",()=>{ demoRelatorio(); });
+  }
+  if(S.tela==="form"){
+    on("f_ir",()=>{ coletarForm(); if(!S.form.doenca.trim()){ toast("Informe a doença suspeita","err"); return; } runPesquisa(S.form); });
+    ["f_doenca","f_iniciais","f_idade","f_queixa","f_sintomas","f_comorbidades","f_medicamentos","f_alergias","f_exames"].forEach(id=>{
+      const el=document.getElementById(id); if(el) el.onblur=coletarForm; });
+  }
+  if(S.tela==="progresso"){
+    on("pg_retry",()=>{ runPesquisa(S.form); });
+  }
+  if(S.tela==="relatorio"){
+    on("rp_print",()=>{ buildPrintDoc(S.atual); window.print(); });
+    on("rp_del",()=>excluirAtual());
+    document.querySelectorAll("[data-chk]").forEach(cb=>cb.onchange=()=>toggleChk(parseInt(cb.getAttribute("data-chk"),10),cb.checked));
+  }
+  if(S.tela==="config"){
+    on("c_salvar",salvarConfig);
+    on("c_sair",()=>sbLogout());
+    on("c_teste",runAutoteste);
+  }
+}
+function coletarForm(){
+  const g=id=>{ const el=document.getElementById(id); return el?el.value:""; };
+  S.form={ doenca:g("f_doenca"), iniciais:g("f_iniciais"), idade:g("f_idade"), sexo:g("f_sexo"),
+    gestante:g("f_gestante"), queixa:g("f_queixa"), sintomas:g("f_sintomas"), comorbidades:g("f_comorbidades"),
+    medicamentos:g("f_medicamentos"), alergias:g("f_alergias"), exames:g("f_exames") };
+}
+async function autenticar(cadastro){
+  const email=(document.getElementById("li_email")||{}).value||"";
+  const pw=(document.getElementById("li_pw")||{}).value||"";
+  if(!email||!pw){ toast("Informe e-mail e senha","err"); return; }
+  toast("Conectando…");
+  const r=cadastro?await sbSignup(email,pw):await sbLogin(email,pw);
+  if(r.ok){ toast("Bem-vindo!","ok"); try{ S.hist=await dbList(); }catch(e){} irTela("home"); }
+  else toast(r.msg,"err");
+}
+async function abrirPesquisa(id){
+  toast("Abrindo…");
+  const p=await dbGet(id);
+  if(!p){ toast("Não encontrada","err"); return; }
+  S.atual=p; irTela("relatorio");
+}
+function toggleChk(i,val){
+  if(!S.atual) return;
+  S.atual.checklist=(S.atual.checklist||[]).map(it=>it.i===i?Object.assign({},it,{feito:val}):it);
+  // re-render só do bloco de checklist
+  const bloco=document.querySelector(".chk"); if(bloco){ bloco.outerHTML=renderChecklist();
+    document.querySelectorAll("[data-chk]").forEach(cb=>cb.onchange=()=>toggleChk(parseInt(cb.getAttribute("data-chk"),10),cb.checked)); }
+  if(S.atual.id && sbConfigured() && S.sess) dbPatchChecklist(S.atual.id, S.atual.checklist);
+}
+async function excluirAtual(){
+  if(!S.atual||!S.atual.id) return;
+  if(!confirm("Excluir esta pesquisa? (LGPD: remove os dados do paciente da nuvem)")) return;
+  const ok=await dbDelete(S.atual.id);
+  if(ok){ toast("Excluída","ok"); try{ S.hist=await dbList(); }catch(e){} irTela("home"); }
+  else toast("Falha ao excluir","err");
+}
+function salvarConfig(){
+  const g=id=>{ const el=document.getElementById(id); return el?el.value.trim():""; };
+  S.cfg.apikey=g("c_key"); S.cfg.modelo=g("c_modelo")||MODELOS.padrao.id; S.cfg.prof=g("c_prof")||"padrao";
+  S.cfg.sburl=g("c_sburl"); S.cfg.sbkey=g("c_sbkey"); S.cfg.anthbase=g("c_anthbase");
+  const fontes={}; document.querySelectorAll("[data-fonte]").forEach(cb=>{ fontes[cb.getAttribute("data-fonte")]=cb.checked; });
+  S.cfg.fontes=fontes;
+  persistCfg();
+  toast("Configurações salvas","ok");
+  render();
+}
+function persistCfg(){
+  try{
+    localStorage.setItem(STORAGE.apikey,S.cfg.apikey);
+    localStorage.setItem(STORAGE.modelo,S.cfg.modelo);
+    localStorage.setItem(STORAGE.prof,S.cfg.prof);
+    localStorage.setItem(STORAGE.fontes,JSON.stringify(S.cfg.fontes));
+    localStorage.setItem(STORAGE.sburl,S.cfg.sburl);
+    localStorage.setItem(STORAGE.sbkey,S.cfg.sbkey);
+    localStorage.setItem(STORAGE.anthbase,S.cfg.anthbase);
+  }catch(e){}
+}
+function pintarProgresso(){ if(S.tela==="progresso"){ const el=app(); if(el){ el.innerHTML=vProgresso(); ligarEventos(); } } }
+
+/* =========================================================================
+   11. PRINT
+   ========================================================================= */
+function buildPrintDoc(r){
+  if(!r) return;
+  const secoes=splitSections(r.relatorio);
+  let body="";
+  SECOES.forEach(s=>{ if(!secoes[s.k]) return;
+    if(s.k==="checklist"){ const itens=r.checklist||[];
+      body+='<h2>'+esc(s.t)+'</h2><ul>'+itens.map(it=>'<li>'+(it.feito?"☑":"☐")+" "+esc(it.texto)+'</li>').join("")+'</ul>'; return; }
+    body+='<h2>'+esc(s.t)+'</h2>'+mdRender(secoes[s.k]);
+  });
+  const p=r.paciente||{};
+  const meta="Doença: "+esc(r.doenca)+" · Paciente: "+esc(p.iniciais||"—")
+    +(p.idade?(" · "+esc(p.idade)):"")+(p.sexo?(" · "+esc(p.sexo)):"")
+    +" · "+esc(fmtDataHora(r.criado_em||new Date().toISOString()))
+    +" · "+esc((PROFUNDIDADES[r.profundidade]||{}).nome||r.profundidade)
+    +(r.status==="sem_fontes"?" · SEM VERIFICAÇÃO NA LITERATURA":"");
+  document.getElementById("printdoc").innerHTML=
+    '<h1>'+esc(r.doenca)+'</h1><div class="meta">'+meta+'</div><div class="rel">'+body+'</div>'
+    +'<div class="rodape">⚕️ Apoio à decisão para médicos — não substitui o julgamento clínico. Confira doses e condutas em fonte oficial/bulário. Gerado em '+esc(fmtDataHora(new Date().toISOString()))+'.</div>';
+}
+
+/* =========================================================================
+   12. AUTOTESTE (sem rede) + FIXTURES
+   ========================================================================= */
+const FIXT_MM = [
+"## Visão geral da doença",
+"Mieloma múltiplo é neoplasia de plasmócitos com produção de proteína monoclonal [PMID 33921211].",
+"",
+"## Critérios diagnósticos e escores validados",
+"Critérios **IMWG**: ≥10% plasmócitos clonais ou plasmocitoma **+ CRAB** ou biomarcadores SLiM.",
+"",
+"## Anamnese completa — perguntas que não podem faltar",
+"- Dor óssea, seu padrão e duração?",
+"- Fadiga, perda de peso, infecções de repetição?",
+"",
+"## Exame físico direcionado",
+"- Palidez, dor à palpação óssea, sinais de compressão medular.",
+"",
+"## Exames complementares recomendados",
+"- Eletroforese de proteínas séricas e urinárias, cadeias leves livres, cálcio, função renal.",
+"",
+"## 🚩 Sinais de alarme (red flags)",
+"- Hipercalcemia sintomática, insuficiência renal aguda, compressão medular.",
+"",
+"## Diagnósticos diferenciais que não podem ser esquecidos",
+"- MGUS, mieloma smoldering, plasmocitoma solitário, metástases ósseas, amiloidose AL.",
+"",
+"## Cruzamento com o paciente e aproximação diagnóstica",
+"| Achado esperado | Dado do paciente | Status |",
+"|---|---|---|",
+"| Anemia | Hb informada | presente |",
+"| Cálcio elevado | não informado | não avaliado |",
+"",
+"Lacunas prioritárias: eletroforese de proteínas, cálcio sérico.",
+"",
+"## Checklist de verificação",
+"- [ ] Solicitar eletroforese de proteínas séricas e urinárias",
+"- [ ] Dosar cálcio e função renal",
+"- [x] Hemograma revisado",
+"",
+"## Tratamento",
+"Esquemas baseados em bortezomibe/lenalidomida/dexametasona conforme elegibilidade a transplante — confira dose no bulário/fonte oficial. Ajuste por função renal.",
+"",
+"## Monitoramento e sinais de piora",
+"- Piora renal, hipercalcemia, novas lesões ósseas.",
+"",
+"## Armadilhas comuns de diagnóstico",
+"- Atribuir dor lombar a causa mecânica sem investigar. ⚠️ evidência limitada",
+"",
+"## Referências",
+"- [PMID 33921211] Rajkumar et al. Multiple myeloma. Am J Hematol, 2022."
+].join("\n");
+
+// prévia offline: monta uma pesquisa a partir da fixture e abre a tela de relatório (sem chave/rede)
+function demoRelatorio(){
+  const secoes=splitSections(FIXT_MM);
+  const checklist=checklistFromMd(secoes.checklist||"");
+  const f=exemploMM();
+  S.atual={ doenca:f.doenca, paciente:pacienteObj(f), estrategia:{},
+    fontes:[{tipo:"Review",fonte:"PubMed",titulo:"Multiple myeloma",ano:"2022",url:"https://pubmed.ncbi.nlm.nih.gov/33921211/",id:"33921211"}],
+    relatorio:FIXT_MM, checklist:checklist, modelo:"claude-sonnet-5", profundidade:"padrao",
+    status:"concluida", criado_em:new Date().toISOString() };
+  irTela("relatorio");
+}
+function exemploMM(){
+  return { doenca:"Mieloma múltiplo", iniciais:"J.B.", idade:"68 anos", sexo:"Masculino", gestante:"nao",
+    queixa:"Dor lombar progressiva há 3 meses e fadiga.",
+    sintomas:"Dor óssea de piora noturna, astenia importante, perda de ~5 kg.",
+    comorbidades:"HAS", medicamentos:"Losartana, Hidroclorotiazida",
+    alergias:"Nega", exames:"Hb 9,2 g/dL (anemia normocítica); VHS 90 mm/h; creatinina 1,8 mg/dL." };
+}
+
+function runAutoteste(){
+  const out=[]; const ok=(nome,cond)=>{ out.push('<div class="'+(cond?"t-ok":"t-fail")+'">'+(cond?"✅":"❌")+" "+nome+'</div>'); };
+  try{
+    // 1) SSE parser: fronteiras hostis, \r\n, ping, thinking_delta ignorado, error
+    const p=makeSSEParser(); let acc="";
+    const chunks=[
+      'event: message_start\r\ndata: {"type":"message_start"}\r\n\r\n',
+      'event: content_block_start\ndata: {"type":"content_block_start","content_block":{"type":"thinking"}}\n\n',
+      'data: {"type":"content_block_delta","delta":{"type":"thinking_delta","thinking":"raciocínio"}}\n\n',
+      'data: {"type":"content_block_del','ta","delta":{"type":"text_delta","text":"Olá "}}\n\n',
+      'event: ping\ndata: {"type":"ping"}\n\n',
+      'data: {"type":"content_block_delta","delta":{"type":"text_delta","text":"mundo"}}\n\n',
+      'data: {"type":"message_delta","delta":{"stop_reason":"end_turn"}}\n\n'
+    ];
+    let stop=null;
+    chunks.forEach(c=>{ p.feed(c).forEach(ev=>{ const d=ev.data; if(!d) return;
+      if(d.type==="content_block_delta"&&d.delta.type==="text_delta") acc+=d.delta.text;
+      if(d.type==="message_delta"&&d.delta.stop_reason) stop=d.delta.stop_reason; }); });
+    ok("SSE parser monta texto ignorando thinking (\""+acc+"\")", acc==="Olá mundo");
+    ok("SSE parser captura stop_reason", stop==="end_turn");
+
+    // 2) mdRender: XSS escapado + PMID vira link
+    const h=mdRender('**Bold** e `code` <script>alert(1)<\/script> [PMID 123]');
+    ok("mdRender escapa <script> (sem tag executável)", h.indexOf("<script")<0);
+    ok("mdRender cria link PMID", h.indexOf("pubmed.ncbi.nlm.nih.gov/123/")>=0);
+    ok("mdRender aplica bold", h.indexOf("<strong>Bold</strong>")>=0);
+    const ht=mdRender("| A | B |\n|---|---|\n| 1 | 2 |");
+    ok("mdRender monta tabela", ht.indexOf("<table>")>=0 && ht.indexOf("<td>1</td>")>=0);
+
+    // 3) splitSections: 13 chaves + tolerante
+    const sc=splitSections(FIXT_MM);
+    const faltando=SECOES.filter(s=>!(s.k in sc)).map(s=>s.k);
+    ok("splitSections cobre as 13 seções", faltando.length===0);
+    ok("splitSections separa 'alarme'", (sc.alarme||"").indexOf("Hipercalcemia")>=0);
+
+    // 4) checklist parse + merge
+    const cl=checklistFromMd(sc.checklist);
+    ok("checklistFromMd extrai 3 itens", cl.length===3);
+    ok("checklistFromMd marca [x]", cl[2].feito===true && cl[0].feito===false);
+    const merged=mergeChecklist(cl,[{i:0,texto:cl[0].texto,feito:true}]);
+    ok("mergeChecklist aplica estado salvo", merged[0].feito===true);
+
+    // 5) extractJson tolerante
+    ok("extractJson com fence", (extractJson('```json\n{"a":1}\n```')||{}).a===1);
+    ok("extractJson com prosa", (extractJson('Aqui está: {"b":2} fim')||{}).b===2);
+    ok("extractJson lixo → null", extractJson("sem json")===null);
+
+    // 6) fallbackQueries
+    const fq=fallbackQueries("dengue");
+    ok("fallbackQueries gera 3 queries", fq.length===3);
+    ok("fallbackQueries inclui filtro de idioma", /english\[la\]/.test(fq[0].term));
+
+    // 7) buildRefs a partir de esummary fake
+    const refs=buildRefs({ uids:["111"], "111":{ title:"T", fulljournalname:"Rev", pubdate:"2021 Jan",
+      authors:[{name:"Silva A"}], articleids:[{idtype:"doi",value:"10.1/x"}], pubtype:["Review"] }},"PubMed");
+    ok("buildRefs monta autor/ano/url", refs[0].autor==="Silva A et al." && refs[0].ano==="2021" && /pubmed.*111/.test(refs[0].url));
+
+    // 8) needsRefresh fronteiras
+    const now=1000000000000;
+    ok("needsRefresh 61s → false", needsRefresh(Math.floor(now/1000)+61, now)===false);
+    ok("needsRefresh 59s → true", needsRefresh(Math.floor(now/1000)+59, now)===true);
+    ok("needsRefresh sem expiry → true", needsRefresh(0, now)===true);
+
+    // 9) dedupe por PMID/DOI
+    const dd=dedupeFontes([{pmid:"1",titulo:"a"},{pmid:"1",titulo:"a2"},{doi:"10.1/X",titulo:"b"},{doi:"10.1/x",titulo:"b2"}]);
+    ok("dedupeFontes remove PMID/DOI duplicados", dd.length===2);
+
+    // 10) throttle: 4 chamadas ao mesmo host espaçam >= min (clock sintético).
+    // Testa a matemática de agendamento (tempos "at"), sem depender de microtasks.
+    (function(){
+      let vnow=0; const timers=[];
+      const th=makeThrottle(()=>vnow,(fn,ms)=>timers.push({at:vnow+ms,fn}));
+      for(let i=0;i<4;i++) th("h",340,()=>{});
+      const ats=timers.map(t=>t.at).sort((a,b)=>a-b);
+      let okgap=true; for(let i=1;i<ats.length;i++){ if(ats[i]-ats[i-1]<340) okgap=false; }
+      ok("throttle espaça >=340ms", okgap && ats.length===4 && ats[0]===340);
+    })();
+
+    // 11) esc
+    ok("esc escapa aspas e < >", esc('<a "x">')==="&lt;a &quot;x&quot;&gt;");
+  }catch(e){ out.push('<div class="t-fail">❌ exceção: '+esc(e.message)+'</div>'); }
+  const el=document.getElementById("autoteste"); if(el) el.innerHTML=out.join("");
+  return out;
+}
+
+/* =========================================================================
+   13. INIT
+   ========================================================================= */
+function carregarCfg(){
+  try{
+    S.cfg.apikey=localStorage.getItem(STORAGE.apikey)||"";
+    S.cfg.modelo=localStorage.getItem(STORAGE.modelo)||MODELOS.padrao.id;
+    S.cfg.prof=localStorage.getItem(STORAGE.prof)||"padrao";
+    S.cfg.fontes=JSON.parse(localStorage.getItem(STORAGE.fontes)||"{}");
+    S.cfg.sburl=localStorage.getItem(STORAGE.sburl)||SB_DEFAULT_URL;
+    S.cfg.sbkey=localStorage.getItem(STORAGE.sbkey)||SB_DEFAULT_KEY;
+    S.cfg.anthbase=localStorage.getItem(STORAGE.anthbase)||"";
+  }catch(e){}
+}
+async function init(){
+  carregarCfg(); loadSession();
+  if(S.sess && sbConfigured()){
+    const ok=await ensureFreshToken();
+    if(ok){ try{ S.hist=await dbList(); }catch(e){} irTela("home"); return; }
+  }
+  irTela(S.sess?"home":"login");
+  // refresh ao voltar de background
+  document.addEventListener("visibilitychange",()=>{ if(document.visibilityState==="visible" && S.sess) ensureFreshToken(); });
+}
+window.addEventListener("DOMContentLoaded", init);
+// expõe funções puras para testes headless
+window.__dx={ makeSSEParser, mdRender, splitSections, checklistFromMd, mergeChecklist, extractJson,
+  fallbackQueries, buildRefs, needsRefresh, dedupeFontes, makeThrottle, esc, runAutoteste,
+  demoRelatorio, SECOES, FIXT_MM };
+</script>
+</body>
+</html>
