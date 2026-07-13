@@ -821,9 +821,87 @@ function pacienteObj(form){
     medicamentos:form.medicamentos, alergias:form.alergias, exames:form.exames };
 }
 
+/* ---- Modo DOSSIÊ (gratuito, sem IA/sem chave) --------------------------- */
+// pura (autotestada): transforma o pacote de fontes em um dossiê markdown com links reais
+function bundleToMarkdown(form, bundle, ctx){
+  bundle=bundle||{};
+  const item=(it)=>{
+    const label=String(it.titulo||"(sem título)").replace(/[\[\]()]/g," ").trim();
+    const meta=[it.revista, it.ano, it.tipoPub].filter(Boolean).join(", ");
+    const link = it.url ? ("["+label+"]("+it.url+")") : label;
+    const cita = it.pmid ? (" [PMID "+it.pmid+"]") : (/^NCT/.test(it.id||"") ? (" ["+it.id+"]") : "");
+    const res = it.resumo ? ("\n  - *"+String(it.resumo).replace(/[\n*]+/g," ").slice(0,300)+"*") : "";
+    return "- "+link+(meta?(" — "+meta):"")+cita+res;
+  };
+  const secao=(titulo,itens)=>{ itens=(itens||[]).filter(x=>x&&(x.titulo||x.resumo));
+    return itens.length ? ("## "+titulo+"\n"+itens.map(item).join("\n")+"\n\n") : ""; };
+  const lit=bundle.literatura||[];
+  const ehGuia=x=>/guideline|systematic|meta-?anal|practice|review|revis|diretriz/i.test((x.tipoPub||"")+" "+(x.titulo||""));
+  let md="";
+  md+=secao("📖 Visão geral e material de referência", (bundle.resumos||[]).concat(bundle.consumidor||[]));
+  md+=secao("📕 Diretrizes e revisões sistemáticas", lit.filter(ehGuia));
+  md+=secao("🆕 Estudos recentes", lit.filter(x=>!ehGuia(x)));
+  md+=secao("🧪 Ensaios clínicos em andamento e tratamentos experimentais", bundle.ensaios);
+  md+=secao("💊 Medicamentos e segurança (bulas)", bundle.medicamentos);
+  md+=secao("🧬 Genética", bundle.genetica);
+  const usadas=(bundle.usadas||[]).join(", "); const falhas=(bundle.falhas||[]).join(", ");
+  md+="## Fontes consultadas\n"+(usadas?("Responderam: "+usadas+".\n"):"")+(falhas?("Sem resposta: "+falhas+".\n"):"");
+  md+="\n> Dossiê montado automaticamente a partir das bases públicas (sem IA). A leitura e a decisão clínica são do médico. Confira sempre doses e condutas em fonte oficial/bulário.";
+  if(!lit.length && !(bundle.ensaios||[]).length && !(bundle.medicamentos||[]).length && !(bundle.resumos||[]).length)
+    md="## Sem resultados\nNenhuma fonte retornou itens nesta execução (pode ser instabilidade das bases ou o termo da doença). Tente novamente ou ajuste o nome da doença.\n\n"+md;
+  return md.trim();
+}
+// pura: lista de seções do dossiê para a navegação (título + âncora)
+function dossieSecoes(md){
+  const out=[]; String(md||"").split("\n").forEach(l=>{ const m=l.match(/^##\s+(.*)/);
+    if(m) out.push({ titulo:m[1].trim(), anchor:slugify(m[1]) }); });
+  return out;
+}
+function ehDossie(r){ return !!(r && (r.tipo==="dossie" || r.profundidade==="dossie")); }
+
+// pipeline gratuito: normalizar → fan-out → montar dossiê (nenhuma chamada de IA)
+async function runDossie(form){
+  S.pipe={ fase:"normalizar", passos:[
+    {k:"normalizar",nome:"Normalizar termo (MeSH)"},
+    {k:"fontes",nome:"Consultar todas as fontes gratuitas"},
+    {k:"montar",nome:"Montar dossiê"}
+  ], logs:[], feito:{}, texto:"", status:"concluida", erro:null };
+  S.busy=true; irTela("progresso");
+  const prof=S.cfg.prof||"padrao";
+  const ativos={}; FONTES_DEF.forEach(f=>{ ativos[f.id]=S.cfg.fontes[f.id]!==false; });
+  try{
+    let doenca_en=form.doenca;
+    try{ pfase("normalizar"); const ids=await euSearch("mesh", form.doenca, 1, 3650);
+      if(ids.length){ const sum=await euSummary("mesh", ids); const it=sum[ids[0]]; if(it&&it.ds_meshterms&&it.ds_meshterms[0]) doenca_en=it.ds_meshterms[0]; }
+      plog("Termo: "+doenca_en);
+    }catch(e){ plog("MeSH indisponível — usando o termo original"); }
+    const ctx={ doenca:form.doenca, doenca_en:doenca_en, sinonimos:[], eh_rara:false,
+      medicamentos_foco:medsDoForm(form), queries_literatura:fallbackQueries(doenca_en), termo_ensaio:doenca_en };
+    pfase("fontes");
+    const bundle=await coletarFontes(ctx, prof, ativos, plog);
+    S.pipe.bundle=bundle;
+    pfase("montar");
+    const md=bundleToMarkdown(form, bundle, ctx);
+    const total=(bundle.literatura||[]).length+(bundle.resumos||[]).length+(bundle.ensaios||[]).length+(bundle.medicamentos||[]).length+(bundle.genetica||[]).length;
+    const fontesUsadas=[].concat(bundle.literatura,bundle.resumos,bundle.genetica,bundle.medicamentos,bundle.ensaios)
+      .filter(Boolean).map(x=>({tipo:x.tipoPub||"", fonte:x.fonte, titulo:x.titulo, ano:x.ano, url:x.url, id:x.pmid||x.id||""}));
+    const row={ doenca:form.doenca, paciente:pacienteObj(form), estrategia:ctx, fontes:fontesUsadas,
+      relatorio:md, checklist:[], modelo:"dossiê (grátis)", profundidade:"dossie",
+      status: total>0?"concluida":"sem_fontes" };
+    let pesquisa=Object.assign({tipo:"dossie", criado_em:new Date().toISOString()}, row);
+    S.pipe.feito.montar=true;
+    if(sbConfigured() && S.sess){ try{ const salvo=await dbInsert(row); pesquisa.id=salvo.id; pesquisa.criado_em=salvo.criado_em; plog("Salvo na nuvem"); }catch(e){ plog("Não salvou na nuvem: "+e.message); } }
+    S.atual=pesquisa; S.busy=false;
+    if(sbConfigured()&&S.sess){ try{ S.hist=await dbList(); }catch(e){} }
+    irTela("relatorio");
+  }catch(e){ S.busy=false; S.pipe.erro=e.message||"erro"; pintarProgresso(); toast("Erro: "+S.pipe.erro,"err"); }
+}
+
 /* =========================================================================
    9. REPORT MODEL (puras — autotestadas)
    ========================================================================= */
+// id de âncora estável a partir de um título (para navegação no dossiê)
+function slugify(s){ return "s-"+String(s==null?"":s).toLowerCase().replace(/[^\wà-ú]+/gi,"-").replace(/^-+|-+$/g,"").slice(0,48); }
 // escapa HTML PRIMEIRO, depois aplica markdown → HTML seguro
 function mdRender(md){
   const linhas=String(md==null?"":md).split("\n");
@@ -831,6 +909,8 @@ function mdRender(md){
   const fechaUL=()=>{ if(emUL){ html+="</ul>"; emUL=false; } };
   const inline=(t)=>{
     t=esc(t);
+    // links markdown [texto](url) — só http(s)/# permitidos (URL já escapada = segura no href)
+    t=t.replace(/\[([^\]]+)\]\((https?:\/\/[^)\s]+|#[^)\s]*)\)/g,(m,txt,url)=>'<a target="_blank" rel="noopener" href="'+url+'">'+txt+'</a>');
     // citações tipadas → links / chips
     t=t.replace(/\[PMID\s*(\d+)\]/g,(m,n)=>'<a class="cita" target="_blank" rel="noopener" href="https://pubmed.ncbi.nlm.nih.gov/'+n+'/">PMID '+n+'</a>');
     t=t.replace(/\[(NCT\d{6,})\]/g,(m,n)=>'<a class="cita" target="_blank" rel="noopener" href="https://clinicaltrials.gov/study/'+n+'">'+n+'</a>');
@@ -859,9 +939,9 @@ function mdRender(md){
       continue;
     }
     let m;
-    if((m=l.match(/^###\s+(.*)/))){ fechaUL(); html+="<h3>"+inline(m[1])+"</h3>"; }
-    else if((m=l.match(/^##\s+(.*)/))){ fechaUL(); html+="<h2>"+inline(m[1])+"</h2>"; }
-    else if((m=l.match(/^#\s+(.*)/))){ fechaUL(); html+="<h2>"+inline(m[1])+"</h2>"; }
+    if((m=l.match(/^###\s+(.*)/))){ fechaUL(); html+='<h3 id="'+slugify(m[1])+'">'+inline(m[1])+"</h3>"; }
+    else if((m=l.match(/^##\s+(.*)/))){ fechaUL(); html+='<h2 id="'+slugify(m[1])+'">'+inline(m[1])+"</h2>"; }
+    else if((m=l.match(/^#\s+(.*)/))){ fechaUL(); html+='<h2 id="'+slugify(m[1])+'">'+inline(m[1])+"</h2>"; }
     else if((m=l.match(/^\s*[-*]\s+\[( |x|X)\]\s+(.*)/))){ // checkbox → item de lista (render estático)
       if(!emUL){ html+="<ul>"; emUL=true; }
       const mk=m[1].toLowerCase()==="x"?"☑":"☐";
@@ -998,9 +1078,10 @@ function vForm(){
     +campo("Alergias","f_alergias",f.alergias,"ex.: penicilina")
     +campo("Exames já realizados","f_exames",f.exames,"resultados relevantes","area")
     +'<div class="btnrow" style="margin-top:14px">'
-    +'<button class="btn primary" id="f_ir">🔎 Pesquisar em todas as fontes</button>'
+    +'<button class="btn primary" id="f_dossie">🔎 Dossiê gratuito (sem chave)</button>'
+    +(S.cfg.apikey?'<button class="btn" id="f_ir">🧠 Relatório com IA (Claude)</button>':'')
     +'<button class="btn ghost" data-go="home">Cancelar</button></div>'
-    +(!S.cfg.apikey?'<div class="banner ambar" style="margin-top:10px">⚠️ Configure sua chave de API Anthropic em ⚙️ para gerar o relatório.</div>':'')
+    +(!S.cfg.apikey?'<div class="banner azul" style="margin-top:10px">💡 O <b>dossiê gratuito</b> funciona sem chave e sem custo: reúne estudos recentes, ensaios em andamento, tratamentos experimentais, diretrizes e bulas. O relatório com <b>raciocínio adaptado ao paciente</b> (IA) fica disponível ao configurar uma chave da Anthropic em ⚙️.</div>':'')
     +'</div>';
 }
 function opt(arr,sel){ return arr.map(o=>'<option'+(o===sel?" selected":"")+'>'+esc(o)+'</option>').join(""); }
@@ -1024,24 +1105,31 @@ function vProgresso(){
 
 function vRelatorio(){
   const r=S.atual; if(!r) return topbar()+'<div class="card">Sem relatório.</div>';
-  const secoes=splitSections(r.relatorio);
-  const nav='<div class="secnav noprint">'+SECOES.filter(s=>secoes[s.k]).map(s=>'<a href="#sec_'+s.k+'">'+esc(s.t.replace("🚩 ",""))+'</a>').join("")+'</div>';
-  let body="";
-  SECOES.forEach(s=>{
-    if(!secoes[s.k]) return;
-    if(s.k==="checklist"){ body+='<h2 id="sec_'+s.k+'">'+esc(s.t)+'</h2>'+renderChecklist(); return; }
-    const cls = s.k==="alarme"?' redflag':'';
-    body+='<h2 id="sec_'+s.k+'">'+esc(s.t)+'</h2><div class="secao'+cls+'">'+mdRender(secoes[s.k])+'</div>';
-  });
+  let nav, body;
+  if(ehDossie(r)){
+    const secs=dossieSecoes(r.relatorio);
+    nav='<div class="secnav noprint">'+secs.map(s=>'<a href="#'+s.anchor+'">'+esc(s.titulo)+'</a>').join("")+'</div>';
+    body=mdRender(r.relatorio);
+  } else {
+    const secoes=splitSections(r.relatorio);
+    nav='<div class="secnav noprint">'+SECOES.filter(s=>secoes[s.k]).map(s=>'<a href="#sec_'+s.k+'">'+esc(s.t.replace("🚩 ",""))+'</a>').join("")+'</div>';
+    body="";
+    SECOES.forEach(s=>{
+      if(!secoes[s.k]) return;
+      if(s.k==="checklist"){ body+='<h2 id="sec_'+s.k+'">'+esc(s.t)+'</h2>'+renderChecklist(); return; }
+      const cls = s.k==="alarme"?' redflag':'';
+      body+='<h2 id="sec_'+s.k+'">'+esc(s.t)+'</h2><div class="secao'+cls+'">'+mdRender(secoes[s.k])+'</div>';
+    });
+  }
   const banner = r.status==="sem_fontes"
-    ? '<div class="banner ambar">Relatório gerado <b>sem verificação na literatura</b> (fontes indisponíveis nesta execução). Confirme tudo em fonte oficial.</div>' : '';
+    ? '<div class="banner ambar">'+(ehDossie(r)?'Nenhuma fonte retornou resultados nesta execução — tente novamente ou ajuste o termo.':'Relatório gerado <b>sem verificação na literatura</b> (fontes indisponíveis nesta execução). Confirme tudo em fonte oficial.')+'</div>' : '';
   const fontesCount=(r.fontes||[]).length;
   return topbar("Relatório")
     +'<div class="card">'
     +'<h1>'+esc(r.doenca)+'</h1>'
     +'<div>'+chip("azul",(r.paciente&&r.paciente.iniciais)||"paciente")
       +chip("cinza",(r.paciente&&r.paciente.idade)||"")+chip("cinza",(r.paciente&&r.paciente.sexo)||"")
-      +chip("verde",fontesCount+" fontes")+chip("cinza",(PROFUNDIDADES[r.profundidade]||{}).nome||r.profundidade)+'</div>'
+      +chip("verde",fontesCount+" fontes")+chip(ehDossie(r)?"ambar":"cinza",ehDossie(r)?"dossiê grátis":((PROFUNDIDADES[r.profundidade]||{}).nome||r.profundidade))+'</div>'
     +banner
     +'<div class="btnrow noprint" style="margin:10px 0">'
     +'<button class="btn primary" id="rp_print">🖨️ Imprimir / PDF</button>'
@@ -1118,6 +1206,7 @@ function ligarEventos(){
     on("ex_mm_prev",()=>{ demoRelatorio(); });
   }
   if(S.tela==="form"){
+    on("f_dossie",()=>{ coletarForm(); if(!S.form.doenca.trim()){ toast("Informe a doença suspeita","err"); return; } runDossie(S.form); });
     on("f_ir",()=>{ coletarForm(); if(!S.form.doenca.trim()){ toast("Informe a doença suspeita","err"); return; } runPesquisa(S.form); });
     ["f_doenca","f_iniciais","f_idade","f_queixa","f_sintomas","f_comorbidades","f_medicamentos","f_alergias","f_exames"].forEach(id=>{
       const el=document.getElementById(id); if(el) el.onblur=coletarForm; });
@@ -1200,19 +1289,23 @@ function pintarProgresso(){ if(S.tela==="progresso"){ const el=app(); if(el){ el
    ========================================================================= */
 function buildPrintDoc(r){
   if(!r) return;
-  const secoes=splitSections(r.relatorio);
   let body="";
-  SECOES.forEach(s=>{ if(!secoes[s.k]) return;
-    if(s.k==="checklist"){ const itens=r.checklist||[];
-      body+='<h2>'+esc(s.t)+'</h2><ul>'+itens.map(it=>'<li>'+(it.feito?"☑":"☐")+" "+esc(it.texto)+'</li>').join("")+'</ul>'; return; }
-    body+='<h2>'+esc(s.t)+'</h2>'+mdRender(secoes[s.k]);
-  });
+  if(ehDossie(r)){
+    body=mdRender(r.relatorio);
+  } else {
+    const secoes=splitSections(r.relatorio);
+    SECOES.forEach(s=>{ if(!secoes[s.k]) return;
+      if(s.k==="checklist"){ const itens=r.checklist||[];
+        body+='<h2>'+esc(s.t)+'</h2><ul>'+itens.map(it=>'<li>'+(it.feito?"☑":"☐")+" "+esc(it.texto)+'</li>').join("")+'</ul>'; return; }
+      body+='<h2>'+esc(s.t)+'</h2>'+mdRender(secoes[s.k]);
+    });
+  }
   const p=r.paciente||{};
   const meta="Doença: "+esc(r.doenca)+" · Paciente: "+esc(p.iniciais||"—")
     +(p.idade?(" · "+esc(p.idade)):"")+(p.sexo?(" · "+esc(p.sexo)):"")
     +" · "+esc(fmtDataHora(r.criado_em||new Date().toISOString()))
-    +" · "+esc((PROFUNDIDADES[r.profundidade]||{}).nome||r.profundidade)
-    +(r.status==="sem_fontes"?" · SEM VERIFICAÇÃO NA LITERATURA":"");
+    +" · "+esc(ehDossie(r)?"dossiê grátis":((PROFUNDIDADES[r.profundidade]||{}).nome||r.profundidade))
+    +(r.status==="sem_fontes"?" · SEM RESULTADOS":"");
   document.getElementById("printdoc").innerHTML=
     '<h1>'+esc(r.doenca)+'</h1><div class="meta">'+meta+'</div><div class="rel">'+body+'</div>'
     +'<div class="rodape">⚕️ Apoio à decisão para médicos — não substitui o julgamento clínico. Confira doses e condutas em fonte oficial/bulário. Gerado em '+esc(fmtDataHora(new Date().toISOString()))+'.</div>';
@@ -1369,6 +1462,20 @@ function runAutoteste(){
 
     // 11) esc
     ok("esc escapa aspas e < >", esc('<a "x">')==="&lt;a &quot;x&quot;&gt;");
+
+    // 12) mdRender: link markdown [texto](url)
+    const hl=mdRender('[NEJM](https://www.nejm.org/x)');
+    ok("mdRender cria link [texto](url)", hl.indexOf('href="https://www.nejm.org/x"')>=0);
+
+    // 13) dossiê gratuito: bundleToMarkdown monta seções + citações; dossieSecoes navega
+    const bmd=bundleToMarkdown({doenca:"x"}, {
+      literatura:[{titulo:"Guideline X", tipoPub:"Guideline", pmid:"9", url:"https://pubmed.ncbi.nlm.nih.gov/9/"}],
+      ensaios:[{titulo:"Trial Y", id:"NCT01234567", url:"https://clinicaltrials.gov/study/NCT01234567", fonte:"ClinicalTrials"}],
+      resumos:[], medicamentos:[], genetica:[], consumidor:[], usadas:["pubmed","clinicaltrials"], falhas:[] });
+    ok("bundleToMarkdown: seção de diretrizes", bmd.indexOf("Diretrizes e revisões")>=0);
+    ok("bundleToMarkdown: seção de ensaios", bmd.indexOf("Ensaios clínicos")>=0);
+    ok("bundleToMarkdown: cita PMID e NCT", bmd.indexOf("[PMID 9]")>=0 && bmd.indexOf("[NCT01234567]")>=0);
+    ok("dossieSecoes lista as seções (>=2)", dossieSecoes(bmd).length>=2);
   }catch(e){ out.push('<div class="t-fail">❌ exceção: '+esc(e.message)+'</div>'); }
   const el=document.getElementById("autoteste"); if(el) el.innerHTML=out.join("");
   return out;
@@ -1405,7 +1512,7 @@ else init();
 // expõe funções puras para testes headless
 window.__dx={ makeSSEParser, mdRender, splitSections, checklistFromMd, mergeChecklist, extractJson,
   fallbackQueries, buildRefs, needsRefresh, dedupeFontes, makeThrottle, esc, runAutoteste,
-  demoRelatorio, SECOES, FIXT_MM };
+  demoRelatorio, bundleToMarkdown, dossieSecoes, slugify, SECOES, FIXT_MM };
 </script>
 </body>
 </html>
