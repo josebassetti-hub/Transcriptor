@@ -40,7 +40,8 @@ class Memoria:
         self.verbetes = []
 
     def registrar(self, titulo, classificacao, formula, entradas, calculo,
-                  resultado, racional="", provs=None, sql_ref=None):
+                  resultado, racional="", provs=None, sql_ref=None,
+                  explicacao=""):
         """Registra um verbete e retorna seu código ("M1", "M2", ...).
 
         classificacao: "DADO" | "DADO-PROXY" | "PREMISSA DECLARADA" |
@@ -54,6 +55,8 @@ class Memoria:
         resultado: string formatada do número final (igual à das seções)
         provs:     proveniências exibidas como selos (render.selo_fonte)
         sql_ref:   rótulo da consulta reproduzível no bloco de SQLs do anexo
+        explicacao: a mesma conta em português corrente, sem jargão — para um
+                   analista júnior entender o que o número significa
         """
         codigo = "M{}".format(len(self.verbetes) + 1)
         self.verbetes.append({
@@ -61,6 +64,7 @@ class Memoria:
             "formula": formula, "entradas": entradas, "calculo": calculo,
             "resultado": resultado, "racional": racional,
             "provs": provs or [], "sql_ref": sql_ref,
+            "explicacao": explicacao,
         })
         return codigo
 
@@ -109,6 +113,11 @@ class Memoria:
                 )
             else:
                 blocos.append("<p>Valor: <b>{}</b></p>".format(v["resultado"]))
+            if v.get("explicacao"):
+                blocos.append(
+                    '<p class="explicacao"><b>Em palavras:</b> {}</p>'
+                    .format(v["explicacao"])
+                )
             if v["racional"]:
                 blocos.append('<p class="premissas">{}</p>'.format(v["racional"]))
             for p in v["provs"]:

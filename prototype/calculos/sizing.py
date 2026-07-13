@@ -140,6 +140,54 @@ def mercado_enderecavel(valores_por_cidade, municipios):
     return {"linhas": linhas, "totais": totais}
 
 
+def demanda_por_linha(bases, linhas):
+    """Mercado por linha de negócio: base contável × frequência anual × preço
+    (método incorporado do plano de negócio da Lorenzoni — a fórmula universal
+    de docs/drivers-demanda.md aplicada linha a linha, com cada frequência e
+    preço como PREMISSA DECLARADA com fonte).
+
+    bases: {"frota": total ponderado, "por_tipo": {tipo: qtd ponderada}}
+    linhas: [{nome, cnae, base ("frota" | {"tipos": [...]} |
+              {"derivada_de": [nomes], "divisor": n}), frequencia_ano?,
+              unidade, preco_medio_brl? | valor_anual_por_veiculo?,
+              racional_frequencia, racional_preco}]
+    Retorna {"linhas": [{...linha, base_qtd, qtd_ano, mercado, mix}],
+             "total": Σ mercado das linhas dimensionadas}.
+    Linha sem parâmetro suficiente sai com mercado=None (não dimensionada —
+    ausência declarada é melhor que número inventado).
+    """
+    calculadas = []
+    por_nome = {}
+    for ln in linhas:
+        base_cfg = ln.get("base", "frota")
+        if base_cfg == "frota":
+            base_qtd = bases.get("frota", 0)
+        elif isinstance(base_cfg, dict) and "tipos" in base_cfg:
+            base_qtd = sum(bases.get("por_tipo", {}).get(t, 0)
+                           for t in base_cfg["tipos"])
+        elif isinstance(base_cfg, dict) and "derivada_de" in base_cfg:
+            base_qtd = sum(por_nome.get(n, {}).get("qtd_ano") or 0
+                           for n in base_cfg["derivada_de"])
+            base_qtd /= base_cfg.get("divisor", 1)
+        else:
+            base_qtd = 0
+        qtd_ano = None
+        mercado = None
+        if ln.get("frequencia_ano") is not None and ln.get("preco_medio_brl"):
+            qtd_ano = base_qtd * ln["frequencia_ano"]
+            mercado = qtd_ano * ln["preco_medio_brl"]
+        elif ln.get("valor_anual_por_veiculo"):
+            mercado = base_qtd * ln["valor_anual_por_veiculo"]
+        item = {**ln, "base_qtd": base_qtd, "qtd_ano": qtd_ano,
+                "mercado": mercado}
+        por_nome[ln["nome"]] = item
+        calculadas.append(item)
+    total = sum(l["mercado"] for l in calculadas if l["mercado"])
+    for l in calculadas:
+        l["mix"] = (l["mercado"] / total) if (l["mercado"] and total) else None
+    return {"linhas": calculadas, "total": total}
+
+
 def por_atividade(sam_total, receita_alvo_total, atividades, concorrencia=None,
                   expansao=None):
     """Dimensionamento multi-CNAE: para cada atividade do estudo, o SAM da

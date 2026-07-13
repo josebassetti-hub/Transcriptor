@@ -42,6 +42,7 @@ def frota_regiao(config: dict):
     municipios_ok = {m["nome"] for m in config["regiao"].get("municipios", [])}
     por_tipo = {}
     por_municipio = {}
+    por_municipio_tipo = {}
     total_geral = 0
     excluidos = {}
     referencia = None
@@ -61,6 +62,8 @@ def frota_regiao(config: dict):
             por_tipo[l["tipo"]] = por_tipo.get(l["tipo"], 0) + q
             if mun:
                 por_municipio[mun] = por_municipio.get(mun, 0) + q
+                pmt = por_municipio_tipo.setdefault(mun, {})
+                pmt[l["tipo"]] = pmt.get(l["tipo"], 0) + q
     if not por_tipo:
         return None
     demo = dd.get("frota_origem", "demo") != "real"
@@ -70,6 +73,7 @@ def frota_regiao(config: dict):
         "excluidos": excluidos or None,
         "por_tipo": por_tipo,
         "por_municipio": por_municipio or None,
+        "por_municipio_tipo": por_municipio_tipo or None,
         "referencia": referencia,
         "proveniencia": {
             "origem": "fixture" if demo else "live",

@@ -205,7 +205,128 @@
       "participacao_sam": 0.04
     }
   ],
-  "racional_atividades": "Pesos do mix = premissa curada a partir da ESTRUTURA de linhas do plano de negócio (pneus como âncora + serviços correlatos), sem usar os valores em R$ do estudo manual (não verificados); a calibrar com a empresa",
+  "racional_atividades": "Participação por atividade = mix MEDIDO pela âncora de demanda por linha (frota atendível × frequência × preço); pesos de receita da empresa = premissa da estrutura do plano de negócio, a calibrar",
+  "linhas_negocio": [
+    {
+      "nome": "Pneus — automóveis",
+      "cnae": "4530-7/05",
+      "base": {
+        "tipos": ["automovel"]
+      },
+      "frequencia_ano": 1.2,
+      "unidade": "pneus",
+      "racional_frequencia": "1,2 pneu/veículo/ano [premissa declarada; referência pública: oficinas independentes respondem por 16,9 mi pneus/ano — Oficina Brasil/CINAU, https://oficinabrasil.com.br/noticia/mercado-cinau/oficina-independente-responde-pelo-consumo-de-16-9-milhoes-de-pneus-por-ano]",
+      "preco_medio_brl": 700,
+      "racional_preco": "R$ 700/pneu de automóvel — premissa do plano de negócio da empresa (declarada), a validar"
+    },
+    {
+      "nome": "Pneus — caminhonetes e utilitários",
+      "cnae": "4530-7/05",
+      "base": {
+        "tipos": ["caminhonete", "camioneta", "utilitario"]
+      },
+      "frequencia_ano": 1.2,
+      "unidade": "pneus",
+      "racional_frequencia": "mesma referência da linha de automóveis (1,2 pneu/veículo/ano)",
+      "preco_medio_brl": 1500,
+      "racional_preco": "R$ 1.500/pneu de caminhonete/utilitário — premissa do plano de negócio (declarada), a validar"
+    },
+    {
+      "nome": "Alinhamento",
+      "cnae": "4520-0/04",
+      "base": "frota",
+      "frequencia_ano": 1.0,
+      "unidade": "serviços",
+      "racional_frequencia": "1 alinhamento/veículo/ano — recomendação técnica a cada 10 mil km, próximo da quilometragem média anual [refs públicas: Quatro Rodas, https://quatrorodas.abril.com.br/auto-servico/quando-verificar-balanceamento-alinhamento-e-cambagem-do-seu-carro/; Revista Carro sobre km média]",
+      "preco_medio_brl": 100,
+      "racional_preco": "R$ 100/serviço — premissa do plano de negócio (declarada), a validar"
+    },
+    {
+      "nome": "Balanceamento",
+      "cnae": "4520-0/04",
+      "base": {
+        "derivada_de": ["Pneus — automóveis", "Pneus — caminhonetes e utilitários"],
+        "divisor": 2
+      },
+      "frequencia_ano": 1.0,
+      "unidade": "serviços",
+      "racional_frequencia": "balanceamento acompanha a troca de pneus (obrigatório a cada troca); troca típica de 2 pneus por atendimento → nº de pneus vendidos ÷ 2 [ref. Quatro Rodas, mesma acima]",
+      "preco_medio_brl": 100,
+      "racional_preco": "R$ 100/serviço — premissa do plano de negócio (declarada), a validar"
+    },
+    {
+      "nome": "Troca de óleo e lubrificação",
+      "cnae": "4520-0/05",
+      "base": "frota",
+      "frequencia_ano": 1.0,
+      "unidade": "trocas",
+      "racional_frequencia": "1 troca/veículo/ano — intervalo médio de 10 mil km ou 12 meses [refs públicas: G1, https://g1.globo.com/carros/dinheiro-sobre-rodas/noticia/2024/11/14/qual-e-o-melhor-momento-para-trocar-o-oleo-do-carro-veja-dicas.ghtml; Firestone]",
+      "preco_medio_brl": 350,
+      "racional_preco": "R$ 350/troca — premissa do plano de negócio (declarada), a validar"
+    },
+    {
+      "nome": "Freios",
+      "cnae": "4520-0/01",
+      "base": "frota",
+      "frequencia_ano": 0.5,
+      "unidade": "serviços",
+      "racional_frequencia": "50% da frota leve faz ao menos 1 serviço remunerado/ano [premissa conservadora do plano de negócio; ref. pública sobre intervalos: Terra/Meu Automóvel]",
+      "preco_medio_brl": 500,
+      "racional_preco": "R$ 500/serviço (peça + mão de obra) — premissa do plano de negócio (declarada), a validar"
+    },
+    {
+      "nome": "Suspensão",
+      "cnae": "4520-0/01",
+      "base": "frota",
+      "frequencia_ano": 0.2,
+      "unidade": "serviços",
+      "racional_frequencia": "1 intervenção a cada ~5 anos (desgaste típico entre 70–80 mil km) [ref. pública: Autoesporte, https://autoesporte.globo.com/servicos/manutencao-de-automoveis/noticia/2025/08/como-fazer-manutencao-suspensao-carro.ghtml]",
+      "preco_medio_brl": 1200,
+      "racional_preco": "R$ 1.200/serviço (peças + mão de obra) — premissa do plano de negócio (declarada), a validar"
+    },
+    {
+      "nome": "Estética automotiva",
+      "cnae": "4520-0/05",
+      "base": "frota",
+      "valor_anual_por_veiculo": 31.5,
+      "unidade": "R$/veículo",
+      "racional_frequencia": "gasto médio nacional: mercado de estética ~R$ 4 bi/ano ÷ frota ~127 mi veículos ≈ R$ 31,50/veículo/ano [referência externa Abrafest via Exame, NÃO verificada — média nacional aplicada à área, premissa declarada]",
+      "racional_preco": "derivado da referência acima"
+    },
+    {
+      "nome": "Borracharia (reparos)",
+      "cnae": "4520-0/06",
+      "base": "frota",
+      "unidade": "serviços",
+      "racional_frequencia": "SEM parâmetro de frequência com fonte — linha não dimensionada (ausência declarada é melhor que número inventado); a levantar com a empresa",
+      "racional_preco": "a levantar"
+    }
+  ],
+  "empresa_info": {
+    "funcionarios_previstos": 12,
+    "fonte": "plano de negócio da empresa (declarado): 12 colaboradores na configuração estabilizada",
+    "faixa_setorial_texto": "Referência declarada no plano de negócio (não verificada): faixa setorial típica de R$ 30 mil a R$ 80 mil de faturamento/funcionário/mês no varejo de pneus"
+  },
+  "benchmarks_externos": [
+    {
+      "rotulo": "Mercado brasileiro de pneus",
+      "texto": "USD 8,65 bi em 2025, projeção USD 10,04 bi em 2030 (CAGR 3,03%) — recorte só de PNEUS; o TAM deste estudo (divisão 45 da PAC) é mais largo, por isso maior",
+      "fonte": "Mordor Intelligence / ANIP (citado no plano de negócio; não verificado)",
+      "url": "https://www.mordorintelligence.com/pt/industry-reports/brazil-tire-market"
+    },
+    {
+      "rotulo": "Estética automotiva no Brasil",
+      "texto": "mercado nacional de ~R$ 4 bi/ano com crescimento de dois dígitos",
+      "fonte": "Abrafest via Exame (citado no plano de negócio; não verificado)",
+      "url": "https://exame.com/negocios/filha-de-mecanico-ela-fez-do-amor-por-carros-uma-empresa-milionaria-que-vai-crescer-75-em-2025/"
+    },
+    {
+      "rotulo": "Frota de São Gabriel da Palha (fonte alternativa)",
+      "texto": "30.677 veículos pelo DETRAN-ES/SIDES vs 29.031 pelo SENATRAN usado neste estudo — divergência de 5,7% entre fontes oficiais, declarada; no recorte de tipos atendidos, 12.749 (DETRAN-ES) vs 12.227 (SENATRAN), divergência de 4,3%",
+      "fonte": "painel SIDES/DETRAN-ES (citado no plano de negócio; não verificado)",
+      "url": "https://analitico.sides.es.gov.br/SASVisualAnalytics/"
+    }
+  ],
   "bottomup_validacao": {
     "agregado": "6449",
     "periodos": "-1",

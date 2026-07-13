@@ -231,6 +231,8 @@ a.memref{font-size:.72em;vertical-align:super;color:var(--mudo);text-decoration:
 .memoria td{word-break:break-word}
 .memoria pre{overflow-x:auto;font-size:.72rem;background:var(--pagina);
 padding:10px;border-radius:8px}
+.explicacao{font-size:.88rem;background:var(--pagina);border-radius:8px;
+padding:10px 14px;margin:10px 0 0}
 footer{color:var(--mudo);font-size:.8rem;margin-top:28px}
 """
 

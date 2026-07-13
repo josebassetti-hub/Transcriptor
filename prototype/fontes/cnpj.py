@@ -135,12 +135,14 @@ def funil_por_municipio(linhas, icp: dict):
                                    "por_cnae": {}})
         emp = l["qtd_empresas"]
         f["universo"] += emp
-        pc = f["por_cnae"].setdefault(l["cnae"], {"universo": 0, "mei": 0})
+        pc = f["por_cnae"].setdefault(l["cnae"],
+                                      {"universo": 0, "mei": 0, "icp": 0})
         pc["universo"] += emp
         if l["regime"] == "MEI":
             pc["mei"] += emp
         if l["porte"] in portes_ok and l["faixa_idade"] in faixas_ok:
             f["icp"] += emp
+            pc["icp"] += emp
             if l["regime"] == "SIMPLES":
                 f["icp_simples"] += emp
     return funil or None

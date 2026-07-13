@@ -22,7 +22,7 @@ from fontes.http_client import ClienteHTTP
 from fontes import ibge, bcb, cnpj, pnad, frota
 from calculos import sizing
 from relatorio import render as R
-from relatorio.memoria import Memoria
+from relatorio.memoria import Memoria, _tabela as tabela_aberta
 
 RAIZ = Path(__file__).resolve().parent
 
@@ -145,6 +145,21 @@ def gerar(config: dict, modo: str) -> str:
         round(icp_enderecavel) if icp_enderecavel is not None
         else contagem["n_icp"],
         config["icp"], config["captura"])
+    # demanda por linha de negócio (base × frequência × preço, premissas com
+    # fonte) sobre a frota atendível ponderada pelos fatores de acesso
+    demanda_linhas = None
+    if config.get("linhas_negocio") and frota_info:
+        if frota_info.get("por_municipio_tipo") and fatores_mun:
+            por_tipo_pond = {}
+            for mun_dl, tipos_m in frota_info["por_municipio_tipo"].items():
+                fb = fatores_mun.get(mun_dl, {"base": 1.0})["base"]
+                for t, q in tipos_m.items():
+                    por_tipo_pond[t] = por_tipo_pond.get(t, 0) + q * fb
+        else:
+            por_tipo_pond = dict(frota_info["por_tipo"])
+        demanda_linhas = sizing.demanda_por_linha(
+            {"frota": sum(por_tipo_pond.values()), "por_tipo": por_tipo_pond},
+            config["linhas_negocio"])
     tri = sizing.triangulacao(td["sam"], bu["sam"])
     sens = sizing.sensibilidade(bu["n_icp"])
     som_base = bu["cenarios"]["base"]["som"]
@@ -183,21 +198,50 @@ def gerar(config: dict, modo: str) -> str:
         f"pela premissa de atividade). No cenário-base de captura "
         f"({R.pct(bu['cenarios']['base']['taxa'])} em {bu['horizonte_anos']} anos), o "
         f"objetivo de receita anual (SOM) é {R.brl(som_base)}.</p>",
+        '<p class="explicacao"><b>Em palavras simples:</b> o estudo mediu um '
+        f"mercado anual de <b>{R.brl(sam_central)}</b> em "
+        f"{config['regiao'].get('apelido', config['regiao']['nome'])}; nele "
+        f"operam de verdade cerca de <b>{R.inteiro(bu['n_operantes'])}</b> "
+        "concorrentes do perfil-alvo; no cenário-base, a empresa captura "
+        f"{R.pct(bu['cenarios']['base']['taxa'])} disso — "
+        f"<b>{R.brl(som_base)}</b> por ano. Termos técnicos: ver o "
+        '<a href="#glossario">Glossário</a> no fim do relatório.</p>',
         '<p class="premissas">A conta completa de cada número deste estudo — '
         "fórmula, entradas, substituição numérica e links de verificação — está "
         'no <a href="#memoria-calculo">Anexo — Memória de cálculo</a>, no fim '
         "do relatório.</p>",
     ))
 
-    # 2. Metodologia
+    # 2. Metodologia — passo a passo em linguagem simples (analista júnior
+    # precisa conseguir seguir o estudo inteiro sem tradutor)
     s.append(secao(
-        "2. Escopo e metodologia",
-        "<p>Dupla metodologia com triangulação, no padrão descrito na pesquisa de mercado: "
-        "<b>top-down</b> (receita setorial oficial → participação do segmento → participação da "
-        "região) e <b>bottom-up</b> (nº de empresas-alvo do censo CNPJ × ticket médio anual × "
-        "taxa de captura por cenário). Toda fonte é citada no selo da respectiva seção; a "
-        "extração da base CNPJ usada é a de <b>" + config["cnpj_extracao"] + "</b>.</p>",
-        '<p class="premissas">ICP: ' + config["icp"]["descricao"] + "</p>",
+        "2. Escopo e metodologia — o passo a passo do estudo",
+        "<p>O estudo responde seis perguntas, nesta ordem, sempre com fonte "
+        "oficial citada e conta aberta:</p>"
+        "<ol>"
+        "<li><b>Quem pode comprar?</b> Contamos a base de clientes potenciais "
+        "(o “driver de demanda”: domicílios ou frota de veículos, "
+        "conforme o setor) — seção 3b.</li>"
+        "<li><b>Qual o tamanho do bolo, de cima para baixo?</b> Partimos da "
+        "receita nacional oficial do setor (IBGE) e recortamos por segmento e "
+        "região — o <b>top-down</b>, seção 4.</li>"
+        "<li><b>Quem já disputa esse bolo?</b> Contamos os concorrentes um a "
+        "um na base oficial de CNPJ, separando cadastro morto de negócio real "
+        "— o <b>bottom-up</b>, seção 5.</li>"
+        "<li><b>Os caminhos batem?</b> Cruzamos as estimativas independentes "
+        "(triangulação) e montamos os cenários de captura — seção 6.</li>"
+        "<li><b>Onde exatamente está o dinheiro?</b> Abrimos o mercado por "
+        "atividade/linha de negócio e testamos o realismo da meta — seções 7 "
+        "e 7b.</li>"
+        "<li><b>O que o estudo NÃO enxerga?</b> Limitações declaradas — "
+        "seção 8.</li>"
+        "</ol>"
+        "<p>Toda fonte é citada no selo da respectiva seção; a extração da "
+        "base CNPJ usada é a de <b>" + config["cnpj_extracao"] + "</b>. "
+        "Termos técnicos estão no <a href=\"#glossario\">Glossário</a> e toda "
+        "conta na <a href=\"#memoria-calculo\">Memória de cálculo</a>.</p>",
+        '<p class="premissas">ICP (o perfil de empresa contado como '
+        "concorrente/cliente-alvo): " + config["icp"]["descricao"] + "</p>",
     ))
 
     # 3. Contexto macroeconômico
@@ -259,6 +303,7 @@ def gerar(config: dict, modo: str) -> str:
                     racional=dd.get("racional_tipos", ""),
                     provs=[frota_info["proveniencia"]],
                     sql_ref="CONSULTA H",
+                    explicacao=("A área tem mais veículos do que a empresa atende: motos e caminhões ficam fora da conta desde o início, por decisão declarada do cliente."),
                 )
             tipos = sorted(frota_info["por_tipo"].items(), key=lambda kv: -kv[1])
             blocos_dd.append(
@@ -313,6 +358,7 @@ def gerar(config: dict, modo: str) -> str:
                                   "total, que retém o mercado da própria cidade."),
                         provs=[prov_cnpj, frota_info["proveniencia"]],
                         sql_ref="CONSULTAS A4 e H",
+                        explicacao=("Mede quanta oferta já existe em cada cidade: quantas empresas do ramo para cada mil veículos. Cidade com densidade baixa depende do polo — bom para a loja."),
                     )
                 entradas_fat = []
                 for l in me["linhas"]:
@@ -333,6 +379,7 @@ def gerar(config: dict, modo: str) -> str:
                     "",
                     "intervalos por cidade (acima)",
                     racional=config["regiao"].get("racional_fatores", ""),
+                    explicacao=("Que fatia do mercado de cada cidade a loja consegue disputar: 100% na cidade-sede e menos nas vizinhas, calibrado pela oferta local medida."),
                 )
                 refs_cidades = []
                 for l in me["linhas"]:
@@ -362,6 +409,9 @@ def gerar(config: dict, modo: str) -> str:
                         "{} veículos (base)".format(
                             R.inteiro(round(l["enderecavel"]))),
                         sql_ref="CONSULTA H",
+                        explicacao=("Da frota atendível desta cidade, a loja "
+                                    "disputa só a fração dada pelo fator de "
+                                    "acesso."),
                     )
                     refs_cidades.append(cod)
                 m_consol = mem.registrar(
@@ -378,6 +428,7 @@ def gerar(config: dict, modo: str) -> str:
                     "{} veículos (base; mín {}, máx {}; teto teórico {})".format(
                         R.inteiro(round(t["base"])), R.inteiro(round(t["min"])),
                         R.inteiro(round(t["max"])), R.inteiro(round(t["teto"]))),
+                    explicacao=("Somando a fatia disputável de cada cidade chega-se à frota que realmente conta para o negócio — somar tudo a 100% inflaria o mercado."),
                 )
                 dens_completa = dens_mun and len(dens_mun) == len(me["linhas"])
                 linhas_me = []
@@ -468,6 +519,7 @@ def gerar(config: dict, modo: str) -> str:
         "{} × {}".format(_num(td["tam"] / fator_un), _num(fator_un)),
         R.brl(td["tam"]),
         provs=[prov_ibge],
+        explicacao=("Quanto o setor inteiro fatura por ano no Brasil, segundo a pesquisa oficial do IBGE."),
     )
     m_cagr = None
     if td["cagr"] is not None and len(anos) >= 2:
@@ -484,6 +536,7 @@ def gerar(config: dict, modo: str) -> str:
              {"nome": "nº de anos", "valor": str(n_anos)}],
             "({} ÷ {})^(1/{}) − 1".format(_num(v1), _num(v0), n_anos),
             R.pct(td["cagr"]),
+            explicacao=("A velocidade média de crescimento do setor por ano no período da série."),
         )
     rac_seg = td["premissas"]["racional_segmento"]
     if rac_seg.startswith("DADO-PROXY"):
@@ -513,6 +566,7 @@ def gerar(config: dict, modo: str) -> str:
             R.pct(part_seg),
             racional=rac_seg,
             provs=[prov_segmento] if prov_segmento else [],
+            explicacao=("Do setor inteiro, qual pedaço é do segmento estudado — medido na tabela oficial, com o viés (quando houver) declarado."),
         )
     else:
         m_frac = mem.registrar(
@@ -524,6 +578,7 @@ def gerar(config: dict, modo: str) -> str:
             "",
             R.pct(part_seg),
             racional=rac_seg,
+            explicacao=("Do setor inteiro, qual pedaço é do segmento estudado."),
         )
     part_reg = td["premissas"]["participacao_regiao"]
     pct_chave = R.pct(part_reg, 1 if part_reg >= 0.01 else 4)
@@ -539,6 +594,7 @@ def gerar(config: dict, modo: str) -> str:
              for p in regiao_pesos],
             "mediana de {{{}}}".format("; ".join(R.pct(v) for v in vals_reg)),
             pct_chave,
+            explicacao=("Qual fatia do mercado nacional está na região: medida por mais de um caminho independente, ficando com o valor do meio."),
         )
     else:
         rac_reg = td["premissas"]["racional_regiao"]
@@ -555,6 +611,7 @@ def gerar(config: dict, modo: str) -> str:
             pct_chave,
             racional=rac_reg,
             sql_ref="CONSULTAS H e H2 (frota)" if m_consol else None,
+            explicacao=("Qual fatia do mercado nacional está na área do estudo."),
         )
     m_sam_td = mem.registrar(
         "SAM top-down — {}".format(config["regiao"]["nome"]),
@@ -565,6 +622,7 @@ def gerar(config: dict, modo: str) -> str:
          {"nome": "chave regional", "valor": pct_chave, "ref": m_chave}],
         "{} × {} × {}".format(_num(td["tam"]), R.pct(part_seg), pct_chave),
         R.brl(td["sam"]),
+        explicacao=("O bolo nacional recortado para o segmento e para a região — o mercado local calculado de cima para baixo."),
     )
 
     blocos_td = [
@@ -591,6 +649,19 @@ def gerar(config: dict, modo: str) -> str:
         blocos_td.append(R.tabela(
             ["Peso", "Participação de " + config["regiao"]["sigla"], "Base"],
             [(p["rotulo"], R.pct(p["valor"]), p["racional"]) for p in regiao_pesos],
+        ))
+    if config.get("benchmarks_externos"):
+        blocos_td.append(
+            "<p><b>Referências externas</b> (declaradas e NÃO verificadas — "
+            "servem para contraste de ordem de grandeza e nunca entram no "
+            "cálculo):</p>"
+        )
+        blocos_td.append(R.tabela(
+            ["Referência", "O que diz", "Fonte"],
+            [(b["rotulo"], b["texto"],
+              ('<a href="{}">{}</a>'.format(b["url"], b["fonte"])
+               if b.get("url") else b["fonte"]))
+             for b in config["benchmarks_externos"]],
         ))
     blocos_td.append(R.selo_fonte(prov_ibge))
     if prov_segmento:
@@ -627,6 +698,7 @@ def gerar(config: dict, modo: str) -> str:
         racional=bu["premissas"]["icp"],
         provs=[prov_cnpj],
         sql_ref="CONSULTA A4",
+        explicacao=("Concorrentes cadastrados com o perfil que interessa (tamanho e tempo de vida) — ainda sem separar quem opera de verdade."),
     )
     m_comp = None
     m_funil_v = None
@@ -652,6 +724,7 @@ def gerar(config: dict, modo: str) -> str:
             R.inteiro(contagem["universo_empresas"]) + " empresas no total",
             provs=[prov_cnpj],
             sql_ref="CONSULTA A4",
+            explicacao=("Abre o que existe em cada cidade, linha por linha — evita confundir o total de empresas do ramo com lojas da linha principal."),
         )
         m_funil_v = mem.registrar(
             "Funil bottom-up por cidade",
@@ -672,6 +745,7 @@ def gerar(config: dict, modo: str) -> str:
                       / max(1, sum(f["icp"] for _, f in cidades_ord)), 1)),
             "ver tabela da seção 5",
             sql_ref="CONSULTA A4",
+            explicacao=("De todas as empresas de cada cidade, quantas têm o perfil-alvo e quantas mostram sinal de operação real."),
         )
         if icp_enderecavel is not None:
             m_icp_end = mem.registrar(
@@ -697,6 +771,7 @@ def gerar(config: dict, modo: str) -> str:
                 "{} concorrentes-equivalentes (ICP real da área: {})".format(
                     R.inteiro(round(icp_enderecavel)),
                     R.inteiro(contagem["n_icp"])),
+                explicacao=("Concorrente de cidade vizinha só disputa parte do mesmo mercado que a loja — então ele conta só essa parte na soma."),
             )
     m_taxa = mem.registrar(
         "Taxa de atividade efetiva",
@@ -708,6 +783,7 @@ def gerar(config: dict, modo: str) -> str:
         R.pct(bu["taxa_atividade"], 1),
         racional=rac_atv,
         sql_ref="CONSULTA A4 (coluna regime)",
+        explicacao=("De cada 100 empresas cadastradas com o perfil, quantas mostram sinal de funcionar de verdade (optar pelo Simples é o sinal usado); as demais tendem a ser cadastros que nunca viraram negócio."),
     )
     m_oper = mem.registrar(
         "Empresas-alvo operantes",
@@ -721,6 +797,7 @@ def gerar(config: dict, modo: str) -> str:
           "ref": m_taxa}],
         "{} × {}".format(R.inteiro(bu["n_icp"]), R.pct(bu["taxa_atividade"], 1)),
         R.inteiro(bu["n_operantes"]) + " empresas",
+        explicacao=("Quantos concorrentes de verdade existem no mercado disputado."),
     )
     m_ticket = mem.registrar(
         "Ticket médio anual por empresa",
@@ -730,6 +807,7 @@ def gerar(config: dict, modo: str) -> str:
         "",
         R.brl(bu["ticket"]),
         racional=bu["premissas"]["racional_ticket"],
+        explicacao=("Quanto um concorrente típico fatura por ano — premissa declarada, com as referências que a sustentam."),
     )
     m_sam_bu = mem.registrar(
         "SAM bottom-up",
@@ -740,6 +818,7 @@ def gerar(config: dict, modo: str) -> str:
          {"nome": "ticket", "valor": "R$ " + _num(bu["ticket"]), "ref": m_ticket}],
         "{} × {}".format(R.inteiro(bu["n_operantes"]), _num(bu["ticket"])),
         R.brl(bu["sam"]),
+        explicacao=("O mercado local medido contando quem já está nele: número de concorrentes reais × quanto cada um fatura."),
     )
 
     if m_icp_end:
@@ -892,6 +971,7 @@ def gerar(config: dict, modo: str) -> str:
             racional=cfg_val.get(
                 "escopo_texto", "em " + config["regiao"]["nome"]),
             provs=[prov_c],
+            explicacao=("Conferência com uma contagem oficial independente do IBGE — os números não precisam bater, mas precisam fazer sentido juntos."),
         )
         blocos_bu.append(
             f"<p><b>Validação cruzada (fonte oficial independente):</b> o CEMPRE do IBGE "
@@ -939,6 +1019,7 @@ def gerar(config: dict, modo: str) -> str:
                 R.brl(mercado_labor),
                 provs=[informal["proveniencia"]],
                 sql_ref="CONSULTA F (PNAD)",
+                explicacao=("Estima o mercado pelo lado dos salários: trabalhadores × renda ÷ fatia do trabalho na receita — enxerga também o que o CNPJ não mostra."),
             )
             blocos_anc.append(
                 "<p><b>Diagnóstico por três âncoras independentes</b> (setores intensivos em "
@@ -1000,6 +1081,7 @@ def gerar(config: dict, modo: str) -> str:
             R.brl(mercado_demanda),
             racional=cfg_d["nota_regional"],
             provs=demanda["provs"] + [prov_dom, prov_ipca],
+            explicacao=("Quanto as famílias declaram gastar com o setor, vezes o número de casas da região, corrigido pela inflação até hoje."),
         )
         blocos_anc.append(
             f"<p><b>Âncora de demanda (POF):</b> despesa média mensal familiar com o setor de "
@@ -1017,6 +1099,63 @@ def gerar(config: dict, modo: str) -> str:
             blocos_anc.append(R.selo_fonte(prov_d))
         blocos_anc.append(R.selo_fonte(prov_dom))
         blocos_anc.append(R.selo_fonte(prov_ipca))
+    m_dl = None
+    if demanda_linhas and demanda_linhas["total"]:
+        entradas_dl = []
+        for l in demanda_linhas["linhas"]:
+            if l["mercado"] is None:
+                entradas_dl.append({
+                    "nome": l["nome"],
+                    "valor": "não dimensionada (sem parâmetro de frequência "
+                             "com fonte — a levantar com a empresa)"})
+            elif l["qtd_ano"] is not None:
+                entradas_dl.append({
+                    "nome": l["nome"],
+                    "valor": "{} veíc. × {}/ano = {} {} × R$ {} = {}".format(
+                        _num(l["base_qtd"]), _dec(l["frequencia_ano"], 1),
+                        _num(l["qtd_ano"]), l.get("unidade", "un."),
+                        _num(l["preco_medio_brl"]), R.brl(l["mercado"])),
+                    "fonte": l.get("racional_frequencia", "")})
+            else:
+                entradas_dl.append({
+                    "nome": l["nome"],
+                    "valor": "{} veíc. × R$ {}/veíc./ano = {}".format(
+                        _num(l["base_qtd"]),
+                        _dec(l["valor_anual_por_veiculo"], 2),
+                        R.brl(l["mercado"])),
+                    "fonte": l.get("racional_frequencia", "")})
+        m_dl = mem.registrar(
+            "Âncora de demanda por linha de negócio",
+            "DADO × PREMISSA",
+            "mercado da linha = base atendível ponderada × frequência anual "
+            "de uso × preço médio (frequências e preços = premissas "
+            "declaradas, cada uma com sua fonte)",
+            entradas_dl,
+            "soma das linhas dimensionadas (detalhe na seção 7b)",
+            R.brl(demanda_linhas["total"]) + "/ano",
+            racional=("Método incorporado do plano de negócio da empresa "
+                      "(dimensionamento por linha da analista), formalizado "
+                      "sobre a frota oficial ponderada pelos fatores de "
+                      "acesso; frequências e preços a validar com a empresa"),
+            explicacao=("Para cada serviço, contamos quantos veículos podem "
+                        "usar, quantas vezes por ano em média e a que preço. "
+                        "A soma é quanto os moradores da área tendem a GASTAR "
+                        "por ano nessas linhas — a demanda. Ela é maior que o "
+                        "SAM bottom-up porque este mede só a receita dos "
+                        "concorrentes formais (ME/EPP) da área: a diferença é "
+                        "atendida por MEIs e informais, por lojas de fora da "
+                        "área, ou é espaço real de expansão."),
+        )
+        blocos_anc.append(
+            "<p><b>Âncora de demanda por linha de negócio:</b> os moradores da "
+            f"área tendem a gastar <b>{R.brl(demanda_linhas['total'])}</b>/ano "
+            "nas linhas do estudo (frota atendível × frequência × preço — "
+            f"tabela completa na seção 7b).{mem.ref(m_dl)} O SAM bottom-up "
+            f"({R.brl(bu['sam'])}) mede só a receita dos concorrentes FORMAIS "
+            "do perfil-alvo — a diferença entre demanda e oferta formal local "
+            "é atendida por MEIs/informais e por lojas de fora da área, ou "
+            "indica espaço de expansão.</p>"
+        )
     # ---- memória de cálculo: SAM central, triangulação, SOM e sensibilidade --
     if usa_bu_central:
         m_sam_central = mem.registrar(
@@ -1030,6 +1169,7 @@ def gerar(config: dict, modo: str) -> str:
             "",
             R.brl(sam_central),
             racional=config.get("racional_sam_central", ""),
+            explicacao=("O número oficial do estudo para o tamanho do mercado local, e por que este caminho de cálculo foi o escolhido."),
         )
     else:
         m_sam_central = mem.registrar(
@@ -1040,6 +1180,7 @@ def gerar(config: dict, modo: str) -> str:
              {"nome": "SAM bottom-up", "valor": R.brl(bu["sam"]), "ref": m_sam_bu}],
             "({} + {}) ÷ 2".format(_num(td["sam"]), _num(bu["sam"])),
             R.brl(sam_central),
+            explicacao=("O número oficial do estudo para o tamanho do mercado local: a média dos dois caminhos de cálculo."),
         )
     tri_maior = max(td["sam"], bu["sam"])
     tri_menor = min(td["sam"], bu["sam"])
@@ -1051,6 +1192,7 @@ def gerar(config: dict, modo: str) -> str:
          {"nome": "SAM bottom-up", "valor": R.brl(bu["sam"]), "ref": m_sam_bu}],
         "({} − {}) ÷ {}".format(_num(tri_maior), _num(tri_menor), _num(tri_maior)),
         R.pct(tri["divergencia"]),
+        explicacao=("Quanto os dois jeitos independentes de calcular divergem entre si — quanto menor, mais confiável a estimativa."),
     )
     m_som = mem.registrar(
         "SOM por cenário de captura ({} anos)".format(bu["horizonte_anos"]),
@@ -1064,6 +1206,7 @@ def gerar(config: dict, modo: str) -> str:
         "por cenário (acima)",
         R.brl(som_base) + " (cenário-base)",
         racional=config["captura"].get("racional", ""),
+        explicacao=("A meta de receita: que fatia do mercado a empresa captura em cada cenário, do pessimista ao otimista."),
     )
     m_sens = mem.registrar(
         "Matriz de sensibilidade do SAM bottom-up",
@@ -1076,6 +1219,7 @@ def gerar(config: dict, modo: str) -> str:
           "valor": ", ".join("R$ " + _num(x) for x in sens["tickets"])}],
         "grade completa na tabela da seção 6",
         "ver matriz",
+        explicacao=("Mostra como o mercado muda se as duas premissas mais incertas (taxa de atividade e ticket) variarem — o intervalo honesto da estimativa."),
     )
 
     ressalva_demo = (
@@ -1215,6 +1359,20 @@ def gerar(config: dict, modo: str) -> str:
     # 7b. Dimensionamento por atividade (estudos multi-CNAE com mix de receita)
     if config.get("atividades"):
         sam_medio = sam_central
+        # mix medido: com a demanda por linha, a participação de cada
+        # atividade no SAM deixa de ser premissa e vira o mix MEDIDO
+        mix_medido = None
+        mercado_cnae = {}
+        if demanda_linhas and demanda_linhas["total"]:
+            for l in demanda_linhas["linhas"]:
+                if l["mercado"]:
+                    mercado_cnae[l["cnae"]] = (mercado_cnae.get(l["cnae"], 0)
+                                               + l["mercado"])
+            mix_medido = {cn: v / demanda_linhas["total"]
+                          for cn, v in mercado_cnae.items()}
+            for atv in config["atividades"]:
+                if atv["cnae"] in mix_medido:
+                    atv["participacao_sam"] = mix_medido[atv["cnae"]]
         expansao = None
         if config["icp"].get("peso_receita_secundaria") and conc_atividades:
             expansao = {
@@ -1254,6 +1412,7 @@ def gerar(config: dict, modo: str) -> str:
             racional=config.get("racional_atividades",
                                 "pesos declarados no arquivo do setor"),
             sql_ref="CONSULTA E" if conc_atividades else None,
+            explicacao=("Divide o mercado pelas linhas de negócio e testa se a meta da empresa é realista em cada uma."),
         )
         corpo_atv = [(
             "<p>Cada atividade é dimensionada como um mercado próprio; a receita-alvo é "
@@ -1266,6 +1425,42 @@ def gerar(config: dict, modo: str) -> str:
                "secundária, ponderadas pelo mix de receita)." if expansao else "")
             + "</p>"
         )]
+        if demanda_linhas:
+            linhas_dl_tab = []
+            for l in demanda_linhas["linhas"]:
+                if l["mercado"] is None:
+                    linhas_dl_tab.append((
+                        l["nome"], _num(l["base_qtd"]), "—", "—", "—",
+                        "não dimensionada (a levantar)", "—"))
+                elif l["qtd_ano"] is not None:
+                    linhas_dl_tab.append((
+                        l["nome"], _num(l["base_qtd"]),
+                        _dec(l["frequencia_ano"], 1) + "×/ano",
+                        _num(l["qtd_ano"]) + " " + l.get("unidade", "un."),
+                        "R$ " + _num(l["preco_medio_brl"]),
+                        R.brl(l["mercado"]), R.pct(l["mix"], 1)))
+                else:
+                    linhas_dl_tab.append((
+                        l["nome"], _num(l["base_qtd"]), "gasto/veíc.", "—",
+                        "R$ " + _dec(l["valor_anual_por_veiculo"], 2) + "/ano",
+                        R.brl(l["mercado"]), R.pct(l["mix"], 1)))
+            linhas_dl_tab.append((
+                "TOTAL (linhas dimensionadas)", "", "", "", "",
+                "<b>" + R.brl(demanda_linhas["total"]) + "</b>", "100%"))
+            corpo_atv.append(
+                "<p><b>Mercado por linha de negócio (lado da demanda):</b> "
+                "para cada linha, base atendível ponderada × frequência anual "
+                "de uso × preço médio. Frequências e preços são premissas "
+                "declaradas, cada uma com sua fonte — método incorporado do "
+                "plano de negócio da empresa e formalizado com a frota "
+                f"oficial.{mem.ref(m_dl)}</p>"
+            )
+            corpo_atv.append(R.tabela(
+                ["Linha de negócio", "Base atendível (ponderada)",
+                 "Frequência", "Volume/ano", "Preço médio [premissa]",
+                 "Mercado/ano", "% do mix"],
+                linhas_dl_tab,
+            ))
         tem_exp = expansao and any(l["sam_expandido"] for l in linhas_atv)
         cab = ["Atividade", "Mix de receita",
                ("SAM (conservador ↔ expandido)" if tem_exp else "SAM da atividade"),
@@ -1293,10 +1488,94 @@ def gerar(config: dict, modo: str) -> str:
                 f"<p><b>Dinâmica por atividade no emprego formal:</b> "
                 f"{config['nota_emprego_formal']}.</p>"
             )
+        # testes de realismo (método incorporado do plano da analista, com
+        # dados oficiais): mercado médio por concorrente e receita/funcionário
+        if mercado_cnae and funil_mun and icp_enderecavel is not None:
+            icp_end_cnae = {}
+            for mun2, f2 in funil_mun.items():
+                fb2 = fatores_mun.get(mun2, {"base": 1.0})["base"]
+                for cn2, pc2 in f2["por_cnae"].items():
+                    icp_end_cnae[cn2] = (icp_end_cnae.get(cn2, 0)
+                                         + pc2["icp"] * fb2)
+            linhas_mm = []
+            entradas_mm = []
+            for cn2 in sorted(mercado_cnae, key=lambda c: -mercado_cnae[c]):
+                icp_c = icp_end_cnae.get(cn2, 0)
+                mm = mercado_cnae[cn2] / icp_c if icp_c else None
+                mm_txt = (R.brl(mm) if mm
+                          else "sem concorrente formal no ICP local")
+                linhas_mm.append((cn2, R.brl(mercado_cnae[cn2]),
+                                  _dec(icp_c, 1), mm_txt))
+                entradas_mm.append({
+                    "nome": cn2,
+                    "valor": "{} ÷ {} = {}".format(
+                        _num(mercado_cnae[cn2]), _dec(icp_c, 1), mm_txt),
+                    "ref": m_dl})
+            m_mm = mem.registrar(
+                "Mercado médio por concorrente da linha (teste de realismo)",
+                "DERIVADO",
+                "mercado medido da linha ÷ concorrentes formais endereçáveis "
+                "da linha",
+                entradas_mm,
+                "por linha (acima)",
+                "comparar com o ticket premissado de "
+                + R.brl(config["icp"]["ticket_medio_anual_brl"]),
+                explicacao=("Se o mercado de cada linha fosse dividido em "
+                            "partes iguais entre os concorrentes formais que "
+                            "o disputam, quanto caberia a cada um. Onde esse "
+                            "valor é muito maior que o ticket premissado, há "
+                            "mais dinheiro por empresa (espaço, informalidade "
+                            "ou vazamento para fora da área)."),
+            )
+            corpo_atv.append(
+                "<p><b>Teste de realismo — mercado médio por concorrente:</b> "
+                "o mercado medido de cada linha dividido pelos concorrentes "
+                "formais endereçáveis da própria linha, para comparar com o "
+                f"ticket premissado.{mem.ref(m_mm)}</p>"
+            )
+            corpo_atv.append(R.tabela(
+                ["Atividade (CNAE)", "Mercado medido (demanda)",
+                 "Concorrentes endereçáveis (ICP)",
+                 "Mercado médio por concorrente"],
+                linhas_mm,
+            ))
+        ei = config.get("empresa_info")
+        if ei and ei.get("funcionarios_previstos"):
+            fat_func = som_base / ei["funcionarios_previstos"] / 12
+            m_ff = mem.registrar(
+                "Faturamento por funcionário (teste de realismo da meta)",
+                "DERIVADO",
+                "faturamento/funcionário/mês = SOM do cenário-base ÷ "
+                "funcionários previstos ÷ 12 meses",
+                [{"nome": "SOM cenário-base", "valor": R.brl(som_base),
+                  "ref": m_som},
+                 {"nome": "funcionários previstos",
+                  "valor": str(ei["funcionarios_previstos"]),
+                  "fonte": ei.get("fonte", "plano de negócio (declarado)")}],
+                "{} ÷ {} ÷ 12".format(_num(som_base),
+                                      ei["funcionarios_previstos"]),
+                "R$ " + _num(fat_func) + "/funcionário/mês",
+                racional=ei.get("faixa_setorial_texto", ""),
+                explicacao=("Divide a meta de receita pela equipe prevista. "
+                            "Se o valor cair muito fora da faixa típica do "
+                            "setor, ou a meta ou o quadro de pessoal está "
+                            "desajustado."),
+            )
+            corpo_atv.append(
+                f"<p><b>Teste de realismo — pessoal:</b> a meta do cenário-base "
+                f"({R.brl(som_base)}/ano) dividida pelos "
+                f"{ei['funcionarios_previstos']} funcionários previstos dá "
+                f"<b>R$ {_num(fat_func)}/funcionário/mês</b>. "
+                f"{ei.get('faixa_setorial_texto', '')}.{mem.ref(m_ff)}</p>"
+            )
         corpo_atv.append(
-            '<p class="premissas">Premissa participacao_sam por atividade declarada no '
-            'arquivo do setor; share implícito = receita-alvo da atividade ÷ SAM da '
-            'atividade.'
+            '<p class="premissas">'
+            + ("Participação por atividade = MIX MEDIDO pela âncora de demanda "
+               "por linha (tabela acima)" + mem.ref(m_dl) + "; "
+               if mix_medido else
+               "Premissa participacao_sam por atividade declarada no arquivo "
+               "do setor; ")
+            + 'share implícito = receita-alvo da atividade ÷ SAM da atividade.'
             + (f' Expansão por CNAE secundário: {config["icp"].get("racional_secundaria", "")}'
                if expansao else '')
             + mem.ref(m_atv) + '</p>'
@@ -1326,6 +1605,7 @@ def gerar(config: dict, modo: str) -> str:
             "{} (piso) a {} (teto)".format(R.brl(piso), R.brl(teto)),
             provs=[informal["proveniencia"]],
             sql_ref="CONSULTA F (PNAD)",
+            explicacao=("O tamanho do mercado invisível: quem trabalha no setor sem CNPJ. É dinheiro que circula, mas não aparece em nenhuma base formal."),
         )
         s.append(secao(
             "7c. Mercado informal (labor input method)",
@@ -1410,6 +1690,49 @@ def gerar(config: dict, modo: str) -> str:
         "8. Limitações declaradas",
         "<ul>" + "".join(f"<li>{i}</li>" for i in itens_lim) + "</ul>",
     ))
+
+    # Anexo — glossário: os termos do estudo em linguagem simples, para um
+    # analista júnior ler o relatório inteiro sem tradutor
+    glossario = [
+        ("TAM", "o mercado inteiro do setor no Brasil, em R$/ano (Total "
+         "Addressable Market)."),
+        ("SAM", "a fatia do TAM que está na região e no segmento da empresa — "
+         "o mercado que dá para disputar (Serviceable Addressable Market)."),
+        ("SOM", "a fatia do SAM que a empresa consegue capturar no horizonte "
+         "do plano — a meta de receita (Serviceable Obtainable Market)."),
+        ("Top-down", "cálculo de cima para baixo: começa na receita nacional "
+         "oficial e recorta por segmento e região."),
+        ("Bottom-up", "cálculo de baixo para cima: conta os concorrentes um a "
+         "um e multiplica pelo faturamento típico de cada um."),
+        ("ICP", "o perfil de empresa contado no estudo (porte, tempo de vida, "
+         "atividade) — Ideal Customer/Competitor Profile."),
+        ("CNAE", "código oficial da atividade econômica de cada CNPJ (ex.: "
+         "4530-7/05 = comércio varejista de pneus)."),
+        ("MEI / ME / EPP", "portes de empresa: Microempreendedor Individual "
+         "(fatura até R$ 81 mil/ano), Microempresa (até R$ 360 mil) e Empresa "
+         "de Pequeno Porte (até R$ 4,8 mi)."),
+        ("Simples Nacional", "regime simplificado de impostos; aderir a ele é "
+         "o sinal usado no estudo de que a empresa opera de verdade."),
+        ("Taxa de atividade", "de cada 100 CNPJs cadastrados com o perfil, "
+         "quantos mostram sinal de operação real — cadastro ativo não "
+         "significa negócio funcionando."),
+        ("Ticket médio", "faturamento anual típico de um concorrente do "
+         "perfil-alvo."),
+        ("Fator de acesso", "fração do mercado de uma cidade que a loja "
+         "consegue disputar: 100% na cidade-sede, menos nas vizinhas."),
+        ("Frota atendível", "só os tipos de veículo que a empresa atende "
+         "(decisão declarada do cliente)."),
+        ("CAGR", "crescimento médio composto ao ano de uma série histórica."),
+        ("Share implícito", "a fatia do mercado que a meta de receita "
+         "representa — o teste de realismo do plano."),
+        ("Selo cinza / laranja", "cinza = dado obtido ao vivo da fonte "
+         "oficial no momento da geração; laranja = dado de demonstração, com "
+         "o motivo declarado."),
+    ]
+    s.append('<section id="glossario"><h2>Anexo — Glossário: os termos do '
+             "estudo em linguagem simples</h2>"
+             + tabela_aberta(["Termo", "O que significa"], glossario)
+             + "</section>")
 
     # Anexo — memória de cálculo: verbetes registrados ao longo do pipeline +
     # SQLs de reprodução das consultas BigQuery declarados no config do setor
