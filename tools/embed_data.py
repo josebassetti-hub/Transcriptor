@@ -35,6 +35,12 @@ def main():
         else:
             with open(path, encoding="utf-8") as f:
                 data = json.load(f)
+        if marker == "REGRAS_MED":
+            # o app só exibe o critério de medição (aba Memorial) — versão enxuta p/ controlar
+            # o tamanho do arquivo; o JSON completo (incluídos, normas, aplicação) fica em data/
+            data = {"meta": {"cadernos": data.get("meta", {}).get("cadernos", [])},
+                    "regras": {c: {"criterio": r.get("criterio")}
+                               for c, r in data.get("regras", {}).items() if r.get("criterio")}}
         blob = json.dumps(data, ensure_ascii=False, separators=(",", ":"))
         blob = blob.replace("</", "<\\/")  # não fechar a tag <script>
         pat = re.compile(r"/\*" + marker + r"_START\*/.*?/\*" + marker + r"_END\*/", re.S)
