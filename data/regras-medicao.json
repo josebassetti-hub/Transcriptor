@@ -63,7 +63,8 @@
    "20 – SERVIÇOS COMPLEMENTARES EXTERNOS · 2004 – TRATAMENTO, CONSERVAÇÃO E LIMPEZA",
    "20 – SERVIÇOS COMPLEMENTARES EXTERNOS · 2005 – DIVERSOS EXTERNOS",
    "21 – SERVIÇOS COMPLEMENTARES INTERNOS · 2101 – QUADROS DE GIZ / AVISO",
-   "21 – SERVIÇOS COMPLEMENTARES INTERNOS · 2102 – ARMÁRIOS E PRATELEIRAS"
+   "21 – SERVIÇOS COMPLEMENTARES INTERNOS · 2102 – ARMÁRIOS E PRATELEIRAS",
+   "14 – INSTALAÇÕES HIDROSSANITÁRIAS (caderno GERAL — extração parcial: 14.14 / 14.15 / 14.19 / 14.21)"
   ]
  },
  "regras": {
@@ -1186,11 +1187,12 @@
    "u": "m",
    "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1514 – FIOS E CABOS",
    "atualizacao": "12/2023",
-   "aplicacao": "Indicado as instalações industriais, comerciais e residenciais para alimentação de circuitos de iluminação, força, sinalização e painéis de comando, podendo ser embutidas em eletrodutos, perfilados, eletrocalhas e canaletas em que sua flexibilidade auxilia o manuseio. Orienta-se que as instalaçõe...",
+   "aplicacao": "Indicado as instalações industriais, comerciais e residenciais para alimentação de circuitos de iluminação, força, sinalização e painéis de comando, podendo ser embutidas em eletrodutos, perfilados, eletrocalhas e canaletas em que sua flexibilidade auxilia o manuseio. Orienta-se que as instalações...",
    "incluidos": "Fornecimento dos materiais e mão de obra para execução do serviço.",
    "criterio": "Por metro instalado.",
    "normas": [
     "NBR NM 247-3:2002",
+    "IEC 60227-3",
     "NBR 280:2011",
     "NBR 5111:1997",
     "NBR 5410:2004",
@@ -1204,11 +1206,12 @@
    "u": "m",
    "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1514 – FIOS E CABOS",
    "atualizacao": "12/2023",
-   "aplicacao": "Indicado as instalações industriais, comerciais e residenciais para alimentação de circuitos de iluminação, força, sinalização e painéis de comando, podendo ser embutidas em eletrodutos, perfilados, eletrocalhas e canaletas em que sua flexibilidade auxilia o manuseio. Orienta-se que as instalaçõe...",
+   "aplicacao": "Indicado as instalações industriais, comerciais e residenciais para alimentação de circuitos de iluminação, força, sinalização e painéis de comando, podendo ser embutidas em eletrodutos, perfilados, eletrocalhas e canaletas em que sua flexibilidade auxilia o manuseio. Orienta-se que as instalações...",
    "incluidos": "Fornecimento dos materiais e mão de obra para execução do serviço.",
    "criterio": "Por metro instalado.",
    "normas": [
     "NBR NM 247-3:2002",
+    "IEC 60227-3",
     "NBR 280:2011",
     "NBR 5111:1997",
     "NBR 5410:2004",
@@ -1222,11 +1225,12 @@
    "u": "m",
    "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1514 – FIOS E CABOS",
    "atualizacao": "12/2023",
-   "aplicacao": "Indicado as instalações industriais, comerciais e residenciais para alimentação de circuitos de iluminação, força, sinalização e painéis de comando, podendo ser embutidas em eletrodutos, perfilados, eletrocalhas e canaletas em que sua flexibilidade auxilia o manuseio. Orienta-se que as instalaçõe...",
+   "aplicacao": "Indicado as instalações industriais, comerciais e residenciais para alimentação de circuitos de iluminação, força, sinalização e painéis de comando, podendo ser embutidas em eletrodutos, perfilados, eletrocalhas e canaletas em que sua flexibilidade auxilia o manuseio. Orienta-se que as instalações...",
    "incluidos": "Fornecimento dos materiais e mão de obra para execução do serviço.",
    "criterio": "Por metro instalado.",
    "normas": [
     "NBR NM 247-3:2002",
+    "IEC 60227-3",
     "NBR 280:2011",
     "NBR 5111:1997",
     "NBR 5410:2004",
@@ -1240,11 +1244,12 @@
    "u": "m",
    "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1514 – FIOS E CABOS",
    "atualizacao": "12/2023",
-   "aplicacao": "Indicado as instalações industriais, comerciais e residenciais para alimentação de circuitos de iluminação, força, sinalização e painéis de comando, podendo ser embutidas em eletrodutos, perfilados, eletrocalhas e canaletas em que sua flexibilidade auxilia o manuseio. Orienta-se que as instalaçõe...",
+   "aplicacao": "Indicado as instalações industriais, comerciais e residenciais para alimentação de circuitos de iluminação, força, sinalização e painéis de comando, podendo ser embutidas em eletrodutos, perfilados, eletrocalhas e canaletas em que sua flexibilidade auxilia o manuseio. Orienta-se que as instalações...",
    "incluidos": "Fornecimento dos materiais e mão de obra para execução do serviço.",
    "criterio": "Por metro instalado.",
    "normas": [
     "NBR NM 247-3:2002",
+    "IEC 60227-3",
     "NBR 280:2011",
     "NBR 5111:1997",
     "NBR 5410:2004",
@@ -1258,11 +1263,12 @@
    "u": "m",
    "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1514 – FIOS E CABOS",
    "atualizacao": "12/2023",
-   "aplicacao": "Indicado as instalações industriais, comerciais e residenciais para alimentação de circuitos de iluminação, força, sinalização e painéis de comando, podendo ser embutidas em eletrodutos, perfilados, eletrocalhas e canaletas em que sua flexibilidade auxilia o manuseio. Orienta-se que as instalaçõe...",
+   "aplicacao": "Indicado as instalações industriais, comerciais e residenciais para alimentação de circuitos de iluminação, força, sinalização e painéis de comando, podendo ser embutidas em eletrodutos, perfilados, eletrocalhas e canaletas em que sua flexibilidade auxilia o manuseio. Orienta-se que as instalações...",
    "incluidos": "Fornecimento dos materiais e mão de obra para execução do serviço.",
    "criterio": "Por metro instalado.",
    "normas": [
     "NBR NM 247-3:2002",
+    "IEC 60227-3",
     "NBR 280:2011",
     "NBR 5111:1997",
     "NBR 5410:2004",
@@ -1276,11 +1282,12 @@
    "u": "m",
    "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1514 – FIOS E CABOS",
    "atualizacao": "12/2023",
-   "aplicacao": "Indicado as instalações industriais, comerciais e residenciais para alimentação de circuitos de iluminação, força, sinalização e painéis de comando, podendo ser embutidas em eletrodutos, perfilados, eletrocalhas e canaletas em que sua flexibilidade auxilia o manuseio. Orienta-se que as instalaçõe...",
+   "aplicacao": "Indicado as instalações industriais, comerciais e residenciais para alimentação de circuitos de iluminação, força, sinalização e painéis de comando, podendo ser embutidas em eletrodutos, perfilados, eletrocalhas e canaletas em que sua flexibilidade auxilia o manuseio. Orienta-se que as instalações...",
    "incluidos": "Fornecimento dos materiais e mão de obra para execução do serviço.",
    "criterio": "Por metro instalado.",
    "normas": [
     "NBR NM 247-3:2002",
+    "IEC 60227-3",
     "NBR 280:2011",
     "NBR 5111:1997",
     "NBR 5410:2004",
@@ -1294,11 +1301,12 @@
    "u": "m",
    "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1514 – FIOS E CABOS",
    "atualizacao": "12/2023",
-   "aplicacao": "Indicado as instalações industriais, comerciais e residenciais para alimentação de circuitos de iluminação, força, sinalização e painéis de comando, podendo ser embutidas em eletrodutos, perfilados, eletrocalhas e canaletas em que sua flexibilidade auxilia o manuseio. Orienta-se que as instalaçõe...",
+   "aplicacao": "Indicado as instalações industriais, comerciais e residenciais para alimentação de circuitos de iluminação, força, sinalização e painéis de comando, podendo ser embutidas em eletrodutos, perfilados, eletrocalhas e canaletas em que sua flexibilidade auxilia o manuseio. Orienta-se que as instalações...",
    "incluidos": "Fornecimento dos materiais e mão de obra para execução do serviço.",
    "criterio": "Por metro instalado.",
    "normas": [
     "NBR NM 247-3:2002",
+    "IEC 60227-3",
     "NBR 280:2011",
     "NBR 5111:1997",
     "NBR 5410:2004",
@@ -1342,7 +1350,7 @@
    "u": "m",
    "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1514 – FIOS E CABOS",
    "atualizacao": "12/2023",
-   "aplicacao": "Indicado as instalações industriais, comerciais, residenciais e subestação para aplicações fixa que exigem maior proteção mecânica do material isolante, incluindo boa resistência a ambientes úmidos, em alimentação de circuitos de iluminação, força, sinalização e painéis de comando, podendo ser em...",
+   "aplicacao": "Indicado as instalações industriais, comerciais, residenciais e subestação para aplicações fixa que exigem maior proteção mecânica do material isolante, incluindo boa resistência a ambientes úmidos, em alimentação de circuitos de iluminação, força, sinalização e painéis de comando, podendo ser...",
    "incluidos": "Fornecimento dos materiais e mão de obra para execução do serviço.",
    "criterio": "Por metro instalado.",
    "normas": [
@@ -1360,7 +1368,7 @@
    "u": "m",
    "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1514 – FIOS E CABOS",
    "atualizacao": "12/2023",
-   "aplicacao": "Indicado as instalações industriais, comerciais, residenciais e subestação para aplicações fixa que exigem maior proteção mecânica do material isolante, incluindo boa resistência a ambientes úmidos, em alimentação de circuitos de iluminação, força, sinalização e painéis de comando, podendo ser em...",
+   "aplicacao": "Indicado as instalações industriais, comerciais, residenciais e subestação para aplicações fixa que exigem maior proteção mecânica do material isolante, incluindo boa resistência a ambientes úmidos, em alimentação de circuitos de iluminação, força, sinalização e painéis de comando, podendo ser...",
    "incluidos": "Fornecimento dos materiais e mão de obra para execução do serviço.",
    "criterio": "Por metro instalado.",
    "normas": [
@@ -1378,7 +1386,7 @@
    "u": "m",
    "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1514 – FIOS E CABOS",
    "atualizacao": "12/2023",
-   "aplicacao": "Indicado as instalações industriais, comerciais, residenciais e subestação para aplicações fixa que exigem maior proteção mecânica do material isolante, incluindo boa resistência a ambientes úmidos, em alimentação de circuitos de iluminação, força, sinalização e painéis de comando, podendo ser em...",
+   "aplicacao": "Indicado as instalações industriais, comerciais, residenciais e subestação para aplicações fixa que exigem maior proteção mecânica do material isolante, incluindo boa resistência a ambientes úmidos, em alimentação de circuitos de iluminação, força, sinalização e painéis de comando, podendo ser...",
    "incluidos": "Fornecimento dos materiais e mão de obra para execução do serviço.",
    "criterio": "Por metro instalado.",
    "normas": [
@@ -1396,7 +1404,7 @@
    "u": "m",
    "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1514 – FIOS E CABOS",
    "atualizacao": "12/2023",
-   "aplicacao": "Indicado as instalações industriais, comerciais, residenciais e subestação para aplicações fixa que exigem maior proteção mecânica do material isolante, incluindo boa resistência a ambientes úmidos, em alimentação de circuitos de iluminação, força, sinalização e painéis de comando, podendo ser em...",
+   "aplicacao": "Indicado as instalações industriais, comerciais, residenciais e subestação para aplicações fixa que exigem maior proteção mecânica do material isolante, incluindo boa resistência a ambientes úmidos, em alimentação de circuitos de iluminação, força, sinalização e painéis de comando, podendo ser...",
    "incluidos": "Fornecimento dos materiais e mão de obra para execução do serviço.",
    "criterio": "Por metro instalado.",
    "normas": [
@@ -1414,7 +1422,7 @@
    "u": "m",
    "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1514 – FIOS E CABOS",
    "atualizacao": "12/2023",
-   "aplicacao": "Indicado as instalações industriais, comerciais, residenciais e subestação para aplicações fixa que exigem maior proteção mecânica do material isolante, incluindo boa resistência a ambientes úmidos, em alimentação de circuitos de iluminação, força, sinalização e painéis de comando, podendo ser em...",
+   "aplicacao": "Indicado as instalações industriais, comerciais, residenciais e subestação para aplicações fixa que exigem maior proteção mecânica do material isolante, incluindo boa resistência a ambientes úmidos, em alimentação de circuitos de iluminação, força, sinalização e painéis de comando, podendo ser...",
    "incluidos": "Fornecimento dos materiais e mão de obra para execução do serviço.",
    "criterio": "Por metro instalado.",
    "normas": [
@@ -1432,7 +1440,7 @@
    "u": "m",
    "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1514 – FIOS E CABOS",
    "atualizacao": "12/2023",
-   "aplicacao": "Indicado as instalações industriais, comerciais, residenciais e subestação para aplicações fixa que exigem maior proteção mecânica do material isolante, incluindo boa resistência a ambientes úmidos, em alimentação de circuitos de iluminação, força, sinalização e painéis de comando, podendo ser em...",
+   "aplicacao": "Indicado as instalações industriais, comerciais, residenciais e subestação para aplicações fixa que exigem maior proteção mecânica do material isolante, incluindo boa resistência a ambientes úmidos, em alimentação de circuitos de iluminação, força, sinalização e painéis de comando, podendo ser...",
    "incluidos": "Fornecimento dos materiais e mão de obra para execução do serviço.",
    "criterio": "Por metro instalado.",
    "normas": [
@@ -1450,7 +1458,7 @@
    "u": "m",
    "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1514 – FIOS E CABOS",
    "atualizacao": "12/2023",
-   "aplicacao": "Indicado as instalações industriais, comerciais, residenciais e subestação para aplicações fixa que exigem maior proteção mecânica do material isolante, incluindo boa resistência a ambientes úmidos, em alimentação de circuitos de iluminação, força, sinalização e painéis de comando, podendo ser em...",
+   "aplicacao": "Indicado as instalações industriais, comerciais, residenciais e subestação para aplicações fixa que exigem maior proteção mecânica do material isolante, incluindo boa resistência a ambientes úmidos, em alimentação de circuitos de iluminação, força, sinalização e painéis de comando, podendo ser...",
    "incluidos": "Fornecimento dos materiais e mão de obra para execução do serviço.",
    "criterio": "Por metro instalado.",
    "normas": [
@@ -1468,7 +1476,7 @@
    "u": "m",
    "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1514 – FIOS E CABOS",
    "atualizacao": "12/2023",
-   "aplicacao": "Indicado as instalações industriais, comerciais, residenciais e subestação para aplicações fixa que exigem maior proteção mecânica do material isolante, incluindo boa resistência a ambientes úmidos, em alimentação de circuitos de iluminação, força, sinalização e painéis de comando, podendo ser em...",
+   "aplicacao": "Indicado as instalações industriais, comerciais, residenciais e subestação para aplicações fixa que exigem maior proteção mecânica do material isolante, incluindo boa resistência a ambientes úmidos, em alimentação de circuitos de iluminação, força, sinalização e painéis de comando, podendo ser...",
    "incluidos": "Fornecimento dos materiais e mão de obra para execução do serviço.",
    "criterio": "Por metro instalado.",
    "normas": [
@@ -1486,7 +1494,7 @@
    "u": "m",
    "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1514 – FIOS E CABOS",
    "atualizacao": "12/2023",
-   "aplicacao": "Indicado as instalações industriais, comerciais, residenciais e subestação para aplicações fixa que exigem maior proteção mecânica do material isolante, incluindo boa resistência a ambientes úmidos, em alimentação de circuitos de iluminação, força, sinalização e painéis de comando, podendo ser em...",
+   "aplicacao": "Indicado as instalações industriais, comerciais, residenciais e subestação para aplicações fixa que exigem maior proteção mecânica do material isolante, incluindo boa resistência a ambientes úmidos, em alimentação de circuitos de iluminação, força, sinalização e painéis de comando, podendo ser...",
    "incluidos": "Fornecimento dos materiais e mão de obra para execução do serviço.",
    "criterio": "Por metro instalado.",
    "normas": [
@@ -1504,7 +1512,7 @@
    "u": "m",
    "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1514 – FIOS E CABOS",
    "atualizacao": "12/2023",
-   "aplicacao": "Indicado as instalações industriais, comerciais, residenciais e subestação para aplicações fixa que exigem maior proteção mecânica do material isolante, incluindo boa resistência a ambientes úmidos, em alimentação de circuitos de iluminação, força, sinalização e painéis de comando, podendo ser em...",
+   "aplicacao": "Indicado as instalações industriais, comerciais, residenciais e subestação para aplicações fixa que exigem maior proteção mecânica do material isolante, incluindo boa resistência a ambientes úmidos, em alimentação de circuitos de iluminação, força, sinalização e painéis de comando, podendo ser...",
    "incluidos": "Fornecimento dos materiais e mão de obra para execução do serviço.",
    "criterio": "Por metro instalado.",
    "normas": [
@@ -1522,7 +1530,7 @@
    "u": "m",
    "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1514 – FIOS E CABOS",
    "atualizacao": "12/2023",
-   "aplicacao": "Indicado as instalações industriais, comerciais, residenciais e subestação para aplicações fixa que exigem maior proteção mecânica do material isolante, incluindo boa resistência a ambientes úmidos, em alimentação de circuitos de iluminação, força, sinalização e painéis de comando, podendo ser em...",
+   "aplicacao": "Indicado as instalações industriais, comerciais, residenciais e subestação para aplicações fixa que exigem maior proteção mecânica do material isolante, incluindo boa resistência a ambientes úmidos, em alimentação de circuitos de iluminação, força, sinalização e painéis de comando, podendo ser...",
    "incluidos": "Fornecimento dos materiais e mão de obra para execução do serviço.",
    "criterio": "Por metro instalado.",
    "normas": [
@@ -1540,7 +1548,7 @@
    "u": "m",
    "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1514 – FIOS E CABOS",
    "atualizacao": "12/2023",
-   "aplicacao": "Indicado as instalações industriais, comerciais, residenciais e subestação para aplicações fixa que exigem maior proteção mecânica do material isolante, incluindo boa resistência a ambientes úmidos, em alimentação de circuitos de iluminação, força, sinalização e painéis de comando, podendo ser em...",
+   "aplicacao": "Indicado as instalações industriais, comerciais, residenciais e subestação para aplicações fixa que exigem maior proteção mecânica do material isolante, incluindo boa resistência a ambientes úmidos, em alimentação de circuitos de iluminação, força, sinalização e painéis de comando, podendo ser...",
    "incluidos": "Fornecimento dos materiais e mão de obra para execução do serviço.",
    "criterio": "Por metro instalado.",
    "normas": [
@@ -10764,6 +10772,304 @@
     "NBR 5732:1991",
     "NBR 7220:1987",
     "NR 18"
+   ]
+  },
+  "141409": {
+   "d": "Tubo de PVC rígido soldável marrom, DN 20mm (1/2\"), inclusive conexões",
+   "u": "m",
+   "caderno": "14 – INSTALAÇÕES HIDROSSANITÁRIAS · 14.14 – REDE DE ÁGUA FRIA - TUBOS SOLDÁVEIS DE PVC",
+   "atualizacao": "11/2023",
+   "aplicacao": "Utilizada em instalações prediais de água fria permanentes e embutidas ou aparentes em locais cobertos e protegidos de intempéries, conforme especificação de projeto executivo. Orienta-se para que nunca as instalações devem ser embutidas em elementos estruturais de concreto.",
+   "incluidos": "Fornecimento dos materiais e mão de obra para execução do serviço, contemplando abertura e fechamento de rasgos em alvenaria sem revestimento, bem como abertura e fechamento de cavas e valas de largura máxima de 30cm e profundidade de até 50cm, para o ramal de entrada, sem fornecimento de material para reaterro. O custo médio das conexões foi considerado por equivalência em custo de comprimento de tubo. Esse processo foi utilizado para simplificar o processo de orçamentação e estimativa de custos recomenda-se o levantamento in-loco das conexões.",
+   "criterio": "m por comprimento de tubulação executada.",
+   "normas": [
+    "NBR 5648",
+    "NBR 5626",
+    "NBR 5680",
+    "NBR 7231"
+   ]
+  },
+  "141410": {
+   "d": "Tubo de PVC rígido soldável marrom, DN 25mm (3/4\"), inclusive conexões",
+   "u": "m",
+   "caderno": "14 – INSTALAÇÕES HIDROSSANITÁRIAS · 14.14 – REDE DE ÁGUA FRIA - TUBOS SOLDÁVEIS DE PVC",
+   "atualizacao": "11/2023",
+   "aplicacao": "Utilizada em instalações prediais de água fria permanentes e embutidas ou aparentes em locais cobertos e protegidos de intempéries, conforme especificação de projeto executivo. Orienta-se para que nunca as instalações devem ser embutidas em elementos estruturais de concreto.",
+   "incluidos": "Fornecimento dos materiais e mão de obra para execução do serviço, contemplando abertura e fechamento de rasgos em alvenaria sem revestimento, bem como abertura e fechamento de cavas e valas de largura máxima de 30cm e profundidade de até 50cm, para o ramal de entrada, sem fornecimento de material para reaterro. O custo médio das conexões foi considerado por equivalência em custo de comprimento de tubo. Esse processo foi utilizado para simplificar o processo de orçamentação e estimativa de custos recomenda-se o levantamento in-loco das conexões.",
+   "criterio": "m por comprimento de tubulação executada.",
+   "normas": [
+    "NBR 5648",
+    "NBR 5626",
+    "NBR 5680",
+    "NBR 7231"
+   ]
+  },
+  "141411": {
+   "d": "Tubo de PVC rígido soldável marrom, DN 32mm (1\"), inclusive conexões",
+   "u": "m",
+   "caderno": "14 – INSTALAÇÕES HIDROSSANITÁRIAS · 14.14 – REDE DE ÁGUA FRIA - TUBOS SOLDÁVEIS DE PVC",
+   "atualizacao": "11/2023",
+   "aplicacao": "Utilizada em instalações prediais de água fria permanentes e embutidas ou aparentes em locais cobertos e protegidos de intempéries, conforme especificação de projeto executivo. Orienta-se para que nunca as instalações devem ser embutidas em elementos estruturais de concreto.",
+   "incluidos": "Fornecimento dos materiais e mão de obra para execução do serviço, contemplando abertura e fechamento de rasgos em alvenaria sem revestimento, bem como abertura e fechamento de cavas e valas de largura máxima de 30cm e profundidade de até 50cm, para o ramal de entrada, sem fornecimento de material para reaterro. O custo médio das conexões foi considerado por equivalência em custo de comprimento de tubo. Esse processo foi utilizado para simplificar o processo de orçamentação e estimativa de custos recomenda-se o levantamento in-loco das conexões.",
+   "criterio": "m por comprimento de tubulação executada.",
+   "normas": [
+    "NBR 5648",
+    "NBR 5626",
+    "NBR 5680",
+    "NBR 7231"
+   ]
+  },
+  "141412": {
+   "d": "Tubo de PVC rígido soldável marrom, DN 40mm (1.1/4\"), inclusive conexões",
+   "u": "m",
+   "caderno": "14 – INSTALAÇÕES HIDROSSANITÁRIAS · 14.14 – REDE DE ÁGUA FRIA - TUBOS SOLDÁVEIS DE PVC",
+   "atualizacao": "11/2023",
+   "aplicacao": "Utilizada em instalações prediais de água fria permanentes e embutidas ou aparentes em locais cobertos e protegidos de intempéries, conforme especificação de projeto executivo. Orienta-se para que nunca as instalações devem ser embutidas em elementos estruturais de concreto.",
+   "incluidos": "Fornecimento dos materiais e mão de obra para execução do serviço, contemplando abertura e fechamento de rasgos em alvenaria sem revestimento, bem como abertura e fechamento de cavas e valas de largura máxima de 30cm e profundidade de até 50cm, para o ramal de entrada, sem fornecimento de material para reaterro. O custo médio das conexões foi considerado por equivalência em custo de comprimento de tubo. Esse processo foi utilizado para simplificar o processo de orçamentação e estimativa de custos recomenda-se o levantamento in-loco das conexões.",
+   "criterio": "m por comprimento de tubulação executada.",
+   "normas": [
+    "NBR 5648",
+    "NBR 5626",
+    "NBR 5680",
+    "NBR 7231"
+   ]
+  },
+  "141413": {
+   "d": "Tubo de PVC rígido soldável marrom, DN 50mm (1.1/2\"), inclusive conexões",
+   "u": "m",
+   "caderno": "14 – INSTALAÇÕES HIDROSSANITÁRIAS · 14.14 – REDE DE ÁGUA FRIA - TUBOS SOLDÁVEIS DE PVC",
+   "atualizacao": "11/2023",
+   "aplicacao": "Utilizada em instalações prediais de água fria permanentes e embutidas ou aparentes em locais cobertos e protegidos de intempéries, conforme especificação de projeto executivo. Orienta-se para que nunca as instalações devem ser embutidas em elementos estruturais de concreto.",
+   "incluidos": "Fornecimento dos materiais e mão de obra para execução do serviço, contemplando abertura e fechamento de rasgos em alvenaria sem revestimento, bem como abertura e fechamento de cavas e valas de largura máxima de 30cm e profundidade de até 50cm, para o ramal de entrada, sem fornecimento de material para reaterro. O custo médio das conexões foi considerado por equivalência em custo de comprimento de tubo. Esse processo foi utilizado para simplificar o processo de orçamentação e estimativa de custos recomenda-se o levantamento in-loco das conexões.",
+   "criterio": "m por comprimento de tubulação executada.",
+   "normas": [
+    "NBR 5648",
+    "NBR 5626",
+    "NBR 5680",
+    "NBR 7231"
+   ]
+  },
+  "141414": {
+   "d": "Tubo de PVC rígido soldável marrom, DN 60mm (2\"), inclusive conexões",
+   "u": "m",
+   "caderno": "14 – INSTALAÇÕES HIDROSSANITÁRIAS · 14.14 – REDE DE ÁGUA FRIA - TUBOS SOLDÁVEIS DE PVC",
+   "atualizacao": "11/2023",
+   "aplicacao": "Utilizada em instalações prediais de água fria permanentes e embutidas ou aparentes em locais cobertos e protegidos de intempéries, conforme especificação de projeto executivo. Orienta-se para que nunca as instalações devem ser embutidas em elementos estruturais de concreto.",
+   "incluidos": "Fornecimento dos materiais e mão de obra para execução do serviço, contemplando abertura e fechamento de rasgos em alvenaria sem revestimento, bem como abertura e fechamento de cavas e valas de largura máxima de 30cm e profundidade de até 50cm, para o ramal de entrada, sem fornecimento de material para reaterro. O custo médio das conexões foi considerado por equivalência em custo de comprimento de tubo. Esse processo foi utilizado para simplificar o processo de orçamentação e estimativa de custos recomenda-se o levantamento in-loco das conexões.",
+   "criterio": "m por comprimento de tubulação executada.",
+   "normas": [
+    "NBR 5648",
+    "NBR 5626",
+    "NBR 5680",
+    "NBR 7231"
+   ]
+  },
+  "141415": {
+   "d": "Tubo de PVC rígido soldável marrom, DN 75mm (2.1/2\"), inclusive conexões",
+   "u": "m",
+   "caderno": "14 – INSTALAÇÕES HIDROSSANITÁRIAS · 14.14 – REDE DE ÁGUA FRIA - TUBOS SOLDÁVEIS DE PVC",
+   "atualizacao": "11/2023",
+   "aplicacao": "Utilizada em instalações prediais de água fria permanentes e embutidas ou aparentes em locais cobertos e protegidos de intempéries, conforme especificação de projeto executivo. Orienta-se para que nunca as instalações devem ser embutidas em elementos estruturais de concreto.",
+   "incluidos": "Fornecimento dos materiais e mão de obra para execução do serviço, contemplando abertura e fechamento de rasgos em alvenaria sem revestimento, bem como abertura e fechamento de cavas e valas de largura máxima de 30cm e profundidade de até 50cm, para o ramal de entrada, sem fornecimento de material para reaterro. O custo médio das conexões foi considerado por equivalência em custo de comprimento de tubo. Esse processo foi utilizado para simplificar o processo de orçamentação e estimativa de custos recomenda-se o levantamento in-loco das conexões.",
+   "criterio": "m por comprimento de tubulação executada.",
+   "normas": [
+    "NBR 5648",
+    "NBR 5626",
+    "NBR 5680",
+    "NBR 7231"
+   ]
+  },
+  "141416": {
+   "d": "Tubo de PVC rígido soldável marrom, DN 85mm (3\"), inclusive conexões",
+   "u": "m",
+   "caderno": "14 – INSTALAÇÕES HIDROSSANITÁRIAS · 14.14 – REDE DE ÁGUA FRIA - TUBOS SOLDÁVEIS DE PVC",
+   "atualizacao": "11/2023",
+   "aplicacao": "Utilizada em instalações prediais de água fria permanentes e embutidas ou aparentes em locais cobertos e protegidos de intempéries, conforme especificação de projeto executivo. Orienta-se para que nunca as instalações devem ser embutidas em elementos estruturais de concreto.",
+   "incluidos": "Fornecimento dos materiais e mão de obra para execução do serviço, contemplando abertura e fechamento de rasgos em alvenaria sem revestimento, bem como abertura e fechamento de cavas e valas de largura máxima de 30cm e profundidade de até 50cm, para o ramal de entrada, sem fornecimento de material para reaterro. O custo médio das conexões foi considerado por equivalência em custo de comprimento de tubo. Esse processo foi utilizado para simplificar o processo de orçamentação e estimativa de custos recomenda-se o levantamento in-loco das conexões.",
+   "criterio": "m por comprimento de tubulação executada.",
+   "normas": [
+    "NBR 5648",
+    "NBR 5626",
+    "NBR 5680",
+    "NBR 7231"
+   ]
+  },
+  "141522": {
+   "d": "Adaptador de PVC soldável com anel para caixa d'água, DN 25mm",
+   "u": "und",
+   "caderno": "14 – INSTALAÇÕES HIDROSSANITÁRIAS · 14.15 – REDE DE ÁGUA FRIA - CONEXÕES SOLDÁVEIS DE PVC",
+   "atualizacao": "11/2023",
+   "aplicacao": "Utilizada em instalações prediais de água fria para ligação da tubulação a caixa d´água, evitando vazamento pelo furo da caixa, conforme especificação de projeto executivo. Orienta-se que as instalações nunca devem ser embutidas em elementos estruturais de concreto.",
+   "incluidos": "Fornecimento dos materiais e mão de obra para execução do serviço.",
+   "criterio": "Por unidade instalada.",
+   "normas": [
+    "NBR 5648",
+    "NBR 5626",
+    "NBR 7231"
+   ]
+  },
+  "141523": {
+   "d": "Adaptador de PVC soldável com anel para caixa d'água, DN 32mm",
+   "u": "und",
+   "caderno": "14 – INSTALAÇÕES HIDROSSANITÁRIAS · 14.15 – REDE DE ÁGUA FRIA - CONEXÕES SOLDÁVEIS DE PVC",
+   "atualizacao": "11/2023",
+   "aplicacao": "Utilizada em instalações prediais de água fria para ligação da tubulação a caixa d´água, evitando vazamento pelo furo da caixa, conforme especificação de projeto executivo. Orienta-se que as instalações nunca devem ser embutidas em elementos estruturais de concreto.",
+   "incluidos": "Fornecimento dos materiais e mão de obra para execução do serviço.",
+   "criterio": "Por unidade instalada.",
+   "normas": [
+    "NBR 5648",
+    "NBR 5626",
+    "NBR 7231"
+   ]
+  },
+  "141524": {
+   "d": "Adaptador de PVC soldável com anel para caixa d'água, DN 40mm",
+   "u": "und",
+   "caderno": "14 – INSTALAÇÕES HIDROSSANITÁRIAS · 14.15 – REDE DE ÁGUA FRIA - CONEXÕES SOLDÁVEIS DE PVC",
+   "atualizacao": "11/2023",
+   "aplicacao": "Utilizada em instalações prediais de água fria para ligação da tubulação a caixa d´água, evitando vazamento pelo furo da caixa, conforme especificação de projeto executivo. Orienta-se que as instalações nunca devem ser embutidas em elementos estruturais de concreto.",
+   "incluidos": "Fornecimento dos materiais e mão de obra para execução do serviço.",
+   "criterio": "Por unidade instalada.",
+   "normas": [
+    "NBR 5648",
+    "NBR 5626",
+    "NBR 7231"
+   ]
+  },
+  "141525": {
+   "d": "Adaptador de PVC soldável com anel para caixa d'água, DN 50mm",
+   "u": "und",
+   "caderno": "14 – INSTALAÇÕES HIDROSSANITÁRIAS · 14.15 – REDE DE ÁGUA FRIA - CONEXÕES SOLDÁVEIS DE PVC",
+   "atualizacao": "11/2023",
+   "aplicacao": "Utilizada em instalações prediais de água fria para ligação da tubulação a caixa d´água, evitando vazamento pelo furo da caixa, conforme especificação de projeto executivo. Orienta-se que as instalações nunca devem ser embutidas em elementos estruturais de concreto.",
+   "incluidos": "Fornecimento dos materiais e mão de obra para execução do serviço.",
+   "criterio": "Por unidade instalada.",
+   "normas": [
+    "NBR 5648",
+    "NBR 5626",
+    "NBR 7231"
+   ]
+  },
+  "141526": {
+   "d": "Adaptador de PVC soldável com anel para caixa d'água, DN 60mm",
+   "u": "und",
+   "caderno": "14 – INSTALAÇÕES HIDROSSANITÁRIAS · 14.15 – REDE DE ÁGUA FRIA - CONEXÕES SOLDÁVEIS DE PVC",
+   "atualizacao": "11/2023",
+   "aplicacao": "Utilizada em instalações prediais de água fria para ligação da tubulação a caixa d´água, evitando vazamento pelo furo da caixa, conforme especificação de projeto executivo. Orienta-se que as instalações nunca devem ser embutidas em elementos estruturais de concreto.",
+   "incluidos": "Fornecimento dos materiais e mão de obra para execução do serviço.",
+   "criterio": "Por unidade instalada.",
+   "normas": [
+    "NBR 5648",
+    "NBR 5626",
+    "NBR 7231"
+   ]
+  },
+  "141527": {
+   "d": "Adaptador de PVC soldável com flanges livres para caixa d'água, DN 75mm x 2.1/2\"",
+   "u": "und",
+   "caderno": "14 – INSTALAÇÕES HIDROSSANITÁRIAS · 14.15 – REDE DE ÁGUA FRIA - CONEXÕES SOLDÁVEIS DE PVC",
+   "atualizacao": "11/2023",
+   "aplicacao": "Utilizada em instalações prediais de água fria para ligação da tubulação a caixa d´água, evitando vazamento pelo furo da caixa, conforme especificação de projeto executivo. Orienta-se que as instalações nunca devem ser embutidas em elementos estruturais de concreto.",
+   "incluidos": "Fornecimento dos materiais e mão de obra para execução do serviço.",
+   "criterio": "Por unidade instalada.",
+   "normas": [
+    "NBR 5648",
+    "NBR 5626",
+    "NBR 7231"
+   ]
+  },
+  "141906": {
+   "d": "Tubo de PVC rígido soldável branco, para esgoto série normal, DN 40mm (1.1/2\"), inclusive conexões",
+   "u": "m",
+   "caderno": "14 – INSTALAÇÕES HIDROSSANITÁRIAS · 14.19 – REDE DE ESGOTO - TUBOS DE PVC",
+   "atualizacao": "11/2023",
+   "aplicacao": "Utilizada em instalações prediais de esgoto e ventilação, para condução de dejetos, escoamento por gravidade não submetida à pressão, embutidas ou aparentes em locais cobertos e protegidos de intempéries, conforme especificação de projeto executivo.",
+   "incluidos": "Fornecimento dos materiais e mão de obra para execução do serviço, consistindo na abertura e fechamento de rasgos em alvenaria sem revestimento, escavação e reaterro apiloado em valas de até 60cm ou fixação por abraçadeiras, suportes, etc. O custo médio das conexões foi considerado por equivalência em custo de comprimento de tubo. Esse processo foi utilizado para simplificar o processo de orçamentação e estimativa de custos recomenda-se o levantamento in-loco das conexões.",
+   "criterio": "m por comprimento de tubulação executada.",
+   "normas": [
+    "NBR 7231",
+    "NBR 8160",
+    "NBR 9054",
+    "NBR 9055",
+    "NBR 10569"
+   ]
+  },
+  "141907": {
+   "d": "Tubo de PVC rígido soldável branco, para esgoto série normal, DN 50mm (2\"), inclusive conexões",
+   "u": "m",
+   "caderno": "14 – INSTALAÇÕES HIDROSSANITÁRIAS · 14.19 – REDE DE ESGOTO - TUBOS DE PVC",
+   "atualizacao": "11/2023",
+   "aplicacao": "Utilizada em instalações prediais de esgoto e ventilação, para condução de dejetos, escoamento por gravidade não submetida à pressão, embutidas ou aparentes em locais cobertos e protegidos de intempéries, conforme especificação de projeto executivo.",
+   "incluidos": "Fornecimento dos materiais e mão de obra para execução do serviço, consistindo na abertura e fechamento de rasgos em alvenaria sem revestimento, escavação e reaterro apiloado em valas de até 60cm ou fixação por abraçadeiras, suportes, etc. O custo médio das conexões foi considerado por equivalência em custo de comprimento de tubo. Esse processo foi utilizado para simplificar o processo de orçamentação e estimativa de custos recomenda-se o levantamento in-loco das conexões.",
+   "criterio": "m por comprimento de tubulação executada.",
+   "normas": [
+    "NBR 7231",
+    "NBR 8160",
+    "NBR 9054",
+    "NBR 9055",
+    "NBR 10569"
+   ]
+  },
+  "141908": {
+   "d": "Tubo de PVC rígido soldável branco, para esgoto série normal, DN 75mm (3\"), inclusive conexões",
+   "u": "m",
+   "caderno": "14 – INSTALAÇÕES HIDROSSANITÁRIAS · 14.19 – REDE DE ESGOTO - TUBOS DE PVC",
+   "atualizacao": "11/2023",
+   "aplicacao": "Utilizada em instalações prediais de esgoto e ventilação, para condução de dejetos, escoamento por gravidade não submetida à pressão, embutidas ou aparentes em locais cobertos e protegidos de intempéries, conforme especificação de projeto executivo.",
+   "incluidos": "Fornecimento dos materiais e mão de obra para execução do serviço, consistindo na abertura e fechamento de rasgos em alvenaria sem revestimento, escavação e reaterro apiloado em valas de até 60cm ou fixação por abraçadeiras, suportes, etc. O custo médio das conexões foi considerado por equivalência em custo de comprimento de tubo. Esse processo foi utilizado para simplificar o processo de orçamentação e estimativa de custos recomenda-se o levantamento in-loco das conexões.",
+   "criterio": "m por comprimento de tubulação executada.",
+   "normas": [
+    "NBR 7231",
+    "NBR 8160",
+    "NBR 9054",
+    "NBR 9055",
+    "NBR 10569"
+   ]
+  },
+  "141909": {
+   "d": "Tubo de PVC rígido soldável branco, para esgoto série normal, DN 100mm (4\"), inclusive conexões",
+   "u": "m",
+   "caderno": "14 – INSTALAÇÕES HIDROSSANITÁRIAS · 14.19 – REDE DE ESGOTO - TUBOS DE PVC",
+   "atualizacao": "11/2023",
+   "aplicacao": "Utilizada em instalações prediais de esgoto e ventilação, para condução de dejetos, escoamento por gravidade não submetida à pressão, embutidas ou aparentes em locais cobertos e protegidos de intempéries, conforme especificação de projeto executivo.",
+   "incluidos": "Fornecimento dos materiais e mão de obra para execução do serviço, consistindo na abertura e fechamento de rasgos em alvenaria sem revestimento, escavação e reaterro apiloado em valas de até 60cm ou fixação por abraçadeiras, suportes, etc. O custo médio das conexões foi considerado por equivalência em custo de comprimento de tubo. Esse processo foi utilizado para simplificar o processo de orçamentação e estimativa de custos recomenda-se o levantamento in-loco das conexões.",
+   "criterio": "m por comprimento de tubulação executada.",
+   "normas": [
+    "NBR 7231",
+    "NBR 8160",
+    "NBR 9054",
+    "NBR 9055",
+    "NBR 10569"
+   ]
+  },
+  "141910": {
+   "d": "Tubo de PVC rígido soldável branco, para esgoto série normal, DN 150mm (6\"), inclusive conexões",
+   "u": "m",
+   "caderno": "14 – INSTALAÇÕES HIDROSSANITÁRIAS · 14.19 – REDE DE ESGOTO - TUBOS DE PVC",
+   "atualizacao": "11/2023",
+   "aplicacao": "Utilizada em instalações prediais de esgoto e ventilação, para condução de dejetos, escoamento por gravidade não submetida à pressão, embutidas ou aparentes em locais cobertos e protegidos de intempéries, conforme especificação de projeto executivo.",
+   "incluidos": "Fornecimento dos materiais e mão de obra para execução do serviço, consistindo na abertura e fechamento de rasgos em alvenaria sem revestimento, escavação e reaterro apiloado em valas de até 60cm ou fixação por abraçadeiras, suportes, etc. O custo médio das conexões foi considerado por equivalência em custo de comprimento de tubo. Esse processo foi utilizado para simplificar o processo de orçamentação e estimativa de custos recomenda-se o levantamento in-loco das conexões.",
+   "criterio": "m por comprimento de tubulação executada.",
+   "normas": [
+    "NBR 7231",
+    "NBR 8160",
+    "NBR 9054",
+    "NBR 9055",
+    "NBR 10569"
+   ]
+  },
+  "142123": {
+   "d": "Adaptador de PVC soldável com anel para caixa d'água, DN 20mm x 1/2\"",
+   "u": "und",
+   "caderno": "14 – INSTALAÇÕES HIDROSSANITÁRIAS · 14.21 – CAIXAS DE PVC / EQUIPAMENTOS",
+   "atualizacao": "11/2023",
+   "aplicacao": "Utilizada em instalações prediais de água fria para ligação da tubulação a caixa d´água, evitando vazamento pelo furo da caixa, conforme especificação de projeto executivo. Orienta-se que as instalações nunca devem ser embutidas em elementos estruturais de concreto.",
+   "incluidos": "Fornecimento dos materiais e mão de obra para execução do serviço.",
+   "criterio": "Por unidade instalada.",
+   "normas": [
+    "NBR 5648",
+    "NBR 5626",
+    "NBR 7231"
    ]
   }
  }

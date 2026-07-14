@@ -71,8 +71,17 @@ python3 tools/embed_data.py          # re-embute tudo no orcamentista.html
 
 Base atual: **DER-ES Edificações, Abril/2026** (LABOR/CT-UFES) — 1.340 serviços, Leis Sociais
 157,27%, preços em **custo direto** (BDI 0 na tabela; o app aplica o BDI da obra).
-Cadernos Técnicos ingeridos: **05 — Paredes e Painéis** (20 serviços). Os demais entram em
-lote pelo `parse_caderno.py` conforme forem enviados.
+Cadernos Técnicos ingeridos: **~65 cadernos → 746 regras de medição** (critério + serviços
+incluídos por código), cobrindo os capítulos 01, 03, 04, 05, 06, 09, 11–21 — **55% dos 1.340
+serviços da tabela** e **68% dos itens do mapa de padrões**. JSONs por caderno em `data/cadernos/`;
+consolidados por `tools/merge_regras.py`. Sem caderno ainda: **02** (canteiro), **07** (esquadrias
+metálicas), **08** (vidros), **10** (impermeabilização) — não constavam do lote enviado — e alguns
+subcapítulos que só existem dentro dos PDFs "gerais" 14 e 15 acima de 10 MB (**14.07 pontos
+hidráulicos, 15.18 pontos elétricos, 15.17/15.19 padrão de entrada e quadros**): o download bruto
+rejeita arquivos >10 MB e a leitura de texto trunca antes deles — para ingeri-los, subir esses dois
+cadernos **divididos em partes < 10 MB** (ou os subcapítulos avulsos) na pasta do Drive. O app
+funciona sem esses critérios (o memorial os marca como "caderno ainda não ingerido"; as quantidades
+dos pontos vêm da NBR 5410, não do caderno).
 
 > **Aviso**: estudo indicativo por metodologia paramétrica. Não substitui orçamento executivo
 > com projetos completos, nem dispensa responsável técnico.
