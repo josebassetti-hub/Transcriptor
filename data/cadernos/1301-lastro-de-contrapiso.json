@@ -1,0 +1,77 @@
+{
+ "arquivo": "1301-LASTRO DE CONTRAPISO.pdf",
+ "caderno": "13 – PISOS INTERNOS E EXTERNOS · 1301 – LASTRO DE CONTRAPISO",
+ "truncado": false,
+ "fichas": {
+  "130103": {
+   "d": "Regularização de base para revestimento cerâmico, com argamassa de cimento e areia no traço 1:5, espessura: 3 cm",
+   "u": "m2",
+   "caderno": "13 – PISOS INTERNOS E EXTERNOS · 1301 – LASTRO DE CONTRAPISO",
+   "atualizacao": "04/2024",
+   "aplicacao": "Em ambientes internos servindo de base para aplicação de pisos cerâmicos, porcelanatos, etc.",
+   "incluidos": "Fornecimento, preparo e transporte da argamassa, considerando perdas por consumo e transporte interno do canteiro até o local da aplicação, varredura e lavagem da superfície, definição e marcação dos níveis do contrapiso, assentamento de taliscas, execução de mestras, execução de camada de aderência, lançamento, espalhamento e compactação da argamassa, acabamento superficial sarrafeado e desempenado do contrapiso.",
+   "criterio": "m2 (metro quadrado) Medido pela área de regularização de base efetivamente executada, descontando a área de projeção das paredes e todos os vazios na laje.",
+   "normas": ["NBR 5732:1991", "NBR 7220:1987"]
+  },
+  "130104": {
+   "d": "Regularização de base para revestimento cerâmico, com argamassa de cimento e areia no traço 1:5, espessura: 5 cm",
+   "u": "m2",
+   "caderno": "13 – PISOS INTERNOS E EXTERNOS · 1301 – LASTRO DE CONTRAPISO",
+   "atualizacao": "04/2024",
+   "aplicacao": "Em ambientes internos servindo de base para aplicação de pisos cerâmicos, porcelanatos etc.",
+   "incluidos": "Fornecimento, preparo e transporte da argamassa, considerando perdas por consumo e transporte interno do canteiro até o local da aplicação, varredura e lavagem da superfície, definição e marcação dos níveis do contrapiso, assentamento de taliscas, execução de mestras, execução de camada de aderência, lançamento, espalhamento e compactação da argamassa, acabamento superficial sarrafeado e desempenado do contrapiso.",
+   "criterio": "m2 (metro quadrado) Medido pela área de regularização de base efetivamente executada, descontando a área de projeção das paredes e todos os vazios na laje.",
+   "normas": ["NBR 5732:1991", "NBR 7220:1987"]
+  },
+  "130109": {
+   "d": "Lastro regularizado e impermeabilizado de concreto não estrutural, espessura: 8 cm",
+   "u": "m2",
+   "caderno": "13 – PISOS INTERNOS E EXTERNOS · 1301 – LASTRO DE CONTRAPISO",
+   "atualizacao": "04/2024",
+   "aplicacao": "Base e camada de regularização em áreas molhadas, que receberão piso cerâmico (cozinhas, sanitários e vestiários). É recomendada também a utilização em locais em que se tenha umidade ascendente.",
+   "incluidos": "Fornecimento, preparo e transporte do concreto com aditivo impermeabilizante e da argamassa, considerando perdas por consumo e transporte interno do canteiro até o local da aplicação, definição e marcação dos níveis do lastro e camada de regularização, assentamento de taliscas, execução de mestras, lançamento e espalhamento do concreto e da argamassa, nivelamento e adensamento apropriado do lastro de concreto, compactação da argamassa, acabamento superficial sarrafeado e desempenado do contrapiso.",
+   "criterio": "m2 (metro quadrado) Medido pela área de lastro regularizado efetivamente aplicado, descontando todos os vãos.",
+   "normas": ["NBR 12655:2022", "NBR 5732:1991", "NBR 7220:1987", "NBR 7211:2005"]
+  },
+  "130110": {
+   "d": "Lastro regularizado de concreto não estrutural, espessura: 8 cm",
+   "u": "m2",
+   "caderno": "13 – PISOS INTERNOS E EXTERNOS · 1301 – LASTRO DE CONTRAPISO",
+   "atualizacao": "04/2024",
+   "aplicacao": "Base e camada de regularização para assentamento de diversos tipos de pisos (cerâmicos, cimentado, pedras etc.). Recomendado utilizar somente em locais em que não se tenha umidade ascendente.",
+   "incluidos": "Fornecimento, preparo e transporte do concreto e da argamassa, considerando perdas por consumo e transporte interno do canteiro até o local da aplicação, definição e marcação dos níveis do lastro e camada de regularização, assentamento de taliscas, execução de mestras, lançamento e espalhamento do concreto e da argamassa, nivelamento e adensamento apropriado do lastro de concreto, compactação da argamassa, acabamento superficial sarrafeado e desempenado do contrapiso.",
+   "criterio": "m2 (metro quadrado) Medido pela área de lastro regularizado efetivamente aplicado, descontando todos os vãos.",
+   "normas": ["NBR 12655:2022", "NBR 5732:1991", "NBR 7220:1987", "NBR 7211:2005"]
+  },
+  "130111": {
+   "d": "Lastro impermeabilizado de concreto não estrutural, espessura: 6 cm",
+   "u": "m2",
+   "caderno": "13 – PISOS INTERNOS E EXTERNOS · 1301 – LASTRO DE CONTRAPISO",
+   "atualizacao": "04/2024",
+   "aplicacao": "Base para aplicação de camada de regularização nos locais que receberão piso cerâmico em áreas molhadas (cozinhas, sanitários e vestiários). É recomendada a utilização em locais em que se tenha umidade ascendente.",
+   "incluidos": "Fornecimento, preparo e transporte do concreto com aditivo impermeabilizante, considerando perdas por consumo e transporte interno do canteiro até o local da aplicação, definição e marcação dos níveis, assentamento de taliscas, execução de mestras, lançamento, espalhamento, nivelamento e adensamento apropriado do lastro de concreto.",
+   "criterio": "m2 (metro quadrado) Medido pela área de lastro efetivamente aplicado, descontando todos os vãos.",
+   "normas": ["NBR 12655:2022"]
+  },
+  "130112": {
+   "d": "Lastro de concreto não estrutural, espessura: 6 cm",
+   "u": "m2",
+   "caderno": "13 – PISOS INTERNOS E EXTERNOS · 1301 – LASTRO DE CONTRAPISO",
+   "atualizacao": "04/2024",
+   "aplicacao": "Base para recebimento de camada de regularização para assentamento de diversos tipos de pisos (cerâmicos, cimentado, pedras etc.). Recomendado utilizar somente em locais em que não se tenha umidade ascendente.",
+   "incluidos": "Fornecimento, preparo e transporte do concreto, considerando perdas por consumo e transporte interno do canteiro até o local da aplicação, definição e marcação dos níveis, assentamento de taliscas, execução de mestras, lançamento, espalhamento, nivelamento e adensamento apropriado do lastro de concreto.",
+   "criterio": "m2 (metro quadrado) Medido pela área de lastro efetivamente aplicado, descontando todos os vãos.",
+   "normas": ["NBR 12655:2022"]
+  },
+  "130113": {
+   "d": "Lastro impermeabilizado de concreto não estrutural, espessura: 8 cm",
+   "u": "m2",
+   "caderno": "13 – PISOS INTERNOS E EXTERNOS · 1301 – LASTRO DE CONTRAPISO",
+   "atualizacao": "04/2024",
+   "aplicacao": "Base para aplicação de camada de regularização nos locais que receberão piso cerâmico em áreas molhadas (cozinhas, sanitários e vestiários). É recomendada a utilização em locais em que se tenha umidade ascendente.",
+   "incluidos": "Fornecimento, preparo e transporte do concreto com aditivo impermeabilizante, considerando perdas por consumo e transporte interno do canteiro até o local da aplicação, definição e marcação dos níveis, assentamento de taliscas, execução de mestras, lançamento, espalhamento, nivelamento e adensamento apropriado do lastro de concreto.",
+   "criterio": "m2 (metro quadrado) Medido pela área de lastro efetivamente aplicado, descontando todos os vãos.",
+   "normas": ["NBR 12655:2022"]
+  }
+ }
+}

@@ -1,0 +1,177 @@
+{
+ "arquivo": "1302-ACABAMENTOS.pdf",
+ "caderno": "13 – PISOS INTERNOS E EXTERNOS · 1302 – ACABAMENTOS",
+ "truncado": false,
+ "fichas": {
+  "130202": {
+   "d": "Piso cimentado liso espessura: 1,50 cm, de argamassa de cimento e areia no traço 1:3 e juntas plásticas em quadros de 1 m",
+   "u": "m2",
+   "caderno": "13 – PISOS INTERNOS E EXTERNOS · 1302 – ACABAMENTOS",
+   "atualizacao": "04/2024",
+   "aplicacao": "Em ambientes internos. Não é recomendada a utilização em locais em que se tenha presença de água (áreas molhadas).",
+   "incluidos": "Fornecimento, preparo e transporte da argamassa, considerando perdas por consumo e transporte interno do canteiro até o local da aplicação, varredura e lavagem da superfície, umedecimento da superfície, execução de camada de aderência, assentamento de juntas plásticas, lançamento, espalhamento e compactação da argamassa, acabamento superficial sarrafeado e natado (alisado) do piso cimentado, execução de cura úmida do piso e limpeza final.",
+   "criterio": "m2 (metro quadrado) Medido pela área real de piso cimentado executado.",
+   "normas": ["NBR 5732:1991", "NBR 7220:1987"]
+  },
+  "130205": {
+   "d": "Piso de tábuas corridas de Peroba largura: 15cm e espessura: 2cm, sobre caibros aparelhados de 7x5 cm, espaçados de 50cm, fixados com argamassa de cimento e areia no traço 1:5",
+   "u": "m2",
+   "caderno": "13 – PISOS INTERNOS E EXTERNOS · 1302 – ACABAMENTOS",
+   "atualizacao": "04/2024",
+   "aplicacao": "Em ambientes internos, em locais de tráfego leve. Não deve ser utilizado em locais com presença de umidade e sujeitos à lavagem.",
+   "incluidos": "Fornecimento, preparo e transporte da argamassa de chumbamento dos barrotes, considerando perdas por consumo e transporte interno do canteiro até o local da aplicação, varredura da superfície, fornecimento e fixação (inclusos pregos) das peças de madeira de lei (barrotes e tábuas corridas).",
+   "criterio": "m2 (metro quadrado) Medido pela área real de piso de tábuas corridas executado.",
+   "normas": ["NBR 7203:1982", "Decreto Estadual nº 1.941-R/2007"]
+  },
+  "130208": {
+   "d": "Fornecimento e instalação de Junta de dilatação em PVC 17 x 3 mm, para pisos corridos",
+   "u": "m",
+   "caderno": "13 – PISOS INTERNOS E EXTERNOS · 1302 – ACABAMENTOS",
+   "atualizacao": "04/2024",
+   "aplicacao": "Indicada para uso em pisos cimentados, calçadas, argamassa de alta resistência tipo granilite, piso de quadras esportivas, etc. Evitam trincas, rachaduras e infiltrações provenientes da dilatação e contração dos pisos cimentícios.",
+   "incluidos": "Fornecimento das juntas plásticas e argamassa, preparo, transporte e aplicação da argamassa de assentamento das juntas, considerando perdas por consumo e transporte interno do canteiro até o local da aplicação, varredura e lavagem da superfície, assentamento das juntas plásticas e limpeza final.",
+   "criterio": "m (metro) Medido pelo comprimento real de junta plástica assentada.",
+   "normas": []
+  },
+  "130209": {
+   "d": "Piso de cimentado camurçado executado com argamassa de cimento e areia no traço 1:3, espessura: 3,0 cm",
+   "u": "m2",
+   "caderno": "13 – PISOS INTERNOS E EXTERNOS · 1302 – ACABAMENTOS",
+   "atualizacao": "04/2024",
+   "aplicacao": "Em ambientes externos (passeios, rampas, calçadas etc.).",
+   "incluidos": "Fornecimento, preparo e transporte da argamassa, considerando perdas por consumo e transporte interno do canteiro até o local da aplicação, varredura e lavagem da superfície, umedecimento da superfície, execução de camada de aderência, assentamento de sarrafos de madeira de lei, lançamento, espalhamento e compactação da argamassa, acabamento superficial sarrafeado e rústico (desempenado) do piso cimentado, execução de cura úmida do piso e limpeza final.",
+   "criterio": "m2 (metro quadrado) Medido pela área real de piso cimentado executado.",
+   "normas": ["NBR 5732:1991", "NBR 7220:1987"]
+  },
+  "130210": {
+   "d": "Piso cimentado liso espessura: 1,50 cm, em argamassa de cimento e areia no traço 1:3 e juntas de dilatação em PVC em quadros de 1 m, colorido com corante tipo Xadrez ou equivalente",
+   "u": "m2",
+   "caderno": "13 – PISOS INTERNOS E EXTERNOS · 1302 – ACABAMENTOS",
+   "atualizacao": "04/2024",
+   "aplicacao": "Em ambientes internos. Não é recomendada a utilização em locais em que se tenha presença de água (áreas molhadas).",
+   "incluidos": "Fornecimento, preparo e transporte da argamassa com adição de corante, considerando perdas por consumo e transporte interno do canteiro até o local da aplicação, varredura e lavagem da superfície, umedecimento da superfície, execução de camada de aderência, assentamento das juntas de dilatação em PVC, lançamento, espalhamento e compactação da argamassa, acabamento superficial sarrafeado e natado (alisado) do piso cimentado, execução de cura úmida do piso e limpeza final.",
+   "criterio": "m2 (metro quadrado) Medido pela área real de piso cimentado executado.",
+   "normas": ["NBR 5732:1991", "NBR 7220:1987"]
+  },
+  "130211": {
+   "d": "Fornecimento e instalação de Piso vinílico em placas de 30x30 cm, espessura: 2mm Linha Chroma Concept - Fademac ou equivalente, inclusive argamassa de regularização",
+   "u": "m2",
+   "caderno": "13 – PISOS INTERNOS E EXTERNOS · 1302 – ACABAMENTOS",
+   "atualizacao": "04/2024",
+   "aplicacao": "Em ambientes internos, em locais de tráfego leve. Não é recomendada a instalação em locais sujeitos à infiltração ascendente de umidade e sujeitos à lavagem.",
+   "incluidos": "Fornecimento e instalação do piso vinílico em placas, inclusive fornecimento e aplicação do primer, argamassa regularizadora e adesivo para colagem, considerando perdas por consumo e transporte interno do canteiro até o local da aplicação, limpeza, remoção de excesso de adesivo entre as placas e proteção do piso.",
+   "criterio": "m2 (metro quadrado) Medido pela área de piso efetivamente executado, medido na projeção horizontal da área revestida.",
+   "normas": ["NBR 7374:2006", "NBR 14917-1:2022", "NBR 14917-2:2022"]
+  },
+  "130222": {
+   "d": "Fornecimento e instalação de Piso de borracha partilhado preto em placas de 50x50 cm, espessura: 3,50mm Plurigoma, exclusive argamassa de regularização",
+   "u": "m2",
+   "caderno": "13 – PISOS INTERNOS E EXTERNOS · 1302 – ACABAMENTOS",
+   "atualizacao": "04/2024",
+   "aplicacao": "Recomendado para grandes áreas de circulação de pessoas; rampas de acesso onde não deve haver retenção de água. Antiderrapante, muito utilizado em vestiários e locais onde a umidade é característica. Não recomendado em locais sujeitos à infiltração ascendente de umidade.",
+   "incluidos": "Fornecimento e instalação do piso em placas de borracha, inclusive fornecimento do adesivo para colagem, considerando perdas por consumo e transporte interno do canteiro até o local da aplicação, limpeza e remoção de excesso de adesivo entre as placas.",
+   "criterio": "m2 (metro quadrado) Medido pela área de piso efetivamente executado, medido na projeção horizontal da área revestida.",
+   "normas": ["NBR 9050:2020"]
+  },
+  "130223": {
+   "d": "Assentamento de piso cerâmico, com utilização de cimento colante, exclusive rejuntamento e piso cerâmico",
+   "u": "m2",
+   "caderno": "13 – PISOS INTERNOS E EXTERNOS · 1302 – ACABAMENTOS",
+   "atualizacao": "04/2024",
+   "aplicacao": "Revestimento indicado para assentamento em ambientes internos, para locais de acesso público em geral, especialmente em áreas molhadas (banheiros, sanitários, cozinhas, etc.).",
+   "incluidos": "Fornecimento e preparo da argamassa de assentamento, considerando perdas por consumo, transporte interno do canteiro até o local de assentamento, umedecimento da superfície de base, assentamento do piso cerâmico (exclusive o fornecimento), fornecimento dos espaçadores (se necessário) e limpeza das superfícies revestidas.",
+   "criterio": "m2 (metro quadrado) Pela área real de piso assentado.",
+   "normas": ["NBR 13753:1996", "NBR 14081-1:2012"]
+  },
+  "130225": {
+   "d": "Rejuntamento de piso cerâmico, usando cimento branco, para juntas de no máximo 3mm de espessura",
+   "u": "m2",
+   "caderno": "13 – PISOS INTERNOS E EXTERNOS · 1302 – ACABAMENTOS",
+   "atualizacao": "04/2024",
+   "aplicacao": "Indicado para rejuntamento de pisos cerâmicos em ambientes internos. Não indicado para aplicação em ambientes sujeitos à umidade.",
+   "incluidos": "Fornecimento, preparo e aplicação da pasta de rejuntamento, considerando perdas por consumo e transporte interno do canteiro até o local de rejuntamento, inclusive limpeza das superfícies rejuntadas.",
+   "criterio": "m2 (metro quadrado) Pela área real de rejuntamento de piso cerâmico.",
+   "normas": ["NBR 13753:1996", "NBR 9817:1987"]
+  },
+  "130226": {
+   "d": "Rejuntamento empregando argamassa para rejunte, espessura: 5mm",
+   "u": "m2",
+   "caderno": "13 – PISOS INTERNOS E EXTERNOS · 1302 – ACABAMENTOS",
+   "atualizacao": "04/2024",
+   "aplicacao": "Indicado para rejuntamento de pisos cerâmicos e pedras naturais, em ambientes internos e externos, sujeitos ou não à umidade.",
+   "incluidos": "Fornecimento, preparo e aplicação da argamassa de rejuntamento, considerando perdas por consumo e transporte interno do canteiro até o local de rejuntamento, inclusive limpeza das superfícies rejuntadas.",
+   "criterio": "m2 (metro quadrado) Pela área real de rejuntamento de piso cerâmico.",
+   "normas": ["NBR 13753:1996", "NBR 9817:1987", "NBR 14992:2003"]
+  },
+  "130228": {
+   "d": "Assentamento e rejuntamento de piso em porcelanato (dimensões superiores a 30x30 cm) utilizando dupla colagem de argamassa colante para porcelanato tipo ACIII, exclusive fornecimento do piso porcelanato e do rejunte",
+   "u": "m2",
+   "caderno": "13 – PISOS INTERNOS E EXTERNOS · 1302 – ACABAMENTOS",
+   "atualizacao": "04/2024",
+   "aplicacao": "Revestimento indicado para assentamento em locais de acesso público em geral, tanto para ambientes internos quanto externos e que receberão alto tráfego.",
+   "incluidos": "Fornecimento e preparo da argamassa de assentamento, considerando perdas por consumo, transporte interno do canteiro até o local de assentamento, umedecimento da superfície de base, assentamento do piso em porcelanato (exclusive o fornecimento), fornecimento dos espaçadores, preparação das juntas, preparo da argamassa de rejuntamento, execução do rejuntamento (exclusive fornecimento do rejunte) e limpeza das superfícies revestidas.",
+   "criterio": "m2 (metro quadrado) Pela área real de piso assentado e rejuntado.",
+   "normas": ["NBR 9817:1987", "NBR 13753:1996", "NBR 14081-1:2012", "NBR 16928:2021"]
+  },
+  "130230": {
+   "d": "Piso argamassa alta resistência tipo granilite ou equivalente de qualidade comprovada, espessura: 10mm, com juntas de dilatação PVC em quadros de 1m, na cor natural, com acabamento mecanizado antiderrapante, inclusive regularização espessura: 3,0cm",
+   "u": "m2",
+   "caderno": "13 – PISOS INTERNOS E EXTERNOS · 1302 – ACABAMENTOS",
+   "atualizacao": "04/2024",
+   "aplicacao": "Indicado para ambientes internos, para locais de acesso público em geral, especialmente em áreas com presença de umidade e sujeitos à lavagem (vestiários, refeitórios, circulação, etc.).",
+   "incluidos": "Fornecimento, preparo, transporte, lançamento e espalhamento da argamassa de regularização e do granilite, considerando perdas por consumo e transporte interno do canteiro até o local da aplicação, varredura e lavagem da superfície, umedecimento da superfície, execução de camada de aderência, assentamento das juntas de dilatação PVC, sarrafeamento e compactação da argamassa de regularização, nivelamento, compactação, acabamento superficial áspero, cura e limpeza final do piso em granilite.",
+   "criterio": "m2 (metro quadrado) Medido pela área real de piso granilite executado.",
+   "normas": ["NBR 5732:1991", "NBR 7220:1987", "NBR 11801:2012", "NBR 12260:2012"]
+  },
+  "130231": {
+   "d": "Piso argamassa alta resistência tipo granilite ou equivalente de qualidade comprovada, espessura: 10mm, com juntas de dilatação PVC em quadros de 1m, na cor natural, com acabamento mecanizado polido, inclusive regularização espessura: 3,0cm",
+   "u": "m2",
+   "caderno": "13 – PISOS INTERNOS E EXTERNOS · 1302 – ACABAMENTOS",
+   "atualizacao": "04/2024",
+   "aplicacao": "Indicado para ambientes internos, para locais de acesso público em geral, como ambientes administrativos, salas de aula, auditórios etc. Não é indicado para ambientes sujeitos à lavagem e com presença de água e umidade.",
+   "incluidos": "Fornecimento, preparo, transporte, lançamento e espalhamento da argamassa de regularização e do granilite, considerando perdas por consumo e transporte interno do canteiro até o local da aplicação, varredura e lavagem da superfície, umedecimento da superfície, execução de camada de aderência, assentamento das juntas de dilatação PVC, sarrafeamento e compactação da argamassa de regularização, nivelamento, compactação, cura, polimento superficial mecanizado e limpeza final do piso em granilite.",
+   "criterio": "m2 (metro quadrado) Medido pela área real de piso granilite executado.",
+   "normas": ["NBR 5732:1991", "NBR 7220:1987", "NBR 11801:2012", "NBR 12260:2012"]
+  },
+  "130233": {
+   "d": "Porcelanato natural acabamento lateral bold, 60x60 cm, cor cimento CINZA BOLD – Portobello ou equivalente, utilizando dupla colagem de argamassa colante para porcelanato tipo ACIII e rejunte para porcelanato junta espessura: 3mm",
+   "u": "m2",
+   "caderno": "13 – PISOS INTERNOS E EXTERNOS · 1302 – ACABAMENTOS",
+   "atualizacao": "04/2024",
+   "aplicacao": "Revestimento indicado para assentamento em ambientes comerciais internos, com trânsito intenso de pessoas, equipamentos leves. Ambientes internos molhados e fachadas externas.",
+   "incluidos": "Fornecimento do piso em Porcelanato e dos espaçadores, argamassa de assentamento e de rejuntamento, considerando perdas por consumo e transporte interno do canteiro até o local de assentamento, inclusive preparo da argamassa e do rejunte, umedecimento da superfície de base, assentamento do piso, preparação das juntas, execução do rejuntamento e limpeza das superfícies revestidas.",
+   "criterio": "m2 (metro quadrado) Pela área real de piso assentado e rejuntado.",
+   "normas": ["NBR 9817:1987", "NBR 13753:1996", "NBR 14081-1:2012", "NBR 14992:2003", "NBR 16928:2021"]
+  },
+  "130234": {
+   "d": "Porcelanato natural acabamento lateral retificado, 60x60 cm, cor bege PLATINA NA – Eliane ou equivalente, utilizando dupla colagem de argamassa colante para porcelanato tipo ACIII e rejunte para porcelanato junta espessura: 1mm",
+   "u": "m2",
+   "caderno": "13 – PISOS INTERNOS E EXTERNOS · 1302 – ACABAMENTOS",
+   "atualizacao": "04/2024",
+   "aplicacao": "Ambientes comerciais internos com trânsito intenso de pessoas, equipamentos pesados e veículos, inclusive ambientes FMC, FLC e FIR. Ambientes internos molhados e fachadas externas, inclusive ambientes WRC e WID.",
+   "incluidos": "Fornecimento do piso em Porcelanato e dos espaçadores, argamassa de assentamento e de rejuntamento, considerando perdas por consumo e transporte interno do canteiro até o local de assentamento, inclusive preparo da argamassa e do rejunte, umedecimento da superfície de base, assentamento do piso, preparação das juntas, execução do rejuntamento e limpeza das superfícies revestidas.",
+   "criterio": "m2 (metro quadrado) Pela área real de piso assentado e rejuntado.",
+   "normas": ["NBR 9817:1987", "NBR 13753:1996", "NBR 14081-1:2012", "NBR 14992:2003", "NBR 16928:2021"]
+  },
+  "130236": {
+   "d": "Piso cerâmico brilhante, PEI 5, acabamento lateral bold, 45x45 cm, cor branco CARGO PLUS WHITE – Eliane ou equivalente, assentado com argamassa de cimento colante, inclusive rejuntamento",
+   "u": "m2",
+   "caderno": "13 – PISOS INTERNOS E EXTERNOS · 1302 – ACABAMENTOS",
+   "atualizacao": "04/2024",
+   "aplicacao": "Revestimento indicado para assentamento em ambientes internos, para locais de acesso público em geral, especialmente em áreas molhadas (banheiros, sanitários, cozinhas, etc.).",
+   "incluidos": "Fornecimento do piso cerâmico e dos espaçadores (se necessário), argamassa de assentamento e pasta de rejuntamento, considerando perdas por consumo e transporte interno do canteiro até o local de assentamento, inclusive preparo da argamassa e do rejunte, umedecimento da superfície de base, assentamento do piso, preparação das juntas, execução do rejuntamento e limpeza das superfícies revestidas.",
+   "criterio": "m2 (metro quadrado) Pela área real de piso assentado e rejuntado.",
+   "normas": ["NBR 9817:1987", "NBR 13753:1996", "NBR 14081-1:2012"]
+  },
+  "130237": {
+   "d": "Assentamento e rejuntamento de piso em porcelanato (dimensões superiores a 30x30 cm) utilizando dupla colagem de argamassa colante para porcelanato tipo ACII/ACIII, exclusive fornecimento do piso porcelanato e do rejunte",
+   "u": "m2",
+   "caderno": "13 – PISOS INTERNOS E EXTERNOS · 1302 – ACABAMENTOS",
+   "atualizacao": "04/2024",
+   "aplicacao": "Revestimento indicado para assentamento em locais de acesso público em geral, para ambientes internos, especialmente em áreas molhadas (banheiros, sanitários, cozinhas, etc.).",
+   "incluidos": "Fornecimento e preparo da argamassa de assentamento, considerando perdas por consumo, transporte interno do canteiro até o local de assentamento, umedecimento da superfície de base, assentamento do piso em porcelanato (exclusive o fornecimento), fornecimento dos espaçadores, preparação das juntas, preparo da argamassa de rejuntamento, execução do rejuntamento (exclusive fornecimento do rejunte) e limpeza das superfícies revestidas.",
+   "criterio": "m2 (metro quadrado) Pela área real de piso assentado e rejuntado.",
+   "normas": ["NBR 9817:1987", "NBR 13753:1996", "NBR 14081-1:2012", "NBR 16928:2021"]
+  }
+ }
+}

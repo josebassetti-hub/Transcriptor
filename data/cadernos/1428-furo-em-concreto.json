@@ -1,0 +1,37 @@
+{
+ "arquivo": "14-INSTALAÇÕES HIDROSSANITÁRIAS -14.28.pdf",
+ "caderno": "14 – INSTALAÇÕES HIDROSSANITÁRIAS · 14.28 – FURO EM CONCRETO",
+ "truncado": false,
+ "fichas": {
+  "142801": {
+   "d": "Furo mecanizado em concreto, com martelete demolidor elétrico, para instalações hidráulicas, diâmetros menores ou iguais a 1.1/2\"",
+   "u": "cm",
+   "caderno": "14 – INSTALAÇÕES HIDROSSANITÁRIAS · 14.28 – FURO EM CONCRETO",
+   "atualizacao": "02/2025",
+   "aplicacao": "Execução de furos ou orifícios em estruturas de concreto (lajes, pisos, vigas, paredes, etc.), para passagem de tubulações hidrossanitárias, fixação de suportes ou acesso a áreas internas de uma estrutura para inspeção ou reparo.",
+   "incluidos": "Transporte do equipamento (mobilização e desmobilização) até o local de execução do furo, demarcação de circunferência e perfuração mecanizada em concreto, limpeza da área, remoção de poeira e partículas soltas.",
+   "criterio": "cm (centímetro) Pela espessura em centímetros de perfuração de um elemento em concreto, com diâmetro menor ou igual a 1.1/2\" (38 milímetros).",
+   "normas": ["NBR 6118:2023", "NR 18"]
+  },
+  "142802": {
+   "d": "Furo mecanizado em concreto, com martelete demolidor elétrico, para instalações hidráulicas, diâmetros maiores 1.1/2\" e menores ou iguais a 3\"",
+   "u": "cm",
+   "caderno": "14 – INSTALAÇÕES HIDROSSANITÁRIAS · 14.28 – FURO EM CONCRETO",
+   "atualizacao": "02/2025",
+   "aplicacao": "Execução de furos ou orifícios em estruturas de concreto (lajes, pisos, vigas, paredes, etc.), para passagem de tubulações hidrossanitárias, fixação de suportes ou acesso a áreas internas de uma estrutura para inspeção ou reparo.",
+   "incluidos": "Transporte do equipamento (mobilização e desmobilização) até o local de execução do furo, demarcação de circunferência e perfuração mecanizada em concreto, limpeza da área, remoção de poeira e partículas soltas.",
+   "criterio": "cm (centímetro) Pela espessura em centímetros de perfuração de um elemento em concreto, com diâmetro maior que 1.1/2\" (38 milímetros) e menor ou igual a 3\" (76,2 milímetros).",
+   "normas": ["NBR 6118:2023", "NR 18"]
+  },
+  "142803": {
+   "d": "Furo mecanizado em concreto, com martelete demolidor elétrico, para instalações hidráulicas, diâmetros maiores 3\" e menores ou iguais a 4\"",
+   "u": "cm",
+   "caderno": "14 – INSTALAÇÕES HIDROSSANITÁRIAS · 14.28 – FURO EM CONCRETO",
+   "atualizacao": "02/2025",
+   "aplicacao": "Execução de furos ou orifícios em estruturas de concreto (lajes, pisos, vigas, paredes, etc.), para passagem de tubulações hidrossanitárias, fixação de suportes ou acesso a áreas internas de uma estrutura para inspeção ou reparo.",
+   "incluidos": "Transporte do equipamento (mobilização e desmobilização) até o local de execução do furo, demarcação de circunferência e perfuração mecanizada em concreto, limpeza da área, remoção de poeira e partículas soltas.",
+   "criterio": "cm (centímetro) Pela espessura em centímetros de perfuração de um elemento em concreto, com diâmetro maior que 3\" (76,2 milímetros) e menor ou igual a 4\" (101,6 milímetros).",
+   "normas": ["NBR 6118:2023", "NR 18"]
+  }
+ }
+}

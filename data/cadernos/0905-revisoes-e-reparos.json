@@ -1,0 +1,67 @@
+{
+ "arquivo": "0905-COBERTURA-1.pdf",
+ "caderno": "09 – COBERTURA · 0905 – REVISÕES E REPAROS",
+ "truncado": false,
+ "fichas": {
+  "090501": {
+   "d": "Recolocação de engradamento de madeira para cobertura com telha cerâmica, com pontaletes, terças, caibros e ripas de até 2 águas, exclusive fornecimento",
+   "u": "m2",
+   "caderno": "09 – COBERTURA · 0905 – REVISÕES E REPAROS",
+   "atualizacao": "05/2025",
+   "aplicacao": "Utilizada na recolocação de peças do madeiramento para telhados de telha cerâmica, em situações que há necessidade de reparo na estrutura.",
+   "incluidos": "Retirada e substituição de pontaletes, terças, caibros e ripas de madeira, considerando corte, furação, escareação, fresagem, montagem e encaixe das peças da estrutura do telhado, inclusive fixação com pregos. Limpeza da área de execução do serviço, com remoção de todos os resíduos de madeira, pó, poeira, materiais excedentes e inaproveitáveis.",
+   "criterio": "m2 (metro quadrado) Pela área de estrutura de madeira da cobertura existente a ser substituída (revisada), utilizando a área de projeção horizontal do telhado.",
+   "normas": ["NBR 7190:2022", "NR 18", "NBR 7203:1982", "Decreto Estadual nº 1.941-R/2007"]
+  },
+  "090502": {
+   "d": "Recolocação de estrutura de madeira para cobertura com telha ondulada de fibrocimento ou telha ecológica tipo onduline, com caibro, terças e pontaletes de até 2 águas, exclusive fornecimento",
+   "u": "m2",
+   "caderno": "09 – COBERTURA · 0905 – REVISÕES E REPAROS",
+   "atualizacao": "05/2025",
+   "aplicacao": "Utilizada na recolocação de peças do madeiramento para telhados de telha ondulada de fibrocimento ou telha ecológica tipo onduline, em situações que há necessidade de reparo na estrutura.",
+   "incluidos": "Retirada e substituição de caibros, terças e pontaletes de madeira, considerando corte, furação, escareação, fresagem, montagem e encaixe das peças da estrutura do telhado, inclusive fixação com pregos. Limpeza da área de execução do serviço, com remoção de todos os resíduos de madeira, pó, poeira, materiais excedentes e inaproveitáveis.",
+   "criterio": "m2 (metro quadrado) Pela área de estrutura de madeira da cobertura existente a ser substituída (revisada), utilizando a área de projeção horizontal do telhado.",
+   "normas": ["NBR 7190:2022", "NR 18", "NBR 7203:1982", "Decreto Estadual nº 1.941-R/2007"]
+  },
+  "090506": {
+   "d": "Recolocação de telha ondulada de fibrocimento 6 mm, exclusive cumeeira",
+   "u": "m2",
+   "caderno": "09 – COBERTURA · 0905 – REVISÕES E REPAROS",
+   "atualizacao": "05/2025",
+   "aplicacao": "Substituição de telhas de fibrocimento em cobertura ou fechamento lateral existente, em situações que as telhas possam estar avariadas, quebradas ou com fissuras, que não estejam protegendo contra as intempéries, ou seja, isolando adequadamente o meio interno do meio externo de uma edificação.",
+   "incluidos": "Recolocação de telhas de fibrocimento com espessura de 6 milímetros, incluindo eventual fornecimento de telhas novas (0,06 m2 de telha por m2 do serviço) e acessórios (parafuso para fixação e conjunto de vedação elástica), considerando execução de cortes, furações, recobrimento, perdas por consumo, transporte interno no canteiro até o local de instalação e transporte vertical dos materiais à cobertura. Limpeza e remoção de materiais excedentes e inaproveitáveis.",
+   "criterio": "m2 (metro quadrado) Pela área total de cobertura existente a ser modificada (revisada), utilizando a área de projeção horizontal do telhado.",
+   "normas": ["NBR 12800:2012", "NBR 9066:2012"]
+  },
+  "090509": {
+   "d": "Remoção e recolocação de telhas cerâmicas, inclusive limpeza utilizando detergente neutro e escovação manual",
+   "u": "m2",
+   "caderno": "09 – COBERTURA · 0905 – REVISÕES E REPAROS",
+   "atualizacao": "05/2025",
+   "aplicacao": "Remoção de sujeiras e incrustações acumuladas nas telhas cerâmicas ocasionadas por fungos, limos, poeiras e maresia, a fim de prevenir infiltrações, melhorar a estética e aumentar a vida útil do telhado.",
+   "incluidos": "Remoção cuidadosa de telhas cerâmicas, limpeza das peças utilizando lavagem com água, detergente neutro e escova com cerdas de aço, transporte vertical dos materiais à cobertura (para remoção e posteriormente para recolocação) e recolocação das telhas cerâmicas conforme configuração original da cobertura). Limpeza e remoção de materiais excedentes e inaproveitáveis.",
+   "criterio": "m2 (metro quadrado) Pela área efetiva de telhado considerando a remoção, a limpeza e a recolocação das telhas cerâmicas.",
+   "normas": ["NBR 15310:2009"]
+  },
+  "090511": {
+   "d": "Tratamento em estrutura de madeira com imunizante cupinicida, a uma demão",
+   "u": "m2",
+   "caderno": "09 – COBERTURA · 0905 – REVISÕES E REPAROS",
+   "atualizacao": "05/2025",
+   "aplicacao": "Utilizado para prevenir infestações de cupins e brocas na estrutura de madeira da cobertura.",
+   "incluidos": "Fornecimento e aplicação de imunizante tipo cupinicida para estrutura de madeira, incluindo (caso necessário) o lixamento ou a aplicação de removedor para remoção de acabamento da madeira. Limpeza e remoção de resíduos e materiais excedentes e inaproveitáveis.",
+   "criterio": "m2 (metro quadrado) Pela área de estrutura de madeira efetivamente tratada com aplicação de imunizante tipo cupinicida.",
+   "normas": ["NBR 7203:1982", "Decreto Estadual nº 1.941-R/2007", "NBR 14725:2023"]
+  },
+  "090512": {
+   "d": "Limpeza manual de calhas e coletores de rede de drenagem pluvial",
+   "u": "m3",
+   "caderno": "09 – COBERTURA · 0905 – REVISÕES E REPAROS",
+   "atualizacao": "05/2025",
+   "aplicacao": "Remoção de sujeiras acumuladas que podem bloquear o fluxo de água e impedir o escoamento correto pelas calhas e coletores, a fim de evitar entupimentos que podem gerar problemas como: infiltrações, mofos, goteiras, alagamentos, etc.",
+   "incluidos": "Limpeza manual e lavagem de calhas e coletores, considerando remoção e destinação apropriada de sujeiras e resíduos diversos.",
+   "criterio": "m3 (metro cúbico) Pelo volume efetivo interno de limpeza das calhas e condutores, considerando toda a extensão desses elementos na cobertura.",
+   "normas": ["NBR 10844:1989"]
+  }
+ }
+}

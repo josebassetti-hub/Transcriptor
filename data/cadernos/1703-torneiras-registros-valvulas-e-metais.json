@@ -1,0 +1,660 @@
+{
+ "arquivo": "1703 - TORNEIRAS, REGISTROS, VÁLVULAS E METAIS.pdf",
+ "caderno": "17 – APARELHOS HIDRO-SANITÁRIOS · 1703 – TORNEIRAS, REGISTROS, VÁLVULAS E METAIS",
+ "truncado": false,
+ "fichas": {
+  "170304": {
+   "d": "Torneira bica baixa de mesa para lavatório PressMatic Alfa - Docol, Decamatic Smart - Deca ou equivalente",
+   "u": "und",
+   "caderno": "1703 – TORNEIRAS, REGISTROS, VÁLVULAS E METAIS",
+   "atualizacao": "08/2024",
+   "aplicacao": "Utilizada em instalações prediais de água fria e quente em lavatórios. Obstruir, interromper e controlar o fluxo de água decorrente da instalação hidráulica.",
+   "incluidos": "Fornecimento completo da Torneira e acessórios para perfeita instalação, bem como a mão de obra para execução do serviço de todo serviço.",
+   "criterio": "Por unidade instalada.",
+   "normas": [
+    "NBR 5626",
+    "NBR 13713"
+   ]
+  },
+  "170306": {
+   "d": "Torneira de parede para tanque longa 3/4\" 1158 Primor – Docol ou equivalente",
+   "u": "und",
+   "caderno": "1703 – TORNEIRAS, REGISTROS, VÁLVULAS E METAIS",
+   "atualizacao": "08/2024",
+   "aplicacao": "Utilizada em instalações prediais de água fria e quente em tanques. Obstruir, interromper e controlar o fluxo de água decorrente da instalação hidráulica.",
+   "incluidos": "Fornecimento completo da Torneira e acessórios para perfeita instalação, bem como a mão de obra para execução do serviço de todo serviço.",
+   "criterio": "Por unidade instalada.",
+   "normas": [
+    "NBR 5626",
+    "NBR 10281"
+   ]
+  },
+  "170309": {
+   "d": "Torneira angular de acionamento restrito para jardim, 3/4\" – Docol ou equivalente",
+   "u": "und",
+   "caderno": "1703 – TORNEIRAS, REGISTROS, VÁLVULAS E METAIS",
+   "atualizacao": "08/2024",
+   "aplicacao": "Utilizada em instalações de água fria, em jardins ou em áreas de lavagem, conforme indicação de projeto. A chave de acionamento deverá ficar com a pessoa indicada pelo responsável da edificação. Obstruir, interromper e controlar o fluxo de água decorrente da instalação hidráulica.",
+   "incluidos": "Fornecimento completo da Torneira e acessórios para perfeita instalação, bem como a mão de obra para execução do serviço de todo serviço.",
+   "criterio": "Por unidade instalada.",
+   "normas": [
+    "NBR 10281"
+   ]
+  },
+  "170310": {
+   "d": "Torneira para uso geral 1130 Trio - Docol ou equivalente",
+   "u": "und",
+   "caderno": "1703 – TORNEIRAS, REGISTROS, VÁLVULAS E METAIS",
+   "atualizacao": "08/2024",
+   "aplicacao": "Utilizada em instalações prediais de água fria e quente nos jardins e pátios. Obstruir, interromper e controlar o fluxo de água decorrente da instalação hidráulica.",
+   "incluidos": "Fornecimento completo da Torneira e acessórios para perfeita instalação, bem como a mão de obra para execução do serviço de todo serviço.",
+   "criterio": "Por unidade instalada.",
+   "normas": [
+    "NBR 5626",
+    "NBR 10281"
+   ]
+  },
+  "170311": {
+   "d": "Torneira em polipropileno parede para pia Slim - Krona ou equivalente",
+   "u": "und",
+   "caderno": "1703 – TORNEIRAS, REGISTROS, VÁLVULAS E METAIS",
+   "atualizacao": "08/2024",
+   "aplicacao": "Utilizada em instalações prediais de água fria nos tanques. Obstruir, interromper e controlar o fluxo de água decorrente da instalação hidráulica.",
+   "incluidos": "Fornecimento completo da Torneira e acessórios para perfeita instalação, bem como a mão de obra para execução do serviço de todo serviço.",
+   "criterio": "Por unidade instalada.",
+   "normas": [
+    "NBR 5626",
+    "NBR 10281"
+   ]
+  },
+  "170313": {
+   "d": "Torneira de parede para tanque longa 1/2\" 1158 Primor – Docol ou equivalente",
+   "u": "und",
+   "caderno": "1703 – TORNEIRAS, REGISTROS, VÁLVULAS E METAIS",
+   "atualizacao": "08/2024",
+   "aplicacao": "Utilizada em instalações prediais de água fria e quente em tanques. Obstruir, interromper e controlar o fluxo de água decorrente da instalação hidráulica.",
+   "incluidos": "Fornecimento completo da Torneira e acessórios para perfeita instalação, bem como a mão de obra para execução do serviço de todo serviço.",
+   "criterio": "Por unidade instalada.",
+   "normas": [
+    "NBR 5626",
+    "NBR 10281"
+   ]
+  },
+  "170315": {
+   "d": "Torneira de parede de cozinha bica alta 360º Gali - Docol ou equivalente",
+   "u": "und",
+   "caderno": "1703 – TORNEIRAS, REGISTROS, VÁLVULAS E METAIS",
+   "atualizacao": "08/2024",
+   "aplicacao": "Utilizada em instalações prediais de água fria e quente em cozinhas. Obstruir, interromper e controlar o fluxo de água decorrente da instalação hidráulica.",
+   "incluidos": "Fornecimento completo da Torneira e acessórios para perfeita instalação, bem como a mão de obra para execução do serviço de todo serviço.",
+   "criterio": "Por unidade instalada.",
+   "normas": [
+    "NBR 5626",
+    "NBR 10281"
+   ]
+  },
+  "170316": {
+   "d": "Registro de pressão com acabamento canopla metal cromada C40, diâmetro 1/2\" (15mm) – Docol, Deca ou equivalente",
+   "u": "und",
+   "caderno": "1703 – TORNEIRAS, REGISTROS, VÁLVULAS E METAIS",
+   "atualizacao": "07/2024",
+   "aplicacao": "Utilizada em instalações prediais de água quente ou fria onde somente o corpo do registro deve ser embutido, para as operações de bloqueio e/ou regulagem do fluxo de água de chuveiros, banheiras ou duchas higiênicas.",
+   "incluidos": "Fornecimento completo do Registro e acessórios para perfeita instalação, bem como a mão de obra para execução do serviço de todo serviço.",
+   "criterio": "Por unidade instalada. Obs.: Acontecendo a necessidade de instalação de niple e união esses serviços serão pagos em separado",
+   "normas": [
+    "NBR 5626",
+    "NBR 10071",
+    "NBR 10090",
+    "NBR 14150",
+    "NBR 15704-1"
+   ]
+  },
+  "170317": {
+   "d": "Registro de pressão com acabamento canopla metal cromado C40, diâmetro 3/4\" (20mm) - Docol, Deca ou equivalente",
+   "u": "und",
+   "caderno": "1703 – TORNEIRAS, REGISTROS, VÁLVULAS E METAIS",
+   "atualizacao": "08/2024",
+   "aplicacao": "Utilizada em instalações prediais de água quente ou fria onde somente o corpo do registro deve ser embutido, para as operações de bloqueio e/ou regulagem do fluxo de água de chuveiros, banheiras ou duchas higiênicas.",
+   "incluidos": "Fornecimento completo do Registro e acessórios para perfeita instalação, bem como a mão de obra para execução do serviço de todo serviço.",
+   "criterio": "Por unidade instalada. Obs.: Acontecendo a necessidade de instalação de niple e união esses serviços serão pagos em separado",
+   "normas": [
+    "NBR 5626",
+    "NBR 10071",
+    "NBR 10090",
+    "NBR 14150",
+    "NBR 15704-1"
+   ]
+  },
+  "170318": {
+   "d": "Registro de pressão bruto com volante, diâmetro 1/2\" (15mm) - Docol, Deca ou equivalente",
+   "u": "und",
+   "caderno": "1703 – TORNEIRAS, REGISTROS, VÁLVULAS E METAIS",
+   "atualizacao": "08/2024",
+   "aplicacao": "Utilizada em instalações prediais de água quente ou fria onde somente o corpo do registro deve ser embutido, para as operações de bloqueio e/ou regulagem do fluxo de água de chuveiros, banheiras ou duchas higiênicas.",
+   "incluidos": "Fornecimento completo do Registro e acessórios para perfeita instalação, bem como a mão de obra para execução do serviço de todo serviço.",
+   "criterio": "Por unidade instalada. Obs.: Acontecendo a necessidade de instalação de niple e união esses serviços serão pagos em separado",
+   "normas": [
+    "NBR 5626",
+    "NBR 10071",
+    "NBR 10090",
+    "NBR 14150"
+   ]
+  },
+  "170319": {
+   "d": "Registro de gaveta bruto ABNT diâmetro 1/2\" (15mm) – Docol, Deca ou equivalente",
+   "u": "und",
+   "caderno": "1703 – TORNEIRAS, REGISTROS, VÁLVULAS E METAIS",
+   "atualizacao": "08/2024",
+   "aplicacao": "Utilizada em instalações prediais de água quente ou fria onde somente o corpo do registro deve ser embutido, para as operações de bloqueio do fluxo de água, sempre como registro de manutenção. Indicado para uso totalmente aberto ou fechado. Não deverá ser empregado para regulagem do fluxo de água...",
+   "incluidos": "Fornecimento completo do Registro e acessórios para perfeita instalação, bem como a mão de obra para execução do serviço de todo serviço.",
+   "criterio": "Por unidade instalada. Obs.: Acontecendo a necessidade de instalação de niple e união esses serviços serão pagos em separado",
+   "normas": [
+    "NBR 5626",
+    "NBR 15705"
+   ]
+  },
+  "170320": {
+   "d": "Registro de gaveta bruto ABNT diâmetro 3/4\" (20mm) – Docol, Deca ou equivalente",
+   "u": "und",
+   "caderno": "1703 – TORNEIRAS, REGISTROS, VÁLVULAS E METAIS",
+   "atualizacao": "08/2024",
+   "aplicacao": "Utilizada em instalações prediais de água quente ou fria onde somente o corpo do registro deve ser embutido, para as operações de bloqueio do fluxo de água, sempre como registro de manutenção. Indicado para uso totalmente aberto ou fechado. Não deverá ser empregado para regulagem do fluxo de água...",
+   "incluidos": "Fornecimento completo do Registro e acessórios para perfeita instalação, bem como a mão de obra para execução do serviço de todo serviço.",
+   "criterio": "Por unidade instalada. Obs.: Acontecendo a necessidade de instalação de niple e união esses serviços serão pagos em separado",
+   "normas": [
+    "NBR 5626",
+    "NBR 15705"
+   ]
+  },
+  "170321": {
+   "d": "Registro de gaveta bruto ABNT diâmetro 1\" (25mm) – Docol, Deca ou equivalente",
+   "u": "und",
+   "caderno": "1703 – TORNEIRAS, REGISTROS, VÁLVULAS E METAIS",
+   "atualizacao": "08/2024",
+   "aplicacao": "Utilizada em instalações prediais de água quente ou fria onde somente o corpo do registro deve ser embutido, para as operações de bloqueio do fluxo de água, sempre como registro de manutenção. Indicado para uso totalmente aberto ou fechado. Não deverá ser empregado para regulagem do fluxo de água...",
+   "incluidos": "Fornecimento completo do Registro e acessórios para perfeita instalação, bem como a mão de obra para execução do serviço de todo serviço.",
+   "criterio": "Por unidade instalada. Obs.: Acontecendo a necessidade de instalação de niple e união esses serviços serão pagos em separado",
+   "normas": [
+    "NBR 5626",
+    "NBR 15705"
+   ]
+  },
+  "170322": {
+   "d": "Registro de gaveta bruto ABNT diâmetro 1.1/4\" (32mm) - Docol, Deca ou equivalente",
+   "u": "und",
+   "caderno": "1703 – TORNEIRAS, REGISTROS, VÁLVULAS E METAIS",
+   "atualizacao": "08/2024",
+   "aplicacao": "Utilizada em instalações prediais de água quente ou fria onde somente o corpo do registro deve ser embutido, para as operações de bloqueio do fluxo de água, sempre como registro de manutenção. Indicado para uso totalmente aberto ou fechado. Não deverá ser empregado para regulagem do fluxo de água...",
+   "incluidos": "Fornecimento completo do Registro e acessórios para perfeita instalação, bem como a mão de obra para execução do serviço de todo serviço.",
+   "criterio": "Por unidade instalada. Obs.: Acontecendo a necessidade de instalação de niple e união esses serviços serão pagos em separado",
+   "normas": [
+    "NBR 5626",
+    "NBR 15705"
+   ]
+  },
+  "170323": {
+   "d": "Registro de gaveta bruto ABNT diâmetro 1.1/2\" (40mm) – Docol, Deca ou equivalente",
+   "u": "und",
+   "caderno": "1703 – TORNEIRAS, REGISTROS, VÁLVULAS E METAIS",
+   "atualizacao": "08/2024",
+   "aplicacao": "Utilizada em instalações prediais de água quente ou fria onde somente o corpo do registro deve ser embutido, para as operações de bloqueio do fluxo de água, sempre como registro de manutenção. Indicado para uso totalmente aberto ou fechado. Não deverá ser empregado para regulagem do fluxo de água...",
+   "incluidos": "Fornecimento completo do Registro e acessórios para perfeita instalação, bem como a mão de obra para execução do serviço de todo serviço.",
+   "criterio": "Por unidade instalada. Obs.: Acontecendo a necessidade de instalação de niple e união esses serviços serão pagos em separado",
+   "normas": [
+    "NBR 5626",
+    "NBR 15705"
+   ]
+  },
+  "170324": {
+   "d": "Registro de gaveta bruto ABNT diâmetro 2\" (50mm) – Docol, Deca ou equivalente",
+   "u": "und",
+   "caderno": "1703 – TORNEIRAS, REGISTROS, VÁLVULAS E METAIS",
+   "atualizacao": "08/2024",
+   "aplicacao": "Utilizada em instalações prediais de água quente ou fria onde somente o corpo do registro deve ser embutido, para as operações de bloqueio do fluxo de água, sempre como registro de manutenção. Indicado para uso totalmente aberto ou fechado. Não deverá ser empregado para regulagem do fluxo de água...",
+   "incluidos": "Fornecimento completo do Registro e acessórios para perfeita instalação, bem como a mão de obra para execução do serviço de todo serviço.",
+   "criterio": "Por unidade instalada. Obs.: Acontecendo a necessidade de instalação de niple e união esses serviços serão pagos em separado",
+   "normas": [
+    "NBR 5626",
+    "NBR 15705"
+   ]
+  },
+  "170325": {
+   "d": "Registro de gaveta bruto industrial diâmetro 2.1/2” (65mm) – Docol, Deca ou equivalente",
+   "u": "und",
+   "caderno": "1703 – TORNEIRAS, REGISTROS, VÁLVULAS E METAIS",
+   "atualizacao": "08/2024",
+   "aplicacao": "Utilizada em instalações prediais de água quente ou fria onde somente o corpo do registro deve ser embutido, para as operações de bloqueio do fluxo de água, sempre como registro de manutenção. Indicado para uso totalmente aberto ou fechado. Não deverá ser empregado para regulagem do fluxo de água...",
+   "incluidos": "Fornecimento completo do Registro e acessórios para perfeita instalação, bem como a mão de obra para execução do serviço de todo serviço.",
+   "criterio": "Por unidade instalada. Obs.: Acontecendo a necessidade de instalação de niple e união esses serviços serão pagos em separado",
+   "normas": [
+    "NBR 5626",
+    "NBR 15705"
+   ]
+  },
+  "170326": {
+   "d": "Registro de gaveta bruto industrial diâmetro 3” (75mm) – Docol, Deca ou equivalente",
+   "u": "und",
+   "caderno": "1703 – TORNEIRAS, REGISTROS, VÁLVULAS E METAIS",
+   "atualizacao": "07/2024",
+   "aplicacao": "Utilizada em instalações prediais de água quente ou fria onde somente o corpo do registro deve ser embutido, para as operações de bloqueio do fluxo de água, sempre como registro de manutenção. Indicado para uso totalmente aberto ou fechado. Não deverá ser empregado para regulagem do fluxo de água...",
+   "incluidos": "Fornecimento completo do Registro e acessórios para perfeita instalação, bem como a mão de obra para execução do serviço de todo serviço.",
+   "criterio": "Por unidade instalada. Obs.: Acontecendo a necessidade de instalação de niple e união esses serviços serão pagos em separado",
+   "normas": [
+    "NBR 5626",
+    "NBR 15705"
+   ]
+  },
+  "170327": {
+   "d": "Registro de gaveta ABNT com acabamento canopla metal cromado C40, diâmetro 1/2\" (15mm) – Docol, Deca ou equivalente",
+   "u": "und",
+   "caderno": "1703 – TORNEIRAS, REGISTROS, VÁLVULAS E METAIS",
+   "atualizacao": "08/2024",
+   "aplicacao": "Utilizada em instalações prediais de água quente ou fria onde somente o corpo do registro deve ser embutido, para as operações de bloqueio do fluxo de água, sempre como registro de manutenção. Indicado para uso totalmente aberto ou fechado. Não deverá ser empregado para regulagem do fluxo de água...",
+   "incluidos": "Fornecimento completo do Registro e acessórios para perfeita instalação, bem como a mão de obra para execução do serviço de todo serviço.",
+   "criterio": "Por unidade instalada. Obs.: Acontecendo a necessidade de instalação de niple e união esses serviços serão pagos em separado",
+   "normas": [
+    "NBR 5626",
+    "NBR 15705"
+   ]
+  },
+  "170328": {
+   "d": "Registro de gaveta ABNT com acabamento canopla metal cromado C40, diâmetro 3/4\" (20mm) - Docol, Deca ou equivalente",
+   "u": "und",
+   "caderno": "1703 – TORNEIRAS, REGISTROS, VÁLVULAS E METAIS",
+   "atualizacao": "08/2024",
+   "aplicacao": "Utilizada em instalações prediais de água quente ou fria onde somente o corpo do registro deve ser embutido, para as operações de bloqueio do fluxo de água, sempre como registro de manutenção. Indicado para uso totalmente aberto ou fechado. Não deverá ser empregado para regulagem do fluxo de água...",
+   "incluidos": "Fornecimento completo do Registro e acessórios para perfeita instalação, bem como a mão de obra para execução do serviço de todo serviço.",
+   "criterio": "Por unidade instalada. Obs.: Acontecendo a necessidade de instalação de niple e união esses serviços serão pagos em separado",
+   "normas": [
+    "NBR 5626",
+    "NBR 15705"
+   ]
+  },
+  "170329": {
+   "d": "Registro de gaveta ABNT com acabamento canopla metal cromado C40, diâmetro 1\" (25mm) - Docol, Deca ou equivalente",
+   "u": "und",
+   "caderno": "1703 – TORNEIRAS, REGISTROS, VÁLVULAS E METAIS",
+   "atualizacao": "08/2024",
+   "aplicacao": "Utilizada em instalações prediais de água quente ou fria onde somente o corpo do registro deve ser embutido, para as operações de bloqueio do fluxo de água, sempre como registro de manutenção. Indicado para uso totalmente aberto ou fechado. Não deverá ser empregado para regulagem do fluxo de água...",
+   "incluidos": "Fornecimento completo do Registro e acessórios para perfeita instalação, bem como a mão de obra para execução do serviço de todo serviço.",
+   "criterio": "Por unidade instalada. Obs.: Acontecendo a necessidade de instalação de niple e união esses serviços serão pagos em separado",
+   "normas": [
+    "NBR 5626",
+    "NBR 15705"
+   ]
+  },
+  "170330": {
+   "d": "Registro de gaveta ABNT com acabamento canopla metal cromado C40, diâmetro 1.1/4\" (32mm) - Docol, Deca ou equivalente",
+   "u": "und",
+   "caderno": "1703 – TORNEIRAS, REGISTROS, VÁLVULAS E METAIS",
+   "atualizacao": "08/2024",
+   "aplicacao": "Utilizada em instalações prediais de água quente ou fria onde somente o corpo do registro deve ser embutido, para as operações de bloqueio do fluxo de água, sempre como registro de manutenção. Indicado para uso totalmente aberto ou fechado. Não deverá ser empregado para regulagem do fluxo de água...",
+   "incluidos": "Fornecimento completo do Registro e acessórios para perfeita instalação, bem como a mão de obra para execução do serviço de todo serviço.",
+   "criterio": "Por unidade instalada. Obs.: Acontecendo a necessidade de instalação de niple e união esses serviços serão pagos em separado",
+   "normas": [
+    "NBR 5626",
+    "NBR 15705"
+   ]
+  },
+  "170331": {
+   "d": "Registro de gaveta ABNT com acabamento canopla metal cromado C40, diâmetro 1.1/2\" (40mm) - Docol, Deca ou equivalente",
+   "u": "und",
+   "caderno": "1703 – TORNEIRAS, REGISTROS, VÁLVULAS E METAIS",
+   "atualizacao": "08/2024",
+   "aplicacao": "Utilizada em instalações prediais de água quente ou fria onde somente o corpo do registro deve ser embutido, para as operações de bloqueio do fluxo de água, sempre como registro de manutenção. Indicado para uso totalmente aberto ou fechado. Não deverá ser empregado para regulagem do fluxo de água...",
+   "incluidos": "Fornecimento completo do Registro e acessórios para perfeita instalação, bem como a mão de obra para execução do serviço de todo serviço.",
+   "criterio": "Por unidade instalada. Obs.: Acontecendo a necessidade de instalação de niple e união esses serviços serão pagos em separado",
+   "normas": [
+    "NBR 5626",
+    "NBR 15705"
+   ]
+  },
+  "170345": {
+   "d": "Válvula de descarga com acabamento canopla metal cromado, diâmetro 1.1/4\" (32mm), referência Docol, Deca ou equivalente",
+   "u": "und",
+   "caderno": "1703 – TORNEIRAS, REGISTROS, VÁLVULAS E METAIS",
+   "atualizacao": "08/2024",
+   "aplicacao": "Utilizada em instalações prediais de água fria em locais como sanitários administrativos e vestiários de funcionários.",
+   "incluidos": "Fornecimento completo da Válvula e acessórios para perfeita instalação, bem como a mão de obra para execução do serviço de todo serviço.",
+   "criterio": "Por unidade instalada.",
+   "normas": [
+    "NBR 5626:2020",
+    "NBR 15857:2011",
+    "NBR 10283:2008"
+   ]
+  },
+  "170346": {
+   "d": "Válvula de descarga com acabamento canopla metal cromado, diâmetro 1.1/2\" (40mm), referência Docol, Deca ou equivalente",
+   "u": "und",
+   "caderno": "1703 – TORNEIRAS, REGISTROS, VÁLVULAS E METAIS",
+   "atualizacao": "08/2024",
+   "aplicacao": "Utilizada em instalações prediais de água fria em locais como sanitários administrativos e vestiários de funcionários.",
+   "incluidos": "Fornecimento completo da Válvula e acessórios para perfeita instalação, bem como a mão de obra para execução do serviço de todo serviço.",
+   "criterio": "Por unidade instalada.",
+   "normas": [
+    "NBR 5626:2020",
+    "NBR 15857:2011",
+    "NBR 10283:2008"
+   ]
+  },
+  "170347": {
+   "d": "Válvula de PVC 1” para lavatório com unho - Astra, Cipla, Akros ou equivalente",
+   "u": "und",
+   "caderno": "1703 – TORNEIRAS, REGISTROS, VÁLVULAS E METAIS",
+   "atualizacao": "08/2024",
+   "aplicacao": "Utilizado em instalação de água fria residencial, comercial e industrial. Coletar ou manter confinado os fluidos provenientes da lavação em cuba de tanque e destinar até o sifão de escoamento.",
+   "incluidos": "Fornecimento completo da Válvula e acessórios para perfeita instalação, bem como a mão de obra para execução do serviço de todo serviço.",
+   "criterio": "Por unidade instalada.",
+   "normas": [
+    "NBR 15423:2022"
+   ]
+  },
+  "170348": {
+   "d": "Válvula de PVC 2.1/4” para tanque com unho - Astra, Cipla, Akros ou equivalente",
+   "u": "und",
+   "caderno": "1703 – TORNEIRAS, REGISTROS, VÁLVULAS E METAIS",
+   "atualizacao": "08/2024",
+   "aplicacao": "Utilizado em instalação de água fria residencial, comercial e industrial. Coletar ou manter confinado os fluidos provenientes da lavação em cuba de tanque e destinar até o sifão de escoamento.",
+   "incluidos": "Fornecimento completo da Válvula e acessórios para perfeita instalação, bem como a mão de obra para execução do serviço de todo serviço.",
+   "criterio": "Por unidade instalada.",
+   "normas": [
+    "NBR 15423:2022"
+   ]
+  },
+  "170349": {
+   "d": "Acabamento para válvula de descarga clássica – Docol, Deca ou Equivalente",
+   "u": "und",
+   "caderno": "1703 – TORNEIRAS, REGISTROS, VÁLVULAS E METAIS",
+   "atualizacao": "08/2024",
+   "aplicacao": "Acabamento para mecanismo de acionamento do sistema de descarga.",
+   "incluidos": "Fornecimento completo do Acabamento e acessórios para perfeita instalação, bem como a mão de obra para execução do serviço de todo serviço.",
+   "criterio": "Por unidade instalada.",
+   "normas": [
+    "NBR 15857:2011"
+   ]
+  },
+  "170350": {
+   "d": "Conjunto Parafuso de fixação para instalação em bacia ou mictório, inclusive colocação",
+   "u": "und",
+   "caderno": "1703 – TORNEIRAS, REGISTROS, VÁLVULAS E METAIS",
+   "atualizacao": "08/2024",
+   "aplicacao": "Para fixação de bacias, mictórios e pias",
+   "incluidos": "Fornecimento completo do conjunto de parafusos e buchas para perfeita instalação, bem como a mão de obra para execução do serviço de todo serviço.",
+   "criterio": "Por unidade instalada.",
+   "normas": null
+  },
+  "170351": {
+   "d": "Torneira de parede para cozinha 1157-P-CR linha: Pratika – Fabrimar ou equivalente",
+   "u": "und",
+   "caderno": "1703 – TORNEIRAS, REGISTROS, VÁLVULAS E METAIS",
+   "atualizacao": "08/2024",
+   "aplicacao": "Utilizada em instalações prediais de água fria e quente em cozinhas. Obstruir, interromper e controlar o fluxo de água decorrente da instalação hidráulica.",
+   "incluidos": "Fornecimento completo da Torneira e acessórios para perfeita instalação, bem como a mão de obra para execução do serviço de todo serviço.",
+   "criterio": "Por unidade instalada.",
+   "normas": [
+    "NBR 5626",
+    "NBR 10281"
+   ]
+  },
+  "170352": {
+   "d": "Válvula de descarga com acabamento canopla metal cromado sistema antivandalismo, diâmetro 1.1/2\" (40mm), referência Docol, Deca ou equivalente",
+   "u": "und",
+   "caderno": "1703 – TORNEIRAS, REGISTROS, VÁLVULAS E METAIS",
+   "atualizacao": "08/2024",
+   "aplicacao": "Utilizada em instalações prediais de água fria em locais como sanitários administrativos e vestiários de funcionários, com componentes totalmente embutidos que dificultam a depredação e o furto de peças.",
+   "incluidos": "Fornecimento completo da Válvula e acessórios para perfeita instalação, bem como a mão de obra para execução do serviço de todo serviço.",
+   "criterio": "Por unidade instalada.",
+   "normas": [
+    "NBR 5626:2020",
+    "NBR 15857:2011",
+    "NBR 10283:2008",
+    "NBR 13713:2009"
+   ]
+  },
+  "170353": {
+   "d": "Torneira para lavatório de parede sistema antivandalismo Biopress 1182- AV-BIO-140 – Fabrimar ou equivalente",
+   "u": "und",
+   "caderno": "1703 – TORNEIRAS, REGISTROS, VÁLVULAS E METAIS",
+   "atualizacao": "08/2024",
+   "aplicacao": "Utilizada em instalações prediais de água fria e quente nos sanitários administrativos, com componentes totalmente embutidos que dificultam a depredação e o furto de peças.",
+   "incluidos": "Fornecimento completo da Torneira e acessórios para perfeita instalação, bem como a mão de obra para execução do serviço de todo serviço.",
+   "criterio": "Por unidade instalada.",
+   "normas": [
+    "NBR 5626",
+    "NBR 13713"
+   ]
+  },
+  "170354": {
+   "d": "Chuveiro de vazão constante com válvula anti-vandalismo Pressmatic - Docol ou equivalente",
+   "u": "und",
+   "caderno": "1703 – TORNEIRAS, REGISTROS, VÁLVULAS E METAIS",
+   "atualizacao": "08/2024",
+   "aplicacao": "Utilizada em instalações prediais de água fria em locais como sanitários administrativos e vestiários de funcionários, com componentes totalmente embutidos que dificultam a depredação e o furto de peças.",
+   "incluidos": "Fornecimento completo do Chuveiro e acessórios para perfeita instalação, bem como a mão de obra para execução do serviço de todo serviço.",
+   "criterio": "Por unidade instalada.",
+   "normas": [
+    "NBR 13713/2009"
+   ]
+  },
+  "170357": {
+   "d": "Chuveiro em metal cromado com desviador flexível e ducha manual Linha Max 1975C – Deca ou equivalente",
+   "u": "und",
+   "caderno": "1703 – TORNEIRAS, REGISTROS, VÁLVULAS E METAIS",
+   "atualizacao": "08/2024",
+   "aplicacao": "Utilizada em instalações prediais de água fria e quente, para alta e baixa pressão.",
+   "incluidos": "Fornecimento completo do Chuveiro e acessórios para perfeita instalação, bem como a mão de obra para execução do serviço de todo serviço.",
+   "criterio": "Por unidade instalada.",
+   "normas": [
+    "NBR 15206"
+   ]
+  },
+  "170361": {
+   "d": "Válvula de retenção horizontal em bronze, tipo portinhola diâmetro 1/2\" (15mm)",
+   "u": "und",
+   "caderno": "1703 – TORNEIRAS, REGISTROS, VÁLVULAS E METAIS",
+   "atualizacao": "08/2024",
+   "aplicacao": "Utilizada em instalações prediais de água fria ou incêndio onde o seu principal benefício é permitir que a água circule somente em uma direção, evitando que partículas de sujeiras retornem para o sistema hidráulico.",
+   "incluidos": "Fornecimento completo da Válvula e acessórios para perfeita instalação, bem como a mão de obra para execução do serviço de todo serviço.",
+   "criterio": "Por unidade instalada.",
+   "normas": [
+    "NBR 5626",
+    "NBR 15055"
+   ]
+  },
+  "170362": {
+   "d": "Válvula de retenção horizontal em bronze, tipo portinhola diâmetro 3/4\" (20mm)",
+   "u": "und",
+   "caderno": "1703 – TORNEIRAS, REGISTROS, VÁLVULAS E METAIS",
+   "atualizacao": "08/2024",
+   "aplicacao": "Utilizada em instalações prediais de água fria ou incêndio onde o seu principal benefício é permitir que a água circule somente em uma direção, evitando que partículas de sujeiras retornem para o sistema hidráulico.",
+   "incluidos": "Fornecimento completo da Válvula e acessórios para perfeita instalação, bem como a mão de obra para execução do serviço de todo serviço.",
+   "criterio": "Por unidade instalada.",
+   "normas": [
+    "NBR 5626",
+    "NBR 15055"
+   ]
+  },
+  "170363": {
+   "d": "Válvula de retenção horizontal em bronze, tipo portinhola diâmetro 1\" (25mm)",
+   "u": "und",
+   "caderno": "1703 – TORNEIRAS, REGISTROS, VÁLVULAS E METAIS",
+   "atualizacao": "08/2024",
+   "aplicacao": "Utilizada em instalações prediais de água fria ou incêndio onde o seu principal benefício é permitir que a água circule somente em uma direção, evitando que partículas de sujeiras retornem para o sistema hidráulico.",
+   "incluidos": "Fornecimento completo da Válvula e acessórios para perfeita instalação, bem como a mão de obra para execução do serviço de todo serviço.",
+   "criterio": "Por unidade instalada.",
+   "normas": [
+    "NBR 5626",
+    "NBR 15055"
+   ]
+  },
+  "170364": {
+   "d": "Válvula de retenção horizontal em bronze, tipo portinhola diâmetro 1.1/4\" (32mm)",
+   "u": "und",
+   "caderno": "1703 – TORNEIRAS, REGISTROS, VÁLVULAS E METAIS",
+   "atualizacao": "08/2024",
+   "aplicacao": "Utilizada em instalações prediais de água fria ou incêndio onde o seu principal benefício é permitir que a água circule somente em uma direção, evitando que partículas de sujeiras retornem para o sistema hidráulico.",
+   "incluidos": "Fornecimento completo da Válvula e acessórios para perfeita instalação, bem como a mão de obra para execução do serviço de todo serviço.",
+   "criterio": "Por unidade instalada.",
+   "normas": [
+    "NBR 5626",
+    "NBR 15055"
+   ]
+  },
+  "170365": {
+   "d": "Válvula de retenção horizontal em bronze, tipo portinhola diâmetro 1.1/2\" (40mm)",
+   "u": "und",
+   "caderno": "1703 – TORNEIRAS, REGISTROS, VÁLVULAS E METAIS",
+   "atualizacao": "08/2024",
+   "aplicacao": "Utilizada em instalações prediais de água fria ou incêndio onde o seu principal benefício é permitir que a água circule somente em uma direção, evitando que partículas de sujeiras retornem para o sistema hidráulico.",
+   "incluidos": "Fornecimento completo da Válvula e acessórios para perfeita instalação, bem como a mão de obra para execução do serviço de todo serviço.",
+   "criterio": "Por unidade instalada.",
+   "normas": [
+    "NBR 5626",
+    "NBR 15055"
+   ]
+  },
+  "170366": {
+   "d": "Válvula de retenção horizontal em bronze, tipo portinhola diâmetro 2\" (50mm)",
+   "u": "und",
+   "caderno": "1703 – TORNEIRAS, REGISTROS, VÁLVULAS E METAIS",
+   "atualizacao": "08/2024",
+   "aplicacao": "Utilizada em instalações prediais de água fria ou incêndio onde o seu principal benefício é permitir que a água circule somente em uma direção, evitando que partículas de sujeiras retornem para o sistema hidráulico.",
+   "incluidos": "Fornecimento completo da Válvula e acessórios para perfeita instalação, bem como a mão de obra para execução do serviço de todo serviço.",
+   "criterio": "Por unidade instalada.",
+   "normas": [
+    "NBR 5626",
+    "NBR 15055"
+   ]
+  },
+  "170367": {
+   "d": "Válvula de retenção horizontal em bronze, tipo portinhola diâmetro 2.1/2\" (65mm)",
+   "u": "und",
+   "caderno": "1703 – TORNEIRAS, REGISTROS, VÁLVULAS E METAIS",
+   "atualizacao": "08/2024",
+   "aplicacao": "Utilizada em instalações prediais de água fria ou incêndio onde o seu principal benefício é permitir que a água circule somente em uma direção, evitando que partículas de sujeiras retornem para o sistema hidráulico.",
+   "incluidos": "Fornecimento completo da Válvula e acessórios para perfeita instalação, bem como a mão de obra para execução do serviço de todo serviço.",
+   "criterio": "Por unidade instalada.",
+   "normas": [
+    "NBR 5626",
+    "NBR 15055"
+   ]
+  },
+  "170368": {
+   "d": "Válvula de retenção horizontal em bronze, tipo portinhola diâmetro 3\" (80mm)",
+   "u": "und",
+   "caderno": "1703 – TORNEIRAS, REGISTROS, VÁLVULAS E METAIS",
+   "atualizacao": "08/2024",
+   "aplicacao": "Utilizada em instalações prediais de água fria ou incêndio onde o seu principal benefício é permitir que a água circule somente em uma direção, evitando que partículas de sujeiras retornem para o sistema hidráulico.",
+   "incluidos": "Fornecimento completo da Válvula e acessórios para perfeita instalação, bem como a mão de obra para execução do serviço de todo serviço.",
+   "criterio": "Por unidade instalada.",
+   "normas": [
+    "NBR 5626",
+    "NBR 15055"
+   ]
+  },
+  "170369": {
+   "d": "Válvula de retenção vertical em bronze, classe 125 diâmetro 1/2\" (15mm)",
+   "u": "und",
+   "caderno": "1703 – TORNEIRAS, REGISTROS, VÁLVULAS E METAIS",
+   "atualizacao": "08/2024",
+   "aplicacao": "Utilizada em instalações prediais de água fria ou incêndio onde o seu principal benefício é permitir que a água circule somente em uma direção, evitando que partículas de sujeiras retornem para o sistema hidráulico.",
+   "incluidos": "Fornecimento completo da Válvula e acessórios para perfeita instalação, bem como a mão de obra para execução do serviço de todo serviço.",
+   "criterio": "Por unidade instalada.",
+   "normas": [
+    "NBR 5626",
+    "NBR 15055"
+   ]
+  },
+  "170370": {
+   "d": "Válvula de retenção vertical em bronze, classe 125 diâmetro 3/4\" (20mm)",
+   "u": "und",
+   "caderno": "1703 – TORNEIRAS, REGISTROS, VÁLVULAS E METAIS",
+   "atualizacao": "08/2024",
+   "aplicacao": "Utilizada em instalações prediais de água fria ou incêndio onde o seu principal benefício é permitir que a água circule somente em uma direção, evitando que partículas de sujeiras retornem para o sistema hidráulico.",
+   "incluidos": "Fornecimento completo da Válvula e acessórios para perfeita instalação, bem como a mão de obra para execução do serviço de todo serviço.",
+   "criterio": "Por unidade instalada.",
+   "normas": [
+    "NBR 5626",
+    "NBR 15055"
+   ]
+  },
+  "170371": {
+   "d": "Válvula de retenção vertical em bronze, classe 125 diâmetro 1\" (25mm)",
+   "u": "und",
+   "caderno": "1703 – TORNEIRAS, REGISTROS, VÁLVULAS E METAIS",
+   "atualizacao": "08/2024",
+   "aplicacao": "Utilizada em instalações prediais de água fria ou incêndio onde o seu principal benefício é permitir que a água circule somente em uma direção, evitando que partículas de sujeiras retornem para o sistema hidráulico.",
+   "incluidos": "Fornecimento completo da Válvula e acessórios para perfeita instalação, bem como a mão de obra para execução do serviço de todo serviço.",
+   "criterio": "Por unidade instalada.",
+   "normas": [
+    "NBR 5626",
+    "NBR 15055"
+   ]
+  },
+  "170372": {
+   "d": "Válvula de retenção vertical em bronze, classe 125 diâmetro 1.1/4\" (32mm)",
+   "u": "und",
+   "caderno": "1703 – TORNEIRAS, REGISTROS, VÁLVULAS E METAIS",
+   "atualizacao": "08/2024",
+   "aplicacao": "Utilizada em instalações prediais de água fria ou incêndio onde o seu principal benefício é permitir que a água circule somente em uma direção, evitando que partículas de sujeiras retornem para o sistema hidráulico.",
+   "incluidos": "Fornecimento completo da Válvula e acessórios para perfeita instalação, bem como a mão de obra para execução do serviço de todo serviço.",
+   "criterio": "Por unidade instalada.",
+   "normas": [
+    "NBR 5626",
+    "NBR 15055"
+   ]
+  },
+  "170373": {
+   "d": "Válvula de retenção vertical em bronze, classe 125 diâmetro 1.1/2\" (40mm)",
+   "u": "und",
+   "caderno": "1703 – TORNEIRAS, REGISTROS, VÁLVULAS E METAIS",
+   "atualizacao": "08/2024",
+   "aplicacao": "Utilizada em instalações prediais de água fria ou incêndio onde o seu principal benefício é permitir que a água circule somente em uma direção, evitando que partículas de sujeiras retornem para o sistema hidráulico.",
+   "incluidos": "Fornecimento completo da Válvula e acessórios para perfeita instalação, bem como a mão de obra para execução do serviço de todo serviço.",
+   "criterio": "Por unidade instalada.",
+   "normas": [
+    "NBR 5626",
+    "NBR 15055"
+   ]
+  },
+  "170374": {
+   "d": "Válvula de retenção vertical em bronze, classe 125 diâmetro 2\" (50mm)",
+   "u": "und",
+   "caderno": "1703 – TORNEIRAS, REGISTROS, VÁLVULAS E METAIS",
+   "atualizacao": "08/2024",
+   "aplicacao": "Utilizada em instalações prediais de água fria onde o seu principal benefício é permitir que a água circule somente em uma direção, evitando que partículas de sujeiras retornem para o sistema hidráulico.",
+   "incluidos": "Fornecimento completo da Válvula e acessórios para perfeita instalação, bem como a mão de obra para execução do serviço de todo serviço.",
+   "criterio": "Por unidade instalada.",
+   "normas": [
+    "NBR 5626",
+    "NBR 15055"
+   ]
+  },
+  "170375": {
+   "d": "Válvula de retenção vertical em bronze, classe 125 diâmetro 2.1/2\" (65mm)",
+   "u": "und",
+   "caderno": "1703 – TORNEIRAS, REGISTROS, VÁLVULAS E METAIS",
+   "atualizacao": "08/2024",
+   "aplicacao": "Utilizada em instalações prediais de água fria onde o seu principal benefício é permitir que a água circule somente em uma direção, evitando que partículas de sujeiras retornem para o sistema hidráulico.",
+   "incluidos": "Fornecimento completo da Válvula e acessórios para perfeita instalação, bem como a mão de obra para execução do serviço de todo serviço.",
+   "criterio": "Por unidade instalada.",
+   "normas": [
+    "NBR 5626",
+    "NBR 15055"
+   ]
+  },
+  "170376": {
+   "d": "Válvula de retenção vertical em bronze, classe 125 diâmetro 3\" (80mm)",
+   "u": "und",
+   "caderno": "1703 – TORNEIRAS, REGISTROS, VÁLVULAS E METAIS",
+   "atualizacao": "08/2024",
+   "aplicacao": "Utilizada em instalações prediais de água fria onde o seu principal benefício é permitir que a água circule somente em uma direção, evitando que partículas de sujeiras retornem para o sistema hidráulico.",
+   "incluidos": "Fornecimento completo da Válvula e acessórios para perfeita instalação, bem como a mão de obra para execução do serviço de todo serviço.",
+   "criterio": "Por unidade instalada.",
+   "normas": [
+    "NBR 5626",
+    "NBR 15055"
+   ]
+  }
+ }
+}

@@ -1,0 +1,147 @@
+{
+ "arquivo": "1802-APARELHOS ELETRICOS - INTERRUPTORES E TOMADAS.pdf",
+ "caderno": "18 – APARELHOS ELÉTRICOS · 1802 – INTERRUPTORES E TOMADAS",
+ "truncado": false,
+ "fichas": {
+  "180201": {
+   "d": "Conjunto de tomada de embutir (1 módulo), padrão brasileiro linha branca, 2 polos + terra 10A/250V (NBR 14136), inclusive suporte e placa 4x2\"",
+   "u": "und",
+   "caderno": "18 – APARELHOS ELÉTRICOS · 1802 – INTERRUPTORES E TOMADAS",
+   "atualizacao": "09/2025",
+   "aplicacao": "Circuitos de tomadas de uso geral (TUGs) em ambientes comerciais e institucionais (salas, corredores, escritórios etc.), equipamentos de baixa potência (até 10A), instalações embutidas em parede de alvenaria ou drywall.",
+   "incluidos": "Fornecimento e instalação da tomada, considerando transporte interno do canteiro até o local de instalação, inclusive suporte e tampa (placa).",
+   "criterio": "Por unidade instalada.",
+   "normas": ["NBR 5410", "NBR 14136", "NM 60884-1", "NR 10"]
+  },
+  "180202": {
+   "d": "Conjunto de tomada de embutir (1 módulo), linha branca, 2 polos + terra 20A/250V (NBR 14136), inclusive suporte e placa 4x2\"",
+   "u": "und",
+   "caderno": "18 – APARELHOS ELÉTRICOS · 1802 – INTERRUPTORES E TOMADAS",
+   "atualizacao": "09/2025",
+   "aplicacao": "Circuitos de tomadas de uso específico (TUEs) em ambientes comerciais e institucionais (salas, corredores, escritórios etc.), equipamentos de potência (até 20A), instalações embutidas em parede de alvenaria ou drywall.",
+   "incluidos": "Fornecimento e instalação da tomada, considerando transporte interno do canteiro até o local de instalação, inclusive suporte e tampa (placa).",
+   "criterio": "Por unidade instalada.",
+   "normas": ["NBR 5410", "NBR 14136", "NM 60884-1", "NR 10"]
+  },
+  "180204": {
+   "d": "Interruptor uma tecla simples (1 módulo), linha branca, 10A/250V, inclusive suporte e placa 4x2\"",
+   "u": "und",
+   "caderno": "18 – APARELHOS ELÉTRICOS · 1802 – INTERRUPTORES E TOMADAS",
+   "atualizacao": "09/2025",
+   "aplicacao": "Circuitos de comando de iluminação em ambientes comerciais e institucionais (salas, corredores, escritórios etc.), instalações embutidas em parede de alvenaria ou drywall.",
+   "incluidos": "Fornecimento e instalação do interruptor, considerando transporte interno do canteiro até o local de instalação, inclusive suporte e tampa (placa).",
+   "criterio": "Por unidade instalada.",
+   "normas": ["NBR 5410", "NM 60669-1", "NR 10"]
+  },
+  "180205": {
+   "d": "Interruptor duas tecla simples (2 módulos), linha branca, 10A/250V, inclusive suporte e placa 4x2\"",
+   "u": "und",
+   "caderno": "18 – APARELHOS ELÉTRICOS · 1802 – INTERRUPTORES E TOMADAS",
+   "atualizacao": "09/2025",
+   "aplicacao": "Circuitos de comando de iluminação, permitindo acender ou apagar dois circuitos de iluminação distintos em ambientes comerciais e institucionais (salas, corredores, escritórios etc.), instalações embutidas em parede de alvenaria ou drywall.",
+   "incluidos": "Fornecimento e instalação do interruptor, considerando transporte interno do canteiro até o local de instalação, inclusive suporte e tampa (placa).",
+   "criterio": "Por unidade instalada.",
+   "normas": ["NBR 5410", "NM 60669-1", "NR 10"]
+  },
+  "180206": {
+   "d": "Interruptor uma tecla paralelo (1 módulo), linha branca, 10A/250V, inclusive suporte e placa 4x2\"",
+   "u": "und",
+   "caderno": "18 – APARELHOS ELÉTRICOS · 1802 – INTERRUPTORES E TOMADAS",
+   "atualizacao": "09/2025",
+   "aplicacao": "Circuitos de comando de iluminação a partir de dois pontos distintos, permitindo acender ou apagar o mesmo circuito em ambientes comerciais e institucionais (salas, corredores, escritórios etc.), instalações embutidas em parede de alvenaria ou drywall.",
+   "incluidos": "Fornecimento e instalação do interruptor, considerando transporte interno do canteiro até o local de instalação, inclusive suporte e tampa (placa).",
+   "criterio": "Por unidade instalada.",
+   "normas": ["NBR 5410", "NM 60669-1", "NR 10"]
+  },
+  "180207": {
+   "d": "Conjunto composto por uma tecla de interruptor simples e uma tomada, padrão brasileiro, linha branca, 2 polos + terra 10A/250V (2 módulos), inclusive suporte e placa 4x2\"",
+   "u": "und",
+   "caderno": "18 – APARELHOS ELÉTRICOS · 1802 – INTERRUPTORES E TOMADAS",
+   "atualizacao": "09/2025",
+   "aplicacao": "Circuitos de comando de iluminação e circuitos de tomadas de uso geral (TUGs) em ambientes comerciais e institucionais (salas, corredores, sanitários etc.), instalações embutidas em parede de alvenaria ou drywall.",
+   "incluidos": "Fornecimento e instalação do interruptor e tomada, considerando transporte interno do canteiro até o local de instalação, inclusive suporte e tampa (placa).",
+   "criterio": "Por unidade instalada.",
+   "normas": ["NBR 5410", "NM 60669-1", "NR 10"]
+  },
+  "180208": {
+   "d": "Conjunto composto por duas teclas de interruptor simples e uma tomada, padrão brasileiro, linha branca, 2 polos + terra 10A/250V (3 módulos), inclusive suporte e placa 4x2\"",
+   "u": "und",
+   "caderno": "18 – APARELHOS ELÉTRICOS · 1802 – INTERRUPTORES E TOMADAS",
+   "atualizacao": "09/2025",
+   "aplicacao": "Circuitos de comando de iluminação (dois circuitos distintos) e circuitos de tomadas de uso geral (TUGs) em ambientes comerciais e institucionais (salas, corredores, sanitários etc.), instalações embutidas em parede de alvenaria ou drywall.",
+   "incluidos": "Fornecimento e instalação do interruptores e tomada, considerando transporte interno do canteiro até o local de instalação, inclusive suporte e tampa (placa).",
+   "criterio": "Por unidade instalada.",
+   "normas": ["NBR 5410", "NM 60669-1", "NR 10"]
+  },
+  "180209": {
+   "d": "Interruptor uma tecla pulsador para campainha (1 módulo), linha branca, 10A/250V, inclusive suporte e placa 4x2\"",
+   "u": "und",
+   "caderno": "18 – APARELHOS ELÉTRICOS · 1802 – INTERRUPTORES E TOMADAS",
+   "atualizacao": "09/2025",
+   "aplicacao": "Dispositivo de acionamento (interruptor tipo campainha) para comando momentâneo de sinalização sonora, em portões de entrada, portarias, recepções, guaritas etc., instalações embutidas em parede de alvenaria ou drywall.",
+   "incluidos": "Fornecimento e instalação do interruptor para campainha, considerando transporte interno do canteiro até o local de instalação, inclusive suporte e tampa (placa).",
+   "criterio": "Por unidade instalada.",
+   "normas": ["NBR 5410", "NM 60669-1", "NR 10"]
+  },
+  "180210": {
+   "d": "Conjunto de tomada de embutir (1 módulo) na cor vermelha, linha branca, 2 polos + terra 20A/250V (NBR 14136), inclusive suporte e placa 4x2\"",
+   "u": "und",
+   "caderno": "18 – APARELHOS ELÉTRICOS · 1802 – INTERRUPTORES E TOMADAS",
+   "atualizacao": "09/2025",
+   "aplicacao": "Circuitos de tomadas de uso específico (TUEs) 220V em ambientes comerciais e institucionais (salas, corredores, escritórios etc.), equipamentos de potência 20A em 220V, instalações embutidas em parede de alvenaria ou drywall.",
+   "incluidos": "Fornecimento e instalação da tomada, considerando transporte interno do canteiro até o local de instalação, inclusive suporte e tampa (placa).",
+   "criterio": "Por unidade instalada.",
+   "normas": ["NBR 5410", "NBR 14136", "NM 60884-1", "NR 10"]
+  },
+  "180211": {
+   "d": "Interruptor seis teclas simples (6 módulos), linha branca, 10A/250V, inclusive suporte e placa (3+3 postos) 4x4\"",
+   "u": "und",
+   "caderno": "18 – APARELHOS ELÉTRICOS · 1802 – INTERRUPTORES E TOMADAS",
+   "atualizacao": "09/2025",
+   "aplicacao": "Circuitos de comando de iluminação, permitindo acender ou apagar seis circuitos de iluminação distintos em ambientes comerciais e institucionais (salas, corredores, escritórios etc.), instalações embutidas em parede de alvenaria ou drywall.",
+   "incluidos": "Fornecimento e instalação dos interruptores, considerando transporte interno do canteiro até o local de instalação, inclusive suporte e tampa (placa).",
+   "criterio": "Por unidade instalada.",
+   "normas": ["NBR 5410", "NM 60669-1", "NR 10"]
+  },
+  "180212": {
+   "d": "Interruptor três teclas simples (3 módulo), linha branca, 10A/250V, inclusive suporte e placa 4x2\"",
+   "u": "und",
+   "caderno": "18 – APARELHOS ELÉTRICOS · 1802 – INTERRUPTORES E TOMADAS",
+   "atualizacao": "09/2025",
+   "aplicacao": "Circuitos de comando de iluminação, permitindo acender ou apagar três circuitos de iluminação distintos em ambientes comerciais e institucionais (salas, corredores, escritórios etc.), instalações embutidas em parede de alvenaria ou drywall.",
+   "incluidos": "Fornecimento e instalação do interruptor, considerando transporte interno do canteiro até o local de instalação, inclusive suporte e tampa (placa).",
+   "criterio": "Por unidade instalada.",
+   "normas": ["NBR 5410", "NM 60669-1", "NR 10"]
+  },
+  "180217": {
+   "d": "Espelho (placa) de acabamento, linha branca, 4x2\"",
+   "u": "und",
+   "caderno": "18 – APARELHOS ELÉTRICOS · 1802 – INTERRUPTORES E TOMADAS",
+   "atualizacao": "09/2025",
+   "aplicacao": "Instalações elétricas em ambientes comerciais e institucionais: cobertura e acabamento estético de caixas de passagem 4x2\", segurança evitando contato com partes energizadas e proteção contra poeira ou respingos, em instalações embutidas em alvenaria ou drywall.",
+   "incluidos": "Fornecimento e instalação da tampa 4x2” (placa), considerando transporte interno do canteiro até o local de instalação.",
+   "criterio": "Por unidade instalada.",
+   "normas": ["NBR 15247", "NBR 14565"]
+  },
+  "180218": {
+   "d": "Espelho (placa) de acabamento, linha branca, 4x4\"",
+   "u": "und",
+   "caderno": "18 – APARELHOS ELÉTRICOS · 1802 – INTERRUPTORES E TOMADAS",
+   "atualizacao": "09/2025",
+   "aplicacao": "Instalações elétricas em ambientes comerciais e institucionais: cobertura e acabamento estético de caixas de passagem 4x4\", segurança evitando contato com partes energizadas e proteção contra poeira ou respingos, em instalações embutidas em alvenaria ou drywall.",
+   "incluidos": "Fornecimento e instalação da tampa 4x4” (placa), considerando transporte interno do canteiro até o local de instalação.",
+   "criterio": "Por unidade instalada.",
+   "normas": ["NBR 15247", "NBR 14565"]
+  },
+  "180220": {
+   "d": "Tomada coaxial para antena de TV (1 módulo), 75 OHMS, linha branca, inclusive suporte e placa 4x2\"",
+   "u": "und",
+   "caderno": "18 – APARELHOS ELÉTRICOS · 1802 – INTERRUPTORES E TOMADAS",
+   "atualizacao": "09/2025",
+   "aplicacao": "Conexão de sinal de TV a cabo ou sistema de distribuição de sinal coletivo, com impedância de 75 ohms, em ambientes comerciais e institucionais, instalações embutidas em parede de alvenaria ou drywall.",
+   "incluidos": "Fornecimento e instalação da tomada, considerando transporte interno do canteiro até o local de instalação, inclusive suporte e tampa (placa).",
+   "criterio": "Por unidade instalada.",
+   "normas": ["NBR 15247", "NBR 14565"]
+  }
+ }
+}

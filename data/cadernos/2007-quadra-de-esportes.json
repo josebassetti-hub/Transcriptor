@@ -1,0 +1,177 @@
+{
+ "arquivo": "20.07 - SERVIÇOS COMPLEMENTARES - QUADRA DE ESPORTES-R1.pdf",
+ "caderno": "20 – SERVIÇOS COMPLEMENTARES EXTERNOS · 2007 – QUADRA DE ESPORTES",
+ "truncado": false,
+ "fichas": {
+  "200702": {
+   "d": "Piso em concreto armado para quadra poliesportiva fck=30MPa, esp.=12 cm, armado com tela dupla Q138, concreto camada única bombeável c/ brita n. 1, acabamento superior com rotoalisador, juntas serradas com corte serra diamantada preenchimento com mastique, base 5cm solo brita 30%",
+   "u": "m2",
+   "caderno": "2007 – QUADRA DE ESPORTES",
+   "atualizacao": "01/2026",
+   "aplicacao": "Utilizado como piso de quadras poliesportivas cobertas ou descobertas, a ser executado sobre base de solo brita.",
+   "incluidos": "Fornecimento dos materiais e mão de obra para execução de piso de concreto armado de quadra poliesportiva, inclusive execução de base em solo brita compactada mecanicamente e corte das juntas de dilatação com serra mecânica apropriada. Fornecimento e aplicação de lona plástica; fornecimento dos materiais das fôrmas laterais do piso, bem como travamentos; fornecimento e posicionamento de armadura dupla em tela soldada nervurada, inclusive colocação de espaçadores soldados; fornecimento e lançamento de concreto usinado com emprego de bomba, inclusive espalhamento e adensamento com utilização de vibrador de imersão; regularização superficial do piso com utilização de rodo de corte e acabamento superficial mecanizado do concreto com utilização de acabadoras de superfície; fornecimento de selante a base de poliuretano, inclusive preenchimento das juntas. Considerado o transporte interno de todos os materiais e equipamentos do canteiro até o local de execução do piso da quadra, inclusive perdas por consumo. Execução de cura úmida com utilização de tecidos de algodão ou sintéticos. Limpeza final do local do serviço (lavagem), com remoção de todos os restos de materiais, resíduos, materiais excedentes e inaproveitáveis. Acondicionamento provisório desses resíduos (se necessário) e descarte (bota-fora) adequado.",
+   "criterio": "m2 (metro quadrado) Medido pela área de piso em concreto armado, de quadra poliesportiva, efetivamente executado.",
+   "normas": ["NBR 12655:2022", "NBR 5732:1991", "NBR 7220:1987", "NBR 7211:2005", "NBR 7203:1982", "Decreto Estadual nº 1.941-R/2007", "NBR 7480:2022", "NBR 7481:2022", "NBR 6181:2003", "NBR 6118:2023", "NBR 9278:2019"]
+  },
+  "200705": {
+   "d": "Rede de voleibol oficial, fio 2 mm de polietileno (nylon) com tratamento UV, 4 faixas, 9,50 metros de largura e 1,00 metro de altura",
+   "u": "und",
+   "caderno": "2007 – QUADRA DE ESPORTES",
+   "atualizacao": "01/2026",
+   "aplicacao": "Para instalação em postes apropriados para fixação de rede de voleibol.",
+   "incluidos": "Fornecimento de rede para voleibol com malha grossa, com ilhós metálicos nas extremidades da rede e corda guia.",
+   "criterio": "und (unidade) Pela quantidade de redes para voleibol fornecidas.",
+   "normas": null
+  },
+  "200706": {
+   "d": "Suporte para tabela de basquete de concreto armado Fck = 20MPa, inclusive forma, armação, lançamento de concreto e desforma, considerando escavação, reaterro e execução de sapata em concreto armado",
+   "u": "und",
+   "caderno": "2007 – QUADRA DE ESPORTES",
+   "atualizacao": "01/2026",
+   "aplicacao": "Utilizado como suporte para fixação da tabela de basquete.",
+   "incluidos": "Fornecimento dos materiais e mão de obra para execução de sapata e suporte para tabela de basquete em concreto armado, inclusive escavação para execução de sapata, lastro de concreto simples e reaterro apiloado da cava de fundação. Inclui também fornecimento, corte e montagem de fôrmas, bem como travamentos, escoramentos e desforma; fornecimento, corte, dobragem e colocação em fôrma de armaduras CA-50 e CA-60, inclusive espaçadores para concreto armado e amarração com fornecimento de arame recozido; fornecimento, lançamento e adensamento de concreto com utilização de vibrador de imersão, considerando cura úmida. Considerado o transporte interno de todos os materiais e equipamentos do canteiro até o local de execução do suporte para tabela de basquete, inclusive perdas por consumo. Limpeza final do local do serviço (lavagem), com remoção de todos os restos de materiais, resíduos, materiais excedentes e inaproveitáveis. Acondicionamento provisório desses resíduos (se necessário) e descarte (bota-fora) adequado.",
+   "criterio": "und (unidade) Pela quantidade de suportes em concreto armado, para tabela de basquete, efetivamente executados.",
+   "normas": ["NBR 12655:2022", "NBR 5732:1991", "NBR 7220:1987", "NBR 7211:2005", "NBR 7203:1982", "Decreto Estadual nº 1.941-R/2007", "NBR 7480:2022", "NBR 6181:2003", "NBR 6118:2023", "NR 18"]
+  },
+  "200707": {
+   "d": "Trave para futebol de salão de tubo de ferro galvanizado 3\", com recuo, removível, dimensões oficiais 3x2m",
+   "u": "und",
+   "caderno": "2007 – QUADRA DE ESPORTES",
+   "atualizacao": "01/2026",
+   "aplicacao": "Para utilização em quadras de esportes, para prática de futebol de salão.",
+   "incluidos": "Fornecimento de trave para futebol de salão, completa, em ferro galvanizado, inclusive pintura, dimensões 3,00x2,00 metros.",
+   "criterio": "und (unidade) Pela quantidade de traves para futebol de salão fornecidas.",
+   "normas": null
+  },
+  "200708": {
+   "d": "Conjunto de poste de voleibol de tubo de ferro galvanizado 3\" e parte móvel de 2.1/2\", inclusive carretilha, furo com tubo de ferro galvanizado de 3.1/2\" e tampão de furo",
+   "u": "und",
+   "caderno": "2007 – QUADRA DE ESPORTES",
+   "atualizacao": "01/2026",
+   "aplicacao": "Para utilização em quadras de esportes, para fixação de rede para a prática de voleibol.",
+   "incluidos": "Fornecimento de conjunto de postes de voleibol, em ferro galvanizado, inclusive pintura, completo, com tampão de furo, ganchos para amarração da rede, carretilha e roldana.",
+   "criterio": "und (unidade) Pela quantidade de conjuntos completos fornecidos, com dois postes de voleibol de ferro galvanizado.",
+   "normas": null
+  },
+  "200709": {
+   "d": "Tabela de basquete oficial, estrutura em compensado naval esp. 18 mm, com aro simples Ø45 a Ø47 cm e rede chuá oficial em nylon 3 mm, inclusive fixação em suporte para tabela de basquete de concreto armado",
+   "u": "und",
+   "caderno": "2007 – QUADRA DE ESPORTES",
+   "atualizacao": "01/2026",
+   "aplicacao": "Utilizada para sustentar a cesta de jogo, na modalidade esportiva basquetebol.",
+   "incluidos": "Fornecimento dos materiais e mão-de-obra para instalação de tabela de basquete oficial, inclusive fornecimento da tabela em estrutura de compensado naval, com pintura na cor branco e marcações em preto, aro e rede para basquete, fixação da tabela ao suporte de sustentação, considerando o transporte interno de todos os materiais até o local de execução do serviço, fornecimento e montagem de plataforma de trabalho. Limpeza do local, com varrição e remoção de resíduos, materiais excedentes e inaproveitáveis, incluindo o descarte (bota-fora) adequado.",
+   "criterio": "und (unidade) Pela quantidade de tabelas de basquete completas, fornecidas e instaladas.",
+   "normas": null
+  },
+  "200711": {
+   "d": "Alambrado com tela de arame galvanizado, fio nº 12, malha quadrada de 1\" (25 mm), fixado em estrutura metálica composta por tubos de ferro galvanizado, montantes verticais Ø 2” e travessas horizontais Ø 1\", incluindo portão metálico tipo padrão, pintura com duas demãos de tinta esmalte sintético e uma demão de fundo anti-corrosivo",
+   "u": "m2",
+   "caderno": "2007 – QUADRA DE ESPORTES",
+   "atualizacao": "01/2026",
+   "aplicacao": "Utilizado para delimitação e separação das áreas de prática de esportes das quadras esportivas, sendo uma solução econômica, com boa durabilidade e boa resistência a impactos devido à tela em malha flexível, além de manter a visibilidade dos espaços.",
+   "incluidos": "Fornecimento dos materiais e mão de obra para execução do serviço de instalação do alambrado com portão, de tubos verticais em aço galvanizado diâmetro 2” e horizontais de 1”, tela de arame galvanizado com malha quadrada de 1” e três fiadas de arame liso (tensor), inclusive soldagem dos tubos metálicos, pintura e fixação na estrutura de apoio dos suportes de ancoragem com chumbadores tipo parabolt, considerando fornecimento de todos os componentes metálicos, perdas por consumo, transporte interno no canteiro até o local da aplicação e marcação dos pontos para instalação dos postes. Limpeza do local do serviço e remoção de todos os restos de materiais, resíduos de solda e de tinta, materiais excedentes e inaproveitáveis, inclusive descarte final.",
+   "criterio": "m2 (metro quadrado) Pela área de alambrado e portão com tubo de aço galvanizado Ø2” e Ø1”, com tela de arame galvanizado com malha quadrada de 1”, efetivamente executado.",
+   "normas": ["NBR 5732:1991", "NBR 7220:1987", "NBR 5887:2020", "NBR 11702:2010", "NBR 13245:2011", "NBR 12311:1992", "NR 18"]
+  },
+  "200713": {
+   "d": "Rede para futebol de salão, fio 2 mm em polietileno de alta densidade, com tratamento UV",
+   "u": "und",
+   "caderno": "2007 – QUADRA DE ESPORTES",
+   "atualizacao": "01/2026",
+   "aplicacao": "Para fixação em traves de gol para futebol de salão.",
+   "incluidos": "Fornecimento de rede para futebol de salão, com malha grossa, em polietileno de alta densidade.",
+   "criterio": "und (unidade) Pela quantidade de redes para futebol de salão fornecidas.",
+   "normas": null
+  },
+  "200714": {
+   "d": "Preparo, regularização e compactação do terreno (compactador manual) para execução de piso de quadra",
+   "u": "m2",
+   "caderno": "2007 – QUADRA DE ESPORTES",
+   "atualizacao": "01/2026",
+   "aplicacao": "Utilizado para preparação do terreno, para recebimento posterior de piso de quadra em concreto.",
+   "incluidos": "Fornecimento de mão-de-obra para preparo, regularização e compactação mecanizada de terreno, considerando a utilização de compactador de solos de percussão, com motor a gasolina (inclusive o fornecimento do combustível) e o transporte interno no canteiro até o local da execução. Limpeza do local do serviço e remoção de todos os resíduos, materiais excedentes e inaproveitáveis, inclusive descarte final.",
+   "criterio": "m2 (metro quadrado) O serviço será pago conforme a área de terreno efetivamente compactada.",
+   "normas": ["NBR 5681"]
+  },
+  "200715": {
+   "d": "Mureta em alvenaria de blocos cerâmicos 10x20x20cm, assentado com argamassa de cimento, cal hidratada CH1 e areia no traço 1:0,5:8, h=0.60m, para fechamento de quadra, com pilaretes de travamento em concreto armado a cada 3m, inclusive chapisco",
+   "u": "m2",
+   "caderno": "2007 – QUADRA DE ESPORTES",
+   "atualizacao": "01/2026",
+   "aplicacao": "Utilizada para fechamento, delimitação e separação das áreas de prática de esportes das quadras esportivas, servindo como estrutura de apoio ou suporte do alambrado.",
+   "incluidos": "Fornecimento dos materiais e mão de obra para execução de mureta em alvenaria com pilaretes de travamento e revestimento em chapisco, inclusive fornecimento dos tijolos cerâmicos, argamassa de assentamento dos blocos, fôrmas, armaduras e concreto para execução dos pilaretes, argamassa para execução do revestimento com chapisco, considerando perdas por consumo e transporte interno no canteiro até o local da execução. Limpeza do local do serviço e remoção de todos os resíduos, materiais excedentes e inaproveitáveis, inclusive descarte final.",
+   "criterio": "m2 (metro quadrado) Pela área de mureta efetivamente executada. Não haverá descontos referentes às larguras dos pilaretes.",
+   "normas": ["NBR 15270-1:2005", "NBR 5732:1991", "NBR 7220:1987", "NR 18", "NBR 7203:1982", "Decreto Estadual nº 1.941-R/2007", "NBR 14931:2023", "NBR 6118:2023", "NBR 6627:1981", "NBR 15696:2009", "NBR 7480:2022", "NBR 6181:2003", "NBR 7211:2005", "NBR 12655:2015"]
+  },
+  "200716": {
+   "d": "Parede em alvenaria de bloco cerâmico 10x20x20cm, h=2m, para proteção de fundo de gol (quadra poliesportiva), com pilares em concreto armado a cada 3m para travamento, inclusive chapisco",
+   "u": "m2",
+   "caderno": "2007 – QUADRA DE ESPORTES",
+   "atualizacao": "12/2025",
+   "aplicacao": "Utilizada como parede de proteção atrás da trave (gol) de futebol de salão, da quadra poliesportiva.",
+   "incluidos": "Fornecimento dos materiais e mão de obra para execução de parede de proteção de fundo de gol em alvenaria, com pilares de travamento e revestimento em chapisco, inclusive fornecimento e montagem de plataforma de trabalho, fornecimento dos tijolos cerâmicos, argamassa de assentamento dos blocos, fôrmas, armaduras e concreto para execução dos pilares, argamassa para execução do revestimento com chapisco, considerando perdas por consumo e transporte interno no canteiro até o local da execução. Limpeza do local do serviço e remoção de todos os resíduos, materiais excedentes e inaproveitáveis, inclusive descarte final.",
+   "criterio": "m2 (metro quadrado) Pela área de parede de proteção de fundo de gol em alvenaria, efetivamente executada. Não haverá descontos referentes às larguras dos pilares.",
+   "normas": ["NBR 15270-1:2005", "NBR 5732:1991", "NBR 7220:1987", "NR 18", "NBR 7203:1982", "Decreto Estadual nº 1.941-R/2007", "NBR 14931:2023", "NBR 6118:2023", "NBR 6627:1981", "NBR 15696:2009", "NBR 7480:2022", "NBR 6181:2003", "NBR 7211:2005", "NBR 12655:2015"]
+  },
+  "200717": {
+   "d": "Goivete nas dimensões 2x1 executado sobre alvenaria chapiscada e rebocada",
+   "u": "m",
+   "caderno": "2007 – QUADRA DE ESPORTES",
+   "atualizacao": "01/2026",
+   "aplicacao": "Geralmente utilizado para fins decorativos em fachadas ou muros. Pode ser empregado na preparação para aplicação de acabamentos (texturas), controle de espessura do revestimento, para criar juntas de dilatação em superfícies específicas, como pingadeira (desvia a água da chuva), etc.",
+   "incluidos": "Fornecimento dos materiais e mão-de-obra para execução de goivete sobre alvenaria rebocada, inclusive fornecimento de peça em madeira de lei bruta (2x1 centímetros), demarcação dos trechos para aplicação dos goivetes, desempeno, acabamento das superfícies internas e cura do reboco (nos trechos da parede onde foram executados o goivete), considerando perdas por consumo e transporte interno no canteiro até o local da execução. Limpeza do local do serviço e remoção de todos os resíduos, materiais excedentes e inaproveitáveis, inclusive descarte final.",
+   "criterio": "m (metro) Pela metragem de goivete nas dimensões 2x1 cm, efetivamente executado.",
+   "normas": ["NBR 7203:1982", "Decreto Estadual nº 1.941-R/2007", "NR 18"]
+  },
+  "200720": {
+   "d": "Cobertura em telha de liga de alumínio e zinco (galvalume), ondulada, esp. mínima 0.43 mm, altura mínima de onda 17 mm, sobreposição longitudinal de uma onda e transversal de no mínimo 200mm, c/ mínimo de 3 apoios, inclusive fixação e vedação do furo com selante a base de poliuretano, exclusive cumeeira",
+   "u": "m2",
+   "caderno": "2007 – QUADRA DE ESPORTES",
+   "atualizacao": "01/2026",
+   "aplicacao": "Fixação de um conjunto de telhas de galvalume sobre estrutura, destinadas a criar isolamento entre o meio externo e o meio interno de uma quadra de esportes, bem como proteção contra as intempéries, tanto para coberturas quanto para fechamentos laterais.",
+   "incluidos": "Fornecimento dos materiais e mão-de-obra para colocação de telhas onduladas de alumínio, incluindo o fornecimento das telhas e dos conjuntos de fixação com parafusos autobrocantes sextavados, considerando furações, sobreposições, perdas por consumo, transporte interno no canteiro até o local de instalação e transporte vertical dos materiais à cobertura. Limpeza do local do serviço e remoção de todos os resíduos e restos de materiais excedentes e inaproveitáveis.",
+   "criterio": "m2 (metro quadrado) Pela área de cobertura da quadra utilizando a área de projeção horizontal do telhado.",
+   "normas": ["NBR 14331:2009", "NR 18"]
+  },
+  "200721": {
+   "d": "Rede de proteção em nylon malha 10x10 cm para proteção de quadra de esportes",
+   "u": "m2",
+   "caderno": "2007 – QUADRA DE ESPORTES",
+   "atualizacao": "01/2026",
+   "aplicacao": "Para fixação nas laterais, fundos e teto de quadras de esportes cobertas, protegendo os espectadores de impactos com bolas que saem da quadra. Também utilizada para proteção das telhas e dos refletores instalados na quadra.",
+   "incluidos": "Fornecimento dos materiais e da mão-de-obra para instalação de rede de proteção em nylon malha 10x10 cm, inclusive fornecimento da rede, considerando perdas por consumo e transporte interno no canteiro até o local da instalação. Limpeza do local do serviço e remoção de todos os resíduos, materiais excedentes e inaproveitáveis, inclusive descarte final.",
+   "criterio": "m2 (metro quadrado) Pela área efetiva executada de rede de proteção em nylon.",
+   "normas": null
+  },
+  "200726": {
+   "d": "Recuperação de piso de quadra com demolição parcial do concreto e aplicação de granilite, inclusive regularização",
+   "u": "m2",
+   "caderno": "2007 – QUADRA DE ESPORTES",
+   "atualizacao": "01/2026",
+   "aplicacao": "Utilizado para recuperação parcial de pisos de quadras poliesportivas cobertas ou descobertas.",
+   "incluidos": "Fornecimento dos materiais, equipamentos e mão de obra para execução de serviço de recuperação de trechos de piso de quadra esportiva, inclusive identificação e demarcação das áreas a serem demolidas, corte mecanizado das áreas demarcadas, demolição parcial do concreto com martelete elétrico, varrição, escovação e lavagem do substrato, com remoção e descarte (bota-fora) dos fragmentos de concreto. Execução de camada de regularização com fornecimento de argamassa de cimento e areia, aplicação de granilite com fornecimentos dos materiais, considerando o transporte interno de todos os materiais e equipamentos do canteiro até o local de execução do serviço, inclusive perdas por consumo, cura úmida e polimento mecanizado do granilite. Limpeza final do local do serviço (lavagem), com remoção de todos os restos de materiais, resíduos, materiais excedentes e inaproveitáveis. Acondicionamento provisório desses resíduos (se necessário) e descarte (bota-fora) adequado.",
+   "criterio": "m2 (metro quadrado) Medido pela área efetiva de piso de quadra demolida e recuperada, considerando regularização e aplicação de granilite.",
+   "normas": ["NBR 5732:1991", "NBR 7220:1987", "NBR 11801:2012", "NBR 12260:2012"]
+  },
+  "200728": {
+   "d": "Alambrado com tela de arame galvanizado, fio nº 12, malha losangular de 2\" (50 mm), revestida em PVC, fixado em estrutura metálica composta por tubos de ferro galvanizado, montantes verticais Ø 2.1/2” e travessas horizontais Ø 1\", incluindo portão metálico tipo padrão, pintura com duas demãos de tinta esmalte sintético e uma demão de fundo anti-corrosivo",
+   "u": "m2",
+   "caderno": "2007 – QUADRA DE ESPORTES",
+   "atualizacao": "01/2026",
+   "aplicacao": "Utilizado para delimitação e separação das áreas de prática de esportes das quadras esportivas, sendo uma solução econômica, com boa durabilidade e boa resistência a impactos devido à tela em malha flexível, além de manter a visibilidade dos espaços.",
+   "incluidos": "Fornecimento dos materiais e mão de obra para execução do alambrado com portão, em tubos verticais em aço galvanizado diâmetro 2.1/2” e horizontais de 1”, tela de arame galvanizado com malha losangular de 2”, com revestimento em PVC e três fiadas de arame liso (tensor), inclusive soldagem dos tubos metálicos, pintura e fixação na estrutura de apoio dos suportes de ancoragem com chumbadores tipo parabolt, considerando fornecimento de todos os componentes metálicos, perdas por consumo, transporte interno no canteiro até o local da aplicação e marcação dos pontos para instalação dos postes. Limpeza do local do serviço e remoção de todos os restos de materiais, resíduos de solda e de tinta, materiais excedentes e inaproveitáveis, inclusive descarte final.",
+   "criterio": "m2 (metro quadrado) Pela área de alambrado e portão com tubo de aço galvanizado Ø2.1/2” e Ø1”, com tela de arame galvanizado com malha losangular de 2”, efetivamente executado.",
+   "normas": ["NBR 5732:1991", "NBR 7220:1987", "NBR 5887:2020", "NBR 11702:2010", "NBR 13245:2011", "NBR 12311:1992", "NR 18"]
+  },
+  "200738": {
+   "d": "Estrutura metálica p/ quadra poliesportiva coberta constituída por perfis formados a frio, aço estrutural ASTM A-570 G33 (terças) e ASTM A-36 (demais perfis). Sistema de tratamento dos perfis por jateamento abrasivo ao metal quase branco, padrão AS 2.1/2, fundo em uma demão de primer à base de epóxi c/ esp. 80 micras e acabamento em duas demãos à base de tinta epóxi esp. 40 micras por demão",
+   "u": "kg",
+   "caderno": "2007 – QUADRA DE ESPORTES",
+   "atualizacao": "05/2026",
+   "aplicacao": "Utilizado como estrutura para cobertura de quadras poliesportivas.",
+   "incluidos": "Fornecimento dos materiais, equipamentos e mão de obra para execução de estrutura metálica para quadra poliesportiva coberta, inclusive tratamento das superfícies metálicas com jateamento padrão SA 2.1/2, pintura com uma demão de primer epóxi e duas demãos de tinta à base de epóxi. Fornecimento e montagem dos perfis metálicos (colunas, tesouras, terças e contraventamento), inclusive soldas apropriadas para ligações entre os componentes da estrutura, içamento desses componentes por guindaste hidráulico sobre rodas com lança telescópica ou equipamento equivalente, com auxílio de equipamento tipo talha de corrente ou equivalente. Fornecimento, montagem e desmontagem de suportes temporários, contraventamentos, andaimes e outros elementos necessários para os serviços de montagem. Considerado o acondicionamento provisório adequado e transporte interno de todos os componentes metálicos e equipamentos do canteiro até o local de montagem da estrutura, inclusive perdas por consumo. Limpeza final do local do serviço (lavagem e varrição), com remoção de todos os restos de materiais, resíduos, materiais excedentes e inaproveitáveis. Acondicionamento provisório desses resíduos (se necessário) e descarte (bota-fora) adequado.",
+   "criterio": "kg (quilograma) Medido pelo peso total da estrutura de cobertura da quadra poliesportiva, efetivamente jateada, pintada e montada.",
+   "normas": ["NBR 5000:2015", "NBR 16580:2017", "NBR 8800:2024", "NBR 16775:2020", "NBR 5008:2015", "NBR 5921:2015", "NBR 6648:2024", "NBR 6649:2014", "NBR 6650:2014", "NBR 14842:2015"]
+  }
+ }
+}

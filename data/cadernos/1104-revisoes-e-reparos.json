@@ -1,0 +1,17 @@
+{
+ "arquivo": "1104-REVISÕES E REPAROS.pdf",
+ "caderno": "11 – TETOS E FORROS · 1104 – REVISÕES E REPAROS",
+ "truncado": false,
+ "fichas": {
+  "110401": {
+   "d": "Recolocação de forro de madeira existente, com aproveitamento integral do material, incluindo desmontagem, limpeza e remontagem das peças",
+   "u": "m2",
+   "caderno": "1104 – REVISÕES E REPAROS",
+   "atualizacao": "10/2025",
+   "aplicacao": "Utilizado com a finalidade de rebaixamento de teto com tábuas de madeira provenientes de reaproveitamento das peças.",
+   "incluidos": "Fornecimento de mão de obra para recolocação de forro de madeira, inclusive fornecimento de pregos para fixação das peças, considerando perdas por consumo e transporte interno no canteiro até o local da execução. Limpeza do local do serviço e remoção de todos os resíduos, materiais excedentes e inaproveitáveis, inclusive descarte final.",
+   "criterio": "m2 (metro quadrado) Pela área efetiva de forro de madeira recolocado.",
+   "normas": ["Decreto Estadual nº 1.941-R/2007", "NBR 10.004-1", "NBR 10.004-2", "NR 18"]
+  }
+ }
+}

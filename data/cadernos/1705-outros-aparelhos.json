@@ -1,0 +1,197 @@
+{
+ "arquivo": "1705-OUTROS APARELHOS.pdf",
+ "caderno": "17 – APARELHOS HIDRO-SANITÁRIOS · 1705 – OUTROS APARELHOS",
+ "truncado": false,
+ "fichas": {
+  "170502": {
+   "d": "Caixa de descarga elevada plástica de sobrepor, com volume regulável de 6 a 9 litros, inclusive tubo de ligação 1.1/2\" e engate em PVC 1/2\" x 30cm",
+   "u": "und",
+   "caderno": "1705 – OUTROS APARELHOS",
+   "atualizacao": "05/2025",
+   "aplicacao": "Indicada para instalação em bacias sanitárias em ambientes residenciais, comerciais e públicos. Ideal quando a instalação de caixas embutidas é inviável. Recomendada para locais que demandam instalação rápida, manutenção facilitada e controle de consumo de água.",
+   "incluidos": "Fornecimento da Caixa de descarga elevada e mão de obra para execução do serviço, inclusive parafusos e buchas de fixação.",
+   "criterio": "Por unidade instalada.",
+   "normas": ["NBR 15491"]
+  },
+  "170506": {
+   "d": "Reservatório de polietileno de 500 L, inclusive adaptadores com flanges de PVC e torneira de bóia de 3/4\"",
+   "u": "und",
+   "caderno": "1705 – OUTROS APARELHOS",
+   "atualizacao": "05/2025",
+   "aplicacao": "Destinado ao armazenamento de água potável para uso em sistemas prediais residenciais, comerciais e industriais. Pode ser instalado em áreas internas ou externas, sobre bases planas e niveladas.",
+   "incluidos": "Fornecimento do Reservatório de polietileno de 500 L e mão de obra para execução do serviço, transporte horizontal do material, inclusive adaptadores PVC e torneira de bóia",
+   "criterio": "Por unidade instalada.",
+   "normas": ["NBR 14799", "NBR 14800", "NBR 5626"]
+  },
+  "170519": {
+   "d": "Ducha higiênica com registro Acqua-Jet, linha Aquarius 2195 A CR - Fabrimar, Tigre ou equivalente",
+   "u": "und",
+   "caderno": "1705 – OUTROS APARELHOS",
+   "atualizacao": "05/2025",
+   "aplicacao": "Indicado para banheiros em ambientes comerciais ou institucionais.",
+   "incluidos": "Fornecimento da Ducha higiênica e mão de obra para execução do serviço, inclusive parafusos e buchas de fixação",
+   "criterio": "Por unidade instalada.",
+   "normas": ["NBR 14877"]
+  },
+  "170524": {
+   "d": "Cabide de parede para lavatório, com um gancho em aço inox cromado - Docol Idea ou equivalente",
+   "u": "und",
+   "caderno": "1705 – OUTROS APARELHOS",
+   "atualizacao": "05/2025",
+   "aplicacao": "Indicado para lavabos e lavatórios de banheiros em ambientes comerciais ou institucionais. Utilizado para sustentação de toalhas de mão ou objetos leves, contribuindo com a organização do espaço e acessibilidade ao usuário.",
+   "incluidos": "Fornecimento do Cabide de parede e mão de obra para execução do serviço, inclusive parafusos e buchas de fixação.",
+   "criterio": "Por unidade instalada.",
+   "normas": ["NR 18"]
+  },
+  "170528": {
+   "d": "Reservatório de polietileno de 5.000 L, exclusive adaptadores com flanges de PVC e torneira de bóia",
+   "u": "und",
+   "caderno": "1705 – OUTROS APARELHOS",
+   "atualizacao": "05/2025",
+   "aplicacao": "Destinado ao armazenamento de água potável para uso em sistemas prediais residenciais, comerciais e industriais. Pode ser instalado em áreas internas ou externas, sobre bases planas e niveladas.",
+   "incluidos": "Fornecimento do Reservatório de polietileno de 5.000 L e mão de obra para execução do serviço, transporte horizontal manual e vertical do material por guindaste hidráulico, exclusive adaptadores PVC e torneira de bóia",
+   "criterio": "Por unidade instalada.",
+   "normas": ["NBR 13210", "NBR 5626"]
+  },
+  "170537": {
+   "d": "Assento sanitário plástico branco oval, Suavit – Tigre ou equivalente",
+   "u": "und",
+   "caderno": "1705 – OUTROS APARELHOS",
+   "atualizacao": "05/2025",
+   "aplicacao": "Indicado para banheiros públicos e de alta circulação, garantindo durabilidade, segurança e higiene com proteção bactericida incorporada ao material.",
+   "incluidos": "Fornecimento do Assento sanitário plástico e mão de obra para execução do serviço, inclusive parafusos e buchas de fixação.",
+   "criterio": "Por unidade instalada.",
+   "normas": ["NBR 16729"]
+  },
+  "170538": {
+   "d": "Chuveiro frio branco com braço reto de 30cm, com crivo removível 4”",
+   "u": "und",
+   "caderno": "1705 – OUTROS APARELHOS",
+   "atualizacao": "05/2025",
+   "aplicacao": "Utilizada para controlar o fluxo de água fria em locais como vestiários, podendo ser utilizado em ambientes internos e externos.",
+   "incluidos": "Fornecimento do Chuveiro e mão de obra para execução do serviço, inclusive fita de vedação.",
+   "criterio": "Por unidade instalada.",
+   "normas": ["NBR 15206"]
+  },
+  "170539": {
+   "d": "Reservatório de polietileno de 500 L, exclusive adaptadores com flanges de PVC e torneira de bóia",
+   "u": "und",
+   "caderno": "1705 – OUTROS APARELHOS",
+   "atualizacao": "05/2025",
+   "aplicacao": "Destinado ao armazenamento de água potável para uso em sistemas prediais residenciais, comerciais e industriais. Pode ser instalado em áreas internas ou externas, sobre bases planas e niveladas.",
+   "incluidos": "Fornecimento do Reservatório de polietileno de 500 L e mão de obra para execução do serviço, transporte horizontal manual, exclusive adaptadores PVC e torneira de bóia",
+   "criterio": "Por unidade instalada.",
+   "normas": ["NBR 14799", "NBR 14800", "NBR 5626"]
+  },
+  "170540": {
+   "d": "Reservatório de polietileno de 1.000 L, exclusive adaptadores com flanges de PVC e torneira de bóia",
+   "u": "und",
+   "caderno": "1705 – OUTROS APARELHOS",
+   "atualizacao": "05/2025",
+   "aplicacao": "Destinado ao armazenamento de água potável para uso em sistemas prediais residenciais, comerciais e industriais. Pode ser instalado em áreas internas ou externas, sobre bases planas e niveladas.",
+   "incluidos": "Fornecimento do Reservatório de polietileno de 1.000 L e mão de obra para execução do serviço, transporte horizontal manual, exclusive adaptadores PVC e torneira de bóia",
+   "criterio": "Por unidade instalada.",
+   "normas": ["NBR 14799", "NBR 14800", "NBR 5626"]
+  },
+  "170541": {
+   "d": "Filtro de água curto Aqualar AP200, inclusive refil – 3M ou equivalente",
+   "u": "und",
+   "caderno": "1705 – OUTROS APARELHOS",
+   "atualizacao": "05/2025",
+   "aplicacao": "Utilizado para filtragem de água potável em pontos de uso, como pias de cozinha e bebedouros, pontos de abastecimento de geladeiras etc. Indicado para uso residencial, comercial e institucional. Instalação diretamente na parede, entre o ponto de alimentação e a torneira ou equipamento",
+   "incluidos": "Fornecimento do Filtro de água curto e mão de obra para execução do serviço, inclusive fita de vedação, niple e refil",
+   "criterio": "Por unidade instalada.",
+   "normas": ["NBR 16098", "Portaria INMETRO Nº 394/2014"]
+  },
+  "170546": {
+   "d": "Tanque em Mármore Sintético Duplo 102x50cm com dois bojo 37 Litros, inclusive vávula em PVC 2.1/4” com unho, Sifão sanfonado em PVC ajustável flexível multiuso 66 cm e fixação em cantoneira de ferro 1\" x 1/8\"",
+   "u": "und",
+   "caderno": "1705 – OUTROS APARELHOS",
+   "atualizacao": "05/2025",
+   "aplicacao": "Indicado para áreas de serviço residenciais, lavanderias, lavanderias coletivas e espaços comerciais de apoio. Pode ser instalado isoladamente ou com bancadas ou armários. Apropriado para lavagem manual de roupas e utensílios. Uso em ambientes internos ou externos cobertos.",
+   "incluidos": "Fornecimento do Tanque em Mármore Sintético Duplo e mão de obra para execução do serviço, inclusive silicone acético, sifões em PVC e cantoneiras de fixação",
+   "criterio": "Por unidade instalada.",
+   "normas": ["NBR 5626", "NBR 8160"]
+  },
+  "170547": {
+   "d": "Reservatório de polietileno de 310 L, exclusive adaptadores com flanges de PVC e torneira de bóia",
+   "u": "und",
+   "caderno": "1705 – OUTROS APARELHOS",
+   "atualizacao": "05/2025",
+   "aplicacao": "Destinado ao armazenamento de água potável para uso em sistemas prediais residenciais, comerciais e industriais. Pode ser instalado em áreas internas ou externas, sobre bases planas e niveladas.",
+   "incluidos": "Fornecimento do Reservatório de polietileno de 310 L e mão de obra para execução do serviço, transporte horizontal manual, exclusive adaptadores PVC e torneira de bóia",
+   "criterio": "Por unidade instalada.",
+   "normas": ["NBR 14799", "NBR 14800", "NBR 5626"]
+  },
+  "170548": {
+   "d": "Reservatório de polietileno de 1.500 L, exclusive adaptadores com flanges de PVC e torneira de bóia",
+   "u": "und",
+   "caderno": "1705 – OUTROS APARELHOS",
+   "atualizacao": "05/2025",
+   "aplicacao": "Destinado ao armazenamento de água potável para uso em sistemas prediais residenciais, comerciais e industriais. Pode ser instalado em áreas internas ou externas, sobre bases planas e niveladas.",
+   "incluidos": "Fornecimento do Reservatório de polietileno de 1.500 L e mão de obra para execução do serviço, transporte horizontal manual, exclusive adaptadores PVC e torneira de bóia",
+   "criterio": "Por unidade instalada.",
+   "normas": ["NBR 14799", "NBR 14800", "NBR 5626"]
+  },
+  "170549": {
+   "d": "Reservatório de polietileno de 3.000 L, exclusive adaptadores com flanges de PVC e torneira de bóia",
+   "u": "und",
+   "caderno": "1705 – OUTROS APARELHOS",
+   "atualizacao": "05/2025",
+   "aplicacao": "Destinado ao armazenamento de água potável para uso em sistemas prediais residenciais, comerciais e industriais. Pode ser instalado em áreas internas ou externas, sobre bases planas e niveladas.",
+   "incluidos": "Fornecimento do Reservatório de polietileno de 3.000 L e mão de obra para execução do serviço, transporte horizontal manual, exclusive adaptadores PVC e torneira de bóia",
+   "criterio": "Por unidade instalada.",
+   "normas": ["NBR 14799", "NBR 14800", "NBR 5626"]
+  },
+  "170550": {
+   "d": "Reservatório de polietileno de 2.000 L, exclusive adaptadores com flanges de PVC e torneira de bóia",
+   "u": "und",
+   "caderno": "1705 – OUTROS APARELHOS",
+   "atualizacao": "05/2025",
+   "aplicacao": "Destinado ao armazenamento de água potável para uso em sistemas prediais residenciais, comerciais e industriais. Pode ser instalado em áreas internas ou externas, sobre bases planas e niveladas.",
+   "incluidos": "Fornecimento do Reservatório de polietileno de 2.000 L e mão de obra para execução do serviço, transporte horizontal manual, exclusive adaptadores PVC e torneira de bóia",
+   "criterio": "Por unidade instalada.",
+   "normas": ["NBR 14799", "NBR 14800", "NBR 5626"]
+  },
+  "170555": {
+   "d": "Tanque Simples em Mármore Sintético 60x50cm com um bojo 34 Litros, inclusive vávula em PVC 2.1/4” com unho, Sifão sanfonado em PVC ajustável flexível multiuso 66 cm e parafusos de fixação",
+   "u": "und",
+   "caderno": "1705 – OUTROS APARELHOS",
+   "atualizacao": "05/2025",
+   "aplicacao": "Indicado para áreas de serviço residenciais, lavanderias, lavanderias coletivas e espaços comerciais de apoio. Pode ser instalado isoladamente ou com bancadas ou armários. Apropriado para lavagem manual de roupas e utensílios. Uso em ambientes internos ou externos cobertos.",
+   "incluidos": "Fornecimento do Tanque Simples em Mármore Sintético e mão de obra para execução do serviço, inclusive silicone acético, válvula, sifão em PVC, parafusos e buchas de fixação",
+   "criterio": "Por unidade instalada.",
+   "normas": ["NBR 5626", "NBR 8160"]
+  },
+  "170561": {
+   "d": "Reservatório de polietileno de 15.000 L, exclusive adaptadores com flanges de PVC e torneira de bóia",
+   "u": "und",
+   "caderno": "1705 – OUTROS APARELHOS",
+   "atualizacao": "05/2025",
+   "aplicacao": "Destinado ao armazenamento de água potável para uso em sistemas prediais residenciais, comerciais e industriais. Pode ser usado para Reserva Técnica de Incêndio (RTI).",
+   "incluidos": "Fornecimento do Reservatório de polietileno de 15.000 L e mão de obra para execução do serviço, transporte horizontal manual e vertical do material por guindaste hidráulico, exclusive adaptadores PVC e torneira de bóia",
+   "criterio": "Por unidade instalada.",
+   "normas": ["NBR 13210", "NBR 5626"]
+  },
+  "170562": {
+   "d": "Bebedouro elétrico de pressão para acessibilidade BDF300 PNE – IBBL ou equivalente",
+   "u": "und",
+   "caderno": "1705 – OUTROS APARELHOS",
+   "atualizacao": "05/2025",
+   "aplicacao": "Ideal para locais com grande circulação de pessoas, oferece água natural, gelada e misturada, atendendo adultos, crianças e pessoas com mobilidade reduzida conforme o Desenho Universal. Baixo consumo de energia, alta capacidade e autonomia; adequado a escolas e espaços públicos.",
+   "incluidos": "Fornecimento do Bebedouro elétrico de pressão e mão de obra para execução do serviço, inclusive fita de vedação, parafusos e buchas de fixação",
+   "criterio": "Por unidade instalada.",
+   "normas": ["NBR 9050", "NBR 16098", "Portaria INMETRO Nº 394/2014"]
+  },
+  "170563": {
+   "d": "Tanque cilíndrico vertical em polietileno, capacidade de 20.000 litros, com boca de inspeção 60cm, tampa de 1/4 de volta e vedação total, inclusive transporte horizontal manual até base de torre, transporte vertical com guindaste hidráulico",
+   "u": "und",
+   "caderno": "1705 – OUTROS APARELHOS",
+   "atualizacao": "05/2025",
+   "aplicacao": "Destinado ao armazenamento de água potável para uso em sistemas prediais residenciais, comerciais e industriais. Pode ser instalado em áreas internas ou externas, sobre bases planas e niveladas.",
+   "incluidos": "Fornecimento do Tanque cilíndrico vertical em polietileno, capacidade de 20.000 litros e mão de obra para execução do serviço e transporte horizontal manual e vertical do material por guindaste hidráulico, exclusive adaptadores PVC e torneira de bóia",
+   "criterio": "Por unidade instalada.",
+   "normas": ["NBR 15682", "NBR 14800", "NBR 5626"]
+  }
+ }
+}

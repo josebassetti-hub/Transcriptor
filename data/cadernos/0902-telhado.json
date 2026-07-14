@@ -1,0 +1,97 @@
+{
+ "arquivo": "0902-TELHADO-1.pdf",
+ "caderno": "09 – COBERTURA · 0902 – TELHADO",
+ "truncado": false,
+ "fichas": {
+  "090202": {
+   "d": "Cobertura com telha ondulada de fibrocimento 6.0mm, inclusive cumeeira e acessórios de fixação",
+   "u": "m2",
+   "caderno": "09 – COBERTURA · 0902 – TELHADO",
+   "atualizacao": "05/2025",
+   "aplicacao": "Fixação de um conjunto de telhas de fibrocimento sobre estrutura, destinadas a criar isolamento entre o meio externo e o meio interno de uma edificação, bem como proteção contra as intempéries, tanto para coberturas quanto para fechamentos laterais.",
+   "incluidos": "Fornecimento e colocação de telhas de fibrocimento com espessura de 6 milímetros, incluindo complemento (cumeeira) e acessórios (parafuso para fixação e conjunto de vedação elástica), considerando execução de cortes, furações, recobrimento, perdas por consumo, transporte interno no canteiro até o local de instalação e transporte vertical dos materiais à cobertura. Limpeza e remoção de materiais excedentes e inaproveitáveis.",
+   "criterio": "m2 (metro quadrado) Pela área de cobertura utilizando a área de projeção horizontal do telhado.",
+   "normas": ["NBR 12800:2012", "NBR 9066:2012"]
+  },
+  "090203": {
+   "d": "Cobertura com telha ondulada de fibrocimento 8.0mm, inclusive cumeeira e acessórios de fixação",
+   "u": "m2",
+   "caderno": "09 – COBERTURA · 0902 – TELHADO",
+   "atualizacao": "05/2025",
+   "aplicacao": "Fixação de um conjunto de telhas de fibrocimento sobre estrutura, destinadas a criar isolamento entre o meio externo e o meio interno de uma edificação, bem como proteção contra as intempéries, tanto para coberturas quanto para fechamentos laterais.",
+   "incluidos": "Fornecimento e colocação de telhas de fibrocimento com espessura de 8 milímetros, incluindo complemento (cumeeira) e acessórios (parafuso para fixação e conjunto de vedação elástica), considerando execução de cortes, furações, recobrimento, perdas por consumo, transporte interno no canteiro até o local de instalação e transporte vertical dos materiais à cobertura. Limpeza e remoção de materiais excedentes e inaproveitáveis.",
+   "criterio": "m2 (metro quadrado) Pela área de cobertura utilizando a área de projeção horizontal do telhado.",
+   "normas": ["NBR 12800:2012", "NBR 9066:2012"]
+  },
+  "090206": {
+   "d": "Cobertura com telha de alumínio trapezoidal, altura: 80 mm, espessura: 0.5 mm, inclusive acessórios de fixação, exclusive cumeeira",
+   "u": "m2",
+   "caderno": "09 – COBERTURA · 0902 – TELHADO",
+   "atualizacao": "05/2025",
+   "aplicacao": "Fixação de um conjunto de telhas de alumínio sobre estrutura, destinadas a criar isolamento entre o meio externo e o meio interno de uma edificação, bem como proteção contra as intempéries, tanto para coberturas quanto para fechamentos laterais.",
+   "incluidos": "Fornecimento e colocação de telhas trapezoidais de alumínio incluindo conjunto de fixação com parafuso autobrocante sextavado, considerando furações, sobreposições, perdas por consumo, transporte interno no canteiro até o local de instalação e transporte vertical dos materiais à cobertura. Limpeza e remoção de materiais excedentes e inaproveitáveis.",
+   "criterio": "m2 (metro quadrado) Pela área de cobertura utilizando a área de projeção horizontal do telhado.",
+   "normas": ["NBR 14331:2009"]
+  },
+  "090211": {
+   "d": "Cobertura com telha cerâmica tipo capa e canal inclusive cumeeira (telhas compradas na praça de Vitória, posto obra) (área de projeção horizontal; inclinação 30%)",
+   "u": "m2",
+   "caderno": "09 – COBERTURA · 0902 – TELHADO",
+   "atualizacao": "05/2025",
+   "aplicacao": "Instalação de um conjunto de telhas cerâmicas sobre uma estrutura com inclinação de 30%, destinadas a criar um isolamento entre o meio externo e o meio interno de uma edificação, bem como proteção contra as intempéries.",
+   "incluidos": "Fornecimento de telhas cerâmicas tipo capa e canal, adquiridas na praça de Vitória e posto obra, considerando a colocação dessas telhas, incluindo cumeeira. Fornecimento, preparo e aplicação de argamassa de emboço de cimento, cal e areia, inclusive perdas por consumo, execução de arremates (cortes), transporte interno no canteiro até o local de instalação e transporte vertical dos materiais à cobertura. Limpeza e remoção de materiais excedentes e inaproveitáveis.",
+   "criterio": "m2 (metro quadrado) Pela área de cobertura utilizando a área de projeção horizontal do telhado e inclinação de 30% para a cobertura.",
+   "normas": ["NBR 15310:2009"]
+  },
+  "090212": {
+   "d": "Cobertura com telha cerâmica tipo capa e canal (telhas compradas na fábrica, posto obra) (área de projeção horizontal; inclusive 30%), inclusive cumeeira, emboçada com argamassa de emboço de cimento, cal e areia no traço 1:2:9",
+   "u": "m2",
+   "caderno": "09 – COBERTURA · 0902 – TELHADO",
+   "atualizacao": "05/2025",
+   "aplicacao": "Instalação de um conjunto de telhas cerâmicas sobre uma estrutura com inclinação de 30%, destinadas a criar um isolamento entre o meio externo e o meio interno de uma edificação, bem como proteção contra as intempéries.",
+   "incluidos": "Fornecimento de telhas cerâmicas tipo capa e canal, adquiridas na fábrica e posto obra, considerando a colocação dessas telhas, incluindo cumeeira. Fornecimento, preparo e aplicação de argamassa de emboço de cimento, cal e areia, inclusive perdas por consumo, execução de arremates (cortes), transporte interno no canteiro até o local de instalação e transporte vertical dos materiais à cobertura. Limpeza e remoção de materiais excedentes e inaproveitáveis.",
+   "criterio": "m2 (metro quadrado) Pela área de cobertura utilizando a área de projeção horizontal do telhado e inclinação de 30% para a cobertura.",
+   "normas": ["NBR 15310:2009"]
+  },
+  "090215": {
+   "d": "Cumeeira para cobertura com telha cerâmica tipo capa e canal (telhas compradas na praça de Vitória, posto obra), emboçada com argamassa de emboço de cimento, cal e areia no traço 1:2:9",
+   "u": "m",
+   "caderno": "09 – COBERTURA · 0902 – TELHADO",
+   "atualizacao": "05/2025",
+   "aplicacao": "Utilizada para cobrir o encontro de duas águas da parte mais alta da cobertura, com telhas cerâmicas tipo capa e canal.",
+   "incluidos": "Fornecimento de cumeeiras cerâmicas tipo capa e canal, adquiridas na praça de Vitória e posto obra, considerando a colocação dessas cumeeiras. Fornecimento, preparo e aplicação de argamassa de emboço de cimento, cal e areia, inclusive perdas por consumo, execução de arremates (cortes), transporte interno no canteiro até o local de instalação e transporte vertical dos materiais à cobertura. Limpeza e remoção de materiais excedentes e inaproveitáveis.",
+   "criterio": "m (metro) Pelo comprimento efetivo de cumeeira cerâmica tipo capa e canal, colocada.",
+   "normas": ["NBR 15310:2009"]
+  },
+  "090216": {
+   "d": "Cumeeira normal de fibrocimento para cobertura em telhas perfil ondulado espessura: 6.0mm, inclusive fixação e vedação do furo com selante a base de poliuretano",
+   "u": "m",
+   "caderno": "09 – COBERTURA · 0902 – TELHADO",
+   "atualizacao": "05/2025",
+   "aplicacao": "Utilizada para cobrir o encontro de duas águas da parte mais alta da cobertura, com telhas onduladas de fibrocimento.",
+   "incluidos": "Fornecimento e fixação de complemento (peça) para telha ondulada de fibrocimento com espessura de 6 milímetros, incluindo parafuso para fixação e vedação do furo com selante a base de poliuretano, considerando execução de cortes, furações, perdas por consumo, transporte interno no canteiro até o local de instalação e transporte vertical dos materiais à cobertura. Limpeza e remoção de materiais excedentes e inaproveitáveis.",
+   "criterio": "m (metro) Pelo comprimento efetivo de cumeeira de fibrocimento colocada.",
+   "normas": ["NBR 12800:2012", "NBR 9066:2012"]
+  },
+  "090219": {
+   "d": "Cobertura em telha ondulada de alumínio, espessura: 0.5 mm, inclusive fixação e vedação do furo com selante a base de poliuretano, exclusive cumeeira",
+   "u": "m2",
+   "caderno": "09 – COBERTURA · 0902 – TELHADO",
+   "atualizacao": "05/2025",
+   "aplicacao": "Fixação de um conjunto de telhas de alumínio sobre estrutura, destinadas a criar isolamento entre o meio externo e o meio interno de uma edificação, bem como proteção contra as intempéries, tanto para coberturas quanto para fechamentos laterais.",
+   "incluidos": "Fornecimento e colocação de telhas onduladas de alumínio incluindo conjunto de fixação com parafuso autobrocante sextavado, considerando furações, sobreposições, perdas por consumo, transporte interno no canteiro até o local de instalação e transporte vertical dos materiais à cobertura. Limpeza e remoção de materiais excedentes e inaproveitáveis.",
+   "criterio": "m2 (metro quadrado) Pela área de cobertura utilizando a área de projeção horizontal do telhado.",
+   "normas": ["NBR 14331:2009"]
+  },
+  "090228": {
+   "d": "Cobertura com Telha em aço galvalume trapezoidal 40, espessura: 0.50 mm, pintura cor branca nas duas faces, inclusive acessório de fixação - Santo André, Eternit, Metform ou equivalente",
+   "u": "m2",
+   "caderno": "09 – COBERTURA · 0902 – TELHADO",
+   "atualizacao": "05/2025",
+   "aplicacao": "Fixação de um conjunto de telhas de aço galvalume sobre estrutura, com inclinação mínima de 5%, para isolamento entre o meio externo e interno da edificação e proteção contra intempéries, para coberturas e fechamentos laterais. Ideal para estruturas que demandam suporte para grandes vãos.",
+   "incluidos": "Fornecimento e colocação de telhas trapezoidais de aço galvalume, incluindo conjunto de fixação com parafuso autobrocante sextavado, considerando furações, sobreposições, perdas por consumo, transporte interno no canteiro até o local de instalação, transporte vertical dos materiais à cobertura e utilização de tábuas providas de sarrafos para proteção na instalação. Limpeza e remoção de materiais excedentes e inaproveitáveis.",
+   "criterio": "m2 (metro quadrado) Pela área de cobertura nova executada, utilizando a área de projeção horizontal do telhado.",
+   "normas": ["NBR 6673:2023", "NBR 14513:2022", "NBR 15578:2008"]
+  }
+ }
+}

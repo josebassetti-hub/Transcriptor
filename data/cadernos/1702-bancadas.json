@@ -1,0 +1,47 @@
+{
+ "arquivo": "1702-BANCADAS-1.pdf",
+ "caderno": "17 – APARELHOS HIDRO-SANITÁRIOS · 1702 – BANCADAS",
+ "truncado": false,
+ "fichas": {
+  "170205": {
+   "d": "Bancada de mármore espessura 3cm, com acabamento polido, inclusive chumbamento na alvenaria, exclusive cantoneira de apoio",
+   "u": "m2",
+   "caderno": "1702 – BANCADAS",
+   "atualizacao": "10/2025",
+   "aplicacao": "Utilizada para apoio de lavatórios em banheiros e vestiários, base de trabalho para cozinhas, refeitórios, laboratórios, secretarias e ambientes de atendimento ao público em geral.",
+   "incluidos": "Fornecimento dos materiais e mão de obra para instalação de bancada de mármore, inclusive fornecimento da bancada e da argamassa de cimento e areia para chumbamento do tampo na alvenaria, considerando perdas por consumo e transporte interno no canteiro até o local da execução. Limpeza do local do serviço e remoção de todos os resíduos, materiais excedentes e inaproveitáveis, inclusive descarte final.",
+   "criterio": "m2 (metro quadrado) Pela área efetiva de bancada de mármore instalada.",
+   "normas": ["NBR 15844/2010", "NBR 5732:1991", "NBR 7220:1987", "NR 18"]
+  },
+  "170220": {
+   "d": "Bancada de granito tipo Cinza Andorinha, com espessura de 2 cm, com acabamento polido, inclusive chumbamento na alvenaria, exclusive cantoneira de apoio",
+   "u": "m2",
+   "caderno": "1702 – BANCADAS",
+   "atualizacao": "10/2025",
+   "aplicacao": "Utilizada para apoio de lavatórios em banheiros e vestiários, base de trabalho para cozinhas, refeitórios, laboratórios, secretarias e ambientes de atendimento ao público em geral.",
+   "incluidos": "Fornecimento dos materiais e mão de obra para instalação de bancada de granito, inclusive fornecimento da bancada e da argamassa de cimento e areia para chumbamento do tampo na alvenaria, considerando perdas por consumo e transporte interno no canteiro até o local da execução. Limpeza do local do serviço e remoção de todos os resíduos, materiais excedentes e inaproveitáveis, inclusive descarte final.",
+   "criterio": "m2 (metro quadrado) Pela área efetiva de bancada de granito instalada.",
+   "normas": ["NBR 15844/2010", "NBR 5732:1991", "NBR 7220:1987", "NR 18"]
+  },
+  "170221": {
+   "d": "Laje armada espessura de 3cm p/ enchimento de fundo de bancada inox",
+   "u": "m2",
+   "caderno": "1702 – BANCADAS",
+   "atualizacao": "10/2025",
+   "aplicacao": "Utilizado para proporcionar rigidez e resistência à bancada de aço inox, uma vez que o concreto armado preenche o espaço vazado e interno sob a bancada, criando uma estrutura mais robusta.",
+   "incluidos": "Fornecimento dos materiais e mão de obra para enchimento de fundo de bancada em aço inox, inclusive fornecimento do concreto e da ferragem, considerando perdas por consumo e transporte interno no canteiro até o local da execução. Limpeza do local do serviço e remoção de todos os resíduos, materiais excedentes e inaproveitáveis, inclusive descarte final.",
+   "criterio": "m2 (metro quadrado) Pela área efetiva de laje armada executada para enchimento sob a bancada de aço inox.",
+   "normas": ["NBR 5732:1991", "NBR 7220:1987", "NBR 7480:2022", "NR 18"]
+  },
+  "170222": {
+   "d": "Bancada em granito cinza andorinha acabamento polido, para tanque de panelões, espessura 2cm, nas dimensões de 0,80 x 1,10 m, frontão h=10cm, inclusive base de concreto e apoio em alvenaria, exclusive acessórios (válvula e sifão) e torneira, conforme detalhe de projeto",
+   "u": "und",
+   "caderno": "1702 – BANCADAS",
+   "atualizacao": "10/2025",
+   "aplicacao": "Utilizada para apoio e instalação de tanque para panelões em cozinhas.",
+   "incluidos": "Fornecimento dos materiais e mão de obra para instalação de bancada de granito cinza andorinha para tanque de panelões, inclusive execução de base em concreto armado, mureta sob a bancada em alvenaria de tijolo cerâmico, chapisco, emboço, tampo em granito, revestimento em cerâmica 10x10 cm branco brilhante e acabamento em alumínio com perfil de canto para arremate das quinas da mureta sob a bancada, considerando perdas por consumo e transporte interno no canteiro até o local da execução. Limpeza do local do serviço e remoção de todos os resíduos, materiais excedentes e inaproveitáveis, inclusive descarte final.",
+   "criterio": "und (unidade) Pela quantidade efetiva de bancada para tanque de panelões instalada.",
+   "normas": ["NBR 15844/2010", "NBR 5732:1991", "NBR 7220:1987", "NBR 7211:2005", "NBR 7203:1982", "Decreto Estadual nº 1.941-R/2007", "NBR 6627:1981", "NBR ISO 1096:2006", "NBR 7480:2022", "NBR 6181:2003", "NBR 15270-1:2005", "NBR 13754:1996", "NBR 14081-1:2012", "NBR 14992:2003", "NBR 14125/2009", "NR 18"]
+  }
+ }
+}

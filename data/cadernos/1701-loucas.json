@@ -1,0 +1,227 @@
+{
+ "arquivo": "1701 - APARELHOS HIDRO-SANITÁRIOS.pdf",
+ "caderno": "17 – APARELHOS HIDRO-SANITÁRIOS · 1701 – LOUÇAS",
+ "truncado": false,
+ "fichas": {
+  "170101": {
+   "d": "Lavatório de louça branca com coluna – Aspen Vogue Plus - Deca ou equivalente, inclusive válvula de saída cromada 1”, sifão em metal cromado 1” x 1/2\", engate flexível trançado inox 1/2” x 30 cm e parafusos para fixação, exclusive torneira",
+   "u": "und",
+   "caderno": "1701 – LOUÇAS",
+   "atualizacao": "08/2024",
+   "aplicacao": "Ideal para espaço compacto, não necessita de bancada. Utilizada em vestiários, sanitários, refeitórios.",
+   "incluidos": "Fornecimento e instalação de lavatório com coluna, inclusive fornecimento de parafusos e buchas, sifão em metal cromado 1”, válvula de saída cromada 1” e engate flexível trançado inox 1/2” x 30 cm, exclusive torneira.",
+   "criterio": "Por conjunto instalado",
+   "normas": ["NBR 16728-1", "NBR 16728-2"]
+  },
+  "170107": {
+   "d": "Mictório de louça branca com sifão integrado antivandalismo - M715 - Deca ou equivalente, inclusive engate flexível trançado inox 1/2” x 30cm",
+   "u": "und",
+   "caderno": "1701 – LOUÇAS",
+   "atualizacao": "08/2024",
+   "aplicacao": "Ideal para vestiários, sanitários e ambientes públicos. Produto antivandalismo, ideal em locais públicos com grande circulação de pessoas, tendo elevada durabilidade e resistência a atos de depredação, vandalismo e furto.",
+   "incluidos": "Fornecimento e instalação do mictório, inclusive fornecimento do engate flexível trançado inox 1/2” x 30 cm.",
+   "criterio": "Por unidade instalada.",
+   "normas": ["NBR 16731-1", "NBR 16731-2"]
+  },
+  "170110": {
+   "d": "Cabide de louça branca com 2 ganchos – Icasa, Celite ou equivalente",
+   "u": "und",
+   "caderno": "1701 – LOUÇAS",
+   "atualizacao": "08/2024",
+   "aplicacao": "Ideal para vestiários, sanitários e bancadas, conforme indicação em projeto",
+   "incluidos": "Fornecimento e instalação do cabide.",
+   "criterio": "Por unidade instalada.",
+   "normas": ["NBR 9050"]
+  },
+  "170114": {
+   "d": "Bacia convencional infantil de louça branca - Studio Kids - Deca ou equivalente, inclusive assento plástico, tubo de ligação metal cromado com canopla, anel de vedação e parafusos para fixação",
+   "u": "und",
+   "caderno": "1701 – LOUÇAS",
+   "atualizacao": "08/2024",
+   "aplicacao": "Ideal para espaço escolares: fraldário e sanitário infantil.",
+   "incluidos": "Fornecimento e instalação da bacia sanitária, inclusive fornecimento de parafusos e buchas, tubo de ligação metal cromado, anel de vedação e assento plástico.",
+   "criterio": "Por unidade instalada.",
+   "normas": ["NBR 16727-1", "NBR 16727-2"]
+  },
+  "170115": {
+   "d": "Cuba de louça branca de embutir redonda, 36cm - L-41 – Deca ou equivalente, inclusive válvula de saída cromada 1”, sifão em metálico tipo copo cromado 1” x 1/2\" e engate flexível trançado inox 1/2” x 30cm, exclusive torneira",
+   "u": "und",
+   "caderno": "1701 – LOUÇAS",
+   "atualizacao": "08/2024",
+   "aplicacao": "Ideal para bancada. Utilizada em vestiários e sanitários.",
+   "incluidos": "Fornecimento e instalação da cuba, inclusive fornecimento de sifão em metálico tipo copo cromado 1”, válvula de saída cromada 1” e engate flexível trançado inox 1/2” x 30 cm, exclusive torneira.",
+   "criterio": "Por conjunto instalado.",
+   "normas": ["NBR 16728-1"]
+  },
+  "170116": {
+   "d": "Bacia convencional de louça branca, padrão popular - Logasa, Celite ou equivalente, inclusive assento plástico, tubo de ligação metal cromado com canopla, anel de vedação e parafusos para fixação",
+   "u": "und",
+   "caderno": "1701 – LOUÇAS",
+   "atualizacao": "08/2024",
+   "aplicacao": "Ideal para vestiário e sanitários.",
+   "incluidos": "Fornecimento e instalação da bacia sanitária, inclusive fornecimento de parafusos e buchas, tubo de ligação metal cromado, anel de vedação e assento plástico.",
+   "criterio": "Por unidade instalada.",
+   "normas": ["NBR 16727-1"]
+  },
+  "170117": {
+   "d": "Lavatório de louça branca sem coluna, padrão popular - Colibri - Logasa ou equivalente, inclusive sifão em PVC rígido 1” x 1/2”, válvula em PVC 1”, engate flexível em PVC 1/2\" x 30cm e parafusos para fixação, exclusive torneira",
+   "u": "und",
+   "caderno": "1701 – LOUÇAS",
+   "atualizacao": "08/2024",
+   "aplicacao": "Ideal para espaço compacto, não necessita de bancada. Utilizada em vestiários, sanitários, refeitórios.",
+   "incluidos": "Fornecimento e instalação de lavatório, inclusive fornecimento de parafusos e buchas, sifão, válvula e engates em PVC, exclusive torneira.",
+   "criterio": "Por conjunto instalado.",
+   "normas": ["NBR 16728-1", "NBR 16728-2"]
+  },
+  "170119": {
+   "d": "Cabide de louça branca com um gancho - A680 – Deca ou equivalente",
+   "u": "und",
+   "caderno": "1701 – LOUÇAS",
+   "atualizacao": "08/2024",
+   "aplicacao": "Ideal para vestiários, sanitários e bancadas, conforme indicação em projeto.",
+   "incluidos": "Fornecimento e instalação do cabide.",
+   "criterio": "Por unidade instalada.",
+   "normas": ["NBR 9050"]
+  },
+  "170120": {
+   "d": "Lavatório de louça branca com coluna, padrão popular Izy – Deca, Celite ou equivalente, inclusive sifão em PVC rígido 1” x 1/2”, válvula em PVC 1”, engate flexível em PVC 1/2\" x 30cm e parafusos para fixação, exclusive torneira",
+   "u": "und",
+   "caderno": "1701 – LOUÇAS",
+   "atualizacao": "08/2024",
+   "aplicacao": "Ideal para espaço compacto, não necessita de bancada. Utilizada em vestiários, sanitários, refeitórios.",
+   "incluidos": "Fornecimento e instalação de lavatório com coluna, inclusive fornecimento de parafusos e buchas, sifão, válvula e engates em PVC, exclusive torneira.",
+   "criterio": "Por conjunto instalado.",
+   "normas": ["NBR 16728-1", "NBR 16728-2"]
+  },
+  "170121": {
+   "d": "Recolocação de bacia sanitária, inclusive fornecimento de tubo de ligação metal cromado com canopla, engate flexível trançado inox 1/2” x 30cm, anel de vedação e parafusos para fixação), exclusive bacia sanitária",
+   "u": "und",
+   "caderno": "1701 – LOUÇAS",
+   "atualizacao": "08/2024",
+   "aplicacao": "Ideal para quando for necessário recolocar a bacia sanitária.",
+   "incluidos": "Fornecimento de mão de obra para instalação da bacia sanitária, inclusive fornecimento de parafusos e buchas, tubo de ligação metal cromado, engate flexível trançado inox 1/2” x 30cm, anel de vedação, exclusive a bacia.",
+   "criterio": "Por unidade relocada.",
+   "normas": ["NBR 16727-1"]
+  },
+  "170122": {
+   "d": "Recolocação de lavatório sanitário, inclusive fornecimento de válvula de saída cromada 1”, sifão em metal cromado 1” x 1/2\" e engate flexível trançado inox 1/2” x 30cm, exclusive lavatório",
+   "u": "und",
+   "caderno": "1701 – LOUÇAS",
+   "atualizacao": "08/2024",
+   "aplicacao": "Ideal para quando for necessário recolocar lavatório com acessórios em metal.",
+   "incluidos": "Fornecimento de mão de obra para a instalação de lavatório, inclusive fornecimento de parafusos e buchas, sifão em metal cromado 1”, válvula de saída cromada 1”, engate flexível trançado inox 1/2” x 30 cm e fita de vedação, exclusive lavatório.",
+   "criterio": "Por unidade relocada",
+   "normas": ["NBR 16728-1", "NBR 16728-2"]
+  },
+  "170123": {
+   "d": "Recolocação de lavatório sanitário, inclusive fornecimento de válvula de saída PVC 1”, sifão em PVC rígido 1” x 1/2\" e engate flexível em PVC 1/2” x 30cm, exclusive lavatório",
+   "u": "und",
+   "caderno": "1701 – LOUÇAS",
+   "atualizacao": "08/2024",
+   "aplicacao": "Ideal para quando for necessário recolocar lavatório com acessórios em PVC.",
+   "incluidos": "Fornecimento de mão de obra para a instalação de lavatório, inclusive fornecimento de parafusos e buchas, sifão PVC 1” x 1.1/2”, válvula em PVC 1” com unho, engate flexível em PVC 1/2\" x 30 cm e fita de vedação, exclusive lavatório.",
+   "criterio": "Por unidade relocada",
+   "normas": ["NBR 16728-1", "NBR 16728-2"]
+  },
+  "170124": {
+   "d": "Lavatório suspenso de Canto - Izy - L101 - Deca ou equivalente, inclusive válvula de saída cromada 1”, sifão em metal cromado 1” x 1/2\", engate flexível trançado inox 1/2” x 30cm e parafusos para fixação, exclusive torneira",
+   "u": "und",
+   "caderno": "1701 – LOUÇAS",
+   "atualizacao": "08/2024",
+   "aplicacao": "Ideal para espaço compacto, não necessita de bancada. Utilizada em vestiários, sanitários",
+   "incluidos": "Fornecimento e instalação de lavatório, inclusive fornecimento de parafusos e buchas, sifão em metal cromado 1”, válvula de saída cromada 1” e engate flexível trançado inox 1/2” x 30 cm, exclusive torneira.",
+   "criterio": "Por conjunto instalado",
+   "normas": ["NBR 16728-1", "NBR 16728-2"]
+  },
+  "170126": {
+   "d": "Bacia convencional de louça branca sem abertura frontal para portadores de necessidades especiais, Vogue Plus Conforto - P510, inclusive assento em poliéster, ref. AP51 - Deca ou equivalente, tubo de ligação metal cromado com canopla, anel de vedação e parafusos para fixação",
+   "u": "und",
+   "caderno": "1701 – LOUÇAS",
+   "atualizacao": "08/2024",
+   "aplicacao": "Ideal para pessoas com dificuldade de mobilidade. Utilizada em vestiários, sanitários e indicado para ambientes públicos.",
+   "incluidos": "Fornecimento e instalação da bacia sanitária, inclusive fornecimento de parafusos e buchas, tubo de ligação metal cromado, anel de vedação e assento em poliéster.",
+   "criterio": "Por unidade instalada.",
+   "normas": ["NBR 16727-1"]
+  },
+  "170128": {
+   "d": "Lavatório de louça branca com coluna suspensa, Vogue Plus Confort - L51+CS1V para portadores de necessidades especiais - DECA, inclusive válvula de saída cromada 1”, sifão em metal cromado 1” x 1/2\", engate flexível trançado inox 1/2” x 30cm e parafusos para fixação, exclusive torneira",
+   "u": "und",
+   "caderno": "1701 – LOUÇAS",
+   "atualizacao": "08/2024",
+   "aplicacao": "Ideal para espaço compacto, não necessita de bancada. Utilizada em vestiários, sanitários e indicado para ambientes públicos. Produto ideal para pessoas com dificuldade de mobilidade.",
+   "incluidos": "Fornecimento e instalação de lavatório com coluna, inclusive fornecimento de parafusos e buchas, sifão em metal cromado 1”, válvula de saída cromada 1” e engate flexível trançado inox 1/2” x 30 cm, exclusive torneira.",
+   "criterio": "Por conjunto instalado",
+   "normas": ["NBR 16728-1", "NBR 16728-2"]
+  },
+  "170129": {
+   "d": "Bacia sanitária de louça branca com caixa acoplada e válvula de acionamento simples - Izy - Deca, Celite ou equivalente, inclusive assento plástico, tubo de ligação metal cromado com canopla, engate flexível trançado inox 1/2” x 30cm, anel de vedação e parafusos para fixação",
+   "u": "und",
+   "caderno": "1701 – LOUÇAS",
+   "atualizacao": "08/2024",
+   "aplicacao": "Ideal para vestiário e sanitários.",
+   "incluidos": "Fornecimento e instalação da bacia sanitária com caixa acoplada e válvula de acionamento simples, inclusive fornecimento de parafusos e buchas, tubo de ligação metal cromado, engate flexível trançado inox 1/2” x 30 cm, anel de vedação e assento plástico.",
+   "criterio": "Por conjunto instalado.",
+   "normas": ["NBR 16727-1"]
+  },
+  "170130": {
+   "d": "Lavatório de louça branca com coluna, Ravena L91 + C9 - Deca ou equivalente, inclusive válvula de saída cromada 1”, sifão em metal cromado 1” x 1/2\", engate flexível trançado inox 1/2” x 30cm e parafusos para fixação, exclusive torneira",
+   "u": "und",
+   "caderno": "1701 – LOUÇAS",
+   "atualizacao": "08/2024",
+   "aplicacao": "Ideal para espaço compacto, não necessita de bancada. Utilizada em vestiários, sanitários, refeitórios.",
+   "incluidos": "Fornecimento e instalação de lavatório com coluna, inclusive fornecimento de parafusos e buchas, sifão em metal cromado 1”, válvula de saída cromada 1” e engate flexível trançado inox 1/2” x 30 cm, exclusive torneira.",
+   "criterio": "Por conjunto instalado",
+   "normas": ["NBR 16728-1", "NBR 16728-2"]
+  },
+  "170132": {
+   "d": "Lavatório suspenso de canto - L76 - Deca ou equivalente, para portadores de necessidades especiais, inclusive válvula de saída cromada 1”, sifão em metal cromado 1” x 1/2\", engate flexível trançado inox 1/2” x 30cm e parafusos para fixação, exclusive torneira",
+   "u": "und",
+   "caderno": "1701 – LOUÇAS",
+   "atualizacao": "08/2024",
+   "aplicacao": "Ideal para espaço compacto, não necessita de bancada. Utilizada em vestiários e sanitários. Produto ideal para pessoas com dificuldade de mobilidade.",
+   "incluidos": "Fornecimento e instalação do lavatório, inclusive fornecimento de sifão em metálico tipo copo cromado 1”, válvula de saída cromada 1” e engate flexível trançado inox 1/2” x 30 cm, exclusive torneira.",
+   "criterio": "Por unidade instalada.",
+   "normas": ["NBR 16728-1", "NBR 16728-2"]
+  },
+  "170133": {
+   "d": "Cuba de louça branca de embutir oval - L37 - Deca ou equivalente, inclusive válvula de saída cromada 1”, sifão em metálico tipo copo cromado 1” x 1/2\" e engate flexível trançado inox 1/2” x 30cm, exclusive torneira",
+   "u": "und",
+   "caderno": "1701 – LOUÇAS",
+   "atualizacao": "08/2024",
+   "aplicacao": "Ideal para bancada. Utilizada em vestiários e sanitários.",
+   "incluidos": "Fornecimento e instalação da cuba, inclusive fornecimento de sifão em metálico tipo copo cromado 1”, válvula de saída cromada 1” e engate flexível trançado inox 1/2” x 30 cm, exclusive torneira.",
+   "criterio": "Por conjunto instalado.",
+   "normas": ["NBR 16728-1"]
+  },
+  "170134": {
+   "d": "Bacia convencional de louça branca- Ravena - P9 - Deca ou equivalente, inclusive assento plástico, tubo de ligação metal cromado com canopla, anel de vedação e parafusos para fixação",
+   "u": "und",
+   "caderno": "1701 – LOUÇAS",
+   "atualizacao": "08/2024",
+   "aplicacao": "Ideal para vestiário e sanitários.",
+   "incluidos": "Fornecimento e instalação da bacia sanitária, inclusive fornecimento de parafusos e buchas, tubo de ligação metal cromado, anel de vedação e assento plástico.",
+   "criterio": "Por unidade instalada.",
+   "normas": ["NBR 16727-1", "NBR 16727-2"]
+  },
+  "170135": {
+   "d": "Bacia convencional de louça branca com abertura frontal para portadores de necessidades especiais, Vogue Plus Conforto - P51, inclusive assento em poliéster com abertura, ref. AP51 - Deca ou equivalente, tubo de ligação metal cromado com canopla, anel de vedação e parafusos para fixação",
+   "u": "und",
+   "caderno": "1701 – LOUÇAS",
+   "atualizacao": "08/2024",
+   "aplicacao": "Ideal para pessoas com dificuldade de mobilidade. Utilizada em vestiários, sanitários e indicado para ambientes públicos.",
+   "incluidos": "Fornecimento e instalação da bacia sanitária, inclusive fornecimento de parafusos e buchas, tubo de ligação metal cromado, anel de vedação e assento em poliéster.",
+   "criterio": "Por unidade instalada.",
+   "normas": ["NBR 16727-1", "NBR 16727-2"]
+  },
+  "170136": {
+   "d": "Bacia sanitária de louça branca com caixa acoplada e válvula de duplo acionamento, Ravena - P909 - Deca ou equivalente, inclusive assento plástico, tubo de ligação metal cromado com canopla, engate flexível trançado inox 1/2” x 30cm, anel de vedação e parafusos para fixação",
+   "u": "und",
+   "caderno": "1701 – LOUÇAS",
+   "atualizacao": "08/2024",
+   "aplicacao": "Ideal para vestiário e sanitários.",
+   "incluidos": "Fornecimento e instalação da bacia sanitária com caixa acoplada e válvula de duplo acionamento, inclusive fornecimento de parafusos e buchas, tubo de ligação metal cromado, engate flexível trançado inox 1/2” x 30 cm, anel de vedação e assento plástico.",
+   "criterio": "Por conjunto instalado.",
+   "normas": ["NBR 16727-1", "NBR 16727-2"]
+  }
+ }
+}

@@ -1,0 +1,445 @@
+{
+ "arquivo": "CADERNO DE ESPECIFICAÇÕES TÉCNICAS - ETAPA 19 - PINTURA.pdf",
+ "caderno": "19 – PINTURA",
+ "truncado": false,
+ "fichas": {
+  "190101": {
+   "d": "Emassamento de paredes e forros, com duas demãos de massa corrida, referência Suvinil, Coral, Metalatex ou equivalente, inclusive uma demão de liquido selador PVA, referência Suvinil, Coral ou Metalatex ou equivalente",
+   "u": "m2",
+   "caderno": "19 – PINTURA · 1901 – SOBRE PAREDES E FORROS",
+   "atualizacao": "05/2023",
+   "aplicacao": "Utilizada para nivelar, uniformizar e corrigir imperfeições em superfícies de alvenaria em geral em ambientes internos. Diluente: água potável.",
+   "incluidos": "Fornecimento dos materiais e execução do serviço, consistindo na limpeza e lixamento, aplicação de massa niveladora à base de água, lixamento final e remoção do pó.",
+   "criterio": "M2 área emassada Pela área, não descontar vãos até 2 m². Para vãos superiores a 2 m², descontar apenas o que exceder, em cada vão, a essa área.",
+   "normas": [
+    "NBR 11702:2010",
+    "NBR 13245:2011",
+    "NBR 15312:2005",
+    "NBR 15303:2005",
+    "NBR 15348:2006"
+   ]
+  },
+  "190103": {
+   "d": "Emassamento de paredes e forros, com duas demãos de massa acrílica premium, referência Suvinil, Coral ou Sherwin Williams ou equivalente, inclusive uma demão de liquido selador acrílico, referência Suvinil, Coral ou Metalatex ou equivalente",
+   "u": "m2",
+   "caderno": "19 – PINTURA · 1901 – SOBRE PAREDES E FORROS",
+   "atualizacao": "05/2023",
+   "aplicacao": "Utilizada para nivelar, uniformizar e corrigir imperfeições rasas de reboco, gesso, massa fina, blocos de concreto, concreto e superfícies cimentícias, em ambientes internos e externos. Diluente: água potável.",
+   "incluidos": "Fornecimento dos materiais e execução do serviço, consistindo na limpeza e lixamento, aplicação de massa niveladora à base de água, lixamento final e remoção do pó.",
+   "criterio": "M2 área emassada Pela área, não descontar vãos até 2 m². Para vãos superiores a 2 m², descontar apenas o que exceder, em cada vão, a essa área.",
+   "normas": [
+    "NBR 11702:2010",
+    "NBR 13245:2011",
+    "NBR 15312:2005",
+    "NBR 15303:2005",
+    "NBR 15348:2006"
+   ]
+  },
+  "190104": {
+   "d": "Pintura em paredes e forros, aplicação manual, com três demãos de tinta látex premium, referência Suvinil, Coral e Metalatex, inclusive uma demão de liquido selador PVA, referência Suvinil, Coral ou Metalatex ou equivalente",
+   "u": "m2",
+   "caderno": "19 – PINTURA · 1901 – SOBRE PAREDES E FORROS",
+   "atualizacao": "05/2023",
+   "aplicacao": "Utilizada em diversas superfícies como alvenaria, reboco, concreto, blocos de concreto, placa de cimentícias, massa corrida, acrílica, drywall, gesso e repintura. Em ambientes internos não molháveis. Diluente: água potável.",
+   "incluidos": "Fornecimento dos materiais e execução do serviço, consistindo na limpeza e lixamento, uma demão de selador PVA e duas demãos de tinta.",
+   "criterio": "M2 área de pintura Pela área, não descontar vãos até 2 m². Para vãos superiores a 2 m², descontar apenas o que exceder, em cada vão, a essa área.",
+   "normas": [
+    "NBR 11702:2010",
+    "NBR 13245:2011",
+    "NBR 14940:2010",
+    "NBR 14942:2003",
+    "NBR 14943:2003",
+    "NBR 15079:2011"
+   ]
+  },
+  "190105": {
+   "d": "Pintura em paredes e forros, aplicação manual, com três demãos de tinta esmalte sintético premium, acabamento fosco, referência Suvinil, Coral ou Metalatex, inclusive uma demão de liquido selador acrílico, referência Suvinil, Coral ou Metalatex ou equivalente",
+   "u": "m2",
+   "caderno": "19 – PINTURA · 1901 – SOBRE PAREDES E FORROS",
+   "atualizacao": "05/2023",
+   "aplicacao": "Indicado para superfícies de madeira, ferro, alumínio e galvanizados. Pode ser utilizado em alvenarias internas e externas. Diluente: Thinner/Aguarrás.",
+   "incluidos": "Fornecimento dos materiais e execução do serviço, consistindo na limpeza e uma demão de selador acrílico e três demãos de tinta.",
+   "criterio": "M2 área pintada Pela área, não descontar vãos até 2 m². Para vãos superiores a 2 m², descontar apenas o que exceder, em cada vão, a essa área.",
+   "normas": [
+    "NBR 11702:2010",
+    "NBR 13245:2011",
+    "NBR 15314:2005",
+    "NBR 15494:2010"
+   ]
+  },
+  "190106": {
+   "d": "Pintura em paredes e forros, aplicação manual, com três demão de tinta látex acrílico premium, referência Coral e Metalatex, inclusive uma demão de liquido selador acrílico, referência Suvinil, Coral ou Metalatex ou equivalente",
+   "u": "m2",
+   "caderno": "19 – PINTURA · 1901 – SOBRE PAREDES E FORROS",
+   "atualizacao": "05/2023",
+   "aplicacao": "Utilizada em diversas superfícies, como alvenaria, reboco, concreto, blocos de concreto, placa de cimentícias, massa corrida, acrílica, drywall, gesso e repintura. Em ambientes internos e externos. Diluente: água potável.",
+   "incluidos": "Fornecimento dos materiais e execução do serviço, consistindo na limpeza e lixamento, uma demão de selador acrílico e três demãos de tinta.",
+   "criterio": "M2 área de pintura Pela área, não descontar vãos até 2 m². Para vãos superiores a 2 m², descontar apenas o que exceder, em cada vão, a essa área.",
+   "normas": [
+    "NBR 11702:2010",
+    "NBR 13245:2011",
+    "NBR 14940:2010",
+    "NBR 14942:2003",
+    "NBR 14943:2003",
+    "NBR 15079:2011"
+   ]
+  },
+  "190108": {
+   "d": "Pintura a cal (tipo caiação), sobre paredes e forros, a três demãos",
+   "u": "m2",
+   "caderno": "19 – PINTURA · 1901 – SOBRE PAREDES E FORROS",
+   "atualizacao": "05/2023",
+   "aplicacao": "Utilizada para pintura de blocos de concreto ou cerâmicos, chapisco, reboco, concreto, cimentícia, madeira entre outros. Em ambientes internos e externos. Diluente: água potável.",
+   "incluidos": "Fornecimento dos materiais e execução do serviço.",
+   "criterio": "M2 área de pintura Pela área, não descontar vãos até 4 m². Para vãos superiores a 4 m², descontar apenas o que exceder, em cada vão, a essa área.",
+   "normas": [
+    "NBR 11702:2010",
+    "NBR 6453:2003",
+    "NBR 6473:2003",
+    "NBR 7175:2003"
+   ]
+  },
+  "190109": {
+   "d": "Pintura de letra, aplicação manual, em parede, dim. 20x30cm com tinta látex acrílica, marcas de referência Suvinil, Coral ou Metalatex ou equivalente",
+   "u": "m2",
+   "caderno": "19 – PINTURA · 1901 – SOBRE PAREDES E FORROS",
+   "atualizacao": "05/2023",
+   "aplicacao": "Utilizada para pintura de letras e repintura. Em ambientes internos e externos. Diluente: água potável.",
+   "incluidos": "Fornecimento dos materiais e execução do serviço, consistindo na limpeza e lixamento, três demãos de tinta.",
+   "criterio": "Unidade de letras de pintura",
+   "normas": [
+    "NBR 11702:2010",
+    "NBR 13245:2011",
+    "NBR 14940:2010",
+    "NBR 14942:2003",
+    "NBR 14943:2003",
+    "NBR 15079:2011"
+   ]
+  },
+  "190114": {
+   "d": "Preparo em paredes e forros, aplicação manual, com uma demão de líquido selador acrílico, referência Suvinil, Coral ou Metalatex ou equivalente",
+   "u": "m2",
+   "caderno": "19 – PINTURA · 1901 – SOBRE PAREDES E FORROS",
+   "atualizacao": "05/2023",
+   "aplicacao": "Indicado para reboco, bloco de concreto e concreto aparente, utilizado para selar e uniformizar a absorção das superfícies internas e externas, proporcionando um ganho no rendimento das tintas de acabamento. Diluente: água potável.",
+   "incluidos": "Fornecimento dos materiais e execução do serviço, consistindo na limpeza e lixamento, uma demão de seladora.",
+   "criterio": "M2 área de pintura Pela área, não descontar vãos até 2 m². Para vãos superiores a 2 m², descontar apenas o que exceder, em cada vão, a essa área.",
+   "normas": [
+    "NBR 11702:2010",
+    "NBR 13245:2011"
+   ]
+  },
+  "190115": {
+   "d": "Pintura, sobre paredes e forros, aplicação manual, com duas demãos de tinta látex PVA premium, referência Suvinil, Coral e Metalatex, inclusive uma demão de liquido selador PVA, referência Suvinil, Coral ou Metalatex ou equivalente",
+   "u": "m2",
+   "caderno": "19 – PINTURA · 1901 – SOBRE PAREDES E FORROS",
+   "atualizacao": "05/2023",
+   "aplicacao": "Utilizada em diversas superfícies como alvenaria, reboco, concreto, blocos de concreto, placa de cimentícias, massa corrida, acrílica, drywall, gesso e repintura. Em ambientes internos não molháveis. Diluente: água potável.",
+   "incluidos": "Fornecimento dos materiais e execução do serviço, consistindo na limpeza e lixamento, uma demão de selador acrílico e duas demãos de tinta.",
+   "criterio": "M2 área de pintura Pela área, não descontar vãos até 2 m². Para vãos superiores a 2 m², descontar apenas o que exceder, em cada vão, a essa área.",
+   "normas": [
+    "NBR 11702:2010",
+    "NBR 13245:2011",
+    "NBR 14940:2010",
+    "NBR 14942:2003",
+    "NBR 14943:2003",
+    "NBR 15079:2011"
+   ]
+  },
+  "190116": {
+   "d": "Pintura, sobre paredes e forros, aplicação manual, com duas demãos de tinta esmalte sintético, referência Suvinil, Coral e Metalatex, inclusive uma demão de liquido selador PVA, referência Suvinil, Coral ou Metalatex ou equivalente",
+   "u": "m2",
+   "caderno": "19 – PINTURA · 1901 – SOBRE PAREDES E FORROS",
+   "atualizacao": "05/2023",
+   "aplicacao": "Indicado para superfícies de madeira, ferro, alumínio e galvanizados. Pode ser utilizado em alvenarias internas e externas. Diluente: Thinner/Aguarrás.",
+   "incluidos": "Fornecimento dos materiais e execução do serviço, consistindo na limpeza e lixamento, uma demão de selador acrílico e duas demãos de tinta.",
+   "criterio": "M2 área pintada Pela área, não descontar vãos até 2 m². Para vãos superiores a 2 m², descontar apenas o que exceder, em cada vão, a essa área.",
+   "normas": [
+    "NBR 11702:2010",
+    "NBR 13245:2011",
+    "NBR 15314:2005",
+    "NBR 15494:2010"
+   ]
+  },
+  "190117": {
+   "d": "Pintura sobre paredes e forros, aplicação manual, com duas demãos de tinta látex acrílico premium, acabamento fosco, referência Suvinil, Coral e Metalatex, inclusive uma demão de liquido selador acrílico, referência Suvinil, Coral ou Metalatex",
+   "u": "m2",
+   "caderno": "19 – PINTURA · 1901 – SOBRE PAREDES E FORROS",
+   "atualizacao": "05/2023",
+   "aplicacao": "Utilizada em diversas superfícies como alvenaria, reboco, concreto, blocos de concreto, placa de cimentícias, massa corrida, acrílica, drywall, gesso e repintura. Em ambientes internos e externos. Diluente: água potável.",
+   "incluidos": "Fornecimento dos materiais e execução do serviço, consistindo na limpeza e lixamento, uma demão de selador acrílico e duas demãos de tinta.",
+   "criterio": "M2 área de pintura Pela área, não descontar vãos até 2 m². Para vãos superiores a 2 m², descontar apenas o que exceder, em cada vão, a essa área.",
+   "normas": [
+    "NBR 11702:2010",
+    "NBR 13245:2011",
+    "NBR 14940:2010",
+    "NBR 14942:2003",
+    "NBR 14943:2003",
+    "NBR 15079:2011"
+   ]
+  },
+  "190121": {
+   "d": "Preparo em paredes e forros, aplicação manual, com uma demão de líquido selador PVA, referência Suvinil, Coral ou Metalatex ou equivalente",
+   "u": "m2",
+   "caderno": "19 – PINTURA · 1901 – SOBRE PAREDES E FORROS",
+   "atualizacao": "05/2023",
+   "aplicacao": "Indicado para reboco e massa corrida, utilizado para selar e uniformizar a absorção das superfícies internas, uniformizando a absorção da superfície, proporcionando um ganho no rendimento das tintas de acabamento. Em ambientes internos não molháveis. Diluente: água potável.",
+   "incluidos": "Fornecimento dos materiais e execução do serviço, consistindo na limpeza e lixamento, uma demão de seladora.",
+   "criterio": "M2 área de pintura Pela área, não descontar vãos até 2 m². Para vãos superiores a 2 m², descontar apenas o que exceder, em cada vão, a essa área.",
+   "normas": [
+    "NBR 11702:2010",
+    "NBR 13245:2011"
+   ]
+  },
+  "190201": {
+   "d": "Pintura sobre concreto ou blocos cerâmicos aparentes, aplicação manual, com duas demãos de verniz acrílico a base de água, acabamento fosco, referência Suvinil, Coral, Metalatex ou equivalente",
+   "u": "m2",
+   "caderno": "19 – PINTURA · 1902 – SOBRE CONCRETO OU BLOCOS",
+   "atualizacao": "05/2023",
+   "aplicacao": "Utilizada como proteção hidrofugante para superfícies de alvenaria, tijolo, concreto, pedra mineira, ardósia, placa de cimentícias. Diluente: água potável.",
+   "incluidos": "Fornecimento dos materiais e execução do serviço, consistindo na limpeza e lixamento, duas demãos de verniz.",
+   "criterio": "M2 área de pintura Pela área, não descontar vãos até 2 m². Para vãos superiores a 2 m², descontar apenas o que exceder, em cada vão, a essa área.",
+   "normas": [
+    "NBR 11702:2010",
+    "NBR 13245:2011",
+    "NBR 14940:2010",
+    "NBR 14942:2003",
+    "NBR 14943:2003",
+    "NBR 15079:2011"
+   ]
+  },
+  "190202": {
+   "d": "Pintura sobre concreto ou blocos cerâmicos aparentes, aplicação manual, com uma demão de silicone incolor, referência Suvinil, Sika, Vedacit ou equivalente",
+   "u": "m2",
+   "caderno": "19 – PINTURA · 1902 – SOBRE CONCRETO OU BLOCOS",
+   "atualizacao": "05/2023",
+   "aplicacao": "Utilizada para proteger e repelir a água em superfícies de alvenaria, tijolo, concreto, pedras naturais e artificiais, e telha cerâmicas concreto e fibrocimento). Diluente: pronto para uso.",
+   "incluidos": "Fornecimento dos materiais e execução do serviço, consistindo na limpeza e lixamento, uma demão de silicone.",
+   "criterio": "M2 área de pintura Pela área, não descontar vãos até 2 m². Para vãos superiores a 2 m², descontar apenas o que exceder, em cada vão, a essa área.",
+   "normas": [
+    "NBR 11702:2010",
+    "NBR 13245:2011",
+    "NBR 16388:2015"
+   ]
+  },
+  "190203": {
+   "d": "Pintura sobre concreto ou blocos de concreto, aplicação manual, com três demãos de tinta látex acrílico premium, referência Suvinil, Coral e Metalatex, inclusive uma demão de liquido selador acrílico, referência Suvinil, Coral ou Metalatex ou equivalente",
+   "u": "m2",
+   "caderno": "19 – PINTURA · 1902 – SOBRE CONCRETO OU BLOCOS",
+   "atualizacao": "05/2023",
+   "aplicacao": "Utilizada em diversas superfícies como alvenaria, concreto, blocos de concreto, placa de cimentícias. Em ambientes internos e externos. Diluente: água potável.",
+   "incluidos": "Fornecimento dos materiais e execução do serviço, consistindo na limpeza e lixamento, uma demão de selador acrílico e três demãos de tinta.",
+   "criterio": "M2 área de pintura Pela área, não descontar vãos até 2 m². Para vãos superiores a 2 m², descontar apenas o que exceder, em cada vão, a essa área.",
+   "normas": [
+    "NBR 11702:2010",
+    "NBR 13245:2011",
+    "NBR 14940:2010",
+    "NBR 14942:2003",
+    "NBR 14943:2003",
+    "NBR 15079:2011"
+   ]
+  },
+  "190204": {
+   "d": "Pintura sobre cobogós de concreto, aplicação manual, com duas demãos de tinta látex acrílico premium, referência Suvinil, Coral e Metalatex, inclusive uma demão de liquido selador acrílico, referência Suvinil, Coral ou Metalatex ou equivalente",
+   "u": "m2",
+   "caderno": "19 – PINTURA · 1902 – SOBRE CONCRETO OU BLOCOS",
+   "atualizacao": "05/2023",
+   "aplicacao": "Utilizada em diversas superfícies como alvenaria, concreto, blocos de concreto, placa de cimentícias. Em ambientes internos e externos. Diluente: água potável.",
+   "incluidos": "Fornecimento dos materiais e execução do serviço, consistindo na limpeza e lixamento, uma demão de selador acrílico e duas demãos de tinta.",
+   "criterio": "M2 área de pintura Pela área, não descontar vãos até 2 m². Para vãos superiores a 2 m², descontar apenas o que exceder, em cada vão, a essa área.",
+   "normas": [
+    "NBR 11702:2010",
+    "NBR 13245:2011",
+    "NBR 14940:2010",
+    "NBR 14942:2003",
+    "NBR 14943:2003",
+    "NBR 15079:2011"
+   ]
+  },
+  "190205": {
+   "d": "Pintura a cal de meio-fio (tipo a caiação), aplicação manual, a três demãos",
+   "u": "m2",
+   "caderno": "19 – PINTURA · 1902 – SOBRE CONCRETO OU BLOCOS",
+   "atualizacao": "05/2023",
+   "aplicacao": "Utilizada para pintura de meio-fio. Em ambientes externos. Diluente: água potável.",
+   "incluidos": "Fornecimento dos materiais e execução do serviço.",
+   "criterio": "M2 área de pintura",
+   "normas": [
+    "NBR 11702:2010",
+    "NBR 6453:2003",
+    "NBR 6473:2003",
+    "NBR 7175:2003"
+   ]
+  },
+  "190211": {
+   "d": "Pintura sobre concreto ou blocos de concreto, aplicação manual, com duas demãos de tinta látex PVA premium, referência Suvinil, Coral e Metalatex, inclusive uma demão de liquido selador PVA, referência Suvinil, Coral ou Metalatex ou equivalente",
+   "u": "m2",
+   "caderno": "19 – PINTURA · 1902 – SOBRE CONCRETO OU BLOCOS",
+   "atualizacao": "05/2023",
+   "aplicacao": "Utilizada para superfícies de alvenaria, reboco, concreto, blocos de concreto, placa de cimentícias. Em ambientes internos não molháveis. Diluente: água potável.",
+   "incluidos": "Fornecimento dos materiais e execução do serviço, consistindo na limpeza e lixamento, duas demãos de tinta, uma demão de seladora.",
+   "criterio": "M2 área de pintura Pela área, não descontar vãos até 2 m². Para vãos superiores a 2 m², descontar apenas o que exceder, em cada vão, a essa área.",
+   "normas": [
+    "NBR 11702:2010",
+    "NBR 13245:2011",
+    "NBR 14940:2010",
+    "NBR 14942:2003",
+    "NBR 14943:2003",
+    "NBR 15079:2011"
+   ]
+  },
+  "190301": {
+   "d": "Emassamento de esquadrias e elementos de madeira, com duas demãos de massa à base água, referência Suvinil, Coral, Sherwin Williams ou equivalente, inclusive uma demão de fundo nivelador alquídico branco, referência Suvinil, Coral ou Metalatex ou equivalente",
+   "u": "m2",
+   "caderno": "19 – PINTURA · 1903 – SOBRE MADEIRA",
+   "atualizacao": "05/2023",
+   "aplicacao": "Indicado para nivelar e corrigir imperfeições rasas de madeiras em ambiente externos e internos, obtendo-se um acabamento liso para o recebimento da pintura.",
+   "incluidos": "Fornecimento dos materiais e execução do serviço, consistindo na limpeza e lixamento, aplicação de massa niveladora à base de água, lixamento final e remoção do pó.",
+   "criterio": "Pelo m2 área emassada Portas ou janelas guilhotina com batente: multiplicar a área de vão por 3. Portas ou janelas guilhotina sem batente: multiplicar a área de vão por 2. Caixilhos com veneziana: multiplicar a área do vão por 5. Se a estrutura for em arco acrescer 30%.",
+   "normas": [
+    "NBR 11702:2010",
+    "NBR 13245:2011",
+    "NBR 15312:2005",
+    "NBR 15303:2005"
+   ]
+  },
+  "190302": {
+   "d": "Pintura de esquadrias e elementos de madeira, aplicação manual, com duas demãos de tinta esmalte sintético referência Suvinil, Coral ou Metalatex, inclusive fundo branco nivelador, referência Suvinil, Coral e Metalatex ou equivalente",
+   "u": "m2",
+   "caderno": "19 – PINTURA · 1903 – SOBRE MADEIRA",
+   "atualizacao": "05/2023",
+   "aplicacao": "Indicado para superfícies de madeira. Pode ser utilizado em elementos internos e externos. Diluente: Thinner/Aguarrás.",
+   "incluidos": "Fornecimento dos materiais e execução do serviço, consistindo na limpeza e lixamento, uma demão de selador acrílico e duas demãos de tinta.",
+   "criterio": "M2 área pintada Pela área, não descontar vãos até 2 m². Para vãos superiores a 2 m², descontar apenas o que exceder, em cada vão, a essa área.",
+   "normas": [
+    "NBR 11702:2010",
+    "NBR 13245:2011",
+    "NBR 15314:2005",
+    "NBR 15494:2010",
+    "NBR 12311:1992"
+   ]
+  },
+  "190303": {
+   "d": "Pintura de esquadrias e elementos de madeira, aplicação manual, com três demão de verniz brilhante incolor, linha Premium Copal, referência Suvinil, Eucatex, Montana ou equivalente",
+   "u": "m2",
+   "caderno": "19 – PINTURA · 1903 – SOBRE MADEIRA",
+   "atualizacao": "05/2023",
+   "aplicacao": "Indicado para proteção em ambientes internos para superfícies de madeira de portas, esquadrias, forros, móveis em ambiente internos.",
+   "incluidos": "Fornecimento dos materiais e execução do serviço, consistindo na limpeza e lixamento, três demãos de verniz de acabamento",
+   "criterio": "Pelo m2 área envernizadas Portas ou janelas guilhotina sem batente: multiplicar a área de vão por 2. Portas ou janelas guilhotina com batente: multiplicar a área de vão por 3. Caixilhos com veneziana: multiplicar a área do vão por 5. Se a estrutura for em arco acrescer 30%.",
+   "normas": [
+    "NBR 11702:2010",
+    "NBR 13245:2011",
+    "NBR 15314:2005",
+    "NBR 16568"
+   ]
+  },
+  "190306": {
+   "d": "Pintura de esquadrias e elementos de madeira, aplicação manual, com três demãos de verniz fosco incolor, linha Tripla Proteção Premium, referência Suvinil, Coral, Metalatex ou equivalente",
+   "u": "m2",
+   "caderno": "19 – PINTURA · 1903 – SOBRE MADEIRA",
+   "atualizacao": "05/2023",
+   "aplicacao": "Indicado para proteção em elementos internos e externos para superfícies de madeira de portas, esquadrias, protegendo contra intemperismo natural e os raios ultravioleta.",
+   "incluidos": "Fornecimento dos materiais e execução do serviço, consistindo na limpeza e lixamento, três demãos de verniz de acabamento",
+   "criterio": "Pelo m2 área envernizadas Portas ou janelas guilhotina sem batente: multiplicar a área de vão por 2. Portas ou janelas guilhotina com batente: multiplicar a área de vão por 3. Caixilhos com veneziana: multiplicar a área do vão por 5. Se a estrutura for em arco acrescer 30%.",
+   "normas": [
+    "NBR 11702:2010",
+    "NBR 13245:2011",
+    "NBR 15314:2005",
+    "NBR 16568"
+   ]
+  },
+  "190307": {
+   "d": "Pintura fundo nivelador alquídico branco, aplicada a rolo, pincel ou trincha, em madeira, a uma demão, referência Suvinil, Coral ou equivalente",
+   "u": "m2",
+   "caderno": "19 – PINTURA · 1903 – SOBRE MADEIRA",
+   "atualizacao": "05/2023",
+   "aplicacao": "Indicado para aplicação em superfícies internas e externas de madeira, selando e uniformizando a absorção da superfície. Diluente: aguarrás.",
+   "incluidos": "Fornecimento dos materiais e execução do serviço, consistindo na limpeza e lixamento, uma demão de seladora.",
+   "criterio": "M2 área de pintura",
+   "normas": [
+    "NBR 11702:2010",
+    "NBR 13245:2011",
+    "NBR 12311:1992"
+   ]
+  },
+  "190417": {
+   "d": "Pintura sobre metal, aplicação manual, com duas demãos de tinta esmalte sintético, referência Suvinil, Coral ou Metalatex, inclusive uma demão de fundo anticorrosivo",
+   "u": "m2",
+   "caderno": "19 – PINTURA · 1904 – SOBRE METAL",
+   "atualizacao": "05/2023",
+   "aplicacao": "Indicado para superfícies de ferro, alumínio e galvanizados. Pode ser utilizado em ambientes internos e externos. Diluente: Thinner/Aguarrás.",
+   "incluidos": "Fornecimento dos materiais e execução do serviço, consistindo na limpeza e lixamento, uma demão de fundo anti-corrosivo zarcão e duas demãos de tinta.",
+   "criterio": "M2 área pintada",
+   "normas": [
+    "NBR 11702:2010",
+    "NBR 13245:2011",
+    "NBR 15314:2005",
+    "NBR 15315:2005",
+    "NBR 15311",
+    "NBR 15299",
+    "NBR 16407",
+    "NBR 12311:1992"
+   ]
+  },
+  "190501": {
+   "d": "Pintura de letras em chapas de ferro, dimensões 20x30cm, aplicação manual, com duas demãos de tinta esmalte sintético, referência Suvinil, Coral, Metalatex ou equivalente, inclusive uma demão de fundo anti- corrosivo",
+   "u": "m2",
+   "caderno": "19 – PINTURA · 1905 – SOBRE ELEMENTOS ESPECIAIS",
+   "atualizacao": "05/2023",
+   "aplicacao": "Utilizada para pintura de letras e repintura. Em ambientes internos e externos. Diluente: Thinner/Aguarrás.",
+   "incluidos": "Fornecimento dos materiais e execução do serviço, consistindo na limpeza e lixamento, uma demão de fundo anti-corrosivo zarcão e duas demãos de tinta.",
+   "criterio": "Unidade de letra pintada",
+   "normas": [
+    "NBR 11702:2010",
+    "NBR 13245:2011",
+    "NBR 15314:2005",
+    "NBR 15315:2005",
+    "NBR 15311",
+    "NBR 15299",
+    "NBR 16407",
+    "NBR 12311:1992"
+   ]
+  },
+  "190601": {
+   "d": "Pintura sobre piso, aplicação manual, para execução de faixa demarcatória L=5cm, com três demãos de tinta à base de epóxi, marcas de referência Suvinil, Coral ou Metalatex ou equivalente",
+   "u": "m2",
+   "caderno": "19 – PINTURA · 1906 – SOBRE PISOS",
+   "atualizacao": "05/2023",
+   "aplicacao": "Utilizada para pintura de faixas em quadras esportivas, pisos comerciais e estacionamento e repintura. Em ambientes internos e externos. Diluente: Diluente epóxi.",
+   "incluidos": "Fornecimento dos materiais e execução do serviço, consistindo na limpeza e lixamento, três demãos de tinta.",
+   "criterio": "M por comprimento de faixa de pintura",
+   "normas": [
+    "NBR 11702:2010",
+    "NBR 13245:2011"
+   ]
+  },
+  "190602": {
+   "d": "Pintura sobre piso, aplicação manual, com duas demãos de tinta à base de resinas acrílicas, marcas de referência Suvinil, Coral, Sherwin Williams NovaCor, Metalatex ou equivalente",
+   "u": "m2",
+   "caderno": "19 – PINTURA · 1906 – SOBRE PISOS",
+   "atualizacao": "05/2023",
+   "aplicacao": "Utilizada para pintura de pisos cimentados, quadras esportivas, calçadas, corredores, escadas, área de lazer, telha de fibrocimento, cerâmica porosas, pisos comerciais e estacionamento e repintura. Em ambientes internos e externos. Diluente: água potável.",
+   "incluidos": "Fornecimento dos materiais e execução do serviço, consistindo na limpeza e lixamento, duas demãos de tinta.",
+   "criterio": "M2 área de pintura",
+   "normas": [
+    "NBR 11702:2010",
+    "NBR 13245:2011"
+   ]
+  },
+  "190604": {
+   "d": "Pintura sobre piso, aplicação manual, para execução de faixa demarcatória L=8cm, com três demãos de tinta à base de epóxi, marcas de referência Suvinil, Coral ou Metalatex ou equivalente",
+   "u": "m2",
+   "caderno": "19 – PINTURA · 1906 – SOBRE PISOS",
+   "atualizacao": "05/2023",
+   "aplicacao": "Utilizada para pintura de faixas em quadras esportivas, pisos comerciais e estacionamento e repintura. Em ambientes internos e externos. Diluente: Diluente epóxi.",
+   "incluidos": "Fornecimento dos materiais e execução do serviço, consistindo na limpeza e lixamento, três demãos de tinta.",
+   "criterio": "M por comprimento de faixa de pintura",
+   "normas": [
+    "NBR 11702:2010",
+    "NBR 13245:2011",
+    "NBR 15314:2005"
+   ]
+  }
+ }
+}

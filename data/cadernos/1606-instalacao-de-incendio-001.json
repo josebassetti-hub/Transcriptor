@@ -1,0 +1,197 @@
+{
+ "arquivo": "16 - OUTRAS INSTALAÇÕES - 16.06 - Instalação de Incêndio - 001.pdf",
+ "caderno": "16 – OUTRAS INSTALAÇÕES · 1606 – INSTALAÇÃO DE INCÊNDIO",
+ "truncado": false,
+ "fichas": {
+  "160602": {
+   "d": "Abrigo de parede para hidrante 60x90x17cm sobrepor, em chapa de aço com pintura eletrostática vermelha, visor transparente e inscrição \"HIDRANTE\", registro globo angular 45º 2.1/2\" (63mm), adaptador em latão storz engate rápido 2.1/2\", mangueira de incêndio 20m – 2.1/2\" – Tipo 2, com acoplamento em latão e esguicho regulável em latão 2.1/2\", fornecimento e instalação",
+   "u": "und",
+   "caderno": "1606 – INSTALAÇÃO DE INCÊNDIO",
+   "atualizacao": "03/2026",
+   "aplicacao": "Usado como sistemas fixos de combate a incêndios em edifícios administrativos e escolares e hospitais. Utilizado para o controle inicial de focos de incêndio com a conexão direta ao sistema hidráulico do edifício.",
+   "incluidos": "Fornecimento do abrigo de parede para hidrante 60x90x17cm, registro globo angular 45º 2.1/2\" (63mm), adaptador em latão storz engate rápido 2.1/2\", mangueira de incêndio 20m – 2.1/2\" – Tipo 2, com acoplamento em latão e esguicho regulável em latão 2.1/2\", inclusive parafuso e buchas, bem como todos os materiais, mão de obra e equipamentos para sua instalação e testes. Limpeza do local do serviço e remoção de todos os resíduos, materiais excedentes e inaproveitáveis, inclusive descarte final.",
+   "criterio": "Por unidade fornecida e instalada.",
+   "normas": ["NBR 11861:1998", "NBR 13714:2000", "NBR 16021:2011", "NBR 14349:1999", "NBR 6941:2015", "NT 015-CAT CBMES"]
+  },
+  "160604": {
+   "d": "Extintor de incêndio portátil de água pressurizada capacidade 2A (10L), inclusive suporte de parede universal, parafuso e bucha S8, exclusive placa sinalizadora em PVC fotoluminescente e pintura de sinalização",
+   "u": "und",
+   "caderno": "1606 – INSTALAÇÃO DE INCÊNDIO",
+   "atualizacao": "03/2026",
+   "aplicacao": "Prevenção e combate a incêndios classe A (materiais sólidos que queimam em profundidade e superfície: madeira, papel, tecidos). Não deve ser utilizado em instalações elétricas (classe C), gases inflamáveis sob pressão e líquidos inflamáveis (classe B).",
+   "incluidos": "Fornecimento dos materiais e da mão-de-obra para instalação do extintor com carga portátil de água pressurizada capacidade 2A (10L), inclusive suporte de parede universal, parafuso e bucha S8, bem como todos os materiais, mão de obra e equipamentos para sua instalação e testes. Limpeza do local do serviço e remoção de todos os resíduos, materiais excedentes e inaproveitáveis, inclusive descarte final. Obs.: Não incluso placa de sinalização e pintura de sinalização",
+   "criterio": "Por unidade fornecida e instalada.",
+   "normas": ["NBR 12962:2016", "NBR 15808:2017", "NBR 12693:2021", "CBMES NT 12/2020"]
+  },
+  "160605": {
+   "d": "Extintor de incêndio portátil de pó químico ABC com capacidade 2A-20B:C (6 kg), inclusive suporte de parede universal, parafuso e bucha S8, exclusive placa sinalizadora em PVC fotoluminescente e pintura de sinalização",
+   "u": "und",
+   "caderno": "1606 – INSTALAÇÃO DE INCÊNDIO",
+   "atualizacao": "03/2026",
+   "aplicacao": "Prevenção e combate a incêndios das classes A (materiais sólidos: madeira, papel, tecidos), B (líquidos e gases inflamáveis: gasolina, óleo, solventes, plásticos, graxas) e C (equipamentos e instalações elétricas energizadas; o pó químico seco é não-condutivo).",
+   "incluidos": "Fornecimento dos materiais e da mão-de-obra para instalação extintor com carga de pó químico ABC com capacidade 2A-20B:C (6 kg), inclusive suporte de parede universal, parafuso e bucha S8, bem como todos os materiais, mão de obra, transporte e equipamentos para sua instalação e testes. Limpeza do local do serviço e remoção de todos os resíduos, materiais excedentes e inaproveitáveis, inclusive descarte final. Obs.: Não incluso placa de sinalização e pintura de sinalização",
+   "criterio": "Por unidade fornecida e instalada.",
+   "normas": ["NBR 12962:2016", "NBR 15808:2017", "NBR 12693:2021", "CBMES NT 12/2020"]
+  },
+  "160606": {
+   "d": "Extintor de incêndio de gás carbônico CO2 5 B:C (6 Kg), inclusive suporte de parede universal, parafuso e bucha S8, exclusive placa sinalizadora em PVC fotoluminescente e pintura de sinalização",
+   "u": "und",
+   "caderno": "1606 – INSTALAÇÃO DE INCÊNDIO",
+   "atualizacao": "03/2026",
+   "aplicacao": "Prevenção e combate a incêndios da classe B: líquidos e gases inflamáveis como gasolina, óleo, solventes, plásticos e graxas que se liquefazem com o calor, que queimam apenas na superfície.",
+   "incluidos": "Fornecimento dos materiais e da mão-de-obra para instalação do extintor com carga gás carbônico CO2 5 B:C (6 Kg), inclusive suporte de parede universal, parafuso e bucha S8, bem como todos os materiais, mão de obra, transporte e equipamentos para sua instalação e testes. Limpeza do local do serviço e remoção de todos os resíduos, materiais excedentes e inaproveitáveis, inclusive descarte final. Obs.: Não incluso placa de sinalização e pintura de sinalização",
+   "criterio": "Por unidade fornecida e instalada.",
+   "normas": ["NBR 12962:2016", "NBR 15808:2017", "NBR 12693:2021", "CBMES NT 12/2020"]
+  },
+  "160607": {
+   "d": "Extintor de incêndio portátil de pó químico ABC com capacidade 2A-20B:C (4 kg), inclusive suporte de parede universal, parafuso e bucha S8, exclusive placa sinalizadora em PVC fotoluminescente e pintura de sinalização",
+   "u": "und",
+   "caderno": "1606 – INSTALAÇÃO DE INCÊNDIO",
+   "atualizacao": "03/2026",
+   "aplicacao": "Prevenção e combate a incêndios das classes A (materiais sólidos: madeira, papel, tecidos), B (líquidos e gases inflamáveis: gasolina, óleo, solventes, plásticos, graxas) e C (equipamentos e instalações elétricas energizadas; o pó químico seco é não-condutivo).",
+   "incluidos": "Fornecimento do extintor com carga pó químico ABC com capacidade 2A-20B:C (4 kg), inclusive suporte de parede universal, parafuso e bucha S8, bem como todos os materiais, mão de obra, transporte e equipamentos para sua instalação e testes. Limpeza do local do serviço e remoção de todos os resíduos, materiais excedentes e inaproveitáveis, inclusive descarte final. Obs.: Não incluso placa de sinalização e pintura de sinalização",
+   "criterio": "Por unidade fornecida e instalada.",
+   "normas": ["NBR 12962:2016", "NBR 15808:2017", "NBR 12693:2021", "CBMES NT 12/2020"]
+  },
+  "160612": {
+   "d": "Placa de sinalização de segurança do tipo \"SAÍDA DE EMERGÊNCIA\" com seta vertical, conforme Código 14 - 315/158 da ABNT NBR 13434 e Código S3 da NT 14/2010 do Corpo de Bombeiros do Espírito Santo (CBMES)",
+   "u": "und",
+   "caderno": "1606 – INSTALAÇÃO DE INCÊNDIO",
+   "atualizacao": "03/2026",
+   "aplicacao": "Utilizada para orientar rotas de fuga em emergências, indicando o caminho a seguir em direção à saída de emergência. Aplicável em edificações comerciais, industriais, residenciais, escolares, hospitalares e outras, conforme legislação de segurança contra incêndio.",
+   "incluidos": "Fornecimento da Placa de sinalização de segurança do tipo \"SAÍDA DE EMERGÊNCIA\" com seta vertical, inclusive parafuso e bucha S6, bem como todos os materiais, mão de obra e equipamentos para sua instalação e testes. Limpeza do local do serviço e remoção de todos os resíduos, materiais excedentes e inaproveitáveis, inclusive descarte final.",
+   "criterio": "Por unidade fornecida e instalada.",
+   "normas": ["NBR 13434-1", "NBR 13434-2", "NBR 13434-3", "NBR 16820", "NT 014-CAT CBMES"]
+  },
+  "160625": {
+   "d": "Hidrante de recalque no passeio, em caixa de alvenaria 60x40x40 cm com blocos de concreto, incluindo com registro globo angular 90º DN 65 mm (2.1/2\"), adaptador Storz para engate rápido e tampão Storz com corrente de segurança e tampa de ferro fundido 40x40 cm com moldura metálica e inscrição \"INCÊNDIO\" pintada com tinta esmalte sintético vermelha a duas demãoes e uma demão de fundo anticorrosivo e lastro de brita 5cm, interligado à rede de incêndio para conexão de viatura do Corpo de Bombeiros ao sistema de combate a incêndio",
+   "u": "und",
+   "caderno": "1606 – INSTALAÇÃO DE INCÊNDIO",
+   "atualizacao": "03/2026",
+   "aplicacao": "Utilizado em passeios públicos ou áreas externas de edificações para permitir a conexão de viaturas do Corpo de Bombeiros ao sistema hidráulico do edifício em caso de incêndio. Exigência normativa em projetos de prevenção e combate a incêndios, com posicionamento estratégico para facilitar o acesso.",
+   "incluidos": "Execução da escavação manual para abertura da vala para execução da caixa, afastamento lateral do material escavado e reaterro apiloado do material escavado, após a conclusão da construção da caixa de passagem. Fornecimento, lançamento, espalhamento e apiloamento da brita para execução do lastro do fundo da caixa de passagem, considerando empolamento, eventuais perdas e transporte interno do canteiro até o local da aplicação. Fornecimento, preparo, transporte e aplicação da argamassa de assentamento dos blocos para execução da caixa de passagem, considerando perdas por consumo e transporte interno do canteiro até o local da aplicação; inclusive fornecimento (blocos adquiridos na praça de Vitória e posto obra), transporte, umedecimento e assentamento dos blocos de concreto (considerando eventuais perdas), limpeza e remoção de materiais excedentes e inaproveitáveis. Fornecimento, preparo, transporte e aplicação das argamassas para execução de revestimento interno (chapisco e reboco) da caixa de passagem, considerando perdas por consumo e transporte interno do canteiro até o local da aplicação. Confecção da tampa e da cinta superior da caixa de passagem, considerando o fornecimento dos materiais (concreto e aço), eventuais perdas e transporte interno do canteiro até a caixa elétrica, inclusive a instalação da tampa. Fornecimento do registro globo angular 90º DN 65 mm (2.1/2\"), adaptador Storz para engate rápido e tampão Storz com corrente de segurança e tampa de ferro fundido 40x40 cm com moldura metálica e inscrição \"INCÊNDIO\" pintada com tinta esmalte sintético vermelha. Limpeza do local do serviço e remoção de todos os resíduos, materiais excedentes e inaproveitáveis, inclusive descarte final.",
+   "criterio": "Por unidade fornecida e instalada.",
+   "normas": ["NBR 11861:1998", "NBR 13714:2000", "NBR 16021:2011", "NBR 14349:1999", "NBR 6941:2015", "NT 015-CAT CBMES"]
+  },
+  "160626": {
+   "d": "Conjunto completo de Porta corta-fogo simples para saída de emergência Dim.: 80x210x5cm, conforme ABNT NBR 11742, classe P-90, chapa de aço galvanizada 24 com revestimento interno de fibra de manta cerâmica de baixa densidade, fechamento automático, inclusive contra-marco, três (3) dobradiças tipo mola com parafusos sextavados e fechadura tipo trinco sobrepor sem chave, exclusive sinalização de emergência e pintura de acabamento",
+   "u": "und",
+   "caderno": "1606 – INSTALAÇÃO DE INCÊNDIO",
+   "atualizacao": "03/2026",
+   "aplicacao": "Instalado em saídas de emergência de edifícios comerciais, industriais, residenciais e públicos, em áreas que requerem compartimentação contra incêndio para evitar propagação de fogo e fumaça, e em corredores e escadas de segurança, conforme exigências do corpo de bombeiros e legislação local.",
+   "incluidos": "Fornecimento da porta corta-fogo simples para saída de emergência Dim.: 80x210x5cm - classe P-90, batente, dobradiças e fechadura bem como todos os materiais, mão de obra, transporte e equipamentos para sua instalação e testes. Limpeza do local do serviço e remoção de todos os resíduos, materiais excedentes e inaproveitáveis, inclusive descarte final. Obs.: Não estão inclusos no presente preço: sinalização de emergência, pintura de acabamento em esmalte sintético sobre fundo (na cor especificada em projeto) e fornecimento/instalação de barra antipânico.",
+   "criterio": "Por unidade fornecida e instalada.",
+   "normas": ["NBR 11742", "CBMES NT 10/2013"]
+  },
+  "160627": {
+   "d": "Conjunto completo de Porta corta-fogo simples para saída de emergência Dim.: 90x210x5cm, conforme ABNT NBR 11742, classe P-90, chapa de aço galvanizada 24 com revestimento interno de fibra de manta cerâmica de baixa densidade, fechamento automático, inclusive contra-marco, três (3) dobradiças tipo mola com parafusos sextavados e fechadura tipo trinco sobrepor sem chave, exclusive sinalização de emergência e pintura de acabamento",
+   "u": "und",
+   "caderno": "1606 – INSTALAÇÃO DE INCÊNDIO",
+   "atualizacao": "03/2026",
+   "aplicacao": "Instalado em saídas de emergência de edifícios comerciais, industriais, residenciais e públicos, em áreas que requerem compartimentação contra incêndio para evitar propagação de fogo e fumaça, e em corredores e escadas de segurança, conforme exigências do corpo de bombeiros e legislação local.",
+   "incluidos": "Fornecimento da porta corta-fogo simples para saída de emergência Dim.: 90x210x5cm - classe P-90, batente, dobradiças e fechadura bem como todos os materiais, mão de obra, transporte e equipamentos para sua instalação e testes. Limpeza do local do serviço e remoção de todos os resíduos, materiais excedentes e inaproveitáveis, inclusive descarte final. Obs.: Não estão inclusos no presente preço: sinalização de emergência, pintura de acabamento em esmalte sintético sobre fundo (na cor especificada em projeto) e fornecimento/instalação de barra antipânico.",
+   "criterio": "Por unidade fornecida e instalada.",
+   "normas": ["NBR 11742", "CBMES NT 10/2013"]
+  },
+  "160628": {
+   "d": "Conjunto completo de Porta corta-fogo simples para saída de emergência Dim.: 90x210x5cm, conforme ABNT NBR 11742, classe P-120, chapa de aço galvanizada 24 com revestimento interno de fibra de manta cerâmica de baixa densidade, fechamento automático, inclusive contra-marco, três (3) dobradiças tipo mola com parafusos sextavados e fechadura tipo trinco sobrepor sem chave, exclusive sinalização de emergência e pintura de acabamento",
+   "u": "und",
+   "caderno": "1606 – INSTALAÇÃO DE INCÊNDIO",
+   "atualizacao": "03/2026",
+   "aplicacao": "Instalado em saídas de emergência de edifícios comerciais, industriais, residenciais e públicos, em áreas que requerem compartimentação contra incêndio para evitar propagação de fogo e fumaça, e em corredores e escadas de segurança, conforme exigências do corpo de bombeiros e legislação local.",
+   "incluidos": "Fornecimento da porta corta-fogo simples para saída de emergência Dim.: 90x210x5cm - classe P-120, batente, dobradiças e fechadura, bem como todos os materiais, mão de obra, transporte e equipamentos para sua instalação e testes. Limpeza do local do serviço e remoção de todos os resíduos, materiais excedentes e inaproveitáveis, inclusive descarte final. Obs.: Não estão inclusos no presente preço: sinalização de emergência, pintura de acabamento em esmalte sintético sobre fundo (na cor especificada em projeto) e fornecimento/instalação de barra antipânico.",
+   "criterio": "Por unidade fornecida e instalada.",
+   "normas": ["NBR 11742", "CBMES NT 10/2013"]
+  },
+  "160629": {
+   "d": "Tubo de aço carbono galvanizado, com costura, classe leve, diâmetro 50mm (2\"), inclusive pintura com uma demão de primer Epoxi e duas demãos de tinta à base de Epoxi na cor vermelha",
+   "u": "m",
+   "caderno": "1606 – INSTALAÇÃO DE INCÊNDIO",
+   "atualizacao": "03/2026",
+   "aplicacao": "Utilizada para conduzir água pressurizada em sistemas de combate a incêndio, ligando hidrantes, mangotinhos e outras unidades de distribuição de água, conforme projeto executivo. As instalações nunca devem ser embutidas em elementos estruturais de concreto.",
+   "incluidos": "Fornecimento do tubo de aço carbono galvanizado, com costura, classe leve, diâmetro 50mm (2\"), inclusive pintura epoxi, elementos de vedação necessários, bem como todos os materiais, mão de obra, transporte e equipamentos para sua instalação e testes. Exclusive conexão e acessórios. Limpeza do local do serviço e remoção de todos os resíduos, materiais excedentes e inaproveitáveis, inclusive descarte final.",
+   "criterio": "metro por comprimento de tubulação executada.",
+   "normas": ["NBR 5580:2013", "DIN 2440", "CBMES NT 15/2009"]
+  },
+  "160630": {
+   "d": "Tubo de aço carbono galvanizado, com costura, classe leve, diâmetro 65mm (2.1/2\"), inclusive pintura com uma demão de primer Epoxi e duas demãos de tinta à base de Epoxi na cor vermelha",
+   "u": "m",
+   "caderno": "1606 – INSTALAÇÃO DE INCÊNDIO",
+   "atualizacao": "03/2026",
+   "aplicacao": "Utilizada para conduzir água pressurizada em sistemas de combate a incêndio, ligando hidrantes, mangotinhos e outras unidades de distribuição de água, conforme projeto executivo. As instalações nunca devem ser embutidas em elementos estruturais de concreto.",
+   "incluidos": "Fornecimento do tubo de aço carbono galvanizado, com costura, classe leve, diâmetro 65mm (2.1/2\"), inclusive pintura epoxi, elementos de vedação necessários, bem como todos os materiais, mão de obra, transporte e equipamentos para sua instalação e testes. Exclusive conexão e acessórios. Limpeza do local do serviço e remoção de todos os resíduos, materiais excedentes e inaproveitáveis, inclusive descarte final.",
+   "criterio": "metro por comprimento de tubulação executada.",
+   "normas": ["NBR 5580:2013", "DIN 2440", "CBMES NT 15/2009"]
+  },
+  "160631": {
+   "d": "Tubo de aço carbono galvanizado, com costura, classe leve, diâmetro 80mm (3\"), inclusive pintura com uma demão de primer Epoxi e duas demãos de tinta à base de Epoxi na cor vermelha",
+   "u": "m",
+   "caderno": "1606 – INSTALAÇÃO DE INCÊNDIO",
+   "atualizacao": "03/2026",
+   "aplicacao": "Utilizada para conduzir água pressurizada em sistemas de combate a incêndio, ligando hidrantes, mangotinhos e outras unidades de distribuição de água, conforme projeto executivo. As instalações nunca devem ser embutidas em elementos estruturais de concreto.",
+   "incluidos": "Fornecimento do tubo de aço carbono galvanizado, com costura, classe leve, diâmetro 80mm (3\"), inclusive pintura epoxi, elementos de vedação necessários, bem como todos os materiais, mão de obra, transporte e equipamentos para sua instalação e testes. Exclusive conexão e acessórios. Limpeza do local do serviço e remoção de todos os resíduos, materiais excedentes e inaproveitáveis, inclusive descarte final.",
+   "criterio": "metro por comprimento de tubulação executada.",
+   "normas": ["NBR 5580:2013", "DIN 2440", "CBMES NT 15/2009"]
+  },
+  "160632": {
+   "d": "Tubo de aço carbono galvanizado, com costura, classe leve, diâmetro 100mm (4\"), inclusive pintura com uma demão de primer Epoxi e duas demãos de tinta à base de Epoxi na cor vermelha",
+   "u": "m",
+   "caderno": "1606 – INSTALAÇÃO DE INCÊNDIO",
+   "atualizacao": "04/2025",
+   "aplicacao": "Utilizada para conduzir água pressurizada em sistemas de combate a incêndio, ligando hidrantes, mangotinhos e outras unidades de distribuição de água, conforme projeto executivo. As instalações nunca devem ser embutidas em elementos estruturais de concreto.",
+   "incluidos": "Fornecimento do tubo de aço carbono galvanizado, com costura, classe leve, diâmetro 100mm (4\"), inclusive pintura epoxi, elementos de vedação necessários, bem como todos os materiais, mão de obra, transporte e equipamentos para sua instalação e testes. Exclusive conexão e acessórios. Limpeza do local do serviço e remoção de todos os resíduos, materiais excedentes e inaproveitáveis, inclusive descarte final.",
+   "criterio": "metro por comprimento de tubulação executada.",
+   "normas": ["NBR 5580:2013", "DIN 2440", "CBMES NT 15/2009"]
+  },
+  "160633": {
+   "d": "Registro de gaveta bruto diâmetro 2\" (50mm), volante em aço com acabamento pintura epóxi vermelha – Docol, Deca ou equivalente",
+   "u": "und",
+   "caderno": "1606 – INSTALAÇÃO DE INCÊNDIO",
+   "atualizacao": "03/2026",
+   "aplicacao": "Instalações prediais de água quente ou fria onde somente o corpo do registro deve ser embutido, para bloqueio do fluxo de água, sempre como registro de manutenção (uso totalmente aberto ou fechado). Não empregar para regulagem do fluxo ou em fim de rede (chuveiros, banheiras, mictórios).",
+   "incluidos": "Fornecimento do registro de gaveta bruto diâmetro 2\" (50mm), volante em aço com acabamento pintura epóxi vermelha, elementos de vedação necessários, bem como todos os materiais, mão de obra, transporte e equipamentos para sua instalação e testes. Exclusive conexão e acessórios. Limpeza do local do serviço e remoção de todos os resíduos, materiais excedentes e inaproveitáveis, inclusive descarte final.",
+   "criterio": "Por unidade instalada. Obs.: Acontecendo a necessidade de instalação de niple e união esses serviços serão pagos em separado",
+   "normas": ["NBR 5626", "NBR 15705", "CBMES NT 15/2009"]
+  },
+  "160634": {
+   "d": "Registro de gaveta bruto diâmetro 2.1/2\" (65mm), volante em aço com acabamento pintura epóxi vermelha – Docol, Deca ou equivalente",
+   "u": "und",
+   "caderno": "1606 – INSTALAÇÃO DE INCÊNDIO",
+   "atualizacao": "03/2026",
+   "aplicacao": "Instalações prediais de água quente ou fria onde somente o corpo do registro deve ser embutido, para bloqueio do fluxo de água, sempre como registro de manutenção (uso totalmente aberto ou fechado). Não empregar para regulagem do fluxo ou em fim de rede (chuveiros, banheiras, mictórios).",
+   "incluidos": "Fornecimento do registro de gaveta bruto diâmetro 2.1/2\" (65mm), volante em aço com acabamento pintura epóxi vermelha, elementos de vedação necessários, bem como todos os materiais, mão de obra, transporte e equipamentos para sua instalação e testes. Exclusive conexão e acessórios. Limpeza do local do serviço e remoção de todos os resíduos, materiais excedentes e inaproveitáveis, inclusive descarte final.",
+   "criterio": "Por unidade instalada. Obs.: Acontecendo a necessidade de instalação de niple e união esses serviços serão pagos em separado",
+   "normas": ["NBR 5626", "NBR 15705", "CBMES NT 15/2009"]
+  },
+  "160635": {
+   "d": "Registro de gaveta bruto diâmetro 3\" (75mm), volante em aço com acabamento pintura epóxi vermelha – Docol, Deca ou equivalente",
+   "u": "und",
+   "caderno": "1606 – INSTALAÇÃO DE INCÊNDIO",
+   "atualizacao": "03/2026",
+   "aplicacao": "Instalações prediais de água quente ou fria onde somente o corpo do registro deve ser embutido, para bloqueio do fluxo de água, sempre como registro de manutenção (uso totalmente aberto ou fechado). Não empregar para regulagem do fluxo ou em fim de rede (chuveiros, banheiras, mictórios).",
+   "incluidos": "Fornecimento do registro de gaveta bruto diâmetro 3\" (75mm), volante em aço com acabamento pintura epóxi vermelha, elementos de vedação necessários, bem como todos os materiais, mão de obra, transporte e equipamentos para sua instalação e testes. Exclusive conexão e acessórios. Limpeza do local do serviço e remoção de todos os resíduos, materiais excedentes e inaproveitáveis, inclusive descarte final.",
+   "criterio": "Por unidade instalada. Obs.: Acontecendo a necessidade de instalação de niple e união esses serviços serão pagos em separado",
+   "normas": ["NBR 5626", "NBR 15705", "CBMES NT 15/2009"]
+  },
+  "160636": {
+   "d": "Registro de gaveta bruto diâmetro 4\" (100mm), volante em aço com acabamento pintura epóxi vermelha – Docol, Deca ou equivalente",
+   "u": "und",
+   "caderno": "1606 – INSTALAÇÃO DE INCÊNDIO",
+   "atualizacao": "03/2026",
+   "aplicacao": "Instalações prediais de água quente ou fria onde somente o corpo do registro deve ser embutido, para bloqueio do fluxo de água, sempre como registro de manutenção (uso totalmente aberto ou fechado). Não empregar para regulagem do fluxo ou em fim de rede (chuveiros, banheiras, mictórios).",
+   "incluidos": "Fornecimento do registro de gaveta bruto diâmetro 4\" (100mm), volante em aço com acabamento pintura epóxi vermelha, elementos de vedação necessários, bem como todos os materiais, mão de obra, transporte e equipamentos para sua instalação e testes. Exclusive conexão e acessórios. Limpeza do local do serviço e remoção de todos os resíduos, materiais excedentes e inaproveitáveis, inclusive descarte final.",
+   "criterio": "Por unidade instalada. Obs.: Acontecendo a necessidade de instalação de niple e união esses serviços serão pagos em separado",
+   "normas": ["NBR 5626", "NBR 15705", "CBMES NT 15/2009"]
+  },
+  "160637": {
+   "d": "Tê de ferro fundido maleável 90º classe leve, diâmetro 50mm (2\"), inclusive pintura com uma demão de primer Epoxi e duas demãos de tinta à base de Epoxi na cor vermelha",
+   "u": "und",
+   "caderno": "1606 – INSTALAÇÃO DE INCÊNDIO",
+   "atualizacao": "03/2026",
+   "aplicacao": "Utilizada para conduzir água pressurizada em sistemas de combate a incêndio, conectando hidrantes, mangotinhos e outras unidades de distribuição de água, conforme especificação de projeto executivo.",
+   "incluidos": "Fornecimento de tê de ferro fundido maleável 90º classe leve, diâmetro 50mm (2\"), pintura epoxi vermelha e elementos de vedação necessários, bem como todos os materiais, mão de obra, transporte e equipamentos para sua instalação e testes. Exclusive conexão e acessórios. Limpeza do local do serviço e remoção de todos os resíduos, materiais excedentes e inaproveitáveis, inclusive descarte final.",
+   "criterio": "Por unidade instalada.",
+   "normas": ["NBR 6943:2016", "ISO 49:1994", "EN 10242:1994", "CBMES NT 15/2009"]
+  }
+ }
+}

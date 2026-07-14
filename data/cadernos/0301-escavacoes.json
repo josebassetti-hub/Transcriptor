@@ -1,0 +1,57 @@
+{
+ "arquivo": "0301-ESCAVAÇÕES.pdf",
+ "caderno": "03 – MOVIMENTO DE TERRA · 0301 – ESCAVAÇÕES",
+ "truncado": false,
+ "fichas": {
+  "030101": {
+   "d": "Escavação manual em material de 1ª categoria, até 1.50 m de profundidade",
+   "u": "m3",
+   "caderno": "0301 – ESCAVAÇÕES",
+   "atualizacao": "04/2024",
+   "aplicacao": "Implantação de redes e sistemas (hidrossanitários, elétricos, gás, etc), de blocos de fundação, sapatas corridas ou isoladas, cintas, cisternas enterradas, caixas de passagem, fossas, filtros, etc.",
+   "incluidos": "Investigação prévia e identificação de interferências antes da escavação, colocação de sinalização de advertência, escadas ou rampas próximas aos postos de trabalho, execução de taludes ou escoramento de proteção, colocação de passarelas (quando necessário), execução da escavação manual e afastamento lateral do material escavado.",
+   "criterio": "m3 (metro cúbico) Medido pelo volume de material efetivamente escavado, medido no corte, desconsiderando-se o empolamento. Não serão pagas escavações em excesso, ultrapassando as dimensões previstas em projeto, sem que sejam absolutamente necessárias.",
+   "normas": ["NR 18", "NBR 9061:1985", "NBR 12266:1992"]
+  },
+  "030102": {
+   "d": "Escavação manual em material de 2ª categoria, até 1.50 m de profundidade",
+   "u": "m3",
+   "caderno": "0301 – ESCAVAÇÕES",
+   "atualizacao": "04/2024",
+   "aplicacao": "Implantação de redes e sistemas (hidrossanitários, elétricos, gás, etc), de blocos de fundação, sapatas corridas ou isoladas, cintas, cisternas enterradas, caixas de passagem, fossas, filtros, etc.",
+   "incluidos": "Investigação prévia e identificação de interferências antes da escavação, colocação de sinalização de advertência, escadas ou rampas próximas aos postos de trabalho, execução de taludes ou escoramento de proteção, colocação de passarelas (quando necessário), execução da escavação manual e afastamento lateral do material escavado. Obs.: Pode, eventualmente, ser necessário o uso de explosivos. Porém, tal serviço não é considerado no custo do serviço da escavação do material.",
+   "criterio": "m3 (metro cúbico) Medido pelo volume de material efetivamente escavado, medido no corte, desconsiderando-se o empolamento. Não serão pagas escavações em excesso, ultrapassando as dimensões previstas em projeto, sem que sejam absolutamente necessárias.",
+   "normas": ["NR 18", "NBR 9061:1985", "NBR 12266:1992"]
+  },
+  "030103": {
+   "d": "Escavação mecânica em material de 1ª categoria",
+   "u": "m3",
+   "caderno": "0301 – ESCAVAÇÕES",
+   "atualizacao": "04/2024",
+   "aplicacao": "Implantação de redes e sistemas (hidrossanitários, elétricos, gás, etc), de blocos de fundação, sapatas corridas ou isoladas, cintas, cisternas enterradas, caixas de passagem, fossas, filtros, etc.",
+   "incluidos": "Investigação prévia e identificação de interferências antes da escavação, colocação de sinalização de advertência, escadas ou rampas próximas aos postos de trabalho, execução de taludes ou escoramento de proteção, colocação de passarelas (quando necessário), execução da escavação mecanizada e afastamento lateral do material escavado.",
+   "criterio": "m3 (metro cúbico) Medido pelo volume de material efetivamente escavado, medido no corte, desconsiderando-se o empolamento. Não serão pagas escavações em excesso, ultrapassando as dimensões previstas em projeto, sem que sejam absolutamente necessárias.",
+   "normas": ["NR 18", "NBR 9061:1985", "NBR 12266:1992"]
+  },
+  "030104": {
+   "d": "Escavação mecânica em material de 2ª categoria",
+   "u": "m3",
+   "caderno": "0301 – ESCAVAÇÕES",
+   "atualizacao": "04/2024",
+   "aplicacao": "Implantação de redes e sistemas (hidrossanitários, elétricos, gás, etc), de blocos de fundação, sapatas corridas ou isoladas, cintas, cisternas enterradas, caixas de passagem, fossas, filtros, etc.",
+   "incluidos": "Investigação prévia e identificação de interferências antes da escavação, colocação de sinalização de advertência, escadas ou rampas próximas aos postos de trabalho, execução de taludes ou escoramento de proteção, colocação de passarelas (quando necessário), execução da escavação mecanizada e afastamento lateral do material escavado. Obs.: Pode, eventualmente, ser necessário o uso de explosivos. Porém, tal serviço não é considerado no custo do serviço da escavação do material.",
+   "criterio": "m3 (metro cúbico) - Medido pelo volume de material efetivamente escavado, medido no corte, desconsiderando-se o empolamento. Não serão pagas escavações em excesso, ultrapassando as dimensões previstas em projeto, sem que sejam absolutamente necessárias.",
+   "normas": ["NR 18", "NBR 9061:1985", "NBR 12266:1992"]
+  },
+  "030119": {
+   "d": "Apiloamento do fundo de vala com maço de 30 a 60 kg",
+   "u": "m2",
+   "caderno": "0301 – ESCAVAÇÕES",
+   "atualizacao": "04/2024",
+   "aplicacao": "Fundo de valas para implantação de redes e sistemas (hidrossanitários, elétricos, gás, etc.), blocos de fundação, sapatas corridas ou isoladas, cintas, cisternas enterradas, caixas de passagem, fossas, filtros, etc., evitando que o material do terreno se misture com o lastro de concreto, brita, areia, etc.",
+   "incluidos": "Limpeza, regularização e apiloamento manual com auxílio de soquete do fundo de vala escavada.",
+   "criterio": "m2 (metro quadrado) Medido pela área de fundo de vala efetivamente regularizada e compactada. Não será pago apiloamento de cava ou fundo de vala escavado em excesso, sem necessidade.",
+   "normas": ["NR 18", "NBR 9061:1985", "NBR 12266:1992", "NBR 5681:2015"]
+  }
+ }
+}

@@ -1,0 +1,17 @@
+{
+ "arquivo": "1807-APARELHOS ELETRICOS - VENTILADORES.pdf",
+ "caderno": "18 – APARELHOS ELÉTRICOS · 1807 – VENTILADORES",
+ "truncado": false,
+ "fichas": {
+  "180702": {
+   "d": "Ventilador de teto com base em madeira, sem alojamento para luminária, indicado para uso interno, acionamento simples, sem dimmer - Tron ou equivalente",
+   "u": "und",
+   "caderno": "18 – APARELHOS ELÉTRICOS · 1807 – VENTILADORES",
+   "atualizacao": "09/2025",
+   "aplicacao": "Ambientes internos com necessidade de ventilação natural forçada, como: salas, escritórios etc., instalações embutidas em parede de alvenaria ou drywall.",
+   "incluidos": "Fornecimento e instalação do ventilador, considerando transporte interno do canteiro até o local de instalação, inclusive suportes de fixação.",
+   "criterio": "Por unidade instalada.",
+   "normas": ["NBR 5410", "Portaria INMETRO nº 20/2017", "NBR IEC 60335-2-80", "NR 10"]
+  }
+ }
+}

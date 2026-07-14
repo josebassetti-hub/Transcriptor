@@ -1,0 +1,82 @@
+{
+ "arquivo": "1803-APARELHOS ELETRICOS - BOMBAS.pdf",
+ "caderno": "18 – APARELHOS ELÉTRICOS · 1803 – BOMBAS",
+ "truncado": false,
+ "fichas": {
+  "180301": {
+   "d": "Bomba centrífuga elétrica, trifásica, potência de 5 CV (cavalos-vapor), diâmetro do rotor 162mm, altura manométrica máxima de 48 mca, modelo 620 TJM - Dancor ou equivalente",
+   "u": "und",
+   "caderno": "18 – APARELHOS ELÉTRICOS · 1803 – BOMBAS",
+   "atualizacao": "09/2025",
+   "aplicacao": "Sistemas de bombeamento em: abastecimento de reservatórios e caixas d'água, sistemas de irrigação, recalque de água em instalações prediais, sistemas de pressurização de redes hidráulicas com demandas elevadas de vazão e pressão.",
+   "incluidos": "Fornecimento e instalação da bomba, considerando transporte interno do canteiro até o local de instalação.",
+   "criterio": "Por unidade instalada.",
+   "normas": [
+    "NBR 5410",
+    "NR 10",
+    "NR 18",
+    "NT 015-CAT CBM-ES"
+   ]
+  },
+  "180302": {
+   "d": "Bomba centrífuga elétrica, monofásica, potência de 1/2 CV (cavalos-vapor), diâmetro do rotor 110mm, altura manométrica máxima de 21 mca, modelo CAM-W4-C - Dancor ou equivalente",
+   "u": "und",
+   "caderno": "18 – APARELHOS ELÉTRICOS · 1803 – BOMBAS",
+   "atualizacao": "09/2025",
+   "aplicacao": "Sistemas de bombeamento em: abastecimento de reservatórios e caixas d'água, sistemas de irrigação, recalque de água em instalações prediais, sistemas de pressurização de redes hidráulicas com demandas elevadas de vazão e pressão.",
+   "incluidos": "Fornecimento e instalação da bomba, considerando transporte interno do canteiro até o local de instalação.",
+   "criterio": "Por unidade instalada.",
+   "normas": [
+    "NBR 5410",
+    "NR 10",
+    "NR 18",
+    "NT 015-CAT CBM-ES"
+   ]
+  },
+  "180303": {
+   "d": "Bomba centrífuga elétrica, monofásica, potência de 3/4 CV (cavalos-vapor), diâmetro do rotor 125mm, altura manométrica máxima de 26 mca, modelo CAM-W10 - Dancor ou equivalente",
+   "u": "und",
+   "caderno": "18 – APARELHOS ELÉTRICOS · 1803 – BOMBAS",
+   "atualizacao": "09/2025",
+   "aplicacao": "Sistemas de bombeamento em: abastecimento de reservatórios e caixas d'água, sistemas de irrigação, recalque de água em instalações prediais, sistemas de pressurização de redes hidráulicas com demandas elevadas de vazão e pressão.",
+   "incluidos": "Fornecimento e instalação da bomba, considerando transporte interno do canteiro até o local de instalação.",
+   "criterio": "Por unidade instalada.",
+   "normas": [
+    "NBR 5410",
+    "NR 10",
+    "NR 18",
+    "NT 015-CAT CBM-ES"
+   ]
+  },
+  "180304": {
+   "d": "Bomba centrífuga elétrica, trifásica, potência de 2 CV (cavalos-vapor), diâmetro do rotor 135mm, altura manométrica máxima de 35 mca, modelo CAM-W14 - Dancor ou equivalente",
+   "u": "und",
+   "caderno": "18 – APARELHOS ELÉTRICOS · 1803 – BOMBAS",
+   "atualizacao": "09/2025",
+   "aplicacao": "Sistemas de bombeamento em: abastecimento de reservatórios e caixas d'água, sistemas de irrigação, recalque de água em instalações prediais, sistemas de pressurização de redes hidráulicas com demandas elevadas de vazão e pressão.",
+   "incluidos": "Fornecimento e instalação da bomba, considerando transporte interno do canteiro até o local de instalação.",
+   "criterio": "Por unidade instalada.",
+   "normas": [
+    "NBR 5410",
+    "NR 10",
+    "NR 18",
+    "NT 015-CAT CBM-ES"
+   ]
+  },
+  "180305": {
+   "d": "Bomba centrífuga elétrica, monofásica, potência de 1 CV (cavalos-vapor), diâmetro do rotor 133mm, altura manométrica máxima de 30 mca, modelo CAM-W10 - Dancor ou equivalente",
+   "u": "und",
+   "caderno": "18 – APARELHOS ELÉTRICOS · 1803 – BOMBAS",
+   "atualizacao": "09/2025",
+   "aplicacao": "Sistemas de bombeamento em: abastecimento de reservatórios e caixas d'água, sistemas de irrigação, recalque de água em instalações prediais, sistemas de pressurização de redes hidráulicas com demandas elevadas de vazão e pressão.",
+   "incluidos": "Fornecimento e instalação da bomba, considerando transporte interno do canteiro até o local de instalação.",
+   "criterio": "Por unidade instalada.",
+   "normas": [
+    "NBR 5410",
+    "NR 10",
+    "NR 18",
+    "NT 015-CAT CBM-ES"
+   ]
+  }
+ }
+}

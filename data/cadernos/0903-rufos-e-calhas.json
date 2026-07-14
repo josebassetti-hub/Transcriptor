@@ -1,0 +1,47 @@
+{
+ "arquivo": "0903-RUFOS E CALHAS.pdf",
+ "caderno": "09 – COBERTURA · 0903 – RUFOS E CALHAS",
+ "truncado": false,
+ "fichas": {
+  "090302": {
+   "d": "Rufo externo/interno em chapa de aço galvanizado nº 26 com largura de 30 cm, incluso içamento",
+   "u": "m",
+   "caderno": "09 – COBERTURA · 0903 – RUFOS E CALHAS",
+   "atualizacao": "05/2025",
+   "aplicacao": "Utilizado para impedir que a água de chuva infiltre nas paredes, visto que é aplicado no encontro entre o telhado e a alvenaria.",
+   "incluidos": "Fornecimento e colocação de rufo em chapa metálica, incluindo união entre as peças com rebite de repuxo e fixação na estrutura com pregos em aço galvanizado, com rejuntamento da cabeça dos preços com selante à base de poliuretano, considerando furações, sobreposições, perdas por consumo, transporte interno no canteiro até o local de instalação e transporte vertical dos materiais à cobertura. Limpeza e remoção de materiais excedentes e inaproveitáveis.",
+   "criterio": "m (metro) Pela metragem de rufo em chapa metálica efetivamente executado.",
+   "normas": ["NBR 6673:2023", "NBR 9278:2019"]
+  },
+  "090306": {
+   "d": "Rufo de concreto armado Fck=20 MPa, nas dimensões de 35 x 7 cm, moldado \"in loco\", inclusive forma e armação e desforma, conforme projeto",
+   "u": "m",
+   "caderno": "09 – COBERTURA · 0903 – RUFOS E CALHAS",
+   "atualizacao": "05/2025",
+   "aplicacao": "Utilizado para impedir que a água de chuva infiltre nas paredes, visto que é aplicado no encontro entre o telhado e a alvenaria.",
+   "incluidos": "Fornecimento e corte das peças de madeira para fabricação das fôrmas do rufo, inclusive pregos, considerando eventuais perdas, transporte interno do canteiro até o local da montagem, travamento, escoramento, aplicação de desmoldante e desforma. Fornecimento, corte, dobragem, transporte (interno do canteiro até o local de aplicação) e colocação em fôrma de armadura CA-50, inclusive espaçadores para concreto armado, amarração com fornecimento de arame recozido e posicionamento da ferragem. Fornecimento e preparo com amassamento apropriado do concreto, considerando perdas por consumo e transporte interno no canteiro até o local da aplicação, lançamento, espalhamento, adensamento, acabamento e cura do concreto. Transporte vertical dos materiais à cobertura. Limpeza e remoção de materiais excedentes e inaproveitáveis.",
+   "criterio": "m (metro) Pela metragem de rufo em concreto armado efetivamente executado.",
+   "normas": ["NBR 7480:2022", "NBR 7203:1982", "Decreto Estadual nº 1.941-R/2007", "NBR 12655:2022", "NBR 6627:1981", "NBR 5732:1991", "NBR 7220:1987", "NBR 7211:2005"]
+  },
+  "090312": {
+   "d": "Calha em chapa de aço galvanizada nº 20 com largura de 40 cm, incluso selante, rebite, pregos e soldas",
+   "u": "m",
+   "caderno": "09 – COBERTURA · 0903 – RUFOS E CALHAS",
+   "atualizacao": "05/2025",
+   "aplicacao": "Utilizado para captação de águas pluviais das coberturas ao longo de todo o beiral do telhado.",
+   "incluidos": "Fornecimento e colocação de calha em chapa de aço galvanizado e suporte em barra chata galvanizada, incluindo união entre as peças com rebite de repuxo, soldagem com filete contínuo (estanho para solda) e fixação na estrutura com pregos em aço galvanizado, com rejuntamento da cabeça dos preços com selante à base de poliuretano, considerando furações, sobreposições, perdas por consumo, transporte interno no canteiro até o local de instalação e transporte vertical dos materiais à cobertura. Limpeza e remoção de materiais excedentes e inaproveitáveis.",
+   "criterio": "m (metro) Pela metragem de calha em chapa galvanizada efetivamente executada.",
+   "normas": ["NBR 6673:2023", "NBR 9278:2019"]
+  },
+  "090314": {
+   "d": "Rufo externo/interno em chapa de aluminio espessura: 0,5 mm com largura de 30 cm, incluso selante, rebite, pregos e soldas",
+   "u": "m",
+   "caderno": "09 – COBERTURA · 0903 – RUFOS E CALHAS",
+   "atualizacao": "05/2025",
+   "aplicacao": "Utilizado para impedir que a água de chuva infiltre nas paredes, visto que é aplicado no encontro entre o telhado e a alvenaria.",
+   "incluidos": "Fornecimento e colocação de rufo em chapa de alumínio, incluindo união entre as peças com rebite de repuxo e fixação na estrutura com pregos em aço galvanizado, com rejuntamento da cabeça dos pregos com selante à base de poliuretano, considerando furações, sobreposições, perdas por consumo, transporte interno no canteiro até o local de instalação e transporte vertical dos materiais à cobertura. Limpeza e remoção de materiais excedentes e inaproveitáveis.",
+   "criterio": "m (metro) Pela metragem de rufo de chapa de alumínio efetivamente executado.",
+   "normas": ["NBR 14331:2009", "NBR 9278:2019"]
+  }
+ }
+}

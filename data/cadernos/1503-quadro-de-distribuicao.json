@@ -1,0 +1,150 @@
+{
+ "arquivo": "1503 - INSTALAÇÕES ELÉTRICAS - QUADRO DE DISTRIBUIÇÃO-1.pdf",
+ "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1503 – QUADRO DE DISTRIBUIÇÃO",
+ "truncado": false,
+ "fichas": {
+  "150306": {
+   "d": "Quadro distribuição de energia em PVC de embutir, capacidade 13 disjuntores DIN, barramento trifásico 80A, IP40, Cor Branca, porta fumê reversível com abertura de 180º transparente fechamento por pressão - Ref. Cemarplast II DIN – Cemar Legrand ou equivalente",
+   "u": "und",
+   "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1503 – QUADRO DE DISTRIBUIÇÃO",
+   "atualizacao": "06/2026",
+   "aplicacao": "Destina-se à distribuição, proteção e seccionamento dos circuitos elétricos de baixa tensão em edificações comerciais, administrativas e institucionais. Permitindo a organização dos dispositivos de proteção, facilitando a operação, inspeção e manutenção dos circuitos elétricos, garantindo seguran...",
+   "incluidos": "Fornecimento e instalação do quadro, incluindo preparação de superfície, bem como todos os materiais, mão de obra, transporte e equipamentos para sua instalação e testes. Exclusive conexão do disjuntores e interligação dos cabos. Limpeza do local do serviço e remoção de todos os resíduos, materiais excedentes e inaproveitáveis, inclusive descarte final.",
+   "criterio": "Por unidade instalada.",
+   "normas": [
+    "NBR 5410",
+    "NBR IEC 61439-1",
+    "NBR IEC 61439-3",
+    "NBR IEC 60529",
+    "NR 10"
+   ]
+  },
+  "150307": {
+   "d": "Quadro distribuição de energia em PVC de embutir, capacidade 26 disjuntores DIN, barramento bifásico 80A, IP40, Cor Branca, porta fumê reversível com abertura de 180º transparente fechamento por pressão - Ref. Cemarplast II DIN – Cemar Legrand ou equivalente",
+   "u": "und",
+   "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1503 – QUADRO DE DISTRIBUIÇÃO",
+   "atualizacao": "06/2026",
+   "aplicacao": "Destina-se à distribuição, proteção e seccionamento dos circuitos elétricos de baixa tensão em edificações comerciais, administrativas e institucionais. Permitindo a organização dos dispositivos de proteção, facilitando a operação, inspeção e manutenção dos circuitos elétricos, garantindo seguran...",
+   "incluidos": "Fornecimento e instalação do quadro, incluindo preparação de superfície, bem como todos os materiais, mão de obra, transporte e equipamentos para sua instalação e testes. Exclusive conexão do disjuntores e interligação dos cabos. Limpeza do local do serviço e remoção de todos os resíduos, materiais excedentes e inaproveitáveis, inclusive descarte final.",
+   "criterio": "Por unidade instalada.",
+   "normas": [
+    "NBR 5410",
+    "NBR IEC 61439-1",
+    "NBR IEC 61439-3",
+    "NBR IEC 60529",
+    "NR 10"
+   ]
+  },
+  "150308": {
+   "d": "Quadro distribuição de energia em PVC de embutir, capacidade 26 disjuntores DIN, barramento trifásico 80A, IP40, Cor Branca, porta fumê reversível com abertura de 180º transparente fechamento por pressão - Ref. Cemarplast II DIN – Cemar Legrand ou equivalente",
+   "u": "und",
+   "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1503 – QUADRO DE DISTRIBUIÇÃO",
+   "atualizacao": "06/2026",
+   "aplicacao": "Destina-se à distribuição, proteção e seccionamento dos circuitos elétricos de baixa tensão em edificações comerciais, administrativas e institucionais. Permitindo a organização dos dispositivos de proteção, facilitando a operação, inspeção e manutenção dos circuitos elétricos, garantindo seguran...",
+   "incluidos": "Fornecimento e instalação do quadro, incluindo preparação de superfície, bem como todos os materiais, mão de obra, transporte e equipamentos para sua instalação e testes. Exclusive conexão do disjuntores e interligação dos cabos. Limpeza do local do serviço e remoção de todos os resíduos, materiais excedentes e inaproveitáveis, inclusive descarte final.",
+   "criterio": "Por unidade instalada.",
+   "normas": [
+    "NBR 5410",
+    "NBR IEC 61439-1",
+    "NBR IEC 61439-3",
+    "NBR IEC 60529",
+    "NR 10"
+   ]
+  },
+  "150309": {
+   "d": "Quadro distribuição de energia em PVC de embutir, capacidade 32 disjuntores DIN, barramento trifásico 80A, IP40, Cor Branca, porta fumê reversível com abertura de 180º transparente fechamento por pressão - Ref. Cemarplast II DIN – Cemar Legrand ou equivalente",
+   "u": "und",
+   "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1503 – QUADRO DE DISTRIBUIÇÃO",
+   "atualizacao": "06/2026",
+   "aplicacao": "Destina-se à distribuição, proteção e seccionamento dos circuitos elétricos de baixa tensão em edificações comerciais, administrativas e institucionais. Permitindo a organização dos dispositivos de proteção, facilitando a operação, inspeção e manutenção dos circuitos elétricos, garantindo seguran...",
+   "incluidos": "Fornecimento e instalação do quadro, incluindo preparação de superfície, bem como todos os materiais, mão de obra, transporte e equipamentos para sua instalação e testes. Exclusive conexão do disjuntores e interligação dos cabos. Limpeza do local do serviço e remoção de todos os resíduos, materiais excedentes e inaproveitáveis, inclusive descarte final.",
+   "criterio": "Por unidade instalada.",
+   "normas": [
+    "NBR 5410",
+    "NBR IEC 61439-1",
+    "NBR IEC 61439-3",
+    "NBR IEC 60529",
+    "NR 10"
+   ]
+  },
+  "150310": {
+   "d": "Quadro de comando de sobrepor 200 x 200 x 120mm sem flange, cor Bege RAL 7032, IP 54 - Ref. CS – Cemar Legrand ou equivalente",
+   "u": "und",
+   "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1503 – QUADRO DE DISTRIBUIÇÃO",
+   "atualizacao": "06/2026",
+   "aplicacao": "Destina-se à instalação de dispositivos de comando, proteção, automação, sinalização e controle, tais como contatores, relés, temporizadores, fontes de alimentação, bornes, controladores, CLPs e demais componentes elétricos utilizados em sistemas prediais, industriais, comerciais e institucionais...",
+   "incluidos": "Fornecimento e instalação do quadro de comando, placa de montagem e acessórios de fixação, incluindo preparação de superfície, bem como todos os materiais, mão de obra, transporte e equipamentos para sua instalação e testes. Exclusive componentes internos. Limpeza do local do serviço e remoção de todos os resíduos, materiais excedentes e inaproveitáveis, inclusive descarte final.",
+   "criterio": "Por unidade instalada.",
+   "normas": [
+    "NBR 5410",
+    "NBR IEC 61439-1",
+    "NBR IEC 62208",
+    "NR 10"
+   ]
+  },
+  "150311": {
+   "d": "Quadro distribuição de energia em PVC de embutir, capacidade 16 disjuntores DIN, sem barramento, IP40, Cor Branca, porta fumê reversível com abertura de 180º transparente fechamento por pressão - Ref. Cemarplast II Universal – Cemar Legrand ou equivalente",
+   "u": "und",
+   "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1503 – QUADRO DE DISTRIBUIÇÃO",
+   "atualizacao": "06/2026",
+   "aplicacao": "Destina-se à distribuição, proteção e seccionamento dos circuitos elétricos de baixa tensão em edificações comerciais, administrativas e institucionais. Permitindo a organização dos dispositivos de proteção, facilitando a operação, inspeção e manutenção dos circuitos elétricos, garantindo seguran...",
+   "incluidos": "Fornecimento e instalação do quadro, incluindo preparação de superfície, bem como todos os materiais, mão de obra, transporte e equipamentos para sua instalação. Exclusive barramento, conexão do disjuntores e interligação dos cabos. Limpeza do local do serviço e remoção de todos os resíduos, materiais excedentes e inaproveitáveis, inclusive descarte final.",
+   "criterio": "Por unidade instalada.",
+   "normas": [
+    "NBR 5410",
+    "NBR IEC 61439-1",
+    "NBR IEC 61439-3",
+    "NBR IEC 60529",
+    "NR 10"
+   ]
+  },
+  "150315": {
+   "d": "Quadro distribuição de energia metálico de sobrepor, capacidade 34 disjuntores DIN, barramento principal trifásico 150A, secundário de 40A, IP40, Cor Bege RAL 7032, trinco com chave Yale. Ref. QDSTG II DIN – Cemar Legrand ou equivalente",
+   "u": "und",
+   "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1503 – QUADRO DE DISTRIBUIÇÃO",
+   "atualizacao": "06/2026",
+   "aplicacao": "Destina-se à proteção, seccionamento e distribuição dos circuitos elétricos de baixa tensão em edificações comerciais, administrativas e institucionais. Permitindo a organização dos circuitos terminais e a instalação dos dispositivos de proteção elétrica, garantindo segurança operacional, facilid...",
+   "incluidos": "Fornecimento e instalação do quadro, incluindo preparação de superfície, bem como todos os materiais, mão de obra, transporte e equipamentos para sua instalação e testes. Exclusive conexão do disjuntores e interligação dos cabos. Limpeza do local do serviço e remoção de todos os resíduos, materiais excedentes e inaproveitáveis, inclusive descarte final.",
+   "criterio": "Por unidade instalada.",
+   "normas": [
+    "NBR 5410",
+    "NBR IEC 61439-1",
+    "NBR IEC 61439-3",
+    "NBR IEC 60529",
+    "NR 10"
+   ]
+  },
+  "150316": {
+   "d": "Quadro distribuição de energia metálico de sobrepor, capacidade 44 disjuntores DIN, barramento principal trifásico 150A, secundário de 40A, IP40, Cor Bege RAL 7032, trinco com chave Yale. Ref. QDETG II DIN – Cemar Legrand ou equivalente",
+   "u": "und",
+   "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1503 – QUADRO DE DISTRIBUIÇÃO",
+   "atualizacao": "06/2026",
+   "aplicacao": "Destina-se à proteção, seccionamento e distribuição dos circuitos elétricos de baixa tensão em edificações comerciais, administrativas e institucionais. Permitindo a organização dos circuitos terminais e a instalação dos dispositivos de proteção elétrica, garantindo segurança operacional, facilid...",
+   "incluidos": "Fornecimento e instalação do quadro, incluindo preparação de superfície, bem como todos os materiais, mão de obra, transporte e equipamentos para sua instalação e testes. Exclusive conexão do disjuntores e interligação dos cabos. Limpeza do local do serviço e remoção de todos os resíduos, materiais excedentes e inaproveitáveis, inclusive descarte final.",
+   "criterio": "Por unidade instalada.",
+   "normas": [
+    "NBR 5410",
+    "NBR IEC 61439-1",
+    "NBR IEC 61439-3",
+    "NBR IEC 60529",
+    "NR 10"
+   ]
+  },
+  "150317": {
+   "d": "Quadro distribuição de energia metálico de sobrepor, capacidade 56 disjuntores DIN, barramento principal trifásico 225A, secundário de 40A, IP40, Cor Bege RAL 7032, trinco com chave Yale. Ref. QDSTG II DIN – Cemar Legrand ou equivalente",
+   "u": "und",
+   "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1503 – QUADRO DE DISTRIBUIÇÃO",
+   "atualizacao": "06/2026",
+   "aplicacao": "Destina-se à proteção, seccionamento e distribuição dos circuitos elétricos de baixa tensão em edificações comerciais, administrativas e institucionais. Permitindo a organização dos circuitos terminais e a instalação dos dispositivos de proteção elétrica, garantindo segurança operacional, facilid...",
+   "incluidos": "Fornecimento e instalação do quadro, incluindo preparação de superfície, bem como todos os materiais, mão de obra, transporte e equipamentos para sua instalação e testes. Exclusive conexão do disjuntores e interligação dos cabos. Limpeza do local do serviço e remoção de todos os resíduos, materiais excedentes e inaproveitáveis, inclusive descarte final.",
+   "criterio": "Por unidade instalada.",
+   "normas": [
+    "NBR 5410",
+    "NBR IEC 61439-1",
+    "NBR IEC 61439-3",
+    "NBR IEC 60529",
+    "NR 10"
+   ]
+  }
+ }
+}
