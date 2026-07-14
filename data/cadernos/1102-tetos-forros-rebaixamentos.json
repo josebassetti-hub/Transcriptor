@@ -1,0 +1,34 @@
+{
+ "arquivo": "1102-TETOS E FORROS - REBAIXAMENTOS.pdf",
+ "caderno": "11 – TETOS E FORROS · 1102 – REBAIXAMENTOS",
+ "truncado": false,
+ "fichas": {
+  "110201": {
+   "d": "Forro em placa de gesso acabamento tipo liso",
+   "u": "m2",
+   "caderno": "11 – TETOS E FORROS · 1102 – REBAIXAMENTOS",
+   "atualizacao": "05/2026",
+   "aplicacao": "Elemento para recobrimento interno sob as lajes (acabamento do teto), reduzindo a temperatura interna e amortecendo ruídos, podendo também embutir (esconder) tubulações e vigas. Geralmente utilizado em cozinhas, banheiros, vestiários, ambientes administrativos, etc.",
+   "incluidos": "Fornecimento dos materiais e mão de obra para execução de rebaixamento de teto em forro de gesso com acabamento tipo liso, inclusive fornecimento e instalação de arame galvanizado 18 BWG (1,24mm) e presilhas metálicas fixados à laje, com pinos de cravação à pólvora, placas de gesso liso (dimensões 60x60 centímetros); fornecimento e aplicação de revestimento em gesso liso, considerando perdas por consumo e transporte interno no canteiro até o local da execução. Fornecimento, montagem e desmontagem cavaletes metálicos com suporte metálico ou de madeira, incluindo proteção do piso nos pontos de apoio dos cavaletes. Limpeza do local do serviço, com varrição, lavagem do piso e remoção de todos os resíduos (placas, gesso liso, arames, etc.), materiais excedentes e inaproveitáveis, inclusive descarte final.",
+   "criterio": "m2 (metro quadrado) Pela área de teto efetivamente forrada (rebaixada) com forro de gesso com acabamento tipo liso.",
+   "normas": [
+    "NBR 16382:2015",
+    "NR 18"
+   ]
+  },
+  "110210": {
+   "d": "Forro em réguas de PVC branco L = 20 cm, frisado, estruturado por perfis de aço galvanizado e tirantes rígidos fabricado de acordo com a NBR-14285, fornecimento e instalação",
+   "u": "m2",
+   "caderno": "11 – TETOS E FORROS · 1102 – REBAIXAMENTOS",
+   "atualizacao": "05/2026",
+   "aplicacao": "Elemento para recobrimento interno sob as coberturas e lajes (acabamento do teto), reduzindo a temperatura interna e amortecendo ruídos, podendo também embutir (esconder) tubulações e vigas. Geralmente utilizado em banheiros, vestiários, ambientes administrativos, etc.",
+   "incluidos": "Fornecimento dos materiais e mão de obra para execução de rebaixamento de teto em forro de PVC, inclusive fornecimento e instalação de tirantes rígidos e estrutura de sustentação em perfis tubulares de aço galvanizado, perfis de PVC com superfície frisada, na cor branca, com perfis de arremate adequados, considerando perdas por consumo e transporte interno no canteiro até o local da execução. Fornecimento, montagem e desmontagem cavaletes metálicos com suporte metálico ou de madeira, incluindo proteção do piso nos pontos de apoio dos cavaletes. Limpeza final da superfície do forro de PVC utilizando pano macio umedecido em mistura de água e detergente neutro. Limpeza do local do serviço e remoção de todos os resíduos, materiais excedentes e inaproveitáveis, inclusive descarte final.",
+   "criterio": "m2 (metro quadrado) Pela área de teto efetivamente forrada (rebaixada) com forro em perfis de PVC rígido branco e frisado.",
+   "normas": [
+    "NBR 14285-1:2014",
+    "NBR 14285-3:2014",
+    "NR 18"
+   ]
+  }
+ }
+}

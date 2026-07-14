@@ -1,0 +1,57 @@
+{
+ "arquivo": "1203-REVESTIMENTO EMPREGANDO ARGAMASSA DE CIMENTO, CAL E AREIA.pdf",
+ "caderno": "12 – REVESTIMENTO DE PAREDES INTERNAS E EXTERNAS · 1203 – REVESTIMENTO EMPREGANDO ARGAMASSA DE CIMENTO, CAL E AREIA",
+ "truncado": false,
+ "fichas": {
+  "120301": {
+   "d": "Emboço de argamassa de cimento, cal hidratada CH1 e areia média ou grossa lavada no traço 1:0.5:6, espessura 20 mm",
+   "u": "m2",
+   "caderno": "12 – REVESTIMENTO DE PAREDES INTERNAS E EXTERNAS · 1203 – REVESTIMENTO EMPREGANDO ARGAMASSA DE CIMENTO, CAL E AREIA",
+   "atualizacao": "04/2024",
+   "aplicacao": "Em alvenarias de blocos cerâmicos ou de concreto, ou em superfícies de concreto que já tenham recebido o chapisco. O emboço deve ser aplicado após ter decorrido um tempo mínimo de 72 horas, de carência de aplicação do chapisco.",
+   "incluidos": "Fornecimento, preparo e transporte da argamassa até o local da aplicação, remoção de sujeiras acumuladas e umedecimento da superfície de aplicação do emboço, assentamento de taliscas, execução das mestras, emassamento, sarrafeamento, desempeno e umedecimento do emboço.",
+   "criterio": "m2 (metro quadrado) Pela área, não descontar vãos até 2 m². Para vãos superiores a 2 m², descontar apenas o que exceder, em cada vão, a essa área.",
+   "normas": ["NBR 7200:1998"]
+  },
+  "120302": {
+   "d": "Reboco de argamassa de cimento, cal hidratada CH1 e areia média ou grossa lavada no traço 1:0.5:6, espessura 5mm",
+   "u": "m2",
+   "caderno": "12 – REVESTIMENTO DE PAREDES INTERNAS E EXTERNAS · 1203 – REVESTIMENTO EMPREGANDO ARGAMASSA DE CIMENTO, CAL E AREIA",
+   "atualizacao": "04/2024",
+   "aplicacao": "Em alvenarias de blocos cerâmicos ou de concreto, ou em superfícies de concreto que já tenham recebido o emboço. O reboco deve ser aplicado após ter decorrido um tempo mínimo de 72 horas, de carência de aplicação do emboço.",
+   "incluidos": "Fornecimento, preparo e transporte da argamassa até o local da aplicação, remoção de sujeiras acumuladas e umedecimento da superfície de aplicação do reboco, assentamento de taliscas, execução das mestras, emassamento, sarrafeamento, acabamento desempenado feltrado e umedecimento do reboco.",
+   "criterio": "m2 (metro quadrado) Pela área, não descontar vãos até 2 m². Para vãos superiores a 2 m², descontar apenas o que exceder, em cada vão, a essa área.",
+   "normas": ["NBR 7200:1998"]
+  },
+  "120303": {
+   "d": "Reboco tipo paulista de argamassa de cimento, cal hidratada CH1 e areia média ou grossa lavada no traço 1:0.5:6, espessura 25 mm",
+   "u": "m2",
+   "caderno": "12 – REVESTIMENTO DE PAREDES INTERNAS E EXTERNAS · 1203 – REVESTIMENTO EMPREGANDO ARGAMASSA DE CIMENTO, CAL E AREIA",
+   "atualizacao": "04/2024",
+   "aplicacao": "Em alvenarias de blocos cerâmicos ou de concreto, ou em superfícies de concreto que já tenham recebido o chapisco. O reboco deve ser aplicado após ter decorrido um tempo mínimo de 72 horas, de carência de aplicação do chapisco.",
+   "incluidos": "Fornecimento, preparo e transporte da argamassa até o local da aplicação, remoção de sujeiras acumuladas e umedecimento da superfície de aplicação do reboco, assentamento de taliscas, execução das mestras, emassamento, sarrafeamento, acabamento desempenado feltrado e umedecimento do reboco.",
+   "criterio": "m2 (metro quadrado) Pela área, não descontar vãos até 2 m². Para vãos superiores a 2 m², descontar apenas o que exceder, em cada vão, a essa área.",
+   "normas": ["NBR 7200:1998"]
+  },
+  "120304": {
+   "d": "Reboco de argamassa de cimento, cal hidratada CH1 e areia média ou grossa lavada no traço 1:0.5:6, com impermeabilizante para revestimentos (caixas, fossas, filtros, cisternas, etc..)",
+   "u": "m2",
+   "caderno": "12 – REVESTIMENTO DE PAREDES INTERNAS E EXTERNAS · 1203 – REVESTIMENTO EMPREGANDO ARGAMASSA DE CIMENTO, CAL E AREIA",
+   "atualizacao": "04/2024",
+   "aplicacao": "Em alvenarias de blocos cerâmicos ou de concreto, muros, caixas, fossas, filtros, cisternas, etc, ou em superfícies de concreto que já tenham recebido o chapisco. O reboco deve ser aplicado após ter decorrido um tempo mínimo de 72 horas, de carência de aplicação do chapisco.",
+   "incluidos": "Fornecimento, preparo e transporte da argamassa até o local da aplicação, remoção de sujeiras acumuladas e umedecimento da superfície de aplicação do reboco com aditivo impermeabilizante, assentamento de taliscas, execução das mestras, emassamento, sarrafeamento, desempeno e umedecimento do reboco.",
+   "criterio": "m2 (metro quadrado) Pela área, não descontar vãos até 2 m². Para vãos superiores a 2 m², descontar apenas o que exceder, em cada vão, a essa área.",
+   "normas": ["NBR 7200:1998"]
+  },
+  "120308": {
+   "d": "Chapisco de argamassa de cimento e areia média ou grossa lavada, no traço 1:3, espessura 5 mm, com utilização de impermeabilizante",
+   "u": "m2",
+   "caderno": "12 – REVESTIMENTO DE PAREDES INTERNAS E EXTERNAS · 1203 – REVESTIMENTO EMPREGANDO ARGAMASSA DE CIMENTO, CAL E AREIA",
+   "atualizacao": "04/2024",
+   "aplicacao": "Em superfícies de concreto, blocos cerâmicos ou de concreto, para recebimento do emboço ou reboco hidrófugos.",
+   "incluidos": "Fornecimento, preparo e transporte da argamassa até o local da aplicação, remoção de poeira e umedecimento da superfície de base de aplicação, lançamento e umedecimento do chapisco com utilização de impermeabilizante.",
+   "criterio": "m2 (metro quadrado) Medido pela área de chapisco efetivamente executado.",
+   "normas": ["NBR 7200:1998"]
+  }
+ }
+}

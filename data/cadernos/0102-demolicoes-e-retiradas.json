@@ -1,0 +1,414 @@
+{
+ "arquivo": "0102-DEMOLIÇÕES E RETIRADAS.pdf",
+ "caderno": "01 – SERVIÇOS PRELIMINARES · 0102 – DEMOLIÇÕES E RETIRADAS",
+ "truncado": true,
+ "fichas": {
+  "010201": {
+   "d": "Demolição manual de piso cimentado espessura de 1,5 cm, inclusive lastro de concreto espessura de 6,0 cm, sem reaproveitamento",
+   "u": "m2",
+   "caderno": "01 – SERVIÇOS PRELIMINARES · 0102 – DEMOLIÇÕES E RETIRADAS",
+   "atualizacao": "07/2025",
+   "aplicacao": "Em situações em que há necessidade de demolição para troca da camada de base e do revestimento em piso cimentado, geralmente por motivo de recalque do solo, que provoca afundamento, rachaduras ou deformações significativas no piso.",
+   "incluidos": "Fornecimento de mão-de-obra para execução do serviço de demolição manual de piso cimentado de espessura de 1,5 cm e do lastro de concreto de 6,0 cm, com auxílio de ferramentas manuais, inclusive transporte horizontal e acondicionamento provisório dos fragmentos e dos resíduos em local apropriado no canteiro de obras. Limpeza do local do serviço, considerando recolhimento, varrição, remoção de resíduos, detritos, fragmentos de concreto e materiais inaproveitáveis.",
+   "criterio": "m2 (metro quadrado) Pela área efetiva de demolição de piso cimentado com lastro de concreto.",
+   "normas": [
+    "NBR 10.004-1",
+    "NBR 10.004-2",
+    "NR 18"
+   ]
+  },
+  "010202": {
+   "d": "Demolição manual de revestimento cerâmico/porcelanato (pisos), exclusive lastro, sem reaproveitamento",
+   "u": "m2",
+   "caderno": "01 – SERVIÇOS PRELIMINARES · 0102 – DEMOLIÇÕES E RETIRADAS",
+   "atualizacao": "07/2025",
+   "aplicacao": "Em situações em que há necessidade de demolição para troca do revestimento de piso em cerâmica, de um determinado ambiente, por diversos motivos, como: mudança de layout, questão estética, placas soltas ou com som cavo.",
+   "incluidos": "Fornecimento de mão-de-obra para execução do serviço de demolição de piso revestido com cerâmica, considerando o transporte horizontal e acondicionamento provisório das peças e dos resíduos em local apropriado no canteiro de obras. Limpeza do local do serviço, considerando recolhimento, varrição, remoção de resíduos e materiais inaproveitáveis, exclusive destinação final.",
+   "criterio": "m2 (metro quadrado) Pela área efetiva de piso cerâmico demolido.",
+   "normas": [
+    "NBR 10.004-1",
+    "NBR 10.004-2",
+    "NR 18"
+   ]
+  },
+  "010203": {
+   "d": "Demolição manual de revestimento cerâmico/porcelanato (pisos), inclusive lastro de concreto espessura de 6,0 cm, sem reaproveitamento",
+   "u": "m2",
+   "caderno": "01 – SERVIÇOS PRELIMINARES · 0102 – DEMOLIÇÕES E RETIRADAS",
+   "atualizacao": "07/2025",
+   "aplicacao": "Em situações em que há necessidade de demolição para troca da camada de base e do revestimento de piso em cerâmica, geralmente por motivo de recalque do solo, que provoca afundamento, rachaduras ou deformações significativas no piso.",
+   "incluidos": "Fornecimento de mão-de-obra para execução do serviço de demolição manual de piso revestido com cerâmica e do lastro de concreto de espessura de 6,0 cm, com auxílio de ferramentas manuais, inclusive transporte horizontal e acondicionamento provisório dos fragmentos e dos resíduos em local apropriado no canteiro de obras. Limpeza do local do serviço, considerando recolhimento, varrição, remoção de resíduos, detritos, fragmentos de concreto, de cerâmica e materiais inaproveitáveis, exclusive destinação final.",
+   "criterio": "m2 (metro quadrado) Pela área efetiva de demolição de piso cerâmico com lastro de concreto.",
+   "normas": [
+    "NBR 10.004-1",
+    "NBR 10.004-2",
+    "NR 18"
+   ]
+  },
+  "010204": {
+   "d": "Demolição manual de piso de madeira (tacos), exclusive lastro, sem reaproveitamento",
+   "u": "m2",
+   "caderno": "01 – SERVIÇOS PRELIMINARES · 0102 – DEMOLIÇÕES E RETIRADAS",
+   "atualizacao": "07/2025",
+   "aplicacao": "Em situações em que há necessidade de demolição para troca do revestimento de piso em tacos de madeira, de um determinado ambiente.",
+   "incluidos": "Demolição de piso revestido com tacos de madeira, considerando o transporte horizontal e acondicionamento provisório das peças e dos resíduos em local apropriado no canteiro de obras. Limpeza do local do serviço, considerando varrição, remoção de resíduos e materiais inaproveitáveis, exclusive destinação final.",
+   "criterio": "m2 (metro quadrado) Pela área efetiva de piso de taco de madeira demolido.",
+   "normas": [
+    "NBR 10.004-1",
+    "NBR 10.004-2",
+    "NR 18",
+    "Decreto Estadual 1.941-R/2007"
+   ]
+  },
+  "010205": {
+   "d": "Demolição manual de piso de madeira (tábuas), exclusive lastro, sem reaproveitamento",
+   "u": "m2",
+   "caderno": "01 – SERVIÇOS PRELIMINARES · 0102 – DEMOLIÇÕES E RETIRADAS",
+   "atualizacao": "07/2025",
+   "aplicacao": "Em situações em que há necessidade de demolição para troca do revestimento de piso em tábuas de madeira, de um determinado ambiente.",
+   "incluidos": "Demolição de piso revestido com tábuas de madeira, considerando o transporte horizontal e acondicionamento provisório das peças e dos resíduos em local apropriado no canteiro de obras. Limpeza do local do serviço, considerando varrição, remoção de resíduos e materiais inaproveitáveis, exclusive destinação final.",
+   "criterio": "m2 (metro quadrado) Pela área efetiva de piso de tábuas demolido.",
+   "normas": [
+    "NBR 10.004-1",
+    "NBR 10.004-2",
+    "NR 18",
+    "Decreto Estadual 1.941-R/2007"
+   ]
+  },
+  "010206": {
+   "d": "Demolição manual de revestimento cerâmico/porcelanato (parede), exclusive emboço/reboco, sem reaproveitamento",
+   "u": "m2",
+   "caderno": "01 – SERVIÇOS PRELIMINARES · 0102 – DEMOLIÇÕES E RETIRADAS",
+   "atualizacao": "07/2025",
+   "aplicacao": "Em situações em que há necessidade de demolição para troca do revestimento de parede em cerâmica, de um determinado ambiente, por diversos motivos, como: mudança de layout, questão estética, placas soltas ou com som cavo.",
+   "incluidos": "Fornecimento de mão-de-obra para execução do serviço de demolição de revestimento com azulejos, considerando a proteção do piso nas proximidades do serviço de demolição, o transporte horizontal e acondicionamento provisório das peças e dos resíduos em local apropriado no canteiro de obras. Limpeza do local do serviço, considerando recolhimento, varrição, remoção de resíduos e materiais inaproveitáveis, exclusive destinação final.",
+   "criterio": "m2 (metro quadrado) Pela área efetiva de revestimento cerâmico demolido.",
+   "normas": [
+    "NBR 10.004-1",
+    "NBR 10.004-2",
+    "NR 18"
+   ]
+  },
+  "010207": {
+   "d": "Demolição manual de lambri de madeira em parede, sem reaproveitamento",
+   "u": "m2",
+   "caderno": "01 – SERVIÇOS PRELIMINARES · 0102 – DEMOLIÇÕES E RETIRADAS",
+   "atualizacao": "07/2025",
+   "aplicacao": "Em situações em que há necessidade de demolição para troca do revestimento com lambris de madeira, de um determinado ambiente, por diversos motivos, como: questão estética, infestações de cupins e brocas ou defeitos nas peças que comprometam sua finalidade (sinais de empenamentos, rachaduras e…",
+   "incluidos": "Demolição de revestimento com tábuas ou painéis de madeira, considerando o transporte horizontal e acondicionamento provisório das peças e dos resíduos em local apropriado no canteiro de obras. Limpeza do local do serviço, considerando varrição, remoção de resíduos e materiais inaproveitáveis, exclusive destinação final.",
+   "criterio": "m2 (metro quadrado) Pela área efetiva de revestimento com tábuas ou painéis de madeira demolido.",
+   "normas": [
+    "NBR 10.004-1",
+    "NBR 10.004-2",
+    "NR 18",
+    "Decreto Estadual 1.941-R/2007"
+   ]
+  },
+  "010208": {
+   "d": "Retirada manual de revestimento em argamassa cimento e areia (emboço e reboco), sem reaproveitamento",
+   "u": "m2",
+   "caderno": "01 – SERVIÇOS PRELIMINARES · 0102 – DEMOLIÇÕES E RETIRADAS",
+   "atualizacao": "07/2025",
+   "aplicacao": "Em situações em que há necessidade de troca do revestimento em emboço ou reboco, por diversos motivos, como: reboco deteriorado, esfarelando, desplacamento (som cavo), correção de problemas de infiltração (umidade na parede), preparação do substrato para aplicação de um novo revestimento, etc.",
+   "incluidos": "Fornecimento de mão-de-obra para execução do serviço de retirada de revestimento antigo em reboco, com auxílio de ferramentas manuais, considerando a proteção do piso nas proximidades do serviço de remoção, o transporte horizontal e acondicionamento provisório dos resíduos em local apropriado no canteiro de obras. Limpeza do local do serviço, considerando recolhimento, varrição, remoção dos fragmentos de reboco, dos resíduos e materiais inaproveitáveis, exclusive destinação final.",
+   "criterio": "m2 (metro quadrado) Pela área efetiva de retirada de revestimento em reboco.",
+   "normas": [
+    "NBR 10.004-1",
+    "NBR 10.004-2",
+    "NR 18"
+   ]
+  },
+  "010209": {
+   "d": "Demolição manual de alvenaria de bloco furado (cerâmico), sem reaproveitamento",
+   "u": "m3",
+   "caderno": "01 – SERVIÇOS PRELIMINARES · 0102 – DEMOLIÇÕES E RETIRADAS",
+   "atualizacao": "07/2025",
+   "aplicacao": "Em situações em que há necessidade de remover partes ou a totalidade de uma edificação, possibilitando a abertura de vãos maiores, com ampliação das áreas dos ambientes, mudança de layout, etc.",
+   "incluidos": "Fornecimento de mão-de-obra para execução do serviço de demolição de alvenaria de bloco furado, inclusive demarcação e execução de cortes com auxílio de máquina manual elétrica, considerando o isolamento e a sinalização das áreas próximas à demolição, a proteção do piso no entorno dos trechos a serem demolidos, o transporte horizontal (e/ou vertical) e o acondicionamento do entulho em local apropriado no canteiro de obras. Limpeza do local do serviço, com varrição e remoção dos resíduos provenientes da demolição, exclusive destinação final.",
+   "criterio": "m3 (metro cúbico) Pelo volume efetivo de demolição, sendo considerado o produto da multiplicação das medidas da alvenaria antes da demolição, que são: espessura da parede (metro), vezes a altura (metro) pelo comprimento (metro).",
+   "normas": [
+    "NBR 10.004-1",
+    "NBR 10.004-2",
+    "NR 18"
+   ]
+  },
+  "010210": {
+   "d": "Demolição manual de concreto simples, sem reaproveitamento",
+   "u": "m3",
+   "caderno": "01 – SERVIÇOS PRELIMINARES · 0102 – DEMOLIÇÕES E RETIRADAS",
+   "atualizacao": "07/2025",
+   "aplicacao": "O serviço geralmente é empregado para demolição de camadas de concreto utilizadas para regularização de superfície (lastro) ou para proteção de parte da estrutura em contato com o solo. Também é recomendada sua utilização em situações em que há necessidade de maior controle e precisão na remoção…",
+   "incluidos": "Fornecimento de mão-de-obra para execução do serviço de demolição manual de concreto simples, com auxílio de ferramentas manuais, inclusive transporte horizontal e acondicionamento provisório dos fragmentos e dos resíduos em local apropriado no canteiro de obras. Limpeza do local do serviço, considerando recolhimento, varrição, remoção de resíduos, detritos, fragmentos de concreto e materiais inaproveitáveis, exclusive destinação final.",
+   "criterio": "m3 (metro cúbico) Pelo volume efetivo de concreto demolido, apropriado com base nas dimensões dos elementos íntegros.",
+   "normas": [
+    "NBR 10.004-1",
+    "NBR 10.004-2",
+    "NR 18"
+   ]
+  },
+  "010212": {
+   "d": "Retirada manual cuidadosa de pavimento em paralelepípedos, inclusive limpeza e empilhamento para reaproveitamento",
+   "u": "m2",
+   "caderno": "01 – SERVIÇOS PRELIMINARES · 0102 – DEMOLIÇÕES E RETIRADAS",
+   "atualizacao": "07/2025",
+   "aplicacao": "Em situações em que há necessidade de retirada dos paralelepípedos para reaproveitamento, por diversos motivos, como: passagem de infraestrutura (tubulações), desnivelamento do piso (recalque do pavimento), mudança de layout, etc.",
+   "incluidos": "Fornecimento de mão-de-obra para execução do serviço de retirada manual cuidadosa de pavimento em paralelepípedos, considerando a limpeza das peças, com remoção total de resíduos e sujeiras, inclusive o empilhamento dos blocos, o transporte horizontal e acondicionamento provisório adequado das peças em local apropriado no canteiro de obras. Varrição e limpeza do local do serviço, considerando remoção de todos os resíduos, detritos e materiais inaproveitáveis, exclusive destinação final.",
+   "criterio": "m2 (metro quadrado) Pela área efetiva de pavimentação em paralelepípedo retirada.",
+   "normas": [
+    "NBR 10.004-1",
+    "NBR 10.004-2",
+    "NR 18"
+   ]
+  },
+  "010213": {
+   "d": "Retirada manual cuidadosa de blocos pré-moldados de concreto (Blokret), inclusive limpeza e empilhamento para reaproveitamento",
+   "u": "m2",
+   "caderno": "01 – SERVIÇOS PRELIMINARES · 0102 – DEMOLIÇÕES E RETIRADAS",
+   "atualizacao": "07/2025",
+   "aplicacao": "Em situações em que há necessidade de retirada dos blokrets para reaproveitamento, por diversos motivos, como: passagem de infraestrutura (tubulações), desnivelamento do piso (recalque do pavimento), mudança de layout, etc.",
+   "incluidos": "Fornecimento de mão-de-obra para execução do serviço de retirada manual cuidadosa de pavimento de blocos pré-moldados de concreto, considerando a limpeza das peças, com remoção total de resíduos e sujeiras, inclusive o empilhamento dos blocos, o transporte horizontal e acondicionamento provisório adequado das peças em local apropriado no canteiro de obras. Varrição e limpeza do local do serviço, considerando remoção de todos os resíduos, detritos e materiais inaproveitáveis, exclusive destinação final.",
+   "criterio": "m2 (metro quadrado) Pela área efetiva de pavimentação em blocos pré-moldados de concreto retirada.",
+   "normas": [
+    "NBR 10.004-1",
+    "NBR 10.004-2",
+    "NR 18"
+   ]
+  },
+  "010214": {
+   "d": "Retirada manual de portas e janelas de madeira, inclusive batentes (marcos), sem reaproveitamento",
+   "u": "m2",
+   "caderno": "01 – SERVIÇOS PRELIMINARES · 0102 – DEMOLIÇÕES E RETIRADAS",
+   "atualizacao": "07/2025",
+   "aplicacao": "Em situações em que há necessidade de retirada das bandeiras e batentes das esquadrias de madeira, por motivos diversos como: aumento, fechamento ou deslocamento do vão da porta, substituição do tipo da esquadria (por alumínio, por exemplo), infestações de cupins e brocas, defeitos na bandeira que…",
+   "incluidos": "Retirada das bandeiras de portas e janelas, inclusive com remoção dos batentes dessas esquadrias, considerando o transporte horizontal e acondicionamento das peças em local apropriado no canteiro de obras. Limpeza do local do serviço, com remoção de resíduos e materiais inaproveitáveis, exclusive destinação final.",
+   "criterio": "m2 (metro quadrado) Pela área efetiva de retirada das bandeiras de portas e janelas de madeira.",
+   "normas": [
+    "NBR 10.004-1",
+    "NBR 10.004-2",
+    "NR 18",
+    "Decreto Estadual 1.941-R/2007"
+   ]
+  },
+  "010215": {
+   "d": "Retirada de portas, janelas e básculas de alumínio, inclusive alizares, caixilho, contramarco e acessórios, exclusive remoção de vidros",
+   "u": "m2",
+   "caderno": "01 – SERVIÇOS PRELIMINARES · 0102 – DEMOLIÇÕES E RETIRADAS",
+   "atualizacao": "03/2026",
+   "aplicacao": "Em situações em que há necessidade de retirada completa da esquadria de alumínio, por motivos diversos como: mudança de layout, fechamento ou deslocamento do vão da esquadria, reforma, ampliação ou modernização do ambiente, etc.",
+   "incluidos": "Fornecimento de mão-de-obra para execução do serviço de retirada de esquadrias metálicas em alumínio, inclusive com remoção dos alizares, caixilho, contramarco e acessórios, exclusive remoção de vidros, considerando o transporte horizontal e acondicionamento provisório das peças em local apropriado no canteiro de obras. Limpeza do local do serviço, com remoção de resíduos e materiais inaproveitáveis, exclusive destinação final.",
+   "criterio": "m2 (metro quadrado) Pela área efetiva e total de retirada de esquadrias metálicas em alumínio, considerando bandeiras, alizares, contramarco e acessórios.",
+   "normas": [
+    "NBR 10.004-1",
+    "NBR 10.004-2",
+    "NR 18"
+   ]
+  },
+  "010216": {
+   "d": "Retirada manual de meio-fio de concreto, sem reaproveitamento",
+   "u": "m",
+   "caderno": "01 – SERVIÇOS PRELIMINARES · 0102 – DEMOLIÇÕES E RETIRADAS",
+   "atualizacao": "07/2025",
+   "aplicacao": "O serviço geralmente é empregado por necessidade de adequação de calçadas, exigência de rebaixamento para execução de rampa para atendimento à acessibilidade, acesso de veículos ou ainda por questões de substituição de peças quebradas.",
+   "incluidos": "Fornecimento de mão-de-obra para execução do serviço de retirada manual de meio-fio de concreto, considerando a escavação e o reaterro de valeta, inclusive o transporte horizontal e acondicionamento provisório adequado das peças em local apropriado no canteiro de obras. Varrição e limpeza do local do serviço, considerando remoção de todos os resíduos, detritos e materiais inaproveitáveis, exclusive destinação final.",
+   "criterio": "m (metro) Pelo comprimento real de meio-fio de concreto retirado.",
+   "normas": [
+    "NBR 10.004-1",
+    "NBR 10.004-2",
+    "NR 18"
+   ]
+  },
+  "010218": {
+   "d": "Remoção de pintura a óleo ou esmalte sobre paredes, com aplicação de removedor",
+   "u": "m2",
+   "caderno": "01 – SERVIÇOS PRELIMINARES · 0102 – DEMOLIÇÕES E RETIRADAS",
+   "atualizacao": "07/2025",
+   "aplicacao": "Em situações em que há necessidade de aplicação de nova pintura sobre as paredes, promovendo a remoção completa de pintura antiga.",
+   "incluidos": "Fornecimento de mão-de-obra para execução do serviço de remoção de pintura antiga sobre paredes, com aplicação de espátula, escova ou palha de aço, inclusive fornecimento de produto removedor adequado. Varrição e limpeza do local do serviço, com remoção de resíduos e materiais inaproveitáveis, exclusive destinação final.",
+   "criterio": "m2 (metro quadrado) Pela área efetiva das superfícies da alvenaria a ser feita a remoção de pintura antiga a base de óleo ou esmalte.",
+   "normas": [
+    "NBR 10.004-1",
+    "NBR 10.004-2",
+    "NR 18"
+   ]
+  },
+  "010219": {
+   "d": "Demolição manual de concreto armado, sem reaproveitamento",
+   "u": "m3",
+   "caderno": "01 – SERVIÇOS PRELIMINARES · 0102 – DEMOLIÇÕES E RETIRADAS",
+   "atualizacao": "07/2025",
+   "aplicacao": "Em situações em que há necessidade de maior controle e precisão na remoção (construções antigas ou recuperação de edifícios históricos), a fim de evitar vibrações que poderiam comprometer a integridade de estruturas vizinhas ou da própria estrutura, ou ainda em locais em que a demolição manual se…",
+   "incluidos": "Fornecimento de mão-de-obra para execução do serviço de demolição manual de concreto armado, com auxílio de ferramentas manuais, inclusive transporte vertical, transporte horizontal e acondicionamento provisório dos fragmentos e dos resíduos em local apropriado no canteiro de obras. Limpeza do local do serviço, considerando recolhimento, varrição, remoção de resíduos, detritos, fragmentos de concreto, pontas de ferro e materiais inaproveitáveis, exclusive destinação final.",
+   "criterio": "m3 (metro cúbico) Pelo volume de estrutura em concreto armado, considerando-se o volume efetivo dos elementos demolidos, apropriado com base nas dimensões das peças íntegras.",
+   "normas": [
+    "NBR 10.004-1",
+    "NBR 10.004-2",
+    "NR 18"
+   ]
+  },
+  "010220": {
+   "d": "Demolição manual de piso cimentado espessura de 1,5 cm, exclusive lastro de concreto, sem reaproveitamento",
+   "u": "m2",
+   "caderno": "01 – SERVIÇOS PRELIMINARES · 0102 – DEMOLIÇÕES E RETIRADAS",
+   "atualizacao": "07/2025",
+   "aplicacao": "Em situações em que há necessidade de demolição para troca do tipo de revestimento, por diversos motivos, como: mudança de layout, questão estética (presença significativa de trincas), piso com som cavo ou desplacamento do cimentado (piso quebrado).",
+   "incluidos": "Fornecimento de mão-de-obra para execução do serviço de demolição de piso cimentado espessura de 1,5cm, considerando o transporte horizontal e acondicionamento provisório dos fragmentos de piso e dos resíduos em local apropriado no canteiro de obras. Limpeza do local do serviço, considerando recolhimento, varrição, remoção de resíduos, detritos, fragmentos de piso e materiais inaproveitáveis, exclusive destinação final.",
+   "criterio": "m2 (metro quadrado) Pela área efetiva de piso cimentado demolido.",
+   "normas": [
+    "NBR 10.004-1",
+    "NBR 10.004-2",
+    "NR 18"
+   ]
+  },
+  "010221": {
+   "d": "Retirada de bandeira de porta de madeira, incluindo acabamento, acessórios e eventuais fixações, exclusive batentes (marcos), sem reaproveitamento",
+   "u": "und",
+   "caderno": "01 – SERVIÇOS PRELIMINARES · 0102 – DEMOLIÇÕES E RETIRADAS",
+   "atualizacao": "07/2025",
+   "aplicacao": "Em situações em que há necessidade de retirada da folha da porta, por motivos diversos como: aumento, fechamento ou deslocamento do vão da porta, infestações de cupins e brocas, defeitos na bandeira que comprometam seu funcionamento, como: sinais de empenamentos, rachaduras e lascas.",
+   "incluidos": "Retirada da bandeira de porta, considerando o transporte horizontal e acondicionamento das peças em local apropriado no canteiro de obras. Limpeza do local do serviço, com remoção de resíduos e materiais inaproveitáveis, exclusive destinação final.",
+   "criterio": "und (unidade) Pela quantidade de folha de porta retirada.",
+   "normas": [
+    "NBR 10.004-1",
+    "NBR 10.004-2",
+    "NR 18",
+    "Decreto Estadual 1.941-R/2007"
+   ]
+  },
+  "010222": {
+   "d": "Demolição manual de elementos vazados cerâmicos ou de concreto (cogogó), sem reaproveitamento",
+   "u": "m2",
+   "caderno": "01 – SERVIÇOS PRELIMINARES · 0102 – DEMOLIÇÕES E RETIRADAS",
+   "atualizacao": "07/2025",
+   "aplicacao": "Em situações em que há necessidade de mudança de layout, ampliação das áreas dos ambientes ou em outras circunstâncias que demandam o fechamento do vão que contém o elemento vazado, como por exemplo: instalação de janelas, climatização do ambiente, etc.",
+   "incluidos": "Fornecimento de mão-de-obra para execução do serviço de demolição de elementos vazados cerâmicos ou de concreto, inclusive execução da proteção do piso no entorno dos trechos a serem demolidos, o transporte horizontal (e/ou vertical) e o acondicionamento do entulho em local apropriado no canteiro de obras. Limpeza do local do serviço, com varrição e remoção dos resíduos provenientes da demolição.",
+   "criterio": "m2 (metro quadrado) Pela área efetiva do vão de elemento vazado demolido.",
+   "normas": [
+    "NBR 10.004-1",
+    "NBR 10.004-2",
+    "NR 18"
+   ]
+  },
+  "010223": {
+   "d": "Retirada manual de louças sanitárias, inclusive vedação dos pontos de esgoto e água fria, sem reaproveitamento",
+   "u": "und",
+   "caderno": "01 – SERVIÇOS PRELIMINARES · 0102 – DEMOLIÇÕES E RETIRADAS",
+   "atualizacao": "07/2025",
+   "aplicacao": "Em situações em que há necessidade de troca ou retirada definitiva de um aparelho sanitário, por diversos motivos, como: adequação de norma técnica, mudança de layout, reforma, ampliação ou modernização do ambiente, etc.",
+   "incluidos": "Fornecimento de mão-de-obra para execução do serviço de retirada de aparelhos sanitários e vedação dos pontos de esgoto e água fria, inclusive remoção de acessórios de fixação (parafusos e buchas), vedações, tubos de ligação e engates flexíveis, acondicionando as peças em local apropriado no canteiro de obras, para descarte (bota-fora). Limpeza do local do serviço, com remoção de resíduos, excesso de água e materiais inaproveitáveis, exclusive destinação final.",
+   "criterio": "und (unidade) Pela quantidade efetiva de louças sanitárias retirados.",
+   "normas": [
+    "NBR 10.004-1",
+    "NBR 10.004-2",
+    "NR 18"
+   ]
+  },
+  "010224": {
+   "d": "Retirada manual de grades, gradis, alambrados, cercas e portões metálicos, inclusive remoção de argamassa de chumbamento, acessórios de fixação e corte de soldas",
+   "u": "m2",
+   "caderno": "01 – SERVIÇOS PRELIMINARES · 0102 – DEMOLIÇÕES E RETIRADAS",
+   "atualizacao": "03/2026",
+   "aplicacao": "Em situações em que há necessidade de retirada completa de cercamentos ou grades metálicas, por motivos diversos como: mudança de layout, reforma ou ampliação dos ambientes, substituição por gradis e portões em aço galvanizado soldado, necessidade de fechamento do trecho com outro tipo de solução…",
+   "incluidos": "Fornecimento de mão-de-obra para execução do serviço de retirada de grades, gradis, alambrados, cercas e portões metálicos, inclusive com remoção de argamassa de chumbamento, acessórios de fixação e corte de soldas das partes metálicas, considerando o transporte horizontal e acondicionamento provisório das peças, acessórios e resíduos em local apropriado no canteiro de obras. Limpeza do local do serviço, com remoção de resíduos e materiais inaproveitáveis, exclusive destinação final.",
+   "criterio": "m2 (metro quadrado) Pela área efetiva e total de retirada de grades, gradis, alambrados, cercas e portões metálicos, considerando remoção argamassa de chumbamento, de complementos e acessórios de fixação das peças.",
+   "normas": [
+    "NBR 10.004-1",
+    "NBR 10.004-2",
+    "NR 18"
+   ]
+  },
+  "010225": {
+   "d": "Retirada de bancada em granito, inclusive remoção de rodabanca e cantoneiras de fixação, sem reaproveitamento",
+   "u": "m2",
+   "caderno": "01 – SERVIÇOS PRELIMINARES · 0102 – DEMOLIÇÕES E RETIRADAS",
+   "atualizacao": "07/2025",
+   "aplicacao": "Em situações em que há necessidade de retirada definitiva de uma bancada, por diversos motivos, como: questão estética, mudança de layout, reforma, ampliação ou modernização do ambiente etc.",
+   "incluidos": "Fornecimento de mão-de-obra para retirada de bancada de pia, inclusive retirada de rodabanca ou frontão, remoção de calafetagem e cantoneiras de apoio, acondicionamento das peças em local apropriado no canteiro de obras, para descarte (bota-fora). Varrição e limpeza do local do serviço, com remoção de resíduos e materiais inaproveitáveis, exclusive destinação final.",
+   "criterio": "m2 (metro quadrado) Pela área efetiva de bancada de pia retirada.",
+   "normas": [
+    "NBR 10.004-1",
+    "NBR 10.004-2",
+    "NR 18"
+   ]
+  },
+  "010226": {
+   "d": "Retirada de tanque em mármore sintético, cantoneiras de fixação, inclusive vedação dos pontos de esgoto e água fria, sem reaproveitamento",
+   "u": "und",
+   "caderno": "01 – SERVIÇOS PRELIMINARES · 0102 – DEMOLIÇÕES E RETIRADAS",
+   "atualizacao": "07/2025",
+   "aplicacao": "Em situações em que há necessidade de retirada definitiva do tanque de mármore sintético, por diversos motivos, como: questão estética, mudança de layout, reforma, ampliação ou modernização do ambiente, etc.",
+   "incluidos": "Fornecimento de mão-de-obra para retirada de tanque em mármore sintético e sifão, inclusive vedação do ponto de esgoto, remoção dos acessórios de fixação (parafusos e buchas) e vedações, com acondicionamento dos materiais em local apropriado no canteiro de obras, para descarte (bota-fora). Limpeza do local do serviço, com remoção de resíduos, excesso de água e materiais inaproveitáveis, exclusive destinação final.",
+   "criterio": "und (unidade) Pela quantidade efetiva de tanque em mármore sintético retirado.",
+   "normas": [
+    "NBR 10.004-1",
+    "NBR 10.004-2",
+    "NR 18"
+   ]
+  },
+  "010227": {
+   "d": "Retirada manual de caixa d’água de fibrocimento, sem considerar o reaproveitamento do reservatório, inclusive remoção dos flanges, boia e vedação dos pontos de alimentação de água fria",
+   "u": "und",
+   "caderno": "01 – SERVIÇOS PRELIMINARES · 0102 – DEMOLIÇÕES E RETIRADAS",
+   "atualizacao": "03/2026",
+   "aplicacao": "Em situações em que há necessidade de troca por um reservatório de outro material, geralmente de polietileno ou de fibra de vidro, visto que a caixa d’água de fibrocimento pode estar danificada, em processo de degradação, com presença de vazamentos ou rachaduras, que podem estar comprometendo a…",
+   "incluidos": "Fornecimento de mão-de-obra para execução do serviço de retirada de caixa d’água de fibrocimento, desconexão e vedação dos tubos de água fria remanescentes, inclusive remoção dos flanges e da boia, considerando o transporte vertical, horizontal e acondicionamento provisório dos detritos, resíduos e das peças em local apropriado no canteiro de obras. Limpeza do local do serviço, com remoção de resíduos e materiais inaproveitáveis, exclusive destinação final.",
+   "criterio": "und (unidade) Pela quantidade efetiva de caixas d’água de fibrocimento retiradas.",
+   "normas": [
+    "NBR 10.004-1",
+    "NBR 10.004-2",
+    "NR 18"
+   ]
+  },
+  "010228": {
+   "d": "Demolição manual de forro/lambri de madeira, sem reaproveitamento",
+   "u": "m2",
+   "caderno": "01 – SERVIÇOS PRELIMINARES · 0102 – DEMOLIÇÕES E RETIRADAS",
+   "atualizacao": "07/2025",
+   "aplicacao": "Em situações em que há necessidade de demolição completa das réguas de madeira para troca do forro de um determinado ambiente, por diversos motivos, como: questão estética, infestações de cupins e brocas ou defeitos nas peças que comprometam sua finalidade (sinais de empenamentos, rachaduras e…",
+   "incluidos": "Demolição de forro de madeira, considerando o transporte horizontal e acondicionamento provisório das peças e dos resíduos em local apropriado no canteiro de obras. Limpeza do local do serviço, considerando varrição, remoção de resíduos e materiais inaproveitáveis, exclusive destinação final.",
+   "criterio": "m2 (metro quadrado) Pela área efetiva de forro de madeira demolido.",
+   "normas": [
+    "NBR 10.004-1",
+    "NBR 10.004-2",
+    "NR 18",
+    "Decreto Estadual 1.941-R/2007"
+   ]
+  },
+  "010229": {
+   "d": "Retirada manual de poste de aço telecônico galvanizado de 4 a 6 m, parafusado sobre base de concreto, exclusive a remoção dessa base",
+   "u": "und",
+   "caderno": "01 – SERVIÇOS PRELIMINARES · 0102 – DEMOLIÇÕES E RETIRADAS",
+   "atualizacao": "03/2026",
+   "aplicacao": "Geralmente em situações em que há necessidade de troca por conjunto de postes com alturas superiores aos existentes, mais modernos e eficientes ou ainda para atendimento à norma NBR 5410.",
+   "incluidos": "Fornecimento de mão-de-obra para execução do serviço de retirada de poste metálico, inclusive remoção de parafusos e acessórios de fixação, considerando o transporte horizontal e acondicionamento provisório das peças, acessórios e resíduos em local apropriado no canteiro de obras. Limpeza do local do serviço, com remoção de resíduos e materiais inaproveitáveis, exclusive destinação final.",
+   "criterio": "und (unidade) Pela quantidade efetiva de postes metálicos com altura de 4 a 6 metros, retirados.",
+   "normas": [
+    "NBR 10.004-1",
+    "NBR 10.004-2"
+   ]
+  },
+  "010230": {
+   "d": "Retirada de pintura à base de PVA, utilizando a raspagem manual",
+   "u": "m2",
+   "caderno": "01 – SERVIÇOS PRELIMINARES · 0102 – DEMOLIÇÕES E RETIRADAS",
+   "atualizacao": "07/2025",
+   "aplicacao": "Em situações em que há necessidade de substituição pintura antiga aplicada sobre as paredes, por diversos motivos, como: presença de mofo, tinta descascando, alteração do uso do ambiente implicando na retirada da pintura e assentamento de revestimento, etc.",
+   "incluidos": "Fornecimento de mão-de-obra para execução do serviço de retirada de pintura antiga à base de PVA sobre paredes, com aplicação de espátula, lixa e escova com cerdas de aço. Varrição e limpeza do local do serviço, com remoção de resíduos e materiais inaproveitáveis, exclusive destinação final.",
+   "criterio": "m2 (metro quadrado) Pela área efetiva das superfícies da alvenaria a ser feita a remoção de pintura antiga à base de PVA.",
+   "normas": [
+    "NBR 10.004-1",
+    "NBR 10.004-2",
+    "NR 18"
+   ]
+  },
+  "010234": {
+   "d": "Demolição manual de laje pré-moldada, sem reaproveitamento",
+   "u": "m2",
+   "caderno": "01 – SERVIÇOS PRELIMINARES · 0102 – DEMOLIÇÕES E RETIRADAS",
+   "atualizacao": "07/2025",
+   "aplicacao": "Em situações em que há necessidade de demolição total ou parcial de uma ou mais lajes pré- moldadas de concreto. Utilizado por exemplo para fazer aberturas na laje para criação de escadas ou shafts para a passagem de prumadas de hidráulica.",
+   "incluidos": null,
+   "criterio": null,
+   "normas": []
+  }
+ }
+}

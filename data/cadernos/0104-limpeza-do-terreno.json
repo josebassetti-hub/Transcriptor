@@ -1,0 +1,63 @@
+{
+ "arquivo": "0104-LIMPEZA DO TERRENO.pdf",
+ "caderno": "01 – SERVIÇOS PRELIMINARES · 0104 – LIMPEZA DO TERRENO",
+ "truncado": false,
+ "fichas": {
+  "010401": {
+   "d": "Corte manual de capoeira fina com foice",
+   "u": "m2",
+   "caderno": "01 – SERVIÇOS PRELIMINARES · 0104 – LIMPEZA DO TERRENO",
+   "atualizacao": "07/2025",
+   "aplicacao": "Utilizada para controle ou eliminação de ervas daninhas em pequenas áreas ou em locais remotos, com o intuito de realizar manutenção periódica (afastar a possibilidade de esconderijo de pragas e vetores urbanos), para desobstruir os mecanismos de drenagem rápida de água da chuva (bocas de lobo…",
+   "incluidos": "Fornecimento de mão-de-obra para execução do serviço de capina de capoeira fina, com auxílio de ferramentas manuais (foice, facão, enxada etc.), considerando retirada manual e corte pela raiz de vegetação daninha, com amontoamento (acondicionamento) em local temporário adequado, exclusive destinação final.",
+   "criterio": "m2 (metro quadrado) Pela área efetiva de corte a foice de capoeira fina, sobre o plano horizontal de superfície.",
+   "normas": [
+    "NBR 10.004-1",
+    "NBR 10.004-2",
+    "NR 18"
+   ]
+  },
+  "010402": {
+   "d": "Raspagem superficial e limpeza manual do terreno, realizado com o uso de ferramentas manuais",
+   "u": "m2",
+   "caderno": "01 – SERVIÇOS PRELIMINARES · 0104 – LIMPEZA DO TERRENO",
+   "atualizacao": "07/2025",
+   "aplicacao": "A raspagem e a limpeza do terreno são realizadas com o intuito de preparar a área para construção ou outras intervenções, como por exemplo: serviços de terraplanagem, sondagem, locação da obra, etc.",
+   "incluidos": "Fornecimento de mão-de-obra para execução do serviço de raspagem e limpeza do terreno, com auxílio de ferramentas manuais, considerando remoção manual de vegetação, material orgânico, material impróprio superficial e entulho, com acondicionamento em local temporário adequado, exclusive destinação final.",
+   "criterio": "m2 (metro quadrado) Pela área efetiva de terreno limpo, sobre o plano horizontal de superfície.",
+   "normas": [
+    "NBR 10.004-1",
+    "NBR 10.004-2",
+    "NR 18"
+   ]
+  },
+  "010403": {
+   "d": "Corte e destocamento manual de árvores com diâmetro de até 15 cm",
+   "u": "und",
+   "caderno": "01 – SERVIÇOS PRELIMINARES · 0104 – LIMPEZA DO TERRENO",
+   "atualizacao": "07/2025",
+   "aplicacao": "O corte de árvores tem o intuito de desobstruir o terreno para execução de obras e outras intervenções, visto que a presença de tocos pode criar obstáculos no terreno. Utilizado também para controle de pragas, visto que ajuda a prevenir infestações que poderiam afetar as plantas ao redor e o…",
+   "incluidos": "Fornecimento de mão-de-obra para execução do serviço de corte e destocamento de árvores, com auxílio de ferramentas manuais, considerando a remoção completa da parte aérea (tronco, galhos e folhagem) e do sistema radicular (raízes e toco), com amontoamento (acondicionamento) em local temporário adequado, exclusive destinação final.",
+   "criterio": "und (unidade) Pela quantidade de árvores com diâmetro de até 15 centímetros, cortadas e destocadas por completo.",
+   "normas": [
+    "NBR 10.004-1",
+    "NBR 10.004-2",
+    "NR 18"
+   ]
+  },
+  "010404": {
+   "d": "Corte e destocamento mecanizado de árvores com diâmetro superior a 30 cm",
+   "u": "und",
+   "caderno": "01 – SERVIÇOS PRELIMINARES · 0104 – LIMPEZA DO TERRENO",
+   "atualizacao": "07/2025",
+   "aplicacao": "O corte de árvores tem o intuito de desobstruir o terreno para execução de obras e outras intervenções, visto que a presença de tocos pode criar obstáculos no terreno. Utilizado também para controle de pragas, visto que ajuda a prevenir infestações que poderiam afetar as plantas ao redor e o…",
+   "incluidos": "Fornecimento de mão-de-obra e equipamentos para execução do serviço de corte e destocamento de árvores, considerando a remoção mecanizada completa da parte aérea (tronco, galhos e folhagem) e do sistema radicular (raízes e toco), com amontoamento (acondicionamento) em local temporário adequado.",
+   "criterio": "und (unidade) Pela quantidade de árvores com diâmetro superior a 30 centímetros, cortadas e destocadas por completo.",
+   "normas": [
+    "NBR 10.004-1",
+    "NBR 10.004-2",
+    "NR 18"
+   ]
+  }
+ }
+}

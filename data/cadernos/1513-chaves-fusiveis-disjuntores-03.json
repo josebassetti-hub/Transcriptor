@@ -1,0 +1,248 @@
+{
+ "arquivo": "1513-CHAVES, FUSIVEIS E DISJUNTORES-03.pdf",
+ "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1513 – CHAVES, FUSÍVEIS E DISJUNTORES",
+ "truncado": false,
+ "fichas": {
+  "151330": {
+   "d": "Mini-Disjuntor tripolar 63A, curva C, 5kA, 127/220Vca, referência Siemens, GE, Schneider ou equivalente",
+   "u": "und",
+   "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1513 – CHAVES, FUSÍVEIS E DISJUNTORES",
+   "atualizacao": "01/2024",
+   "aplicacao": "Utilizada em instalações residenciais e comerciais de médio porte, para proteger circuitos de iluminação, tomadas ou equipamentos específicos contra sobrecargas e curto-circuito. Instalados em painéis elétricos.",
+   "incluidos": "Fornecimento dos materiais e mão de obra para execução do serviço.",
+   "criterio": "Por und instalada.",
+   "normas": [
+    "NBR 5410",
+    "NR 18",
+    "NBR NM 60898",
+    "NBR IEC 60947-2"
+   ]
+  },
+  "151331": {
+   "d": "Mini-Disjuntor tripolar 80A, curva C, 5kA, 127/220Vca, referência Siemens, GE, Schneider ou equivalente",
+   "u": "und",
+   "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1513 – CHAVES, FUSÍVEIS E DISJUNTORES",
+   "atualizacao": "01/2024",
+   "aplicacao": "Utilizada em instalações residenciais e comerciais de médio porte, para proteger circuitos de iluminação, tomadas ou equipamentos específicos contra sobrecargas e curto-circuito. Instalados em painéis elétricos.",
+   "incluidos": "Fornecimento dos materiais e mão de obra para execução do serviço.",
+   "criterio": "Por und instalada.",
+   "normas": [
+    "NBR 5410",
+    "NR 18",
+    "NBR NM 60898",
+    "NBR IEC 60947-2"
+   ]
+  },
+  "151332": {
+   "d": "Mini-Disjuntor tripolar 125A, curva C, 20kA, 127/220Vca, referência Siemens, GE, Schneider ou equivalente",
+   "u": "und",
+   "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1513 – CHAVES, FUSÍVEIS E DISJUNTORES",
+   "atualizacao": "01/2024",
+   "aplicacao": "Utilizada em instalações residenciais e comerciais de médio porte, para proteger circuitos de iluminação, tomadas ou equipamentos específicos contra sobrecargas e curto-circuito. Instalados em painéis elétricos.",
+   "incluidos": "Fornecimento dos materiais e mão de obra para execução do serviço.",
+   "criterio": "Por und instalada.",
+   "normas": [
+    "NBR 5410",
+    "NR 18",
+    "NBR NM 60898",
+    "NBR IEC 60947-2"
+   ]
+  },
+  "151333": {
+   "d": "Disjuntor caixa moldada termomagnetico fixo, tripolar 175A, Icu: 50kA, 400/500Vca, referência Siemens, Soprano, Schneider ou equivalente",
+   "u": "und",
+   "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1513 – CHAVES, FUSÍVEIS E DISJUNTORES",
+   "atualizacao": "01/2024",
+   "aplicacao": "Utilizada em instalações comerciais, industriais, infraestrutura e energia de médio e grande porte, para proteger contra sobrecargas e curto-circuito. Instalados em painéis elétricos.",
+   "incluidos": "Fornecimento dos materiais e mão de obra para execução do serviço.",
+   "criterio": "Por und instalada.",
+   "normas": [
+    "NBR 5410",
+    "NR 18",
+    "NBR NM 60898",
+    "NBR IEC 60947-2"
+   ]
+  },
+  "151334": {
+   "d": "Disjuntor caixa moldada termomagnetico fixo, tripolar 200A, Icu: 50kA, 400/500Vca, referência Siemens, Soprano, Schneider ou equivalente",
+   "u": "und",
+   "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1513 – CHAVES, FUSÍVEIS E DISJUNTORES",
+   "atualizacao": "01/2024",
+   "aplicacao": "Utilizada em instalações comerciais, industriais, infraestrutura e energia de médio e grande porte, para proteger contra sobrecargas e curto-circuito. Instalados em painéis elétricos.",
+   "incluidos": "Fornecimento dos materiais e mão de obra para execução do serviço.",
+   "criterio": "Por und instalada.",
+   "normas": [
+    "NBR 5410",
+    "NR 18",
+    "NBR NM 60898",
+    "NBR IEC 60947-2"
+   ]
+  },
+  "151335": {
+   "d": "Disjuntor caixa moldada termomagnetico fixo, tripolar 400A, Icu: 65kA, 380/415Vca, referência Siemens, Soprano, Schneider ou equivalente",
+   "u": "und",
+   "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1513 – CHAVES, FUSÍVEIS E DISJUNTORES",
+   "atualizacao": "01/2024",
+   "aplicacao": "Utilizada em instalações comerciais, industriais, infraestrutura e energia de médio e grande porte, para proteger contra sobrecargas e curto-circuito. Instalados em painéis elétricos.",
+   "incluidos": "Fornecimento dos materiais e mão de obra para execução do serviço.",
+   "criterio": "Por und instalada.",
+   "normas": [
+    "NBR 5410",
+    "NR 18",
+    "NBR NM 60898",
+    "NBR IEC 60947-2"
+   ]
+  },
+  "151337": {
+   "d": "Dispositivo de proteção contra surto (DPS) bipolar, 40kA, 275Vca, referência Siemens, Steck, Clamper ou equivalente",
+   "u": "und",
+   "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1513 – CHAVES, FUSÍVEIS E DISJUNTORES",
+   "atualizacao": "01/2024",
+   "aplicacao": "São instalados nos pontos de entrada de energia, garantindo que a proteção seja abrangente para todos os equipamentos conectados à rede elétrica, são projetados para desviar a corrente de surto causada por raios ou outras fontes de transientes elétricos indesejados. Se instalados diretamente em…",
+   "incluidos": "Fornecimento dos materiais e mão de obra para execução do serviço.",
+   "criterio": "Por und instalada.",
+   "normas": [
+    "NBR 5410",
+    "IEC 61643-1"
+   ]
+  },
+  "151338": {
+   "d": "Mini-Disjuntor monopolar 10A, curva C, 5kA, 127/220Vca, referência Siemens, GE, Schneider ou equivalente",
+   "u": "und",
+   "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1513 – CHAVES, FUSÍVEIS E DISJUNTORES",
+   "atualizacao": "01/2024",
+   "aplicacao": "Utilizada em instalações residenciais e comerciais de médio porte, para proteger circuitos de iluminação, tomadas ou equipamentos específicos contra sobrecargas e curto-circuito. Instalados em painéis elétricos.",
+   "incluidos": "Fornecimento dos materiais e mão de obra para execução do serviço.",
+   "criterio": "Por und instalada.",
+   "normas": [
+    "NBR 5410",
+    "NR 18",
+    "NBR NM 60898-1",
+    "NBR IEC 60947-2"
+   ]
+  },
+  "151339": {
+   "d": "Mini-Disjuntor tripolar 125A, curva C, 15kA, 220/380Vca, referência Siemens, GE, Schneider ou equivalente",
+   "u": "und",
+   "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1513 – CHAVES, FUSÍVEIS E DISJUNTORES",
+   "atualizacao": "01/2024",
+   "aplicacao": "Utilizada em instalações residenciais e comerciais de médio porte, para proteger circuitos de iluminação, tomadas ou equipamentos específicos contra sobrecargas e curto-circuito. Instalados em painéis elétricos.",
+   "incluidos": "Fornecimento dos materiais e mão de obra para execução do serviço.",
+   "criterio": "Por und instalada.",
+   "normas": [
+    "NBR 5410",
+    "NR 18",
+    "NBR NM 60898",
+    "NBR IEC 60947-2"
+   ]
+  },
+  "151344": {
+   "d": "Fusivel retardado NH gG(gL), tamanho 01 – 100A, 120kA em 500Vca, referência Siemens, WEG, Negrini ou equivalente",
+   "u": "und",
+   "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1513 – CHAVES, FUSÍVEIS E DISJUNTORES",
+   "atualizacao": "01/2024",
+   "aplicacao": "Os fusíveis são utilizados para proteção contra curtos-circuitos e sobrecargas em instalações elétricas, especialmente em situações em que há cargas que podem gerar picos de corrente temporários. O termo \"retardado\" indica que esses fusíveis têm um tempo de resposta mais lento em comparação com os…",
+   "incluidos": "Fornecimento dos materiais e mão de obra para execução do serviço.",
+   "criterio": "Por und instalada.",
+   "normas": [
+    "NBR 5410"
+   ]
+  },
+  "151345": {
+   "d": "Fusivel retardado NH gG(gL), tamanho 01 – 160A, 120kA em 500Vca, referência Siemens, WEG, Negrini ou equivalente",
+   "u": "und",
+   "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1513 – CHAVES, FUSÍVEIS E DISJUNTORES",
+   "atualizacao": "01/2024",
+   "aplicacao": "Os fusíveis são utilizados para proteção contra curtos-circuitos e sobrecargas em instalações elétricas, especialmente em situações em que há cargas que podem gerar picos de corrente temporários. O termo \"retardado\" indica que esses fusíveis têm um tempo de resposta mais lento em comparação com os…",
+   "incluidos": "Fornecimento dos materiais e mão de obra para execução do serviço.",
+   "criterio": "Por und instalada.",
+   "normas": [
+    "NBR 5410"
+   ]
+  },
+  "151346": {
+   "d": "Fusivel retardado NH gG(gL), tamanho 02 – 250A, 120kA em 500Vca, referência Siemens, WEG, Negrini ou equivalente",
+   "u": "und",
+   "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1513 – CHAVES, FUSÍVEIS E DISJUNTORES",
+   "atualizacao": "01/2024",
+   "aplicacao": "Os fusíveis são utilizados para proteção contra curtos-circuitos e sobrecargas em instalações elétricas, especialmente em situações em que há cargas que podem gerar picos de corrente temporários. O termo \"retardado\" indica que esses fusíveis têm um tempo de resposta mais lento em comparação com os…",
+   "incluidos": "Fornecimento dos materiais e mão de obra para execução do serviço.",
+   "criterio": "Por und instalada.",
+   "normas": [
+    "NBR 5410"
+   ]
+  },
+  "151347": {
+   "d": "Fusivel retardado NH gG(gL), tamanho 02 – 300A, 120kA em 500Vca, referência Siemens, WEG, Negrini ou equivalente",
+   "u": "und",
+   "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1513 – CHAVES, FUSÍVEIS E DISJUNTORES",
+   "atualizacao": "01/2024",
+   "aplicacao": "Os fusíveis são utilizados para proteção contra curtos-circuitos e sobrecargas em instalações elétricas, especialmente em situações em que há cargas que podem gerar picos de corrente temporários. O termo \"retardado\" indica que esses fusíveis têm um tempo de resposta mais lento em comparação com os…",
+   "incluidos": "Fornecimento dos materiais e mão de obra para execução do serviço.",
+   "criterio": "Por und instalada.",
+   "normas": [
+    "NBR 5410"
+   ]
+  },
+  "151348": {
+   "d": "Fusivel retardado NH gG(gL), tamanho 02 – 355A, 120kA em 500Vca, referência Siemens, WEG, Negrini ou equivalente",
+   "u": "und",
+   "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1513 – CHAVES, FUSÍVEIS E DISJUNTORES",
+   "atualizacao": "01/2024",
+   "aplicacao": "Os fusíveis são utilizados para proteção contra curtos-circuitos e sobrecargas em instalações elétricas, especialmente em situações em que há cargas que podem gerar picos de corrente temporários. O termo \"retardado\" indica que esses fusíveis têm um tempo de resposta mais lento em comparação com os…",
+   "incluidos": "Fornecimento dos materiais e mão de obra para execução do serviço.",
+   "criterio": "Por und instalada.",
+   "normas": [
+    "NBR 5410"
+   ]
+  },
+  "151349": {
+   "d": "Fusivel retardado NH gG(gL), tamanho 01 – 125A, 120kA em 500Vca, referência Siemens, WEG, Negrini ou equivalente",
+   "u": "und",
+   "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1513 – CHAVES, FUSÍVEIS E DISJUNTORES",
+   "atualizacao": "01/2024",
+   "aplicacao": "Os fusíveis são utilizados para proteção contra curtos-circuitos e sobrecargas em instalações elétricas, especialmente em situações em que há cargas que podem gerar picos de corrente temporários. O termo \"retardado\" indica que esses fusíveis têm um tempo de resposta mais lento em comparação com os…",
+   "incluidos": "Fornecimento dos materiais e mão de obra para execução do serviço.",
+   "criterio": "Por und instalada.",
+   "normas": [
+    "NBR 5410"
+   ]
+  },
+  "151350": {
+   "d": "Interruptor Diferencial Bipolar DR 25A, 30mA – 6kA, referência Siemens, Schneider, WEG ou equivalente",
+   "u": "und",
+   "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1513 – CHAVES, FUSÍVEIS E DISJUNTORES",
+   "atualizacao": "01/2024",
+   "aplicacao": "Utilizado em instalações elétricas residenciais, comerciais e prediais, são dispositivos de proteção que têm como objetivo detectar correntes de fuga à terra em um sistema elétrico, são frequentemente utilizados para proteger pessoas contrachoques elétricos, desligando automaticamente a…",
+   "incluidos": "Fornecimento dos materiais e mão de obra para execução do serviço.",
+   "criterio": "Por und instalada.",
+   "normas": [
+    "NBR 5410"
+   ]
+  },
+  "151357": {
+   "d": "Interruptor Diferencial Bipolar DR 40A, 30mA – 6kA, referência Siemens, Schneider, WEG ou equivalente",
+   "u": "und",
+   "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1513 – CHAVES, FUSÍVEIS E DISJUNTORES",
+   "atualizacao": "01/2024",
+   "aplicacao": "Utilizado em instalações elétricas residenciais, comerciais e prediais, são dispositivos de proteção que têm como objetivo detectar correntes de fuga à terra em um sistema elétrico, são frequentemente utilizados para proteger pessoas contrachoques elétricos, desligando automaticamente a…",
+   "incluidos": "Fornecimento dos materiais e mão de obra para execução do serviço.",
+   "criterio": "Por und instalada.",
+   "normas": [
+    "NBR 5410"
+   ]
+  },
+  "151359": {
+   "d": "Interruptor Diferencial Bipolar DR 80A, 30mA - 6kA, referência Siemens, Schneider, WEG ou equivalente",
+   "u": "und",
+   "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1513 – CHAVES, FUSÍVEIS E DISJUNTORES",
+   "atualizacao": "01/2024",
+   "aplicacao": "Utilizado em instalações elétricas residenciais, comerciais e prediais, são dispositivos de proteção que têm como objetivo detectar correntes de fuga à terra em um sistema elétrico, são frequentemente utilizados para proteger pessoas contrachoques elétricos, desligando automaticamente a…",
+   "incluidos": "Fornecimento dos materiais e mão de obra para execução do serviço.",
+   "criterio": "Por und instalada.",
+   "normas": [
+    "NBR 5410"
+   ]
+  }
+ }
+}

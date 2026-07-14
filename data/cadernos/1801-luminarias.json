@@ -1,0 +1,58 @@
+{
+ "arquivo": "1801-APARELHOS ELETRICOS - LUMINÁRIAS.pdf",
+ "caderno": "18 – APARELHOS ELÉTRICOS · 1801 – LUMINÁRIAS",
+ "truncado": false,
+ "fichas": {
+  "180107": {
+   "d": "Luminária industrial blindada tipo ovóide, 45 graus, exclusive lâmpada, ref. WYN-26/1 – Wetzel ou equivalente",
+   "u": "und",
+   "caderno": "18 – APARELHOS ELÉTRICOS · 1801 – LUMINÁRIAS",
+   "atualizacao": "09/2025",
+   "aplicacao": "Projetada para ambientes agressivos: Mineradoras, siderúrgicas, açúcar e álcool, petroquímicas, papel e celulose, estacionamentos, e outras.",
+   "incluidos": "Fornecimento e instalação da luminária, considerando transporte interno do canteiro até o local de instalação, exclusive lâmpadas.",
+   "criterio": "Por unidade instalada.",
+   "normas": [
+    "NBR 5410",
+    "NBR IEC 60598-1:2010",
+    "NBR IEC 60.598-2-1:2012",
+    "ISO/CIE 8995:2013",
+    "NBR 8346:2012",
+    "NR-6",
+    "NR-10",
+    "NR-35"
+   ]
+  },
+  "180110": {
+   "d": "Luminária tipo arandela de sobrepor IP65, exclusive lâmpada, ref. IPT-26/15 – Wetzel ou equivalente",
+   "u": "und",
+   "caderno": "18 – APARELHOS ELÉTRICOS · 1801 – LUMINÁRIAS",
+   "atualizacao": "09/2025",
+   "aplicacao": "Projetada para ambientes agressivos: Mineradoras, siderúrgicas, açúcar e álcool, petroquímicas, papel e celulose, estacionamentos, e outras.",
+   "incluidos": "Fornecimento e instalação da luminária, considerando transporte interno do canteiro até o local de instalação, exclusive lâmpadas.",
+   "criterio": "Por unidade instalada.",
+   "normas": [
+    "NBR 5410",
+    "NBR IEC 60598-1:2010",
+    "NBR IEC 60.598-2-1:2012",
+    "ISO/CIE 8995:2013",
+    "NBR 8346:2012"
+   ]
+  },
+  "180115": {
+   "d": "Luminária tipo globo decorativo, fabricada em plástico difusor leitoso ou translúcido, com dimensões aproximadas de 14,5 x 14,8 cm, ref. LGB1-Astra ou equivalente",
+   "u": "und",
+   "caderno": "18 – APARELHOS ELÉTRICOS · 1801 – LUMINÁRIAS",
+   "atualizacao": "09/2025",
+   "aplicacao": "Indicada para iluminação decorativa e funcional em ambientes internos e externos cobertos",
+   "incluidos": "Fornecimento e instalação da luminária, considerando transporte interno do canteiro até o local de instalação, exclusive lâmpadas.",
+   "criterio": "Por unidade instalada.",
+   "normas": [
+    "NBR 5410",
+    "NBR IEC 60598-1:2010",
+    "NBR IEC 60.598-2-1:2012",
+    "ISO/CIE 8995:2013",
+    "NBR 8346:2012"
+   ]
+  }
+ }
+}

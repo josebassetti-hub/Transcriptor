@@ -1,0 +1,22 @@
+{
+ "arquivo": "1304-REVISÕES E REPAROS (pisos).pdf",
+ "caderno": "13 – PISOS INTERNOS E EXTERNOS · 1304 – REVISÕES E REPAROS",
+ "truncado": false,
+ "fichas": {
+  "130403": {
+   "d": "Recomposição de piso cimentado, com argamassa de cimento e areia no traço 1:3, espessura: 2 cm, inclusive lastro",
+   "u": "m2",
+   "caderno": "13 – PISOS INTERNOS E EXTERNOS · 1304 – REVISÕES E REPAROS",
+   "atualizacao": "04/2024",
+   "aplicacao": "Em locais que possuem piso cimentado executado sobre lastro de concreto, que precisaram passar por alguma intervenção de demolição, rasgo, reparo parcial ou piso danificado, sendo necessária a recomposição do piso e da base.",
+   "incluidos": "Fornecimento, preparo e transporte do concreto e da argamassa, considerando perdas por consumo e transporte interno do canteiro até o local da aplicação, definição e marcação dos níveis do piso, lançamento e espalhamento do concreto e da argamassa, nivelamento e adensamento apropriado do lastro de concreto, acabamento superficial desempenado do piso cimentado.",
+   "criterio": "m2 (metro quadrado) Medido pela área de recomposição de piso efetivamente executada, descontando todos os vãos.",
+   "normas": [
+    "NBR 12655:2022",
+    "NBR 5732:1991",
+    "NBR 7220:1987",
+    "NBR 7211:2005"
+   ]
+  }
+ }
+}

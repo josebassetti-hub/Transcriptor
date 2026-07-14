@@ -1,0 +1,97 @@
+{
+ "arquivo": "1516-ABERTURA E FECHAMENTO DE RASGOS.pdf",
+ "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1516 – ABERTURA E FECHAMENTO DE RASGOS",
+ "truncado": false,
+ "fichas": {
+  "151601": {
+   "d": "Abertura e fechamento de rasgos em alvenaria, para passagem de eletrodutos diâm. 1/2\" a 1\"",
+   "u": "m",
+   "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1516 – ABERTURA E FECHAMENTO DE RASGOS",
+   "atualizacao": "04/2025",
+   "aplicacao": "Interligações entre os pontos de suprimento da instalação elétrica (infraestrutura), em que os eletrodutos precisam ser embutidos em paredes de alvenaria.",
+   "incluidos": "Demarcação e execução dos rasgos em alvenaria, com auxílio de ferramentas manuais (marreta e talhadeira), fornecimento dos materiais (inclusive eventuais perdas), preparo, transporte interno no canteiro e aplicação da argamassa (de cimento, cal hidratada e areia) para preenchimento (fechamento) dos rasgos.",
+   "criterio": "m (metro) Pelo comprimento total de rasgo aberto e recomposto, para assentamento de eletrodutos com diâmetro que pode variar de 1/2” a 1”.",
+   "normas": [
+    "NBR 5410:2004",
+    "NBR 5732:1991",
+    "NBR 7220:1987",
+    "NR 18"
+   ]
+  },
+  "151602": {
+   "d": "Abertura e fechamento de rasgos em alvenaria, para passagem de eletrodutos diâm. 1.1/4\" a 2\"",
+   "u": "m",
+   "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1516 – ABERTURA E FECHAMENTO DE RASGOS",
+   "atualizacao": "05/2025",
+   "aplicacao": "Interligações entre os pontos de suprimento da instalação elétrica (infraestrutura), em que os eletrodutos precisam ser embutidos em paredes de alvenaria.",
+   "incluidos": "Demarcação e execução dos rasgos em alvenaria, com auxílio de ferramentas manuais (marreta e talhadeira), fornecimento dos materiais (inclusive eventuais perdas), preparo, transporte interno no canteiro e aplicação da argamassa (de cimento, cal hidratada e areia) para preenchimento (fechamento) dos rasgos.",
+   "criterio": "m (metro) Pelo comprimento total de rasgo aberto e recomposto, para assentamento de eletrodutos com diâmetro que pode variar de 1.1/4” a 2”.",
+   "normas": [
+    "NBR 5410:2004",
+    "NBR 5732:1991",
+    "NBR 7220:1987",
+    "NR 18"
+   ]
+  },
+  "151603": {
+   "d": "Abertura e fechamento de rasgos em alvenaria, para passagem de eletrodutos diâm. 2.1/2\" a 4\"",
+   "u": "m",
+   "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1516 – ABERTURA E FECHAMENTO DE RASGOS",
+   "atualizacao": "04/2025",
+   "aplicacao": "Interligações entre os pontos de suprimento da instalação elétrica (infraestrutura), em que os eletrodutos precisam ser embutidos em paredes de alvenaria.",
+   "incluidos": "Demarcação e execução dos rasgos em alvenaria, com auxílio de ferramentas manuais (marreta e talhadeira), fornecimento dos materiais (inclusive eventuais perdas), preparo, transporte interno no canteiro e aplicação da argamassa (de cimento, cal hidratada e areia) para preenchimento (fechamento) dos rasgos.",
+   "criterio": "m (metro) Pelo comprimento total de rasgo aberto e recomposto, para assentamento de eletrodutos com diâmetro que pode variar de 2.1/2” a 4”.",
+   "normas": [
+    "NBR 5410:2004",
+    "NBR 5732:1991",
+    "NBR 7220:1987",
+    "NR 18"
+   ]
+  },
+  "151604": {
+   "d": "Abertura e fechamento de rasgos em concreto, para passagem de eletroduto diâm. 1/2\" a 1\"",
+   "u": "m",
+   "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1516 – ABERTURA E FECHAMENTO DE RASGOS",
+   "atualizacao": "04/2025",
+   "aplicacao": "Interligações entre os pontos de suprimento da instalação elétrica (infraestrutura), em que os eletrodutos precisam ser embutidos em concreto simples, como por exemplo: passeios, lastro de contrapiso, etc.",
+   "incluidos": "Demarcação e execução dos rasgos em concreto, com auxílio de ferramentas manuais (marreta e talhadeira), fornecimento dos materiais (inclusive eventuais perdas), preparo, transporte interno no canteiro e aplicação da argamassa (de cimento, cal hidratada e areia) para preenchimento (fechamento) dos rasgos.",
+   "criterio": "m (metro) Pelo comprimento total de rasgo aberto e recomposto, para assentamento de eletrodutos com diâmetro que pode variar de ½” a 1”.",
+   "normas": [
+    "NBR 5410:2004",
+    "NBR 5732:1991",
+    "NBR 7220:1987",
+    "NR 18"
+   ]
+  },
+  "151605": {
+   "d": "Abertura e fechamento de rasgos em concreto, para passagem de eletroduto diâm. 1.1/4\" a 2\"",
+   "u": "m",
+   "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1516 – ABERTURA E FECHAMENTO DE RASGOS",
+   "atualizacao": "04/2025",
+   "aplicacao": "Interligações entre os pontos de suprimento da instalação elétrica (infraestrutura), em que os eletrodutos precisam ser embutidos em concreto simples, como por exemplo: passeios, lastro de contrapiso, etc.",
+   "incluidos": "Demarcação e execução dos rasgos em concreto, com auxílio de ferramentas manuais (marreta e talhadeira), fornecimento dos materiais (inclusive eventuais perdas), preparo, transporte interno no canteiro e aplicação da argamassa (de cimento, cal hidratada e areia) para preenchimento (fechamento) dos rasgos.",
+   "criterio": "m (metro) Pelo comprimento total de rasgo aberto e recomposto, para assentamento de eletrodutos com diâmetro que pode variar de 1.1/4” a 2”.",
+   "normas": [
+    "NBR 5410:2004",
+    "NBR 5732:1991",
+    "NBR 7220:1987",
+    "NR 18"
+   ]
+  },
+  "151606": {
+   "d": "Abertura e fechamento de rasgos em concreto, para passagem de eletroduto diâm. 2.1/2\" a 4\"",
+   "u": "m",
+   "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1516 – ABERTURA E FECHAMENTO DE RASGOS",
+   "atualizacao": "04/2025",
+   "aplicacao": "Interligações entre os pontos de suprimento da instalação elétrica (infraestrutura), em que os eletrodutos precisam ser embutidos em concreto simples, como por exemplo: passeios, lastro de contrapiso, etc.",
+   "incluidos": "Demarcação e execução dos rasgos em concreto, com auxílio de ferramentas manuais (marreta e talhadeira), fornecimento dos materiais (inclusive eventuais perdas), preparo, transporte interno no canteiro e aplicação da argamassa (de cimento, cal hidratada e areia) para preenchimento (fechamento) dos rasgos.",
+   "criterio": "m (metro) Pelo comprimento total de rasgo aberto e recomposto, para assentamento de eletrodutos com diâmetro que pode variar de 2.1/2” a 4”.",
+   "normas": [
+    "NBR 5410:2004",
+    "NBR 5732:1991",
+    "NBR 7220:1987",
+    "NR 18"
+   ]
+  }
+ }
+}

@@ -1,0 +1,153 @@
+{
+ "arquivo": "1515-INSTALAÇÕES ELÉTRICAS - SERVIÇOS DIVERSOS.pdf",
+ "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1515 – SERVIÇOS DIVERSOS",
+ "truncado": false,
+ "fichas": {
+  "151503": {
+   "d": "Cabeçote de entrada (Mufla) em alumínio fundido de 1.1/4\"",
+   "u": "und",
+   "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1515 – SERVIÇOS DIVERSOS",
+   "atualizacao": "01/2026",
+   "aplicacao": "Utilizado em instalações elétricas prediais, comerciais e industriais, aplicado para proteger e vedar a entrada de fios e cabos em eletrodutos expostos (como em postes), impedindo a entrada de água e poeira, e oferecendo alta resistência mecânica e contra corrosão, fixação por parafusos ou encaixe.",
+   "incluidos": "Fornecimento e instalação do cabeçote de entrada em alumínio.",
+   "criterio": "Por unidade.",
+   "normas": [
+    "NBR 5410",
+    "NBR IEC 61386",
+    "NBR 5598",
+    "NBR 5597"
+   ]
+  },
+  "151504": {
+   "d": "Cabeçote de entrada (Mufla) em alumínio fundido de 1.1/2\"",
+   "u": "und",
+   "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1515 – SERVIÇOS DIVERSOS",
+   "atualizacao": "01/2026",
+   "aplicacao": "Utilizado em instalações elétricas prediais, comerciais e industriais, aplicado para proteger e vedar a entrada de fios e cabos em eletrodutos expostos (como em postes), impedindo a entrada de água e poeira, e oferecendo alta resistência mecânica e contra corrosão, fixação por parafusos ou encaixe.",
+   "incluidos": "Fornecimento e instalação do cabeçote de entrada em alumínio.",
+   "criterio": "Por unidade.",
+   "normas": [
+    "NBR 5410",
+    "NBR IEC 61386",
+    "NBR 5598",
+    "NBR 5597"
+   ]
+  },
+  "151506": {
+   "d": "Haste de terra tipo COPPERWELD de alta camada - 5/8\" x 2.40m, exclusive conexão exotérmica",
+   "u": "und",
+   "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1515 – SERVIÇOS DIVERSOS",
+   "atualizacao": "01/2026",
+   "aplicacao": "Utilizada em sistemas de aterramento elétrico de instalações prediais, comerciais, industriais e de infraestrutura, destinada à dissipação de correntes de fuga, descargas atmosféricas e surtos elétricos, assegurando a proteção de pessoas, equipamentos e a conformidade com os requisitos de…",
+   "incluidos": "Fornecimento e instalação da haste de terra tipo COPPERWELD de alta camada - 5/8\" x 2.40m, exclusive acessórios de conexão",
+   "criterio": "Por unidade.",
+   "normas": [
+    "NBR 5410",
+    "NBR 5419",
+    "NBR 13571"
+   ]
+  },
+  "151507": {
+   "d": "Sapatilha leve de aço carbono galvanizada para cabo de aço 3/8” (10mm), inclusive fixação no cabo",
+   "u": "und",
+   "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1515 – SERVIÇOS DIVERSOS",
+   "atualizacao": "01/2026",
+   "aplicacao": "Utilizada como elemento de proteção e reforço do cabo nas instalações que exigem estaiamento, ancoragem ou amarração, evitando o contato direto do cabo com superfícies rígidas e reduzindo o desgaste por atrito, dobra excessiva e fadiga mecânica. É componente fundamental para assegurar a…",
+   "incluidos": "Fornecimento e instalação da Sapatilha leve para cabo de aço 3/8” (10mm)",
+   "criterio": "Por unidade.",
+   "normas": [
+    "NBR 11900",
+    "NBR 13541",
+    "NBR ISO 4309"
+   ]
+  },
+  "151508": {
+   "d": "Bucha e arruela de alumínio fundido com acabamento liso, diâmetro 20mm (3/4\")",
+   "u": "und",
+   "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1515 – SERVIÇOS DIVERSOS",
+   "atualizacao": "01/2026",
+   "aplicacao": "Utilizadas em instalações elétricas prediais, comerciais e industriais, para fixação e acabamento de eletrodutos em caixas de passagem, quadros, painéis e invólucros metálicos, proporcionando proteção das bordas, alinhamento do eletroduto e melhor distribuição de esforços mecânicos.",
+   "incluidos": "Fornecimento e instalação da bucha e arruela de alumínio fundido.",
+   "criterio": "Por unidade.",
+   "normas": [
+    "NBR 5410",
+    "NBR IEC 61386",
+    "NBR 5598",
+    "NBR 5597"
+   ]
+  },
+  "151509": {
+   "d": "Bucha e arruela de alumínio fundido com acabamento liso, diâmetro 25mm (1\")",
+   "u": "und",
+   "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1515 – SERVIÇOS DIVERSOS",
+   "atualizacao": "01/2026",
+   "aplicacao": "Utilizadas em instalações elétricas prediais, comerciais e industriais, para fixação e acabamento de eletrodutos em caixas de passagem, quadros, painéis e invólucros metálicos, proporcionando proteção das bordas, alinhamento do eletroduto e melhor distribuição de esforços mecânicos.",
+   "incluidos": "Fornecimento e instalação da bucha e arruela de alumínio fundido.",
+   "criterio": "Por unidade.",
+   "normas": [
+    "NBR 5410",
+    "NBR IEC 61386",
+    "NBR 5598",
+    "NBR 5597"
+   ]
+  },
+  "151510": {
+   "d": "Bucha e arruela de alumínio fundido com acabamento liso, diâmetro 40mm (1.1/2\")",
+   "u": "und",
+   "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1515 – SERVIÇOS DIVERSOS",
+   "atualizacao": "01/2026",
+   "aplicacao": "Utilizadas em instalações elétricas prediais, comerciais e industriais, para fixação e acabamento de eletrodutos em caixas de passagem, quadros, painéis e invólucros metálicos, proporcionando proteção das bordas, alinhamento do eletroduto e melhor distribuição de esforços mecânicos.",
+   "incluidos": "Fornecimento e instalação da bucha e arruela de alumínio fundido.",
+   "criterio": "Por unidade.",
+   "normas": [
+    "NBR 5410",
+    "NBR IEC 61386",
+    "NBR 5598",
+    "NBR 5597"
+   ]
+  },
+  "151511": {
+   "d": "Bucha e arruela de alumínio fundido com acabamento liso, diâmetro 80mm (3\")",
+   "u": "und",
+   "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1515 – SERVIÇOS DIVERSOS",
+   "atualizacao": "01/2026",
+   "aplicacao": "Utilizadas em instalações elétricas prediais, comerciais e industriais, para fixação e acabamento de eletrodutos em caixas de passagem, quadros, painéis e invólucros metálicos, proporcionando proteção das bordas, alinhamento do eletroduto e melhor distribuição de esforços mecânicos.",
+   "incluidos": "Fornecimento e instalação da bucha e arruela de alumínio fundido.",
+   "criterio": "Por unidade.",
+   "normas": [
+    "NBR 5410",
+    "NBR IEC 61386",
+    "NBR 5598",
+    "NBR 5597"
+   ]
+  },
+  "151512": {
+   "d": "Chave de nível tipo automático de boia superior/inferior 25A, cabo com 1,20 m",
+   "u": "und",
+   "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1515 – SERVIÇOS DIVERSOS",
+   "atualizacao": "01/2026",
+   "aplicacao": "Utilizado em sistemas de abastecimento e recalque de água, cisternas, caixas d’água e reservatórios em instalações residenciais, comerciais e industriais, possibilitando o acionamento e desligamento automático de bombas elétricas conforme o nível do líquido, prevenindo funcionamento a seco ou…",
+   "incluidos": "Fornecimento e instalação da chave de nível automático de boia.",
+   "criterio": "Por unidade.",
+   "normas": [
+    "NBR 5410",
+    "NBR 5354"
+   ]
+  },
+  "151513": {
+   "d": "Parafuso de máquina galvanizado, com cabeça quadrada, diâmetro nominal 16 mm, comprimento 450 mm",
+   "u": "und",
+   "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1515 – SERVIÇOS DIVERSOS",
+   "atualizacao": "01/2026",
+   "aplicacao": "Utilizado como elemento de fixação e ajuste na montagem e ancoragem de estruturas em postes de rede aérea, sejam eles circulares, perfil duplo T ou postes de madeira, bem como na fixação de diversos tipos de ferragens da rede externa, assegurando estabilidade, alinhamento e segurança do conjunto…",
+   "incluidos": "Fornecimento e instalação do Parafuso de máquina galvanizado, com cabeça quadrada, diâmetro nominal 16 mm, comprimento 450 mm",
+   "criterio": "Por unidade.",
+   "normas": [
+    "NBR 5580",
+    "NBR 6323",
+    "NBR ISO 898-1",
+    "NBR 8158"
+   ]
+  }
+ }
+}

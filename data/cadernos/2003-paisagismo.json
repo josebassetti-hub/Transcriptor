@@ -1,0 +1,74 @@
+{
+ "arquivo": "2003-PAISAGISMO.pdf",
+ "caderno": "20 – SERVIÇOS COMPLEMENTARES EXTERNOS · 2003 – PAISAGISMO",
+ "truncado": false,
+ "fichas": {
+  "200303": {
+   "d": "Fornecimento de grama tipo esmeralda em placas com espessura de 0.06 m, exclusive plantio",
+   "u": "m2",
+   "caderno": "2003 – PAISAGISMO",
+   "atualizacao": "05/2025",
+   "aplicacao": "Utilizada em jardins, em playgrounds, praças públicas, em taludes para evitar a erosão, etc. Geralmente empregada em áreas amplas e abertas.",
+   "incluidos": "Fornecimento de grama tipo esmeralda em placas, incluindo o transporte do material do fornecedor até a obra, a carga, descarga e acondicionamento em local temporário apropriado no canteiro.",
+   "criterio": "m2 (metro quadrado) Medido pela área efetiva de grama em placa fornecida.",
+   "normas": null
+  },
+  "200305": {
+   "d": "Fornecimento e espalhamento de areia média lavada, para plantio",
+   "u": "m3",
+   "caderno": "2003 – PAISAGISMO",
+   "atualizacao": "05/2025",
+   "aplicacao": "Utilizado como camada de proteção ou para estabilização do solo, em serviços de paisagismo (jardins, canteiros etc.). Também pode ser misturada com a terra comum e com a terra vegetal, diminuindo a compactação e proporcionando à mistura um melhor escoamento da água.",
+   "incluidos": "Fornecimento, lançamento, espalhamento e nivelamento da areia média lavada, incluindo o transporte do material da jazida até a obra (inclusive até o local de espalhamento). O empolamento considerado na composição de preço do serviço é de 15%.",
+   "criterio": "m3 (metro cúbico) Medido pelo volume de areia média lavada fornecida e efetivamente espalhada. Não será pago volume de material em excesso, sem necessidade.",
+   "normas": [
+    "NBR 7220:1987"
+   ]
+  },
+  "200306": {
+   "d": "Fornecimento e espalhamento de brita nº 1 ou nº 2 para formação de camada drenante em áreas de paisagismo e canteiros",
+   "u": "m3",
+   "caderno": "2003 – PAISAGISMO",
+   "atualizacao": "05/2025",
+   "aplicacao": "Utilizado como camada drenante em serviços de paisagismo, evitando excesso de água em jardins, canteiros etc.",
+   "incluidos": "Fornecimento, lançamento, espalhamento e nivelamento da pedra britada 1 ou 2, incluindo o transporte do material da jazida até a obra (inclusive até o local de espalhamento). O empolamento considerado na composição de preço do serviço é de 5%.",
+   "criterio": "m3 (metro cúbico) Medido pelo volume de brita fornecida e efetivamente espalhada. Não será pago volume de material em excesso, sem necessidade.",
+   "normas": [
+    "NBR 16917:2021",
+    "NBR 17054:2022"
+   ]
+  },
+  "200307": {
+   "d": "Fornecimento e espalhamento de terra vegetal, para plantio",
+   "u": "m3",
+   "caderno": "2003 – PAISAGISMO",
+   "atualizacao": "05/2025",
+   "aplicacao": "Utilizado em serviços de paisagismo (jardins, canteiros etc.), proporcionando um solo mais macio e nutritivo, servindo como preparo para o plantio de gramas, mudas, plantas, arbustos etc. Evita a compactação do solo e retém nutrientes para as espécies vegetais.",
+   "incluidos": "Fornecimento, lançamento, homogeneização e espalhamento da terra vegetal, incluindo o transporte do material até a obra (inclusive até o local de espalhamento). O empolamento considerado na composição de preço do serviço é de 5%.",
+   "criterio": "m3 (metro cúbico) Medido pelo volume de terra vegetal fornecida e efetivamente espalhada. Não será pago volume de material em excesso, sem necessidade.",
+   "normas": null
+  },
+  "200323": {
+   "d": "Fornecimento e espalhamento de pó de pedra",
+   "u": "m3",
+   "caderno": "2003 – PAISAGISMO",
+   "atualizacao": "05/2025",
+   "aplicacao": "Utilizado em serviços de paisagismo (jardins, canteiros, etc.), podendo em alguns casos substituir a areia. Também pode ser utilizado como base para receber a grama sintética.",
+   "incluidos": "Fornecimento, lançamento, espalhamento e nivelamento de pó de pedra, incluindo o transporte do material da jazida até à obra (inclusive até o local de espalhamento). O empolamento considerado na composição de preço do serviço é de 5%.",
+   "criterio": "m3 (metro cúbico) Medido pelo volume de pó de pedra fornecido e efetivamente espalhado. Não será pago volume de material em excesso, sem necessidade.",
+   "normas": [
+    "NBR 7220:1987"
+   ]
+  },
+  "200326": {
+   "d": "Fornecimento e plantio de grama em placas tipo esmeralda, inclusive fornecimento de terra vegetal",
+   "u": "m2",
+   "caderno": "2003 – PAISAGISMO",
+   "atualizacao": "05/2025",
+   "aplicacao": "Utilizada em jardins, em playgrounds, praças públicas, em taludes para evitar a erosão etc. Geralmente empregada em áreas amplas e abertas.",
+   "incluidos": "Fornecimento, plantio e irrigação da grama tipo esmeralda em placas, incluindo o fornecimento de terra vegetal, o transporte do material do fornecedor até à obra, a carga, a descarga e o transporte horizontal no canteiro até o local do plantio.",
+   "criterio": "m2 (metro quadrado) Medido pela área efetiva de grama em placa fornecida e plantada.",
+   "normas": null
+  }
+ }
+}

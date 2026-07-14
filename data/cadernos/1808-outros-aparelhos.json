@@ -1,0 +1,52 @@
+{
+ "arquivo": "1808-APARELHOS ELETRICOS - OUTROS APARELHOS.pdf",
+ "caderno": "18 – APARELHOS ELÉTRICOS · 1808 – OUTROS APARELHOS",
+ "truncado": false,
+ "fichas": {
+  "180803": {
+   "d": "Campainha elétrica tipo timbre, ref. 412.77 - Pial-Legrand ou equivalente",
+   "u": "und",
+   "caderno": "18 – APARELHOS ELÉTRICOS · 1808 – OUTROS APARELHOS",
+   "atualizacao": "09/2025",
+   "aplicacao": "Destina-se à sinalização sonora em unidades residenciais, comerciais ou institucionais, sendo acionada por interruptor de campainha. Instalada junto à entrada principal ou em pontos estratégicos, garante aviso sonoro eficiente e de fácil identificação.",
+   "incluidos": "Fornecimento e instalação da campainha elétrica, considerando transporte interno do canteiro até o local de instalação.",
+   "criterio": "Por unidade instalada.",
+   "normas": [
+    "NBR 5410",
+    "NBR NM 60884-1",
+    "Portaria INMETRO 371/2009",
+    "NR 10"
+   ]
+  },
+  "180804": {
+   "d": "Campainha elétrica tipo prato, ref. 414.18 - Pial-Legrand ou equivalente",
+   "u": "und",
+   "caderno": "18 – APARELHOS ELÉTRICOS · 1808 – OUTROS APARELHOS",
+   "atualizacao": "09/2025",
+   "aplicacao": "Indicada para sinalização sonora em ambientes internos e semiabertos, em áreas que exijam maior alcance do som, como: portarias, recepções e corredores, áreas comuns em edifícios residenciais e comerciais e ambientes escolares ou escritórios.",
+   "incluidos": "Fornecimento e instalação da campainha tipo prato, considerando transporte interno do canteiro até o local de instalação.",
+   "criterio": "Por unidade instalada.",
+   "normas": [
+    "NBR 5410",
+    "NBR NM 60884-1",
+    "Portaria INMETRO 371/2009",
+    "NR 10"
+   ]
+  },
+  "180809": {
+   "d": "Chuveiro eletrico 3 temperaturas 127/5500W - MAXI DUCHA ULTRA – Lorenzetti ou equivalente",
+   "u": "und",
+   "caderno": "18 – APARELHOS ELÉTRICOS · 1808 – OUTROS APARELHOS",
+   "atualizacao": "09/2025",
+   "aplicacao": "Indicado para o aquecimento de água para banho",
+   "incluidos": "Fornecimento e instalação do chuveiro elétrico, considerando transporte interno do canteiro até o local de instalação.",
+   "criterio": "Por unidade instalada.",
+   "normas": [
+    "NBR 5410",
+    "NBR 5626",
+    "NBR 12483",
+    "NR 10"
+   ]
+  }
+ }
+}

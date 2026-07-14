@@ -1,0 +1,168 @@
+{
+ "arquivo": "2002-PAVIMENTAÇÃO.pdf",
+ "caderno": "20 – SERVIÇOS COMPLEMENTARES EXTERNOS · 2002 – PAVIMENTAÇÃO",
+ "truncado": false,
+ "fichas": {
+  "200202": {
+   "d": "Assentamento de meio-fio pré-moldado de concreto com dimensões de 15 x 12 x 30 x 100 cm, rejuntado com argamassa de cimento e areia no traço 1:3",
+   "u": "m",
+   "caderno": "2002 – PAVIMENTAÇÃO",
+   "atualizacao": "04/2025",
+   "aplicacao": "Elemento fundamental para construção de calçadas, ruas, praças, pátios, áreas de circulação e estacionamentos. Constitui obstáculo/separação entre o tráfego de veículos e o trânsito de pedestres nos passeios, garantindo segurança e contribuindo para a canalização das águas pluviais.",
+   "incluidos": "Fornecimento, preparo e transporte da argamassa, considerando perdas por consumo e transporte interno do canteiro até o local da aplicação, preparação (escavação e apiloamento do fundo) da cava de fundação para execução do meio-fio, demarcação de níveis e alinhamento, incluindo fornecimento, transporte e assentamento das peças pré-moldadas de concreto e execução do rejuntamento entre elas, limpeza do local, com remoção de argamassa, resíduos, materiais excedentes e inaproveitáveis.",
+   "criterio": "m (metro) Pelo comprimento de meio-fio efetivamente executado.",
+   "normas": [
+    "NBR 7211:2005",
+    "NBR 5732:1991",
+    "NBR 7220:1987",
+    "NBR 6118:2023",
+    "NBR 12655:2015"
+   ]
+  },
+  "200206": {
+   "d": "Execução de pavimentação com blocos intertravados de concreto tipo 'pavi-s', espessura de 8 cm e resistência mínima de 35 MPa, assentados sobre colchão de pó de pedra de 10 cm, com rejuntamento em areia, compactação com placa vibratória e cortes com cortadora de piso",
+   "u": "m2",
+   "caderno": "2002 – PAVIMENTAÇÃO",
+   "atualizacao": "04/2025",
+   "aplicacao": "Indicado para pavimentações nas áreas externas às edificações, somente para acesso de pedestres, como por exemplo: junto a jardins, pátios, praças, passeios, etc.",
+   "incluidos": "Fornecimento dos materiais (blocos pré-moldados de concreto, areia média lavada e pó de pedra) e transporte do local de armazenamento no canteiro até o local de execução do pavimento intertravado, considerando eventuais perdas, inclusive execução de mestras. Marcação para o assentamento, lançamento, espalhamento e compactação do pó de pedra (execução da camada de assentamento), assentamento manual dos blocos de concreto, execução de ajustes e arremates com utilização de equipamento para corte das peças. Espalhamento do material (areia média lavada) e rejuntamento das peças (preenchimento dos vazios entre as peças), travamento das peças (compactação) com utilização de compactador de placas vibratórias, limpeza do local, com remoção de resíduos, materiais excedentes e inaproveitáveis.",
+   "criterio": "m2 (metro quadrado) Pela área efetivamente executada de pavimentação com bloco pré-moldado intertravado.",
+   "normas": [
+    "NBR 7211:2005",
+    "NBR 7220:1987",
+    "NBR 9781:2013",
+    "NBR 15953:2011"
+   ]
+  },
+  "200209": {
+   "d": "Execução de passeio cimentado com acabamento camurçado, em argamassa traço 1:3 (cimento e areia) com 1,5 cm de espessura, sobre lastro de concreto de 8 cm, incluindo preparo da caixa",
+   "u": "m2",
+   "caderno": "2002 – PAVIMENTAÇÃO",
+   "atualizacao": "04/2025",
+   "aplicacao": "O passeio é geralmente utilizado como área da plataforma das vias públicas localizada entre o alinhamento das edificações e o meio-fio, sendo destinado também ao tráfego de pedestres nas áreas de circulação e externas aos imóveis.",
+   "incluidos": "Fornecimento, preparo, transporte do concreto para o lastro, das argamassas de regularização e do cimentado, considerando perdas por consumo e transporte interno do canteiro até o local da aplicação. Definição e marcação dos níveis do lastro e camada de regularização, assentamento de taliscas, execução de mestras, lançamento e espalhamento do concreto e da argamassa. Nivelamento e adensamento apropriado do lastro de concreto. Compactação da argamassa, acabamento superficial sarrafeado e desempenado do contrapiso, varredura e lavagem da superfície, umedecimento da superfície e execução de camada de aderência. Fornecimento e assentamento de sarrafos em madeira de lei (preparo de caixa), lançamento, espalhamento e compactação da argamassa, acabamento superficial sarrafeado e rústico (desempenado) do piso cimentado, execução de cura úmida do piso, limpeza final, remoção de resíduos e materiais inaproveitáveis.",
+   "criterio": "m2 (metro quadrado) Medido pela área de passeio cimentado efetivamente executado sobre lastro.",
+   "normas": [
+    "NBR 12655:2022",
+    "NBR 5732:1991",
+    "NBR 7220:1987",
+    "NBR 7211:2005",
+    "NBR 7203:1982",
+    "Decreto Estadual nº 1.941-R/2007",
+    "NBR 9050:2020",
+    "NBR 12255:1990"
+   ]
+  },
+  "200214": {
+   "d": "Execução de pavimentação com blocos intertravados de concreto tipo 'pavi-s', espessura de 10 cm e resistência mínima de 35 MPa, assentados sobre colchão de pó de pedra de 10 cm, com rejuntamento em areia, compactação com placa vibratória e cortes com cortadora de piso",
+   "u": "m2",
+   "caderno": "2002 – PAVIMENTAÇÃO",
+   "atualizacao": "04/2025",
+   "aplicacao": "Indicado para pavimentações nas áreas externas às edificações, somente para acesso de pedestres, como por exemplo: junto a jardins, pátios, praças, passeios, etc.",
+   "incluidos": "Fornecimento dos materiais (blocos pré-moldados de concreto, areia média lavada e pó de pedra) e transporte do local de armazenamento no canteiro até o local de execução do pavimento intertravado, considerando eventuais perdas, inclusive execução de mestras. Marcação para o assentamento, lançamento, espalhamento e compactação do pó de pedra (execução da camada de assentamento), assentamento manual dos blocos de concreto, execução de ajustes e arremates com utilização de equipamento para corte das peças. Espalhamento do material (areia média lavada) e rejuntamento das peças (preenchimento dos vazios entre as peças), travamento das peças (compactação) com utilização de compactador de placas vibratórias, limpeza do local, com remoção de resíduos, materiais excedentes e inaproveitáveis.",
+   "criterio": "m2 (metro quadrado) Pela área efetivamente executada de pavimentação com bloco pré-moldado intertravado.",
+   "normas": [
+    "NBR 7211:2005",
+    "NBR 7220:1987",
+    "NBR 9781:2013",
+    "NBR 15953:2011"
+   ]
+  },
+  "200223": {
+   "d": "Execução de lastro de brita nº 2, aplicado sob passeios e ciclovias, compreendendo a escavação do terreno natural, nivelamento e compactação mecânica da base, bem como o fornecimento, espalhamento e regularização da camada de brita",
+   "u": "m3",
+   "caderno": "2002 – PAVIMENTAÇÃO",
+   "atualizacao": "04/2025",
+   "aplicacao": "Utilizado como preparação de terreno para execução de pavimentação de passeios e ciclovias.",
+   "incluidos": "Fornecimento da toda a brita nº 02 necessária à execução do lastro, transporte da brita da jazida até à obra inclusive até o local de execução do lastro, escavação (preparação) da “caixa”, compactação mecanizada da base, lançamento, espalhamento e apiloamento manual da pedra britada. O empolamento considerado na composição de preço do serviço é de 20%.",
+   "criterio": "m3 (metro cúbico) Medido pelo volume de lastro de brita efetivamente apiloado. Não será pago lastro em excesso, sem necessidade.",
+   "normas": [
+    "NBR 11806:1991",
+    "NBR 5681:2015",
+    "NBR 15115:2004"
+   ]
+  },
+  "200229": {
+   "d": "Execução de meio-fio de concreto moldado in loco, com dimensões de 10 x 30 cm, utilizando fôrmas de chapa compensada resinada de 6 mm, incluindo escavação, reaterro e bota-fora",
+   "u": "m",
+   "caderno": "2002 – PAVIMENTAÇÃO",
+   "atualizacao": "04/2025",
+   "aplicacao": "Elemento fundamental para construção de calçadas, ruas, praças, pátios, áreas de circulação e estacionamentos. Constitui obstáculo/separação entre o tráfego de veículos e o trânsito de pedestres nos passeios, garantindo segurança e contribuindo para a canalização das águas pluviais.",
+   "incluidos": "Preparação (escavação e apiloamento do fundo) da cava de fundação para execução do meio-fio, demarcação de níveis e alinhamento, incluindo fornecimento da argamassa e vedação das juntas de dilatação, reaterro apiloado do material escavado e bota-fora de material excedente. Fornecimento e corte das chapas compensadas e dos sarrafos para fabricação da fôrma, incluindo pregos, considerando eventuais perdas, transporte interno do canteiro até o local da montagem, nivelamento, travamento, aplicação de desmoldante e desforma. Fornecimento e preparo com amassamento mecânico do concreto, considerando perdas por consumo e transporte interno no canteiro até o local da aplicação, lançamento, espalhamento, adensamento, acabamento e cura do concreto para execução do meio-fio, incluindo fornecimento da argamassa e vedação das juntas de dilatação, limpeza do local, com remoção de argamassa, concreto, restos de madeira, materiais excedentes e inaproveitáveis.",
+   "criterio": "m (metro) Pelo comprimento de meio-fio efetivamente executado.",
+   "normas": [
+    "NBR 7211:2005",
+    "NBR 5732:1991",
+    "NBR 7220:1987",
+    "NBR 6118:2023",
+    "NBR 12655:2015",
+    "NBR 7203:1982",
+    "Decreto Estadual nº 1.941-R/2007"
+   ]
+  },
+  "200237": {
+   "d": "Blocos pré-moldados de concreto intertravados tipo pavi-s ou equivalente, esp. de 6 cm e resistência a compressão mínima de 35MPa, assentados sobre colchão de pó de pedra na espessura de 10 cm e rejuntamento com areia, utilizando compactador de placa vibratória e cortadora de piso",
+   "u": "m2",
+   "caderno": "2002 – PAVIMENTAÇÃO",
+   "atualizacao": "04/2025",
+   "aplicacao": "Indicado para pavimentações nas áreas externas às edificações, somente para acesso de pedestres, como por exemplo: junto a jardins, pátios, praças, passeios, etc.",
+   "incluidos": "Fornecimento dos materiais (blocos pré-moldados de concreto, areia média lavada e pó de pedra) e transporte do local de armazenamento no canteiro até o local de execução do pavimento intertravado, considerando eventuais perdas, inclusive execução de mestras. Marcação para o assentamento, lançamento, espalhamento e compactação do pó de pedra (execução da camada de assentamento), assentamento manual dos blocos de concreto, execução de ajustes e arremates com utilização de equipamento para corte das peças. Espalhamento do material (areia média lavada) e rejuntamento das peças (preenchimento dos vazios entre as peças), travamento das peças (compactação) com utilização de compactador de placas vibratórias, limpeza do local, com remoção de resíduos, materiais excedentes e inaproveitáveis.",
+   "criterio": "m2 (metro quadrado) Pela área efetivamente executada de pavimentação com bloco pré-moldado intertravado.",
+   "normas": [
+    "NBR 7211:2005",
+    "NBR 7220:1987",
+    "NBR 9781:2013",
+    "NBR 15953:2011"
+   ]
+  },
+  "200243": {
+   "d": "Canaleta embutida no piso em concreto simples, com dimensões internas de 20 cm x 10 cm, equipada com grelha metálica composta por barras de ferro de 1/2\" de diâmetro, espaçadas a cada 3 cm. As barras são fixadas em cantoneira de 3/4\" x 1/8\", apoiada sobre requadro em cantoneira de 1\" x 3/16\"",
+   "u": "m",
+   "caderno": "2002 – PAVIMENTAÇÃO",
+   "atualizacao": "04/2025",
+   "aplicacao": "Utilizada em pátios pavimentados, praças e junto aos estacionamentos, com fluxo de pedestres, nas passagens com fluxo de água superficial, encaminhando as águas drenadas para o sistema de drenagem.",
+   "incluidos": "Preparação (escavação e apiloamento do fundo) da cava de fundação para execução da canaleta, demarcação de níveis e alinhamento. Fornecimento e corte das tábuas e dos sarrafos para fabricação das fôrmas, incluindo pregos, considerando eventuais perdas, transporte interno do canteiro até o local da montagem, nivelamento, travamento, aplicação de desmoldante e desforma. Fornecimento e preparo com amassamento mecânico do concreto, considerando perdas por consumo e transporte interno no canteiro até o local da aplicação. Lançamento, espalhamento, adensamento, sarrafeamento, acabamento e cura do concreto para execução da canaleta, incluindo fornecimento e instalação do requadro em cantoneira de ferro e da grelha de ferro. Limpeza do local, com remoção de material escavado, concreto, restos de madeira, materiais excedentes e inaproveitáveis.",
+   "criterio": "m (metro) Pelo comprimento de canaleta efetivamente executada.",
+   "normas": [
+    "NBR 7211:2005",
+    "NBR 5732:1991",
+    "NBR 7220:1987",
+    "NBR 6118:2023",
+    "NBR 12655:2015",
+    "NBR 7203:1982",
+    "Decreto Estadual nº 1.941-R/2007",
+    "NBR 7007:2022"
+   ]
+  },
+  "200253": {
+   "d": "Fornecimento e assentamento de ladrilho hidráulico pastilhado (tátil de alerta), vermelho, dim. 20x20 cm, esp. 1.5cm, assentado com pasta de cimento colante AC-I, exclusive regularização e lastro",
+   "u": "m2",
+   "caderno": "2002 – PAVIMENTAÇÃO",
+   "atualizacao": "04/2025",
+   "aplicacao": "Revestimento tipo tátil de alerta, indicado para assentamento em ambientes externos, como passeios, calçadas, pátios, praças, junto a jardins e estacionamento, etc.",
+   "incluidos": "Fornecimento e preparo da argamassa de assentamento, considerando perdas por consumo, transporte interno do canteiro até o local de assentamento, umedecimento da superfície de base, fornecimento e assentamento do ladrilho hidráulico e limpeza das superfícies revestidas.",
+   "criterio": "m2 (metro quadrado) Pela área real de ladrilho hidráulico assentado.",
+   "normas": [
+    "NBR 9050:2020",
+    "NBR 12255:1990",
+    "NBR 14081-1:2012",
+    "NBR 9457:2013"
+   ]
+  },
+  "200254": {
+   "d": "Fornecimento e assentamento de ladrilho hidráulico ranhurado (tátil direcional), vermelho, dim. 20x20 cm, esp. 1.5cm, assentado com pasta de cimento colante AC-I, exclusive regularização e lastro",
+   "u": "m2",
+   "caderno": "2002 – PAVIMENTAÇÃO",
+   "atualizacao": "04/2025",
+   "aplicacao": "Revestimento tipo tátil direcional, indicado para assentamento em ambientes externos, como passeios, calçadas, pátios, praças, junto a jardins e estacionamento, etc.",
+   "incluidos": "Fornecimento e preparo da argamassa de assentamento, considerando perdas por consumo, transporte interno do canteiro até o local de assentamento, umedecimento da superfície de base, fornecimento e assentamento do ladrilho hidráulico e limpeza das superfícies revestidas.",
+   "criterio": "m2 (metro quadrado) Pela área real de ladrilho hidráulico assentado.",
+   "normas": [
+    "NBR 9050:2020",
+    "NBR 12255:1990",
+    "NBR 14081-1:2012",
+    "NBR 9457:2013"
+   ]
+  }
+ }
+}

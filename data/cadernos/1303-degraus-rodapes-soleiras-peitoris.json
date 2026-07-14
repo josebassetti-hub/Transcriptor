@@ -1,0 +1,161 @@
+{
+ "arquivo": "1303-DEGRAUS, RODAPÉS, SOLEIRAS E PEITORIS.pdf",
+ "caderno": "13 – PISOS INTERNOS E EXTERNOS · 1303 – DEGRAUS, RODAPÉS, SOLEIRAS E PEITORIS",
+ "truncado": false,
+ "fichas": {
+  "130301": {
+   "d": "Rodapé de argamassa de cimento e areia no traço 1:3, altura de 7 cm e espessura de 2 cm",
+   "u": "m",
+   "caderno": "13 – PISOS INTERNOS E EXTERNOS · 1303 – DEGRAUS, RODAPÉS, SOLEIRAS E PEITORIS",
+   "atualizacao": "04/2024",
+   "aplicacao": "Elemento indicado para as áreas que irão receber a execução de piso cimentado.",
+   "incluidos": "Fornecimento, preparo e transporte da argamassa, considerando perdas por consumo e transporte interno do canteiro até o local da aplicação, umedecimento da superfície, execução de camada de aderência, assentamento de ripas de madeira (mestras), lançamento, compactação e sarrafeamento da argamassa, acabamento superficial desempenado do rodapé, execução de cura úmida e limpeza final.",
+   "criterio": "m (metro) Pelo perímetro do ambiente e metragem de rodapé efetivamente executado, descontando-se todos os vãos.",
+   "normas": [
+    "NBR 5732:1991",
+    "NBR 7220:1987"
+   ]
+  },
+  "130303": {
+   "d": "Rodapé de cerâmica PEI-3 altura: 7,0 cm, assentado com argamassa de cimento cola, inclusive rejuntamento com cimento branco",
+   "u": "m",
+   "caderno": "13 – PISOS INTERNOS E EXTERNOS · 1303 – DEGRAUS, RODAPÉS, SOLEIRAS E PEITORIS",
+   "atualizacao": "04/2024",
+   "aplicacao": "Elemento indicado para assentamento em ambientes sem presença de umidade, preferencialmente nas áreas que irão receber a instalação de piso cerâmico. Em ambientes com umidade (banheiros e cozinhas), já revestidos por placas cerâmicas, o uso de rodapé não é necessário.",
+   "incluidos": "Fornecimento do rodapé, da argamassa de assentamento e pasta de rejuntamento, considerando perdas por consumo e transporte interno do canteiro até o local de assentamento, inclusive preparo da argamassa e do rejunte, assentamento do rodapé (inclusive espaçadores), execução do rejuntamento e limpeza das peças.",
+   "criterio": "m (metro) Pelo perímetro do ambiente e metragem de rodapé efetivamente assentado, descontando-se todos os vãos.",
+   "normas": [
+    "NBR 9817:1987",
+    "NBR 13753:1996",
+    "NBR 14081-1:2012"
+   ]
+  },
+  "130304": {
+   "d": "Rodapé de madeira de lei 7 x 1,50 cm, fixado com parafuso e bucha plástica nº 7",
+   "u": "m",
+   "caderno": "13 – PISOS INTERNOS E EXTERNOS · 1303 – DEGRAUS, RODAPÉS, SOLEIRAS E PEITORIS",
+   "atualizacao": "04/2024",
+   "aplicacao": "Em ambientes internos como auditório, arquivos e ambientes administrativos, sem presença de água e umidade, não sujeitos à lavagem, preferencialmente em ambientes que receberam a instalação de piso de madeira.",
+   "incluidos": "Fornecimento de peças de madeira de lei, parafusos e buchas, considerando perdas por consumo e transporte interno do canteiro até o local de instalação, execução de furos com furadeira e fixação do rodapé, calafetação e limpeza das peças de madeira.",
+   "criterio": "m (metro) Pelo perímetro do ambiente e metragem de rodapé efetivamente instalado, descontando-se todos os vãos.",
+   "normas": [
+    "NBR 7203:1982",
+    "Decreto Estadual nº 1.941-R/2007"
+   ]
+  },
+  "130307": {
+   "d": "Peitoril de mármore branco largura 40 cm e espessura 3 cm, assentado com argamassa de cimento, cal hidratada CH1 e areia no traço 1:0,5:8",
+   "u": "m",
+   "caderno": "13 – PISOS INTERNOS E EXTERNOS · 1303 – DEGRAUS, RODAPÉS, SOLEIRAS E PEITORIS",
+   "atualizacao": "04/2024",
+   "aplicacao": "Elemento indicado para assentamento em vãos de esquadrias (janelas), em ambientes internos às edificações, não sujeitos à ação de chuva e lavagem com água, visto que são peças desprovidas de pingadeiras.",
+   "incluidos": "Fornecimento da peça de mármore e argamassa de assentamento, considerando perdas por consumo e transporte interno do canteiro até o local de assentamento, inclusive preparo da argamassa, corte e arremate de trecho do vão (para encaixe da peça de mármore), assentamento e limpeza do peitoril.",
+   "criterio": "m (metro) Pelo comprimento efetivo da peça de mármore (peitoril) colocada.",
+   "normas": [
+    "NBR 15844:2010"
+   ]
+  },
+  "130308": {
+   "d": "Soleira de granito cinza andorinha largura de 15 cm e espessura 2 cm, assentado com argamassa de cimento, cal hidratada CH1 e areia no traço 1:0,5:8",
+   "u": "m",
+   "caderno": "13 – PISOS INTERNOS E EXTERNOS · 1303 – DEGRAUS, RODAPÉS, SOLEIRAS E PEITORIS",
+   "atualizacao": "04/2024",
+   "aplicacao": "Elemento indicado para assentamento em locais de acesso público em geral, para transição de ambientes que tenham pisos com características diferentes e cujas paredes tenham a mesma largura da peça de granito (15 centímetros).",
+   "incluidos": "Fornecimento da peça de granito e argamassa de assentamento, considerando perdas por consumo e transporte interno do canteiro até o local de assentamento, inclusive preparo da argamassa, assentamento e limpeza da soleira.",
+   "criterio": "m (metro) Pelo comprimento efetivo da peça de granito (soleira) colocada.",
+   "normas": [
+    "NBR 15844:2010"
+   ]
+  },
+  "130311": {
+   "d": "Soleira de granito cinza andorinha polido, largura de 3 cm e espessura 3 cm, assentado com argamassa de cimento, cal hidratada CH1 e areia no traço 1:0,5:8",
+   "u": "m",
+   "caderno": "13 – PISOS INTERNOS E EXTERNOS · 1303 – DEGRAUS, RODAPÉS, SOLEIRAS E PEITORIS",
+   "atualizacao": "04/2024",
+   "aplicacao": "Elemento indicado para assentamento em locais de acesso público em geral, para transição de ambientes que tenham pisos com características diferentes. Geralmente utilizado na transição para ambientes de áreas molhadas (banheiros, sanitários, cozinhas, etc.).",
+   "incluidos": "Fornecimento da peça de granito e argamassa de assentamento, considerando perdas por consumo e transporte interno do canteiro até o local de assentamento, inclusive preparo da argamassa, assentamento e limpeza da soleira.",
+   "criterio": "m (metro) Pelo comprimento efetivo da peça de granito (soleira) colocada.",
+   "normas": [
+    "NBR 15844:2010"
+   ]
+  },
+  "130315": {
+   "d": "Rodapé de granito cinza andorinha altura de 7 cm e espessura de 2 cm, assentado com argamassa de cimento, cal hidratada CH1 e areia no traço 1:0,5:8, inclusive rejuntamento com cimento branco",
+   "u": "m",
+   "caderno": "13 – PISOS INTERNOS E EXTERNOS · 1303 – DEGRAUS, RODAPÉS, SOLEIRAS E PEITORIS",
+   "atualizacao": "04/2024",
+   "aplicacao": "Elemento indicado para assentamento em locais de acesso público em geral, como ambientes administrativos, bibliotecas, refeitórios, salas de aula, circulação, etc. Em ambientes com umidade (banheiros e cozinhas), já revestidos por placas cerâmicas, o uso de rodapé não é necessário.",
+   "incluidos": "Fornecimento das peças de granito, argamassa de assentamento e pasta de rejuntamento, considerando perdas por consumo e transporte interno do canteiro até o local de assentamento, inclusive preparo da argamassa e do rejunte, assentamento do rodapé, execução do rejuntamento e limpeza das peças.",
+   "criterio": "m (metro) Pelo perímetro do ambiente e metragem de rodapé de granito efetivamente colocado, com base em seu comprimento efetivo, considerando-se toda e qualquer deflexão, descontando-se todos os vãos.",
+   "normas": [
+    "NBR 15844:2010"
+   ]
+  },
+  "130317": {
+   "d": "Peitoril de granito cinza andorinha polido, largura de 15 cm, espessura de 3 cm",
+   "u": "m",
+   "caderno": "13 – PISOS INTERNOS E EXTERNOS · 1303 – DEGRAUS, RODAPÉS, SOLEIRAS E PEITORIS",
+   "atualizacao": "04/2024",
+   "aplicacao": "Elemento indicado para assentamento em vãos de esquadrias (janelas), em ambientes internos às edificações, não sujeitos à ação de chuva e lavagem com água, visto que são peças desprovidas de pingadeiras.",
+   "incluidos": "Fornecimento da peça de granito e argamassa de assentamento, considerando perdas por consumo e transporte interno do canteiro até o local de assentamento, inclusive preparo da argamassa, corte e arremate de trecho do vão (para encaixe da peça de granito), assentamento e limpeza do peitoril.",
+   "criterio": "m (metro) Pelo comprimento efetivo da peça de granito (peitoril) colocada.",
+   "normas": [
+    "NBR 15844:2010"
+   ]
+  },
+  "130320": {
+   "d": "Rodapé de cerâmica PEI-3 altura: 7,0 cm, assentado com argamassa de cimento, cal e areia, inclusive rejuntamento com cimento branco",
+   "u": "m",
+   "caderno": "13 – PISOS INTERNOS E EXTERNOS · 1303 – DEGRAUS, RODAPÉS, SOLEIRAS E PEITORIS",
+   "atualizacao": "04/2024",
+   "aplicacao": "Elemento indicado para assentamento em ambientes sem presença de umidade, preferencialmente nas áreas que irão receber a instalação de piso cerâmico. Em ambientes com umidade (banheiros e cozinhas), já revestidos por placas cerâmicas, o uso de rodapé não é necessário.",
+   "incluidos": "Fornecimento do rodapé (com imersão das peças em água limpa), da argamassa de assentamento e pasta de rejuntamento, considerando perdas por consumo e transporte interno do canteiro até o local de assentamento, inclusive preparo da argamassa e do rejunte, assentamento do rodapé (inclusive espaçadores), execução do rejuntamento e limpeza das peças.",
+   "criterio": "m (metro) Pelo perímetro do ambiente e metragem de rodapé efetivamente assentado, descontando-se todos os vãos.",
+   "normas": [
+    "NBR 9817:1987"
+   ]
+  },
+  "130321": {
+   "d": "Rodapé de granito cinza andorinha polido altura: 7 cm e espessura: 2 cm, assentado com argamassa de cimento, cal hidratada CH1 e areia no traço 1:0,5:8, inclusive rejuntamento com cimento branco",
+   "u": "m",
+   "caderno": "13 – PISOS INTERNOS E EXTERNOS · 1303 – DEGRAUS, RODAPÉS, SOLEIRAS E PEITORIS",
+   "atualizacao": "04/2024",
+   "aplicacao": "Elemento indicado para assentamento em locais de acesso público em geral, como ambientes administrativos, bibliotecas, refeitórios, salas de aula, circulação, etc. Em ambientes com umidade (banheiros e cozinhas), já revestidos por placas cerâmicas, o uso de rodapé não é necessário.",
+   "incluidos": "Fornecimento das peças de granito, argamassa de assentamento e pasta de rejuntamento, considerando perdas por consumo e transporte interno do canteiro até o local de assentamento, inclusive preparo da argamassa e do rejunte, assentamento do rodapé, execução do rejuntamento e limpeza das peças.",
+   "criterio": "m (metro) Pelo perímetro do ambiente e metragem de rodapé de granito efetivamente colocado, com base em seu comprimento efetivo, considerando-se toda e qualquer deflexão, descontando-se todos os vãos.",
+   "normas": [
+    "NBR 15844:2010"
+   ]
+  },
+  "130322": {
+   "d": "Rodapé de argamassa alta resistência tipo granilite ou equivalente de qualidade comprovada, altura: 10 cm e espessura: 10 mm, com cantos boleados, executado com cimento e granitina grana N.1, inclusive polimento",
+   "u": "m",
+   "caderno": "13 – PISOS INTERNOS E EXTERNOS · 1303 – DEGRAUS, RODAPÉS, SOLEIRAS E PEITORIS",
+   "atualizacao": "04/2024",
+   "aplicacao": "Elemento indicado para as áreas que irão receber a execução de piso granilite.",
+   "incluidos": "Fornecimento, preparo, transporte, lançamento e espalhamento da argamassa do granilite, considerando perdas por consumo e transporte interno do canteiro até o local da aplicação, varredura, lavagem e umedecimento da superfície de base, execução de camada de aderência, execução e polimento superficial mecanizado do rodapé, cura e limpeza final.",
+   "criterio": "m (metro) Pelo perímetro do ambiente e metragem de rodapé efetivamente executado, descontando-se todos os vãos.",
+   "normas": [
+    "NBR 5732:1991",
+    "NBR 7220:1987",
+    "NBR 11801:2012",
+    "NBR 12260:2012"
+   ]
+  },
+  "130323": {
+   "d": "Soleira de argamassa alta resistência tipo granilite ou equivalente de qualidade comprovada, largura: 15 cm, executado com cimento e granitina grana N.1",
+   "u": "m",
+   "caderno": "13 – PISOS INTERNOS E EXTERNOS · 1303 – DEGRAUS, RODAPÉS, SOLEIRAS E PEITORIS",
+   "atualizacao": "04/2024",
+   "aplicacao": "Elemento indicado para assentamento em locais de acesso público em geral, para transição de ambientes diferentes que tenham pisos de granilite e cujas paredes tenham a mesma largura da soleira (quinze centímetros).",
+   "incluidos": "Fornecimento, preparo, transporte, lançamento e espalhamento da argamassa do granilite, considerando perdas por consumo e transporte interno do canteiro até o local da aplicação, varredura, lavagem e umedecimento da superfície de base, execução de camada de aderência, execução e acabamento superficial desempenado da soleira, cura e limpeza final.",
+   "criterio": "m (metro) Pelo comprimento efetivo da soleira executada.",
+   "normas": [
+    "NBR 5732:1991",
+    "NBR 7220:1987",
+    "NBR 11801:2012",
+    "NBR 12260:2012"
+   ]
+  }
+ }
+}

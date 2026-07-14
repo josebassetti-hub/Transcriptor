@@ -1,0 +1,44 @@
+{
+ "arquivo": "0303-TRANSPORTES.pdf",
+ "caderno": "03 – MOVIMENTO DE TERRA · 0303 – TRANSPORTES",
+ "truncado": false,
+ "fichas": {
+  "030304": {
+   "d": "Índice de preço para remoção de entulho decorrente da execução de obras (Classe A CONAMA – NBR 10.004 – Classe II-B), incluindo aluguel de caçamba, carga, transporte e descarga em área licenciada",
+   "u": "m3",
+   "caderno": "03 – MOVIMENTO DE TERRA · 0303 – TRANSPORTES",
+   "atualizacao": "04/2024",
+   "aplicacao": "Acondicionamento, transporte, remoção e deposição de entulho proveniente da construção, demolição, reformas e reparo em edificações, sendo os resíduos resultantes classificados em Classe A CONAMA – NBR 10.004 – Classe II-B (inertes), como: componentes cerâmicos (tijolos, blocos, telhas…",
+   "incluidos": "Aluguel de caçamba por período de 3 a 4 dias, sinalização e cercamento do local de estadia da caçamba, transporte de entulho dentro dos limites da obra, instalação de rampas, carregamento manual da caçamba, transporte até o bota-fora licenciado e descarga no destino.",
+   "criterio": "m3 (metro cúbico) O serviço será pago conforme volume de entulho e resíduos removidos, considerando-se, quando diretamente associado a serviços de demolições em geral, o volume efetivo das peças demolidas, acrescido de um índice médio de empolamento igual a 30% (trinta por cento).",
+   "normas": [
+    "NBR 10.004:2004",
+    "NR 18"
+   ]
+  },
+  "030305": {
+   "d": "Transporte de material encosta acima, serviço inteiramente manual, a 10 m de distância, considerados ao longo da encosta, inclusive carga e descarga (txdam)",
+   "u": "und",
+   "caderno": "03 – MOVIMENTO DE TERRA · 0303 – TRANSPORTES",
+   "atualizacao": "04/2024",
+   "aplicacao": "Transporte manual de materiais diversos como solos para terraplanagem, cimento, areia, brita, entulho etc., em taludes, ribanceiras ou trechos inclinados.",
+   "incluidos": "Carregamento manual do material, transporte do material encosta acima em carrinho de mão, giricas ou ferramenta similar, descarga no destino na obra.",
+   "criterio": "txdam (tonelada vezes decâmetro) Medido pela quantidade efetiva de material em peso (toneladas), transportada de forma manual, da parte inferior para a parte superior da encosta, em frações de dez metros (10 m) de distância.",
+   "normas": [
+    "NR 18"
+   ]
+  },
+  "030306": {
+   "d": "Transporte de material encosta abaixo, serviço inteiramente manual, a 10 m de distância, considerados ao longo da encosta, inclusive carga e descarga (txdam)",
+   "u": "und",
+   "caderno": "03 – MOVIMENTO DE TERRA · 0303 – TRANSPORTES",
+   "atualizacao": "04/2024",
+   "aplicacao": "Transporte manual de materiais diversos como solos para terraplanagem, cimento, areia, brita, entulho etc., em taludes, ribanceiras ou trechos inclinados.",
+   "incluidos": "Carregamento manual do material, transporte do material encosta abaixo em carrinho de mão, giricas ou ferramenta similar, descarga no destino na obra.",
+   "criterio": "txdam (tonelada vezes decâmetro) Medido pela quantidade efetiva de material em peso (toneladas), transportada de forma manual, da parte superior para a parte inferior da encosta, em frações de dez metros (10 m) de distância.",
+   "normas": [
+    "NR 18"
+   ]
+  }
+ }
+}

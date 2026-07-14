@@ -1,0 +1,46 @@
+{
+ "arquivo": "2004-TRATAMENTO, CONSERVAÇÃO E LIMPEZA.pdf",
+ "caderno": "20 – SERVIÇOS COMPLEMENTARES EXTERNOS · 2004 – TRATAMENTO, CONSERVAÇÃO E LIMPEZA",
+ "truncado": false,
+ "fichas": {
+  "200401": {
+   "d": "Limpeza geral da obra (edificação)",
+   "u": "m2",
+   "caderno": "2004 – TRATAMENTO, CONSERVAÇÃO E LIMPEZA",
+   "atualizacao": "05/2025",
+   "aplicacao": "Utilizada após a execução de uma intervenção (construção, reforma, ampliação, manutenção, etc.) nos ambientes de uma edificação.",
+   "incluidos": "Limpeza geral de superfícies, peças e aparelhos dos ambientes da edificação, considerando escovação, raspagem, varrição, lavagem com a utilização de água, acessórios e materiais de limpeza apropriados. Remoção adequada e completa de entulhos, restos de materiais, andaimes e outros equipamentos.",
+   "criterio": "m2 (metro quadrado) Pela área efetiva (construída) de limpeza da edificação.",
+   "normas": [
+    "NBR 10004:2004",
+    "NR 18"
+   ]
+  },
+  "200402": {
+   "d": "Limpeza geral de obras (quadras, praças e jardins)",
+   "u": "m2",
+   "caderno": "2004 – TRATAMENTO, CONSERVAÇÃO E LIMPEZA",
+   "atualizacao": "05/2025",
+   "aplicacao": "Utilizada após a execução de uma intervenção (construção, reforma, ampliação, manutenção, etc.) nas áreas externas de uma obra.",
+   "incluidos": "Limpeza geral de áreas externas, considerando escovação, raspagem, varrição, lavagem com a utilização de água, pano, acessórios e materiais de limpeza apropriados. Remoção adequada e completa de entulhos, restos de materiais, andaimes e outros equipamentos.",
+   "criterio": "m2 (metro quadrado) Pela área efetiva de limpeza de uma obra.",
+   "normas": [
+    "NBR 10004:2004",
+    "NR 18"
+   ]
+  },
+  "200404": {
+   "d": "Limpeza de pisos e revestimentos cerâmicos, utilizando detergente neutro, escovação manual e vassoura a seco",
+   "u": "m2",
+   "caderno": "2004 – TRATAMENTO, CONSERVAÇÃO E LIMPEZA",
+   "atualizacao": "05/2025",
+   "aplicacao": "Utilizada após a execução de uma intervenção de substituição parcial, completa ou manutenção em pisos e revestimentos cerâmicos, nos ambientes de uma edificação.",
+   "incluidos": "Fornecimento dos materiais e mão de obra para execução, inclusive escovação manual, raspagem, varrição, lavagem com a utilização de detergente neutro e água, acessórios e materiais de limpeza apropriados. Remoção adequada e completa de resíduos e restos de materiais.",
+   "criterio": "m2 (metro quadrado) Pela área efetiva de limpeza de pisos e revestimentos cerâmicos.",
+   "normas": [
+    "NBR 10004:2004",
+    "NR 18"
+   ]
+  }
+ }
+}

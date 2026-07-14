@@ -1,0 +1,355 @@
+{
+ "arquivo": "04-ESTRUTURA.pdf",
+ "caderno": "04 – ESTRUTURAS · 0402 – INFRA-ESTRUTURA (FUNDAÇÃO) · 0403 – SUPER-ESTRUTURA",
+ "truncado": true,
+ "fichas": {
+  "040202": {
+   "d": "Fornecimento, preparo e aplicação de concreto ciclópico Fck=15MPa com 30% de pedra de mão",
+   "u": "m3",
+   "caderno": "0402 – INFRA-ESTRUTURA (FUNDAÇÃO)",
+   "atualizacao": "11/2024",
+   "aplicacao": "Utilizado em muros de contenção e alguns tipos de fundações, que geralmente não necessitam de armadura. O emprego do concreto ciclópico é recomendado em peças de grandes dimensões e com maquinário específico; em pequenas obras pode gerar problemas de recebimento, armazenamento e transporte da rocha.",
+   "incluidos": "Fornecimento e preparo com amassamento mecânico da massa de concreto, considerando perdas por consumo e transporte interno no canteiro até o local da aplicação, inclusive fornecimento da pedra de mão, lançamento, espalhamento, adensamento, acabamento, cura do concreto e limpeza da área, com remoção dos materiais excedentes e inaproveitáveis.",
+   "criterio": "m3 (metro cúbico) Pelo volume de concreto calculado no projeto de fôrma.",
+   "normas": [
+    "NBR 12655:2022",
+    "NBR 5732:1991",
+    "NBR 7220:1987",
+    "NBR 7211:2005",
+    "NBR 7225:2009",
+    "NBR 12655:2015",
+    "NBR 6118:2023",
+    "NR 18"
+   ]
+  },
+  "040206": {
+   "d": "Fôrma de tábua de madeira de 2.5 x 30.0 cm para fundações, levando-se em conta a utilização 5 vezes (incluindo o material, corte, montagem, escoramento e desforma)",
+   "u": "m2",
+   "caderno": "0402 – INFRA-ESTRUTURA (FUNDAÇÃO)",
+   "atualizacao": "11/2024",
+   "aplicacao": "Nos elementos estruturais de infraestrutura (fundações), como por exemplo: sapatas, blocos, cintas, baldrames, radier, etc. As fôrmas têm que ser capazes de resistir à pressão resultante do lançamento e vibração do concreto.",
+   "incluidos": "Fornecimento e corte dos materiais (madeira para 5 utilizações) para fabricação da fôrma, inclusive pregos, considerando eventuais perdas, transporte interno do canteiro até o local da montagem, escoramento, nivelamento, aplicação de desmoldante, desfôrma e limpeza da área, com remoção dos materiais excedentes e inaproveitáveis.",
+   "criterio": "m2 (metro quadrado) Pela área da superfície da fôrma em contato com o concreto, efetivamente realizada, sendo descontadas as áreas de interseção.",
+   "normas": [
+    "NBR 7203:1982",
+    "NBR 14931:2023",
+    "NBR 6118:2023",
+    "NBR 6627:1981",
+    "NBR 15696:2009",
+    "NR 18",
+    "Decreto Estadual nº 1.941-R/2007"
+   ]
+  },
+  "040224": {
+   "d": "Fornecimento, preparo e aplicação de concreto Fck=30 MPa (brita 1 e 2) - (5% de perdas já incluído no custo)",
+   "u": "m3",
+   "caderno": "0402 – INFRA-ESTRUTURA (FUNDAÇÃO)",
+   "atualizacao": "11/2024",
+   "aplicacao": "Nos elementos estruturais de infraestrutura (fundações), como por exemplo: sapatas, blocos, cintas, baldrames, radier, etc.",
+   "incluidos": "Fornecimento e preparo com amassamento mecânico do concreto, considerando perdas por consumo e transporte interno no canteiro até o local da aplicação, lançamento, espalhamento, adensamento, acabamento, cura do concreto e limpeza da área, com remoção dos materiais excedentes e inaproveitáveis.",
+   "criterio": "m3 (metro cúbico) Pelo volume de concreto calculado no projeto de fôrma.",
+   "normas": [
+    "NBR 12655:2022",
+    "NBR 5732:1991",
+    "NBR 7220:1987",
+    "NBR 7211:2005",
+    "NBR 12655:2015",
+    "NBR 6118:2023",
+    "NR 18"
+   ]
+  },
+  "040231": {
+   "d": "Fornecimento, preparo e aplicação de concreto magro com consumo mínimo de cimento de 250 kg/m3 (brita 1 e 2) - (5% de perdas já incluído no custo)",
+   "u": "m3",
+   "caderno": "0402 – INFRA-ESTRUTURA (FUNDAÇÃO)",
+   "atualizacao": "11/2024",
+   "aplicacao": "Utilizado para recobrimento de fundo de vala dos elementos estruturais de infraestrutura (fundações), como por exemplo: sapatas, blocos, cintas, baldrames, radier, etc.",
+   "incluidos": "Fornecimento e preparo com amassamento mecânico do concreto, considerando perdas por consumo e transporte interno no canteiro até o local da aplicação, lançamento, espalhamento, adensamento, acabamento, cura do concreto e limpeza da área, com remoção dos materiais excedentes e inaproveitáveis.",
+   "criterio": "m3 (metro cúbico) Pelo volume de concreto efetivamente executado, medido no local de lançamento.",
+   "normas": [
+    "NBR 12655:2022",
+    "NBR 5732:1991",
+    "NBR 7220:1987",
+    "NBR 7211:2005",
+    "NBR 12655:2015",
+    "NR 18"
+   ]
+  },
+  "040233": {
+   "d": "Fornecimento, preparo e aplicação de concreto Fck=15 MPa (brita 1 e 2) - (5% de perdas já incluído no custo)",
+   "u": "m3",
+   "caderno": "0402 – INFRA-ESTRUTURA (FUNDAÇÃO)",
+   "atualizacao": "11/2024",
+   "aplicacao": "Nos elementos estruturais de infraestrutura (fundações), como por exemplo: sapatas, blocos, cintas, baldrames, radier, etc.",
+   "incluidos": "Fornecimento e preparo com amassamento mecânico do concreto, considerando perdas por consumo e transporte interno no canteiro até o local da aplicação, lançamento, espalhamento, adensamento, acabamento, cura do concreto e limpeza da área, com remoção dos materiais excedentes e inaproveitáveis.",
+   "criterio": "m3 (metro cúbico) Pelo volume de concreto calculado no projeto de fôrma.",
+   "normas": [
+    "NBR 12655:2022",
+    "NBR 5732:1991",
+    "NBR 7220:1987",
+    "NBR 7211:2005",
+    "NBR 12655:2015",
+    "NBR 6118:2023",
+    "NR 18"
+   ]
+  },
+  "040235": {
+   "d": "Fornecimento, preparo e aplicação de concreto Fck=20 MPa (brita 1 e 2) - (5% de perdas já incluído no custo)",
+   "u": "m3",
+   "caderno": "0402 – INFRA-ESTRUTURA (FUNDAÇÃO)",
+   "atualizacao": "11/2024",
+   "aplicacao": "Nos elementos estruturais de infraestrutura (fundações), como por exemplo: sapatas, blocos, cintas, baldrames, radier, etc.",
+   "incluidos": "Fornecimento e preparo com amassamento mecânico do concreto, considerando perdas por consumo e transporte interno no canteiro até o local da aplicação, lançamento, espalhamento, adensamento, acabamento, cura do concreto e limpeza da área, com remoção dos materiais excedentes e inaproveitáveis.",
+   "criterio": "m3 (metro cúbico) Pelo volume de concreto calculado no projeto de fôrma.",
+   "normas": [
+    "NBR 12655:2022",
+    "NBR 5732:1991",
+    "NBR 7220:1987",
+    "NBR 7211:2005",
+    "NBR 12655:2015",
+    "NBR 6118:2023",
+    "NR 18"
+   ]
+  },
+  "040237": {
+   "d": "Fornecimento, preparo e aplicação de concreto Fck=25 MPa (brita 1 e 2) - (5% de perdas já incluído no custo)",
+   "u": "m3",
+   "caderno": "0402 – INFRA-ESTRUTURA (FUNDAÇÃO)",
+   "atualizacao": "11/2024",
+   "aplicacao": "Nos elementos estruturais de infraestrutura (fundações), como por exemplo: sapatas, blocos, cintas, baldrames, radier, etc.",
+   "incluidos": "Fornecimento e preparo com amassamento mecânico do concreto, considerando perdas por consumo e transporte interno no canteiro até o local da aplicação, lançamento, espalhamento, adensamento, acabamento, cura do concreto e limpeza da área, com remoção dos materiais excedentes e inaproveitáveis.",
+   "criterio": "m3 (metro cúbico) Pelo volume de concreto calculado no projeto de fôrma.",
+   "normas": [
+    "NBR 12655:2022",
+    "NBR 5732:1991",
+    "NBR 7220:1987",
+    "NBR 7211:2005",
+    "NBR 12655:2015",
+    "NBR 6118:2023",
+    "NR 18"
+   ]
+  },
+  "040238": {
+   "d": "Fôrma de chapa compensada resinada 12mm, considerando 3 utilizações (incluindo o material, corte, montagem, escoramento e desforma)",
+   "u": "m2",
+   "caderno": "0402 – INFRA-ESTRUTURA (FUNDAÇÃO)",
+   "atualizacao": "11/2024",
+   "aplicacao": "Nos elementos estruturais de infraestrutura (fundações) como por exemplo: sapatas, blocos, cintas, baldrames, radier, etc. As fôrmas devem ser capazes de resistir à pressão resultante do lançamento e vibração do concreto.",
+   "incluidos": "Fornecimento e corte das chapas compensadas e dos sarrafos (para 3 utilizações) para fabricação da fôrma, incluindo pregos, considerando eventuais perdas, transporte interno do canteiro até o local da montagem, escoramento, nivelamento, aplicação de desmoldante, desforma e limpeza da área, com remoção dos materiais excedentes e inaproveitáveis.",
+   "criterio": "m2 (metro quadrado) Pela área da superfície da fôrma em contato com o concreto, efetivamente realizada, sendo descontadas as áreas de interseção.",
+   "normas": [
+    "NBR 7203:1982",
+    "NBR 14931:2023",
+    "NBR 6118:2023",
+    "NBR 6627:1981",
+    "NBR 15696:2009",
+    "NR 18",
+    "Decreto Estadual nº 1.941-R/2007"
+   ]
+  },
+  "040239": {
+   "d": "Fornecimento e aplicação de concreto USINADO Fck=20 MPa - considerando lançamento MANUAL para INFRA-ESTRUTURA (5% de perdas já incluído no custo)",
+   "u": "m3",
+   "caderno": "0402 – INFRA-ESTRUTURA (FUNDAÇÃO)",
+   "atualizacao": "11/2024",
+   "aplicacao": "Nos elementos estruturais de infraestrutura (fundações), como por exemplo: sapatas, blocos, cintas, baldrames, radier, etc.",
+   "incluidos": "Fornecimento e transporte do concreto dosado em central, considerando perdas por consumo e transporte interno no canteiro até o local da aplicação, lançamento, espalhamento, adensamento, acabamento, cura do concreto e limpeza da área, com remoção dos materiais excedentes e inaproveitáveis, inclusive fornecimento dos ensaios à compressão e consistência, juntamente com o relatório para comprovação da qualidade do concreto.",
+   "criterio": "m3 (metro cúbico) Pelo volume de concreto calculado no projeto de fôrma.",
+   "normas": [
+    "NBR 7212:2021",
+    "NBR 12655:2015",
+    "NBR 6118:2023",
+    "NR 18"
+   ]
+  },
+  "040240": {
+   "d": "Fornecimento e aplicação de concreto USINADO Fck=25 MPa - considerando lançamento MANUAL para INFRA-ESTRUTURA (5% de perdas já incluído no custo)",
+   "u": "m3",
+   "caderno": "0402 – INFRA-ESTRUTURA (FUNDAÇÃO)",
+   "atualizacao": "11/2024",
+   "aplicacao": "Nos elementos estruturais de infraestrutura (fundações), como por exemplo: sapatas, blocos, cintas, baldrames, radier, etc.",
+   "incluidos": "Fornecimento e transporte do concreto dosado em central, considerando perdas por consumo e transporte interno no canteiro até o local da aplicação, lançamento, espalhamento, adensamento, acabamento, cura do concreto e limpeza da área, com remoção dos materiais excedentes e inaproveitáveis, inclusive fornecimento dos ensaios à compressão e consistência, juntamente com o relatório para comprovação da qualidade do concreto.",
+   "criterio": "m3 (metro cúbico) Pelo volume de concreto calculado no projeto de fôrma.",
+   "normas": [
+    "NBR 7212:2021",
+    "NBR 12655:2015",
+    "NBR 6118:2023",
+    "NR 18"
+   ]
+  },
+  "040243": {
+   "d": "Fornecimento, dobragem e colocação em fôrma, de armadura CA-50 A média, diâmetro de 6.3 a 10.0 mm",
+   "u": "kg",
+   "caderno": "0402 – INFRA-ESTRUTURA (FUNDAÇÃO)",
+   "atualizacao": "11/2024",
+   "aplicacao": "Nos elementos estruturais de infraestrutura (fundações), como por exemplo: sapatas, blocos, cintas, baldrames, radier, etc. As armaduras deverão estar posicionadas de maneira a absorver os esforços de tração sobre as estruturas de concreto armado.",
+   "incluidos": "Fornecimento, corte, dobragem, transporte (interno do canteiro até o local de aplicação) e colocação em fôrma de armadura CA-50 de bitolas de diâmetros de 6,3 a 10,0 milímetros, inclusive espaçadores para concreto armado e amarração com fornecimento de arame recozido, posicionamento e limpeza, inclusive limpeza da área com remoção e bota-fora do material excedente e inaproveitável.",
+   "criterio": "kg (quilo) Pelo levantamento das bitolas de diâmetros de 6,3 a 10,0 milímetros, nos seus pesos nominais, nas plantas de armadura de infraestrutura, conforme estabelecido no projeto e efetivamente colocado em fôrma (executado). As perdas não devem estar incluídas no levantamento, pois já estão consideradas dentro da composição de preço unitário (10%). Consideram-se armaduras de infraestrutura as utilizadas até o respaldo superior da viga baldrame.",
+   "normas": [
+    "NBR 7480:2022",
+    "NBR 6181:2003",
+    "NBR 6118:2023",
+    "NR 18"
+   ]
+  },
+  "040245": {
+   "d": "Fornecimento, dobragem e colocação em fôrma, de armadura CA-50 A grossa diâmetro de 12.5 a 25.0 mm (1/2 a 1”)",
+   "u": "kg",
+   "caderno": "0402 – INFRA-ESTRUTURA (FUNDAÇÃO)",
+   "atualizacao": "11/2024",
+   "aplicacao": "Nos elementos estruturais de infraestrutura (fundações), como por exemplo: sapatas, cintas, baldrames, radier, etc. As armaduras deverão estar posicionadas de maneira a absorver os esforços de tração sobre as estruturas de concreto armado.",
+   "incluidos": "Fornecimento, corte, dobragem, transporte (interno do canteiro até o local de aplicação) e colocação em fôrma de armadura CA-50 de bitolas de diâmetros de 12,5 a 25,0 milímetros, inclusive espaçadores para concreto armado e amarração com fornecimento de arame recozido, posicionamento e limpeza, inclusive limpeza da área com remoção e bota-fora do material excedente e inaproveitável.",
+   "criterio": "kg (quilo) Pelo levantamento das bitolas de diâmetros de 12,5 a 25,0 milímetros, nos seus pesos nominais, nas plantas de armadura de infraestrutura, conforme estabelecido no projeto e efetivamente colocado em fôrma (executado). As perdas não devem estar incluídas no levantamento, pois já estão consideradas dentro da composição de preço unitário (10%). Consideram-se armaduras de infraestrutura as utilizadas até o respaldo superior da viga baldrame.",
+   "normas": [
+    "NBR 7480:2022",
+    "NBR 6181:2003",
+    "NBR 6118:2023",
+    "NR 18"
+   ]
+  },
+  "040246": {
+   "d": "Fornecimento, dobragem e colocação em fôrma, de armadura CA-60 B fina, diâmetro de 4.0 a 7.0 mm",
+   "u": "kg",
+   "caderno": "0402 – INFRA-ESTRUTURA (FUNDAÇÃO)",
+   "atualizacao": "11/2024",
+   "aplicacao": "Nos elementos estruturais de infraestrutura (fundações), como por exemplo: sapatas, cintas, baldrames, radier, etc. As armaduras deverão estar posicionadas de maneira a absorver os esforços de tração sobre as estruturas de concreto armado.",
+   "incluidos": "Fornecimento, corte, dobragem, transporte (interno do canteiro até o local de aplicação) e colocação em fôrma de armadura CA-60 de bitolas de diâmetros de 4,0 a 7,0 milímetros, inclusive espaçadores para concreto armado e amarração com fornecimento de arame recozido, posicionamento e limpeza, inclusive limpeza da área com remoção e bota-fora do material excedente e inaproveitável.",
+   "criterio": "kg (quilo) Pelo levantamento das bitolas de diâmetros de 4,0 a 7,0 milímetros, nos seus pesos nominais, nas plantas de armadura de infraestrutura, conforme estabelecido no projeto e efetivamente colocado em fôrma (executado). As perdas não devem estar incluídas no levantamento, pois já estão consideradas dentro da composição de preço unitário (10%). Consideram-se armaduras de infraestrutura as utilizadas até o respaldo superior da viga baldrame.",
+   "normas": [
+    "NBR 7480:2022",
+    "NBR 6181:2003",
+    "NBR 6118:2023",
+    "NR 18"
+   ]
+  },
+  "040249": {
+   "d": "Fôrma de tábua de madeira de 2.5 x 30.0 cm, considerando 1 utilização (incluindo o material, corte, montagem, escoramento e desforma)",
+   "u": "m2",
+   "caderno": "0402 – INFRA-ESTRUTURA (FUNDAÇÃO)",
+   "atualizacao": "11/2024",
+   "aplicacao": "Nos elementos estruturais de infraestrutura (fundações), como por exemplo: sapatas, cintas, baldrames, radier, etc. As fôrmas têm que ser capazes de resistir à pressão resultante do lançamento e vibração do concreto.",
+   "incluidos": "Fornecimento e corte dos materiais para fabricação da fôrma, incluindo pregos, considerando eventuais perdas, transporte interno do canteiro até o local da montagem, escoramento, nivelamento, aplicação de desmoldante, desforma e limpeza da área, com remoção dos materiais excedentes e inaproveitáveis.",
+   "criterio": "m2 (metro quadrado) Pela área da superfície da fôrma em contato com o concreto, efetivamente realizada, sendo descontadas as áreas de interseção.",
+   "normas": [
+    "NBR 7203:1982",
+    "NBR 14931:2023",
+    "NBR 6118:2023",
+    "NBR 6627:1981",
+    "NBR 15696:2009",
+    "NR 18",
+    "Decreto Estadual nº 1.941-R/2007"
+   ]
+  },
+  "040250": {
+   "d": "Fôrma de tábua de madeira de 2.5 x 30.0 cm, considerando 3 utilizações (incluindo o material, corte, montagem, escoramento e desforma)",
+   "u": "m2",
+   "caderno": "0402 – INFRA-ESTRUTURA (FUNDAÇÃO)",
+   "atualizacao": "11/2024",
+   "aplicacao": "Nos elementos estruturais de infraestrutura (fundações), como por exemplo: sapatas, cintas, baldrames, radier, etc. As fôrmas têm que ser capazes de resistir à pressão resultante do lançamento e vibração do concreto.",
+   "incluidos": "Fornecimento e corte dos materiais (madeira para 3 utilizações) para fabricação da fôrma, incluindo pregos, considerando eventuais perdas, transporte interno do canteiro até o local da montagem, escoramento, nivelamento, aplicação de desmoldante, desforma e limpeza da área, com remoção dos materiais excedentes e inaproveitáveis.",
+   "criterio": "m2 (metro quadrado) Pela área da superfície da fôrma em contato com o concreto, efetivamente realizada, sendo descontadas as áreas de interseção.",
+   "normas": [
+    "NBR 7203:1982",
+    "NBR 14931:2023",
+    "NBR 6118:2023",
+    "NBR 6627:1981",
+    "NBR 15696:2009",
+    "NR 18",
+    "Decreto Estadual nº 1.941-R/2007"
+   ]
+  },
+  "040253": {
+   "d": "Fornecimento e aplicação de concreto USINADO Fck=30 MPa - considerando lançamento MANUAL para INFRA-ESTRUTURA (5% de perdas já incluído no custo)",
+   "u": "m3",
+   "caderno": "0402 – INFRA-ESTRUTURA (FUNDAÇÃO)",
+   "atualizacao": "11/2024",
+   "aplicacao": "Nos elementos estruturais de infraestrutura (fundações), como por exemplo: sapatas, blocos, cintas, baldrames, radier, etc.",
+   "incluidos": "Fornecimento e transporte do concreto dosado em central, considerando perdas por consumo e transporte interno no canteiro até o local da aplicação, lançamento, espalhamento, adensamento, acabamento, cura do concreto e limpeza da área, com remoção dos materiais excedentes e inaproveitáveis, inclusive fornecimento dos ensaios à compressão e consistência, juntamente com o relatório para comprovação da qualidade do concreto.",
+   "criterio": "m3 (metro cúbico) Pelo volume de concreto calculado no projeto de fôrma.",
+   "normas": [
+    "NBR 7212:2021",
+    "NBR 12655:2015",
+    "NBR 6118:2023",
+    "NR 18"
+   ]
+  },
+  "040315": {
+   "d": "Fornecimento, preparo e aplicação de concreto Fck=30 MPa (brita 1 e 2) - (5% de perdas já incluído no custo)",
+   "u": "m3",
+   "caderno": "0403 – SUPER-ESTRUTURA",
+   "atualizacao": "11/2024",
+   "aplicacao": "Nos elementos estruturais de superestrutura, como por exemplo: lajes, pilares, vigas, etc.",
+   "incluidos": "Fornecimento e preparo com amassamento mecânico do concreto, considerando perdas por consumo e transporte interno no canteiro até o local da aplicação, lançamento, espalhamento, adensamento, acabamento, cura do concreto e limpeza da área, com remoção dos materiais excedentes e inaproveitáveis.",
+   "criterio": "m3 (metro cúbico) Pelo volume de concreto calculado no projeto de fôrma.",
+   "normas": [
+    "NBR 12655:2022",
+    "NBR 5732:1991",
+    "NBR 7220:1987",
+    "NBR 7211:2005",
+    "NBR 12655:2015",
+    "NBR 6118:2023"
+   ]
+  },
+  "040320": {
+   "d": "Fornecimento, preparo e aplicação de concreto Fck=15 MPa (brita 1 e 2) - (5% de perdas já incluído no custo)",
+   "u": "m3",
+   "caderno": "0403 – SUPER-ESTRUTURA",
+   "atualizacao": "11/2024",
+   "aplicacao": "Em alguns elementos estruturais de superestrutura (como capeamento de alguns tipos de lajes) que não exigem uma grande resistência, sendo uma opção mais econômica de concreto.",
+   "incluidos": "Fornecimento e preparo com amassamento mecânico do concreto, considerando perdas por consumo e transporte interno no canteiro até o local da aplicação, lançamento, espalhamento, adensamento, acabamento, cura do concreto e limpeza da área, com remoção dos materiais excedentes e inaproveitáveis.",
+   "criterio": "m3 (metro cúbico) Pelo volume de concreto calculado no projeto de fôrma.",
+   "normas": [
+    "NBR 12655:2022",
+    "NBR 5732:1991",
+    "NBR 7220:1987",
+    "NBR 7211:2005",
+    "NBR 12655:2015",
+    "NBR 6118:2023"
+   ]
+  },
+  "040322": {
+   "d": "Fornecimento, preparo e aplicação de concreto Fck=20 MPa (brita 1 e 2) - (5% de perdas já incluído no custo)",
+   "u": "m3",
+   "caderno": "0403 – SUPER-ESTRUTURA",
+   "atualizacao": "10/2024",
+   "aplicacao": "Nos elementos estruturais de superestrutura, como por exemplo: lajes, pilares, vigas, etc.",
+   "incluidos": "Fornecimento e preparo com amassamento mecânico do concreto, considerando perdas por consumo e transporte interno no canteiro até o local da aplicação, lançamento, espalhamento, adensamento, acabamento, cura do concreto e limpeza da área, com remoção dos materiais excedentes e inaproveitáveis.",
+   "criterio": "m3 (metro cúbico) Pelo volume de concreto calculado no projeto de fôrma.",
+   "normas": [
+    "NBR 12655:2022",
+    "NBR 5732:1991",
+    "NBR 7220:1987",
+    "NBR 7211:2005",
+    "NBR 12655:2015",
+    "NBR 6118:2023"
+   ]
+  },
+  "040324": {
+   "d": "Fornecimento, preparo e aplicação de concreto Fck=25 MPa (brita 1 e 2) - (5% de perdas já incluído no custo)",
+   "u": "m3",
+   "caderno": "0403 – SUPER-ESTRUTURA",
+   "atualizacao": "11/2024",
+   "aplicacao": "Nos elementos estruturais de superestrutura, como por exemplo: lajes, pilares, vigas, etc.",
+   "incluidos": "Fornecimento e preparo com amassamento mecânico do concreto, considerando perdas por consumo e transporte interno no canteiro até o local da aplicação, lançamento, espalhamento, adensamento, acabamento, cura do concreto e limpeza da área, com remoção dos materiais excedentes e inaproveitáveis.",
+   "criterio": "m3 (metro cúbico) Pelo volume de concreto calculado no projeto de fôrma.",
+   "normas": [
+    "NBR 12655:2022",
+    "NBR 5732:1991",
+    "NBR 7220:1987",
+    "NBR 7211:2005",
+    "NBR 12655:2015",
+    "NBR 6118:2023"
+   ]
+  },
+  "040328": {
+   "d": "Fornecimento, dobragem e colocação em fôrma, de armadura CA-50 A média, diâmetro de 6.3 a 10.0 mm",
+   "u": "kg",
+   "caderno": "0403 – SUPER-ESTRUTURA",
+   "atualizacao": "11/2024",
+   "aplicacao": "Nos elementos estruturais de superestrutura, como por exemplo: lajes, pilares, vigas, etc. As armaduras deverão estar posicionadas de maneira a absorver os esforços de tração sobre as estruturas de concreto armado.",
+   "incluidos": null,
+   "criterio": null,
+   "normas": null
+  }
+ }
+}

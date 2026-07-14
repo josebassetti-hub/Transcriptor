@@ -1,0 +1,22 @@
+{
+ "arquivo": "1101-TETOS E FORROS - REVESTIMENTO COM ARGAMASSA.pdf",
+ "caderno": "11 – TETOS E FORROS · 1101 – REVESTIMENTO COM ARGAMASSA",
+ "truncado": false,
+ "fichas": {
+  "110101": {
+   "d": "Chapisco com argamassa de cimento e areia média ou grossa lavada no traço 1:3, espessura 5 mm, preparo manual",
+   "u": "m2",
+   "caderno": "11 – TETOS E FORROS · 1101 – REVESTIMENTO COM ARGAMASSA",
+   "atualizacao": "05/2026",
+   "aplicacao": "Em superfícies lisas de concreto (laje aparente, vigas e fundos de vigas) ou EPS (isopor), promovendo uma ponte de aderência com a camada de revestimento (reboco ou emboço), a fim de evitar desplacamentos. Também sela a superfície porosa da laje e reduz a entrada de umidade.",
+   "incluidos": "Fornecimento dos materiais e mão de obra para execução de chapisco em tetos, inclusive fornecimento, preparo e transporte da argamassa de cimento e areia (traço 1:3) até o local da aplicação, limpeza, remoção de poeira e umedecimento da superfície de base de aplicação, lançamento e umedecimento do chapisco. Fornecimento, montagem e desmontagem cavaletes metálicos com suporte metálico ou de madeira, incluindo proteção do piso nos pontos de apoio dos cavaletes. Limpeza do local do serviço, com remoção de todos os resíduos de argamassa, materiais excedentes e inaproveitáveis, inclusive descarte final.",
+   "criterio": "m2 (metro quadrado) Pela área de chapisco em teto efetivamente executado, considerando as faces laterais e fundos de viga.",
+   "normas": [
+    "NBR 7200:1998",
+    "NBR 5732:1991",
+    "NBR 7220:1987",
+    "NR 18"
+   ]
+  }
+ }
+}

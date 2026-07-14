@@ -1,0 +1,417 @@
+{
+ "arquivo": "14-INSTALAÇÕES HIDROSSANITÁRIAS - 14.11 E 14.22.pdf",
+ "caderno": "14 – INSTALAÇÕES HIDROSSANITÁRIAS · 14.11 – CAIXAS EMPREGANDO ARGAMASSA DE CIMENTO, CAL E AREIA · 14.22 – ABERTURA E FECHAMENTO DE RASGOS",
+ "truncado": false,
+ "fichas": {
+  "141101": {
+   "d": "Caixas de inspeção em alvenaria de blocos de concreto 9x19x39cm, dim, 60x60cm e Hmáx = 1m, com tampa de concreto esp. 5cm, lastro de concreto esp. 10cm, revestimento interno c/ chapisco e reboco impermeabilizado, inclusive escavação, reaterro e enchimento",
+   "u": "und",
+   "caderno": "14.11 – CAIXAS EMPREGANDO ARGAMASSA DE CIMENTO, CAL E AREIA",
+   "atualizacao": "01/2025",
+   "aplicacao": "Utilizada em áreas externas, com ou sem pavimentação, enterradas no solo, como caixa de ligação ou inspeção em rede coletora de esgoto.",
+   "incluidos": "Execução da escavação manual para abertura da vala para execução da caixa, afastamento lateral do material escavado e reaterro apiloado do material escavado, após a conclusão da construção da caixa de inspeção. Fornecimento e preparo com amassamento mecânico do concreto, considerando perdas por consumo e transporte interno no canteiro até o local da aplicação, lançamento, espalhamento, adensamento do lastro do fundo da vala. Fornecimento, preparo, transporte e aplicação da argamassa de assentamento dos blocos para execução da caixa de inspeção, considerando perdas por consumo e transporte interno do canteiro até o local da aplicação; inclusive fornecimento dos blocos, transporte e assentamento dos blocos de concreto (considerando eventuais perdas). Fornecimento, preparo, transporte e aplicação das argamassas para execução de revestimento interno (chapisco e reboco com impermeabilizante) da caixa de inspeção, considerando perdas por consumo e transporte interno do canteiro até o local da aplicação. Confecção da tampa e da cinta superior da caixa de inspeção, considerando o fornecimento dos materiais (concreto, aço e fôrma), eventuais perdas e transporte interno do canteiro até à caixa, inclusive a instalação da tampa. Fornecimento, preparo, transporte e aplicação da argamassa para execução do enchimento abaulado do fundo da caixa de inspeção, considerando perdas por consumo e transporte interno do canteiro até o local da aplicação. Limpeza do local e retirada para bota-fora de todo o material excedente e inaproveitável.",
+   "criterio": "und (unidade) Pela quantidade de caixa de inspeção em alvenaria efetivamente construída.",
+   "normas": [
+    "NBR 8160:1999",
+    "NBR 6136:2016",
+    "NBR 7203:1982",
+    "NBR 6627:1981",
+    "NBR 5732:1991",
+    "NBR 7220:1987",
+    "NBR 14931:2023",
+    "NBR 7480:2022",
+    "NBR 6181:2003",
+    "NBR 7211:2005",
+    "NBR 12655:2015",
+    "Decreto Estadual nº 1.941-R/2007"
+   ]
+  },
+  "141102": {
+   "d": "Caixa de areia de alvenaria de blocos de concreto 9x19x39cm, dim. 60x60cm e Hmáx=1m, c/ tampa em concreto esp. 5cm, lastro concreto esp. 10cm, revestida intern. c/ chapisco e reboco impermeabilizante, incl. escavação e reaterro",
+   "u": "und",
+   "caderno": "14.11 – CAIXAS EMPREGANDO ARGAMASSA DE CIMENTO, CAL E AREIA",
+   "atualizacao": "01/2025",
+   "aplicacao": "Utilizada em áreas externas, com ou sem pavimentação, enterradas no solo, como caixa de ligação ou inspeção (de areia) em rede coletora de esgoto ou rede de águas pluviais.",
+   "incluidos": "Execução da escavação manual para abertura da vala para execução da caixa, afastamento lateral do material escavado e reaterro apiloado do material escavado, após a conclusão da construção da caixa de areia. Fornecimento e preparo com amassamento mecânico do concreto, considerando perdas por consumo e transporte interno no canteiro até o local da aplicação, lançamento, espalhamento, adensamento e nivelamento do lastro do fundo da vala. Fornecimento, preparo, transporte e aplicação da argamassa de assentamento dos blocos para execução da caixa de areia, considerando perdas por consumo e transporte interno do canteiro até o local da aplicação; inclusive fornecimento dos blocos, transporte e assentamento dos blocos de concreto (considerando eventuais perdas). Fornecimento, preparo, transporte e aplicação das argamassas para execução de revestimento interno (chapisco e reboco com impermeabilizante) da caixa de areia, considerando perdas por consumo e transporte interno do canteiro até o local da aplicação. Confecção da tampa e da cinta superior da caixa de areia, considerando o fornecimento dos materiais (concreto, aço e fôrma), eventuais perdas e transporte interno do canteiro até à caixa, inclusive a instalação da tampa. Limpeza do local e retirada para bota-fora de todo o material excedente e inaproveitável.",
+   "criterio": "und (unidade) Pela quantidade de caixa de areia em alvenaria efetivamente construída.",
+   "normas": [
+    "NBR 8160:1999",
+    "NBR 6136:2016",
+    "NBR 7203:1982",
+    "NBR 6627:1981",
+    "NBR 5732:1991",
+    "NBR 7220:1987",
+    "NBR 14931:2023",
+    "NBR 7480:2022",
+    "NBR 6181:2003",
+    "NBR 7211:2005",
+    "NBR 12655:2015",
+    "Decreto Estadual nº 1.941-R/2007"
+   ]
+  },
+  "141103": {
+   "d": "Caixa sifonada especial de alvenaria de blocos de concreto 9x19x39cm, dim. 60x60cm e Hmáx=1m, c/ tampa em concreto esp. 5cm, lastro concreto esp. 10cm, revestida intern. c/ chapisco e reboco impermeabilizante, incl. escavação, reaterro e curva curta c/ visita e plug em PVC 100 mm",
+   "u": "und",
+   "caderno": "14.11 – CAIXAS EMPREGANDO ARGAMASSA DE CIMENTO, CAL E AREIA",
+   "atualizacao": "01/2025",
+   "aplicacao": "Utilizada em áreas externas, com ou sem pavimentação, enterradas no solo, como caixa de ligação ou inspeção (sifonada especial) em rede coletora de esgoto.",
+   "incluidos": "Execução da escavação manual para abertura da vala para execução da caixa, afastamento lateral do material escavado e reaterro apiloado do material escavado, após a conclusão da construção da caixa sifonada especial. Fornecimento e preparo com amassamento mecânico do concreto, considerando perdas por consumo e transporte interno no canteiro até o local da aplicação, lançamento, espalhamento, adensamento e nivelamento do lastro do fundo da vala. Fornecimento, preparo, transporte e aplicação da argamassa de assentamento dos blocos para execução da caixa sifonada especial, considerando perdas por consumo e transporte interno do canteiro até o local da aplicação; inclusive fornecimento dos blocos, transporte e assentamento dos blocos de concreto (considerando eventuais perdas). Fornecimento, preparo, transporte e aplicação das argamassas para execução de revestimento interno (chapisco e reboco com impermeabilizante) da caixa sifonada especial, considerando perdas por consumo e transporte interno do canteiro até o local da aplicação. Confecção da tampa e da cinta superior da caixa sifonada especial, considerando o fornecimento dos materiais (concreto, aço e fôrma), eventuais perdas e transporte interno do canteiro até à caixa, inclusive a instalação da tampa. Fornecimento e instalação de joelho 90º em PVC para esgoto com visita de 100x50 milímetros e plug em PVC para esgoto de 100 milímetros. Limpeza do local e retirada para bota-fora de todo o material excedente e inaproveitável.",
+   "criterio": "und (unidade) Pela quantidade de caixa sifonada especial em alvenaria efetivamente construída.",
+   "normas": [
+    "NBR 8160:1999",
+    "NBR 6136:2016",
+    "NBR 7203:1982",
+    "NBR 6627:1981",
+    "NBR 5732:1991",
+    "NBR 7220:1987",
+    "NBR 14931:2023",
+    "NBR 7480:2022",
+    "NBR 6181:2003",
+    "NBR 7211:2005",
+    "NBR 12655:2015",
+    "Decreto Estadual nº 1.941-R/2007"
+   ]
+  },
+  "141104": {
+   "d": "Caixa de gordura de alvenaria de blocos de concreto 9x19x39cm, dim. 60x60cm e Hmáx=1m, c/ tampa em concreto esp. 5cm, lastro concreto esp. 10cm, revestida intern. c/ chapisco e reboco impermeabilizante, incl. escavação, reaterro e parede interna em concreto",
+   "u": "und",
+   "caderno": "14.11 – CAIXAS EMPREGANDO ARGAMASSA DE CIMENTO, CAL E AREIA",
+   "atualizacao": "01/2025",
+   "aplicacao": "Utilizada em áreas externas, com ou sem pavimentação, enterradas no solo, como caixa de gordura em rede coletora de esgoto, prevenindo entupimentos causados por dejetos provenientes das pias e ralos.",
+   "incluidos": "Execução da escavação manual para abertura da vala para execução da caixa, afastamento lateral do material escavado e reaterro apiloado do material escavado, após a conclusão da construção da caixa de gordura. Fornecimento e preparo com amassamento mecânico do concreto, considerando perdas por consumo e transporte interno no canteiro até o local da aplicação, lançamento, espalhamento, adensamento e nivelamento do lastro do fundo da vala. Fornecimento, preparo, transporte e aplicação da argamassa de assentamento dos blocos para execução da caixa de gordura, considerando perdas por consumo e transporte interno do canteiro até o local da aplicação; inclusive fornecimento dos blocos, transporte e assentamento dos blocos de concreto (considerando eventuais perdas). Fornecimento, preparo, transporte e aplicação das argamassas para execução de revestimento interno (chapisco e reboco com impermeabilizante) da caixa de gordura, considerando perdas por consumo e transporte interno do canteiro até o local da aplicação. Confecção da tampa, septo e da cinta superior da caixa de gordura, considerando o fornecimento dos materiais (concreto, aço e fôrma), eventuais perdas e transporte interno do canteiro até à caixa, inclusive a instalação da tampa. Fornecimento e instalação de joelho 90º em PVC para esgoto de 75 milímetros. Limpeza do local e retirada para bota-fora de todo o material excedente e inaproveitável.",
+   "criterio": "und (unidade) Pela quantidade de caixa de gordura em alvenaria efetivamente construída.",
+   "normas": [
+    "NBR 8160:1999",
+    "NBR 6136:2016",
+    "NBR 7203:1982",
+    "NBR 6627:1981",
+    "NBR 5732:1991",
+    "NBR 7220:1987",
+    "NBR 14931:2023",
+    "NBR 7480:2022",
+    "NBR 6181:2003",
+    "NBR 7211:2005",
+    "NBR 12655:2015",
+    "Decreto Estadual nº 1.941-R/2007"
+   ]
+  },
+  "141105": {
+   "d": "Caixa retentora de matéria sólida de alvenaria de blocos de concreto 9x19x39cm, dim. 60x60cm e Hmáx=1m, c/ tampa em concreto esp. 5cm, lastro concreto esp. 10cm, revestida intern. c/ chapisco e reboco impermeabilizante, incl. escavação, reaterro e paredes internas em concreto",
+   "u": "und",
+   "caderno": "14.11 – CAIXAS EMPREGANDO ARGAMASSA DE CIMENTO, CAL E AREIA",
+   "atualizacao": "01/2025",
+   "aplicacao": "Utilizada em áreas externas, com ou sem pavimentação, enterradas no solo, como caixa retentora de materiais sólidos em rede coletora de esgoto, geralmente disposta entre o tanque séptico e o filtro anaeróbio.",
+   "incluidos": "Execução da escavação manual para abertura da vala para execução da retentora de matéria sólida, afastamento lateral do material escavado e reaterro apiloado do material escavado, após a conclusão da construção da caixa. Fornecimento e preparo com amassamento mecânico do concreto, considerando perdas por consumo e transporte interno no canteiro até o local da aplicação, lançamento, espalhamento, adensamento e nivelamento do lastro do fundo da vala. Fornecimento, preparo, transporte e aplicação da argamassa de assentamento dos blocos para execução da caixa, considerando perdas por consumo e transporte interno do canteiro até o local da aplicação; inclusive fornecimento dos blocos, transporte e assentamento dos blocos de concreto (considerando eventuais perdas). Fornecimento, preparo, transporte e aplicação das argamassas para execução de revestimento interno (chapisco e reboco com impermeabilizante) da caixa retentora de materiais sólidos, considerando perdas por consumo e transporte interno do canteiro até o local da aplicação. Confecção da tampa, paredes de concreto e da cinta superior da caixa, considerando o fornecimento dos materiais (concreto, aço e fôrma), eventuais perdas e transporte interno do canteiro até à caixa, inclusive a instalação da tampa. Limpeza do local e retirada para bota-fora de todo o material excedente e inaproveitável.",
+   "criterio": "und (unidade) Pela quantidade de caixa retentora de matéria sólida em alvenaria efetivamente construída.",
+   "normas": [
+    "NBR 8160:1999",
+    "NBR 6136:2016",
+    "NBR 7203:1982",
+    "NBR 6627:1981",
+    "NBR 5732:1991",
+    "NBR 7220:1987",
+    "NBR 14931:2023",
+    "NBR 7480:2022",
+    "NBR 6181:2003",
+    "NBR 7211:2005",
+    "NBR 12655:2015",
+    "Decreto Estadual nº 1.941-R/2007"
+   ]
+  },
+  "141106": {
+   "d": "Caixas de inspeção em alvenaria de blocos de concreto 9x19x39cm, dim, 100x60cm e Hmáx = 1m, com tampa de concreto esp. 5cm, lastro de concreto esp. 10cm, revestimento interno c/ chapisco e reboco impermeabilizado, inclusive escavação, reaterro e enchimento",
+   "u": "und",
+   "caderno": "14.11 – CAIXAS EMPREGANDO ARGAMASSA DE CIMENTO, CAL E AREIA",
+   "atualizacao": "01/2025",
+   "aplicacao": "Utilizada em áreas externas, com ou sem pavimentação, enterradas no solo, como caixa de ligação ou inspeção em rede coletora de esgoto.",
+   "incluidos": "Execução da escavação manual para abertura da vala para execução da caixa, afastamento lateral do material escavado e reaterro apiloado do material escavado, após a conclusão da construção da caixa de inspeção. Fornecimento e preparo com amassamento mecânico do concreto, considerando perdas por consumo e transporte interno no canteiro até o local da aplicação, lançamento, espalhamento, adensamento do lastro do fundo da vala. Fornecimento, preparo, transporte e aplicação da argamassa de assentamento dos blocos para execução da caixa de inspeção, considerando perdas por consumo e transporte interno do canteiro até o local da aplicação; inclusive fornecimento dos blocos, transporte e assentamento dos blocos de concreto (considerando eventuais perdas). Fornecimento, preparo, transporte e aplicação das argamassas para execução de revestimento interno (chapisco e reboco com impermeabilizante) da caixa de inspeção, considerando perdas por consumo e transporte interno do canteiro até o local da aplicação. Confecção da tampa e da cinta superior da caixa de inspeção, considerando o fornecimento dos materiais (concreto, aço e fôrma), eventuais perdas e transporte interno do canteiro até à caixa, inclusive a instalação da tampa. Fornecimento, preparo, transporte e aplicação da argamassa para execução do enchimento abaulado do fundo da caixa de inspeção, considerando perdas por consumo e transporte interno do canteiro até o local da aplicação. Limpeza do local e retirada para bota-fora de todo o material excedente e inaproveitável.",
+   "criterio": "und (unidade) Pela quantidade de caixa de inspeção em alvenaria efetivamente construída.",
+   "normas": [
+    "NBR 8160:1999",
+    "NBR 6136:2016",
+    "NBR 7203:1982",
+    "NBR 6627:1981",
+    "NBR 5732:1991",
+    "NBR 7220:1987",
+    "NBR 14931:2023",
+    "NBR 7480:2022",
+    "NBR 6181:2003",
+    "NBR 7211:2005",
+    "NBR 12655:2015",
+    "Decreto Estadual nº 1.941-R/2007"
+   ]
+  },
+  "141107": {
+   "d": "Caixa de gordura de alvenaria de blocos de concreto 9x19x39cm, dim. 80x60cm e Hmáx=1m, c/ tampa em concreto esp. 5cm, lastro concreto esp. 10cm, revestida intern. c/ chapisco e reboco impermeabilizante, incl. escavação, reaterro e parede interna em concreto",
+   "u": "und",
+   "caderno": "14.11 – CAIXAS EMPREGANDO ARGAMASSA DE CIMENTO, CAL E AREIA",
+   "atualizacao": "01/2025",
+   "aplicacao": "Utilizada em áreas externas, com ou sem pavimentação, enterradas no solo, como caixa de gordura em rede coletora de esgoto, prevenindo entupimentos causados por dejetos provenientes das pias e ralos.",
+   "incluidos": "Execução da escavação manual para abertura da vala para execução da caixa, afastamento lateral do material escavado e reaterro apiloado do material escavado, após a conclusão da construção da caixa de gordura. Fornecimento e preparo com amassamento mecânico do concreto, considerando perdas por consumo e transporte interno no canteiro até o local da aplicação, lançamento, espalhamento, adensamento e nivelamento do lastro do fundo da vala. Fornecimento, preparo, transporte e aplicação da argamassa de assentamento dos blocos para execução da caixa de gordura, considerando perdas por consumo e transporte interno do canteiro até o local da aplicação; inclusive fornecimento dos blocos, transporte e assentamento dos blocos de concreto (considerando eventuais perdas). Fornecimento, preparo, transporte e aplicação das argamassas para execução de revestimento interno (chapisco e reboco com impermeabilizante) da caixa de gordura, considerando perdas por consumo e transporte interno do canteiro até o local da aplicação. Confecção da tampa, septo e da cinta superior da caixa de gordura, considerando o fornecimento dos materiais (concreto, aço e fôrma), eventuais perdas e transporte interno do canteiro até à caixa, inclusive a instalação da tampa. Fornecimento e instalação de joelho 90º em PVC para esgoto de 75 milímetros. Limpeza do local e retirada para bota-fora de todo o material excedente e inaproveitável.",
+   "criterio": "und (unidade) Pela quantidade de caixa de gordura em alvenaria efetivamente construída.",
+   "normas": [
+    "NBR 8160:1999",
+    "NBR 6136:2016",
+    "NBR 7203:1982",
+    "NBR 6627:1981",
+    "NBR 5732:1991",
+    "NBR 7220:1987",
+    "NBR 14931:2023",
+    "NBR 7480:2022",
+    "NBR 6181:2003",
+    "NBR 7211:2005",
+    "NBR 12655:2015",
+    "Decreto Estadual nº 1.941-R/2007"
+   ]
+  },
+  "141108": {
+   "d": "Caixa de gordura especial de alvenaria de blocos de concreto 9x19x39cm, dim. 160x135cm e Hmáx=1m, c/ tampa em concreto esp. 5cm, lastro concreto esp. 10cm, revestida intern. c/ chapisco e reboco impermeabilizante, incl. escavação, reaterro e parede interna em concreto",
+   "u": "und",
+   "caderno": "14.11 – CAIXAS EMPREGANDO ARGAMASSA DE CIMENTO, CAL E AREIA",
+   "atualizacao": "01/2025",
+   "aplicacao": "Utilizada em áreas externas, com ou sem pavimentação, enterradas no solo, como caixa de gordura em rede coletora de esgoto, prevenindo entupimentos causados por dejetos provenientes das pias e ralos.",
+   "incluidos": "Execução da escavação manual para abertura da vala para execução da caixa, afastamento lateral do material escavado e reaterro apiloado do material escavado, após a conclusão da construção da caixa de gordura. Fornecimento e preparo com amassamento mecânico do concreto, considerando perdas por consumo e transporte interno no canteiro até o local da aplicação, lançamento, espalhamento, adensamento e nivelamento do lastro do fundo da vala. Fornecimento, preparo, transporte e aplicação da argamassa de assentamento dos blocos para execução da caixa de gordura, considerando perdas por consumo e transporte interno do canteiro até o local da aplicação; inclusive fornecimento dos blocos, transporte e assentamento dos blocos de concreto (considerando eventuais perdas). Fornecimento, preparo, transporte e aplicação das argamassas para execução de revestimento interno (chapisco e reboco com impermeabilizante) da caixa de gordura, considerando perdas por consumo e transporte interno do canteiro até o local da aplicação. Confecção da tampa, septo e da cinta superior da caixa de gordura, considerando o fornecimento dos materiais (concreto, aço e fôrma), eventuais perdas e transporte interno do canteiro até à caixa, inclusive a instalação da tampa. Fornecimento e instalação de joelho 90º em PVC para esgoto de 75 milímetros. Limpeza do local e retirada para bota-fora de todo o material excedente e inaproveitável.",
+   "criterio": "und (unidade) Pela quantidade de caixa de gordura em alvenaria efetivamente construída.",
+   "normas": [
+    "NBR 8160:1999",
+    "NBR 6136:2016",
+    "NBR 7203:1982",
+    "NBR 6627:1981",
+    "NBR 5732:1991",
+    "NBR 7220:1987",
+    "NBR 14931:2023",
+    "NBR 7480:2022",
+    "NBR 6181:2003",
+    "NBR 7211:2005",
+    "NBR 12655:2015",
+    "Decreto Estadual nº 1.941-R/2007"
+   ]
+  },
+  "141109": {
+   "d": "Grelha com largura de 20 centímetros, em ferro diam. 1/2\" a cada 3 cm, contorno com barra de ferro de 3/4\" x 1/8\" e caixilho em cantoneira de ferro de 1\" x 3/16\"",
+   "u": "m",
+   "caderno": "14.11 – CAIXAS EMPREGANDO ARGAMASSA DE CIMENTO, CAL E AREIA",
+   "atualizacao": "01/2025",
+   "aplicacao": "Utilizada sobre dispositivo de drenagem superficial (canaleta) aplicado no direcionamento das águas de drenagem em pátios pavimentados, praças e junto aos estacionamentos, com fluxo de pedestres e nas passagens com fluxo de água superficial.",
+   "incluidos": "Fornecimento dos materiais e confecção da grelha, incluindo chumbamento de caixilho em cantoneira de ferro, instalação de grelha em barra de ferro redonda com contorno em cantoneira de ferro e limpeza do local, com remoção de materiais excedentes e inaproveitáveis.",
+   "criterio": "m (metro) Pelo comprimento de grelha de ferro efetivamente executada e instalada.",
+   "normas": [
+    "NBR 7007:2022"
+   ]
+  },
+  "141110": {
+   "d": "Caixa de inspeção em alvenaria de blocos de concreto 9x19x39cm, dim, 60x60cm e Hmáx = 1m, com tampa de ferro fundido 40x40 cm, lastro de concreto esp. 10cm, revestimento interno c/ chapisco e reboco impermeabilizado, inclusive escavação, reaterro e enchimento",
+   "u": "und",
+   "caderno": "14.11 – CAIXAS EMPREGANDO ARGAMASSA DE CIMENTO, CAL E AREIA",
+   "atualizacao": "01/2025",
+   "aplicacao": "Utilizada em áreas externas, com ou sem pavimentação, enterradas no solo, como caixa de ligação ou inspeção em rede coletora de esgoto.",
+   "incluidos": "Execução da escavação manual para abertura da vala para execução da caixa, afastamento lateral do material escavado e reaterro apiloado do material escavado, após a conclusão da construção da caixa de inspeção. Fornecimento e preparo com amassamento mecânico do concreto, considerando perdas por consumo e transporte interno no canteiro até o local da aplicação, lançamento, espalhamento, adensamento do lastro do fundo da vala. Fornecimento, preparo, transporte e aplicação da argamassa de assentamento dos blocos para execução da caixa de inspeção, considerando perdas por consumo e transporte interno do canteiro até o local da aplicação; inclusive fornecimento dos blocos, transporte e assentamento dos blocos de concreto (considerando eventuais perdas). Fornecimento, preparo, transporte e aplicação das argamassas para execução de revestimento interno (chapisco e reboco com impermeabilizante) da caixa de inspeção, considerando perdas por consumo e transporte interno do canteiro até o local da aplicação. Confecção da laje e da cinta superior da caixa de inspeção, considerando o fornecimento dos materiais (concreto, aço e fôrma), eventuais perdas e transporte interno do canteiro até à caixa. Fornecimento, preparo, transporte e aplicação da argamassa para execução do enchimento abaulado do fundo da caixa de inspeção, considerando perdas por consumo e transporte interno do canteiro até o local da aplicação. Fornecimento e instalação da tampa de ferro fundido, considerando a utilização de argamassa para chumbamento da tampa. Limpeza do local e retirada para bota-fora de todo o material excedente e inaproveitável.",
+   "criterio": "und (unidade) Pela quantidade de caixa de inspeção em alvenaria efetivamente construída.",
+   "normas": [
+    "NBR 8160:1999",
+    "NBR 6136:2016",
+    "NBR 7203:1982",
+    "NBR 6627:1981",
+    "NBR 5732:1991",
+    "NBR 7220:1987",
+    "NBR 14931:2023",
+    "NBR 7480:2022",
+    "NBR 6181:2003",
+    "NBR 7211:2005",
+    "NBR 12655:2015",
+    "NBR 10160:2005",
+    "Decreto Estadual nº 1.941-R/2007"
+   ]
+  },
+  "141111": {
+   "d": "Caixa de areia de alvenaria de blocos de concreto 9x19x39cm, dim. 60x60cm e Hmáx=1m, c/ tampa em ferro fundido 40x40 cm, lastro concreto esp. 10cm, revestida intern. c/ chapisco e reboco impermeabilizante, incl. escavação e reaterro",
+   "u": "und",
+   "caderno": "14.11 – CAIXAS EMPREGANDO ARGAMASSA DE CIMENTO, CAL E AREIA",
+   "atualizacao": "01/2025",
+   "aplicacao": "Utilizada em áreas externas, com ou sem pavimentação, enterradas no solo, como caixa de ligação ou inspeção (de areia) em rede coletora de esgoto ou rede de águas pluviais.",
+   "incluidos": "Execução da escavação manual para abertura da vala para execução da caixa, afastamento lateral do material escavado e reaterro apiloado do material escavado, após a conclusão da construção da caixa de areia. Fornecimento e preparo com amassamento mecânico do concreto, considerando perdas por consumo e transporte interno no canteiro até o local da aplicação, lançamento, espalhamento, adensamento e nivelamento do lastro do fundo da vala. Fornecimento, preparo, transporte e aplicação da argamassa de assentamento dos blocos para execução da caixa de areia, considerando perdas por consumo e transporte interno do canteiro até o local da aplicação; inclusive fornecimento dos blocos, transporte e assentamento dos blocos de concreto (considerando eventuais perdas). Fornecimento, preparo, transporte e aplicação das argamassas para execução de revestimento interno (chapisco e reboco com impermeabilizante) da caixa de areia, considerando perdas por consumo e transporte interno do canteiro até o local da aplicação. Confecção da laje e da cinta superior da caixa de areia, considerando o fornecimento dos materiais (concreto, aço e fôrma), eventuais perdas e transporte interno do canteiro até à caixa. Fornecimento e instalação da tampa de ferro fundido, considerando a utilização de argamassa para chumbamento da tampa. Limpeza do local e retirada para bota-fora de todo o material excedente e inaproveitável.",
+   "criterio": "und (unidade) Pela quantidade de caixa de areia em alvenaria efetivamente construída.",
+   "normas": [
+    "NBR 8160:1999",
+    "NBR 6136:2016",
+    "NBR 7203:1982",
+    "NBR 6627:1981",
+    "NBR 5732:1991",
+    "NBR 7220:1987",
+    "NBR 14931:2023",
+    "NBR 7480:2022",
+    "NBR 6181:2003",
+    "NBR 7211:2005",
+    "NBR 12655:2015",
+    "NBR 10160:2005",
+    "Decreto Estadual nº 1.941-R/2007"
+   ]
+  },
+  "141112": {
+   "d": "Caixa sifonada especial de alvenaria de blocos de concreto 9x19x39cm, dim. 60x60cm e Hmáx=1m, c/ tampa em ferro fundido 40x40 cm, lastro concreto esp. 10cm, revestida intern. c/ chapisco e reboco impermeabilizante, incl. escavação, reaterro e curva curta c/ visita e plug em PVC 100 mm",
+   "u": "und",
+   "caderno": "14.11 – CAIXAS EMPREGANDO ARGAMASSA DE CIMENTO, CAL E AREIA",
+   "atualizacao": "01/2025",
+   "aplicacao": "Utilizada em áreas externas, com ou sem pavimentação, enterradas no solo, como caixa de ligação ou inspeção (sifonada especial) em rede coletora de esgoto.",
+   "incluidos": "Execução da escavação manual para abertura da vala para execução da caixa, afastamento lateral do material escavado e reaterro apiloado do material escavado, após a conclusão da construção da caixa sifonada especial. Fornecimento e preparo com amassamento mecânico do concreto, considerando perdas por consumo e transporte interno no canteiro até o local da aplicação, lançamento, espalhamento, adensamento e nivelamento do lastro do fundo da vala. Fornecimento, preparo, transporte e aplicação da argamassa de assentamento dos blocos para execução da caixa sifonada especial, considerando perdas por consumo e transporte interno do canteiro até o local da aplicação; inclusive fornecimento dos blocos, transporte e assentamento dos blocos de concreto (considerando eventuais perdas). Fornecimento, preparo, transporte e aplicação das argamassas para execução de revestimento interno (chapisco e reboco com impermeabilizante) da caixa sifonada especial, considerando perdas por consumo e transporte interno do canteiro até o local da aplicação. Confecção da laje e da cinta superior da caixa de areia, considerando o fornecimento dos materiais (concreto, aço e fôrma), eventuais perdas e transporte interno do canteiro até à caixa. Fornecimento e instalação da tampa de ferro fundido, considerando a utilização de argamassa para chumbamento da tampa. Fornecimento e instalação de joelho 90º em PVC para esgoto com visita de 100x50 milímetros e plug em PVC para esgoto de 100 milímetros. Limpeza do local e retirada para bota-fora de todo o material excedente e inaproveitável.",
+   "criterio": "und (unidade) Pela quantidade de caixa sifonada especial em alvenaria efetivamente construída.",
+   "normas": [
+    "NBR 8160:1999",
+    "NBR 6136:2016",
+    "NBR 7203:1982",
+    "NBR 6627:1981",
+    "NBR 5732:1991",
+    "NBR 7220:1987",
+    "NBR 14931:2023",
+    "NBR 7480:2022",
+    "NBR 6181:2003",
+    "NBR 7211:2005",
+    "NBR 12655:2015",
+    "NBR 10160:2005",
+    "Decreto Estadual nº 1.941-R/2007"
+   ]
+  },
+  "141113": {
+   "d": "Caixa de gordura de alvenaria de blocos de concreto 9x19x39cm, dim. 60x60cm e Hmáx=1m, c/ tampa em ferro fundido 40x40 cm, lastro concreto esp. 10cm, revestida intern. c/ chapisco e reboco impermeabilizante, incl. escavação, reaterro e parede interna em concreto",
+   "u": "und",
+   "caderno": "14.11 – CAIXAS EMPREGANDO ARGAMASSA DE CIMENTO, CAL E AREIA",
+   "atualizacao": "01/2025",
+   "aplicacao": "Utilizada em áreas externas, com ou sem pavimentação, enterradas no solo, como caixa de gordura em rede coletora de esgoto, prevenindo entupimentos causados por dejetos provenientes das pias e ralos.",
+   "incluidos": "Execução da escavação manual para abertura da vala para execução da caixa, afastamento lateral do material escavado e reaterro apiloado do material escavado, após a conclusão da construção da caixa de gordura. Fornecimento e preparo com amassamento mecânico do concreto, considerando perdas por consumo e transporte interno no canteiro até o local da aplicação, lançamento, espalhamento, adensamento e nivelamento do lastro do fundo da vala. Fornecimento, preparo, transporte e aplicação da argamassa de assentamento dos blocos para execução da caixa de gordura, considerando perdas por consumo e transporte interno do canteiro até o local da aplicação; inclusive fornecimento dos blocos, transporte e assentamento dos blocos de concreto (considerando eventuais perdas). Fornecimento, preparo, transporte e aplicação das argamassas para execução de revestimento interno (chapisco e reboco com impermeabilizante) da caixa de gordura, considerando perdas por consumo e transporte interno do canteiro até o local da aplicação. Confecção da laje e da cinta superior da caixa de areia, considerando o fornecimento dos materiais (concreto, aço e fôrma), eventuais perdas e transporte interno do canteiro até à caixa. Fornecimento e instalação da tampa de ferro fundido, considerando a utilização de argamassa para chumbamento da tampa. Fornecimento e instalação de joelho 90º em PVC para esgoto de 75 milímetros. Limpeza do local e retirada para bota-fora de todo o material excedente e inaproveitável.",
+   "criterio": "und (unidade) Pela quantidade de caixa de gordura em alvenaria efetivamente construída.",
+   "normas": [
+    "NBR 8160:1999",
+    "NBR 6136:2016",
+    "NBR 7203:1982",
+    "NBR 6627:1981",
+    "NBR 5732:1991",
+    "NBR 7220:1987",
+    "NBR 14931:2023",
+    "NBR 7480:2022",
+    "NBR 6181:2003",
+    "NBR 7211:2005",
+    "NBR 12655:2015",
+    "NBR 10160:2005",
+    "Decreto Estadual nº 1.941-R/2007"
+   ]
+  },
+  "141114": {
+   "d": "Caixa retentora de matéria sólida em alvenaria de blocos de concreto 9x19x39cm, dim. 60x60cm e Hmáx=1m, c/ tampa em ferro fundido 40x40 cm, lastro concreto esp. 10cm, revestida intern. c/ chapisco e reboco impermeabilizante, incl. escavação, reaterro e paredes internas em concreto",
+   "u": "und",
+   "caderno": "14.11 – CAIXAS EMPREGANDO ARGAMASSA DE CIMENTO, CAL E AREIA",
+   "atualizacao": "01/2025",
+   "aplicacao": "Utilizada em áreas externas, com ou sem pavimentação, enterradas no solo, como caixa retentora de materiais sólidos em rede coletora de esgoto, geralmente disposta entre o tanque séptico e o filtro anaeróbio.",
+   "incluidos": "Execução da escavação manual para abertura da vala para execução da retentora de matéria sólida, afastamento lateral do material escavado e reaterro apiloado do material escavado, após a conclusão da construção da caixa. Fornecimento e preparo com amassamento mecânico do concreto, considerando perdas por consumo e transporte interno no canteiro até o local da aplicação, lançamento, espalhamento, adensamento e nivelamento do lastro do fundo da vala. Fornecimento, preparo, transporte e aplicação da argamassa de assentamento dos blocos para execução da caixa, considerando perdas por consumo e transporte interno do canteiro até o local da aplicação; inclusive fornecimento dos blocos, transporte e assentamento dos blocos de concreto (considerando eventuais perdas). Fornecimento, preparo, transporte e aplicação das argamassas para execução de revestimento interno (chapisco e reboco com impermeabilizante) da caixa retentora de materiais sólidos, considerando perdas por consumo e transporte interno do canteiro até o local da aplicação. Confecção da laje, paredes de concreto e da cinta superior da caixa, considerando o fornecimento dos materiais (concreto, aço e fôrma), eventuais perdas e transporte interno do canteiro até à caixa, inclusive a instalação da tampa. Fornecimento e instalação da tampa de ferro fundido, considerando a utilização de argamassa para chumbamento da tampa. Limpeza do local e retirada para bota-fora de todo o material excedente e inaproveitável.",
+   "criterio": "und (unidade) Pela quantidade de caixa retentora de matéria sólida em alvenaria efetivamente construída.",
+   "normas": [
+    "NBR 8160:1999",
+    "NBR 6136:2016",
+    "NBR 7203:1982",
+    "NBR 6627:1981",
+    "NBR 5732:1991",
+    "NBR 7220:1987",
+    "NBR 14931:2023",
+    "NBR 7480:2022",
+    "NBR 6181:2003",
+    "NBR 7211:2005",
+    "NBR 12655:2015",
+    "NBR 10160:2005",
+    "Decreto Estadual nº 1.941-R/2007"
+   ]
+  },
+  "142201": {
+   "d": "Abertura e fechamento de rasgos em alvenaria, para passagem de tubulações, diâm. 1/2\" a 1\"",
+   "u": "m",
+   "caderno": "14.22 – ABERTURA E FECHAMENTO DE RASGOS",
+   "atualizacao": "01/2025",
+   "aplicacao": "Interligações entre os pontos de alimentação da instalação hidrossanitária, em que as tubulações precisam ser embutidas em paredes de alvenaria.",
+   "incluidos": "Demarcação e execução dos rasgos em alvenaria, com auxílio de ferramentas manuais (marreta e talhadeira), fornecimento dos materiais (inclusive eventuais perdas), preparo, transporte interno no canteiro e aplicação da argamassa (de cimento, cal hidratada e areia) para preenchimento (fechamento) dos rasgos.",
+   "criterio": "m (metro) Pelo comprimento total de rasgo aberto e recomposto, para assentamento de tubulações com diâmetro que pode variar de ½” a 1”.",
+   "normas": [
+    "NBR 5626:2020",
+    "NBR 5732:1991",
+    "NBR 7220:1987",
+    "NR 18"
+   ]
+  },
+  "142202": {
+   "d": "Abertura e fechamento de rasgos em alvenaria, para passagem de tubulações, diâm. 1.1/4\" a 2\"",
+   "u": "m",
+   "caderno": "14.22 – ABERTURA E FECHAMENTO DE RASGOS",
+   "atualizacao": "01/2025",
+   "aplicacao": "Interligações entre os pontos de alimentação da instalação hidrossanitária ou esgoto, em que as tubulações precisam ser embutidas em paredes de alvenaria.",
+   "incluidos": "Demarcação e execução dos rasgos em alvenaria, com auxílio de ferramentas manuais (marreta e talhadeira), fornecimento dos materiais (inclusive eventuais perdas), preparo, transporte interno no canteiro e aplicação da argamassa (de cimento, cal hidratada e areia) para preenchimento (fechamento) dos rasgos.",
+   "criterio": "m (metro) Pelo comprimento total de rasgo aberto e recomposto, para assentamento de tubulações com diâmetro que pode variar de 1.1/4” a 2”.",
+   "normas": [
+    "NBR 5626:2020",
+    "NBR 8160:1999",
+    "NBR 5732:1991",
+    "NBR 7220:1987",
+    "NR 18"
+   ]
+  },
+  "142203": {
+   "d": "Abertura e fechamento de rasgos em alvenaria, para passagem de tubulações, diâm. 2.1/2\" a 4\"",
+   "u": "m",
+   "caderno": "14.22 – ABERTURA E FECHAMENTO DE RASGOS",
+   "atualizacao": "01/2025",
+   "aplicacao": "Interligações entre os pontos de alimentação da instalação hidrossanitária, esgoto ou águas pluviais, em que as tubulações precisam ser embutidas em paredes de alvenaria.",
+   "incluidos": "Demarcação e execução dos rasgos em alvenaria, com auxílio de ferramentas manuais (marreta e talhadeira), fornecimento dos materiais (inclusive eventuais perdas), preparo, transporte interno no canteiro e aplicação da argamassa (de cimento, cal hidratada e areia) para preenchimento (fechamento) dos rasgos.",
+   "criterio": "m (metro) Pelo comprimento total de rasgo aberto e recomposto, para assentamento de tubulações com diâmetro que pode variar de 2.1/2” a 4”.",
+   "normas": [
+    "NBR 5626:2020",
+    "NBR 8160:1999",
+    "NBR 5732:1991",
+    "NBR 7220:1987",
+    "NR 18"
+   ]
+  },
+  "142204": {
+   "d": "Abertura e fechamento de rasgos em concreto, para passagem de tubulações, diâm. 1/2\" a 1\"",
+   "u": "m",
+   "caderno": "14.22 – ABERTURA E FECHAMENTO DE RASGOS",
+   "atualizacao": "01/2025",
+   "aplicacao": "Interligações entre os pontos de alimentação da instalação hidrossanitária, em que as tubulações precisam ser embutidas em concreto simples, como por exemplo: passeios, lastro de contrapiso, etc.",
+   "incluidos": "Demarcação e execução dos rasgos em concreto, com auxílio de ferramentas manuais (marreta e talhadeira), fornecimento dos materiais (inclusive eventuais perdas), preparo, transporte interno no canteiro e aplicação de graute (de cimento, cal hidratada, areia grossa e brita 0) para preenchimento (fechamento) dos rasgos.",
+   "criterio": "m (metro) Pelo comprimento total de rasgo aberto e recomposto, para assentamento de tubos com diâmetro que pode variar de ½” a 1”.",
+   "normas": [
+    "NBR 5626:2020",
+    "NBR 5732:1991",
+    "NBR 7220:1987",
+    "NR 18"
+   ]
+  },
+  "142205": {
+   "d": "Abertura e fechamento de rasgos em concreto, para passagem de tubulações, diâm. 1.1/4\" a 2\"",
+   "u": "m",
+   "caderno": "14.22 – ABERTURA E FECHAMENTO DE RASGOS",
+   "atualizacao": "01/2025",
+   "aplicacao": "Interligações entre os pontos de alimentação da instalação hidrossanitária, esgoto ou águas pluviais, em que as tubulações precisam ser embutidas em concreto simples, como por exemplo: passeios, lastro de contrapiso, etc.",
+   "incluidos": "Demarcação e execução dos rasgos em concreto, com auxílio de ferramentas manuais (marreta e talhadeira), fornecimento dos materiais (inclusive eventuais perdas), preparo, transporte interno no canteiro e aplicação de graute (de cimento, cal hidratada, areia grossa e brita 0) para preenchimento (fechamento) dos rasgos.",
+   "criterio": "m (metro) Pelo comprimento total de rasgo aberto e recomposto, para assentamento de tubos com diâmetro que pode variar de 1.1/4” a 2”.",
+   "normas": [
+    "NBR 5626:2020",
+    "NBR 8160:1999",
+    "NBR 5732:1991",
+    "NBR 7220:1987",
+    "NR 18"
+   ]
+  },
+  "142206": {
+   "d": "Abertura e fechamento de rasgos em concreto, para passagem de tubulações, diâm. 2.1/2\" a 4\"",
+   "u": "m",
+   "caderno": "14.22 – ABERTURA E FECHAMENTO DE RASGOS",
+   "atualizacao": "01/2025",
+   "aplicacao": "Interligações entre os pontos de alimentação da instalação hidrossanitária, esgoto ou águas pluviais, em que as tubulações precisam ser embutidas em concreto simples, como por exemplo: passeios, lastro de contrapiso, etc.",
+   "incluidos": "Demarcação e execução dos rasgos em concreto, com auxílio de ferramentas manuais (marreta e talhadeira), fornecimento dos materiais (inclusive eventuais perdas), preparo, transporte interno no canteiro e aplicação de graute (de cimento, cal hidratada, areia grossa e brita 0) para preenchimento (fechamento) dos rasgos.",
+   "criterio": "m (metro) Pelo comprimento total de rasgo aberto e recomposto, para assentamento de tubos com diâmetro que pode variar de 2.1/2” a 4”.",
+   "normas": [
+    "NBR 5626:2020",
+    "NBR 8160:1999",
+    "NBR 5732:1991",
+    "NBR 7220:1987",
+    "NR 18"
+   ]
+  }
+ }
+}

@@ -1,0 +1,177 @@
+{
+ "arquivo": "16.06 - Instalação de Incêndio - 003.pdf",
+ "caderno": "16 – OUTRAS INSTALAÇÕES · 1606 – INSTALAÇÃO DE INCÊNDIO",
+ "truncado": false,
+ "fichas": {
+  "160658": {
+   "d": "Manômetro com caixa e anel tipo cravado em aço inox, mostrador duplo 100 mm escalas de 0 a 7 kgf/cm2 e 0 à 100 PSI, saída traseira de 1/4\" BSP",
+   "u": "und",
+   "caderno": "1606 – INSTALAÇÃO DE INCÊNDIO",
+   "atualizacao": "03/2026",
+   "aplicacao": "Utilizado em sistemas hidráulicos e pneumáticos para monitorar pressões de ar comprimido, líquidos, óleo e outros fluidos compatíveis, em equipamentos industriais onde a resistência à corrosão e a precisão são essenciais, e em instalações de gás e água.",
+   "incluidos": "Fornecimento do manômetro com caixa e anel tipo cravado em aço inox, mostrador duplo 100 mm escalas de 0 a 7 kgf/cm2 e 0 à 100 PSI, inclusive os elementos de vedação necessários, bem como todos os materiais, mão de obra, transporte e equipamentos para sua instalação e testes. Exclusive conexão e acessórios. Limpeza do local do serviço e remoção de todos os resíduos, materiais excedentes e inaproveitáveis, inclusive descarte final.",
+   "criterio": "Por unidade fornecida e instalada.",
+   "normas": [
+    "NBR 14105",
+    "CBMES NT 15/2009"
+   ]
+  },
+  "160659": {
+   "d": "Manômetro com caixa e anel tipo cravado em aço inox, mostrador duplo 100 mm escalas de 0 a 10 kgf/cm2 e 0 a 150 PSI, saída traseira de 1/4\" BSP",
+   "u": "und",
+   "caderno": "1606 – INSTALAÇÃO DE INCÊNDIO",
+   "atualizacao": "03/2026",
+   "aplicacao": "Utilizado em sistemas hidráulicos e pneumáticos para monitorar a pressão de ar comprimido, óleo, água e outros fluidos compatíveis, em aplicações industriais que requerem medição de pressões médias a altas, sistemas de gás e redes de distribuição.",
+   "incluidos": "Fornecimento do manômetro com caixa e anel tipo cravado em aço inox, mostrador duplo 100 mm escalas de 0 a 10 kgf/cm2 e 0 a 150 PSI, inclusive os elementos de vedação necessários, bem como todos os materiais, mão de obra, transporte e equipamentos para sua instalação e testes. Exclusive conexão e acessórios. Limpeza do local do serviço e remoção de todos os resíduos, materiais excedentes e inaproveitáveis, inclusive descarte final.",
+   "criterio": "Por unidade fornecida e instalada.",
+   "normas": [
+    "NBR 14105",
+    "CBMES NT 15/2009"
+   ]
+  },
+  "160660": {
+   "d": "Pressostato 80 / 120 PSI com válvula, capacidade elétrica até 5CV em 250VCA, Margirius ou equivalente",
+   "u": "und",
+   "caderno": "1606 – INSTALAÇÃO DE INCÊNDIO",
+   "atualizacao": "03/2026",
+   "aplicacao": "Utilizado em redes de água pressurizada em sistema de combate ao incêndio, sua função é acionar a bomba de recalque para garantir que a pressão no sistema permaneça dentro dos parâmetros ideais, assegurando uma operação segura e eficiente em emergências.",
+   "incluidos": "Fornecimento do pressostato 80 / 120 PSI com válvula, capacidade elétrica até 5CV em 250VCA, elementos de vedação necessários, bem como todos os materiais, mão de obra, transporte e equipamentos para sua instalação e testes. Exclusive conexão e acessórios. Limpeza do local do serviço e remoção de todos os resíduos, materiais excedentes e inaproveitáveis, inclusive descarte final.",
+   "criterio": "Por unidade fornecida e instalada.",
+   "normas": []
+  },
+  "160661": {
+   "d": "Pressostato 100 / 150 PSI com válvula, capacidade elétrica até 5CV em 250VCA, Margirius ou equivalente",
+   "u": "und",
+   "caderno": "1606 – INSTALAÇÃO DE INCÊNDIO",
+   "atualizacao": "03/2026",
+   "aplicacao": "Utilizado em redes de água pressurizada em sistema de combate à incêndio, sua função é acionar a bomba de recalque para garantir que a pressão no sistema permaneça dentro dos parâmetros ideais, assegurando uma operação segura e eficiente em emergências.",
+   "incluidos": "Fornecimento do pressostato 100/150 PSI com válvula de alívio 3/16, capacidade elétrica até 5CV, elementos de vedação necessários, bem como todos os materiais, mão de obra, transporte e equipamentos para sua instalação e testes. Exclusive conexão e acessórios. Limpeza do local do serviço e remoção de todos os resíduos, materiais excedentes e inaproveitáveis, inclusive descarte final.",
+   "criterio": "Por unidade fornecida e instalada.",
+   "normas": []
+  },
+  "160662": {
+   "d": "Tanque de pressurização/cilindro de pressão, capacidade de 10 litros, fornecimento (vazio) e instalação, exclusive conexões",
+   "u": "und",
+   "caderno": "1606 – INSTALAÇÃO DE INCÊNDIO",
+   "atualizacao": "03/2026",
+   "aplicacao": "Utilizado em sistemas de combate a incêndio fixos ou portáteis, em especial nos sistemas de pressurização por gás (CO₂, N₂ ou ar comprimido) ou tanques de espuma pressurizada, como reserva de energia pneumática ou contenção de agente extintor.",
+   "incluidos": "Fornecimento tanque de pressurização/cilindro de pressão, capacidade de 10 litros, elementos de vedação necessários, bem como todos os materiais, mão de obra, transporte e equipamentos para sua instalação e testes. Exclusive conexão e acessórios. Limpeza do local do serviço e remoção de todos os resíduos, materiais excedentes e inaproveitáveis, inclusive descarte final.",
+   "criterio": "Por unidade fornecida e instalada.",
+   "normas": [
+    "NBR 12962",
+    "NBR 13485",
+    "Portaria INMETRO nº 73/2021",
+    "CBMES NT 15/2009"
+   ]
+  },
+  "160663": {
+   "d": "Fornecimento e instalação de Bateria estacionária 12V - 60 AH, para centrais de alarme / iluminação de emergência, Moura ou equivalente",
+   "u": "und",
+   "caderno": "1606 – INSTALAÇÃO DE INCÊNDIO",
+   "atualizacao": "03/2026",
+   "aplicacao": "Ideal para sistemas de backup (no-breaks), iluminação de emergência, telecomunicações, sistemas de alarme e energia solar.",
+   "incluidos": "Fornecimento e instalação da Bateria estacionária 12V - 60 AH, bem como todos os materiais, mão de obra, transporte e equipamentos para sua instalação e testes. Exclusive conexão e acessórios. Limpeza do local do serviço e remoção de todos os resíduos, materiais excedentes e inaproveitáveis, inclusive descarte final.",
+   "criterio": "Por unidade fornecida e instalada.",
+   "normas": [
+    "ATO nº 847",
+    "NBR 14204",
+    "NBR 14205",
+    "NBR 14206",
+    "NBR 5410",
+    "NBR 15389",
+    "NBR 15641",
+    "NBR 15254",
+    "IEC 60896-21",
+    "IEC 60896-22",
+    "IEEE 485-2010",
+    "CONAMA 401/2008"
+   ]
+  },
+  "160665": {
+   "d": "Conjunto completo de Porta corta-fogo simples para saída de emergência Dim.: 100x210x5cm, conforme ABNT NBR 11742, classe P-90, chapa de aço galvanizada 24 com revestimento interno de fibra de manta cerâmica de baixa densidade, fechamento automático, inclusive contra-marco, três (3) dobradiças tipo mola com parafusos sextavados, barra antipânico e fechadura tipo trinco sobrepor sem chave, exclusive sinalização de emergência e pintura de acabamento",
+   "u": "und",
+   "caderno": "1606 – INSTALAÇÃO DE INCÊNDIO",
+   "atualizacao": "03/2026",
+   "aplicacao": "Instalado em saídas de emergência de edifícios comerciais, industriais, residenciais e públicos, em áreas que requerem compartimentação contra incêndio para evitar a propagação de fogo e fumaça, e em corredores e escadas de segurança.",
+   "incluidos": "Fornecimento da porta corta-fogo simples para saída de emergência Dim.: 100x210x5cm - classe P-90, batente, dobradiças e fechadura bem como todos os materiais, mão de obra, transporte e equipamentos para sua instalação e testes. Limpeza do local do serviço e remoção de todos os resíduos, materiais excedentes e inaproveitáveis, inclusive descarte final. Obs.: Não estão inclusos no presente preço: sinalização de emergência, pintura de acabamento em esmalte sintético sobre fundo (na cor especificada em projeto).",
+   "criterio": "Por unidade fornecida e instalada.",
+   "normas": [
+    "NBR 11742"
+   ]
+  },
+  "160671": {
+   "d": "Abrigo de parede para hidrante 80x90x17cm sobrepor, em chapa de aço com pintura eletrostática vermelha, visor transparente e inscrição \"HIDRANTE\", registro globo angular 45º 2.1/2” (63mm), adaptador em latão storz engate rápido 2.1/2”, 2 (duas) mangueiras de incêndio 15m – 2.1/2” - Tipo 2 e esguicho regulável em latão 2.1/2”, fornecimento e instalação",
+   "u": "und",
+   "caderno": "1606 – INSTALAÇÃO DE INCÊNDIO",
+   "atualizacao": "03/2026",
+   "aplicacao": "Usado como sistemas fixos de combate a incêndios em edifícios administrativos e escolares e hospitais. Utilizado para o controle inicial de focos de incêndio com a conexão direta ao sistema hidráulico do edifício",
+   "incluidos": "Fornecimento do abrigo de parede para hidrante 80x90x17cm, registro globo angular 45º 2.1/2” (63mm), adaptador em latão storz engate rápido 2.1/2”, duas (02) mangueiras de incêndio 15m – 2.1/2” – Tipo 2, com acoplamento em latão e esguicho regulável em latão 2.1/2”, inclusive parafuso e buchas, bem como todos os materiais, mão de obra e equipamentos para sua instalação e testes. Limpeza do local do serviço e remoção de todos os resíduos, materiais excedentes e inaproveitáveis, inclusive descarte final.",
+   "criterio": "Por unidade fornecida e instalada.",
+   "normas": [
+    "NBR 11861:1998",
+    "NBR 13714:2000",
+    "NBR 16021:2011",
+    "NBR 14349:1999",
+    "NBR 6941:2015",
+    "NT 015-CAT CBMES"
+   ]
+  },
+  "160673": {
+   "d": "Central de Alarme de Incêndio Endereçável, com capacidade para até 256 endereços, distribuídos em 4 laços, incluindo fornecimento, instalação e configuração completa",
+   "u": "und",
+   "caderno": "1606 – INSTALAÇÃO DE INCÊNDIO",
+   "atualizacao": "03/2026",
+   "aplicacao": "Utilizada em sistemas de detecção e alarme de incêndio em edificações comerciais, hospitalares e institucionais, oferecendo alta confiabilidade, flexibilidade de configuração e precisão na identificação de ocorrências, com controle por zonas e setorização.",
+   "incluidos": "Fornecimento, instalação e configuração da central de Alarme de Incêndio Endereçável, com capacidade para até 256 endereços, distribuídos em 4 laços, bem como a mão de obra para execução do serviço. Limpeza do local do serviço e remoção de todos os resíduos, materiais excedentes e inaproveitáveis, inclusive descarte final.",
+   "criterio": "Por unidade fornecida e instalada.",
+   "normas": [
+    "NBR 17240",
+    "NBR 5410",
+    "NBR IEC 60529",
+    "CBMES NT 17/2013"
+   ]
+  },
+  "160674": {
+   "d": "Acionador manual de alarme de incêndio endereçável, tipo quebra-vidro, na cor vermelha, incluso martelo – Fornecimento, instalação e configuração",
+   "u": "und",
+   "caderno": "1606 – INSTALAÇÃO DE INCÊNDIO",
+   "atualizacao": "03/2026",
+   "aplicacao": "Instalado em rotas de fuga, halls, escadas, saídas de emergência e áreas comuns, permite a ativação imediata do sistema de alarme de incêndio por qualquer pessoa em situação de risco, sendo obrigatório em sistemas de detecção e alarme de incêndio.",
+   "incluidos": "Fornecimento, instalação e configuração do Acionador manual de alarme de incêndio endereçável, tipo quebra-vidro, na cor vermelha, incluso martelo, bem como a mão de obra para execução do serviço. Limpeza do local do serviço e remoção de todos os resíduos, materiais excedentes e inaproveitáveis, inclusive descarte final.",
+   "criterio": "Por unidade fornecida e instalada.",
+   "normas": [
+    "NBR 17240",
+    "NBR 5410",
+    "CBMES NT 17/2013"
+   ]
+  },
+  "160675": {
+   "d": "Detector de fumaça óptico (fotoelétrico) endereçável, alimentação bivolt 12/24V – Fornecimento, instalação e configuração",
+   "u": "und",
+   "caderno": "1606 – INSTALAÇÃO DE INCÊNDIO",
+   "atualizacao": "03/2026",
+   "aplicacao": "Utilizado em ambientes internos de circulação, salas técnicas, escritórios, corredores e áreas comuns, permite a detecção precoce de fumaça, ativando a central de alarme de incêndio para evacuação e resposta imediata, conforme a NBR 17240.",
+   "incluidos": "Fornecimento, instalação e configuração do Detector de fumaça óptico (fotoelétrico) endereçável, alimentação bivolt 12/24V, bem como a mão de obra para execução do serviço. Limpeza do local do serviço e remoção de todos os resíduos, materiais excedentes e inaproveitáveis, inclusive descarte final.",
+   "criterio": "Por unidade fornecida e instalada.",
+   "normas": [
+    "NBR 17240",
+    "NBR 5410",
+    "CBMES NT 17/2013"
+   ]
+  },
+  "160676": {
+   "d": "Sirene eletrônica média tipo corneta em ABS, IP52 – 12 e 24V – Fornecimento e instalação",
+   "u": "und",
+   "caderno": "1606 – INSTALAÇÃO DE INCÊNDIO",
+   "atualizacao": "03/2026",
+   "aplicacao": "Instalada em áreas internas ou semiabertas (corredores, halls, áreas técnicas, depósitos), com função de alertar sonoramente os ocupantes em caso de incêndio, atuando em conjunto com sinalização visual quando exigido. Atende à NBR 17240.",
+   "incluidos": "Fornecimento da Sirene eletrônica média tipo corneta em ABS, IP52 – 12 e 24V, bem como todos os materiais, mão de obra e equipamentos para sua instalação e testes. Limpeza do local do serviço e remoção de todos os resíduos, materiais excedentes e inaproveitáveis, inclusive descarte final., bem como a mão de obra para execução do serviço.",
+   "criterio": "Por unidade fornecida e instalada.",
+   "normas": [
+    "NBR 17240",
+    "NBR 5410",
+    "CBMES NT 17/2013"
+   ]
+  }
+ }
+}

@@ -1,0 +1,222 @@
+{
+ "arquivo": "0103-DEMOLIÇÕES E RETIRADAS.pdf",
+ "caderno": "01 – SERVIÇOS PRELIMINARES · 0103 – DEMOLIÇÕES E RETIRADAS",
+ "truncado": false,
+ "fichas": {
+  "010315": {
+   "d": "Retirada manual de telhas tipo Canalete 49, sem reaproveitamento",
+   "u": "m2",
+   "caderno": "01 – SERVIÇOS PRELIMINARES · 0103 – DEMOLIÇÕES E RETIRADAS",
+   "atualizacao": "07/2025",
+   "aplicacao": "Em situações em que há necessidade de substituição parcial ou completa das telhas Canalete 49 da cobertura, por motivos de infiltrações, peças quebradas, questão estética ou troca do tipo de telhado.",
+   "incluidos": "Remoção de telhas e cumeeira Canalete 49, considerando o transporte horizontal e vertical e acondicionamento das peças em local apropriado no canteiro de obras. Limpeza do local do serviço, com remoção de resíduos e materiais inaproveitáveis, exclusive destinação final.",
+   "criterio": "m2 (metro quadrado) Pela área efetiva de telhado considerando a retirada das telhas de fibrocimento e da cumeeira.",
+   "normas": [
+    "NBR 10.004-1",
+    "NBR 10.004-2",
+    "NR 18"
+   ]
+  },
+  "010317": {
+   "d": "Demolição cuidadosa de alvenaria de forma manual, para abertura de vãos, sem reaproveitamento",
+   "u": "m2",
+   "caderno": "01 – SERVIÇOS PRELIMINARES · 0103 – DEMOLIÇÕES E RETIRADAS",
+   "atualizacao": "07/2025",
+   "aplicacao": "Em situações em que há necessidade de abertura de vão entre ambientes, como por exemplo: remanejamento ou aumento de vão de porta ou janela, instalação de portas ou esquadrias novas etc.",
+   "incluidos": "Fornecimento de mão-de-obra para execução do serviço de demolição de alvenaria, inclusive execução de cortes com auxílio de máquina manual elétrica, considerando o transporte horizontal e acondicionamento do entulho em local apropriado no canteiro de obras. Limpeza do local do serviço, com varrição e remoção de resíduos provenientes da demolição, exclusive destinação final.",
+   "criterio": "m2 (metro quadrado) Pela área efetiva do vão de alvenaria demolida.",
+   "normas": [
+    "NBR 10.004-1",
+    "NBR 10.004-2",
+    "NR 18"
+   ]
+  },
+  "010318": {
+   "d": "Remoção manual de forro modular apoiados em estruturas em perfis metálicos, sem reaproveitamento",
+   "u": "m2",
+   "caderno": "01 – SERVIÇOS PRELIMINARES · 0103 – DEMOLIÇÕES E RETIRADAS",
+   "atualizacao": "07/2025",
+   "aplicacao": "Em situações em que há necessidade de substituição do tipo do rebaixamento existente ou alteração do layout de um determinado ambiente da edificação.",
+   "incluidos": "Desmontagem de forro modular em chapa e estrutura em perfis metálicos, inclusive acessórios (pregos, parafusos, buchas, rebites etc.), considerando o transporte horizontal e acondicionamento dos materiais em local apropriado no canteiro de obras, para descarte. Limpeza do local do serviço, considerando varrição, remoção de resíduos e materiais inaproveitáveis, exclusive destinação final.",
+   "criterio": "m2 (metro quadrado) Pela área efetiva de forro removido (desmontado).",
+   "normas": [
+    "NBR 10.004-1",
+    "NBR 10.004-2"
+   ]
+  },
+  "010319": {
+   "d": "Remoção manual de pintura antiga a base de óleo ou esmalte sobre esquadrias, com aplicação de removedor",
+   "u": "m2",
+   "caderno": "01 – SERVIÇOS PRELIMINARES · 0103 – DEMOLIÇÕES E RETIRADAS",
+   "atualizacao": "07/2025",
+   "aplicacao": "Em situações em que há necessidade de aplicação de nova pintura esmalte sobre esquadrias, promovendo a remoção completa de pintura antiga.",
+   "incluidos": "Fornecimento de mão-de-obra para execução do serviço de remoção de pintura antiga sobre esquadrias, com aplicação de espátula, escova ou palha de aço, inclusive fornecimento de produto removedor adequado. Limpeza da esquadria e local do serviço, com remoção de resíduos e materiais inaproveitáveis.",
+   "criterio": "m2 (metro quadrado) Pela área efetiva das superfícies da esquadria a ser feita a remoção de pintura antiga.",
+   "normas": [
+    "NBR 10.004-1",
+    "NBR 10.004-2",
+    "NR 18"
+   ]
+  },
+  "010320": {
+   "d": "Remoção manual de revestimento de pisos com forração têxtil, com aplicação de solvente",
+   "u": "m2",
+   "caderno": "01 – SERVIÇOS PRELIMINARES · 0103 – DEMOLIÇÕES E RETIRADAS",
+   "atualizacao": "07/2025",
+   "aplicacao": "Em situações em que há necessidade de retirada para troca do revestimento de piso em carpete, em um determinado ambiente.",
+   "incluidos": "Fornecimento de mão-de-obra para execução do serviço de remoção de piso com forração têxtil, com auxílio de ferramentas apropriadas (estilete, faca de carpete, espátula ou raspador), inclusive fornecimento de produto removedor da cola ou solvente adequado. Limpeza do local do serviço, com remoção de resíduos e materiais inaproveitáveis, exclusive destinação final.",
+   "criterio": "m2 (metro quadrado) Pela área efetiva de piso em carpete removido.",
+   "normas": [
+    "NBR 10.004-1",
+    "NBR 10.004-2",
+    "NR 18",
+    "Decreto Estadual 1.941-R/2007"
+   ]
+  },
+  "010323": {
+   "d": "Retirada de torneira, sem reaproveitamento",
+   "u": "und",
+   "caderno": "01 – SERVIÇOS PRELIMINARES · 0103 – DEMOLIÇÕES E RETIRADAS",
+   "atualizacao": "07/2025",
+   "aplicacao": "Em situações em que há necessidade de troca da torneira, por problemas de vazamento, corrosão ou desgaste das peças de acionamento, ou ainda devido à vida útil do aparelho, que é em torno de 5 a 10 anos ou 30.000 ciclos de abertura e fechamento do mecanismo (torneiras convencionais).",
+   "incluidos": "Fornecimento de mão-de-obra para execução do serviço de retirada de torneiras, inclusive remoção de acessórios de fixação (porcas), bases, acabamentos e engates flexíveis, acondicionando as peças em local apropriado no canteiro de obras, para descarte (bota-fora). Limpeza do local do serviço, com remoção de resíduos, excesso de água e materiais inaproveitáveis, exclusive destinação final.",
+   "criterio": "und (unidade) Pela quantidade efetiva de torneiras retiradas.",
+   "normas": [
+    "NBR 10.004-1",
+    "NBR 10.004-2",
+    "NR 18"
+   ]
+  },
+  "010324": {
+   "d": "Retirada manual de telha tipo Canalete 90, sem reaproveitamento",
+   "u": "m2",
+   "caderno": "01 – SERVIÇOS PRELIMINARES · 0103 – DEMOLIÇÕES E RETIRADAS",
+   "atualizacao": "07/2025",
+   "aplicacao": "Em situações em que há necessidade de substituição parcial ou completa das telhas Canalete 90 da cobertura, por motivos de infiltrações, peças quebradas, questão estética ou troca do tipo de telhado.",
+   "incluidos": "Remoção de telhas e cumeeira Canalete 90, considerando o transporte horizontal e vertical e acondicionamento das peças em local apropriado no canteiro de obras. Limpeza do local do serviço, com remoção de resíduos e materiais inaproveitáveis.",
+   "criterio": "m2 (metro quadrado) Pela área efetiva de telhado considerando a retirada das telhas de fibrocimento e da cumeeira.",
+   "normas": [
+    "NBR 10.004-1",
+    "NBR 10.004-2",
+    "NR 18"
+   ]
+  },
+  "010325": {
+   "d": "Remoção manual de trama de madeira para cobertura, sem reaproveitamento",
+   "u": "m2",
+   "caderno": "01 – SERVIÇOS PRELIMINARES · 0103 – DEMOLIÇÕES E RETIRADAS",
+   "atualizacao": "07/2025",
+   "aplicacao": "Em situações em que há necessidade de remoção completa das peças da estrutura de madeira. Por exemplo, para troca do tipo de estrutura da cobertura.",
+   "incluidos": "Demolição da estrutura de madeira da cobertura, considerando o transporte vertical e horizontal, acondicionamento provisório e das peças e dos resíduos em local apropriado no canteiro de obras. Limpeza do local do serviço, com remoção de resíduos e materiais inaproveitáveis, exclusive destinação final.",
+   "criterio": "m2 (metro quadrado) Pela área efetiva da estrutura de madeira da cobertura demolida, utilizando a área de projeção horizontal do telhado.",
+   "normas": [
+    "NBR 10.004-1",
+    "NBR 10.004-2",
+    "NR 18",
+    "Decreto Estadual 1.941-R/2007"
+   ]
+  },
+  "010326": {
+   "d": "Remoção manual de trama de madeira para cobertura, com reaproveitamento",
+   "u": "m2",
+   "caderno": "01 – SERVIÇOS PRELIMINARES · 0103 – DEMOLIÇÕES E RETIRADAS",
+   "atualizacao": "07/2025",
+   "aplicacao": "Em situações em que há necessidade de remoção parcial das peças da estrutura de madeira. Por exemplo, para substituição de peças da estrutura da cobertura.",
+   "incluidos": "Retirada da estrutura de madeira da cobertura, considerando o transporte vertical e horizontal, acondicionamento provisório das peças e dos resíduos em local apropriado no canteiro de obras. Limpeza do local do serviço, com remoção de resíduos e materiais inaproveitáveis, exclusive destinação final.",
+   "criterio": "m2 (metro quadrado) Pela área efetiva de retirada de componentes da estrutura de madeira da cobertura, utilizando a área de projeção horizontal do telhado.",
+   "normas": [
+    "NBR 10.004-1",
+    "NBR 10.004-2",
+    "NBR 7190-2",
+    "NR 18"
+   ]
+  },
+  "010327": {
+   "d": "Retirada manual de batente (marco) de madeira, sem reaproveitamento",
+   "u": "m",
+   "caderno": "01 – SERVIÇOS PRELIMINARES · 0103 – DEMOLIÇÕES E RETIRADAS",
+   "atualizacao": "07/2025",
+   "aplicacao": "Em situações em que há necessidade de substituição parcial ou completa dos batentes de madeira do vão da porta, por motivos de aumento, fechamento ou deslocamento do vão da porta, infestações de cupins e brocas, defeitos nas peças que comprometam sua finalidade, como: sinais de empenamentos…",
+   "incluidos": "Retirada das peças de madeira do batente (marco), inclusive com remoção de acessórios de fixação (pregos ou parafusos), considerando o transporte horizontal e acondicionamento das peças em local apropriado no canteiro de obras. Limpeza do local do serviço, com remoção de resíduos e materiais inaproveitáveis, exclusive destinação final.",
+   "criterio": "m (metro) Pelo comprimento efetivo de marco de madeira removido.",
+   "normas": [
+    "NBR 10.004-1",
+    "NBR 10.004-2",
+    "NR 18",
+    "Decreto Estadual 1.941-R/2007"
+   ]
+  },
+  "010329": {
+   "d": "Retirada manual de disjuntor monofásico, bifásico ou trifásico, sem reaproveitamento",
+   "u": "und",
+   "caderno": "01 – SERVIÇOS PRELIMINARES · 0103 – DEMOLIÇÕES E RETIRADAS",
+   "atualizacao": "07/2025",
+   "aplicacao": "Geralmente em situações em que há necessidade de troca do disjuntor, seja por sinais de falha ou dano, ou ainda devido à vida útil do dispositivo, que é em média de 10 a 15 anos ou 4.000 ciclos.",
+   "incluidos": "Retirada do disjuntor do quadro elétrico, inclusive com remoção de acessórios de fixação (parafusos e conectores), isolamento dos fios ou cabos desconectados com utilização de fita isolante e acondicionamento das peças em local apropriado no canteiro de obras, para descarte (bota-fora). Limpeza do local do serviço, com remoção de resíduos e materiais inaproveitáveis, exclusive destinação final.",
+   "criterio": "und (unidade) Pela quantidade efetiva de disjuntores retirados.",
+   "normas": [
+    "NBR 10.004-1",
+    "NBR 10.004-2",
+    "NBR 5410",
+    "NR 18"
+   ]
+  },
+  "010331": {
+   "d": "Demolição manual de piso, soleira, peitoris e escadas em mármore ou granito, exclusive regularização, sem reaproveitamento",
+   "u": "m2",
+   "caderno": "01 – SERVIÇOS PRELIMINARES · 0103 – DEMOLIÇÕES E RETIRADAS",
+   "atualizacao": "07/2025",
+   "aplicacao": "Em situações em que há necessidade de demolição para troca dos revestimentos de pedras naturais, de um determinado ambiente, por diversos motivos, como: mudança de layout, abertura, fechamento ou deslocamento de vãos, questão estética, placas soltas ou com som cavo etc.",
+   "incluidos": "Fornecimento de mão-de-obra para execução do serviço de demolição manual de revestimento de pedras naturais (piso, soleira, peitoris e escadas), inclusive remoção de argamassa de assentamento das peças, com auxílio de ferramentas apropriadas, considerando o transporte horizontal e acondicionamento provisório dos fragmentos e dos resíduos em local apropriado no canteiro de obras. Limpeza do local do serviço, considerando recolhimento, varrição, remoção de resíduos e materiais inaproveitáveis, exclusive destinação final.",
+   "criterio": "m2 (metro quadrado) Pela área efetiva de demolição de revestimentos de pedras naturais (piso, soleira, peitoris e escadas).",
+   "normas": [
+    "NBR 10.004-1",
+    "NBR 10.004-2",
+    "NR 18"
+   ]
+  },
+  "010332": {
+   "d": "Retirada manual de roda-parede em madeira, sem reaproveitamento",
+   "u": "m",
+   "caderno": "01 – SERVIÇOS PRELIMINARES · 0103 – DEMOLIÇÕES E RETIRADAS",
+   "atualizacao": "07/2025",
+   "aplicacao": "Em situações em que há necessidade de remoção, substituição parcial ou completa das peças de roda parede de um determinado ambiente.",
+   "incluidos": "Retirada de roda parede de madeira, considerando o transporte horizontal e acondicionamento provisório das peças em local apropriado no canteiro de obras. Limpeza do local do serviço, com remoção de resíduos e materiais inaproveitáveis, exclusive destinação final.",
+   "criterio": "m (metro) Pelo comprimento efetivo de roda parede em madeira retirado.",
+   "normas": [
+    "NBR 10.004-1",
+    "NBR 10.004-2",
+    "NR 18",
+    "Decreto Estadual 1.941-R/2007"
+   ]
+  },
+  "010333": {
+   "d": "Retirada manual de piso de borracha com aplicação de solvente a base de álcool, sem reaproveitamento",
+   "u": "m2",
+   "caderno": "01 – SERVIÇOS PRELIMINARES · 0103 – DEMOLIÇÕES E RETIRADAS",
+   "atualizacao": "07/2025",
+   "aplicacao": "Em situações em que há necessidade de retirada para troca do revestimento de piso de borracha, de um determinado ambiente, por diversos motivos, como: mudança de layout ou de uso do ambiente, piso danificado ou desgastado etc.",
+   "incluidos": "Fornecimento de mão-de-obra para execução do serviço de retirada de piso de borracha, com auxílio de martelo, cinzel, raspador e espátula, inclusive fornecimento de produto solvente a base de álcool. Limpeza do local do serviço, com remoção de resíduos e materiais inaproveitáveis, exclusive destinação final.",
+   "criterio": "m2 (metro quadrado) Pela área efetiva de retirada de piso de borracha.",
+   "normas": [
+    "NBR 10.004-1",
+    "NBR 10.004-2",
+    "NR 18"
+   ]
+  },
+  "010344": {
+   "d": "Demolição de lajes, em concreto armado, de forma mecanizada com martelete demolidor elétrico, sem reaproveitamento",
+   "u": "m3",
+   "caderno": "01 – SERVIÇOS PRELIMINARES · 0103 – DEMOLIÇÕES E RETIRADAS",
+   "atualizacao": "07/2025",
+   "aplicacao": "Em situações em que há necessidade de demolição total ou parcial de uma ou mais lajes de concreto armado de uma edificação, de forma mais eficiente e controlada em relação à demolição manual. Utilizado por exemplo para fazer aberturas na laje para criação de escadas ou shafts para a passagem de…",
+   "incluidos": "Fornecimento de mão-de-obra para execução do serviço de demolição mecanizada de lajes em concreto armado, com auxílio de máquina robusta do tipo martelete demolidor elétrico e ferramenta manual tipo tesoura para corte de vergalhão, inclusive transporte vertical, transporte horizontal e acondicionamento provisório dos fragmentos e dos resíduos em local apropriado no canteiro de obras. Limpeza do local do serviço, considerando recolhimento, varrição, remoção de resíduos, detritos, fragmentos de concreto, pontas de ferro e materiais inaproveitáveis, exclusive destinação final.",
+   "criterio": "m3 (metro cúbico) Pelo volume das lajes em concreto armado, considerando-se o volume efetivo dos elementos demolidos, apropriado com base nas dimensões das peças íntegras.",
+   "normas": [
+    "NBR 10.004-1",
+    "NBR 10.004-2",
+    "NR 18"
+   ]
+  }
+ }
+}

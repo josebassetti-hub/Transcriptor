@@ -1,0 +1,107 @@
+{
+ "arquivo": "1202-ACABAMENTOS.pdf",
+ "caderno": "12 – REVESTIMENTO DE PAREDES INTERNAS E EXTERNAS · 1202 – ACABAMENTOS",
+ "truncado": false,
+ "fichas": {
+  "120201": {
+   "d": "Azulejo branco 15 x 15 cm, juntas a prumo, assentado com argamassa de cimento colante, inclusive rejuntamento com cimento branco, referência Eliane, Cecrisa, Portobello ou equivalente",
+   "u": "m2",
+   "caderno": "12 – REVESTIMENTO DE PAREDES INTERNAS E EXTERNAS · 1202 – ACABAMENTOS",
+   "atualizacao": "04/2024",
+   "aplicacao": "Revestimento interno de paredes de sanitários, vestiários, despensa, cozinha etc., conforme especificação de projeto.",
+   "incluidos": "Fornecimento do azulejo e dos espaçadores, argamassa de assentamento e pasta de rejuntamento, considerando perdas por consumo e transporte interno do canteiro até o local de assentamento, inclusive preparo da argamassa e do rejunte, umedecimento da superfície de base, assentamento do azulejo e execução do rejuntamento das peças, limpeza das superfícies revestidas, colocação de escadas ou montagem de plataformas de trabalho.",
+   "criterio": "m2 (metro quadrado) Pela área real da superfície efetivamente revestida com azulejo, considerando todas as espalas, ressaltos ou molduras, e descontando todos os vãos (portas, janelas etc.) e interferências, quaisquer que sejam suas dimensões.",
+   "normas": ["NBR 8214:1983", "NBR 13754:1996", "NBR 14081-1:2012", "NBR 14992:2003"]
+  },
+  "120205": {
+   "d": "Roda-parede de madeira de lei tipo Paraju ou equivalente, de 10 x 2.5cm, fixado com parafuso e bucha plástica nº 8",
+   "u": "m",
+   "caderno": "12 – REVESTIMENTO DE PAREDES INTERNAS E EXTERNAS · 1202 – ACABAMENTOS",
+   "atualizacao": "04/2024",
+   "aplicacao": "Em alvenarias internas, em ambientes como salas de aula, biblioteca, circulação, ambientes administrativos etc.",
+   "incluidos": "Fornecimento de peça de madeira de lei, parafusos e buchas, considerando perdas por consumo e transporte interno do canteiro até o local de instalação, execução de furos com furadeira e fixação do roda-parede, limpeza das peças de madeira.",
+   "criterio": "m (metro) Pela metragem de roda-parede efetivamente instalado.",
+   "normas": ["NBR 7203:1982", "Decreto Estadual nº 1.941-R/2007"]
+  },
+  "120207": {
+   "d": "Roda-parede de madeira de lei tipo Paraju ou equivalente, de 20 x 1,5 cm, fixado com parafuso e bucha plástica nº 7",
+   "u": "m",
+   "caderno": "12 – REVESTIMENTO DE PAREDES INTERNAS E EXTERNAS · 1202 – ACABAMENTOS",
+   "atualizacao": "04/2024",
+   "aplicacao": "Em alvenarias internas, em ambientes como salas de aula, biblioteca, circulação, ambientes administrativos etc.",
+   "incluidos": "Fornecimento de peça de madeira de lei, parafusos e buchas, considerando perdas por consumo e transporte interno do canteiro até o local de instalação, execução de furos com furadeira e fixação do roda-parede, limpeza das peças de madeira.",
+   "criterio": "m (metro) Pela metragem de roda-parede efetivamente instalado.",
+   "normas": ["NBR 7203:1982", "Decreto Estadual nº 1.941-R/2007"]
+  },
+  "120208": {
+   "d": "Acabamento de alumínio com perfil de canto para arremate das paredes",
+   "u": "m",
+   "caderno": "12 – REVESTIMENTO DE PAREDES INTERNAS E EXTERNAS · 1202 – ACABAMENTOS",
+   "atualizacao": "04/2024",
+   "aplicacao": "Em cantos expostos de alvenarias internas, revestidas com azulejos, cerâmicas, pastilhas cerâmicas ou argamassa.",
+   "incluidos": "Fornecimento e instalação da cantoneira e da argamassa de chumbamento, considerando perdas por consumo, transporte interno do canteiro até o local de instalação, limpeza do excesso de argamassa.",
+   "criterio": "m (metro) Pela metragem de cantoneira efetivamente instalada.",
+   "normas": ["NBR 14125/2009"]
+  },
+  "120216": {
+   "d": "Acabamento de perfil \"U\" em alumínio anodizado fosco 1/2\"",
+   "u": "m",
+   "caderno": "12 – REVESTIMENTO DE PAREDES INTERNAS E EXTERNAS · 1202 – ACABAMENTOS",
+   "atualizacao": "04/2024",
+   "aplicacao": "Uso interno e externo para revestimento de alvenaria. Geralmente utilizado em fachadas, muros, etc.",
+   "incluidos": "Fornecimento e instalação do perfil \"U\" e da argamassa de chumbamento, considerando perdas por consumo, transporte interno do canteiro até o local de instalação, limpeza do excesso de argamassa.",
+   "criterio": "m (metro) Pela metragem de perfil de alumínio efetivamente instalado.",
+   "normas": ["NBR 14125/2009"]
+  },
+  "120220": {
+   "d": "Cerâmica 10 x 10 cm, referência Eliane, Cecrisa, Portobello ou equivalente, nas cores branco ou areia, com rejunte esp. 0,50 cm, empregando argamassa colante",
+   "u": "m2",
+   "caderno": "12 – REVESTIMENTO DE PAREDES INTERNAS E EXTERNAS · 1202 – ACABAMENTOS",
+   "atualizacao": "04/2024",
+   "aplicacao": "Revestimento interno de paredes de salas de aula, circulação, refeitório, ambientes administrativos etc., conforme especificação de projeto.",
+   "incluidos": "Fornecimento da cerâmica e dos espaçadores, argamassa de assentamento e pasta de rejuntamento, considerando perdas por consumo e transporte interno do canteiro até o local de assentamento, inclusive preparo da argamassa e do rejunte, umedecimento da superfície de base, assentamento da cerâmica e execução do rejuntamento das peças, limpeza das superfícies revestidas, colocação de escadas ou montagem de plataformas de trabalho.",
+   "criterio": "m2 (metro quadrado) Pela área real da superfície efetivamente revestida com cerâmica, considerando todas as espalas, ressaltos ou molduras, e descontando todos os vãos (portas, janelas etc.) e interferências, quaisquer que sejam suas dimensões.",
+   "normas": ["NBR 13754:1996", "NBR 14081-1:2012", "NBR 14992:2003"]
+  },
+  "120221": {
+   "d": "Pastilha cerâmica branca 5 x 5 cm, assentada com argamassa de cimento colante e rejunte pré-fabricado, referência Atlas, Jatobá, NGK ou equivalente",
+   "u": "m2",
+   "caderno": "12 – REVESTIMENTO DE PAREDES INTERNAS E EXTERNAS · 1202 – ACABAMENTOS",
+   "atualizacao": "04/2024",
+   "aplicacao": "Principalmente em áreas externas e fachadas, sendo aplicada também em áreas internas como paredes de laboratório, refeitório, cozinha, vestiários etc., conforme especificação de projeto.",
+   "incluidos": "Fornecimento da pastilha cerâmica, argamassa de assentamento e de rejuntamento, considerando perdas por consumo e transporte interno do canteiro até o local de assentamento, inclusive preparo da argamassa e do rejunte, umedecimento da superfície de base, assentamento da pastilha cerâmica e execução do rejuntamento das peças, limpeza das superfícies revestidas, colocação de escadas ou montagem de plataformas de trabalho.",
+   "criterio": "m2 (metro quadrado) Pela área real da superfície efetivamente revestida com pastilha cerâmica, considerando todas as espalas, ressaltos ou molduras, e descontando todos os vãos (portas, janelas etc.) e interferências, quaisquer que sejam suas dimensões.",
+   "normas": ["NBR 13754:1996", "NBR 13755:1996", "NBR 13816", "NBR 13817", "NBR 13818", "NBR 14081-1:2012", "NBR 14992:2003"]
+  },
+  "120224": {
+   "d": "Assentamento de revestimento cerâmico com cimento colante, para áreas da superfície da placa cerâmica menores que 900 cm2, exclusive rejuntamento e cerâmica",
+   "u": "m2",
+   "caderno": "12 – REVESTIMENTO DE PAREDES INTERNAS E EXTERNAS · 1202 – ACABAMENTOS",
+   "atualizacao": "04/2024",
+   "aplicacao": "Revestimento interno de paredes de sanitários, vestiários, refeitório, despensa, cozinha, laboratório, etc, conforme especificação de projeto.",
+   "incluidos": "Fornecimento e preparo da argamassa de assentamento, considerando perdas por consumo, transporte interno da argamassa e do revestimento cerâmico do canteiro até o local de assentamento, umedecimento da superfície de base, assentamento do revestimento cerâmico (exclusive o fornecimento), fornecimento dos espaçadores, limpeza das superfícies revestidas, colocação de escadas ou montagem de plataformas de trabalho.",
+   "criterio": "m2 (metro quadrado) Pela área real da superfície efetivamente revestida, considerando todas as espalas, ressaltos ou molduras, e descontando todos os vãos (portas, janelas, etc) e interferências, quaisquer que sejam suas dimensões.",
+   "normas": ["NBR 8214:1983", "NBR 13754:1996", "NBR 13755:1996", "NBR 14081-1:2012"]
+  },
+  "120227": {
+   "d": "Roda parede em granito cinza andorinha 7x2cm, com acabamento abaulado nos dois lados",
+   "u": "m",
+   "caderno": "12 – REVESTIMENTO DE PAREDES INTERNAS E EXTERNAS · 1202 – ACABAMENTOS",
+   "atualizacao": "04/2024",
+   "aplicacao": "Em alvenarias internas, em ambientes como salas de aula, biblioteca, circulação, refeitórios, ambientes administrativos, etc.",
+   "incluidos": "Fornecimento das peças de granito, argamassa de assentamento e pasta de rejuntamento, considerando perdas por consumo e transporte interno do canteiro até o local de assentamento, inclusive preparo da argamassa e do rejunte, assentamento da roda parede, execução do rejuntamento e limpeza das peças.",
+   "criterio": "m (metro) Pela metragem de roda parede efetivamente colocado, com base em seu comprimento efetivo, considerando-se toda e qualquer deflexão.",
+   "normas": ["NBR 15844/2010"]
+  },
+  "120232": {
+   "d": "Cerâmica 10x10 cm, referência Camburi Branco - Eliane, Cecrisa, Portobello ou equivalente, empregando argamassa colante, inclusive rejuntamento junta plus cinza claro esp. 3 mm",
+   "u": "m2",
+   "caderno": "12 – REVESTIMENTO DE PAREDES INTERNAS E EXTERNAS · 1202 – ACABAMENTOS",
+   "atualizacao": "04/2024",
+   "aplicacao": "Revestimento interno de paredes de salas de aula, circulação, refeitório, ambientes administrativos, etc, conforme especificação de projeto.",
+   "incluidos": "Fornecimento da cerâmica e dos espaçadores, argamassa de assentamento e pasta de rejuntamento, considerando perdas por consumo e transporte interno do canteiro até o local de assentamento, inclusive preparo da argamassa e do rejunte, umedecimento da superfície de base, assentamento da cerâmica e execução do rejuntamento das peças, limpeza das superfícies revestidas, colocação de escadas ou montagem de plataformas de trabalho.",
+   "criterio": "m2 (metro quadrado) Pela área real da superfície efetivamente revestida com cerâmica, considerando todas as espalas, ressaltos ou molduras, e descontando todos os vãos (portas, janelas, etc) e interferências, quaisquer que sejam suas dimensões.",
+   "normas": ["NBR 13754:1996", "NBR 14081-1:2012", "NBR 14992:2003"]
+  }
+ }
+}

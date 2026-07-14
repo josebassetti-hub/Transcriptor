@@ -1,0 +1,37 @@
+{
+ "arquivo": "1103-TETOS E FORROS - REV.EMPREGANDO ARG. CIMENTO CAL E AREIA.pdf",
+ "caderno": "11 – TETOS E FORROS · 1103 – REVESTIMENTO EMPREGANDO ARGAMASSA DE CIMENTO CAL E AREIA",
+ "truncado": false,
+ "fichas": {
+  "110301": {
+   "d": "Emboço de argamassa de cimento, cal hidratada CH1 e areia lavada traço 1:0.5:6, espessura 20 mm",
+   "u": "m2",
+   "caderno": "11 – TETOS E FORROS · 1103 – REVESTIMENTO EMPREGANDO ARGAMASSA DE CIMENTO CAL E AREIA",
+   "atualizacao": "05/2026",
+   "aplicacao": "Em superfícies lisas de concreto (laje aparente, vigas e fundos de vigas) ou EPS (isopor), que já tenham recebido o chapisco, com a finalidade de regularização para aplicação de algum tipo de revestimento. Aplicado após tempo mínimo de 72 horas de carência do chapisco.",
+   "incluidos": "Fornecimento dos materiais e mão de obra para execução de emboço em tetos, inclusive fornecimento, preparo e transporte da argamassa de cimento, cal hidratada e areia (traço 1:0,5:6) até o local da aplicação, umedecimento da superfície, assentamento de taliscas e fio para nivelamento, aplicação manual da argamassa, acabamento superficial (desempeno) e umedecimento do emboço. Fornecimento, montagem e desmontagem cavaletes metálicos com suporte metálico ou de madeira, incluindo proteção do piso nos pontos de apoio dos cavaletes. Limpeza do local do serviço, com remoção de todos os resíduos de argamassa, materiais excedentes e inaproveitáveis, inclusive descarte final.",
+   "criterio": "m2 (metro quadrado) Pela área de emboço em teto efetivamente executado, considerando as faces laterais e fundos de viga.",
+   "normas": [
+    "NBR 7200:1998",
+    "NBR 5732:1991",
+    "NBR 7220:1987",
+    "NR 18"
+   ]
+  },
+  "110302": {
+   "d": "Massa única de argamassa de cimento, cal hidratada CH1 e areia lavada traço 1:0.5:6, espessura 25 mm",
+   "u": "m2",
+   "caderno": "11 – TETOS E FORROS · 1103 – REVESTIMENTO EMPREGANDO ARGAMASSA DE CIMENTO CAL E AREIA",
+   "atualizacao": "05/2026",
+   "aplicacao": "Em superfícies lisas de concreto (laje aparente, vigas e fundos de vigas) ou EPS (isopor), que já tenham recebido o chapisco, para regularização e posterior aplicação de textura ou massa (PVA ou acrílica) e pintura. Aplicada após tempo mínimo de 72 horas de carência do chapisco.",
+   "incluidos": "Fornecimento dos materiais e mão de obra para execução de massa única “reboco” em tetos, inclusive fornecimento, preparo e transporte da argamassa de cimento, cal hidratada e areia (traço 1:0,5:6) até o local da aplicação, umedecimento da superfície, assentamento de taliscas e fio para nivelamento, aplicação manual da argamassa, acabamento superficial (desempenado e alisado) e umedecimento do reboco. Fornecimento, montagem e desmontagem cavaletes metálicos com suporte metálico ou de madeira, incluindo proteção do piso nos pontos de apoio dos cavaletes. Limpeza do local do serviço, com remoção de todos os resíduos de argamassa, materiais excedentes e inaproveitáveis, inclusive descarte final.",
+   "criterio": "m2 (metro quadrado) Pela área de massa única em teto efetivamente executado, considerando as faces laterais e fundos de viga.",
+   "normas": [
+    "NBR 7200:1998",
+    "NBR 5732:1991",
+    "NBR 7220:1987",
+    "NR 18"
+   ]
+  }
+ }
+}

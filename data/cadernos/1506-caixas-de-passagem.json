@@ -1,0 +1,222 @@
+{
+ "arquivo": "1506 - INSTALAÇÕES ELÉTRICAS - CAIXAS DE PASSAGEM.pdf",
+ "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1506 – CAIXAS DE PASSAGEM",
+ "truncado": false,
+ "fichas": {
+  "150610": {
+   "d": "Caixa de passagem de alvenaria de blocos de concreto 9x19x39cm, dimensões de 30x30x25cm, com revestimento interno em chapisco e reboco impermeabilizado, tampa de concreto esp.5cm e lastro de brita 5 cm, inclusive haste de terra tipo COPPERWELD de alta camada - 5/8\" x 2.40m, exclusive conexão exotérmica",
+   "u": "und",
+   "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1506 – CAIXAS DE PASSAGEM",
+   "atualizacao": "06/2026",
+   "aplicacao": "Utilizada em redes de instalações elétricas, com a principal finalidade de facilitar a passagem de condutores elétricos. A utilização das caixas de passagem é obrigatória em algumas situações, de acordo com a NBR 5410 da ABNT, como: ● Em todos os pontos de entrada ou saída de condutores na…",
+   "incluidos": "Execução da escavação manual para abertura da vala para execução da caixa, afastamento lateral do material escavado e reaterro apiloado do material escavado, após a conclusão da construção da caixa de passagem. Fornecimento, lançamento, espalhamento e apiloamento da brita para execução do lastro do fundo da caixa de passagem, considerando empolamento, eventuais perdas e transporte interno do canteiro até o local da aplicação. Fornecimento, preparo, transporte e aplicação da argamassa de assentamento dos blocos para execução da caixa de passagem, considerando perdas por consumo e transporte interno do canteiro até o local da aplicação; inclusive fornecimento dos blocos, transporte e assentamento dos blocos de concreto (considerando eventuais perdas), limpeza e remoção de materiais excedentes e inaproveitáveis. Fornecimento, preparo, transporte e aplicação das argamassas para execução de revestimento interno (chapisco e reboco com impermeabilizante) da caixa de passagem, considerando perdas por consumo e transporte interno do canteiro até o local da aplicação. Confecção da tampa e da cinta superior da caixa de passagem, considerando o fornecimento dos materiais (concreto e aço), eventuais perdas e transporte interno do canteiro até a caixa elétrica, inclusive a instalação da tampa. Fornecimento e instalação da haste de terra tipo COPPERWELD de alta camada - 5/8\" x 2.40m, exclusive acessórios de conexão",
+   "criterio": "und (unidade) Pela quantidade de caixa de passagem em alvenaria efetivamente construída, inclusive haste de terra",
+   "normas": [
+    "NBR 5410:2004",
+    "NBR 5354:2006",
+    "NBR 6136:2016",
+    "NBR 7203:1982",
+    "Decreto Estadual nº 1.941-R",
+    "NBR 6627:1981",
+    "NBR 5732:1991",
+    "NBR 7220:1987",
+    "NBR 14931:2023",
+    "NBR 7480:2022",
+    "NBR 6181:2003",
+    "NBR 7211:2005",
+    "NBR 12655:2015",
+    "NBR 5419",
+    "NBR 13571"
+   ]
+  },
+  "150612": {
+   "d": "Caixa de passagem de embutir em aço na cor Bege RAL 7032 Dim.: 100x100x80mm, com tampa parafusada – Ref. CPS - Cemar ou equivalente",
+   "u": "und",
+   "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1506 – CAIXAS DE PASSAGEM",
+   "atualizacao": "06/2026",
+   "aplicacao": "Destina-se à passagem, derivação, inspeção e acomodação de condutores elétricos em instalações prediais, comerciais, industriais e institucionais de baixa tensão.",
+   "incluidos": "Fornecimento e instalação da caixa de passagem, tampa e parafusos, incluindo preparação de superfície, bem como todos os materiais, mão de obra, transporte e equipamentos para sua instalação. Limpeza do local do serviço e remoção de todos os resíduos, materiais excedentes e inaproveitáveis, inclusive descarte final.",
+   "criterio": "Por unidade instalada.",
+   "normas": [
+    "NBR 5410",
+    "NBR IEC 62208",
+    "NBR IEC 60670",
+    "NR-10"
+   ]
+  },
+  "150614": {
+   "d": "Caixa de passagem de alvenaria de blocos de concreto 9x19x39cm, dimensões de 30x30x50cm, com revestimento interno em chapisco e reboco impermeabilizado, tampa de concreto esp.5cm e lastro de brita 5 cm",
+   "u": "und",
+   "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1506 – CAIXAS DE PASSAGEM",
+   "atualizacao": "06/2026",
+   "aplicacao": "Utilizada em redes de instalações elétricas, com a principal finalidade de facilitar a passagem de condutores elétricos. A utilização das caixas de passagem é obrigatória em algumas situações, de acordo com a NBR 5410 da ABNT, como: ● Em todos os pontos de entrada ou saída de condutores na…",
+   "incluidos": "Execução da escavação manual para abertura da vala para execução da caixa, afastamento lateral do material escavado e reaterro apiloado do material escavado, após a conclusão da construção da caixa de passagem. Fornecimento, lançamento, espalhamento e apiloamento da brita para execução do lastro do fundo da caixa de passagem, considerando empolamento, eventuais perdas e transporte interno do canteiro até o local da aplicação. Fornecimento, preparo, transporte e aplicação da argamassa de assentamento dos blocos para execução da caixa de passagem, considerando perdas por consumo e transporte interno do canteiro até o local da aplicação; inclusive fornecimento dos blocos, transporte e assentamento dos blocos de concreto (considerando eventuais perdas), limpeza e remoção de materiais excedentes e inaproveitáveis. Fornecimento, preparo, transporte e aplicação das argamassas para execução de revestimento interno (chapisco e reboco com impermeabilizante) da caixa de passagem, considerando perdas por consumo e transporte interno do canteiro até o local da aplicação. Confecção da tampa e da cinta superior da caixa de passagem, considerando o fornecimento dos materiais (concreto e aço), eventuais perdas e transporte interno do canteiro até a caixa elétrica, inclusive a instalação da tampa.",
+   "criterio": "und (unidade) Pela quantidade de caixa de passagem em alvenaria efetivamente construída.",
+   "normas": [
+    "NBR 5410:2004",
+    "NBR 5354:2006",
+    "NBR 6136:2016",
+    "NBR 7203:1982",
+    "Decreto Estadual nº 1.941-R",
+    "NBR 6627:1981",
+    "NBR 5732:1991",
+    "NBR 7220:1987",
+    "NBR 14931:2023",
+    "NBR 7480:2022",
+    "NBR 6181:2003",
+    "NBR 7211:2005",
+    "NBR 12655:2015"
+   ]
+  },
+  "150615": {
+   "d": "Caixa de passagem de alvenaria de blocos de concreto 9x19x39cm, dimensões de 40x40x50cm, com revestimento interno em chapisco e reboco impermeabilizado, tampa de concreto esp.5cm e lastro de brita 5 cm",
+   "u": "und",
+   "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1506 – CAIXAS DE PASSAGEM",
+   "atualizacao": "06/2026",
+   "aplicacao": "Utilizada em redes de instalações elétricas, com a principal finalidade de facilitar a passagem de condutores elétricos. A utilização das caixas de passagem é obrigatória em algumas situações, de acordo com a NBR 5410 da ABNT, como: ● Em todos os pontos de entrada ou saída de condutores na…",
+   "incluidos": "Execução da escavação manual para abertura da vala para execução da caixa, afastamento lateral do material escavado e reaterro apiloado do material escavado, após a conclusão da construção da caixa de passagem. Fornecimento, lançamento, espalhamento e apiloamento da brita para execução do lastro do fundo da caixa de passagem, considerando empolamento, eventuais perdas e transporte interno do canteiro até o local da aplicação. Fornecimento, preparo, transporte e aplicação da argamassa de assentamento dos blocos para execução da caixa de passagem, considerando perdas por consumo e transporte interno do canteiro até o local da aplicação; inclusive fornecimento dos blocos, transporte e assentamento dos blocos de concreto (considerando eventuais perdas), limpeza e remoção de materiais excedentes e inaproveitáveis. Fornecimento, preparo, transporte e aplicação das argamassas para execução de revestimento interno (chapisco e reboco com impermeabilizante) da caixa de passagem, considerando perdas por consumo e transporte interno do canteiro até o local da aplicação. Confecção da tampa e da cinta superior da caixa de passagem, considerando o fornecimento dos materiais (concreto e aço), eventuais perdas e transporte interno do canteiro até a caixa elétrica, inclusive a instalação da tampa.",
+   "criterio": "und (unidade) Pela quantidade de caixa de passagem em alvenaria efetivamente construída.",
+   "normas": [
+    "NBR 5410:2004",
+    "NBR 5354:2006",
+    "NBR 6136:2016",
+    "NBR 7203:1982",
+    "Decreto Estadual nº 1.941-R",
+    "NBR 6627:1981",
+    "NBR 5732:1991",
+    "NBR 7220:1987",
+    "NBR 14931:2023",
+    "NBR 7480:2022",
+    "NBR 6181:2003",
+    "NBR 7211:2005",
+    "NBR 12655:2015"
+   ]
+  },
+  "150616": {
+   "d": "Caixa de passagem de alvenaria de blocos de concreto 9x19x39cm, dimensões de 50x50x50cm, com revestimento interno em chapisco e reboco impermeabilizado, tampa de concreto esp.5cm e lastro de brita 5 cm",
+   "u": "und",
+   "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1506 – CAIXAS DE PASSAGEM",
+   "atualizacao": "06/2026",
+   "aplicacao": "Utilizada em redes de instalações elétricas, com a principal finalidade de facilitar a passagem de condutores elétricos. A utilização das caixas de passagem é obrigatória em algumas situações, de acordo com a NBR 5410 da ABNT, como: ● Em todos os pontos de entrada ou saída de condutores na…",
+   "incluidos": "Execução da escavação manual para abertura da vala para execução da caixa, afastamento lateral do material escavado e reaterro apiloado do material escavado, após a conclusão da construção da caixa de passagem. Fornecimento, lançamento, espalhamento e apiloamento da brita para execução do lastro do fundo da caixa de passagem, considerando empolamento, eventuais perdas e transporte interno do canteiro até o local da aplicação. Fornecimento, preparo, transporte e aplicação da argamassa de assentamento dos blocos para execução da caixa de passagem, considerando perdas por consumo e transporte interno do canteiro até o local da aplicação; inclusive fornecimento dos blocos, transporte e assentamento dos blocos de concreto (considerando eventuais perdas), limpeza e remoção de materiais excedentes e inaproveitáveis. Fornecimento, preparo, transporte e aplicação das argamassas para execução de revestimento interno (chapisco e reboco com impermeabilizante) da caixa de passagem, considerando perdas por consumo e transporte interno do canteiro até o local da aplicação. Confecção da tampa e da cinta superior da caixa de passagem, considerando o fornecimento dos materiais (concreto e aço), eventuais perdas e transporte interno do canteiro até a caixa elétrica, inclusive a instalação da tampa.",
+   "criterio": "und (unidade) Pela quantidade de caixa de passagem em alvenaria efetivamente construída.",
+   "normas": [
+    "NBR 5410:2004",
+    "NBR 5354:2006",
+    "NBR 6136:2016",
+    "NBR 7203:1982",
+    "Decreto Estadual nº 1.941-R",
+    "NBR 6627:1981",
+    "NBR 5732:1991",
+    "NBR 7220:1987",
+    "NBR 14931:2023",
+    "NBR 7480:2022",
+    "NBR 6181:2003",
+    "NBR 7211:2005",
+    "NBR 12655:2015"
+   ]
+  },
+  "150628": {
+   "d": "Caixa de luz de embutir em PVC 4x2\" – Ref. Tigreflex - Tigre ou equivalente",
+   "u": "und",
+   "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1506 – CAIXAS DE PASSAGEM",
+   "atualizacao": "06/2026",
+   "aplicacao": "Destina-se à instalação embutida em paredes de alvenaria ou drywall para suporte de interruptores, tomadas, pontos de comunicação, dispositivos de comando e passagem de condutores elétricos.",
+   "incluidos": "Fornecimento e instalação da caixa de luz, incluindo preparação de superfície, bem como todos os materiais, mão de obra, transporte e equipamentos para sua instalação. Limpeza do local do serviço e remoção de todos os resíduos, materiais excedentes e inaproveitáveis, inclusive descarte final.",
+   "criterio": "Por unidade instalada.",
+   "normas": [
+    "NBR 5410",
+    "NBR IEC 60670",
+    "NR-10"
+   ]
+  },
+  "150629": {
+   "d": "Caixa de luz de embutir em PVC 4x4\" – Ref. Tigreflex - Tigre ou equivalente",
+   "u": "und",
+   "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1506 – CAIXAS DE PASSAGEM",
+   "atualizacao": "06/2026",
+   "aplicacao": "Destina-se à instalação embutida em paredes de alvenaria ou drywall para suporte de interruptores, tomadas, pontos de comunicação, dispositivos de comando e passagem de condutores elétricos.",
+   "incluidos": "Fornecimento e instalação da caixa de luz, incluindo preparação de superfície, bem como todos os materiais, mão de obra, transporte e equipamentos para sua instalação. Limpeza do local do serviço e remoção de todos os resíduos, materiais excedentes e inaproveitáveis, inclusive descarte final.",
+   "criterio": "Por unidade instalada.",
+   "normas": [
+    "NBR 5410",
+    "NBR IEC 60670",
+    "NR-10"
+   ]
+  },
+  "150632": {
+   "d": "Caixa de passagem de embutir em aço na cor Bege RAL 7032 Dim.: 150x150x80mm, com tampa parafusada – Ref. CPS - Cemar ou equivalente",
+   "u": "und",
+   "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1506 – CAIXAS DE PASSAGEM",
+   "atualizacao": "06/2026",
+   "aplicacao": "Destina-se à passagem, derivação, inspeção e acomodação de condutores elétricos em instalações prediais, comerciais, industriais e institucionais de baixa tensão.",
+   "incluidos": "Fornecimento e instalação da caixa de passagem, tampa e parafusos, incluindo preparação de superfície, bem como todos os materiais, mão de obra, transporte e equipamentos para sua instalação. Limpeza do local do serviço e remoção de todos os resíduos, materiais excedentes e inaproveitáveis, inclusive descarte final.",
+   "criterio": "Por unidade instalada.",
+   "normas": [
+    "NBR 5410",
+    "NBR IEC 62208",
+    "NBR IEC 60670",
+    "NR-10"
+   ]
+  },
+  "150633": {
+   "d": "Caixa de passagem de embutir em aço na cor Bege RAL 7032 Dim.: 200x200x100mm, com tampa parafusada – Ref. CPS - Cemar ou equivalente",
+   "u": "und",
+   "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1506 – CAIXAS DE PASSAGEM",
+   "atualizacao": "06/2026",
+   "aplicacao": "Destina-se à passagem, derivação, inspeção e acomodação de condutores elétricos em instalações prediais, comerciais, industriais e institucionais de baixa tensão.",
+   "incluidos": "Fornecimento e instalação da caixa de passagem, tampa e parafusos, incluindo preparação de superfície, bem como todos os materiais, mão de obra, transporte e equipamentos para sua instalação. Limpeza do local do serviço e remoção de todos os resíduos, materiais excedentes e inaproveitáveis, inclusive descarte final.",
+   "criterio": "Por unidade instalada.",
+   "normas": [
+    "NBR 5410",
+    "NBR IEC 62208",
+    "NBR IEC 60670",
+    "NR-10"
+   ]
+  },
+  "150634": {
+   "d": "Caixa de passagem de embutir em aço na cor Bege RAL 7032 Dim.: 300x300x120mm, com tampa parafusada – Ref. CPS - Cemar ou equivalente",
+   "u": "und",
+   "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1506 – CAIXAS DE PASSAGEM",
+   "atualizacao": "06/2026",
+   "aplicacao": "Destina-se à passagem, derivação, inspeção e acomodação de condutores elétricos em instalações prediais, comerciais, industriais e institucionais de baixa tensão.",
+   "incluidos": "Fornecimento e instalação da caixa de passagem, tampa e parafusos, incluindo preparação de superfície, bem como todos os materiais, mão de obra, transporte e equipamentos para sua instalação. Limpeza do local do serviço e remoção de todos os resíduos, materiais excedentes e inaproveitáveis, inclusive descarte final.",
+   "criterio": "Por unidade instalada.",
+   "normas": [
+    "NBR 5410",
+    "NBR IEC 62208",
+    "NBR IEC 60670",
+    "NR-10"
+   ]
+  },
+  "150635": {
+   "d": "Caixa de passagem de embutir em aço na cor Bege RAL 7032 Dim.: 400x400x120mm, com tampa parafusada – Ref. CPS - Cemar ou equivalente",
+   "u": "und",
+   "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1506 – CAIXAS DE PASSAGEM",
+   "atualizacao": "06/2026",
+   "aplicacao": "Destina-se à passagem, derivação, inspeção e acomodação de condutores elétricos em instalações prediais, comerciais, industriais e institucionais de baixa tensão.",
+   "incluidos": "Fornecimento e instalação da caixa de passagem, tampa e parafusos, incluindo preparação de superfície, bem como todos os materiais, mão de obra, transporte e equipamentos para sua instalação. Limpeza do local do serviço e remoção de todos os resíduos, materiais excedentes e inaproveitáveis, inclusive descarte final.",
+   "criterio": "Por unidade instalada.",
+   "normas": [
+    "NBR 5410",
+    "NBR IEC 62208",
+    "NBR IEC 60670",
+    "NR-10"
+   ]
+  },
+  "150636": {
+   "d": "Caixa Octogonal em PVC 3x3\", com anel deslizante – Ref. Tigreflex - Tigre ou equivalente",
+   "u": "und",
+   "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1506 – CAIXAS DE PASSAGEM",
+   "atualizacao": "06/2026",
+   "aplicacao": "Destina-se à instalação embutida em lajes, forros, paredes de alvenaria ou sistemas construtivos em drywall, para acomodação de emendas, derivações e fixação de pontos de iluminação, luminárias, sensores de presença, detectores e demais dispositivos elétricos fixados em tetos ou paredes.",
+   "incluidos": "Fornecimento e instalação da caixa de luz com anel deslizante, incluindo preparação de superfície, bem como todos os materiais, mão de obra, transporte e equipamentos para sua instalação. Limpeza do local do serviço e remoção de todos os resíduos, materiais excedentes e inaproveitáveis, inclusive descarte final.",
+   "criterio": "Por unidade instalada.",
+   "normas": [
+    "NBR 5410",
+    "NBR IEC 60670",
+    "NR-10"
+   ]
+  }
+ }
+}

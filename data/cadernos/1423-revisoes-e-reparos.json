@@ -1,0 +1,58 @@
+{
+ "arquivo": "1423-INSTALAÇÕES HIDROSSANITARIAS - REVISÕES E REPAROS.pdf",
+ "caderno": "14 – INSTALAÇÕES HIDROSSANITÁRIAS · 14.23 – REVISÕES E REPAROS",
+ "truncado": false,
+ "fichas": {
+  "142301": {
+   "d": "Revisões e reparos em registros, exclusive peças de reposição",
+   "u": "und",
+   "caderno": "14 – INSTALAÇÕES HIDROSSANITÁRIAS · 14.23 – REVISÕES E REPAROS",
+   "atualizacao": "01/2026",
+   "aplicacao": "Indicado para manutenção preventiva e corretiva a fim de restabelecer o funcionamento adequado, eliminar vazamentos e prolongar a vida útil dos dispositivos hidráulicos.",
+   "incluidos": "Fornecimento de mão-de-obra para execução dos serviços de revisão e reparo em registros, exclusive peças de reposição. Limpeza do local após a conclusão dos serviços.",
+   "criterio": "und (unidade) Pela quantidade efetiva de revisão e reparo do registro.",
+   "normas": [
+    "NBR 10281",
+    "NBR 5626"
+   ]
+  },
+  "142302": {
+   "d": "Revisões e reparos em caixas de descarga, exclusive peças de reposição",
+   "u": "und",
+   "caderno": "14 – INSTALAÇÕES HIDROSSANITÁRIAS · 14.23 – REVISÕES E REPAROS",
+   "atualizacao": "01/2026",
+   "aplicacao": "Indicado para manutenção preventiva e corretiva de caixas de descarga de sobrepor ou embutir, com o objetivo de restabelecer o funcionamento adequado, eliminar vazamentos, garantir a descarga eficiente e prolongar a vida útil do equipamento.",
+   "incluidos": "Fornecimento de mão-de-obra para execução dos serviços de revisão e reparo em caixas de descarga, exclusive peças de reposição. Execução de desmontagem, limpeza, ajustes, regulagem e testes de funcionamento. Limpeza e organização do local após a conclusão dos serviços.",
+   "criterio": "und (unidade) Pela quantidade efetiva de revisão e reparo da caixa de descarga.",
+   "normas": [
+    "NBR 15491",
+    "NBR 5626"
+   ]
+  },
+  "142303": {
+   "d": "Revisões e reparos em torneiras de boia, exclusive peças de reposição",
+   "u": "und",
+   "caderno": "14 – INSTALAÇÕES HIDROSSANITÁRIAS · 14.23 – REVISÕES E REPAROS",
+   "atualizacao": "01/2026",
+   "aplicacao": "Indicado para manutenção preventiva e corretiva com o objetivo de restabelecer o funcionamento adequado da torneira de boia, evitar transbordamentos, garantir o controle de nível e prolongar a vida útil do dispositivo.",
+   "incluidos": "Fornecimento de mão-de-obra para execução dos serviços de revisão e reparo em torneira de boia, exclusive peças de reposição. Limpeza do local após a conclusão dos serviços.",
+   "criterio": "und (unidade) Pela quantidade efetiva de torneira de boia reparada",
+   "normas": [
+    "NBR 16098",
+    "NBR 5626",
+    "NBR 10281",
+    "NBR 15527"
+   ]
+  },
+  "142304": {
+   "d": "Fornecimento de massa epóxi tipo Durepox (250 g), para reparos",
+   "u": "und",
+   "caderno": "14 – INSTALAÇÕES HIDROSSANITÁRIAS · 14.23 – REVISÕES E REPAROS",
+   "atualizacao": "01/2026",
+   "aplicacao": "Indicada para reparos em metais, cerâmicas, plásticos, concreto, madeira e outras superfícies rígidas, preenchimento de fissuras, trincas, furos, vedação de pequenos vazamentos e fixações diversas em instalações hidráulicas, elétricas ou estruturais.",
+   "incluidos": "Fornecimento da massa epóxi",
+   "criterio": "Pela unidade fornecida, correspondente a 250g.",
+   "normas": null
+  }
+ }
+}

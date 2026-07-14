@@ -1,0 +1,123 @@
+{
+ "arquivo": "0302-REATERRO E COMPACTAÇÃO.pdf",
+ "caderno": "03 – MOVIMENTO DE TERRA · 0302 – REATERRO E COMPACTAÇÃO",
+ "truncado": false,
+ "fichas": {
+  "030201": {
+   "d": "Reaterro apiloado de cavas de fundação, em camadas de 20 cm",
+   "u": "m3",
+   "caderno": "03 – MOVIMENTO DE TERRA · 0302 – REATERRO E COMPACTAÇÃO",
+   "atualizacao": "04/2024",
+   "aplicacao": "Fechamento de valas abertas para implantação de redes e sistemas (hidrossanitários, elétricos, gás, etc.), blocos de fundação, sapatas corridas ou isoladas, cintas, cisternas enterradas, caixas de passagem, fossas e filtros, utilizando o material proveniente da escavação.",
+   "incluidos": "Limpeza, seleção de material aproveitável, lançamento e espalhamento de material, umedecimento ou aeração, apiloamento da cava de fundação com auxílio de soquete, nivelamento e regularização da superfície.",
+   "criterio": "m3 (metro cúbico) Medido pelo volume de reaterro de cava efetivamente apiloado. Não será pago reaterro de cava ou vala escavado em excesso, sem necessidade.",
+   "normas": [
+    "NR 18",
+    "NBR 9061:1985",
+    "NBR 5681:2015",
+    "NBR 12266:1992"
+   ]
+  },
+  "030202": {
+   "d": "Material para aterro – areia limpa (fornecimento já considerado 15% de empolamento)",
+   "u": "m3",
+   "caderno": "03 – MOVIMENTO DE TERRA · 0302 – REATERRO E COMPACTAÇÃO",
+   "atualizacao": "04/2024",
+   "aplicacao": "Material geralmente utilizado para aterro de base de pavimento intertravado, passeios, calçadas, etc.",
+   "incluidos": "Fornecimento de areia para aterro, com percentual de acréscimo de 15% (empolamento), inclusive transporte da areia da jazida até a obra.",
+   "criterio": "m3 (metro cúbico) O serviço será pago conforme volume de areia efetivamente fornecido.",
+   "normas": [
+    "NBR 5681:2015"
+   ]
+  },
+  "030203": {
+   "d": "Lastro de brita 3 e 4, apiloado manualmente",
+   "u": "m3",
+   "caderno": "03 – MOVIMENTO DE TERRA · 0302 – REATERRO E COMPACTAÇÃO",
+   "atualizacao": "04/2024",
+   "aplicacao": "Geralmente utilizado em caixas de passagem, filtros anaeróbios, sumidouros, drenos, berços para assentamento de tubulação, base de pavimento, preparação de terreno, passeios, calçadas, etc. Recomenda-se o uso do lastro de brita quando o solo no fundo da cava é de boa qualidade só que o nível…",
+   "incluidos": "Fornecimento da toda a brita necessária à execução do lastro (com percentual médio de acréscimo de 20% de apiloamento do material), transporte da brita da jazida até à obra inclusive até o local de execução do lastro, lançamento, espalhamento e apiloamento manual da pedra britada.",
+   "criterio": "m3 (metro cúbico) Medido pelo volume de lastro de brita efetivamente apiloado. Não será pago lastro em excesso, sem necessidade.",
+   "normas": [
+    "NR 18",
+    "NBR 11806:1991",
+    "NBR 12266:1992"
+   ]
+  },
+  "030204": {
+   "d": "Lastro de areia",
+   "u": "m3",
+   "caderno": "03 – MOVIMENTO DE TERRA · 0302 – REATERRO E COMPACTAÇÃO",
+   "atualizacao": "04/2024",
+   "aplicacao": "Geralmente utilizado em berço para tubulação. Recomenda-se o uso do lastro de areia quando o fundo da vala fica situado em regiões rochosas, sendo executado a fim de evitar que a tubulação fique em contato direto com a rocha.",
+   "incluidos": "Fornecimento de todo o material necessário à execução do lastro (inclusive água e areia, com percentual médio de acréscimo de 15% de apiloamento da areia), transporte da areia da jazida até à obra (inclusive até o local de execução do lastro), lançamento, espalhamento e adensamento manual de areia.",
+   "criterio": "m3 (metro cúbico) Medido pelo volume de lastro de areia efetivamente apiloado. Não será pago lastro em excesso, sem necessidade.",
+   "normas": [
+    "NR 18",
+    "NBR 12266:1992"
+   ]
+  },
+  "030206": {
+   "d": "Aterro manual para regularização de terreno em areia, inclusive adensamento hidráulico e fornecimento do material (máximo de 100 m3)",
+   "u": "m3",
+   "caderno": "03 – MOVIMENTO DE TERRA · 0302 – REATERRO E COMPACTAÇÃO",
+   "atualizacao": "04/2024",
+   "aplicacao": "Geralmente utilizado como base de pavimento intertravado, passeios, calçadas, etc.",
+   "incluidos": "Fornecimento de todo o material necessário à execução do aterro (inclusive água e areia, com percentual médio de acréscimo de 15% da areia), transporte da areia da jazida até a obra (inclusive até o local de execução do aterro), lançamento, espalhamento, adensamento hidráulico manual, acertos e acabamentos manuais da areia.",
+   "criterio": "m3 (metro cúbico) O serviço será pago conforme volume de aterro de areia efetivamente adensado. Não será pago aterro em excesso, sem necessidade.",
+   "normas": [
+    "NBR 5681:2015"
+   ]
+  },
+  "030208": {
+   "d": "Aterro manual para regularização de terreno em argila, inclusive adensamento manual e fornecimento do material (máximo de 100 m3)",
+   "u": "m3",
+   "caderno": "03 – MOVIMENTO DE TERRA · 0302 – REATERRO E COMPACTAÇÃO",
+   "atualizacao": "04/2024",
+   "aplicacao": "Geralmente utilizado como base de pavimentos, lajes, cisternas, demais elementos estruturais apoiados sobre o terreno, etc.",
+   "incluidos": "Fornecimento de todo o material necessário à execução do aterro (inclusive água e argila, com percentual médio de acréscimo de 30% de adensamento da argila), transporte da argila da jazida até a obra (inclusive até o local de execução do aterro), lançamento, espalhamento, umedecimento, apiloamento manual necessário à correta compactação do solo, e eventuais acertos e acabamentos manuais.",
+   "criterio": "m3 (metro cúbico) O serviço será pago conforme volume de aterro de argila executado, calculado no aterro compactado. Não será pago aterro em excesso, sem necessidade.",
+   "normas": [
+    "NBR 5681:2015"
+   ]
+  },
+  "030209": {
+   "d": "Aterro com areia em áreas de calçada, inclusive fornecimento e adensamento",
+   "u": "m3",
+   "caderno": "03 – MOVIMENTO DE TERRA · 0302 – REATERRO E COMPACTAÇÃO",
+   "atualizacao": "04/2024",
+   "aplicacao": "Utilizado como preparo de base para execução de passeios e calçadas.",
+   "incluidos": "Fornecimento de todo o material necessário à execução do aterro (inclusive água e areia, com percentual médio de acréscimo de 15% da areia), transporte da areia da jazida até a obra (inclusive até o local de execução do aterro), lançamento, espalhamento, adensamento hidráulico com auxílio de caminhão tanque, acertos e acabamentos manuais da areia.",
+   "criterio": "m3 (metro cúbico) O serviço será pago conforme volume de aterro de areia efetivamente adensado. Não será pago aterro em excesso, sem necessidade.",
+   "normas": [
+    "NBR 5681:2015",
+    "NBR 9050:2015"
+   ]
+  },
+  "030210": {
+   "d": "Aterro compactado utilizando compactador de placa vibratória com reaproveitamento do material",
+   "u": "m3",
+   "caderno": "03 – MOVIMENTO DE TERRA · 0302 – REATERRO E COMPACTAÇÃO",
+   "atualizacao": "04/2024",
+   "aplicacao": "Geralmente utilizado como sub-base ou base de pavimentos e elementos estruturais apoiados sobre o terreno.",
+   "incluidos": "Limpeza, seleção de material aproveitável, lançamento e espalhamento de material, umedecimento ou aeração, compactação mecanizada, e eventuais acertos e acabamentos manuais.",
+   "criterio": "m3 (metro cúbico) O serviço será pago conforme volume de aterro compactado. Não será pago aterro em excesso, sem necessidade.",
+   "normas": [
+    "NBR 5681:2015"
+   ]
+  },
+  "030211": {
+   "d": "Reaterro de valas, exclusive compactação",
+   "u": "m3",
+   "caderno": "03 – MOVIMENTO DE TERRA · 0302 – REATERRO E COMPACTAÇÃO",
+   "atualizacao": "04/2024",
+   "aplicacao": "Fechamento de valas abertas para implantação de redes e sistemas (hidrossanitários, elétricos, gás, etc).",
+   "incluidos": "Limpeza, seleção de material aproveitável, lançamento, espalhamento de material e nivelamento da superfície.",
+   "criterio": "m3 (metro cúbico) Medido pelo volume de reaterro de vala efetivamente executado. Não será pago reaterro de cava ou vala escavado em excesso, sem necessidade.",
+   "normas": [
+    "NR 18",
+    "NBR 5681"
+   ]
+  }
+ }
+}

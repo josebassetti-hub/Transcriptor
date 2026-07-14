@@ -1,0 +1,37 @@
+{
+ "arquivo": "2101-SERV.COMPL. INTERNOS - QUADROS DE GIZ-AVISO.pdf",
+ "caderno": "21 – SERVIÇOS COMPLEMENTARES INTERNOS · 2101 – QUADROS DE GIZ / AVISO",
+ "truncado": false,
+ "fichas": {
+  "210105": {
+   "d": "Quadro de avisos confeccionado em chapa de madeira MDF revestida com laminado melamínico 0,8mm (fórmica) lisa de acabamento brilhante. Requadro em madeira de lei aparelhada com seção de 5,0 x 1,5 cm, pintura esmalte sintético, inclusive fundo branco nivelador a 2 (duas) demãos",
+   "u": "m2",
+   "caderno": "2101 – QUADROS DE GIZ / AVISO",
+   "atualizacao": "05/2026",
+   "aplicacao": "Utilizado como painel (quadro) de avisos, sendo uma superfície para múltiplas funções (escrever, projetar e fixar), para uso interno em ambientes pedagógicos, administrativos, circulações, áreas comuns e outros.",
+   "incluidos": "Fornecimento dos materiais e mão de obra para execução de quadro de avisos de fórmica lisa brilhante, com fornecimento do laminado melamínico, chapa de MDF cru e da guarnição (requadro) em madeira de lei, parafusos e buchas, considerando perdas por consumo e transporte interno no canteiro até o local da execução, inclusive marcações, execução dos furos e instalação do quadro de avisos. Pintura de guarnição em madeira com tinta esmalte sintético a duas demãos, com fornecimento e transporte dos materiais até o local de aplicação, inclusive perdas por consumo. Limpeza do local do serviço e remoção de todos os restos de materiais, resíduos de madeira e tinta, materiais excedentes e inaproveitáveis, inclusive descarte final.",
+   "criterio": "m2 (metro quadrado) Pela área efetiva de quadro de avisos de fórmica lisa brilhante, instalado.",
+   "normas": ["NBR 7203:1982", "Decreto Estadual nº 1.941-R/2007", "NBR 5841:2015", "NBR 11702:2010", "NBR 13245:2011", "NBR 15314:2005", "NBR 15494:2010", "NBR 12311:1992", "NR 18"]
+  },
+  "210109": {
+   "d": "Quadro mural revestido com azulejos cerâmicos tipo extra, 15 x 15 cm. Requadro em madeira de lei aparelhada, seção 7,0 x 2,5 cm, lixada e envernizada. Dimensões: 2,09 x 1,04 m",
+   "u": "und",
+   "caderno": "2101 – QUADROS DE GIZ / AVISO",
+   "atualizacao": "05/2026",
+   "aplicacao": "Utilizado como mural ou painel (quadro), para uso interno em circulações, pátios, áreas comuns e outros, para fixar avisos e cartazes.",
+   "incluidos": "Fornecimento dos materiais e mão de obra para execução de quadro mural, com fornecimento dos azulejos (15x15 cm), espaçadores, argamassa de assentamento e pasta de rejuntamento, considerando perdas por consumo e transporte interno do canteiro até o local de assentamento, inclusive preparo da argamassa e do rejunte, umedecimento da superfície de base, assentamento do azulejo, execução do rejuntamento das peças e limpeza das superfícies revestidas. Considera também o fornecimento das réguas em madeira de lei (7x2,5 cm), lixa para madeira, aguarrás mineral, verniz incolor fosco premium e parafusos com bucha plástica (S-8), execução de meia esquadria com utilização de serra manual, lixamento, envernizamento e fixação das peças para execução da moldura do quadro mural. Limpeza das peças (placas cerâmicas e réguas de madeira), do local do serviço e remoção de todos os restos de materiais, poeiras, materiais excedentes e inaproveitáveis, inclusive descarte final.",
+   "criterio": "und (unidade) Pela quantidade executada de quadro mural revestido com azulejos cerâmicos tipo extra, 15 x 15 cm. Requadro em madeira de lei aparelhada, seção 7,0 x 2,5 cm, inclusive lixamento e pintura verniz. Dimensões: 2,09 x 1,04 m.",
+   "normas": ["NBR 8214:1983", "NBR 13754:1996", "NBR 14081-1:2012", "NBR 14992:2003", "NBR 7203:1982", "Decreto Estadual nº 1.941-R/2007", "NR 18"]
+  },
+  "210114": {
+   "d": "Quadro tipo lousa quadriculada, confeccionado em laminado melamínico de alta pressão (HPL), acabamento branco brilhante, linha “Lousas”, padrão F608 Brancoline ou equivalente, esp: 1,0 mm, Requadro em madeira de lei aparelhada com seção de 2,5 x 5,0 cm lixado e envernizado e porta-pincel contínuo integrado. Dimensões finais: 3,95 x 1,29 m",
+   "u": "und",
+   "caderno": "2101 – QUADROS DE GIZ / AVISO",
+   "atualizacao": "05/2026",
+   "aplicacao": "Utilizado como ferramenta de ensino em escolas (salas de aula, bibliotecas, laboratórios, etc.).",
+   "incluidos": "Fornecimento dos materiais e mão de obra para execução de quadro para pincel novo, em laminado melamínico de alta pressão, com requadro em madeira, porta pincel, parafusos e buchas, inclusive transporte interno no canteiro até o local da execução, inclusive marcações, execução dos furos e instalação do quadro. Considera também o fornecimento de lixa para madeira, aguarrás mineral e verniz incolor fosco premium, com lixamento e envernizamento das peças do requadro em madeira de lei. Limpeza do local do serviço e remoção de todos os restos de materiais, poeiras, materiais excedentes e inaproveitáveis, inclusive descarte final.",
+   "criterio": "und (unidade) Pela quantidade de quadros de pincel novos, dimensões 3,95 x 1,29 m, completos e instalados.",
+   "normas": ["NBR 7203:1982", "Decreto Estadual nº 1.941-R/2007", "NBR 5841:2015", "NBR 11003:2023", "NBR 16332:2014", "NR 18"]
+  }
+ }
+}
