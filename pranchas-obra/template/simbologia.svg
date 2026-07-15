@@ -1,0 +1,98 @@
+<!-- ═══════════════════════════════════════════════════════════════════
+  BIBLIOTECA DE SÍMBOLOS — baseada nas legendas do caderno exemplo (VIVA).
+  Uso: colar este <defs> dentro de uma camada_sobre e instanciar com
+       <use href="#simb-..." x="..." y="..."/>  (coordenadas do desenho base).
+  Tamanhos pensados para plantas na escala do exemplo (1 m ≈ 20–23 pt).
+  Ajustar com transform="scale(...)" se a nova planta tiver outra escala.
+
+  ILUMINAÇÃO                      ELÉTRICA (alturas conforme exemplo)
+    simb-painel-led-28              simb-tomada-baixa   (h=30 cm)
+    simb-painel-led-22              simb-tomada-media   (h=115 cm)
+    simb-plafon                     simb-tomada-alta-tv (h=180 cm)
+    simb-spot-led                   simb-tomada-ac
+    simb-lum-emergencia             simb-rede           (internet/telefone, h=30 cm)
+                                    simb-interruptor    (h=110 cm)
+  HIDRO                             simb-interruptor-tomada (mesma caixa, h=110)
+    simb-ponto-agua                 simb-tree-way
+    simb-ponto-esgoto               simb-antena-tv      (h=180 cm)
+    simb-registro                   simb-interfone      (h=80 cm)
+═══════════════════════════════════════════════════════════════════ -->
+<defs>
+  <!-- ─── ILUMINAÇÃO ─── -->
+  <g id="simb-painel-led-28">
+    <rect x="-4.2" y="-4.2" width="8.4" height="8.4" fill="#efa7e2" stroke="#000" stroke-width="0.45"/>
+    <rect x="-2.4" y="-2.4" width="4.8" height="4.8" fill="#d668c2" stroke="#000" stroke-width="0.3"/>
+  </g>
+  <g id="simb-painel-led-22">
+    <rect x="-3.3" y="-3.3" width="6.6" height="6.6" fill="#f6dc94" stroke="#000" stroke-width="0.45"/>
+    <rect x="-1.9" y="-1.9" width="3.8" height="3.8" fill="#e7b93f" stroke="#000" stroke-width="0.3"/>
+  </g>
+  <g id="simb-plafon">
+    <rect x="-5" y="-5" width="10" height="10" fill="#fdf3b0" stroke="#000" stroke-width="0.6"/>
+    <rect x="-3" y="-3" width="6" height="6" fill="#f2df6e" stroke="#000" stroke-width="0.35"/>
+  </g>
+  <g id="simb-spot-led" stroke="#000" stroke-width="0.55" fill="none">
+    <path d="M0 -4.5V4.5M-4.5 0H4.5M-3.2 -3.2L3.2 3.2M3.2 -3.2L-3.2 3.2"/>
+  </g>
+  <g id="simb-lum-emergencia">
+    <rect x="-4" y="-2.2" width="8" height="4.4" fill="#fff" stroke="#000" stroke-width="0.45"/>
+    <text x="0" y="1.1" font-size="3" text-anchor="middle" font-family="sans-serif">E</text>
+  </g>
+
+  <!-- ─── ELÉTRICA (tomadas = triângulos como no exemplo) ─── -->
+  <g id="simb-tomada-baixa">
+    <path d="M0 0L-5 -2.6V2.6Z" fill="#fff" stroke="#c00" stroke-width="0.5"/>
+  </g>
+  <g id="simb-tomada-media">
+    <path d="M0 0L-5 -2.6V2.6Z" fill="#c00" fill-opacity="0.45" stroke="#c00" stroke-width="0.5"/>
+  </g>
+  <g id="simb-tomada-alta-tv">
+    <path d="M0 0L-5 -2.6V2.6Z" fill="#c00" stroke="#c00" stroke-width="0.5"/>
+  </g>
+  <g id="simb-tomada-ac">
+    <circle r="2.6" fill="#fff" stroke="#c00" stroke-width="0.5"/>
+    <path d="M-2.6 0H2.6M0 -2.6V0" stroke="#c00" stroke-width="0.45" fill="none"/>
+  </g>
+  <g id="simb-rede">
+    <circle r="2.4" fill="#fff" stroke="#000" stroke-width="0.5"/>
+    <circle r="0.9" fill="#000"/>
+  </g>
+  <g id="simb-interruptor" stroke="#000" stroke-width="0.5" fill="none">
+    <path d="M0 2.8V0.6M0 0.6L2 -2.4"/>
+    <circle cy="2.8" r="0.7" fill="#000" stroke="none"/>
+  </g>
+  <g id="simb-interruptor-tomada">
+    <use href="#simb-interruptor"/>
+    <path d="M5 0L0 -2.6V2.6Z" fill="#fff" stroke="#c00" stroke-width="0.5" transform="translate(3,0)"/>
+  </g>
+  <g id="simb-tree-way">
+    <use href="#simb-interruptor"/>
+    <text x="3" y="3" font-size="3" font-family="sans-serif">3</text>
+  </g>
+  <g id="simb-antena-tv" stroke="#000" stroke-width="0.5" fill="none">
+    <circle r="2.2"/>
+    <path d="M-1.5 -1V1L1.8 0Z" fill="#000" stroke="none"/>
+  </g>
+  <g id="simb-interfone">
+    <rect x="-3.5" y="-2" width="7" height="4" fill="#000"/>
+    <path d="M3.5 0H6" stroke="#000" stroke-width="0.5"/>
+  </g>
+
+  <!-- ─── HIDROSSANITÁRIO ─── -->
+  <g id="simb-ponto-agua">
+    <circle r="2.4" fill="#9fd3f2" stroke="#005a9e" stroke-width="0.5"/>
+  </g>
+  <g id="simb-ponto-esgoto">
+    <circle r="2.4" fill="#fff" stroke="#7a4a12" stroke-width="0.6"/>
+    <path d="M-1.7 -1.7L1.7 1.7M1.7 -1.7L-1.7 1.7" stroke="#7a4a12" stroke-width="0.5"/>
+  </g>
+  <g id="simb-registro" stroke="#005a9e" stroke-width="0.55" fill="#fff">
+    <path d="M-3 -2L0 0L-3 2ZM3 -2L0 0L3 2Z"/>
+  </g>
+
+  <!-- hachura genérica p/ áreas de intervenção (usar em fill="url(#hach-obra)") -->
+  <pattern id="hach-obra" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+    <rect width="6" height="6" fill="none"/>
+    <line x1="0" y1="0" x2="0" y2="6" stroke="#c00" stroke-width="0.7" opacity="0.55"/>
+  </pattern>
+</defs>

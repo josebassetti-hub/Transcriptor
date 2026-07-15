@@ -1,0 +1,30 @@
+{
+  "template": "../template/prancha.html",
+  "saida": "paginacao-piso-2andar.html",
+  "desenho": {
+    "svg": "base-2andar-full.svg",
+    "recorte": [136, 113, 352, 368],
+    "camada_sob": "grade-piso.svg"
+  },
+  "titulo_prancha": "PAGINAÇÃO PISO 2º ANDAR",
+  "escala": "1/100",
+  "legenda": {
+    "titulo": "LEGENDA",
+    "itens": [
+      { "texto": "PORCELANATO 90X90" }
+    ]
+  },
+  "carimbo": {
+    "titulo_bloco": "PROJETO DE REFORMA",
+    "resp_nome": "MICHELLE CECATO",
+    "resp_reg": "CAU: A42167-7",
+    "resp_sub": "Arquitetura • Interiores",
+    "cliente": "VIVA CUIDADOS EM SAUDE LTDA",
+    "autor": "MICHELLE CECATO CAU A42167-7",
+    "endereco": "RUA MARECHAL DEODORO DA FONSECA N º 108 , 2ºANDAR",
+    "data": "MAIO 2025",
+    "area": "132,00 M2",
+    "prancha": "2/6"
+  },
+  "marca": "REPRODUÇÃO DIGITAL (PROVA DE CONCEITO) — NÃO SUBSTITUI A PRANCHA ORIGINAL ASSINADA PELO RESPONSÁVEL TÉCNICO"
+}

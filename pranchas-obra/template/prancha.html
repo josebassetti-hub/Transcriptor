@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<!--
+  TEMPLATE DE PRANCHA A4 RETRATO — padrão visual do caderno de plantas exemplo (VIVA).
+  Preenchido por montar.py via tokens {{...}}. Não editar os tokens à mão sem necessidade.
+
+  Estrutura (de cima para baixo), replicando o exemplo: moldura com canto
+  superior direito arredondado; área de desenho (SVG injetado pelo montar.py);
+  título da prancha com balão + escala; quadros de NOTAS e LEGENDA (opcionais);
+  carimbo (responsável | projeto/cliente/autor/endereço/data/área/prancha).
+-->
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>{{TITULO_PRANCHA}}</title>
+<style>
+  @page { size: A4 portrait; margin: 0; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 210mm; height: 297mm; }
+  body { font-family: "DejaVu Sans", Arial, sans-serif; color: #000; background: #fff; }
+
+  .folha {
+    position: relative;
+    width: 210mm; height: 297mm;
+    padding: 6mm 6mm 6mm 8mm;
+  }
+  .moldura {
+    width: 100%; height: 100%;
+    border: 0.5mm solid #000;
+    border-top-right-radius: 24mm;
+    display: flex; flex-direction: column;
+    padding: 4mm;
+    overflow: hidden;
+  }
+
+  /* ── área de desenho ─────────────────────────────── */
+  .desenho {
+    flex: 1 1 auto; min-height: 0;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .desenho svg { max-width: 100%; max-height: 100%; }
+
+  /* ── título com balão ────────────────────────────── */
+  .titulo-row { flex: 0 0 auto; padding: 2mm 0 0 8mm; }
+  .titulo-linha { display: flex; align-items: center; gap: 3mm; }
+  .balao {
+    width: 9mm; height: 9mm; border: 0.4mm solid #000; border-radius: 50%;
+    flex: 0 0 auto;
+  }
+  .titulo-texto {
+    font-size: 15pt; letter-spacing: 0.35em; font-weight: 500;
+    border-bottom: 0.4mm solid #000; padding: 0 14mm 1mm 1mm;
+  }
+  .escala { font-size: 9pt; letter-spacing: 0.15em; padding: 1.5mm 0 0 12mm; }
+
+  /* ── faixa legenda/notas ─────────────────────────── */
+  .quadros { flex: 0 0 auto; display: flex; justify-content: flex-end; align-items: flex-end; gap: 4mm; padding-top: 2mm; }
+  .quadro { border: 0.3mm solid #000; font-size: 7.5pt; }
+  .quadro .cab { border-bottom: 0.3mm solid #000; padding: 1mm 2mm; font-weight: 600; letter-spacing: 0.08em; }
+  .quadro .cab.centro { text-align: center; }
+  .quadro table { border-collapse: collapse; }
+  .quadro td { padding: 1mm 2mm; vertical-align: middle; border-top: 0.2mm solid #000; }
+  .quadro tr:first-child td { border-top: none; }
+  .quadro td.simb { width: 9mm; text-align: center; }
+  .quadro td.simb svg { display: block; margin: 0 auto; }
+  .quadro .notas { padding: 1mm 2mm; line-height: 1.45; white-space: pre-line; }
+  .oculto { display: none; }
+
+  /* ── carimbo ─────────────────────────────────────── */
+  .carimbo { flex: 0 0 auto; margin-top: 2mm; border: 0.45mm solid #000; display: flex; }
+  .resp {
+    flex: 0 0 34mm; border-right: 0.45mm solid #000;
+    display: flex; flex-direction: column; justify-content: space-between;
+    padding: 3mm 2mm; text-align: center;
+  }
+  .resp .nome { font-family: "Comic Sans MS", "DejaVu Sans", cursive; font-size: 11pt; line-height: 1.25; }
+  .resp .reg  { font-size: 7pt; margin-top: 1.5mm; }
+  .resp .sub  { font-size: 6.5pt; letter-spacing: 0.05em; }
+  .cgrid { flex: 1 1 auto; display: flex; flex-direction: column; font-size: 7.5pt; }
+  .cgrid .linha { display: flex; border-top: 0.35mm solid #000; }
+  .cgrid .linha:first-child { border-top: none; }
+  .cel { padding: 1mm 2mm; flex: 1; }
+  .cel + .cel { border-left: 0.35mm solid #000; }
+  .cel .rotulo { font-size: 6pt; letter-spacing: 0.05em; }
+  .cel .valor { text-align: center; padding-top: 0.5mm; }
+  .tit-bloco { text-align: center; font-weight: 600; font-size: 9pt; padding: 1.5mm 0; }
+  .assin { min-height: 12mm; display: flex; align-items: flex-end; justify-content: center; font-size: 7.5pt; }
+  .nome-cx { text-align: center; padding: 1mm 0; }
+  .marca-poc {
+    position: absolute; left: 10mm; bottom: 1.8mm;
+    font-size: 5.5pt; letter-spacing: 0.15em; color: #666;
+  }
+</style>
+</head>
+<body>
+  <div class="folha">
+    <div class="moldura">
+      <div class="desenho">{{DESENHO_HTML}}</div>
+
+      <div class="titulo-row">
+        <div class="titulo-linha">
+          <div class="balao"></div>
+          <div class="titulo-texto">{{TITULO_PRANCHA}}</div>
+        </div>
+        <div class="escala">ESC:&nbsp;&nbsp;&nbsp;{{ESCALA}}</div>
+      </div>
+
+      <div class="quadros">
+        {{NOTAS_HTML}}
+        {{LEGENDA_HTML}}
+      </div>
+
+      <div class="carimbo">
+        <div class="resp">
+          <div class="nome">{{RESP_NOME}}</div>
+          <div class="reg">{{RESP_REG}}</div>
+          <div class="sub">{{RESP_SUB}}</div>
+        </div>
+        <div class="cgrid">
+          <div class="linha"><div class="cel tit-bloco">{{TITULO_BLOCO}}</div></div>
+          <div class="linha" style="flex:1">
+            <div class="cel"><div class="rotulo">CLIENTE</div><div class="assin"></div></div>
+            <div class="cel"><div class="rotulo">AUTOR DO PROJETO</div><div class="assin"></div></div>
+          </div>
+          <div class="linha">
+            <div class="cel nome-cx">{{CLIENTE}}</div>
+            <div class="cel nome-cx">{{AUTOR}}</div>
+          </div>
+          <div class="linha"><div class="cel nome-cx">ENDEREÇO: {{ENDERECO}}</div></div>
+          <div class="linha">
+            <div class="cel nome-cx">DATA : {{DATA}}</div>
+            <div class="cel nome-cx">ÁREA : {{AREA}}</div>
+            <div class="cel nome-cx">PRANCHA : {{PRANCHA}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="marca-poc">{{MARCA}}</div>
+  </div>
+</body>
+</html>

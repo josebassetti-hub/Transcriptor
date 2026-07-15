@@ -1,0 +1,16 @@
+<!-- Malha de paginação de piso (porcelanato 90x90) — 2º andar VIVA.
+     Coordenadas no sistema da página original (pt). Pitch 20,4 pt medido
+     na prancha 2/6 original. Desenhada POR BAIXO da planta base (camada_sob),
+     como no CAD original: as paredes/portas cobrem a malha por cima. -->
+<defs>
+  <pattern id="ov-malha-piso" width="20.4" height="20.4" patternUnits="userSpaceOnUse"
+           x="219.5" y="131.5">
+    <path d="M 20.4 0 H 0 V 20.4" fill="none" stroke="#3d3d3d" stroke-width="0.4"/>
+  </pattern>
+</defs>
+<g id="ov-paginacao-piso">
+  <!-- campo principal (Copa/PNE/Estúdio/Recepção/Treinamento/circulação) -->
+  <path d="M 219.5 131.5 H 470.5 V 458 H 219.5 Z" fill="url(#ov-malha-piso)"/>
+  <!-- vestíbulo do bloco de serviço (entre escada e elevador) -->
+  <path d="M 152 357 H 219.5 V 407 H 152 Z" fill="url(#ov-malha-piso)"/>
+</g>
