@@ -86,6 +86,23 @@ dos pontos vêm da NBR 5410, não do caderno).
 > **Aviso**: estudo indicativo por metodologia paramétrica. Não substitui orçamento executivo
 > com projetos completos, nem dispensa responsável técnico.
 
+### 🧩 Skill para o chat do Claude (`.claude/skills/orcamentista-der-es/`)
+
+Todo o sistema também existe como **Agent Skill**: no chat do claude.ai (ou em qualquer sessão
+do Claude Code neste repositório), você envia o projeto e o Claude produz **o mesmo orçamento do
+app** — a skill embute a base de preços, o mapa de padrões, os 746 critérios de medição e um
+**motor em Python idêntico ao do app** (validado item a item contra o orçamento dourado:
+custo direto R$ 183.464,48 no exemplo de 70 m²).
+
+**Instalar no claude.ai:** baixe `dist/orcamentista-der-es.zip` → claude.ai → Configurações →
+Capacidades (Capabilities) → **Skills** → carregar o zip → ativar. Depois é só abrir um chat,
+anexar a planta e pedir "faça o orçamento desta obra". Requer o recurso de execução de código
+ativo (padrão nos planos pagos); sem ele a skill degrada para estimativa aproximada com aviso.
+
+**Atualização anual:** após rodar `build_base.py`/`merge_regras.py`, rode
+`python3 tools/build_skill.py` — ele re-sincroniza as referências, roda o autoteste dourado e
+regenera o zip.
+
 ---
 
 ## 🏦 Simulador BNB/FNE (`index.html`)

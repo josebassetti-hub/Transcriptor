@@ -1,0 +1,84 @@
+{
+ "obra": {
+  "nome": "Residência exemplo 70 m²",
+  "local": "Vitória - ES",
+  "area": 70,
+  "pav": 1,
+  "padrao": "medio",
+  "bdi": 25,
+  "redeEsgoto": true,
+  "incluirEstrutura": true,
+  "temLaje": true,
+  "perExt": 0,
+  "semEle": true,
+  "semHid": true,
+  "semEst": true
+ },
+ "ambientes": [
+  {
+   "nome": "Sala",
+   "tipo": "sala",
+   "area": 16,
+   "per": 16.5,
+   "distQ": 3,
+   "distP": 0
+  },
+  {
+   "nome": "Cozinha",
+   "tipo": "cozinha",
+   "area": 9,
+   "per": 12,
+   "distQ": 2,
+   "distP": 3
+  },
+  {
+   "nome": "Quarto 1",
+   "tipo": "quarto",
+   "area": 12,
+   "per": 14,
+   "distQ": 6,
+   "distP": 0
+  },
+  {
+   "nome": "Quarto 2",
+   "tipo": "quarto",
+   "area": 9,
+   "per": 12,
+   "distQ": 9,
+   "distP": 0
+  },
+  {
+   "nome": "Banheiro",
+   "tipo": "banheiro",
+   "area": 3.5,
+   "per": 7.6,
+   "distQ": 8,
+   "distP": 1.5
+  },
+  {
+   "nome": "Área de serviço",
+   "tipo": "area_servico",
+   "area": 4,
+   "per": 8.2,
+   "distQ": 4,
+   "distP": 2
+  },
+  {
+   "nome": "Circulação",
+   "tipo": "circulacao",
+   "area": 2.5,
+   "per": 6.6,
+   "distQ": 5,
+   "distP": 0
+  }
+ ],
+ "med": {
+  "quadroMedidor": 12,
+  "esgotoExterno": 8,
+  "escalaNota": ""
+ },
+ "ov": {},
+ "extras": [],
+ "precos": {},
+ "par": {}
+}
