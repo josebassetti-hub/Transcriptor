@@ -92,7 +92,7 @@ Todo o sistema também existe como **Agent Skill**: no chat do claude.ai (ou em 
 do Claude Code neste repositório), você envia o projeto e o Claude produz **o mesmo orçamento do
 app** — a skill embute a base de preços, o mapa de padrões, os 746 critérios de medição e um
 **motor em Python idêntico ao do app** (validado item a item contra o orçamento dourado:
-custo direto R$ 183.464,48 no exemplo de 70 m²).
+custo direto R$ 175.142,06 no exemplo de 70 m²).
 
 **Instalar no claude.ai:** baixe `dist/orcamentista-der-es.zip` → claude.ai → Configurações →
 Capacidades (Capabilities) → **Skills** → carregar o zip → ativar. Depois é só abrir um chat,

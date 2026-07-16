@@ -167,11 +167,10 @@ class Motor:
         circuitos = (math.ceil(st["area"] / CIRC["iluminacao_area_max_m2"])
                      + math.ceil(st["area"] / CIRC["tug_area_max_m2"])
                      + CIRC["circuito_dedicado_cozinha_as"] + st["chuveiros"] + CIRC["reserva"])
-        telha_fator = P["fator_area_telhado_fibrocimento"] if S["obra"]["padrao"] == "popular" else P["fator_area_telhado_ceramica"]
         vaos_verga = st["portasInt"] + 2 + jsround(st["janelasM2"] / 1.5)
         return dict(st=st, pd=pd, areaConstr=area_constr, pav=pav, footprint=footprint,
                     perExt=per_ext, paredesLen=paredes_len, paredesM2=paredes_m2,
-                    nColunas=n_colunas, circuitos=circuitos, telhaFator=telha_fator,
+                    nColunas=n_colunas, circuitos=circuitos,
                     vaosVerga=vaos_verga,
                     distQM=float(S["med"].get("quadroMedidor") or 0) or P["dist_default_quadro_medidor_m"],
                     distEsgExt=float(S["med"].get("esgotoExterno") or 0) or P["dist_default_esgoto_externo_m"])
@@ -202,7 +201,7 @@ class Motor:
             "comp_rodape": lambda c: R(rnd1(c["st"]["rodape"]), "Σ perímetros secos − portas"),
             "comp_soleiras": lambda c: R(rnd1((c["st"]["zonasMolhadas"] + 2) * P["largura_porta_padrao_m"]), f"{c['st']['zonasMolhadas'] + 2} transições × {P['largura_porta_padrao_m']} m"),
             "comp_peitoril": lambda c: R(rnd1(c["st"]["janelasM2"] / 1.2), "Σ larguras de janelas (h média 1,2 m)"),
-            "area_telhado": lambda c: R(rnd1(c["footprint"] * 1.05 * c["telhaFator"]), f"projeção {fmt1(c['footprint'] * 1.05)} m² × fator {c['telhaFator']}"),
+            "area_telhado": lambda c: R(rnd1(c["footprint"] * P["fator_beiral_telhado"]), f"projeção horizontal {fmt1(c['footprint'])} m² × beiral {P['fator_beiral_telhado']} (critério DER 0901/0902: inclinação embutida na composição)"),
             "qtd_portas_internas": lambda c: R(c["st"]["portasInt"], "contagem por ambiente (quartos, banheiros, etc.)"),
             "qtd_portas_todas": lambda c: R(c["st"]["portasInt"] + 2, f"{c['st']['portasInt']} internas + 2 externas"),
             "comp_alizar": lambda c: R(rnd1((c["st"]["portasInt"] + 2) * (2 * P["altura_porta_padrao_m"] + P["largura_porta_padrao_m"]) * 2), f"{c['st']['portasInt'] + 2} portas × {fmt1(2 * P['altura_porta_padrao_m'] + P['largura_porta_padrao_m'])} m × 2 faces"),
@@ -390,7 +389,8 @@ class Motor:
         return out.getvalue()
 
 
-GOLD_CUSTO_DIRETO = 183464.48  # casa exemplo 70 m², padrão médio, BDI 25% — idêntico ao app
+GOLD_CUSTO_DIRETO = 175142.06  # casa exemplo 70 m², padrão médio, BDI 25% — idêntico ao app
+# (telhado medido por projeção horizontal conforme critério DER 0901/0902 desde 07/2026)
 
 
 def autoteste(refs):

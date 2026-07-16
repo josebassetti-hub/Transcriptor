@@ -60,7 +60,7 @@ O motor é o **mesmo do app orcamentista.html** (validado item a item): aplica N
 ambiente, pontos DER 14.07/15.18 (o ponto já embute ~5 m de eletroduto+cabo do ramal; os
 **aparelhos** do cap. 18 são somados à parte), tubos/cabos por metro × fator de rota, estrutura
 por índices, BDI por cima do custo direto. Rode antes `--autoteste` se quiser provar a
-integridade (dourado: custo direto R$ 183.464,48).
+integridade (dourado: custo direto R$ 175.142,06).
 
 **5. Sanidade (checklist do orçamentista).** Confira antes de entregar:
 - R$/m² com BDI na faixa? (popular ~1,8–2,6 mil · médio ~2,4–3,4 mil · alto >3,2 mil — ordem de
@@ -86,6 +86,8 @@ por link/QR; (e) o `planilha.csv` para Excel.
 4. Vãos ≤ 2 m² não se descontam da alvenaria (compensam vergas).
 5. Preços da tabela são **custo direto** (LS 157,27% embutidas na MO; BDI 0) — o BDI da obra é
    aplicado por cima (default 25%, editável).
+6. Estrutura de telhado E telhamento medem-se pela **projeção horizontal** × 1,05 de beiral
+   (cadernos 0901/0902) — a inclinação já está na composição; nunca usar a área inclinada.
 
 ## Se não houver ambiente de execução de código
 

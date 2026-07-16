@@ -43,8 +43,10 @@ Por ambiente (nome, tipo, área, perímetro — medidos ou lidos da planta):
 3. **Pisos**: área interna por pavimento → lastro (térreo), regularização, acabamento
    (item pelo padrão), rodapé (ambientes secos).
 4. **Forro**: médio/alto → gesso nos ambientes internos; popular → sem forro (premissa).
-5. **Cobertura**: área de projeção da planta de cobertura × fator de inclinação+beiral
-   (cerâmica 1,3 / fibrocimento 1,15) → estrutura de madeira + telhamento.
+5. **Cobertura**: área de **projeção horizontal** da planta de cobertura × 1,05 (beiral) →
+   estrutura de madeira + telhamento. Critério de medição DER-ES (cadernos 0901/0902):
+   estrutura E telhas medem-se pela projeção horizontal — a inclinação já está embutida nas
+   composições (cerâmica considera 30%). NÃO multiplicar pela área inclinada.
 6. **Pintura**: faces rebocadas − áreas azulejadas; + forro quando houver; selador sempre,
    massa corrida médio/alto.
 
