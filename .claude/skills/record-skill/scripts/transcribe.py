@@ -71,16 +71,25 @@ def main() -> int:
         return 1
 
     # modo offline: --model pode ser um diretório local com o modelo CT2; se
-    # não for, procura um modelo em models/ ao lado do script antes de tentar
-    # o download do Hugging Face
+    # não for, procura em models/ ao lado do script antes de tentar o download
+    # do Hugging Face. Um único modelo na pasta é usado independente do nome —
+    # o usuário não precisa casar o nome da pasta com o --model.
     model_ref = args.model
     if not Path(model_ref).is_dir():
         local_dir = Path(__file__).resolve().parent / "models"
-        for candidate in (local_dir / f"faster-whisper-{args.model}", local_dir / args.model):
-            if (candidate / "model.bin").exists():
-                model_ref = str(candidate)
-                print(f"[transcribe] usando modelo local: {model_ref}")
-                break
+        local_models = sorted(
+            d for d in (local_dir.iterdir() if local_dir.is_dir() else [])
+            if (d / "model.bin").exists()
+        )
+        matching = [d for d in local_models if args.model in d.name]
+        chosen = (matching or local_models)[:1]
+        if len(local_models) > 1 and not matching:
+            print(f"[transcribe] AVISO: vários modelos em {local_dir} e nenhum "
+                  f"casa com '{args.model}' — usando {chosen[0].name}; passe "
+                  f"--model <caminho> para escolher outro.")
+        if chosen:
+            model_ref = str(chosen[0])
+            print(f"[transcribe] usando modelo local: {model_ref}")
 
     language = None if args.language == "auto" else args.language
     print(f"[transcribe] transcrevendo com faster-whisper "

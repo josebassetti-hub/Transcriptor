@@ -46,11 +46,16 @@ rede restritiva, esses domínios precisam estar na lista de permitidos —
 `transcribe.py` acusa isso com mensagem clara (código de saída 2).
 
 Bloqueado e sem como liberar? Use o **modo offline**: o usuário baixa o
-modelo uma única vez em um computador com internet (no site huggingface.co,
-repositório `Systran/faster-whisper-small` — ~460 MB; ou `-base`/`-tiny` para
-versões menores), envia a pasta para a sessão (upload ou Google Drive) e o
-`transcribe.py` a usa automaticamente se estiver em `scripts/models/`, ou via
-`--model /caminho/da/pasta`. A partir daí a transcrição funciona sem rede.
+modelo uma única vez em um computador com internet (site huggingface.co) e
+envia a pasta para a sessão (upload ou Google Drive). Recomendação de
+download: **`deepdml/faster-whisper-large-v3-turbo-ct2`** (~1,6 GB — precisão
+de modelo grande com velocidade de medium; a melhor escolha para PT) ou
+`Systran/faster-whisper-medium` (~1,5 GB). Coloque a pasta em
+`scripts/models/` — o `transcribe.py` a detecta e usa automaticamente,
+qualquer que seja o nome — ou passe `--model /caminho/da/pasta`. A partir daí
+a transcrição funciona sem rede. Modelos maiores transcrevem mais devagar
+(minutos a mais por vídeo), mas erram muito menos nomes, números e termos
+técnicos — o que melhora diretamente a skill gerada.
 
 ### 3. Ouvir e ver (podem rodar em paralelo)
 
