@@ -17,6 +17,10 @@ Uso:
 --language auto: detecta o idioma automaticamente (informa a confiança).
 --initial-prompt: vocabulário de domínio (nomes de sistemas, siglas) para o
   Whisper reconhecer termos que de outra forma erraria.
+--model: nome do modelo (baixado do Hugging Face) OU caminho de um diretório
+  com um modelo CTranslate2 já baixado (modo offline — para ambientes onde o
+  Hugging Face é bloqueado). Se existir um modelo em models/ ao lado deste
+  script, ele é usado automaticamente.
 """
 
 import argparse
@@ -66,13 +70,25 @@ def main() -> int:
         print(proc.stderr[-2000:], file=sys.stderr)
         return 1
 
+    # modo offline: --model pode ser um diretório local com o modelo CT2; se
+    # não for, procura um modelo em models/ ao lado do script antes de tentar
+    # o download do Hugging Face
+    model_ref = args.model
+    if not Path(model_ref).is_dir():
+        local_dir = Path(__file__).resolve().parent / "models"
+        for candidate in (local_dir / f"faster-whisper-{args.model}", local_dir / args.model):
+            if (candidate / "model.bin").exists():
+                model_ref = str(candidate)
+                print(f"[transcribe] usando modelo local: {model_ref}")
+                break
+
     language = None if args.language == "auto" else args.language
     print(f"[transcribe] transcrevendo com faster-whisper "
-          f"({args.model}, idioma={'auto' if language is None else language})...")
+          f"({model_ref}, idioma={'auto' if language is None else language})...")
     from faster_whisper import WhisperModel
 
     try:
-        model = WhisperModel(args.model, device="cpu", compute_type="int8")
+        model = WhisperModel(model_ref, device="cpu", compute_type="int8")
     except Exception as exc:  # noqa: BLE001 - diagnóstico de rede legível
         msg = f"{type(exc).__name__}: {exc}"
         if "403" in msg or "Proxy" in msg or "Connection" in msg or "Name or service" in msg:

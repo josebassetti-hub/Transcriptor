@@ -43,8 +43,14 @@ Requisitos de rede: apt/PyPI para instalar as ferramentas, e
 **huggingface.co + cdn-lfs.huggingface.co** para o download do modelo Whisper
 na primeira transcrição (depois fica em cache). Em ambientes com política de
 rede restritiva, esses domínios precisam estar na lista de permitidos —
-`transcribe.py` acusa isso com mensagem clara (código de saída 2); nesse caso
-peça ao usuário para liberar os domínios na configuração do ambiente.
+`transcribe.py` acusa isso com mensagem clara (código de saída 2).
+
+Bloqueado e sem como liberar? Use o **modo offline**: o usuário baixa o
+modelo uma única vez em um computador com internet (no site huggingface.co,
+repositório `Systran/faster-whisper-small` — ~460 MB; ou `-base`/`-tiny` para
+versões menores), envia a pasta para a sessão (upload ou Google Drive) e o
+`transcribe.py` a usa automaticamente se estiver em `scripts/models/`, ou via
+`--model /caminho/da/pasta`. A partir daí a transcrição funciona sem rede.
 
 ### 3. Ouvir e ver (podem rodar em paralelo)
 
