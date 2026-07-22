@@ -33,6 +33,18 @@ else
   fi
 fi
 
+# OCR é opcional: reforça a leitura de textos pequenos na tela, mas a skill
+# funciona sem ele — por isso falha aqui não derruba o setup.
+if command -v tesseract >/dev/null 2>&1; then
+  echo "[setup] tesseract já instalado."
+else
+  echo "[setup] instalando tesseract (OCR, opcional)..."
+  if command -v sudo >/dev/null 2>&1 && [ "$(id -u)" != "0" ]; then APT="sudo apt-get"; else APT="apt-get"; fi
+  $APT install -y -qq tesseract-ocr tesseract-ocr-por >/dev/null 2>&1 \
+    && echo "[setup] tesseract instalado." \
+    || echo "[setup] AVISO: tesseract não instalado — OCR será pulado."
+fi
+
 if [ "$ok" = "1" ]; then
   echo "[setup] ambiente pronto."
 else

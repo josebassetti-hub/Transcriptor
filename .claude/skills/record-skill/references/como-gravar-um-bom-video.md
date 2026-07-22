@@ -17,6 +17,13 @@ você confere na tela antes de prosseguir, regras de nomenclatura, o que fazer
 quando algo dá errado, seus hábitos de conferência. Fale essas coisas em voz
 alta — elas não aparecem em manual nenhum.
 
+## Errou durante a gravação? Corrija falando
+
+Não precisa regravar por causa de um erro: diga em voz alta que errou e qual
+é o jeito certo ("ops, esse campo não — o correto é o de cima"). O Claude
+aprende o caminho corrigido e ainda transforma o erro num aviso útil na
+skill. O que confunde é errar e corrigir **em silêncio**.
+
 ## Uma tarefa por vídeo
 
 Grave um procedimento completo por vídeo, do início ao fim (incluindo abrir o
