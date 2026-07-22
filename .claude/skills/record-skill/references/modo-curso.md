@@ -17,13 +17,23 @@ Não há limite rígido de duração ou tamanho por vídeo. Os limites reais:
   trabalho em várias sessões usando o checkpoint (abaixo).
 - **Contexto de leitura**: vídeos são assistidos em segmentos de ~10–15 min
   (o fluxo normal já faz isso).
-- **Upload**: arquivos grandes chegam melhor pelo Google Drive; a aula não
-  precisa ser recortada pelo usuário — divida aqui sem reencodar:
+- **Upload**: arquivos grandes chegam melhor pelo Google Drive (atenção ao
+  limite de payload das ferramentas MCP para arquivos de centenas de MB — se
+  o download falhar, peça link direto ou upload); a aula não precisa ser
+  recortada pelo usuário — divida aqui sem reencodar:
   `ffmpeg -i aula.mp4 -c copy -f segment -segment_time 1500 -reset_timestamps 1 parte%02d.mp4`
+  (corta em keyframes: as partes saem com duração aproximada, não exata —
+  normal e inofensivo).
 
 ## 1. Inventário e ordem
 
-1. Liste todos os vídeos (pasta do Drive ou uploads) com nome e duração.
+Tudo de `aprendizados/` fica na **raiz do projeto** (persiste entre sessões)
+— NUNCA no scratchpad, que é apagado quando a sessão termina; a retomada do
+curso depende disso.
+
+1. Liste todos os materiais (pasta do Drive ou uploads) com nome e duração —
+   **vídeos E manuais/PDFs** do curso (manuais entram com `"tipo": "manual"`
+   e são processados pelo modo-manual, em geral após as aulas do mesmo tema).
 2. Proponha a ordem pela numeração dos arquivos ("Aula 01", "Módulo 2.1"...).
 3. **Confirme a ordem com o usuário antes de começar** — ambiguidade de
    ordem nunca se resolve por palpite.
@@ -55,8 +65,13 @@ Para cada vídeo, na ordem confirmada:
 4. Atualize a memória do curso e o progresso.json (status `concluido`).
 5. **Apague o vídeo, o áudio e os quadros brutos** antes do próximo — só as
    notas e telas-chave ficam.
-6. **Checkpoint**: commit das notas + memória + progresso após cada módulo.
-   Se a sessão cair no meio de 22 h de curso, nada se perde.
+6. **Checkpoint**: os arquivos em `aprendizados/` (raiz do projeto) SÃO o
+   checkpoint. Se o diretório for um repositório git E o usuário tiver
+   concordado com commits, faça commit após cada módulo (proteção extra);
+   sem git ou sem acordo, apenas mantenha os arquivos — nunca commite por
+   conta própria. Se a sessão cair no meio de 22 h de curso, nada se perde.
+   Atualize também `aprendizados/ferramentas/<programa>.md` (conhecimento
+   acumulado por ferramenta — ver SKILL.md, etapa 5) a cada aula.
 
 ## 3. Memória do curso
 

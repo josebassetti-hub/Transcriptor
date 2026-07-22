@@ -41,13 +41,27 @@ def main() -> int:
         return 1
 
     index = json.loads(index_file.read_text(encoding="utf-8"))
+    lang = args.lang
     results = []
+    failures = 0
     for entry in index:
         img = frames_dir / entry["frame"]
         proc = subprocess.run(
-            ["tesseract", str(img), "stdout", "-l", args.lang, "--psm", "3"],
+            ["tesseract", str(img), "stdout", "-l", lang, "--psm", "3"],
             capture_output=True, text=True,
         )
+        if proc.returncode != 0 and "language" in proc.stderr.lower() and lang != "eng":
+            # traineddata do idioma ausente: cai para inglês e segue
+            print(f"AVISO: tesseract sem o idioma '{lang}' — usando 'eng' "
+                  "(instale tesseract-ocr-por para melhor OCR em português).",
+                  file=sys.stderr)
+            lang = "eng"
+            proc = subprocess.run(
+                ["tesseract", str(img), "stdout", "-l", lang, "--psm", "3"],
+                capture_output=True, text=True,
+            )
+        if proc.returncode != 0:
+            failures += 1
         text = " ".join(proc.stdout.split()) if proc.returncode == 0 else ""
         results.append({**entry, "text": text})
 
@@ -55,6 +69,10 @@ def main() -> int:
     out.write_text(json.dumps(results, ensure_ascii=False, indent=1), encoding="utf-8")
     com_texto = sum(1 for r in results if r["text"])
     print(f"[ocr] {com_texto}/{len(results)} quadros com texto -> {out}")
+    if results and failures == len(results):
+        print("ERRO: o tesseract falhou em todos os quadros — OCR indisponível "
+              "(veja os avisos acima).", file=sys.stderr)
+        return 1
     return 0
 
 

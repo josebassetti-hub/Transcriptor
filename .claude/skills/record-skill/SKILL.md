@@ -1,6 +1,6 @@
 ---
 name: record-skill
-description: Aprende um procedimento de trabalho assistindo a um vídeo já gravado (tela + narração em áudio) e gera um SOP passo a passo e uma nova skill reutilizável no formato Agent Skills — a versão para vídeos pré-gravados do "Record a Skill" oficial do Claude Cowork. Use sempre que o usuário enviar ou apontar um arquivo de vídeo (mp4, mkv, webm, mov, avi) e pedir para "assistir", "aprender com o vídeo", "ver o treinamento", "criar uma skill a partir do vídeo", mencionar "record skill", gravação de tela, videoaula, tutorial gravado, ou disser que o vídeo ensina a mexer em um sistema/programa/serviço — mesmo que não use a palavra "skill". Também dispare quando o vídeo estiver no Google Drive, e para cursos completos com várias aulas/módulos/playlist ("aprenda esse curso", "continue o curso") — há um modo curso que processa aula por aula com memória acumulada.
+description: Aprende um procedimento de trabalho assistindo a um vídeo já gravado (tela + narração) e/ou lendo manuais e documentos, e gera um SOP passo a passo e uma nova skill reutilizável no formato Agent Skills — a versão para material pré-gravado do "Record a Skill" oficial do Claude Cowork. Use sempre que o usuário enviar ou apontar um arquivo de vídeo (mp4, mkv, webm, mov, avi) e pedir para "assistir", "aprender com o vídeo", "ver o treinamento", "criar uma skill a partir do vídeo", mencionar "record skill", gravação de tela, videoaula, tutorial gravado, ou disser que o vídeo ensina a mexer em um sistema/programa/serviço — mesmo que não use a palavra "skill". Dispare também para manuais e documentos ("aprenda esse manual", "crie uma skill a partir desse PDF", apostila, documentação de sistema — sozinhos ou complementando um vídeo), para material no Google Drive, e para cursos completos com várias aulas/módulos/playlist ("aprenda esse curso", "continue o curso") — há modos curso e manual com memória acumulada por ferramenta.
 ---
 
 # Record Skill — aprender procedimentos a partir de vídeos gravados
@@ -26,17 +26,28 @@ interface; uma que diz "clique no terceiro botão azul" não.
 Siga as etapas na ordem. Use o scratchpad da sessão como área de trabalho
 (`<scratchpad>/record-skill/<nome-do-video>/`).
 
-### 1. Obter o vídeo
+### 1. Obter o material (vídeo e/ou manual)
 
 - **Arquivo na conversa**: use o caminho local informado.
 - **Google Drive**: localize com as ferramentas MCP do Drive (busque pelo nome
-  se o usuário não der o ID) e baixe para o scratchpad.
-- Confirme com `ffprobe` que o arquivo é um vídeo válido e anote a duração.
+  se o usuário não der o ID) e baixe para o scratchpad. Atenção: ferramentas
+  MCP retornam o conteúdo na resposta — para vídeos grandes (centenas de MB)
+  isso pode falhar; nesse caso peça ao usuário um link de download direto ou
+  upload na conversa.
+- **Link de YouTube/streaming ou vídeo com DRM**: não há como baixar/decodificar —
+  peça ao usuário o arquivo exportado (nunca tente burlar proteções).
+- **Manual/documento (PDF, DOCX, prints)**: também é material de aprendizado —
+  sozinho ou complementando o vídeo; leia `references/modo-manual.md`.
+- Confirme com `ffprobe` que o vídeo é válido e anote a duração. Casos
+  especiais: **vídeo sem áudio** → aprenda só de tela+OCR e peça ao usuário
+  narração ou manual complementar; **arquivo só de áudio** (mp3/m4a) → pule a
+  extração de quadros e aprenda só da fala.
 
 ### 2. Preparar o ambiente
 
-Execute `scripts/setup.sh` (instala ffmpeg e faster-whisper apenas se
-faltarem). Se falhar por falta de rede, avise o usuário e pare — não há como
+Execute `scripts/setup.sh` (instala ffmpeg, faster-whisper e tesseract com
+português, apenas o que faltar; nunca trava pedindo senha de sudo). Se falhar
+por falta de rede ou permissão, avise o usuário e pare — não há como
 transcrever sem as ferramentas.
 
 Requisitos de rede: apt/PyPI para instalar as ferramentas, e
@@ -64,23 +75,34 @@ sistemas/termos técnicos** que aparecem no vídeo — eles entram no
 `--initial-prompt` e evitam que o Whisper erre nomes próprios e siglas.
 
 ```bash
-python3 scripts/transcribe.py --video <video> --outdir <workdir> \
+# caminhos a partir do diretório DESTA skill (.claude/skills/record-skill/)
+python3 <skill>/scripts/transcribe.py --video <video> --outdir <workdir> \
     --initial-prompt "<nomes de sistemas, siglas, termos do domínio>"
-python3 scripts/extract_frames.py --video <video> --outdir <workdir>
-python3 scripts/ocr_frames.py --outdir <workdir>   # depois do extract_frames
+python3 <skill>/scripts/extract_frames.py --video <video> --outdir <workdir>
+python3 <skill>/scripts/ocr_frames.py --outdir <workdir>   # depois do extract_frames
 ```
+
+**Importante — tempo de execução**: transcrição leva ~8–15 min por hora de
+vídeo (modelo small; mais com modelos maiores), e a extração de quadros
+decodifica o vídeo inteiro. **Rode os dois em background** (`run_in_background`
+do Bash) e aguarde a notificação de conclusão — o timeout padrão de 2 min
+mataria o processo. O mesmo vale para o primeiro download do modelo (em
+sessões remotas novas o modelo é baixado de novo — minutos; com rede
+bloqueada, use o modo offline). O transcript é gravado incrementalmente: se
+algo morrer no meio, o parcial sobrevive.
 
 - `transcribe.py` gera `transcript.json` (segmentos com texto E timestamps
   por palavra — use as palavras para casar a fala com o quadro exato) e
   `transcript.txt`. Padrões: modelo `small`, idioma `pt`; use
   `--language auto` quando não souber o idioma (o script informa a detecção e
   a confiança) e `--model medium` se a transcrição vier ruim.
-- `extract_frames.py` gera `frames/frame_NNNN_t<segundos>s_<papel>.jpg` +
-  `frames_index.json`. Cada mudança de cena vira um **par causa→efeito**:
-  quadro `antes` (a tela em que a ação foi feita) e `depois` (o resultado) —
-  é assim que se enxerga o clique sem ter os eventos de mouse. O threshold de
-  cena se ajusta sozinho à densidade do vídeo; para ações muito rápidas,
-  aumente a cobertura com `--max-frames 150 --interval 10`.
+- `extract_frames.py` gera `frames/frame_NNNN_t<segundos>s_<papel>.jpg` e o
+  índice `frames/frames_index.json`. Cada mudança de cena vira um **par
+  causa→efeito**: quadro `antes` (a tela em que a ação foi feita) e `depois`
+  (o resultado) — é assim que se enxerga o clique sem ter os eventos de
+  mouse. O threshold de cena se ajusta sozinho à densidade do vídeo; para
+  ações muito rápidas (vários cliques em poucos segundos), reduza
+  `--min-gap 0.8` — é o dedup de cenas próximas que as separa.
 - `ocr_frames.py` gera `frames_text.json` com o texto visível de cada quadro
   (OCR) — use como índice pesquisável para menus/campos pequenos; ele
   complementa, não substitui, a leitura visual dos quadros.
@@ -89,7 +111,10 @@ python3 scripts/ocr_frames.py --outdir <workdir>   # depois do extract_frames
 
 1. Leia `transcript.txt` inteiro primeiro para entender o arco geral: qual
    serviço está sendo ensinado, quais programas aparecem, onde começa e
-   termina cada tarefa.
+   termina cada tarefa. **Antes de assistir**, verifique se já existe
+   conhecimento acumulado dos programas envolvidos em
+   `aprendizados/ferramentas/` (na raiz do projeto) e leia-o — o Claude
+   assiste o vídeo já "conhecendo" a planilha/sistema.
 2. Leia os quadros com a ferramenta Read em lotes de ~10, **em ordem
    cronológica**. O timestamp no nome diz qual trecho da narração acompanha
    aquela tela; leia os pares `antes`/`depois` juntos para entender cada ação
@@ -139,11 +164,20 @@ Reconstrua o procedimento como uma sequência de ações intencionais. Regras:
   conteúdo novo e apresente ao usuário o que mudou em vez de um rascunho do
   zero.
 
-Produza:
+Produza (todos os artefatos de `aprendizados/` ficam na **raiz do projeto**,
+que persiste entre sessões — nunca no scratchpad, que é apagado):
 
 - **SOP** em `aprendizados/<nome-do-video>/SOP.md` seguindo o modelo abaixo, e
   copie os quadros-chave (um por passo importante) para
   `aprendizados/<nome-do-video>/telas/`.
+- **Conhecimento da ferramenta**: para cada programa/planilha/sistema que o
+  material ensina, crie ou ATUALIZE `aprendizados/ferramentas/<programa>.md`
+  com o que este material acrescentou — telas e menus mapeados, campos e
+  variáveis (e o que significam), funções e recursos, macetes, mudanças de
+  interface observadas, e a lista de serviços que já se sabe executar nele
+  (com as skills correspondentes). É esse acúmulo que faz um novo serviço na
+  MESMA ferramenta nascer sabendo tudo que os materiais anteriores ensinaram;
+  a parte relevante entra nas `references/` da skill gerada.
 - **Rascunho da nova skill** em `.claude/skills/<nome-do-procedimento>/`
   seguindo `references/skill-authoring.md` (leia antes de escrever). A skill
   não é uma cópia do SOP: é o procedimento destilado em instruções acionáveis
@@ -201,6 +235,12 @@ dados diferentes dos usados na demonstração (outro cliente, outro valor,
 outro arquivo) em um subagente com acesso à skill, e confira se ela guia a
 tarefa corretamente. Ajuste o que falhar.
 
+Sem subagentes no ambiente, ou com a skill recém-criada ainda não carregada
+na sessão: valide **inline** — leia o SKILL.md gerado como se fosse sua única
+fonte e execute o prompt de teste passo a passo seguindo apenas o que está
+escrito nele; onde você precisar de algo que não está lá, a skill está
+incompleta.
+
 ### 8. Entregar e limpar
 
 - **Entregar**: resumo do procedimento aprendido, caminho do SOP, nome da
@@ -215,6 +255,15 @@ tarefa corretamente. Ajuste o que falhar.
   apague do scratchpad o vídeo baixado, o áudio e os quadros não citados no
   SOP; mantenha apenas as telas referenciadas. Se alguma tela mantida exibir
   dado sensível, avise o usuário explicitamente.
+
+## Manuais e documentos
+
+Se o material incluir (ou for apenas) um manual, apostila, PDF, DOCX ou
+prints de tela, **leia `references/modo-manual.md`**: ele cobre aprender só
+do documento (com a marcação honesta "não demonstrado em tela"), usar o
+manual como complemento oficial do vídeo (cruzamento passo a passo, como na
+pesquisa normativa) e a integração com o modo curso e com o conhecimento por
+ferramenta.
 
 ## Cursos completos e vídeos longos
 
