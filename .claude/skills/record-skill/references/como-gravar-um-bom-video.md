@@ -17,6 +17,14 @@ você confere na tela antes de prosseguir, regras de nomenclatura, o que fazer
 quando algo dá errado, seus hábitos de conferência. Fale essas coisas em voz
 alta — elas não aparecem em manual nenhum.
 
+## Cite leis e normas pelo número
+
+Se o procedimento se apoia em lei, decreto, resolução ou norma, cite o
+identificador em voz alta ("conforme a Lei 14.133, artigo 75" em vez de "como
+manda a lei de licitações"). O Claude busca o texto oficial na internet,
+confere a fonte e acopla os artigos relevantes ao aprendizado — a skill
+gerada fica com o detalhe exato da norma, não só com o seu resumo.
+
 ## Errou durante a gravação? Corrija falando
 
 Não precisa regravar por causa de um erro: diga em voz alta que errou e qual

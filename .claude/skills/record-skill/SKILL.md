@@ -94,6 +94,21 @@ python3 scripts/ocr_frames.py --outdir <workdir>   # depois do extract_frames
    ficar pesado, delegue cada segmento a um subagente que recebe o transcript
    do trecho + os quadros do trecho e devolve as notas estruturadas.
 
+### 4b. Pesquisar normas citadas
+
+Se o instrutor citar lei, decreto, resolução, portaria, instrução normativa,
+NBR ou qualquer documento oficial (na fala OU visível na tela/OCR), **leia
+`references/pesquisa-normativa.md` e siga o protocolo**: identificar a
+citação, pesquisar com WebSearch, validar que a fonte é oficial (planalto,
+in.gov.br, site do órgão em gov.br...), confirmar que é o documento certo,
+baixar com WebFetch e destilar o extrato relevante para o aprendizado.
+
+O motivo: o instrutor resume; o texto oficial detalha. Uma skill que cita "o
+art. 75, I, da Lei 14.133/2021" com o extrato anexo é muito mais confiável do
+que uma que repete o resumo falado. Normas pagas, bloqueadas pela rede ou
+internas da empresa não são contornadas — viram pendências apresentadas na
+revisão (o protocolo detalha os fallbacks).
+
 ### 5. Sintetizar
 
 Reconstrua o procedimento como uma sequência de ações intencionais. Regras:
@@ -146,8 +161,13 @@ Fonte: [arquivo do vídeo], [duração], transcrito em [data]
 ## Decisões e regras narradas
 [condições, exceções, conferências que o instrutor menciona]
 
+## Base normativa
+| Norma | O que o instrutor disse | O que o texto oficial detalha | Fonte oficial | Arquivo |
+|---|---|---|---|---|
+[uma linha por norma citada; divergências fala×texto destacadas]
+
 ## Lacunas e dúvidas
-[o que o vídeo não mostrou ou ficou ambíguo]
+[o que o vídeo não mostrou ou ficou ambíguo, incluindo normas não resolvidas]
 ```
 
 ### 6. Revisar com o usuário (obrigatório)
@@ -156,6 +176,11 @@ Como o Record a Skill oficial, **não finalize sem revisão**: apresente ao
 usuário um resumo do que foi aprendido, o rascunho da nova skill e a lista de
 lacunas/ambiguidades, e pergunte o que ajustar antes de gravar a versão
 final. As respostas do usuário resolvem as lacunas — incorpore-as.
+
+Inclua na revisão o resultado da pesquisa normativa (etapa 4b): normas
+encontradas e incorporadas com suas fontes, divergências entre o que foi
+falado e o texto oficial, e citações pendentes (ambíguas, pagas, bloqueadas
+ou internas) que dependem de resposta ou documento do usuário.
 
 ### 7. Validar em um exemplo novo
 
