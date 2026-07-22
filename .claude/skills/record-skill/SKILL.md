@@ -1,6 +1,6 @@
 ---
 name: record-skill
-description: Aprende um procedimento de trabalho assistindo a um vídeo já gravado (tela + narração em áudio) e gera um SOP passo a passo e uma nova skill reutilizável no formato Agent Skills — a versão para vídeos pré-gravados do "Record a Skill" oficial do Claude Cowork. Use sempre que o usuário enviar ou apontar um arquivo de vídeo (mp4, mkv, webm, mov, avi) e pedir para "assistir", "aprender com o vídeo", "ver o treinamento", "criar uma skill a partir do vídeo", mencionar "record skill", gravação de tela, videoaula, tutorial gravado, ou disser que o vídeo ensina a mexer em um sistema/programa/serviço — mesmo que não use a palavra "skill". Também dispare quando o vídeo estiver no Google Drive e o usuário pedir para aprender o que é ensinado nele.
+description: Aprende um procedimento de trabalho assistindo a um vídeo já gravado (tela + narração em áudio) e gera um SOP passo a passo e uma nova skill reutilizável no formato Agent Skills — a versão para vídeos pré-gravados do "Record a Skill" oficial do Claude Cowork. Use sempre que o usuário enviar ou apontar um arquivo de vídeo (mp4, mkv, webm, mov, avi) e pedir para "assistir", "aprender com o vídeo", "ver o treinamento", "criar uma skill a partir do vídeo", mencionar "record skill", gravação de tela, videoaula, tutorial gravado, ou disser que o vídeo ensina a mexer em um sistema/programa/serviço — mesmo que não use a palavra "skill". Também dispare quando o vídeo estiver no Google Drive, e para cursos completos com várias aulas/módulos/playlist ("aprenda esse curso", "continue o curso") — há um modo curso que processa aula por aula com memória acumulada.
 ---
 
 # Record Skill — aprender procedimentos a partir de vídeos gravados
@@ -215,6 +215,19 @@ tarefa corretamente. Ajuste o que falhar.
   apague do scratchpad o vídeo baixado, o áudio e os quadros não citados no
   SOP; mantenha apenas as telas referenciadas. Se alguma tela mantida exibir
   dado sensível, avise o usuário explicitamente.
+
+## Cursos completos e vídeos longos
+
+Se o material for um curso/treinamento com várias aulas (ou o usuário disser
+"curso", "aulas", "módulos", "playlist"), **leia
+`references/modo-curso.md` e siga aquele protocolo** em vez do fluxo de vídeo
+único: inventário com ordem confirmada, um vídeo por vez com limpeza de
+disco, memória acumulada do curso, detecção de continuidade entre aulas,
+checkpoint com commit por módulo (retomável entre sessões via
+`progresso.json`) e consolidação final em uma skill (ou família de skills +
+skill mestre). Vídeos com mais de ~1 h: divida sem reencodar com
+`ffmpeg -c copy -f segment` (comando no protocolo) — o usuário não precisa
+recortar nada.
 
 ## Qualidade do vídeo de entrada
 
