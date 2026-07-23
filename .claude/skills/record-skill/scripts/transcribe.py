@@ -20,8 +20,8 @@ Uso:
 --initial-prompt: vocabulário de domínio (nomes de sistemas, siglas).
 
 ATENÇÃO (para quem chama): transcrição demora (~45-90 min por hora de vídeo
-com o padrão large-v3-turbo em CPU; ~8-15 min com --model small) — rode em
-background ou com timeout estendido, nunca com o timeout padrão de 2 min.
+com o padrão large-v3-turbo em CPU) — rode em background ou com timeout
+estendido, nunca com o timeout padrão de 2 min.
 """
 
 import argparse

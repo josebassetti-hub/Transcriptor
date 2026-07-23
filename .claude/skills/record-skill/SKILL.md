@@ -58,10 +58,10 @@ rede restritiva, esses domínios precisam estar na lista de permitidos —
 
 Bloqueado e sem como liberar? Use o **modo offline**: o usuário baixa o
 modelo uma única vez em um computador com internet (site huggingface.co) e
-envia a pasta para a sessão (upload ou Google Drive). Recomendação de
-download: **`deepdml/faster-whisper-large-v3-turbo-ct2`** (~1,6 GB — precisão
-de modelo grande com velocidade de medium; a melhor escolha para PT) ou
-`Systran/faster-whisper-medium` (~1,5 GB). Coloque a pasta em
+envia a pasta para a sessão (upload ou Google Drive). Download:
+**`deepdml/faster-whisper-large-v3-turbo-ct2`** (~1,6 GB — precisão de
+modelo grande com velocidade de medium; o modelo padrão desta skill, usado
+para qualquer duração de vídeo). Coloque a pasta em
 `scripts/models/` — o `transcribe.py` a detecta e usa automaticamente,
 qualquer que seja o nome — ou passe `--model /caminho/da/pasta`. A partir daí
 a transcrição funciona sem rede. Modelos maiores transcrevem mais devagar
@@ -83,7 +83,9 @@ python3 <skill>/scripts/ocr_frames.py --outdir <workdir>   # depois do extract_f
 ```
 
 **Importante — tempo de execução**: transcrição leva ~45–90 min por hora de
-vídeo (padrão `large-v3-turbo`; ~8–15 min com `--model small`), e a extração de quadros
+vídeo com o `large-v3-turbo` (o modelo padrão — **use-o sempre, mesmo em
+vídeos longos**: decisão do usuário, precisão acima de velocidade; apenas
+avise a estimativa de tempo antes de começar), e a extração de quadros
 decodifica o vídeo inteiro. **Rode os dois em background** (`run_in_background`
 do Bash) e aguarde a notificação de conclusão — o timeout padrão de 2 min
 mataria o processo. O mesmo vale para o primeiro download do modelo (em
@@ -94,9 +96,9 @@ algo morrer no meio, o parcial sobrevive.
 - `transcribe.py` gera `transcript.json` (segmentos com texto E timestamps
   por palavra — use as palavras para casar a fala com o quadro exato) e
   `transcript.txt`. Padrões: modelo `large-v3-turbo` (o mais preciso para
-  PT), idioma `pt`; use `--language auto` quando não souber o idioma (o
-  script informa a detecção e a confiança) e `--model small` quando a
-  velocidade importar mais que a precisão (vídeos com 1 h ou mais).
+  PT) e idioma `pt`; use `--language auto` quando não souber o idioma (o
+  script informa a detecção e a confiança). Não troque de modelo por conta
+  própria — o `large-v3-turbo` é a regra para qualquer duração de vídeo.
 - `extract_frames.py` gera `frames/frame_NNNN_t<segundos>s_<papel>.jpg` e o
   índice `frames/frames_index.json`. Cada mudança de cena vira um **par
   causa→efeito**: quadro `antes` (a tela em que a ação foi feita) e `depois`

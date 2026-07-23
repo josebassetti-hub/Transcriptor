@@ -12,11 +12,11 @@ Não há limite rígido de duração ou tamanho por vídeo. Os limites reais:
 
 - **Disco da sessão**: processar UM vídeo por vez e apagar os brutos depois.
 - **Tempo de transcrição** (por hora de vídeo, nos 4 CPUs típicos):
-  `small` ≈ 8–15 min; `medium`/`large-v3-turbo` ≈ 30–60 min. Um curso de 22 h
-  leva de ~4 h (small) a ~15–20 h (turbo) só de transcrição — divida o
-  trabalho em várias sessões usando o checkpoint (abaixo). Atenção: o padrão
-  da skill é `large-v3-turbo`; em cursos longos, passe `--model small`
-  explicitamente se o prazo importar mais que a precisão máxima.
+  `large-v3-turbo` ≈ 30–60 min. Um curso de 22 h leva ~15–20 h só de
+  transcrição — divida o trabalho em várias sessões usando o checkpoint
+  (abaixo) e avise o usuário da estimativa antes de começar. O modelo é
+  **sempre** o `large-v3-turbo`, mesmo em cursos longos (decisão do usuário:
+  precisão acima de velocidade) — não troque para modelos menores.
 - **Contexto de leitura**: vídeos são assistidos em segmentos de ~10–15 min
   (o fluxo normal já faz isso).
 - **Upload**: arquivos grandes chegam melhor pelo Google Drive (atenção ao
