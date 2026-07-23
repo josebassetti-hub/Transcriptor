@@ -19,6 +19,8 @@ bash teste-transcricao/rodar_teste.sh tiny     # mais rápido, só p/ validar re
 ```
 
 Status do último teste (22/07/2026, sessão claude/session-h7d2wk):
-setup.sh OK (ffmpeg, faster-whisper, tesseract+por), extração de áudio OK,
-falha controlada no download do modelo (rede bloqueada — exit 2, como
-documentado no SKILL.md).
+**TESTE APROVADO — 6/6 palavras-chave.** Rede liberada (nível Custom com
+`huggingface.co` + `*.hf.co`; o download vem do `us.aws.cdn.hf.co`),
+modelo small baixado do Hugging Face, vídeo transcrito com timestamps.
+Únicos erros: "Confira"→"Confida" e "Gerar"→"gedar", típicos da voz
+sintética do vídeo de teste.
