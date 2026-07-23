@@ -82,8 +82,8 @@ python3 <skill>/scripts/extract_frames.py --video <video> --outdir <workdir>
 python3 <skill>/scripts/ocr_frames.py --outdir <workdir>   # depois do extract_frames
 ```
 
-**Importante — tempo de execução**: transcrição leva ~8–15 min por hora de
-vídeo (modelo small; mais com modelos maiores), e a extração de quadros
+**Importante — tempo de execução**: transcrição leva ~45–90 min por hora de
+vídeo (padrão `large-v3-turbo`; ~8–15 min com `--model small`), e a extração de quadros
 decodifica o vídeo inteiro. **Rode os dois em background** (`run_in_background`
 do Bash) e aguarde a notificação de conclusão — o timeout padrão de 2 min
 mataria o processo. O mesmo vale para o primeiro download do modelo (em
@@ -93,9 +93,10 @@ algo morrer no meio, o parcial sobrevive.
 
 - `transcribe.py` gera `transcript.json` (segmentos com texto E timestamps
   por palavra — use as palavras para casar a fala com o quadro exato) e
-  `transcript.txt`. Padrões: modelo `small`, idioma `pt`; use
-  `--language auto` quando não souber o idioma (o script informa a detecção e
-  a confiança) e `--model medium` se a transcrição vier ruim.
+  `transcript.txt`. Padrões: modelo `large-v3-turbo` (o mais preciso para
+  PT), idioma `pt`; use `--language auto` quando não souber o idioma (o
+  script informa a detecção e a confiança) e `--model small` quando a
+  velocidade importar mais que a precisão (vídeos com 1 h ou mais).
 - `extract_frames.py` gera `frames/frame_NNNN_t<segundos>s_<papel>.jpg` e o
   índice `frames/frames_index.json`. Cada mudança de cena vira um **par
   causa→efeito**: quadro `antes` (a tela em que a ação foi feita) e `depois`

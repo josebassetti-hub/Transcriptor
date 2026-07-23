@@ -9,7 +9,7 @@ meio preserva o que já foi transcrito):
 
 Uso:
   python3 transcribe.py --video video.mp4 --outdir saida/ \
-      [--model small] [--language pt|auto] \
+      [--model large-v3-turbo] [--language pt|auto] \
       [--initial-prompt "Sistema Protheus, SEFAZ, DANFE"]
 
 --model: nome (tiny/base/small/medium/large-v3-turbo...) baixado do Hugging
@@ -19,9 +19,9 @@ Uso:
 --language auto: detecta o idioma automaticamente (informa a confiança).
 --initial-prompt: vocabulário de domínio (nomes de sistemas, siglas).
 
-ATENÇÃO (para quem chama): transcrição demora (~8-15 min por hora de vídeo
-com small em CPU; mais com modelos maiores) — rode em background ou com
-timeout estendido, nunca com o timeout padrão de 2 min.
+ATENÇÃO (para quem chama): transcrição demora (~45-90 min por hora de vídeo
+com o padrão large-v3-turbo em CPU; ~8-15 min com --model small) — rode em
+background ou com timeout estendido, nunca com o timeout padrão de 2 min.
 """
 
 import argparse
@@ -78,7 +78,7 @@ def main() -> int:
     ap.add_argument("--outdir", required=True, help="diretório de saída")
     ap.add_argument("--model", default=None,
                     help="modelo Whisper (tiny/base/small/medium/large-v3-turbo) "
-                    "ou caminho de modelo local (default: small, ou modelo em scripts/models/)")
+                    "ou caminho de modelo local (default: large-v3-turbo, ou modelo em scripts/models/)")
     ap.add_argument("--language", default="pt",
                     help="idioma da narração, ou 'auto' para detectar")
     ap.add_argument("--initial-prompt", default=None,
@@ -111,7 +111,7 @@ def main() -> int:
         print(proc.stderr[-2000:], file=sys.stderr)
         return 1
 
-    model_ref = resolve_model(args.model or "small", explicit=args.model is not None)
+    model_ref = resolve_model(args.model or "large-v3-turbo", explicit=args.model is not None)
     language = None if args.language == "auto" else args.language
     print(f"[transcribe] transcrevendo com faster-whisper "
           f"({model_ref}, idioma={'auto' if language is None else language})...")

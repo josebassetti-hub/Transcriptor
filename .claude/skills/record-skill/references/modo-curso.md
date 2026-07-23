@@ -14,7 +14,9 @@ Não há limite rígido de duração ou tamanho por vídeo. Os limites reais:
 - **Tempo de transcrição** (por hora de vídeo, nos 4 CPUs típicos):
   `small` ≈ 8–15 min; `medium`/`large-v3-turbo` ≈ 30–60 min. Um curso de 22 h
   leva de ~4 h (small) a ~15–20 h (turbo) só de transcrição — divida o
-  trabalho em várias sessões usando o checkpoint (abaixo).
+  trabalho em várias sessões usando o checkpoint (abaixo). Atenção: o padrão
+  da skill é `large-v3-turbo`; em cursos longos, passe `--model small`
+  explicitamente se o prazo importar mais que a precisão máxima.
 - **Contexto de leitura**: vídeos são assistidos em segmentos de ~10–15 min
   (o fluxo normal já faz isso).
 - **Upload**: arquivos grandes chegam melhor pelo Google Drive (atenção ao
