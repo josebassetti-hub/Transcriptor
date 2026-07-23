@@ -14,8 +14,9 @@ Pré-requisito: política de rede do ambiente com os domínios
 
 Uso:
 ```bash
-bash teste-transcricao/rodar_teste.sh          # modelo small (padrão da skill)
-bash teste-transcricao/rodar_teste.sh tiny     # mais rápido, só p/ validar rede
+bash teste-transcricao/rodar_teste.sh          # large-v3-turbo (padrão da skill)
+bash teste-transcricao/rodar_teste.sh small    # mais rápido, precisão menor
+bash teste-transcricao/rodar_teste.sh tiny     # o mais rápido, só p/ validar rede
 ```
 
 Status do último teste (22/07/2026, sessão claude/session-h7d2wk):

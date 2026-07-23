@@ -4,10 +4,10 @@
 # cdn-lfs.huggingface.co e cas-bridge.xethub.hf.co (ou *.hf.co).
 #
 # Uso: bash teste-transcricao/rodar_teste.sh [modelo]
-#   modelo: tiny/base/small/... (default: small, o padrão da skill)
+#   modelo: tiny/base/small/... (default: large-v3-turbo, o padrão da skill)
 set -uo pipefail
 
-MODEL="${1:-small}"
+MODEL="${1:-large-v3-turbo}"
 REPO="$(cd "$(dirname "$0")/.." && pwd)"
 WORK="${TMPDIR:-/tmp}/teste-record-skill"
 SKILL_BRANCH="claude/record-skill-video-learning-n65ef2"
