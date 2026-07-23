@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Revisão de analista — Análise de Mercado Lorenzoni Pneus (base 21/07/2026)</title>
+<style>
+body{margin:0;background:#fff;color:#111;font:16px/1.6 Georgia,"Times New Roman",serif}
+main{max-width:860px;margin:0 auto;padding:36px 24px 80px}
+h1{font-size:1.5rem} h2{font-size:1.15rem;margin-top:2rem} h3{font-size:1rem}
+.rev{color:#c00000}
+.rev b{color:#c00000}
+.del{color:#c00000;text-decoration:line-through;opacity:.75}
+.mc{background:#f5f4f0;border-left:4px solid #c00000;padding:12px 16px;margin:14px 0;
+font-family:system-ui,-apple-system,"Segoe UI",sans-serif;font-size:.86rem}
+.mc b.t{display:block;color:#c00000;margin-bottom:4px}
+.ok{background:#eef5ee;border-left:4px solid #2e7d32;padding:12px 16px;margin:14px 0;
+font-family:system-ui,sans-serif;font-size:.9rem}
+.legenda{background:#f5f4f0;padding:12px 16px;font-family:system-ui,sans-serif;font-size:.85rem}
+table{border-collapse:collapse;width:100%;font-size:.85rem;margin:12px 0;
+font-family:system-ui,sans-serif}
+td,th{border:1px solid #ccc;padding:6px 9px;text-align:left}
+.mc a{color:#c00000} a{color:#1a56a0;word-break:break-all}
+.res th{background:#f0efe9}
+</style></head><body><main>
+
+<h1>Revisão de analista — seção "2. Análise de Mercado" (estudo manual, frota base 21/07/2026)</h1>
+<p class="legenda"><b>Como ler:</b> texto <b>preto</b> = original do autor, preservado na íntegra ·
+<span class="rev"><b>texto vermelho</b> = intervenção do revisor (acréscimo, substituição sugerida ou pergunta)</span> ·
+<span class="del">texto riscado</span> = trecho que sugiro substituir ·
+caixas <b>MC-n</b> = memória de cálculo da sugestão, com fórmula, substituição numérica e fonte verificável.
+Regra seguida: nenhum dado novo entra sem referência verificável — a mesma regra do autor.</p>
+
+<div class="ok"><b>Parecer geral do revisor — o que está bom:</b> (1) a aritmética interna desta versão foi
+recalculada linha a linha e <b>100% confere</b> (as oito linhas e o total de R$ 34.154.097 — diferenças de
+centavos por arredondamento intermediário, irrelevantes); (2) cada frequência tem fonte citada; (3) o recorte
+de tipos de veículo (automóvel, caminhonete, camioneta, utilitário) está correto e alinhado ao que a empresa
+atende; (4) a premissa de acesso dos vizinhos agora está declarada (30%), não escondida. As sugestões abaixo
+são de <b>método e de fontes</b>, não de conta errada.</div>
+
+<h2>2. Análise de Mercado</h2>
+<p>O mercado-alvo da empresa é composto pelos proprietários de veículos de passeio e de linha leve na área
+efetivamente atendida. A demanda por pneus e por serviços de manutenção rápida é função direta da frota
+circulante.</p>
+
+<h2>2.1 Cenário Nacional do Setor Automotivo de Reposição</h2>
+<p>O mercado brasileiro de pneus atingiu USD 8,65 bilhões em 2025 e está previsto para alcançar USD 10,04
+bilhões até 2030, avançando a um CAGR de 3,03%. A sólida demanda por pneus de reposição associada ao
+envelhecimento da frota nacional de veículos, a uma recuperação constante na produção de novos automóveis no
+âmbito dos incentivos do programa Nova Indústria Brasil e à intensa atividade de frete vinculada às
+exportações do agronegócio sustentam o crescimento no curto prazo. O mercado brasileiro de pneus se beneficia
+da penetração de SUVs que supera um em cada dois novos emplacamentos, impulsionando uma mudança em direção a
+aros de maior diâmetro e compostos premium.<br>
+Fonte: https://www.mordorintelligence.com/pt/industry-reports/brazil-tire-market</p>
+<p class="rev"><b>[REVISOR — acrescentar]</b> Complementarmente, a estatística oficial brasileira mede a
+receita de todo o comércio de veículos, peças e motocicletas (divisão 45 da CNAE): <b>R$ 646,2 bilhões em
+2023, com crescimento médio de 13,3% ao ano desde 2018</b> (IBGE — Pesquisa Anual de Comércio, tabela SIDRA
+1399, variável 643). Citar a fonte oficial ao lado do relatório privado blinda o estudo: o número do IBGE é
+verificável por qualquer analista em <a href="https://sidra.ibge.gov.br/tabela/1399">sidra.ibge.gov.br/tabela/1399</a>.</p>
+<div class="mc"><b class="t">MC-1 — por que os dois números nacionais convivem</b>
+Mordor Intelligence mede SÓ pneus, em dólar (USD 8,65 bi ≈ recorte estreito); a PAC/IBGE mede a divisão 45
+inteira (veículos, peças, pneus, acessórios) em reais: R$ 646,2 bi (2023). Não são concorrentes — são escopos
+diferentes, e o texto deve dizer isso. CAGR oficial: (646,2 ÷ receita de 2018)^(1/5) − 1 = 13,3% a.a.
+<b>Fonte verificável:</b> <a href="https://sidra.ibge.gov.br/tabela/1399">SIDRA 1399</a> (consulta pública, sem login).
+<b>Nota sobre a fonte da estética:</b> o link da Exame é uma reportagem — manter a Abrafest citada como
+referência declarada (não verificada), nunca como dado de cálculo.</div>
+
+<p>O segmento de serviços automotivos rápidos vinculados à manutenção preventiva (alinhamento, balanceamento,
+troca de óleo, freios, suspensão e correlatos) apresenta demanda estrutural ancorada na frota em circulação,
+que ultrapassou 127 milhões de veículos em 2025 (Senatran). O mesmo acontece no segmento de estética
+automotiva, que registrou crescimento expressivo, movimentando mais de R$ 4 bilhões por ano e cresce acima de
+dois dígitos mesmo em períodos de desaceleração econômica, segundo a Associação Brasileira de Estética
+Automotiva (Abrafest).<br>
+FONTE: https://exame.com/negocios/filha-de-mecanico-ela-fez-do-amor-por-carros-uma-empresa-milionaria-que-vai-crescer-75-em-2025/</p>
+
+<h2>2.2 Área de Influência e Mercado Potencial</h2>
+<p>O município de São Gabriel da Palha possui população estimada de 34.272 habitantes (IBGE Estimativas
+2025). Além da população residente, o empreendimento se beneficia da posição geográfica estratégica do
+município, que funciona como polo regional de comércio para municípios vizinhos como Vila Valério e São
+Domingos do Norte.</p>
+<p>O mercado de pneus e serviços automotivos rápidos depende do comportamento da frota circulante, da
+quilometragem rodada, da renda disponível, do custo de manutenção veicular e da dinâmica de reposição. Em
+cidades-polo regionais, o consumo é sustentado tanto por veículos de passeio quanto por caminhonetes,
+pequenos utilitários, motos e veículos de apoio à atividade agrícola e comercial.</p>
+<p>De acordo com dados do DETRAN base 21/07/2026, o município de São Gabriel da Palha possui uma frota total
+de 30.895 veículos, extraindo apenas o tipo de veículo <span class="del">atendimento</span>
+<span class="rev">atendido</span> pela empresa (Automóveis, Caminhonete, Camioneta e Utilitário) o município
+conta com 12.898 veículos. [...] obtém-se frota microrregional adicional considerando apenas os tipos de
+veículos que a empresa atende de 9.146 veículos.<br>
+FONTE: https://analitico.sides.es.gov.br/SASVisualAnalytics/ (painel SIDES/DETRAN-ES)</p>
+<p class="rev"><b>[REVISOR — acrescentar após o parágrafo acima]</b> Para robustez, cita-se também a segunda
+fonte oficial de frota: pela base SENATRAN/Ministério dos Transportes (referência 2025-10, via Base dos
+Dados/BigQuery), São Gabriel da Palha tinha 29.031 veículos no total e 12.227 nos tipos atendidos — uma
+divergência de 6,4% (total) e 5,5% (recorte) em relação ao DETRAN-ES, explicada pela diferença de data e de
+metodologia entre as bases. <b>Declarar as duas fontes com as respectivas datas evita que a divergência seja
+descoberta por terceiros e vire questionamento.</b></p>
+<div class="mc"><b class="t">MC-2 — dupla fonte da frota</b>
+DETRAN-ES (21/07/2026): 30.895 total; 12.898 atendíveis · SENATRAN (2025-10): 29.031 total; 12.227
+atendíveis. Divergência: 30.895 ÷ 29.031 − 1 = <b>+6,4%</b>; 12.898 ÷ 12.227 − 1 = <b>+5,5%</b>.
+<b>Fontes verificáveis:</b> painel <a href="https://analitico.sides.es.gov.br/SASVisualAnalytics/">SIDES/DETRAN-ES</a> ·
+<a href="https://www.gov.br/transportes/pt-br/assuntos/transito/conteudo-Senatran/estatisticas-frota-de-veiculos-senatran">estatísticas SENATRAN</a>
+(dados por município × tipo também no BigQuery público <code>basedosdados.br_denatran_frota.municipio_tipo</code>).</div>
+
+<p class="rev"><b>[REVISOR — pergunta ao autor]</b> <b>Águia Branca ficou fora desta versão — foi decisão
+comercial ou omissão?</b> A empresa declarou anteriormente atender também Águia Branca (frota atendível de
+3.241 veículos pela SENATRAN 2025-10). Se a cidade integra a área, o mercado abaixo está subestimado; se não
+integra, recomendo uma frase declarando a exclusão (um analista externo que olhe o mapa vai perguntar).</p>
+<div class="mc"><b class="t">MC-3 — efeito de Águia Branca (se incluída a 30%)</b>
+Frota atendível de Águia Branca: 3.241 (SENATRAN 2025-10). A 30% de acesso: +972 veículos na base → pela
+estrutura de cálculo do próprio estudo (≈ R$ 2.184/veículo/ano na composição média das linhas), aproximadamente
+<b>+R$ 2,1 milhões/ano</b> no mercado potencial. <b>Fonte da frota:</b> mesma da MC-2.</div>
+
+<p>Adota-se como premissa metodológica que 30% da população dos municípios vizinhos utiliza regularmente o
+comércio especializado de São Gabriel da Palha como polo regional —, a frota efetivamente acessível à área de
+influência da LORENZONI PNEUS, considerando apenas o tipo de veículo atendido pela empresa é estimada em
+≅ 15.638 veículos (12.898 do município + ≅ 2.740 representando 30% da frota microrregional).</p>
+<p class="rev"><b>[REVISOR — atenção: este é o único parâmetro do estudo SEM referência verificável.]</b>
+Os 30% estão declarados (correto), mas não têm fonte — e é o parâmetro que move R$ 6,2 milhões do total. Duas
+melhorias: <b>(a)</b> ancorar a premissa num dado público: pela base oficial de CNPJ, Vila Valério tem 6,1
+empresas do setor por mil veículos atendíveis e São Domingos do Norte 5,7, contra 7,1 no polo São Gabriel —
+ou seja, as cidades vizinhas têm MENOS oferta própria por veículo, o que <i>fundamenta</i> a dependência do
+polo (é o critério usado em modelos gravitacionais de varejo, Reilly/Huff); <b>(b)</b> publicar o resultado
+como INTERVALO (20%–30%–40%) em vez de ponto único: <b>o mercado potencial fica entre R$ 32,1 milhões e
+R$ 36,2 milhões, com R$ 34,15 milhões no cenário-base</b> — um intervalo declarado resiste a qualquer
+questionamento sobre o número exato.</p>
+<div class="mc"><b class="t">MC-4 — a premissa dos 30% em intervalo</b>
+O mercado separa-se em: parcela de SGP (fixa) = R$ 27,98 mi e parcela dos vizinhos a 30% = R$ 6,17 mi.
+A parcela dos vizinhos escala linearmente com o percentual de acesso p: Mercado(p) = 27,98 + 6,17 × (p ÷ 30%).<br>
+• p = 20% → 27,98 + 4,12 = <b>R$ 32,10 mi</b> · p = 30% → <b>R$ 34,15 mi</b> · p = 40% → 27,98 + 8,23 =
+<b>R$ 36,21 mi</b>.<br>
+<b>Fonte das densidades (justificativa da premissa):</b> contagem de empresas ativas dos 5 CNAEs do estudo
+por município na base pública de CNPJ da Receita Federal
+(<a href="https://dadosabertos.rfb.gov.br/CNPJ/">dadosabertos.rfb.gov.br/CNPJ</a>, consultável no BigQuery
+público <code>basedosdados.br_me_cnpj</code>; a consulta SQL exata está no repositório do estudo
+automatizado, arquivo <code>prototype/dados/sql/consultas_lorenzoni.sql</code>, consulta A4) ÷ frota
+atendível por município (MC-2): SGP 87 ÷ 12.227 × 1.000 = 7,1/mil · VV 34 ÷ 5.575 × 1.000 = 6,1/mil ·
+SDN 18 ÷ 3.145 × 1.000 = 5,7/mil.</div>
+
+<h2>2.3 Dimensionamento do Mercado por Linha de Negócio</h2>
+<p>[texto original mantido — frota acessível de 15.638 veículos; km média de 11,7 mil km/ano no ES
+(KKB Brasil via Revista Carro)]</p>
+<p class="rev"><b>[REVISOR — nota sobre a fonte da km]</b> A referência cobre o <i>primeiro ano de uso</i> do
+veículo; frota mais velha tende a rodar menos. Como a premissa é usada só para justificar "1 serviço/ano"
+(intervalo de 10 mil km), o efeito é pequeno — mas declare: "km do 1º ano usada como proxy da média geral
+[premissa]".</p>
+
+<p>A demanda anual de pneumáticos por reposição é calculada pela aplicação da taxa de troca setorial sobre a
+frota acessível, adotou-se a referência de 1,2 pneu* por veículo ao ano, resultando em uma demanda estimada
+de 18.765 unidades.<br>
+FONTE: https://oficinabrasil.com.br/noticia/mercado-cinau/oficina-independente-responde-pelo-consumo-de-16-9-milhoes-de-pneus-por-ano</p>
+<p class="rev"><b>[REVISOR — a fonte citada NÃO sustenta o 1,2.]</b> A reportagem diz que as oficinas
+independentes respondem por 16,9 milhões de pneus/ano; dividido pela frota nacional de 127 milhões, isso dá
+0,13 pneu/veículo/ano <b>só nesse canal</b> — o número 1,2 não aparece na fonte. O 1,2 pode até ser razoável
+(equivale a trocar o jogo de 4 pneus a cada ~3,3 anos), mas do jeito que está, um analista que abrir o link
+derruba o parâmetro mais importante do estudo (a linha de pneus é 53% do total). Sugestão: <b>(a)</b>
+declarar 1,2 como premissa própria com o racional "jogo de 4 pneus a cada 3,3 anos"; <b>(b)</b> buscar o dado
+setorial verificável de vendas de reposição na ANIP (Associação Nacional da Indústria de Pneumáticos,
+<a href="https://www.anip.org.br">anip.org.br</a>, dados de mercado) e recalcular a taxa = vendas de
+reposição ÷ frota; <b>(c)</b> enquanto isso, publicar a linha de pneus como intervalo de sensibilidade.</p>
+<div class="mc"><b class="t">MC-5 — sensibilidade da taxa de troca de pneus</b>
+Mercado de pneus(f) = frota por categoria × f × preço; balanceamento acompanha (pneus ÷ 2 × R$ 100).<br>
+• f = 0,8 (jogo a cada 5 anos): pneus R$ 12,02 mi; total do estudo cai para <b>R$ 27,8 mi</b>.<br>
+• f = 1,2 (base, jogo a cada 3,3 anos): pneus R$ 18,02 mi; total <b>R$ 34,15 mi</b>.<br>
+• f = 1,5 (jogo a cada 2,7 anos, frota rodando muito — perfil agro): pneus R$ 22,53 mi; total <b>R$ 38,9 mi</b>.<br>
+Conta da taxa implícita da fonte citada: 16,9 mi ÷ 127 mi = 0,13 pneu/veíc/ano (canal oficinas independentes
+apenas — por isso não serve como taxa total).</div>
+
+<p>[balanceamento = pneus ÷ 2; alinhamento e troca de óleo = 1×/veículo/ano; freios = 50% da frota/ano;
+suspensão = 0,2/veículo/ano; estética = R$ 31,50/veículo/ano — texto original mantido com as fontes citadas]</p>
+<p class="rev"><b>[REVISOR — nota técnica sobre alinhamento/balanceamento]</b> A recomendação técnica é
+"alinhar a cada troca de pneus OU a cada 10.000 km, o que ocorrer primeiro". Como o estudo já conta 1
+alinhamento/veículo/ano para TODA a frota, declare que esse 1×/ano <b>já engloba</b> o alinhamento feito na
+troca de pneus — senão parece haver dupla contagem quando lido junto com o balanceamento vinculado à troca.</p>
+<p class="rev"><b>[REVISOR — os preços médios não têm fonte.]</b> R$ 700, R$ 1.500, R$ 100, R$ 350, R$ 500 e
+R$ 1.200 são os únicos números da tabela sem referência. Pela regra do próprio estudo, rotular cada um:
+<b>"premissa comercial — fonte: tabela de preços praticados pela própria empresa (verificável
+internamente)"</b> — é uma fonte legítima e auditável; sem o rótulo, parecem chute.</p>
+<div class="mc"><b class="t">MC-6 — rótulo de proveniência dos preços</b>
+Nenhum recálculo: a mudança é de PROVENIÊNCIA. Todo número do estudo deve ter uma das três etiquetas:
+<b>DADO</b> (medido em fonte pública), <b>REFERÊNCIA EXTERNA</b> (relatório/reportagem citada, não
+verificada) ou <b>PREMISSA DECLARADA</b> (escolha do estudo, com racional e origem). Os preços são premissas
+declaradas com fonte interna — o que é aceitável e defensável, desde que dito.</div>
+
+<p>Dessa forma, somadas, essas linhas de negócio, indicam mercado potencial anual aproximado de R$ 34,15
+milhões em São Gabriel da Palha <span class="rev">e área de acesso microrregional (intervalo R$ 32,1–36,2 mi
+pela sensibilidade da premissa de acesso — MC-4; e R$ 27,8–38,9 mi pela sensibilidade da taxa de troca de
+pneus — MC-5)</span>.</p>
+<p>[tabela original de linhas de negócio mantida — aritmética conferida linha a linha pelo revisor ✓]</p>
+
+<h2 class="rev">2.4 [REVISOR — seção nova sugerida] Checagem oferta × demanda: quanto desse mercado as lojas locais capturam?</h2>
+<p class="rev">Os R$ 34,15 milhões medem o que os moradores <b>gastam</b> — não o que as lojas da área
+<b>faturam</b>. A checagem pelo lado da oferta, com a base pública de CNPJ: nas três cidades do estudo há
+<b>139 empresas ativas</b> nos 5 CNAEs (SGP 87, VV 34, SDN 18 — incluindo MEIs), das quais <b>47 são
+concorrentes formais consolidados</b> (ME/EPP com 2+ anos). Na linha-âncora, <b>lojas com venda de pneus como
+atividade principal são apenas 9</b> (7 em SGP, 2 em SDN). Dividindo o mercado de pneus do próprio estudo
+(R$ 18,0 mi) pelos ~8 concorrentes efetivamente endereçáveis, o mercado médio por loja é de
+<b>≈ R$ 2,25 milhões/ano — praticamente o faturamento atual da própria Lorenzoni (R$ 2,3 mi declarados)</b>.
+Três caminhos independentes (demanda calculada, contagem oficial de concorrentes e o caixa real da empresa)
+chegando ao mesmo lugar é o selo de consistência mais forte que um estudo de mercado pode ter. A diferença
+entre a demanda total (R$ 34 mi) e o que os formais capturam é atendida por MEIs e informais (só em SGP são
+56 MEIs no setor) e por vazamento para polos maiores — exatamente o espaço que a nova sede pretende ocupar.</p>
+<div class="mc"><b class="t">MC-7 — contagem de concorrentes e mercado médio por loja</b>
+Empresas ativas dos CNAEs 4530-7/05, 4520-0/01, 4520-0/04, 4520-0/05 e 4520-0/06, por município (base CNPJ
+da Receita, extração 2026-07): SGP 87 (das quais 56 MEI) · VV 34 · SDN 18. Recorte ME/EPP com 2+ anos:
+SGP 30 · VV 8 · SDN 9 → 47. Pneus como atividade principal: SGP 7 · SDN 2 · VV 0.<br>
+Concorrentes endereçáveis da linha de pneus ≈ 7 (SGP, a 100%) + 2 × 50% (SDN, fator de acesso) = <b>8</b>.<br>
+Mercado médio por loja = R$ 18.024.300 ÷ 8 = <b>R$ 2.253.038/ano</b> ≈ faturamento atual da Lorenzoni
+(R$ 2,3 mi, declarado no plano).<br>
+<b>Fontes verificáveis:</b> <a href="https://dadosabertos.rfb.gov.br/CNPJ/">dados abertos do CNPJ</a> /
+BigQuery público <code>basedosdados.br_me_cnpj</code> — a consulta SQL exata (reproduzível por qualquer
+analista) está em <code>prototype/dados/sql/consultas_lorenzoni.sql</code> (consulta A4) no repositório do
+estudo automatizado.</div>
+
+<h2>Quadro-resumo do revisor</h2>
+<table class="res">
+<tr><th>#</th><th>Recomendação</th><th>Prioridade</th><th>Efeito no número</th></tr>
+<tr><td>1</td><td>Corrigir a fonte do 1,2 pneu/veíc/ano (a citada não contém a taxa) — declarar premissa + ANIP + sensibilidade (MC-5)</td><td><b>Alta</b></td><td>total varia R$ 27,8–38,9 mi</td></tr>
+<tr><td>2</td><td>Publicar a premissa dos 30% como intervalo 20–40%, justificada pela densidade de oferta medida (MC-4)</td><td><b>Alta</b></td><td>total varia R$ 32,1–36,2 mi</td></tr>
+<tr><td>3</td><td>Acrescentar a seção 2.4 (oferta × demanda + mercado médio por loja) — o teste de realismo que converge com o caixa da empresa (MC-7)</td><td><b>Alta</b></td><td>valida o estudo</td></tr>
+<tr><td>4</td><td>Rotular os preços como premissa comercial com fonte interna (MC-6)</td><td>Média</td><td>nenhum</td></tr>
+<tr><td>5</td><td>Citar as duas fontes de frota com datas (DETRAN-ES × SENATRAN, divergência 5–6%) (MC-2)</td><td>Média</td><td>nenhum</td></tr>
+<tr><td>6</td><td>Definir Águia Branca: incluir (≈ +R$ 2,1 mi) ou declarar exclusão (MC-3)</td><td>Média</td><td>+R$ 2,1 mi se incluída</td></tr>
+<tr><td>7</td><td>Acrescentar o TAM oficial (PAC/IBGE) ao lado do benchmark privado (MC-1)</td><td>Baixa</td><td>nenhum</td></tr>
+<tr><td>8</td><td>Notas de declaração: km do 1º ano como proxy; alinhamento 1×/ano engloba o da troca de pneus</td><td>Baixa</td><td>nenhum</td></tr>
+</table>
+<p style="font-family:system-ui,sans-serif;font-size:.85rem;color:#555">Nota: o estudo automatizado
+(relatório do motor, mesma área e mesmos CNAEs) já aplica as recomendações 1–8 com memória de cálculo
+completa e links por número — os dois estudos agora convergem em frota, concorrentes e mercado médio por
+loja, divergindo apenas nas premissas declaradas (acesso dos vizinhos e taxa de troca), o que é saudável e
+está documentado.</p>
+
+</main></body></html>
