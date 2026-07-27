@@ -80,6 +80,7 @@ python3 <skill>/scripts/transcribe.py --video <video> --outdir <workdir> \
     --initial-prompt "<nomes de sistemas, siglas, termos do domínio>"
 python3 <skill>/scripts/extract_frames.py --video <video> --outdir <workdir>
 python3 <skill>/scripts/ocr_frames.py --outdir <workdir>   # depois do extract_frames
+python3 <skill>/scripts/extract_actions.py --video <video> --outdir <workdir>  # mouse/cliques/digitação
 ```
 
 **Importante — tempo de execução**: transcrição leva ~45–90 min por hora de
@@ -109,6 +110,15 @@ algo morrer no meio, o parcial sobrevive.
 - `ocr_frames.py` gera `frames_text.json` com o texto visível de cada quadro
   (OCR) — use como índice pesquisável para menus/campos pequenos; ele
   complementa, não substitui, a leitura visual dos quadros.
+- `extract_actions.py` gera `actions.json` + `actions.txt` — a telemetria
+  reconstruída dos pixels: trajetória do cursor, **cliques** (instante e
+  posição), **digitação** (texto, início/fim, cadência) e colagens. Use para
+  dar precisão operacional ao SOP ("clique em X às 00:41, digite Y no campo
+  Z") e para desambiguar quando a narração diz "clique aqui". Ações com
+  `confianca < 0.5` são hipótese — confirme no quadro correspondente antes de
+  afirmar no SOP. Requer opencv (o setup instala); vídeos < 720p ou com
+  cursor fora do padrão reduzem a taxa de acerto — nesses casos o fluxo
+  antigo (pares antes→depois) continua sendo a fonte da verdade.
 
 ### 4. Assistir (correlacionar tela ↔ fala)
 

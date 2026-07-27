@@ -59,6 +59,19 @@ else
   fi
 fi
 
+# --- opencv + numpy (extração de ações: cursor/cliques/digitação) -----------
+if python3 -c "import cv2, numpy" >/dev/null 2>&1; then
+  echo "[setup] opencv/numpy já instalados."
+else
+  echo "[setup] instalando opencv-python-headless + numpy via pip..."
+  if pip_install opencv-python-headless numpy && python3 -c "import cv2, numpy" >/dev/null 2>&1; then
+    echo "[setup] opencv/numpy instalados."
+  else
+    echo "[setup] AVISO: sem opencv — extract_actions.py (mouse/cliques/digitação)" >&2
+    echo "        fica indisponível; transcrição e quadros seguem normais. Log: $LOG" >&2
+  fi
+fi
+
 # --- tesseract + português (OCR é opcional: falha não derruba o setup) ------
 if ! command -v tesseract >/dev/null 2>&1; then
   echo "[setup] instalando tesseract (OCR, opcional)..."
