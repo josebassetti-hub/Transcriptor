@@ -119,6 +119,13 @@ algo morrer no meio, o parcial sobrevive.
   afirmar no SOP. Requer opencv (o setup instala); vídeos < 720p ou com
   cursor fora do padrão reduzem a taxa de acerto — nesses casos o fluxo
   antigo (pares antes→depois) continua sendo a fonte da verdade.
+- `render_demo.py` (opcional, após o extract_actions) gera a **sessão
+  simulada**: o vídeo re-renderizado com as ações desenhadas — anel no
+  cursor, pulso "CLIQUE", faixa de digitação — mais `demo_script.md` (roteiro
+  ação a ação), preservando a narração. Use para o usuário revisar as ações
+  reconstruídas e para demonstrações assistidas (ex.: tocar em tela cheia
+  numa gravação do Record a Skill oficial do Cowork, que assim "vê" cliques e
+  digitação sinalizados além dos pixels originais).
 
 ### 4. Assistir (correlacionar tela ↔ fala)
 
