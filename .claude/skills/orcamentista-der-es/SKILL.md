@@ -18,8 +18,9 @@ impacto, ex.: padrão de acabamento; incluir muro/canteiro?; tem rede pública d
 | `base-der-es.json` | 1.340 serviços com preço (custo direto, BDI 0) + árvore de capítulos |
 | `mapa-padroes.json` | grupo de serviço → código DER por padrão (popular/medio/alto) + regra de quantificação |
 | `indices-estimativa.json` | heurísticas p/ projeto ausente: pontos mínimos NBR 5410 por ambiente, fatores de rota, DNs, bitolas, índices estruturais |
-| `regras-medicao.json` | 746 critérios de medição oficiais dos Cadernos Técnicos (por código) |
+| `regras-medicao.json` | 832 critérios de medição oficiais dos Cadernos Técnicos (por código) |
 | `METODOLOGIA.md` | roteiro completo de análise (leia quando precisar de detalhe) |
+| `COBERTURA.md` | o que tem/não tem critério oficial e por quê (consulte antes de afirmar cobertura) |
 | `exemplo-entrada.json` | entrada de referência (casa 70 m², padrão médio) |
 
 ## Fluxo (6 passos)
@@ -95,6 +96,21 @@ Degrade com aviso explícito: monte os quantitativos pelas mesmas regras (NBR 54
 `indices-estimativa.json` + `mapa-padroes.json`), busque os preços em `base-der-es.json` e
 calcule manualmente, informando que **os valores são aproximados** e que o resultado exato sai do
 motor/app. Nunca invente preço: todo item citado deve ter código DER existente na base.
+
+## Cobertura dos critérios de medição (seja honesto sobre isso)
+
+832 regras cobrem **827 dos 1.340 serviços** da tabela (62%) e **71%** dos itens do mapa de padrões.
+Completos ou quase: capítulos **03, 04, 05, 06, 09, 11, 12, 13, 18, 19, 20** (o esqueleto de uma
+residência). Sem caderno publicado no acervo: **02** canteiro, **07** esquadrias metálicas, **08**
+vidros, **10** impermeabilização, e os subcapítulos **14.07/14.01/14.02/14.21** (pontos hidráulicos,
+fossas, entrada d'água, caixas PVC) e **15.18/15.17/15.19/15.01** (pontos elétricos, padrão de
+entrada, quadros).
+
+**Isso não impede orçar:** todo item tem **preço** (a base de 1.340 é independente dos cadernos) e a
+**quantidade** vem das fórmulas/NBR 5410. O que falta é apenas o *texto* do critério no memorial.
+Quando um item não tiver critério, escreva no memorial "critério do Caderno Técnico não disponível —
+quantidade por [fórmula/NBR usada]" em vez de inventar um critério. Detalhe completo em
+`references/COBERTURA.md`.
 
 ## Limitações honestas (declare quando relevante)
 

@@ -570,12 +570,37 @@ function rMem(){
 }
 
 // --- aba 5: parâmetros ---
+// painel de cobertura dos Cadernos Técnicos (critérios de medição por capítulo)
+function boxCobertura(){
+  const reg = REGRAS_MED.regras||{};
+  const porCap = {};
+  BASE_DER.servicos.forEach(s=>{
+    const d = porCap[s.cap] = porCap[s.cap]||[0,0];
+    d[1]++; if(reg[s.c]) d[0]++;
+  });
+  const tot = BASE_DER.servicos.length, com = BASE_DER.servicos.filter(s=>reg[s.c]).length;
+  const linhas = Object.keys(porCap).sort().map(cap=>{
+    const [c,t] = porCap[cap], p = c/t*100;
+    const cor = p>=95?'#15803d':(p>=50?'#ca8a04':'#b91c1c');
+    return `<tr><td>${esc(cap)}</td><td style="font-size:11px">${esc((CAPS[cap]||'').slice(0,38))}</td>
+      <td class="num">${c}/${t}</td><td style="width:34%"><div style="height:9px;border-radius:3px;background:${cor};width:${Math.max(p,1.5)}%"></div></td></tr>`;
+  }).join('');
+  return `<div class="parambox"><h3>📚 Cobertura dos Cadernos Técnicos (critérios de medição)</h3>
+    <div style="font-size:12.5px;margin-bottom:6px"><b>${Object.keys(reg).length}</b> regras de medição ingeridas ·
+    <b>${com} de ${tot}</b> serviços da tabela com critério oficial (${fmt1(com/tot*100)}%).
+    Itens sem critério <b>não impedem o orçamento</b>: o preço vem da tabela e a quantidade das fórmulas/NBR —
+    o memorial apenas marca "caderno ainda não ingerido". Detalhe completo em <code>COBERTURA.md</code>.</div>
+    <div class="tblwrap"><table>${linhas}</table></div></div>`;
+}
+
 function rCfg(){
   let h=`<h2>⚙️ Parâmetros & base de preços</h2>
   <div class="parambox"><h3>Fonte de preços</h3>
   <div style="font-size:12.5px">${esc(BASE_DER.meta.fonte)} — <b>${esc(BASE_DER.meta.arquivo||'')}</b><br>
   Data-base: <b>${esc(BASE_DER.meta.data_base)}</b> · Leis Sociais: ${fmt(BASE_DER.meta.leis_sociais_pct)}% (embutidas na MO) · BDI da tabela: ${fmt0(BASE_DER.meta.bdi_pct)} (aplicado no app: campo BDI da obra)<br>
   Atualização anual: rodar <code>tools/build_base.py</code> com os XLSX novos e re-embutir com <code>tools/embed_data.py</code>.</div></div>
+
+  ${boxCobertura()}
 
   <div class="parambox"><h3>Parâmetros de estimativa (editáveis — viram premissa)</h3><div class="grid3">`;
   [['pe_direito_m','Pé-direito (m)'],['fator_rota_eletrica','Fator rota elétrica'],['fator_rota_hidraulica','Fator rota hidráulica'],

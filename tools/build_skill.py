@@ -17,6 +17,7 @@ REFS = [
     ("data/indices-estimativa.json", "indices-estimativa.json"),
     ("data/regras-medicao.json", "regras-medicao.json"),
     ("METODOLOGIA.md", "METODOLOGIA.md"),
+    ("COBERTURA.md", "COBERTURA.md"),
 ]
 
 
