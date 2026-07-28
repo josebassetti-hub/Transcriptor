@@ -1,277 +1,637 @@
 {
- "arquivo": "06 - ESQUADRIAS DE MADEIRA.pdf",
+ "arquivo": "06 - ESQUADRIAS DE MADEIRA.pdf (2 partes)",
  "caderno": "06 – ESQUADRIAS DE MADEIRA",
- "truncado": true,
+ "truncado": false,
  "fichas": {
   "060101": {
-   "d": "Marco em madeira de lei tipo Peroba, Ipê, Angelim Pedra ou equivalente, com 15 x 3cm de batente, nas dimensões: 0,60 x 2,10 m",
-   "u": "und",
-   "caderno": "06 – ESQUADRIAS DE MADEIRA · 0601 – MARCOS E ALIZARES",
+   "d": "Marco em madeira de lei tipo Peroba, Ipê, Angelim Pedra ou equivalente, und com 15 x 3cm de batente, nas dimensões: 0,60 x 2,10",
+   "u": "m",
+   "caderno": "06 – ESQUADRIAS DE MADEIRA",
    "atualizacao": "08/2024",
    "aplicacao": "Para chumbamento na parede ao redor da abertura (vão) onde a porta se encaixa quando fechada. A largura do marco, que é de 15 centímetros, deve ser igual à espessura da parede acabada.",
-   "incluidos": "Fornecimento e preparo da argamassa, considerando perdas por consumo e transporte interno do canteiro até o local de instalação, fornecimento (inclui montagem) e chumbamento do marco na parede, inclusive fornecimento de tacos de madeira e parafusos do tipo aço para madeira, limpeza das peças de madeira.",
+   "incluidos": "Fornecimento e preparo da argamassa, considerando perdas por consumo e transporte interno do canteiro até o local de instalação, fornecimento (inclui montagem) e chumbamento 3/4 00 do marco na parede, inclusive fornecimento de tacos de madeira e parafusos do tipo aço para madeira, limpeza das peças de madeira.",
    "criterio": "und (unidade) Pelo conjunto de batentes ou jogo (unidade) de marco de madeira instalado.",
    "normas": [
-    "NBR 7203:1982",
-    "Decreto Estadual nº 1.941-R/2007"
+    "NBR 7203:1982 - Madeira serrada e beneficiada.",
+    "Decreto Estadual nº 1.941- R, de 18 de Outubro de 2007 - utilização de produtos e"
    ]
   },
   "060102": {
-   "d": "Marco em madeira de lei tipo Peroba, Ipê, Angelim Pedra ou equivalente, com 15 x 3cm de batente, nas dimensões: 0,70 x 2,10 m",
-   "u": "und",
-   "caderno": "06 – ESQUADRIAS DE MADEIRA · 0601 – MARCOS E ALIZARES",
+   "d": "Marco em madeira de lei tipo Peroba, Ipê, Angelim Pedra ou equivalente, und com 15 x 3cm de batente, nas dimensões: 0,70 x 2,10",
+   "u": "m",
+   "caderno": "06 – ESQUADRIAS DE MADEIRA",
    "atualizacao": "08/2024",
    "aplicacao": "Para chumbamento na parede ao redor da abertura (vão) onde a porta se encaixa quando fechada. A largura do marco, que é de 15 centímetros, deve ser igual à espessura da parede acabada.",
-   "incluidos": "Fornecimento e preparo da argamassa, considerando perdas por consumo e transporte interno do canteiro até o local de instalação, fornecimento (inclui montagem) e chumbamento do marco na parede, inclusive fornecimento de tacos de madeira e parafusos do tipo aço para madeira, limpeza das peças de madeira.",
+   "incluidos": "Fornecimento e preparo da argamassa, considerando perdas por consumo e transporte interno do canteiro até o local de instalação, fornecimento (inclui montagem) e chumbamento 3/4 00 do marco na parede, inclusive fornecimento de tacos de madeira e parafusos do tipo aço para madeira, limpeza das peças de madeira.",
    "criterio": "und (unidade) Pelo conjunto de batentes ou jogo (unidade) de marco de madeira instalado.",
    "normas": [
-    "NBR 7203:1982",
-    "Decreto Estadual nº 1.941-R/2007"
+    "NBR 7203:1982 - Madeira serrada e beneficiada.",
+    "Decreto Estadual nº 1.941- R, de 18 de Outubro de 2007 - utilização de produtos e"
    ]
   },
   "060103": {
-   "d": "Marco em madeira de lei tipo Peroba, Ipê, Angelim Pedra ou equivalente, com 15 x 3cm de batente, nas dimensões: 0,80 x 2,10 m",
-   "u": "und",
-   "caderno": "06 – ESQUADRIAS DE MADEIRA · 0601 – MARCOS E ALIZARES",
+   "d": "Marco em madeira de lei tipo Peroba, Ipê, Angelim Pedra ou equivalente, und com 15 x 3cm de batente, nas dimensões: 0,80 x 2,10",
+   "u": "m",
+   "caderno": "06 – ESQUADRIAS DE MADEIRA",
    "atualizacao": "08/2024",
    "aplicacao": "Para chumbamento na parede ao redor da abertura (vão) onde a porta se encaixa quando fechada. A largura do marco, que é de 15 centímetros, deve ser igual à espessura da parede acabada.",
-   "incluidos": "Fornecimento e preparo da argamassa, considerando perdas por consumo e transporte interno do canteiro até o local de instalação, fornecimento (inclui montagem) e chumbamento do marco na parede, inclusive fornecimento de tacos de madeira e parafusos do tipo aço para madeira, limpeza das peças de madeira.",
+   "incluidos": "Fornecimento e preparo da argamassa, considerando perdas por consumo e transporte interno do canteiro até o local de instalação, fornecimento (inclui montagem) e chumbamento do marco na parede, inclusive fornecimento de tacos de madeira e parafusos do tipo aço para madeira, limpeza das peças de madeira. 3/4 00",
    "criterio": "und (unidade) Pelo conjunto de batentes ou jogo (unidade) de marco de madeira instalado.",
    "normas": [
-    "NBR 7203:1982",
-    "Decreto Estadual nº 1.941-R/2007"
+    "NBR 7203:1982 - Madeira serrada e beneficiada.",
+    "Decreto Estadual nº 1.941- R, de 18 de Outubro de 2007 - utilização de produtos e"
    ]
   },
   "060107": {
    "d": "Alizar em madeira de lei tipo Peroba, Ipê, Angelim Pedra ou equivalente, com 5 x 1,5cm",
    "u": "m",
-   "caderno": "06 – ESQUADRIAS DE MADEIRA · 0601 – MARCOS E ALIZARES",
+   "caderno": "06 – ESQUADRIAS DE MADEIRA",
    "atualizacao": "08/2024",
    "aplicacao": "Utilizados com finalidade decorativa, como uma moldura, para acabamento dos marcos em madeira, cobrindo parte das faces dos batentes e parede.",
    "incluidos": "Fornecimento e fixação dos alizares, considerando perdas por consumo e transporte interno do canteiro até o local de instalação, execução de rebaixos para encaixe das dobradiças e de cortes nas peças em meia esquadria, inclusive fornecimento de pregos sem cabeça para madeira, limpeza das peças de madeira.",
    "criterio": "m (metro) Pela metragem de alizar de madeira efetivamente instalado.",
    "normas": [
-    "NBR 7203:1982",
-    "Decreto Estadual nº 1.941-R/2007"
+    "NBR 7203:1982 - Madeira serrada e beneficiada.",
+    "Decreto Estadual nº 1.941- R, de 18 de Outubro de 2007 - utilização de produtos e"
    ]
   },
   "060108": {
-   "d": "Marco em madeira de lei tipo Peroba, Ipê, Angelim Pedra ou equivalente, com 15 x 3cm de batente, nas dimensões: 0,90 x 2,10 m",
-   "u": "und",
-   "caderno": "06 – ESQUADRIAS DE MADEIRA · 0601 – MARCOS E ALIZARES",
+   "d": "Marco em madeira de lei tipo Peroba, Ipê, Angelim Pedra ou equivalente, und com 15 x 3cm de batente, nas dimensões: 0,90 x 2,10",
+   "u": "m",
+   "caderno": "06 – ESQUADRIAS DE MADEIRA",
    "atualizacao": "08/2024",
    "aplicacao": "Para chumbamento na parede ao redor da abertura (vão) onde a porta se encaixa quando fechada. A largura do marco, que é de 15 centímetros, deve ser igual à espessura da parede acabada.",
-   "incluidos": "Fornecimento e preparo da argamassa, considerando perdas por consumo e transporte interno do canteiro até o local de instalação, fornecimento (inclui montagem) e chumbamento do marco na parede, inclusive fornecimento de tacos de madeira e parafusos do tipo aço para madeira, limpeza das peças de madeira.",
+   "incluidos": "Fornecimento e preparo da argamassa, considerando perdas por consumo e transporte interno do canteiro até o local de instalação, fornecimento (inclui montagem) e chumbamento do marco na parede, inclusive fornecimento de tacos de madeira e parafusos do tipo aço para madeira, limpeza das peças de madeira. 3/4 00",
    "criterio": "und (unidade) Pelo conjunto de batentes ou jogo (unidade) de marco de madeira instalado.",
    "normas": [
-    "NBR 7203:1982",
-    "Decreto Estadual nº 1.941-R/2007"
+    "NBR 7203:1982 - Madeira serrada e beneficiada.",
+    "Decreto Estadual nº 1.941- R, de 18 de Outubro de 2007 - utilização de produtos e"
    ]
   },
   "060110": {
    "d": "Marco em madeira de lei tipo Peroba, Ipê, Angelim Pedra ou equivalente, com 15 x 3cm de batente",
    "u": "m",
-   "caderno": "06 – ESQUADRIAS DE MADEIRA · 0601 – MARCOS E ALIZARES",
+   "caderno": "06 – ESQUADRIAS DE MADEIRA",
    "atualizacao": "08/2024",
    "aplicacao": "Para chumbamento na parede ao redor da abertura (vão) onde a porta se encaixa quando fechada. A largura do marco, que é de 15 centímetros, deve ser igual à espessura da parede acabada.",
-   "incluidos": "Fornecimento e preparo da argamassa, considerando perdas por consumo e transporte interno do canteiro até o local de instalação, fornecimento, montagem e chumbamento do marco na parede, inclusive fornecimento de tacos de madeira e parafusos do tipo aço para madeira, limpeza das peças de madeira.",
+   "incluidos": "Fornecimento e preparo da argamassa, considerando perdas por consumo e transporte interno do canteiro até o local de instalação, fornecimento, montagem e chumbamento do marco na parede, inclusive fornecimento de tacos de madeira e parafusos do tipo aço para madeira, limpeza das peças de madeira. 3/4 00",
    "criterio": "m (metro) Pela metragem de batentes (ou marco) de madeira instalados.",
    "normas": [
-    "NBR 7203:1982",
-    "Decreto Estadual nº 1.941-R/2007"
+    "NBR 7203:1982 - Madeira serrada e beneficiada.",
+    "Decreto Estadual nº 1.941- R, de 18 de Outubro de 2007 - utilização de produtos e"
    ]
   },
   "060112": {
    "d": "Caixilho em madeira de lei tipo Peroba, Ipê, Angelim Pedra ou equivalente, com 9 x 3 cm para janela",
    "u": "m",
-   "caderno": "06 – ESQUADRIAS DE MADEIRA · 0601 – MARCOS E ALIZARES",
+   "caderno": "06 – ESQUADRIAS DE MADEIRA",
    "atualizacao": "08/2024",
    "aplicacao": "Para chumbamento na parede ao redor da abertura (vão) onde a janela se encaixa quando fechada.",
    "incluidos": "Fornecimento e preparo da argamassa, considerando perdas por consumo e transporte interno do canteiro até o local de instalação, fornecimento, montagem e chumbamento do caixilho na parede, inclusive fornecimento de tacos de madeira e pregos sem cabeça, limpeza das peças de madeira.",
    "criterio": "m (metro) Pela metragem de caixilho de madeira instalado.",
    "normas": [
-    "NBR 7203:1982",
-    "Decreto Estadual nº 1.941-R/2007"
+    "NBR 7203:1982 - Madeira serrada e beneficiada.",
+    "Decreto Estadual nº 1.941- R, de 18 de Outubro de 2007 - utilização de produtos e"
    ]
   },
   "060113": {
    "d": "Alizar em madeira de lei tipo Peroba, Ipê, Angelim Pedra ou equivalente, com 7 x 1,5 cm",
    "u": "m",
-   "caderno": "06 – ESQUADRIAS DE MADEIRA · 0601 – MARCOS E ALIZARES",
+   "caderno": "06 – ESQUADRIAS DE MADEIRA",
    "atualizacao": "08/2024",
    "aplicacao": "Utilizados com finalidade decorativa, como uma moldura, para acabamento dos marcos em madeira, cobrindo parte das faces dos batentes e parede.",
    "incluidos": "Fornecimento e fixação dos alizares, considerando perdas por consumo e transporte interno do canteiro até o local de instalação, execução de rebaixos para encaixe das dobradiças e de cortes nas peças em meia esquadria, inclusive fornecimento de pregos sem cabeça para madeira, limpeza das peças de madeira.",
    "criterio": "m (metro) Pela metragem de alizar de madeira efetivamente instalado.",
    "normas": [
-    "NBR 7203:1982",
-    "Decreto Estadual nº 1.941-R/2007"
+    "NBR 7203:1982 - Madeira serrada e beneficiada.",
+    "Decreto Estadual nº 1.941- R, de 18 de Outubro de 2007 - utilização de produtos e"
    ]
   },
   "061101": {
    "d": "Tarjeta fio redondo 3” para travamento de portas - IMAB, STAN, ALIANÇA ou equivalente",
    "u": "und",
-   "caderno": "06 – ESQUADRIAS DE MADEIRA · 0611 – FERRAGENS",
+   "caderno": "06 – ESQUADRIAS DE MADEIRA",
    "atualizacao": "08/2024",
    "aplicacao": "Indicada para instalação em portas de madeira, para impedir o movimento de suas folhas num determinado sentido, com o intuito de promover a segurança e evitar violações dos mais diversos locais.",
-   "incluidos": "Fornecimento da tarjeta e parafusos para fixação, inclusive execução dos furos e aparafusamento do conjunto.",
+   "incluidos": "Fornecimento da tarjeta e parafusos para fixação, inclusive execução dos furos e aparafusamento do conjunto. 2/2 00",
    "criterio": "und (unidade) Pela quantidade de dispositivo tipo tarjeta efetivamente instalada.",
    "normas": [
-    "NBR 14913:2011"
+    "NBR 14913:2011 - Fechadura de embutir - Requisitos, classificação e métodos de ensaio."
    ]
   },
   "061102": {
    "d": "Fechadura com maçaneta tipo alavanca e chave tipo yale - IMAB, STAN, ALIANÇA ou equivalente",
    "u": "und",
-   "caderno": "06 – ESQUADRIAS DE MADEIRA · 0611 – FERRAGENS",
+   "caderno": "06 – ESQUADRIAS DE MADEIRA",
    "atualizacao": "08/2024",
-   "aplicacao": "Indicada para instalação em portas externas, de abrir, de madeira, para uso em ambientes públicos em geral, para frequência de uso de tráfego intenso. Para portas com espessura que podem variar de 30 a 35 milímetros.",
+   "aplicacao": "Indicada para instalação em portas externas, de abrir, de madeira, para uso em ambientes públicos em geral, para frequência de uso de tráfego intenso. Para portas com espessura que podem variar de 30 a 35 milímetros. A maçaneta tipo alavanca é recomendada para uso em locais com acesso de pessoas com",
    "incluidos": "Fornecimento da fechadura completa, com acessórios e parafusos para fixação, inclusive execução dos furos, encaixes, entalhes e instalação do conjunto.",
    "criterio": "und (unidade) Pela quantidade do conjunto completo de fechadura efetivamente instalado.",
    "normas": [
-    "NBR 14913:2011"
+    "NBR 14913:2011 - Fechadura de embutir - Requisitos, classificação e métodos de ensaio."
    ]
   },
   "061103": {
    "d": "Fechadura com maçaneta tipo alavanca e chave comum para porta interna - IMAB, STAN, ALIANÇA ou equivalente",
    "u": "und",
-   "caderno": "06 – ESQUADRIAS DE MADEIRA · 0611 – FERRAGENS",
+   "caderno": "06 – ESQUADRIAS DE MADEIRA",
    "atualizacao": "08/2024",
-   "aplicacao": "Indicada para instalação em portas internas, de abrir, de madeira, para uso que não necessita de um sistema reforçado de segurança, em que o modelo da fechadura não conta com chaves de segredo. Para portas com espessura que podem variar de 30 a 35 milímetros.",
+   "aplicacao": "Indicada para instalação em portas internas, de abrir, de madeira, para uso que não necessita de um sistema reforçado de segurança, em que o modelo da fechadura não conta com chaves de segredo. Para portas com espessura que podem variar de 30 a 35 milímetros. A maçaneta tipo alavanca é recomendada p",
    "incluidos": "Fornecimento da fechadura completa, com acessórios e parafusos para fixação, inclusive execução dos furos, encaixes, entalhes e instalação do conjunto.",
    "criterio": "und (unidade) Pela quantidade do conjunto completo de fechadura efetivamente instalado.",
    "normas": [
-    "NBR 14913:2011"
+    "NBR 14913:2011 - Fechadura de embutir - Requisitos, classificação e métodos de ensaio."
    ]
   },
   "061104": {
    "d": "Tarjeta tipo livre/ocupado - IMAB, STA, ALIANÇA ou equivalente",
    "u": "und",
-   "caderno": "06 – ESQUADRIAS DE MADEIRA · 0611 – FERRAGENS",
+   "caderno": "06 – ESQUADRIAS DE MADEIRA",
    "atualizacao": "08/2024",
    "aplicacao": "Indicada para instalação em portas de banheiros em áreas públicas e sanitários coletivos. Para portas com espessura que podem variar de 25 a 40 milímetros.",
-   "incluidos": "Fornecimento da tarjeta e parafusos para fixação, inclusive execução dos furos e aparafusamento do conjunto.",
+   "incluidos": "Fornecimento da tarjeta e parafusos para fixação, inclusive execução dos furos e aparafusamento do conjunto. 2/2 00",
    "criterio": "und (unidade) Pela quantidade de dispositivo tipo tarjeta efetivamente instalada.",
    "normas": [
-    "NBR 14913:2011"
+    "NBR 14913:2011 - Fechadura de embutir - Requisitos, classificação e métodos de ensaio."
    ]
   },
   "061106": {
    "d": "Fechadura com maçaneta tipo bola e chave tipo yale - IMAB, STAN, ALIANÇA ou equivalente",
    "u": "und",
-   "caderno": "06 – ESQUADRIAS DE MADEIRA · 0611 – FERRAGENS",
+   "caderno": "06 – ESQUADRIAS DE MADEIRA",
    "atualizacao": "08/2024",
    "aplicacao": "Indicada para instalação em portas externas, de abrir, de madeira, para uso em ambientes públicos em geral, para frequência de uso de tráfego intenso. Para portas com espessura que podem variar de 30 a 35 milímetros.",
    "incluidos": "Fornecimento da fechadura completa, com acessórios e parafusos para fixação, inclusive execução dos furos, encaixes, entalhes e instalação do conjunto.",
    "criterio": "und (unidade) Pela quantidade do conjunto completo de fechadura efetivamente instalado.",
    "normas": [
-    "NBR 14913:2011"
+    "NBR 14913:2011 - Fechadura de embutir - Requisitos, classificação e métodos de ensaio."
    ]
   },
   "061107": {
    "d": "Fechadura de sobrepor, tipo caixão, com chave comum - IMAB, STAN, ALIANÇA ou equivalente",
    "u": "und",
-   "caderno": "06 – ESQUADRIAS DE MADEIRA · 0611 – FERRAGENS",
+   "caderno": "06 – ESQUADRIAS DE MADEIRA",
    "atualizacao": "08/2024",
    "aplicacao": "Indicada para instalação em portas mais simples, em locais onde não exista a necessidade de muita segurança (como por exemplo: depósito de materiais de limpeza).",
    "incluidos": "Fornecimento da fechadura completa, com acessórios e parafusos para fixação, inclusive execução dos furos, encaixes e instalação do conjunto.",
-   "criterio": "und (unidade) Pela quantidade do conjunto completo de fechadura efetivamente instalado.",
+   "criterio": "und (unidade) Pela quantidade do conjunto completo de fechadura efetivamente instalado. 2/2 00",
    "normas": [
-    "NBR 13051:2014"
+    "NBR 13051:2014 - Fechadura de sobrepor externa com trinco e lingueta - Requisitos,"
    ]
   },
   "061108": {
    "d": "Fechadura com maçaneta tipo alavanca e chave tipo banheiro - IMAB, STAN, ALIANÇA ou equivalente",
    "u": "und",
-   "caderno": "06 – ESQUADRIAS DE MADEIRA · 0611 – FERRAGENS",
+   "caderno": "06 – ESQUADRIAS DE MADEIRA",
    "atualizacao": "08/2024",
-   "aplicacao": "Indicada para instalação em portas de banheiros e sanitários, de abrir, de madeira, para uso que não necessita de chave removível (modelo de fechadura com chave fixa e que acompanha chave de segurança). Para portas com espessura que podem variar de 30 a 35 milímetros.",
+   "aplicacao": "Indicada para instalação em portas de banheiros e sanitários, de abrir, de madeira, para uso que não necessita de chave removível (modelo de fechadura com chave fixa e que acompanha chave de segurança). Para portas com espessura que podem variar de 30 a 35 milímetros. A maçaneta tipo alavanca é reco",
    "incluidos": "Fornecimento da fechadura completa, com acessórios e parafusos para fixação, inclusive execução dos furos, encaixes, entalhes e instalação do conjunto.",
    "criterio": "und (unidade) Pela quantidade do conjunto completo de fechadura efetivamente instalado.",
    "normas": [
-    "NBR 14913:2011"
+    "NBR 14913:2011 - Fechadura de embutir - Requisitos, classificação e métodos de ensaio."
    ]
   },
   "061112": {
    "d": "Dobradiça de latão cromado de 3 x 2.1/2”, inclusive parafusos - IMAB, STAN, ALIANÇA ou equivalente",
    "u": "und",
-   "caderno": "06 – ESQUADRIAS DE MADEIRA · 0611 – FERRAGENS",
+   "caderno": "06 – ESQUADRIAS DE MADEIRA",
    "atualizacao": "08/2024",
    "aplicacao": "Indicada para instalação em portas de abrir, de madeira, com peso de até 25 quilos e espessura da folha da porta de até 30 milímetros.",
    "incluidos": "Fornecimento e instalação das dobradiças, com parafusos auto-atarrachantes para fixação em madeira, inclusive marcações, execução dos furos, recortes e entalhes.",
    "criterio": "und (unidade) Pela quantidade de dobradiça efetivamente instalada.",
    "normas": [
-    "NBR 7178:1997"
+    "NBR 7178:1997 – Dobradiças de Abas – Especificação e desempenho."
    ]
   },
   "061301": {
-   "d": "Porta em madeira de lei tipo angelim pedra ou equivalente,esp. 30 a 35mm c/ enchimento em madeira 1a qualidade, tipo sarrafeada para pintura, inclusive alizares, dobradiças e fechadura tipo alavanca em latão cromado LaFonte ou equivalente, exclusive marco, nas dimensões: 0,60 x 2,10 m",
-   "u": "und",
-   "caderno": "06 – ESQUADRIAS DE MADEIRA · 0613 – PORTA EM MADEIRA DE LEI TIPO ANGELIM PEDRA OU EQUIV.C/ENCHIMENTO EM MADEIRA 1A.QUALIDADE ESP. 30MM P/ PINTURA, INCLUSIVE ALIZARES, DOBRADIÇAS E FECHADURA EXTERNA, EXCLUSIVE MARCO",
+   "d": "Porta em madeira de lei tipo angelim pedra ou equivalente,esp. 30 a 35mm c/ enchimento em madeira 1a qualidade, tipo sarrafeada para pintura, und inclusive alizares, dobradiças e fechadura tipo alavanca em latão cromado LaFonte ou equivalente, exclusive marco, nas dimensões: 0,60 x 2,10",
+   "u": "m",
+   "caderno": "06 – ESQUADRIAS DE MADEIRA",
    "atualizacao": "08/2024",
    "aplicacao": "Porta externa de abrir, indicada para uso em ambientes públicos em geral, para frequência de uso de tráfego intenso.",
    "incluidos": "Fornecimento e instalação de folha de porta, dobradiças e fechadura completa, com acessórios e parafusos auto-atarrachantes fixação em madeira, inclusive marcações, execução dos furos, encaixes, recortes e entalhes, inclusive fornecimento e fixação dos alizares, considerando perdas por consumo e transporte interno do canteiro até o local de instalação, execução de rebaixos para encaixe das dobradiças, cortes nas peças em meia esquadria e fornecimento de pregos sem cabeça para madeira, limpeza das peças de madeira e ferragens.",
-   "criterio": "und (unidade) Pela quantidade de folha de porta, conjunto de alizares, dobradiças e fechadura completas efetivamente instalados.",
+   "criterio": "und (unidade) 5/6 00 Pela quantidade de folha de porta, conjunto de alizares, dobradiças e fechadura completas efetivamente instalados.",
    "normas": [
-    "NBR 7203:1982",
-    "Decreto Estadual nº 1.941-R/2007",
-    "NBR 7178:1997",
-    "NBR 14913:2011"
+    "NBR 7203:1982 - Madeira serrada e beneficiada.",
+    "Decreto Estadual nº 1.941- R, de 18 de Outubro de 2007 - utilização de produtos e",
+    "NBR 7178:1997 – Dobradiças de Abas – Especificação e desempenho.",
+    "NBR 14913:2011 - Fechadura de embutir - Requisitos, classificação e métodos de ensaio."
    ]
   },
   "061302": {
-   "d": "Porta em madeira de lei tipo angelim pedra ou equivalente,esp. 30 a 35mm c/ enchimento em madeira 1a qualidade, tipo sarrafeada para pintura, inclusive alizares, dobradiças e fechadura tipo alavanca em latão cromado LaFonte ou equivalente, exclusive marco, nas dimensões: 0,70 x 2,10 m",
-   "u": "und",
-   "caderno": "06 – ESQUADRIAS DE MADEIRA · 0613 – PORTA EM MADEIRA DE LEI TIPO ANGELIM PEDRA OU EQUIV.C/ENCHIMENTO EM MADEIRA 1A.QUALIDADE ESP. 30MM P/ PINTURA, INCLUSIVE ALIZARES, DOBRADIÇAS E FECHADURA EXTERNA, EXCLUSIVE MARCO",
+   "d": "Porta em madeira de lei tipo angelim pedra ou equivalente,esp. 30 a 35mm c/ enchimento em madeira 1a qualidade, tipo sarrafeada para pintura, und inclusive alizares, dobradiças e fechadura tipo alavanca em latão cromado LaFonte ou equivalente, exclusive marco, nas dimensões: 0,70 x 2,10",
+   "u": "m",
+   "caderno": "06 – ESQUADRIAS DE MADEIRA",
    "atualizacao": "08/2024",
    "aplicacao": "Porta externa de abrir, indicada para uso em ambientes públicos em geral, para frequência de uso de tráfego intenso.",
    "incluidos": "Fornecimento e instalação de folha de porta, dobradiças e fechadura completa, com acessórios e parafusos auto-atarrachantes fixação em madeira, inclusive marcações, execução dos furos, encaixes, recortes e entalhes, inclusive fornecimento e fixação dos alizares, considerando perdas por consumo e transporte interno do canteiro até o local de instalação, execução de rebaixos para encaixe das dobradiças, cortes nas peças em meia esquadria e fornecimento de pregos sem cabeça para madeira, limpeza das peças de madeira e ferragens.",
-   "criterio": "und (unidade) Pela quantidade de folha de porta, conjunto de alizares, dobradiças e fechadura completas efetivamente instalados.",
+   "criterio": "und (unidade) 5/6 00 Pela quantidade de folha de porta, conjunto de alizares, dobradiças e fechadura completas efetivamente instalados.",
    "normas": [
-    "NBR 7203:1982",
-    "Decreto Estadual nº 1.941-R/2007",
-    "NBR 7178:1997",
-    "NBR 14913:2011"
+    "NBR 7203:1982 - Madeira serrada e beneficiada.",
+    "Decreto Estadual nº 1.941- R, de 18 de Outubro de 2007 - utilização de produtos e",
+    "NBR 7178:1997 – Dobradiças de Abas – Especificação e desempenho.",
+    "NBR 14913:2011 - Fechadura de embutir - Requisitos, classificação e métodos de ensaio."
    ]
   },
   "061303": {
-   "d": "Porta em madeira de lei tipo angelim pedra ou equivalente,esp. 30 a 35mm c/ enchimento em madeira 1a qualidade, tipo sarrafeada para pintura, inclusive alizares, dobradiças e fechadura tipo alavanca em latão cromado LaFonte ou equivalente, exclusive marco, nas dimensões: 0,80 x 2,10 m",
-   "u": "und",
-   "caderno": "06 – ESQUADRIAS DE MADEIRA · 0613 – PORTA EM MADEIRA DE LEI TIPO ANGELIM PEDRA OU EQUIV.C/ENCHIMENTO EM MADEIRA 1A.QUALIDADE ESP. 30MM P/ PINTURA, INCLUSIVE ALIZARES, DOBRADIÇAS E FECHADURA EXTERNA, EXCLUSIVE MARCO",
+   "d": "Porta em madeira de lei tipo angelim pedra ou equivalente,esp. 30 a 35mm c/ enchimento em madeira 1a qualidade, tipo sarrafeada para pintura, und inclusive alizares, dobradiças e fechadura tipo alavanca em latão cromado LaFonte ou equivalente, exclusive marco, nas dimensões: 0,80 x 2,10",
+   "u": "m",
+   "caderno": "06 – ESQUADRIAS DE MADEIRA",
    "atualizacao": "08/2024",
    "aplicacao": "Porta externa de abrir, indicada para uso em ambientes públicos em geral, para frequência de uso de tráfego intenso.",
    "incluidos": "Fornecimento e instalação de folha de porta, dobradiças e fechadura completa, com acessórios e parafusos auto-atarrachantes fixação em madeira, inclusive marcações, execução dos furos, encaixes, recortes e entalhes, inclusive fornecimento e fixação dos alizares, considerando perdas por consumo e transporte interno do canteiro até o local de instalação, execução de rebaixos para encaixe das dobradiças, cortes nas peças em meia esquadria e fornecimento de pregos sem cabeça para madeira, limpeza das peças de madeira e ferragens.",
-   "criterio": "und (unidade) Pela quantidade de folha de porta, conjunto de alizares, dobradiças e fechadura completas efetivamente instalados.",
+   "criterio": "und (unidade) 5/6 00 Pela quantidade de folha de porta, conjunto de alizares, dobradiças e fechadura completas efetivamente instalados.",
    "normas": [
-    "NBR 7203:1982",
-    "Decreto Estadual nº 1.941-R/2007",
-    "NBR 7178:1997",
-    "NBR 14913:2011"
+    "NBR 7203:1982 - Madeira serrada e beneficiada.",
+    "Decreto Estadual nº 1.941- R, de 18 de Outubro de 2007 - utilização de produtos e",
+    "NBR 7178:1997 – Dobradiças de Abas – Especificação e desempenho.",
+    "NBR 14913:2011 - Fechadura de embutir - Requisitos, classificação e métodos de ensaio."
    ]
   },
   "061304": {
-   "d": "Porta em madeira de lei tipo angelim pedra ou equivalente,esp. 30 a 35mm c/ enchimento em madeira 1a qualidade, tipo sarrafeada para pintura, inclusive alizares, dobradiças e fechadura tipo alavanca em latão cromado LaFonte ou equivalente, exclusive marco, nas dimensões: 0.90 x 2.10 m",
-   "u": "und",
-   "caderno": "06 – ESQUADRIAS DE MADEIRA · 0613 – PORTA EM MADEIRA DE LEI TIPO ANGELIM PEDRA OU EQUIV.C/ENCHIMENTO EM MADEIRA 1A.QUALIDADE ESP. 30MM P/ PINTURA, INCLUSIVE ALIZARES, DOBRADIÇAS E FECHADURA EXTERNA, EXCLUSIVE MARCO",
+   "d": "Porta em madeira de lei tipo angelim pedra ou equivalente,esp. 30 a 35mm c/ enchimento em madeira 1a qualidade, tipo sarrafeada para pintura, und inclusive alizares, dobradiças e fechadura tipo alavanca em latão cromado LaFonte ou equivalente, exclusive marco, nas dimensões: 0.90 x 2.10",
+   "u": "m",
+   "caderno": "06 – ESQUADRIAS DE MADEIRA",
    "atualizacao": "08/2024",
    "aplicacao": "Porta externa de abrir, indicada para uso em ambientes públicos em geral, para frequência de uso de tráfego intenso.",
    "incluidos": "Fornecimento e instalação de folha de porta, dobradiças e fechadura completa, com acessórios e parafusos auto-atarrachantes fixação em madeira, inclusive marcações, execução dos furos, encaixes, recortes e entalhes, inclusive fornecimento e fixação dos alizares, considerando perdas por consumo e transporte interno do canteiro até o local de instalação, execução de rebaixos para encaixe das dobradiças, cortes nas peças em meia esquadria e fornecimento de pregos sem cabeça para madeira, limpeza das peças de madeira e ferragens.",
-   "criterio": "und (unidade) Pela quantidade de folha de porta, conjunto de alizares, dobradiças e fechadura completas efetivamente instalados.",
+   "criterio": "und (unidade) 5/6 00 Pela quantidade de folha de porta, conjunto de alizares, dobradiças e fechadura completas efetivamente instalados.",
    "normas": [
-    "NBR 7203:1982",
-    "Decreto Estadual nº 1.941-R/2007",
-    "NBR 7178:1997",
-    "NBR 14913:2011"
+    "NBR 7203:1982 - Madeira serrada e beneficiada.",
+    "Decreto Estadual nº 1.941- R, de 18 de Outubro de 2007 - utilização de produtos e",
+    "NBR 7178:1997 – Dobradiças de Abas – Especificação e desempenho.",
+    "NBR 14913:2011 - Fechadura de embutir - Requisitos, classificação e métodos de ensaio."
    ]
   },
   "061401": {
-   "d": "Porta em madeira de lei tipo angelim pedra ou equivalente, esp. 30 a 35mm c/enchimento em madeira 1a qualidade, tipo sarrafeada para pintura, inclusive fechadura tipo \"livre/ocupado\" em latão cromado Lafonte ou equivalente e ferragens para fixação em granito, exclusive marco, nas dimensões: 0,60 x 1,80 m",
-   "u": "und",
-   "caderno": "06 – ESQUADRIAS DE MADEIRA · 0614 – PORTA MADEIRA DE LEI TIPO ANGELIM PEDRA OU EQUIV.C/ENCHIMENTO EM MADEIRA 1A.QUALIDADE ESP. 30MM P/ PINTURA, INCL. FECHADURA TIPO \"LIVRE/OCUPADO\" E FERRAGENS P/ FIXAÇÃO EM GRANITO, EXCLUSIVE MARCO",
+   "d": "Porta em madeira de lei tipo angelim pedra ou equivalente, esp. 30 a 35mm c/enchimento em madeira 1a qualidade, tipo sarrafeada para pintura, inclusive fechadura tipo \"livre/ocupado\" em latão cromado Lafonte und ou equivalente e ferragens para fixação em granito, exclusive marco, nas dimensões: 0,60 x 1,80",
+   "u": "m",
+   "caderno": "06 – ESQUADRIAS DE MADEIRA",
    "atualizacao": "08/2024",
    "aplicacao": "Porta de abrir, indicada para instalação em divisórias de mármore ou granito, em banheiros em áreas públicas e sanitários coletivos.",
-   "incluidos": null,
-   "criterio": null,
+   "incluidos": "Fornecimento e instalação de folha de porta, fechadura “livre/ocupado”, dobradiças e batente de ferro cromado, com parafusos em ferro cromado, rosca com duas cabeças, fixação em divisória de mármore ou granito, inclusive marcações e execução dos furos, limpeza da folha de porta e ferragens.",
+   "criterio": "und (unidade) Pela quantidade de folha de porta, fechadura “livre/ocupado”, conjunto de dobradiças e batente de ferro cromado efetivamente instalados.",
+   "normas": [
+    "NBR 7203:1982 - Madeira serrada e beneficiada.",
+    "Decreto Estadual nº 1.941- R, de 18 de Outubro de 2007 - utilização de produtos e",
+    "NBR 7178:1997 – Dobradiças de Abas – Especificação e desempenho.",
+    "NBR 14913:2011 - Fechadura de embutir - Requisitos, classificação e métodos de ensaio."
+   ]
+  },
+  "061402": {
+   "d": "Porta em madeira de lei tipo angelim pedra ou equivalente, esp. 30 a 35mm c/enchimento em madeira 1a qualidade, tipo sarrafeada para pintura, inclusive fechadura tipo \"livre/ocupado\" em latão cromado Lafonte und ou equivalente e ferragens para fixação em granito, exclusive marco, nas dimensões: 0,80 x 1,80",
+   "u": "m",
+   "caderno": "06 – ESQUADRIAS DE MADEIRA",
+   "atualizacao": "08/2024",
+   "aplicacao": "Porta de abrir, indicada para instalação em divisórias de mármore ou granito, em banheiros em áreas públicas e sanitários coletivos.",
+   "incluidos": "Fornecimento e instalação de folha de porta, fechadura “livre/ocupado”, dobradiças e batente de ferro cromado, com parafusos em ferro cromado, rosca com duas cabeças, fixação em divisória de mármore ou granito, inclusive marcações e execução dos furos, limpeza da folha de porta e ferragens.",
+   "criterio": "und (unidade) Pela quantidade de folha de porta, fechadura “livre/ocupado”, conjunto de dobradiças e batente de ferro cromado efetivamente instalados.",
+   "normas": [
+    "NBR 7203:1982 - Madeira serrada e beneficiada.",
+    "Decreto Estadual nº 1.941- R, de 18 de Outubro de 2007 - utilização de produtos e",
+    "NBR 7178:1997 – Dobradiças de Abas – Especificação e desempenho.",
+    "NBR 14913:2011 - Fechadura de embutir - Requisitos, classificação e métodos de ensaio."
+   ]
+  },
+  "061403": {
+   "d": "Porta em madeira de lei tipo angelim pedra ou equivalente, esp. 30 a 35mm c/enchimento em madeira 1a qualidade, tipo sarrafeada para pintura, inclusive fechadura tipo \"livre/ocupado\" em latão cromado Lafonte und ou equivalente e ferragens para fixação em granito, exclusive marco, nas dimensões: 0,60 x 1,60",
+   "u": "m",
+   "caderno": "06 – ESQUADRIAS DE MADEIRA",
+   "atualizacao": "08/2024",
+   "aplicacao": "Porta de abrir, indicada para instalação em divisórias de mármore ou granito, em banheiros em áreas públicas e sanitários coletivos.",
+   "incluidos": "Fornecimento e instalação de folha de porta, fechadura “livre/ocupado”, dobradiças e batente de ferro cromado, com parafusos em ferro cromado, rosca com duas cabeças, fixação em divisória de mármore ou granito, inclusive marcações e execução dos furos, limpeza da folha de porta e ferragens.",
+   "criterio": "und (unidade) Pela quantidade de folha de porta, fechadura “livre/ocupado”, conjunto de dobradiças e batente de ferro cromado efetivamente instalados.",
+   "normas": [
+    "NBR 7203:1982 - Madeira serrada e beneficiada.",
+    "Decreto Estadual nº 1.941- R, de 18 de Outubro de 2007 - utilização de produtos e",
+    "NBR 7178:1997 – Dobradiças de Abas – Especificação e desempenho.",
+    "NBR 14913:2011 - Fechadura de embutir - Requisitos, classificação e métodos de ensaio."
+   ]
+  },
+  "061404": {
+   "d": "Porta em madeira de lei tipo angelim pedra ou equivalente, esp. 30 a 35mm c/enchimento em madeira 1a qualidade, tipo sarrafeada para pintura, inclusive fechadura tipo \"livre/ocupado\" em latão cromado Lafonte und ou equivalente e ferragens para fixação em granito, exclusive marco, nas dimensões: 0,80 x 1,60",
+   "u": "m",
+   "caderno": "06 – ESQUADRIAS DE MADEIRA",
+   "atualizacao": "08/2024",
+   "aplicacao": "Porta de abrir, indicada para instalação em divisórias de mármore ou granito, em banheiros em áreas públicas e sanitários coletivos.",
+   "incluidos": "Fornecimento e instalação de folha de porta, fechadura “livre/ocupado”, dobradiças e batente de ferro cromado, com parafusos em ferro cromado, rosca com duas cabeças, fixação em divisória de mármore ou granito, inclusive marcações e execução dos furos, limpeza da folha de porta e ferragens.",
+   "criterio": "und (unidade) Pela quantidade de folha de porta, fechadura “livre/ocupado”, conjunto de dobradiças e batente de ferro cromado efetivamente instalados.",
+   "normas": [
+    "NBR 7203:1982 - Madeira serrada e beneficiada.",
+    "Decreto Estadual nº 1.941- R, de 18 de Outubro de 2007 - utilização de produtos e",
+    "NBR 7178:1997 – Dobradiças de Abas – Especificação e desempenho.",
+    "NBR 14913:2011 - Fechadura de embutir - Requisitos, classificação e métodos de ensaio."
+   ]
+  },
+  "061701": {
+   "d": "Porta em madeira de lei angelim pedra ou equivalente, esp. 30 a 35mm, maciça, tipo veneziana, inclusive dobradiças, exclusive alizar, marco e und fechadura, nas dimensões: 0,60 x 2,10",
+   "u": "m",
+   "caderno": "06 – ESQUADRIAS DE MADEIRA",
+   "atualizacao": "08/2024",
+   "aplicacao": "Porta de abrir, tipo veneziana, indicada para uso em ambientes públicos em geral, que necessitam ser arejados e iluminados, mas mantendo segurança e privacidade (como por exemplo: depósitos em geral, banheiros, etc.).",
+   "incluidos": "Fornecimento e instalação de folha de porta e dobradiças, com acessórios e parafusos auto- atarrachantes para fixação em madeira, inclusive marcações, execução dos furos, recortes e entalhes e rebaixos para encaixe das dobradiças, limpeza da porta e dobradiças. 3/4 00",
+   "criterio": "und (unidade) Pela quantidade de folha de porta e dobradiças efetivamente instaladas.",
+   "normas": [
+    "NBR 7203:1982 - Madeira serrada e beneficiada.",
+    "Decreto Estadual nº 1.941- R, de 18 de Outubro de 2007 - utilização de produtos e",
+    "NBR 7178:1997 – Dobradiças de Abas – Especificação e desempenho."
+   ]
+  },
+  "061702": {
+   "d": "Porta em madeira de lei angelim pedra ou equivalente, esp. 30 a 35mm, maciça, tipo veneziana, inclusive dobradiças, exclusive alizar, marco e und fechadura, nas dimensões: 0,70 x 2,10",
+   "u": "m",
+   "caderno": "06 – ESQUADRIAS DE MADEIRA",
+   "atualizacao": "08/2024",
+   "aplicacao": "Porta de abrir, tipo veneziana, indicada para uso em ambientes públicos em geral, que necessitam ser arejados e iluminados, mas mantendo segurança e privacidade (como por exemplo: depósitos em geral, banheiros, etc.).",
+   "incluidos": "Fornecimento e instalação de folha de porta e dobradiças, com acessórios e parafusos auto- atarrachantes para fixação em madeira, inclusive marcações, execução dos furos, recortes e entalhes e rebaixos para encaixe das dobradiças, limpeza da porta e dobradiças. 3/4 00",
+   "criterio": "und (unidade) Pela quantidade de folha de porta e dobradiças efetivamente instaladas.",
+   "normas": [
+    "NBR 7203:1982 - Madeira serrada e beneficiada.",
+    "Decreto Estadual nº 1.941- R, de 18 de Outubro de 2007 - utilização de produtos e",
+    "NBR 7178:1997 – Dobradiças de Abas – Especificação e desempenho."
+   ]
+  },
+  "061703": {
+   "d": "Porta em madeira de lei angelim pedra ou equivalente, esp. 30 a 35mm, maciça, tipo veneziana, inclusive dobradiças, exclusive alizar, marco e und fechadura, nas dimensões: 0,80 x 2,10",
+   "u": "m",
+   "caderno": "06 – ESQUADRIAS DE MADEIRA",
+   "atualizacao": "08/2024",
+   "aplicacao": "Porta de abrir, tipo veneziana, indicada para uso em ambientes públicos em geral, que necessitam ser arejados e iluminados, mas mantendo segurança e privacidade (como por exemplo: depósitos em geral, banheiros, etc.).",
+   "incluidos": "Fornecimento e instalação de folha de porta e dobradiças, com acessórios e parafusos auto- atarrachantes para fixação em madeira, inclusive marcações, execução dos furos, recortes e entalhes e rebaixos para encaixe das dobradiças, limpeza da porta e dobradiças. 3/4 00",
+   "criterio": "und (unidade) Pela quantidade de folha de porta e dobradiças efetivamente instaladas.",
+   "normas": [
+    "NBR 7203:1982 - Madeira serrada e beneficiada.",
+    "Decreto Estadual nº 1.941- R, de 18 de Outubro de 2007 - utilização de produtos e",
+    "NBR 7178:1997 – Dobradiças de Abas – Especificação e desempenho."
+   ]
+  },
+  "061901": {
+   "d": "Porta em madeira de lei angelim pedra ou equivalente, esp. 30 a 35mm c/ enchimento em madeira de 1ª qualidade, tipo sarrafeada com visor 0,40 x 0,60 m, inclusive alizares, dobradiças e fechaduras tipo alavanca em latão und cromado La Fonte ou equivalente, exclusive marco, nas dimensões: 0,70 x 2,10",
+   "u": "m",
+   "caderno": "06 – ESQUADRIAS DE MADEIRA",
+   "atualizacao": "08/2024",
+   "aplicacao": "Porta externa de abrir, com visor, permitindo a visibilidade entre dois ambientes (sem necessidade de abertura da porta), indicada para uso em ambientes públicos em geral, para frequência de uso de tráfego intenso (como por exemplo cozinhas, despensas, etc.). 2/6 00",
+   "incluidos": "Fornecimento e instalação de folha de porta com visor, vidro, dobradiças e fechadura completa, com acessórios e parafusos auto-atarrachantes fixação em madeira, inclusive marcações, execução dos furos, encaixes, recortes e entalhes, inclusive fornecimento e fixação dos alizares, considerando perdas por consumo e transporte interno do canteiro até o local de instalação, execução de rebaixos para encaixe das dobradiças, cortes nas peças em meia esquadria e fornecimento de pregos sem cabeça para madeira, limpeza das peças de madeira, vidro e ferragens.",
+   "criterio": "und (unidade) Pela quantidade de folha de porta com visor de vidro, conjunto de alizares, dobradiças e fechadura completas efetivamente instalados.",
+   "normas": [
+    "NBR 7203:1982 - Madeira serrada e beneficiada.",
+    "Decreto Estadual nº 1.941- R, de 18 de Outubro de 2007 - utilização de produtos e",
+    "NBR 7178:1997 – Dobradiças de Abas – Especificação e desempenho.",
+    "NBR 14913:2011 - Fechadura de embutir - Requisitos, classificação e métodos de ensaio."
+   ]
+  },
+  "061902": {
+   "d": "Porta em madeira de Lei tipo Angelim Pedra ou equiv. c/ enchimento em madeira de 1ª qualidade esp. 30mm, com visor de vidro, inclusive alizares, und dobradiças e fechaduras externas em latão cromado La Fonte/equiv. exclusive marco, nas dimensões: 0.80 x 2.10",
+   "u": "m",
+   "caderno": "06 – ESQUADRIAS DE MADEIRA",
+   "atualizacao": "08/2024",
+   "aplicacao": "Porta externa de abrir, com visor, permitindo a visibilidade entre dois ambientes (sem necessidade de abertura da porta), indicada para uso em ambientes públicos em geral, para frequência de uso de tráfego intenso (como por exemplo cozinhas, despensas, etc.).",
+   "incluidos": "Fornecimento e instalação de folha de porta com visor, vidro, dobradiças e fechadura completa, com acessórios e parafusos auto-atarrachantes fixação em madeira, inclusive marcações, execução dos furos, encaixes, recortes e entalhes, inclusive fornecimento e fixação dos alizares, considerando perdas por consumo e transporte interno do canteiro até o local de instalação, execução de rebaixos para encaixe das dobradiças, cortes nas peças em meia esquadria e fornecimento de pregos sem cabeça para madeira, limpeza das peças de madeira, vidro e ferragens.",
+   "criterio": "und (unidade) Pela quantidade de folha de porta com visor de vidro, conjunto de alizares, dobradiças e fechadura completas efetivamente instalados.",
+   "normas": [
+    "NBR 7203:1982 - Madeira serrada e beneficiada.",
+    "Decreto Estadual nº 1.941- R, de 18 de Outubro de 2007 - utilização de produtos e",
+    "NBR 7178:1997 – Dobradiças de Abas – Especificação e desempenho.",
+    "NBR 14913:2011 - Fechadura de embutir - Requisitos, classificação e métodos de ensaio."
+   ]
+  },
+  "061903": {
+   "d": "Porta em madeira de lei angelim pedra ou equivalente, esp. 30 a 35mm c/ enchimento em madeira de 1ª qualidade, tipo sarrafeada com visor 0,40x0,60 m, inclusive alizares, dobradiças e fechaduras tipo alavanca em und latão cromado La Fonte ou equivalente, exclusive marco, nas dimensões: 0.90 x 2.10",
+   "u": "m",
+   "caderno": "06 – ESQUADRIAS DE MADEIRA",
+   "atualizacao": "08/2024",
+   "aplicacao": "Porta externa de abrir, com visor, permitindo a visibilidade entre dois ambientes (sem necessidade de abertura da porta), indicada para uso em ambientes públicos em geral, para frequência de uso de tráfego intenso (como por exemplo cozinhas, despensas, etc.). 2/6 00",
+   "incluidos": "Fornecimento e instalação de folha de porta com visor, vidro, dobradiças e fechadura completa, com acessórios e parafusos auto-atarrachantes fixação em madeira, inclusive marcações, execução dos furos, encaixes, recortes e entalhes, inclusive fornecimento e fixação dos alizares, considerando perdas por consumo e transporte interno do canteiro até o local de instalação, execução de rebaixos para encaixe das dobradiças, cortes nas peças em meia esquadria e fornecimento de pregos sem cabeça para madeira, limpeza das peças de madeira, vidro e ferragens.",
+   "criterio": "und (unidade) Pela quantidade de folha de porta com visor de vidro, conjunto de alizares, dobradiças e fechadura completas efetivamente instalados.",
+   "normas": [
+    "NBR 7203:1982 - Madeira serrada e beneficiada.",
+    "Decreto Estadual nº 1.941- R, de 18 de Outubro de 2007 - utilização de produtos e",
+    "NBR 7178:1997 – Dobradiças de Abas – Especificação e desempenho.",
+    "NBR 14913:2011 - Fechadura de embutir - Requisitos, classificação e métodos de ensaio."
+   ]
+  },
+  "062201": {
+   "d": "Substituição de fechadura com maçaneta tipo alavanca e chave tipo yale - IMAB, STAN, ALIANÇA ou equivalente",
+   "u": "und",
+   "caderno": "06 – ESQUADRIAS DE MADEIRA",
+   "atualizacao": "08/2024",
+   "aplicacao": "Indicado para troca de fechaduras em portas externas, de abrir, de madeira, para uso em ambientes públicos em geral, para frequência de uso de tráfego intenso. Para portas com espessura que podem variar de 30 a 35 milímetros. A maçaneta tipo alavanca é recomendada para uso em locais com acesso de pe",
+   "incluidos": "Fornecimento com substituição da fechadura completa (retirada da fechadura antiga), com acessórios e parafusos para fixação, instalação do conjunto, inclusive execução de eventuais ajustes dos furos e encaixes.",
+   "criterio": "und (unidade) Pela quantidade do conjunto completo de fechadura efetivamente substituído.",
+   "normas": [
+    "NBR 14913:2011 - Fechadura de embutir - Requisitos, classificação e métodos de ensaio."
+   ]
+  },
+  "062202": {
+   "d": "Substituição de fechadura com maçaneta tipo alavanca e chave comum para porta interna - IMAB, STAN, ALIANÇA ou equivalente",
+   "u": "und",
+   "caderno": "06 – ESQUADRIAS DE MADEIRA",
+   "atualizacao": "08/2024",
+   "aplicacao": "Indicado para troca de fechaduras em portas internas, de abrir, de madeira, para uso que não necessita de um sistema reforçado de segurança, em que o modelo da fechadura não conta com chaves de segredo. Para portas com espessura que podem variar de 30 a 35 milímetros. A maçaneta tipo alavanca é reco",
+   "incluidos": "Fornecimento com substituição da fechadura completa (retirada da fechadura antiga), com acessórios e parafusos para fixação, instalação do conjunto, inclusive execução de eventuais ajustes dos furos e encaixes.",
+   "criterio": "und (unidade) Pela quantidade do conjunto completo de fechadura efetivamente substituído.",
+   "normas": [
+    "NBR 14913:2011 - Fechadura de embutir - Requisitos, classificação e métodos de ensaio."
+   ]
+  },
+  "062203": {
+   "d": "Substituição de fechadura com maçaneta tipo bola e chave tipo yale - IMAB, STAN, ALIANÇA ou equivalente",
+   "u": "und",
+   "caderno": "06 – ESQUADRIAS DE MADEIRA",
+   "atualizacao": "08/2024",
+   "aplicacao": "Indicado para troca de fechaduras em portas externas, de abrir, de madeira, para uso em ambientes públicos em geral, para frequência de uso de tráfego intenso. Para portas com espessura que podem variar de 30 a 35 milímetros.",
+   "incluidos": "Fornecimento com substituição da fechadura completa (retirada da fechadura antiga), com acessórios e parafusos para fixação, instalação do conjunto, inclusive execução de eventuais ajustes dos furos e encaixes.",
+   "criterio": "und (unidade) Pela quantidade do conjunto completo de fechadura efetivamente substituído.",
+   "normas": [
+    "NBR 14913:2011 - Fechadura de embutir - Requisitos, classificação e métodos de ensaio."
+   ]
+  },
+  "062204": {
+   "d": "Recolocação de folha de porta em madeira de 1 folha, exclusive ferragens, porta, marcos e alizares",
+   "u": "und",
+   "caderno": "06 – ESQUADRIAS DE MADEIRA",
+   "atualizacao": "08/2024",
+   "aplicacao": "Indicada para recolocação de portas de abrir em madeira, a ser reinstalada em um marco (vão e batentes) apropriado para as dimensões (largura e altura) e espessura da folha da porta.",
+   "incluidos": "Recolocação de folha de porta com reaproveitamento, inclusive limpeza.",
+   "criterio": "und (unidade) 2/2 00 Pela quantidade de folha de porta efetivamente reinstalada.",
    "normas": null
+  },
+  "062205": {
+   "d": "Substituição de tarjeta tipo livre/ocupado - IMAB, STA, ALIANÇA ou equivalente",
+   "u": "und",
+   "caderno": "06 – ESQUADRIAS DE MADEIRA",
+   "atualizacao": "08/2024",
+   "aplicacao": "Indicado para troca de tarjeta em portas de banheiros em áreas públicas e sanitários coletivos. Para portas com espessura que podem variar de 25 a 40 milímetros.",
+   "incluidos": "Fornecimento com substituição da tarjeta e parafusos para fixação (retirada da tarjeta antiga), inclusive execução de eventuais ajustes dos furos e aparafusamento do conjunto.",
+   "criterio": "und (unidade) Pela quantidade de dispositivo tipo tarjeta efetivamente substituído.",
+   "normas": [
+    "NBR 14913:2011 - Fechadura de embutir - Requisitos, classificação e métodos de ensaio."
+   ]
+  },
+  "062206": {
+   "d": "Substituição de targeta fio redondo 2\", ref. IMAB, STAN, ALIANÇA ou equivalente",
+   "u": "und",
+   "caderno": "06 – ESQUADRIAS DE MADEIRA",
+   "atualizacao": "08/2024",
+   "aplicacao": "Indicado para troca de tarjeta em portas de madeira, para impedir o movimento de suas folhas num determinado sentido, com o intuito de promover a segurança e evitar violações dos mais diversos locais.",
+   "incluidos": "Fornecimento com substituição da tarjeta e parafusos para fixação (retirada da tarjeta antiga), inclusive execução de eventuais ajustes dos furos e aparafusamento do conjunto. 2/2 00",
+   "criterio": "und (unidade) Pela quantidade de dispositivo tipo tarjeta efetivamente substituída.",
+   "normas": [
+    "NBR 14913:2011 - Fechadura de embutir - Requisitos, classificação e métodos de ensaio."
+   ]
+  },
+  "062207": {
+   "d": "Substituição de dobradiça de latão cromado de 3 x 2.1/2”, inclusive parafusos - IMAB, STAN, ALIANÇA ou equivalente",
+   "u": "und",
+   "caderno": "06 – ESQUADRIAS DE MADEIRA",
+   "atualizacao": "08/2024",
+   "aplicacao": "Utilizado para troca de dobradiças em portas de abrir, de madeira, com peso de até 25 quilos e espessura da folha da porta de até 30 milímetros.",
+   "incluidos": "Fornecimento com substituição de dobradiça (retirada da dobradiça antiga e da folha da porta), com parafusos auto-atarrachantes para fixação em madeira, reinstalação da folha da porta, inclusive execução de eventuais ajustes dos furos e entalhes.",
+   "criterio": "und (unidade) Pela quantidade de dobradiça efetivamente substituída.",
+   "normas": [
+    "NBR 7178:1997 – Dobradiças de Abas – Especificação e desempenho."
+   ]
+  },
+  "062208": {
+   "d": "Reparo na porta com plaina, inclusive retirada e recolocação de folha de porta",
+   "u": "und",
+   "caderno": "06 – ESQUADRIAS DE MADEIRA",
+   "atualizacao": "08/2024",
+   "aplicacao": "Reparo em folha de porta, que provavelmente apresenta alguma dificuldade ao fechar.",
+   "incluidos": "Conserto de folha de porta com auxílio de ferramenta tipo plaina e lixa, inclusive retirada, reinstalação e limpeza.",
+   "criterio": "und (unidade) Pela quantidade de porta efetivamente retirada, reparada e reinstalada..",
+   "normas": null
+  },
+  "062211": {
+   "d": "Remoção e reinstalação de alizar de madeira, exclusive alizar",
+   "u": "m",
+   "caderno": "06 – ESQUADRIAS DE MADEIRA",
+   "atualizacao": "08/2024",
+   "aplicacao": "Utilizado com a finalidade para reinstalação das réguas em madeira (alizar), para acabamento dos marcos em madeira, cobrindo parte das faces dos batentes e parede.",
+   "incluidos": "Recolocação dos alizares com reaproveitamento das peças (inclui seleção e separação das peças), inclusive execução de eventuais ajustes (cortes), rebaixos para encaixe das dobradiças e lixamento nas peças, inclusive fornecimento de pregos sem cabeça para madeira, limpeza das peças de madeira.",
+   "criterio": "m (metro) Pela metragem de alizar de madeira efetivamente reinstalado.",
+   "normas": [
+    "NBR 7203:1982 - Madeira serrada e beneficiada.",
+    "Decreto Estadual nº 1.941- R, de 18 de Outubro de 2007 - utilização de produtos e"
+   ]
+  },
+  "062212": {
+   "d": "Remoção e reinstalação de marco de madeira, exclusive marco, inclusive acessórios de fixação: pregos e argamassa de cimento, cal hidratado e areia, para chumbamento",
+   "u": "m",
+   "caderno": "06 – ESQUADRIAS DE MADEIRA",
+   "atualizacao": "08/2024",
+   "aplicacao": "Utilizado com a finalidade para reinstalação de marco na parede ao redor da abertura (vão), onde a porta se encaixa quando fechada. A largura do marco, deve ser igual à espessura da parede acabada.",
+   "incluidos": "Recolocação do marco com reaproveitamento das peças inclui seleção e separação das peças, inclusive execução de eventuais ajustes (cortes), fornecimento e preparo da argamassa, considerando perdas por consumo e transporte interno do canteiro até o local de instalação, chumbamento do marco na parede, com fornecimento de pregos de acabamento de madeira, limpeza das peças de madeira.",
+   "criterio": "m (metro) Pela metragem de batentes (ou marco) de madeira recolocados. 3/4 00",
+   "normas": [
+    "NBR 7203:1982 - Madeira serrada e beneficiada.",
+    "Decreto Estadual nº 1.941- R, de 18 de Outubro de 2007 - utilização de produtos e"
+   ]
+  },
+  "062301": {
+   "d": "Porta de madeira de lei sarrafeada com enchimento em madeira de 1ª qualidade, esp. 30 a 35mm, semi-sólida, para pintura, inclusive alizares, und dobradiças, fechadura tipo \"livre/ocupado\" em latão cromado La Fonte ou equivalente, exclusive marco, nas dimensões: 0.60 x 1.60",
+   "u": "m",
+   "caderno": "06 – ESQUADRIAS DE MADEIRA",
+   "atualizacao": "08/2024",
+   "aplicacao": "Porta de abrir, indicada para instalação em banheiros em áreas públicas e sanitários coletivos.",
+   "incluidos": "Fornecimento e instalação de folha de porta, dobradiças e fechadura “livre/ocupado”, com acessórios e parafusos auto-atarrachantes fixação em madeira, inclusive marcações, execução dos furos, encaixes, recortes e entalhes, inclusive fornecimento e fixação dos alizares, considerando perdas por consumo e transporte interno do canteiro até o local de instalação, execução de rebaixos para encaixe das dobradiças, cortes nas peças e fornecimento de pregos sem cabeça para madeira, limpeza das peças de madeira e ferragens.",
+   "criterio": "und (unidade) Pela quantidade de folha de porta, conjunto de alizares, dobradiças e fechadura “livre/ocupado” efetivamente instalados.",
+   "normas": [
+    "NBR 7203:1982 - Madeira serrada e beneficiada.",
+    "Decreto Estadual nº 1.941- R, de 18 de Outubro de 2007 - utilização de produtos e",
+    "NBR 7178:1997 – Dobradiças de Abas – Especificação e desempenho.",
+    "NBR 14913:2011 - Fechadura de embutir - Requisitos, classificação e métodos de ensaio."
+   ]
+  },
+  "062302": {
+   "d": "Porta de madeira de lei sarrafeada com enchimento em madeira de 1ª qualidade, esp. 30 a 35mm, semi-sólida, para pintura, inclusive alizares, und dobradiças, fechadura tipo \"livre/ocupado\" em latão cromado La Fonte ou equivalente, exclusive marco, nas dimensões: 0.80 x 1.60",
+   "u": "m",
+   "caderno": "06 – ESQUADRIAS DE MADEIRA",
+   "atualizacao": "08/2024",
+   "aplicacao": "Porta de abrir, indicada para instalação em banheiros em áreas públicas e sanitários coletivos.",
+   "incluidos": "Fornecimento e instalação de folha de porta, dobradiças e fechadura “livre/ocupado”, com acessórios e parafusos auto-atarrachantes fixação em madeira, inclusive marcações, execução dos furos, encaixes, recortes e entalhes, inclusive fornecimento e fixação dos alizares, considerando perdas por consumo e transporte interno do canteiro até o local de instalação, execução de rebaixos para encaixe das dobradiças, cortes nas peças e fornecimento de pregos sem cabeça para madeira, limpeza das peças de madeira e ferragens.",
+   "criterio": "und (unidade) Pela quantidade de folha de porta, conjunto de alizares, dobradiças e fechadura “livre/ocupado” efetivamente instalados.",
+   "normas": [
+    "NBR 7203:1982 - Madeira serrada e beneficiada.",
+    "Decreto Estadual nº 1.941- R, de 18 de Outubro de 2007 - utilização de produtos e",
+    "NBR 7178:1997 – Dobradiças de Abas – Especificação e desempenho.",
+    "NBR 14913:2011 - Fechadura de embutir - Requisitos, classificação e métodos de ensaio."
+   ]
+  },
+  "062501": {
+   "d": "Porta de madeira de lei angelim pedra ou equivalente, esp. 30 a 35 mm, maciça, tipo mexicana, c/ friso p/ verniz, padrão SEDU, com visor 1,00 x 0,15m e vidro 4mm, inclusive alizares, dobradiças e fechadura tipo und alavanca em latão cromado LaFonte ou equiv., exclusive marco, dimensões: 0.60 x 2.10",
+   "u": "m",
+   "caderno": "06 – ESQUADRIAS DE MADEIRA",
+   "atualizacao": "08/2024",
+   "aplicacao": "Porta externa de abrir, com visor, permitindo a visibilidade entre dois ambientes (sem necessidade de abertura da porta), indicada para uso em ambientes públicos em geral, para frequência de uso de tráfego intenso (como por exemplo salas de aula, bibliotecas, etc.).",
+   "incluidos": "Fornecimento e instalação de folha de porta com visor (exclusive vidro), dobradiças e fechadura completa, com acessórios e parafusos auto-atarrachantes fixação em madeira, inclusive marcações, execução dos furos, encaixes, recortes e entalhes, inclusive 5/6 00 fornecimento e fixação dos alizares, considerando perdas por consumo e transporte interno do canteiro até o local de instalação, execução de rebaixos para encaixe das dobradiças, cortes nas peças em meia esquadria e fornecimento de pregos sem cabeça para madeira, limpeza das peças de madeira e ferragens.",
+   "criterio": "und (unidade) Pela quantidade de folha de porta com visor, conjunto de alizares, dobradiças e fechadura completas efetivamente instalados.",
+   "normas": [
+    "NBR 7203:1982 - Madeira serrada e beneficiada.",
+    "Decreto Estadual nº 1.941- R, de 18 de Outubro de 2007 - utilização de produtos e",
+    "NBR 7178:1997 – Dobradiças de Abas – Especificação e desempenho.",
+    "NBR 14913:2011 - Fechadura de embutir - Requisitos, classificação e métodos de ensaio."
+   ]
+  },
+  "062502": {
+   "d": "Porta de madeira de lei angelim pedra ou equivalente, esp. 30 a 35 mm, maciça, tipo mexicana, c/ friso p/ verniz, padrão SEDU, com visor 1,00 x 0,15m e vidro 4mm, inclusive alizares, dobradiças e fechadura tipo und alavanca em latão cromado LaFonte ou equiv., exclusive marco, dimensões: 0.70 x 2.10",
+   "u": "m",
+   "caderno": "06 – ESQUADRIAS DE MADEIRA",
+   "atualizacao": "08/2024",
+   "aplicacao": "Porta externa de abrir, com visor, permitindo a visibilidade entre dois ambientes (sem necessidade de abertura da porta), indicada para uso em ambientes públicos em geral, para frequência de uso de tráfego intenso (como por exemplo salas de aula, bibliotecas, etc.).",
+   "incluidos": "Fornecimento e instalação de folha de porta com visor (exclusive vidro), dobradiças e fechadura completa, com acessórios e parafusos auto-atarrachantes fixação em madeira, inclusive marcações, execução dos furos, encaixes, recortes e entalhes, inclusive 5/6 00 fornecimento e fixação dos alizares, considerando perdas por consumo e transporte interno do canteiro até o local de instalação, execução de rebaixos para encaixe das dobradiças, cortes nas peças em meia esquadria e fornecimento de pregos sem cabeça para madeira, limpeza das peças de madeira e ferragens.",
+   "criterio": "und (unidade) Pela quantidade de folha de porta com visor, conjunto de alizares, dobradiças e fechadura completas efetivamente instalados.",
+   "normas": [
+    "NBR 7203:1982 - Madeira serrada e beneficiada.",
+    "Decreto Estadual nº 1.941- R, de 18 de Outubro de 2007 - utilização de produtos e",
+    "NBR 7178:1997 – Dobradiças de Abas – Especificação e desempenho.",
+    "NBR 14913:2011 - Fechadura de embutir - Requisitos, classificação e métodos de ensaio."
+   ]
+  },
+  "062503": {
+   "d": "Porta de madeira de lei angelim pedra ou equivalente, esp. 30 a 35 mm, maciça, tipo mexicana, c/ friso p/ verniz, padrão SEDU, com visor 1,00 x 0,15m e vidro 4mm, inclusive alizares, dobradiças e fechadura tipo und alavanca em latão cromado LaFonte ou equiv., exclusive marco, dimensões: 0.80 x 2.10",
+   "u": "m",
+   "caderno": "06 – ESQUADRIAS DE MADEIRA",
+   "atualizacao": "08/2024",
+   "aplicacao": "Porta externa de abrir, com visor, permitindo a visibilidade entre dois ambientes (sem necessidade de abertura da porta), indicada para uso em ambientes públicos em geral, para frequência de uso de tráfego intenso (como por exemplo salas de aula, bibliotecas, etc.).",
+   "incluidos": "Fornecimento e instalação de folha de porta com visor (exclusive vidro), dobradiças e fechadura completa, com acessórios e parafusos auto-atarrachantes fixação em madeira, inclusive marcações, execução dos furos, encaixes, recortes e entalhes, inclusive 5/6 00 fornecimento e fixação dos alizares, considerando perdas por consumo e transporte interno do canteiro até o local de instalação, execução de rebaixos para encaixe das dobradiças, cortes nas peças em meia esquadria e fornecimento de pregos sem cabeça para madeira, limpeza das peças de madeira e ferragens.",
+   "criterio": "und (unidade) Pela quantidade de folha de porta com visor, conjunto de alizares, dobradiças e fechadura completas efetivamente instalados.",
+   "normas": [
+    "NBR 7203:1982 - Madeira serrada e beneficiada.",
+    "Decreto Estadual nº 1.941- R, de 18 de Outubro de 2007 - utilização de produtos e",
+    "NBR 7178:1997 – Dobradiças de Abas – Especificação e desempenho.",
+    "NBR 14913:2011 - Fechadura de embutir - Requisitos, classificação e métodos de ensaio."
+   ]
+  },
+  "062504": {
+   "d": "Porta de madeira de lei angelim pedra ou equivalente, esp. 30 a 35 mm, maciça, tipo mexicana, c/ friso p/ verniz, padrão SEDU, com visor 1,00 x 0,15m e vidro 4mm, inclusive alizares, dobradiças e fechadura tipo und alavanca em latão cromado LaFonte ou equiv., exclusive marco, dimensões: 0.90 x 2.10",
+   "u": "m",
+   "caderno": "06 – ESQUADRIAS DE MADEIRA",
+   "atualizacao": "08/2024",
+   "aplicacao": "Porta externa de abrir, com visor, permitindo a visibilidade entre dois ambientes (sem necessidade de abertura da porta), indicada para uso em ambientes públicos em geral, para frequência de uso de tráfego intenso (como por exemplo salas de aula, bibliotecas, etc.).",
+   "incluidos": "Fornecimento e instalação de folha de porta com visor (exclusive vidro), dobradiças e fechadura completa, com acessórios e parafusos auto-atarrachantes fixação em madeira, inclusive marcações, execução dos furos, encaixes, recortes e entalhes, inclusive 5/6 00 fornecimento e fixação dos alizares, considerando perdas por consumo e transporte interno do canteiro até o local de instalação, execução de rebaixos para encaixe das dobradiças, cortes nas peças em meia esquadria e fornecimento de pregos sem cabeça para madeira, limpeza das peças de madeira e ferragens.",
+   "criterio": "und (unidade) Pela quantidade de folha de porta com visor, conjunto de alizares, dobradiças e fechadura completas efetivamente instalados.",
+   "normas": [
+    "NBR 7203:1982 - Madeira serrada e beneficiada.",
+    "Decreto Estadual nº 1.941- R, de 18 de Outubro de 2007 - utilização de produtos e",
+    "NBR 7178:1997 – Dobradiças de Abas – Especificação e desempenho.",
+    "NBR 14913:2011 - Fechadura de embutir - Requisitos, classificação e métodos de ensaio."
+   ]
+  },
+  "062505": {
+   "d": "Porta de madeira de lei angelim pedra ou equivalente, esp. 30 a 35 mm, maciça, tipo mexicana, c/ friso p/ verniz, padrão SEDU, com visor 1,00 x 0,15m e vidro 4mm, inclusive alizares, dobradiças e fechadura tipo und alavanca em latão cromado LaFonte ou equiv., exclusive marco, dimensões: 1.60 x 2.10 (duas folhas)",
+   "u": "m",
+   "caderno": "06 – ESQUADRIAS DE MADEIRA",
+   "atualizacao": "08/2024",
+   "aplicacao": "Porta externa de abrir, com visor, permitindo a visibilidade entre dois ambientes (sem necessidade de abertura da porta), indicada para uso em ambientes públicos em geral, para frequência de uso de tráfego intenso (Exemplo: auditórios). 2/7 00",
+   "incluidos": "Fornecimento e instalação de folha de porta com visor (exclusive vidro), dobradiças, trincos chatos e fechadura completa, com acessórios e parafusos auto-atarrachantes fixação em madeira, inclusive marcações, execução dos furos, encaixes, recortes e entalhes, inclusive fornecimento e fixação dos alizares, considerando perdas por consumo e transporte interno do canteiro até o local de instalação, execução de rebaixos para encaixe das dobradiças, cortes nas peças em meia esquadria e fornecimento de pregos sem cabeça para madeira, limpeza das peças de madeira e ferragens.",
+   "criterio": "und (unidade) Pela quantidade de folha de porta com visor, conjunto de alizares, dobradiças, trincos e fechadura completas efetivamente instalados.",
+   "normas": [
+    "NBR 7203:1982 - Madeira serrada e beneficiada.",
+    "Decreto Estadual nº 1.941- R, de 18 de Outubro de 2007 - utilização de produtos e",
+    "NBR 7178:1997 – Dobradiças de Abas – Especificação e desempenho.",
+    "NBR 14913:2011 - Fechadura de embutir - Requisitos, classificação e métodos de ensaio."
+   ]
   }
  }
 }
