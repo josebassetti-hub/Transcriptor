@@ -266,6 +266,44 @@ r += 2
 ws.cell(row=r, column=1, value="Área construída total (c/ paredes e circulações):").font = Font(bold=True, size=10)
 c = ws.cell(row=r, column=3, value=AREA); c.number_format = NUM; c.font = Font(bold=True, size=10)
 
+# ─────────────── 8. REFERÊNCIAS CRUZADAS (opcional) ───────────────
+XREF = oj.get('referencias_cruzadas')
+if XREF:
+    ws = wb.create_sheet("8. Referências cruzadas")
+    widths(ws, [40, 10, 6, 14, 22, 44, 20, 60])
+    ws['A1'] = "BUSCA DOS ITENS DE COMPLEMENTO EM TABELAS REFERENCIAIS"
+    ws['A1'].font = Font(bold=True, size=13, color=TEAL)
+    ws['A2'] = XREF['nota']; ws['A2'].font = Font(italic=True, size=9, color="475569")
+    ws.merge_cells('A2:H2'); ws.row_dimensions[2].height = 30
+    ws['A2'].alignment = Alignment(wrap_text=True, vertical='top')
+    head(ws, 4, ["Item do complemento", "Quant.", "Und", "Situação", "Código DER-ES",
+                 "Serviço equivalente na DER-ES", "Preço DER-ES", "Ação adotada"])
+    ws.freeze_panes = "A5"
+    COR = {"MIGRADO": "BBF7D0", "PARCIAL": "FEF3C7", "ÂNCORA": "DBEAFE",
+           "ALTERNATIVA": "E9D5FF", "NÃO EXISTE": "FEE2E2"}
+    ordem = {"MIGRADO": 0, "PARCIAL": 1, "ALTERNATIVA": 2, "ÂNCORA": 3, "NÃO EXISTE": 4}
+    r = 5
+    for it in sorted(XREF['itens'], key=lambda x: (ordem.get(x['situacao'], 9), x['item'])):
+        vals = [it['item'], it['qtd'], it['und'], it['situacao'], it['codigo'],
+                it['descricao_der'], it['preco_der'], it['acao']]
+        for col, v in enumerate(vals, start=1):
+            c = ws.cell(row=r, column=col, value=v); c.border = BORDER; c.font = Font(size=9)
+            if col == 2: c.number_format = NUM
+            if col in (1, 5, 6, 8): c.alignment = Alignment(wrap_text=True, vertical='top')
+            if col == 4:
+                c.fill = PatternFill("solid", fgColor=COR.get(it['situacao'], "FFFFFF"))
+                c.font = Font(bold=True, size=9)
+                c.alignment = Alignment(horizontal='center', vertical='center')
+        ws.row_dimensions[r].height = 46
+        r += 1
+    r += 1
+    ws.cell(row=r, column=1, value="LEGENDA — MIGRADO: saiu da cotação e entrou na planilha DER-ES · "
+            "PARCIAL: a tabela cobre parte do escopo · ALTERNATIVA: existe solução DER-ES diferente da "
+            "especificada · ÂNCORA: sem equivalente, mas há item próximo que valida a ordem de grandeza · "
+            "NÃO EXISTE: nem serviço nem insumo na tabela.").font = Font(italic=True, size=9, color="92400E")
+    ws.merge_cells(start_row=r, start_column=1, end_row=r + 1, end_column=8)
+    ws.cell(row=r, column=1).alignment = Alignment(wrap_text=True, vertical='top')
+
 wb.save(out)
 print("gerado:", out)
 print("abas:", ", ".join(wb.sheetnames))
