@@ -162,31 +162,38 @@ for col in range(1, 8): ws.cell(row=r, column=col).fill = PatternFill("solid", f
 
 # ─────────────── 3. COMPLEMENTO A COTAR ───────────────
 ws = wb.create_sheet("3. Complemento a cotar")
-widths(ws, [54, 11, 6, 15, 17, 17, 20, 46])
+widths(ws, [50, 10, 6, 14, 16, 16, 15, 15, 26, 52])
 ws['A1'] = "COMPLEMENTO — ITENS SEM PREÇO NA TABELA DER-ES"; ws['A1'].font = Font(bold=True, size=13, color=LARANJA)
 ws['A2'] = COMPL['nota']; ws['A2'].font = Font(italic=True, size=9, color="475569")
-ws.merge_cells('A2:H2'); ws.row_dimensions[2].height = 28
+ws.merge_cells('A2:J2'); ws.row_dimensions[2].height = 30
 ws['A2'].alignment = Alignment(wrap_text=True, vertical='top')
 head(ws, 4, ["Item", "Quant.", "Und", "Preço unit. (R$)", "Total s/ BDI", "Total c/ BDI",
-             "Fonte do preço", "Observação"], fill=LARANJA)
+             "Com preço de tabela (R$/un)", "A cotar (R$/un)", "Fonte do preço", "Observação"], fill=LARANJA)
 ws.freeze_panes = "A5"
 r = 5
 for it in sorted(COMPL['itens'], key=lambda x: -x['total']):
     fonte = it.get('fonte', 'Cotação de mercado')
+    mo = it.get('mo_oficial', 0)
     vals = [it['descricao'], it['qtd'], it['und'], it['pu'], it['total'], it['total'] * (1 + bdi),
-            fonte, it.get('obs', '')]
+            mo or None, (it.get('material_cotar') or None) if mo else it['pu'], fonte, it.get('obs', '')]
     for col, v in enumerate(vals, start=1):
         c = ws.cell(row=r, column=col, value=v); c.border = BORDER; c.font = Font(size=9)
         if col == 2: c.number_format = NUM
-        if col in (4, 5, 6): c.number_format = RS
-        if col in (1, 8): c.alignment = Alignment(wrap_text=True, vertical='top')
-        if col == 7 and 'SINAPI' in str(fonte):
+        if col in (4, 5, 6, 7, 8): c.number_format = RS
+        if col in (1, 10): c.alignment = Alignment(wrap_text=True, vertical='top')
+        if col == 7 and mo:
+            c.fill = PatternFill("solid", fgColor="BBF7D0"); c.font = Font(bold=True, size=9)
+        if col == 9 and 'SINAPI' in str(fonte):
             c.fill = PatternFill("solid", fgColor="BBF7D0"); c.font = Font(bold=True, size=9)
     r += 1
 ws.cell(row=r, column=1, value="SUBTOTAL COMPLEMENTO").font = Font(bold=True, size=11)
 for col, v in [(5, COMPL['custo_direto']), (6, COMPL['com_bdi'])]:
     c = ws.cell(row=r, column=col, value=v); c.number_format = RS; c.font = Font(bold=True, size=11)
-for col in range(1, 9): ws.cell(row=r, column=col).fill = PatternFill("solid", fgColor="FED7AA")
+for col in range(1, 11): ws.cell(row=r, column=col).fill = PatternFill("solid", fgColor="FED7AA")
+if COMPL.get('mo_oficial_total'):
+    ws.cell(row=r + 1, column=1, value="dos quais JÁ TÊM preço oficial de tabela (composição completa ou mão de obra):").font = Font(bold=True, size=10)
+    c = ws.cell(row=r + 1, column=5, value=COMPL['mo_oficial_total']); c.number_format = RS
+    c.font = Font(bold=True, size=10, color="15803D")
 r += 2
 ws.cell(row=r, column=1, value="RECOMENDAÇÃO: solicitar cotação de 3 fornecedores para os 5 maiores itens desta aba — "
         "concentram a maior parte da incerteza do orçamento.").font = Font(italic=True, size=9, color="92400E")
@@ -290,9 +297,10 @@ if XREF:
     head(ws, 4, ["Item do complemento", "Quant.", "Und", "Resolvido por"]
               + XREF.get('colunas', ["DER-ES", "SINAPI"]) + ["Ação adotada"])
     ws.freeze_panes = "A5"
-    COR = {"DER-ES": "BBF7D0", "SINAPI": "BBF7D0", "PARCIAL": "FEF3C7", "ÂNCORA": "DBEAFE",
-           "ALTERNATIVA": "E9D5FF", "NÃO EXISTE": "FEE2E2"}
-    ordem = {"DER-ES": 0, "SINAPI": 1, "ALTERNATIVA": 2, "PARCIAL": 3, "ÂNCORA": 4, "NÃO EXISTE": 5}
+    COR = {"DER-ES": "BBF7D0", "SINAPI": "BBF7D0", "MO SINAPI": "D9F99D", "PARCIAL": "FEF3C7",
+           "ÂNCORA": "DBEAFE", "ALTERNATIVA": "E9D5FF", "NÃO EXISTE": "FEE2E2"}
+    ordem = {"DER-ES": 0, "SINAPI": 1, "MO SINAPI": 2, "ALTERNATIVA": 3, "PARCIAL": 4,
+             "ÂNCORA": 5, "NÃO EXISTE": 6}
     r = 5
     for it in sorted(XREF['itens'], key=lambda x: (ordem.get(x['situacao'], 9), -x['qtd'])):
         vals = [it['item'], it['qtd'], it['und'], it['situacao'],
@@ -310,7 +318,8 @@ if XREF:
         r += 1
     r += 1
     ws.cell(row=r, column=1, value="LEGENDA — DER-ES / SINAPI: o item saiu da cotação e passou a ter preço "
-            "oficial da tabela indicada · ALTERNATIVA: existe solução equivalente em tabela, mas com "
+            "oficial da tabela indicada · MO SINAPI: a composição existe e a mão de obra tem preço oficial, "
+            "mas o material não é pesquisado pelo IBGE — só ele vai a cotação · ALTERNATIVA: existe solução equivalente em tabela, mas com "
             "especificação diferente da projetada · PARCIAL: a tabela cobre parte do escopo · ÂNCORA: sem "
             "equivalente, mas há item próximo que valida a ordem de grandeza · NÃO EXISTE: ausente das duas "
             "tabelas, nem como insumo.").font = Font(italic=True, size=9, color="92400E")

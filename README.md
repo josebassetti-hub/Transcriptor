@@ -58,6 +58,7 @@ data/    base-der-es.json · mapa-padroes.json · indices-estimativa.json ·
 tools/   build_base.py (XLSX→JSON) · parse_caderno.py (Caderno Técnico PDF→regras) ·
          embed_data.py (injeta os JSON no orcamentista.html) ·
          build_sinapi.py (SINAPI_Referência.xlsx → preços da UF) ·
+         decompoe_sinapi.py (composição sem preço → MO oficial + material a cotar) ·
          gera_excel.py (orcamento.json → planilha .xlsx de 8 abas)
 ```
 
@@ -76,6 +77,20 @@ python3 tools/build_sinapi.py SINAPI_Referencia_2026_06.xlsx --uf ES --out data/
 O extrator lê as abas `ISD` (insumos) e `CSD` (composições), que trazem as 27 UFs lado a lado, e
 recupera o código da composição de dentro da fórmula `=HYPERLINK(...)` — o Excel não grava o
 resultado dessa fórmula em cache, e uma leitura ingênua devolveria `0` em todas as linhas.
+
+**Composições publicadas sem preço.** Itens como pele de vidro (104099-104103), brises
+(104940-104943) e fachada com placas insertadas (105938-105943) existem no SINAPI com a estrutura
+completa, mas **sem custo em nenhuma das 27 UFs**: o IBGE não pesquisa o preço desses materiais.
+`decompoe_sinapi.py` lê a aba `Analítico` e separa o que tem preço do que não tem, de modo que a
+**mão de obra fica oficial** e só o material vai a cotação:
+
+```bash
+python3 tools/decompoe_sinapi.py SINAPI_Referencia_2026_06.xlsx 104099 104941 --uf ES
+#  104099 fachada cortina stick → MO R$ 59,84/m² (vidraceiro + servente) | material 44970 a cotar
+#  104941 brise de alumínio B57 → MO R$ 26,27/m² (serralheiro + auxiliar) | material 45096 a cotar
+```
+
+Resultado em `data/sinapi-decomposicoes.json`.
 
 Para entregar o orçamento em Excel formatado (capa/resumo com gráfico por capítulo, planilha por
 capítulo, complemento a cotar, curva ABC, memorial com o critério de medição de cada item,

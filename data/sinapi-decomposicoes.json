@@ -1,0 +1,781 @@
+{
+ "104099": {
+  "descricao": "FACHADA CORTINA EM VIDRO NO SISTEMA STICK, CONSIDERANDO MODULAÇÃO DE 1,25 X 3,20 M, SEM ABERTURA, ACABAMENTO ANODIZADO OU PINTADO - FORNECIMENTO E INSTALAÇÃO. AF_06/2022",
+  "unidade": "M2",
+  "custo_com_preco": 59.84,
+  "com_preco": [
+   {
+    "tipo": "COMPOSICAO",
+    "c": "88325",
+    "d": "VIDRACEIRO COM ENCARGOS COMPLEMENTARES",
+    "u": "H",
+    "coef": 0.962,
+    "situacao": "COM CUSTO",
+    "pu": 32.04,
+    "total": 30.82
+   },
+   {
+    "tipo": "COMPOSICAO",
+    "c": "88316",
+    "d": "SERVENTE COM ENCARGOS COMPLEMENTARES",
+    "u": "H",
+    "coef": 0.962,
+    "situacao": "COM CUSTO",
+    "pu": 30.17,
+    "total": 29.02
+   }
+  ],
+  "sem_preco": [
+   {
+    "tipo": "INSUMO",
+    "c": "44970",
+    "d": "FACHADA CORTINA VIDRO (STICK), MOD. 1,25 X 3,20, SEM ABERTURA, PERFIS ALUM. ANOD, VIDRO LAM. 8MM, MONTANTES, TRAV. E QUADROS, PLACAS DE VIDROS, ANCORAGENS, CHUMBADORES, PRESILHAS, PARAF. DE FIXACAO, GUARNICOES, TRAT. JUNTAS (SEM INSTALACAO)",
+    "u": "M2",
+    "coef": 1.0,
+    "situacao": "SEM PREÇO"
+   }
+  ]
+ },
+ "104100": {
+  "descricao": "FACHADA CORTINA EM VIDRO NO SISTEMA STICK, CONSIDERANDO MODULAÇÃO DE 1,25 X 3,20 M, COM ABERTURA, ACABAMENTO ANODIZADO OU PINTADO - FORNECIMENTO E INSTALAÇÃO. AF_06/2022",
+  "unidade": "M2",
+  "custo_com_preco": 71.23,
+  "com_preco": [
+   {
+    "tipo": "COMPOSICAO",
+    "c": "88325",
+    "d": "VIDRACEIRO COM ENCARGOS COMPLEMENTARES",
+    "u": "H",
+    "coef": 1.145,
+    "situacao": "COM CUSTO",
+    "pu": 32.04,
+    "total": 36.69
+   },
+   {
+    "tipo": "COMPOSICAO",
+    "c": "88316",
+    "d": "SERVENTE COM ENCARGOS COMPLEMENTARES",
+    "u": "H",
+    "coef": 1.145,
+    "situacao": "COM CUSTO",
+    "pu": 30.17,
+    "total": 34.54
+   }
+  ],
+  "sem_preco": [
+   {
+    "tipo": "INSUMO",
+    "c": "44971",
+    "d": "FACHADA CORTINA VIDRO (STICK), 1,25 X 3,20, C/ ABERTURA, PERFIS ALUM. ANOD, VIDRO LAM. 8MM, MONTANTES, TRAV. E QUADROS, PLACAS VIDROS, MAXIM-AR, ANCORAGENS, CHUMBADORES, PRESILHAS, PARAF. DE FIXACAO, GUARNICOES E TRAT.JUNTAS, SEM INSTALACAO",
+    "u": "M2",
+    "coef": 1.0,
+    "situacao": "SEM PREÇO"
+   }
+  ]
+ },
+ "104101": {
+  "descricao": "FACHADA CORTINA EM VIDRO NO SISTEMA UNITIZADO, CONSIDERANDO MODULAÇÃO DE 1,25 X 3,20 M, SEM ABERTURA, ACABAMENTO ANODIZADO OU PINTADO - FORNECIMENTO E INSTALAÇÃO. AF_06/2022",
+  "unidade": "M2",
+  "custo_com_preco": 22.57,
+  "com_preco": [
+   {
+    "tipo": "COMPOSICAO",
+    "c": "88325",
+    "d": "VIDRACEIRO COM ENCARGOS COMPLEMENTARES",
+    "u": "H",
+    "coef": 0.536,
+    "situacao": "COM CUSTO",
+    "pu": 32.04,
+    "total": 17.17
+   },
+   {
+    "tipo": "COMPOSICAO",
+    "c": "88316",
+    "d": "SERVENTE COM ENCARGOS COMPLEMENTARES",
+    "u": "H",
+    "coef": 0.179,
+    "situacao": "COM CUSTO",
+    "pu": 30.17,
+    "total": 5.4
+   }
+  ],
+  "sem_preco": [
+   {
+    "tipo": "COMPOSICAO",
+    "c": "103794",
+    "d": "MINI GUINDASTE ARANHA SOBRE ESTEIRAS E LANCA TELESCÓPICA, CAPACIDADE MÁXIMA DE CARGA 3,0 TON, RAIO MÁXIMO DE TRABALHO 8,25 M, ALTURA DE LANÇA DO SOLO 9,2 M, 55 M DE CABO DE AÇO 8 MM, MOTOR ELÉTRICO 220/380 VOLTS TRIFÁSICO - CHI DIURNO. AF_03/2022",
+    "u": "CHI",
+    "coef": 0.129,
+    "situacao": "SEM CUSTO"
+   },
+   {
+    "tipo": "COMPOSICAO",
+    "c": "103793",
+    "d": "MINI GUINDASTE ARANHA SOBRE ESTEIRAS E LANCA TELESCÓPICA, CAPACIDADE MÁXIMA DE CARGA 3,0 TON, RAIO MÁXIMO DE TRABALHO 8,25 M, ALTURA DE LANÇA DO SOLO 9,2 M, 55 M DE CABO DE AÇO 8 MM, MOTOR ELÉTRICO 220/380 VOLTS TRIFÁSICO - CHP DIURNO. AF_03/2022",
+    "u": "CHP",
+    "coef": 0.049,
+    "situacao": "SEM CUSTO"
+   },
+   {
+    "tipo": "INSUMO",
+    "c": "44972",
+    "d": "FACHADA VIDRO (PAVTO TIPO), 1,25 X 3,20, SEM ABERTURA, PERFIS ALUM. ANOD. VIDRO LAM. 8MM. INCLUSO QUADROS DE ALUMINIO, PLACAS DE VIDROS, ANCORAGENS, CHUMBADORES, PRESILHAS, PARAFUSOS DE FIXACAO, GUARNICOES E TRAT.JUNTAS, SEM INSTALACAO",
+    "u": "M2",
+    "coef": 1.0,
+    "situacao": "SEM PREÇO"
+   }
+  ]
+ },
+ "104102": {
+  "descricao": "FACHADA CORTINA EM VIDRO NO SISTEMA UNITIZADO, CONSIDERANDO MODULAÇÃO DE 1,25 X 3,20 M, COM ABERTURA, ACABAMENTO ANODIZADO OU PINTADO - FORNECIMENTO E INSTALAÇÃO. AF_06/2022",
+  "unidade": "M2",
+  "custo_com_preco": 37.73,
+  "com_preco": [
+   {
+    "tipo": "COMPOSICAO",
+    "c": "88325",
+    "d": "VIDRACEIRO COM ENCARGOS COMPLEMENTARES",
+    "u": "H",
+    "coef": 0.896,
+    "situacao": "COM CUSTO",
+    "pu": 32.04,
+    "total": 28.71
+   },
+   {
+    "tipo": "COMPOSICAO",
+    "c": "88316",
+    "d": "SERVENTE COM ENCARGOS COMPLEMENTARES",
+    "u": "H",
+    "coef": 0.299,
+    "situacao": "COM CUSTO",
+    "pu": 30.17,
+    "total": 9.02
+   }
+  ],
+  "sem_preco": [
+   {
+    "tipo": "COMPOSICAO",
+    "c": "103794",
+    "d": "MINI GUINDASTE ARANHA SOBRE ESTEIRAS E LANCA TELESCÓPICA, CAPACIDADE MÁXIMA DE CARGA 3,0 TON, RAIO MÁXIMO DE TRABALHO 8,25 M, ALTURA DE LANÇA DO SOLO 9,2 M, 55 M DE CABO DE AÇO 8 MM, MOTOR ELÉTRICO 220/380 VOLTS TRIFÁSICO - CHI DIURNO. AF_03/2022",
+    "u": "CHI",
+    "coef": 0.129,
+    "situacao": "SEM CUSTO"
+   },
+   {
+    "tipo": "COMPOSICAO",
+    "c": "103793",
+    "d": "MINI GUINDASTE ARANHA SOBRE ESTEIRAS E LANCA TELESCÓPICA, CAPACIDADE MÁXIMA DE CARGA 3,0 TON, RAIO MÁXIMO DE TRABALHO 8,25 M, ALTURA DE LANÇA DO SOLO 9,2 M, 55 M DE CABO DE AÇO 8 MM, MOTOR ELÉTRICO 220/380 VOLTS TRIFÁSICO - CHP DIURNO. AF_03/2022",
+    "u": "CHP",
+    "coef": 0.049,
+    "situacao": "SEM CUSTO"
+   },
+   {
+    "tipo": "INSUMO",
+    "c": "44973",
+    "d": "FACHADA CORTINA VIDRO (PAVTO TIPO), MOD. 1,25 X 3,20, C/ ABERTURA, PERFIS ALUM. ANOD, VIDRO LAM. 8MM, MONTANTES, PLACAS DE VIDROS, MAXIM-AR, ANCORAGENS, CHUMBADORES, PRESILHAS, PARAF. DE FIXACAO, GUARN. E TRAT. DE JUNTAS, SEM INSTALACAO",
+    "u": "M2",
+    "coef": 1.0,
+    "situacao": "SEM PREÇO"
+   }
+  ]
+ },
+ "104103": {
+  "descricao": "FACHADA EM VIDRO NO SISTEMA SPIDER GLASS, CONSIDERANDO MÓDULOS DE 2,00 X 2,50 M, FIXADO EM ESTRUTURA METÁLICA FORNECIMENTO E INSTALAÇÃO. AF_06/2022",
+  "unidade": "M2",
+  "custo_com_preco": 59.21,
+  "com_preco": [
+   {
+    "tipo": "COMPOSICAO",
+    "c": "88325",
+    "d": "VIDRACEIRO COM ENCARGOS COMPLEMENTARES",
+    "u": "H",
+    "coef": 1.848,
+    "situacao": "COM CUSTO",
+    "pu": 32.04,
+    "total": 59.21
+   }
+  ],
+  "sem_preco": [
+   {
+    "tipo": "INSUMO",
+    "c": "44974",
+    "d": "FACHADA VIDRO (SPIDER-GLASS), 2,00 X 2,50 M, SPIDERS EM ACO INOX FIXADOS EM COLUNAS METALICAS, VIDRO TEMPERADO LAMINADO 16 MM. INCLUSO SPIDER, ROTULA, VIDRO, PARAFUSOS DE FIXACAO, GUARNICOES E TRAT. DE JUNTAS, SEM INSTALACAO",
+    "u": "M2",
+    "coef": 1.0,
+    "situacao": "SEM PREÇO"
+   }
+  ]
+ },
+ "104940": {
+  "descricao": "FORNECIMENTO E INSTALAÇÃO DE CAIXA DE ALUMÍNIO PROTETORA PARA CONDENSADORA DE AR-CONDICIONADO, PINTURA ELETROSTÁTICA BRANCA, DIMENSÕES 100 CM X 78 CM X 50 CM. AF_03/2024",
+  "unidade": "UN",
+  "custo_com_preco": 137.93,
+  "com_preco": [
+   {
+    "tipo": "COMPOSICAO",
+    "c": "88315",
+    "d": "SERRALHEIRO COM ENCARGOS COMPLEMENTARES",
+    "u": "H",
+    "coef": 1.87001,
+    "situacao": "COM CUSTO",
+    "pu": 40.32,
+    "total": 75.4
+   },
+   {
+    "tipo": "COMPOSICAO",
+    "c": "88251",
+    "d": "AUXILIAR DE SERRALHEIRO COM ENCARGOS COMPLEMENTARES",
+    "u": "H",
+    "coef": 0.935,
+    "situacao": "COM CUSTO",
+    "pu": 32.51,
+    "total": 30.4
+   },
+   {
+    "tipo": "INSUMO",
+    "c": "142",
+    "d": "SELANTE ELASTICO MONOCOMPONENTE A BASE DE POLIURETANO (PU) PARA JUNTAS DIVERSAS",
+    "u": "310ML",
+    "coef": 1.0,
+    "situacao": "COM PREÇO",
+    "pu": 32.13,
+    "total": 32.13
+   }
+  ],
+  "sem_preco": [
+   {
+    "tipo": "INSUMO",
+    "c": "45095",
+    "d": "CAIXA PROTETORA PARA CONDENSADORA DE AR-CONDICIONADO, VAZADA COMPOSTA POR PERFIS DE ALUMINIO, COM TOPO SEMI-ABERTO, COM TAMPA, FUNDO LISO, PINTURA ELETROSTATICA BRANCA, DIMENSOES 100 CM X 78 CM X 50 CM, INCLUI ACESSORIOS DE INSTALACAO, NAO INCLUI INSTALACAO",
+    "u": "UN",
+    "coef": 1.0,
+    "situacao": "SEM PREÇO"
+   }
+  ]
+ },
+ "104941": {
+  "descricao": "FORNECIMENTO E INSTALAÇÃO DE BRISE DE ALUMÍNIO B57, COM PINTURA ELETROSTÁTICA BRANCA, ACABAMENTO LISO, FIXADO EM PORTA-PAINEL RANHURADO. AF_03/2024",
+  "unidade": "M2",
+  "custo_com_preco": 26.27,
+  "com_preco": [
+   {
+    "tipo": "COMPOSICAO",
+    "c": "88315",
+    "d": "SERRALHEIRO COM ENCARGOS COMPLEMENTARES",
+    "u": "H",
+    "coef": 0.413501,
+    "situacao": "COM CUSTO",
+    "pu": 40.32,
+    "total": 16.67
+   },
+   {
+    "tipo": "COMPOSICAO",
+    "c": "88251",
+    "d": "AUXILIAR DE SERRALHEIRO COM ENCARGOS COMPLEMENTARES",
+    "u": "H",
+    "coef": 0.295358,
+    "situacao": "COM CUSTO",
+    "pu": 32.51,
+    "total": 9.6
+   }
+  ],
+  "sem_preco": [
+   {
+    "tipo": "INSUMO",
+    "c": "45096",
+    "d": "BRISE FIXO COM PAINEL EM SECAO U (57,5 MM X 51 MM, ESPESSURA 0,5 MM, ESPACAMENTO 115 MM) DE ALUMINIO, COM PINTURA ELETROSTATICA BRANCA, ACABAMENTO LISO, FIXADO EM PORTA-PAINEL RANHURADO COM PINTURA ELETROSTATICA, FIXADO EM FACHADA OU ESTRUTURA DE PROJECAO, INCLUI ACESSORIOS DE INSTALACAO (PARAFUSOS E BUCHAS), NAO INCLUI A INSTALACAO, NAO INCLUI A ESTRUTURA DE PROJECAO",
+    "u": "M2",
+    "coef": 1.0,
+    "situacao": "SEM PREÇO"
+   }
+  ]
+ },
+ "104942": {
+  "descricao": "FORNECIMENTO E INSTALAÇÃO DE BRISE DE ALUZINC SL4, COM PINTURA ELETROSTÁTICA BRANCA, INCLINAÇÃO DE 45°, ACABAMENTO LISO, FIXADO EM PORTA-PAINEL RANHURADO. AF_03/2024",
+  "unidade": "M2",
+  "custo_com_preco": 27.36,
+  "com_preco": [
+   {
+    "tipo": "COMPOSICAO",
+    "c": "88315",
+    "d": "SERRALHEIRO COM ENCARGOS COMPLEMENTARES",
+    "u": "H",
+    "coef": 0.43062,
+    "situacao": "COM CUSTO",
+    "pu": 40.32,
+    "total": 17.36
+   },
+   {
+    "tipo": "COMPOSICAO",
+    "c": "88251",
+    "d": "AUXILIAR DE SERRALHEIRO COM ENCARGOS COMPLEMENTARES",
+    "u": "H",
+    "coef": 0.30759,
+    "situacao": "COM CUSTO",
+    "pu": 32.51,
+    "total": 10.0
+   }
+  ],
+  "sem_preco": [
+   {
+    "tipo": "INSUMO",
+    "c": "45097",
+    "d": "BRISE FIXO COM PAINEL EM SECAO U (84 MM X 16 MM, ESPESSURA 0,4 MM, ESPACAMENTO 86 MM) DE ALUZINC, COM PINTURA ELETROSTATICA BRANCA, ACABAMENTO LISO, INCLINACAO DE 45 GRAUS, FIXADO EM PORTA-PAINEL RANHURADO COM PINTURA ELETROSTATICA, FIXADO EM FACHADA OU ESTRUTURA DE PROJECAO, INCLUI ACESSORIOS DE INSTALACAO (PARAFUSOS E BUCHAS), NAO INCLUI INSTALACAO, NAO INCLUI A ESTRUTURA DE PROJECAO",
+    "u": "M2",
+    "coef": 1.0,
+    "situacao": "SEM PREÇO"
+   }
+  ]
+ },
+ "104943": {
+  "descricao": "FORNECIMENTO E INSTALAÇÃO DE CONJUNTO DE BRISE EM REQUADRO DE ALUMÍNIO DESLIZANTE, COM PERFIS INTERNOS TUBULARES FIXOS, COM PINTURA ELETROSTÁTICA BRANCA, ACABAMENTO, 150 CM X 265 CM. AF_03/2024",
+  "unidade": "M2",
+  "custo_com_preco": 62.74,
+  "com_preco": [
+   {
+    "tipo": "COMPOSICAO",
+    "c": "88315",
+    "d": "SERRALHEIRO COM ENCARGOS COMPLEMENTARES",
+    "u": "H",
+    "coef": 1.556,
+    "situacao": "COM CUSTO",
+    "pu": 40.32,
+    "total": 62.74
+   }
+  ],
+  "sem_preco": [
+   {
+    "tipo": "INSUMO",
+    "c": "45098",
+    "d": "CONJUNTO DE BRISE / VENEZIANA EM REQUADRO DE ALUMINIO DESLIZANTE / DE CORRER PARA FACHADA, COM MARCO 150 CM X 265 CM, PAINEIS EM PERFIS FIXOS TUBULARES 25 MM X 50 MM, ESPACAMENTO 79 MM, TRILHO INTERNO SIMPLES, PINTURA ELETROSTATICA BRANCA, ACABAMENTO LISO, INCLUI ACESSORIOS DE INSTALACAO (PARAFUSOS E BUCHAS), NAO INCLUI INSTALACAO",
+    "u": "M2",
+    "coef": 1.0,
+    "situacao": "SEM PREÇO"
+   }
+  ]
+ },
+ "105938": {
+  "descricao": "REVESTIMENTO NÃO ADERIDO DE PAREDES EXTERNAS COM PLACAS DE PORCELANATO DE ÁREA MAIOR DO QUE 2500 CM2 E MENOR OU IGUAL A 6400 CM2, FIXADAS COM INSERTE METÁLICO. AF_03/2025",
+  "unidade": "M2",
+  "custo_com_preco": 189.45,
+  "com_preco": [
+   {
+    "tipo": "COMPOSICAO",
+    "c": "88316",
+    "d": "SERVENTE COM ENCARGOS COMPLEMENTARES",
+    "u": "H",
+    "coef": 1.06065,
+    "situacao": "COM CUSTO",
+    "pu": 30.17,
+    "total": 32.0
+   },
+   {
+    "tipo": "COMPOSICAO",
+    "c": "88256",
+    "d": "AZULEJISTA OU LADRILHEIRO COM ENCARGOS COMPLEMENTARES",
+    "u": "H",
+    "coef": 2.1213,
+    "situacao": "COM CUSTO",
+    "pu": 36.14,
+    "total": 76.66
+   },
+   {
+    "tipo": "INSUMO",
+    "c": "45190",
+    "d": "PISO EM PORCELANATO, RETIFICADO, LISO, MONOCOLOR, ACETINADO OU POLIDO, FORMATO MAIOR QUE 2500 ATE 6400 CM2",
+    "u": "M2",
+    "coef": 1.1377,
+    "situacao": "COM PREÇO",
+    "pu": 58.8,
+    "total": 66.9
+   },
+   {
+    "tipo": "INSUMO",
+    "c": "12815",
+    "d": "FITA CREPE ROLO DE *25* MM X 50 M",
+    "u": "UN",
+    "coef": 0.1467,
+    "situacao": "COM PREÇO",
+    "pu": 13.03,
+    "total": 1.91
+   },
+   {
+    "tipo": "INSUMO",
+    "c": "142",
+    "d": "SELANTE ELASTICO MONOCOMPONENTE A BASE DE POLIURETANO (PU) PARA JUNTAS DIVERSAS",
+    "u": "310ML",
+    "coef": 0.373,
+    "situacao": "COM PREÇO",
+    "pu": 32.13,
+    "total": 11.98
+   }
+  ],
+  "sem_preco": [
+   {
+    "tipo": "INSUMO",
+    "c": "45297",
+    "d": "INSERTE METALICO PARA PORCELANATO, EM ACO INOXIDAVEL (ABNT 304), CONJUNTO ORELHA SIMPLES (CHUMBADOR, CANTONEIRA, PARAFUSO E GARRA)",
+    "u": "CJ",
+    "coef": 6.1111,
+    "situacao": "SEM PREÇO"
+   }
+  ]
+ },
+ "105939": {
+  "descricao": "REVESTIMENTO NÃO ADERIDO DE PAREDES EXTERNAS COM PLACAS DE PORCELANATO DE ÁREA MAIOR QUE 6400 CM2 E MENOR QUE 10000 CM2, FIXADAS COM INSERTE METÁLICO. AF_03/2025",
+  "unidade": "M2",
+  "custo_com_preco": 68.52,
+  "com_preco": [
+   {
+    "tipo": "COMPOSICAO",
+    "c": "88316",
+    "d": "SERVENTE COM ENCARGOS COMPLEMENTARES",
+    "u": "H",
+    "coef": 0.56715,
+    "situacao": "COM CUSTO",
+    "pu": 30.17,
+    "total": 17.11
+   },
+   {
+    "tipo": "COMPOSICAO",
+    "c": "88256",
+    "d": "AZULEJISTA OU LADRILHEIRO COM ENCARGOS COMPLEMENTARES",
+    "u": "H",
+    "coef": 1.1343,
+    "situacao": "COM CUSTO",
+    "pu": 36.14,
+    "total": 40.99
+   },
+   {
+    "tipo": "INSUMO",
+    "c": "12815",
+    "d": "FITA CREPE ROLO DE *25* MM X 50 M",
+    "u": "UN",
+    "coef": 0.11,
+    "situacao": "COM PREÇO",
+    "pu": 13.03,
+    "total": 1.43
+   },
+   {
+    "tipo": "INSUMO",
+    "c": "142",
+    "d": "SELANTE ELASTICO MONOCOMPONENTE A BASE DE POLIURETANO (PU) PARA JUNTAS DIVERSAS",
+    "u": "310ML",
+    "coef": 0.2797,
+    "situacao": "COM PREÇO",
+    "pu": 32.13,
+    "total": 8.99
+   }
+  ],
+  "sem_preco": [
+   {
+    "tipo": "INSUMO",
+    "c": "45297",
+    "d": "INSERTE METALICO PARA PORCELANATO, EM ACO INOXIDAVEL (ABNT 304), CONJUNTO ORELHA SIMPLES (CHUMBADOR, CANTONEIRA, PARAFUSO E GARRA)",
+    "u": "CJ",
+    "coef": 3.0556,
+    "situacao": "SEM PREÇO"
+   },
+   {
+    "tipo": "INSUMO",
+    "c": "45295",
+    "d": "PORCELANATO RETIFICADO EXTRA PARA REVESTIMENTO DE FACHADA, MONOCOLOR, NATURAL, ACETINADO OU POLIDO, FORMATO MAIOR QUE 6400 CM2 E MENOR OU IGUAL A 10000 CM2, E = *1* CM",
+    "u": "M2",
+    "coef": 1.1377,
+    "situacao": "SEM PREÇO"
+   }
+  ]
+ },
+ "105940": {
+  "descricao": "REVESTIMENTO NÃO ADERIDO DE PAREDES EXTERNAS COM PLACAS DE GRANITO DE ÁREA MAIOR QUE 3025 CM2 E MENOR OU IGUAL A 10000 CM2, FIXADAS COM INSERTE METÁLICO. AF_03/2025",
+  "unidade": "M2",
+  "custo_com_preco": 92.7,
+  "com_preco": [
+   {
+    "tipo": "COMPOSICAO",
+    "c": "88316",
+    "d": "SERVENTE COM ENCARGOS COMPLEMENTARES",
+    "u": "H",
+    "coef": 0.77775,
+    "situacao": "COM CUSTO",
+    "pu": 30.17,
+    "total": 23.46
+   },
+   {
+    "tipo": "COMPOSICAO",
+    "c": "88256",
+    "d": "AZULEJISTA OU LADRILHEIRO COM ENCARGOS COMPLEMENTARES",
+    "u": "H",
+    "coef": 1.5555,
+    "situacao": "COM CUSTO",
+    "pu": 36.14,
+    "total": 56.22
+   },
+   {
+    "tipo": "INSUMO",
+    "c": "44073",
+    "d": "TARUGO DELIMITADOR DE PROFUNDIDADE EM ESPUMA DE POLIETILENO DE BAIXA DENSIDADE 10 MM, CINZA",
+    "u": "M",
+    "coef": 2.7937,
+    "situacao": "COM PREÇO",
+    "pu": 0.87,
+    "total": 2.43
+   },
+   {
+    "tipo": "INSUMO",
+    "c": "12815",
+    "d": "FITA CREPE ROLO DE *25* MM X 50 M",
+    "u": "UN",
+    "coef": 0.1117,
+    "situacao": "COM PREÇO",
+    "pu": 13.03,
+    "total": 1.46
+   },
+   {
+    "tipo": "INSUMO",
+    "c": "142",
+    "d": "SELANTE ELASTICO MONOCOMPONENTE A BASE DE POLIURETANO (PU) PARA JUNTAS DIVERSAS",
+    "u": "310ML",
+    "coef": 0.2842,
+    "situacao": "COM PREÇO",
+    "pu": 32.13,
+    "total": 9.13
+   }
+  ],
+  "sem_preco": [
+   {
+    "tipo": "INSUMO",
+    "c": "45296",
+    "d": "INSERTE METALICO PARA GRANITO, EM ACO INOXIDAVEL (ABNT 304), CONJUNTO ORELHA PINO SIMPLES (CHUMBADOR, CANTONEIRA, PARAFUSO E PINO)",
+    "u": "CJ",
+    "coef": 3.4921,
+    "situacao": "SEM PREÇO"
+   },
+   {
+    "tipo": "INSUMO",
+    "c": "45293",
+    "d": "GRANITO POLIDO PARA REVESTIMENTO DE FACHADA, TIPO ANDORINHA/ QUARTZ/ CASTELO/ CORUMBA OU OUTROS EQUIVALENTES DA REGIAO, FORMATO MAIOR QUE 3025 CM2 E MENOR OU IGUAL A 10000 CM2, E = *2* CM",
+    "u": "M2",
+    "coef": 1.0,
+    "situacao": "SEM PREÇO"
+   }
+  ]
+ },
+ "105941": {
+  "descricao": "REVESTIMENTO NÃO ADERIDO DE PAREDES EXTERNAS COM PLACAS DE GRANITO DE ÁREA MAIOR QUE 10000 CM2, FIXADAS COM INSERTE METÁLICO. AF_03/2025",
+  "unidade": "M2",
+  "custo_com_preco": 50.87,
+  "com_preco": [
+   {
+    "tipo": "COMPOSICAO",
+    "c": "88316",
+    "d": "SERVENTE COM ENCARGOS COMPLEMENTARES",
+    "u": "H",
+    "coef": 0.40925,
+    "situacao": "COM CUSTO",
+    "pu": 30.17,
+    "total": 12.35
+   },
+   {
+    "tipo": "COMPOSICAO",
+    "c": "88256",
+    "d": "AZULEJISTA OU LADRILHEIRO COM ENCARGOS COMPLEMENTARES",
+    "u": "H",
+    "coef": 0.8185,
+    "situacao": "COM CUSTO",
+    "pu": 36.14,
+    "total": 29.58
+   },
+   {
+    "tipo": "INSUMO",
+    "c": "44073",
+    "d": "TARUGO DELIMITADOR DE PROFUNDIDADE EM ESPUMA DE POLIETILENO DE BAIXA DENSIDADE 10 MM, CINZA",
+    "u": "M",
+    "coef": 1.9167,
+    "situacao": "COM PREÇO",
+    "pu": 0.87,
+    "total": 1.67
+   },
+   {
+    "tipo": "INSUMO",
+    "c": "12815",
+    "d": "FITA CREPE ROLO DE *25* MM X 50 M",
+    "u": "UN",
+    "coef": 0.0767,
+    "situacao": "COM PREÇO",
+    "pu": 13.03,
+    "total": 1.0
+   },
+   {
+    "tipo": "INSUMO",
+    "c": "142",
+    "d": "SELANTE ELASTICO MONOCOMPONENTE A BASE DE POLIURETANO (PU) PARA JUNTAS DIVERSAS",
+    "u": "310ML",
+    "coef": 0.195,
+    "situacao": "COM PREÇO",
+    "pu": 32.13,
+    "total": 6.27
+   }
+  ],
+  "sem_preco": [
+   {
+    "tipo": "INSUMO",
+    "c": "45296",
+    "d": "INSERTE METALICO PARA GRANITO, EM ACO INOXIDAVEL (ABNT 304), CONJUNTO ORELHA PINO SIMPLES (CHUMBADOR, CANTONEIRA, PARAFUSO E PINO)",
+    "u": "CJ",
+    "coef": 1.6667,
+    "situacao": "SEM PREÇO"
+   },
+   {
+    "tipo": "INSUMO",
+    "c": "45294",
+    "d": "GRANITO POLIDO PARA REVESTIMENTO DE FACHADA, TIPO ANDORINHA/ QUARTZ/ CASTELO/ CORUMBA OU OUTROS EQUIVALENTES DA REGIAO, FORMATO MAIOR QUE 10000 CM2, E = *2* CM",
+    "u": "M2",
+    "coef": 1.0,
+    "situacao": "SEM PREÇO"
+   }
+  ]
+ },
+ "105942": {
+  "descricao": "REQUADRO DE VÃOS COM PLACAS DE PORCELANATO ASSENTADAS COM ARGAMASSA COLANTE. AF_03/2025",
+  "unidade": "M",
+  "custo_com_preco": 42.23,
+  "com_preco": [
+   {
+    "tipo": "COMPOSICAO",
+    "c": "88316",
+    "d": "SERVENTE COM ENCARGOS COMPLEMENTARES",
+    "u": "H",
+    "coef": 0.26995,
+    "situacao": "COM CUSTO",
+    "pu": 30.17,
+    "total": 8.14
+   },
+   {
+    "tipo": "COMPOSICAO",
+    "c": "88256",
+    "d": "AZULEJISTA OU LADRILHEIRO COM ENCARGOS COMPLEMENTARES",
+    "u": "H",
+    "coef": 0.5399,
+    "situacao": "COM CUSTO",
+    "pu": 36.14,
+    "total": 19.51
+   },
+   {
+    "tipo": "INSUMO",
+    "c": "37595",
+    "d": "ARGAMASSA COLANTE TIPO AC III",
+    "u": "KG",
+    "coef": 2.2825,
+    "situacao": "COM PREÇO",
+    "pu": 2.24,
+    "total": 5.11
+   },
+   {
+    "tipo": "INSUMO",
+    "c": "12815",
+    "d": "FITA CREPE ROLO DE *25* MM X 50 M",
+    "u": "UN",
+    "coef": 0.1,
+    "situacao": "COM PREÇO",
+    "pu": 13.03,
+    "total": 1.3
+   },
+   {
+    "tipo": "INSUMO",
+    "c": "142",
+    "d": "SELANTE ELASTICO MONOCOMPONENTE A BASE DE POLIURETANO (PU) PARA JUNTAS DIVERSAS",
+    "u": "310ML",
+    "coef": 0.2542,
+    "situacao": "COM PREÇO",
+    "pu": 32.13,
+    "total": 8.17
+   }
+  ],
+  "sem_preco": [
+   {
+    "tipo": "INSUMO",
+    "c": "45295",
+    "d": "PORCELANATO RETIFICADO EXTRA PARA REVESTIMENTO DE FACHADA, MONOCOLOR, NATURAL, ACETINADO OU POLIDO, FORMATO MAIOR QUE 6400 CM2 E MENOR OU IGUAL A 10000 CM2, E = *1* CM",
+    "u": "M2",
+    "coef": 0.2844,
+    "situacao": "SEM PREÇO"
+   }
+  ]
+ },
+ "105943": {
+  "descricao": "REQUADRO DE VÃOS PLACAS DE GRANITO FIXADAS COM INSERTE METÁLICO. AF_03/2025",
+  "unidade": "M",
+  "custo_com_preco": 37.98,
+  "com_preco": [
+   {
+    "tipo": "COMPOSICAO",
+    "c": "88316",
+    "d": "SERVENTE COM ENCARGOS COMPLEMENTARES",
+    "u": "H",
+    "coef": 0.25705,
+    "situacao": "COM CUSTO",
+    "pu": 30.17,
+    "total": 7.76
+   },
+   {
+    "tipo": "COMPOSICAO",
+    "c": "88256",
+    "d": "AZULEJISTA OU LADRILHEIRO COM ENCARGOS COMPLEMENTARES",
+    "u": "H",
+    "coef": 0.5141,
+    "situacao": "COM CUSTO",
+    "pu": 36.14,
+    "total": 18.58
+   },
+   {
+    "tipo": "INSUMO",
+    "c": "44073",
+    "d": "TARUGO DELIMITADOR DE PROFUNDIDADE EM ESPUMA DE POLIETILENO DE BAIXA DENSIDADE 10 MM, CINZA",
+    "u": "M",
+    "coef": 2.4989,
+    "situacao": "COM PREÇO",
+    "pu": 0.87,
+    "total": 2.17
+   },
+   {
+    "tipo": "INSUMO",
+    "c": "12815",
+    "d": "FITA CREPE ROLO DE *25* MM X 50 M",
+    "u": "UN",
+    "coef": 0.1,
+    "situacao": "COM PREÇO",
+    "pu": 13.03,
+    "total": 1.3
+   },
+   {
+    "tipo": "INSUMO",
+    "c": "142",
+    "d": "SELANTE ELASTICO MONOCOMPONENTE A BASE DE POLIURETANO (PU) PARA JUNTAS DIVERSAS",
+    "u": "310ML",
+    "coef": 0.2542,
+    "situacao": "COM PREÇO",
+    "pu": 32.13,
+    "total": 8.17
+   }
+  ],
+  "sem_preco": [
+   {
+    "tipo": "INSUMO",
+    "c": "45296",
+    "d": "INSERTE METALICO PARA GRANITO, EM ACO INOXIDAVEL (ABNT 304), CONJUNTO ORELHA PINO SIMPLES (CHUMBADOR, CANTONEIRA, PARAFUSO E PINO)",
+    "u": "CJ",
+    "coef": 0.7174,
+    "situacao": "SEM PREÇO"
+   },
+   {
+    "tipo": "INSUMO",
+    "c": "45293",
+    "d": "GRANITO POLIDO PARA REVESTIMENTO DE FACHADA, TIPO ANDORINHA/ QUARTZ/ CASTELO/ CORUMBA OU OUTROS EQUIVALENTES DA REGIAO, FORMATO MAIOR QUE 3025 CM2 E MENOR OU IGUAL A 10000 CM2, E = *2* CM",
+    "u": "M2",
+    "coef": 0.25,
+    "situacao": "SEM PREÇO"
+   }
+  ]
+ }
+}
