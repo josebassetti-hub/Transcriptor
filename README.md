@@ -57,8 +57,25 @@ data/    base-der-es.json · mapa-padroes.json · indices-estimativa.json ·
          regras-medicao.json · composicoes-resumo.json · insumos.json
 tools/   build_base.py (XLSX→JSON) · parse_caderno.py (Caderno Técnico PDF→regras) ·
          embed_data.py (injeta os JSON no orcamentista.html) ·
-         gera_excel.py (orcamento.json → planilha .xlsx de 7 abas)
+         build_sinapi.py (SINAPI_Referência.xlsx → preços da UF) ·
+         gera_excel.py (orcamento.json → planilha .xlsx de 8 abas)
 ```
+
+### Segunda tabela de referência: SINAPI
+
+`data/base-sinapi-es.json` traz **8.402 composições + 4.278 insumos** com preço em Vitória/ES
+(SINAPI 06/2026, **sem desoneração** — custo direto, BDI 0, mesma natureza da DER-ES, portanto
+diretamente comparável). Serve para precificar o que a DER-ES não cobre (vidro temperado, forro
+em fibra mineral, guarda-corpo na altura de norma) e para **cruzar preços** dos itens que as duas
+tabelas têm.
+
+```bash
+python3 tools/build_sinapi.py SINAPI_Referencia_2026_06.xlsx --uf ES --out data/base-sinapi-es.json
+```
+
+O extrator lê as abas `ISD` (insumos) e `CSD` (composições), que trazem as 27 UFs lado a lado, e
+recupera o código da composição de dentro da fórmula `=HYPERLINK(...)` — o Excel não grava o
+resultado dessa fórmula em cache, e uma leitura ingênua devolveria `0` em todas as linhas.
 
 Para entregar o orçamento em Excel formatado (capa/resumo com gráfico por capítulo, planilha por
 capítulo, complemento a cotar, curva ABC, memorial com o critério de medição de cada item,

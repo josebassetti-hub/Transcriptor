@@ -63,7 +63,11 @@ for k, v in [("Área construída", f"{br(AREA)} m²"),
              ("Base de preços", f"Tabela DER-ES · data-base {oj['obra'].get('data_base','')}"),
              ("BDI adotado", f"{br(oj['totais']['bdi_pct'], 1)}%"),
              ("Nº de itens orçados (DER-ES)", len(oj['itens'])),
-             ("Nº de itens a cotar (mercado)", len(COMPL['itens']))]:
+             ("Nº de itens do complemento", len(COMPL['itens'])),
+             ("  · com preço de outra tabela", sum(1 for i in COMPL['itens']
+                                                   if 'cota' not in str(i.get('fonte', 'cotação')).lower())),
+             ("  · por cotação de mercado", sum(1 for i in COMPL['itens']
+                                                if 'cota' in str(i.get('fonte', 'cotação')).lower()))]:
     ws.cell(row=r, column=2, value=k).font = Font(bold=True, size=10)
     ws.cell(row=r, column=3, value=v).font = Font(size=10); r += 1
 
@@ -158,24 +162,31 @@ for col in range(1, 8): ws.cell(row=r, column=col).fill = PatternFill("solid", f
 
 # ─────────────── 3. COMPLEMENTO A COTAR ───────────────
 ws = wb.create_sheet("3. Complemento a cotar")
-widths(ws, [62, 12, 7, 16, 18, 18])
+widths(ws, [54, 11, 6, 15, 17, 17, 20, 46])
 ws['A1'] = "COMPLEMENTO — ITENS SEM PREÇO NA TABELA DER-ES"; ws['A1'].font = Font(bold=True, size=13, color=LARANJA)
 ws['A2'] = COMPL['nota']; ws['A2'].font = Font(italic=True, size=9, color="475569")
-head(ws, 4, ["Item", "Quant.", "Und", "Preço unit. (R$)", "Total s/ BDI", "Total c/ BDI"], fill=LARANJA)
+ws.merge_cells('A2:H2'); ws.row_dimensions[2].height = 28
+ws['A2'].alignment = Alignment(wrap_text=True, vertical='top')
+head(ws, 4, ["Item", "Quant.", "Und", "Preço unit. (R$)", "Total s/ BDI", "Total c/ BDI",
+             "Fonte do preço", "Observação"], fill=LARANJA)
 ws.freeze_panes = "A5"
 r = 5
 for it in sorted(COMPL['itens'], key=lambda x: -x['total']):
-    vals = [it['descricao'], it['qtd'], it['und'], it['pu'], it['total'], it['total'] * (1 + bdi)]
+    fonte = it.get('fonte', 'Cotação de mercado')
+    vals = [it['descricao'], it['qtd'], it['und'], it['pu'], it['total'], it['total'] * (1 + bdi),
+            fonte, it.get('obs', '')]
     for col, v in enumerate(vals, start=1):
         c = ws.cell(row=r, column=col, value=v); c.border = BORDER; c.font = Font(size=9)
         if col == 2: c.number_format = NUM
         if col in (4, 5, 6): c.number_format = RS
-        if col == 1: c.alignment = Alignment(wrap_text=True, vertical='top')
+        if col in (1, 8): c.alignment = Alignment(wrap_text=True, vertical='top')
+        if col == 7 and 'SINAPI' in str(fonte):
+            c.fill = PatternFill("solid", fgColor="BBF7D0"); c.font = Font(bold=True, size=9)
     r += 1
 ws.cell(row=r, column=1, value="SUBTOTAL COMPLEMENTO").font = Font(bold=True, size=11)
 for col, v in [(5, COMPL['custo_direto']), (6, COMPL['com_bdi'])]:
     c = ws.cell(row=r, column=col, value=v); c.number_format = RS; c.font = Font(bold=True, size=11)
-for col in range(1, 7): ws.cell(row=r, column=col).fill = PatternFill("solid", fgColor="FED7AA")
+for col in range(1, 9): ws.cell(row=r, column=col).fill = PatternFill("solid", fgColor="FED7AA")
 r += 2
 ws.cell(row=r, column=1, value="RECOMENDAÇÃO: solicitar cotação de 3 fornecedores para os 5 maiores itens desta aba — "
         "concentram a maior parte da incerteza do orçamento.").font = Font(italic=True, size=9, color="92400E")
@@ -270,38 +281,40 @@ c = ws.cell(row=r, column=3, value=AREA); c.number_format = NUM; c.font = Font(b
 XREF = oj.get('referencias_cruzadas')
 if XREF:
     ws = wb.create_sheet("8. Referências cruzadas")
-    widths(ws, [40, 10, 6, 14, 22, 44, 20, 60])
+    widths(ws, [38, 9, 6, 13, 52, 52, 62])
     ws['A1'] = "BUSCA DOS ITENS DE COMPLEMENTO EM TABELAS REFERENCIAIS"
     ws['A1'].font = Font(bold=True, size=13, color=TEAL)
     ws['A2'] = XREF['nota']; ws['A2'].font = Font(italic=True, size=9, color="475569")
-    ws.merge_cells('A2:H2'); ws.row_dimensions[2].height = 30
+    ws.merge_cells('A2:G2'); ws.row_dimensions[2].height = 42
     ws['A2'].alignment = Alignment(wrap_text=True, vertical='top')
-    head(ws, 4, ["Item do complemento", "Quant.", "Und", "Situação", "Código DER-ES",
-                 "Serviço equivalente na DER-ES", "Preço DER-ES", "Ação adotada"])
+    head(ws, 4, ["Item do complemento", "Quant.", "Und", "Resolvido por"]
+              + XREF.get('colunas', ["DER-ES", "SINAPI"]) + ["Ação adotada"])
     ws.freeze_panes = "A5"
-    COR = {"MIGRADO": "BBF7D0", "PARCIAL": "FEF3C7", "ÂNCORA": "DBEAFE",
+    COR = {"DER-ES": "BBF7D0", "SINAPI": "BBF7D0", "PARCIAL": "FEF3C7", "ÂNCORA": "DBEAFE",
            "ALTERNATIVA": "E9D5FF", "NÃO EXISTE": "FEE2E2"}
-    ordem = {"MIGRADO": 0, "PARCIAL": 1, "ALTERNATIVA": 2, "ÂNCORA": 3, "NÃO EXISTE": 4}
+    ordem = {"DER-ES": 0, "SINAPI": 1, "ALTERNATIVA": 2, "PARCIAL": 3, "ÂNCORA": 4, "NÃO EXISTE": 5}
     r = 5
-    for it in sorted(XREF['itens'], key=lambda x: (ordem.get(x['situacao'], 9), x['item'])):
-        vals = [it['item'], it['qtd'], it['und'], it['situacao'], it['codigo'],
-                it['descricao_der'], it['preco_der'], it['acao']]
+    for it in sorted(XREF['itens'], key=lambda x: (ordem.get(x['situacao'], 9), -x['qtd'])):
+        vals = [it['item'], it['qtd'], it['und'], it['situacao'],
+                it.get('der', ''), it.get('sinapi', ''), it['acao']]
         for col, v in enumerate(vals, start=1):
             c = ws.cell(row=r, column=col, value=v); c.border = BORDER; c.font = Font(size=9)
             if col == 2: c.number_format = NUM
-            if col in (1, 5, 6, 8): c.alignment = Alignment(wrap_text=True, vertical='top')
+            if col in (1, 5, 6, 7): c.alignment = Alignment(wrap_text=True, vertical='top')
             if col == 4:
                 c.fill = PatternFill("solid", fgColor=COR.get(it['situacao'], "FFFFFF"))
                 c.font = Font(bold=True, size=9)
-                c.alignment = Alignment(horizontal='center', vertical='center')
-        ws.row_dimensions[r].height = 46
+                c.alignment = Alignment(horizontal='center', vertical='center', wrap_text=True)
+        ws.row_dimensions[r] = ws.row_dimensions[r]
+        ws.row_dimensions[r].height = 62
         r += 1
     r += 1
-    ws.cell(row=r, column=1, value="LEGENDA — MIGRADO: saiu da cotação e entrou na planilha DER-ES · "
-            "PARCIAL: a tabela cobre parte do escopo · ALTERNATIVA: existe solução DER-ES diferente da "
-            "especificada · ÂNCORA: sem equivalente, mas há item próximo que valida a ordem de grandeza · "
-            "NÃO EXISTE: nem serviço nem insumo na tabela.").font = Font(italic=True, size=9, color="92400E")
-    ws.merge_cells(start_row=r, start_column=1, end_row=r + 1, end_column=8)
+    ws.cell(row=r, column=1, value="LEGENDA — DER-ES / SINAPI: o item saiu da cotação e passou a ter preço "
+            "oficial da tabela indicada · ALTERNATIVA: existe solução equivalente em tabela, mas com "
+            "especificação diferente da projetada · PARCIAL: a tabela cobre parte do escopo · ÂNCORA: sem "
+            "equivalente, mas há item próximo que valida a ordem de grandeza · NÃO EXISTE: ausente das duas "
+            "tabelas, nem como insumo.").font = Font(italic=True, size=9, color="92400E")
+    ws.merge_cells(start_row=r, start_column=1, end_row=r + 2, end_column=7)
     ws.cell(row=r, column=1).alignment = Alignment(wrap_text=True, vertical='top')
 
 wb.save(out)
