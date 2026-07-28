@@ -56,7 +56,16 @@ fontes/  XLSX oficiais da Tabela DER-ES (serviços, composições, insumos)
 data/    base-der-es.json · mapa-padroes.json · indices-estimativa.json ·
          regras-medicao.json · composicoes-resumo.json · insumos.json
 tools/   build_base.py (XLSX→JSON) · parse_caderno.py (Caderno Técnico PDF→regras) ·
-         embed_data.py (injeta os JSON no orcamentista.html)
+         embed_data.py (injeta os JSON no orcamentista.html) ·
+         gera_excel.py (orcamento.json → planilha .xlsx de 7 abas)
+```
+
+Para entregar o orçamento em Excel formatado (capa/resumo com gráfico por capítulo, planilha por
+capítulo, complemento a cotar, curva ABC, memorial com o critério de medição de cada item,
+premissas/lacunas e a lista de ambientes):
+
+```bash
+python3 tools/gera_excel.py orcamento.json Orcamento.xlsx --refs data
 ```
 
 Quando sair tabela nova (ou de outro estado/SINAPI no mesmo formato):
@@ -93,7 +102,7 @@ critério fica marcado como "caderno ainda não ingerido" no memorial.
 
 Todo o sistema também existe como **Agent Skill**: no chat do claude.ai (ou em qualquer sessão
 do Claude Code neste repositório), você envia o projeto e o Claude produz **o mesmo orçamento do
-app** — a skill embute a base de preços, o mapa de padrões, os 746 critérios de medição e um
+app** — a skill embute a base de preços, o mapa de padrões, os 832 critérios de medição e um
 **motor em Python idêntico ao do app** (validado item a item contra o orçamento dourado:
 custo direto R$ 175.142,06 no exemplo de 70 m²).
 
