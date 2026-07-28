@@ -1,25 +1,23 @@
 {
- "arquivo": "15-INSTALAÇÕES ELÉTRICAS.pdf",
+ "arquivo": "15-INSTALAÇÕES ELÉTRICAS.pdf (partes 1+2)",
  "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1514 – FIOS E CABOS",
- "truncado": true,
+ "truncado": false,
  "fichas": {
   "151401": {
    "d": "Cabo de cobre termoplástico (PVC) flexível isolado 450/750V, antichama BWF livre de chumbo, 70ºC - 1,5mm2",
    "u": "m",
    "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1514 – FIOS E CABOS",
    "atualizacao": "12/2023",
-   "aplicacao": "Indicado as instalações industriais, comerciais e residenciais para alimentação de circuitos de iluminação, força, sinalização e painéis de comando, podendo ser embutidas em eletrodutos, perfilados, eletrocalhas e canaletas em que sua flexibilidade auxilia o manuseio. Orienta-se que as instalações...",
+   "aplicacao": "Indicado as instalações industriais, comerciais e residenciais para alimentação de circuitos de iluminação, força, sinalização e painéis de comando, podendo ser embutidas em eletrodutos, perfilados, eletrocalhas e canaletas em que sua flexibilidade auxilia o manuseio. Orienta-se que as instalações n",
    "incluidos": "Fornecimento dos materiais e mão de obra para execução do serviço.",
    "criterio": "Por metro instalado.",
    "normas": [
-    "NBR NM 247-3:2002",
-    "IEC 60227-3",
-    "NBR 280:2011",
-    "NBR 5111:1997",
-    "NBR 5410:2004",
-    "NBR 13248:2014",
-    "NBR 9513:1986",
-    "NBR 9511:1997"
+    "NBRNM247-3:2002 – Cabos isolados com policloreto de vinila (PVC) para tensões nominais",
+    "NBR 280:2011 - Condutores de cabos isolados - NBR 5111:1997 - Fios de cobre nus, de",
+    "NBR 5410:2004 - Instalações elétricas de baixa tensão I - Proteção e segurança.",
+    "NBR13248:2014 - Cabos de potência e condutores isolados sem cobertura, não halogenados",
+    "NBR 9513:1986 – Emendas para cabos de potência isolados para tensões até 750 V –",
+    "NBR 9511:1997 – Cabos elétricos - Raios mínimos de curvatura para instalações e diâmetros"
    ]
   },
   "151402": {
@@ -27,18 +25,16 @@
    "u": "m",
    "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1514 – FIOS E CABOS",
    "atualizacao": "12/2023",
-   "aplicacao": "Indicado as instalações industriais, comerciais e residenciais para alimentação de circuitos de iluminação, força, sinalização e painéis de comando, podendo ser embutidas em eletrodutos, perfilados, eletrocalhas e canaletas em que sua flexibilidade auxilia o manuseio. Orienta-se que as instalações...",
+   "aplicacao": "Indicado as instalações industriais, comerciais e residenciais para alimentação de circuitos de iluminação, força, sinalização e painéis de comando, podendo ser embutidas em eletrodutos, perfilados, eletrocalhas e canaletas em que sua flexibilidade auxilia o manuseio. Orienta-se que as instalações n",
    "incluidos": "Fornecimento dos materiais e mão de obra para execução do serviço.",
    "criterio": "Por metro instalado.",
    "normas": [
-    "NBR NM 247-3:2002",
-    "IEC 60227-3",
-    "NBR 280:2011",
-    "NBR 5111:1997",
-    "NBR 5410:2004",
-    "NBR 13248:2014",
-    "NBR 9513:1986",
-    "NBR 9511:1997"
+    "NBRNM247-3:2002 – Cabos isolados com policloreto de vinila (PVC) para tensões nominais",
+    "NBR 280:2011 - Condutores de cabos isolados - NBR 5111:1997 - Fios de cobre nus, de",
+    "NBR 5410:2004 - Instalações elétricas de baixa tensão I - Proteção e segurança.",
+    "NBR13248:2014 - Cabos de potência e condutores isolados sem cobertura, não halogenados",
+    "NBR 9513:1986 – Emendas para cabos de potência isolados para tensões até 750 V –",
+    "NBR 9511:1997 – Cabos elétricos - Raios mínimos de curvatura para instalações e diâmetros"
    ]
   },
   "151403": {
@@ -46,18 +42,16 @@
    "u": "m",
    "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1514 – FIOS E CABOS",
    "atualizacao": "12/2023",
-   "aplicacao": "Indicado as instalações industriais, comerciais e residenciais para alimentação de circuitos de iluminação, força, sinalização e painéis de comando, podendo ser embutidas em eletrodutos, perfilados, eletrocalhas e canaletas em que sua flexibilidade auxilia o manuseio. Orienta-se que as instalações...",
+   "aplicacao": "Indicado as instalações industriais, comerciais e residenciais para alimentação de circuitos de iluminação, força, sinalização e painéis de comando, podendo ser embutidas em eletrodutos, perfilados, eletrocalhas e canaletas em que sua flexibilidade auxilia o manuseio. Orienta-se que as instalações n",
    "incluidos": "Fornecimento dos materiais e mão de obra para execução do serviço.",
    "criterio": "Por metro instalado.",
    "normas": [
-    "NBR NM 247-3:2002",
-    "IEC 60227-3",
-    "NBR 280:2011",
-    "NBR 5111:1997",
-    "NBR 5410:2004",
-    "NBR 13248:2014",
-    "NBR 9513:1986",
-    "NBR 9511:1997"
+    "NBRNM247-3:2002 – Cabos isolados com policloreto de vinila (PVC) para tensões nominais",
+    "NBR 280:2011 - Condutores de cabos isolados - NBR 5111:1997 - Fios de cobre nus, de",
+    "NBR 5410:2004 - Instalações elétricas de baixa tensão I - Proteção e segurança.",
+    "NBR13248:2014 - Cabos de potência e condutores isolados sem cobertura, não halogenados",
+    "NBR 9513:1986 – Emendas para cabos de potência isolados para tensões até 750 V –",
+    "NBR 9511:1997 – Cabos elétricos - Raios mínimos de curvatura para instalações e diâmetros"
    ]
   },
   "151404": {
@@ -65,18 +59,16 @@
    "u": "m",
    "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1514 – FIOS E CABOS",
    "atualizacao": "12/2023",
-   "aplicacao": "Indicado as instalações industriais, comerciais e residenciais para alimentação de circuitos de iluminação, força, sinalização e painéis de comando, podendo ser embutidas em eletrodutos, perfilados, eletrocalhas e canaletas em que sua flexibilidade auxilia o manuseio. Orienta-se que as instalações...",
+   "aplicacao": "Indicado as instalações industriais, comerciais e residenciais para alimentação de circuitos de iluminação, força, sinalização e painéis de comando, podendo ser embutidas em eletrodutos, perfilados, eletrocalhas e canaletas em que sua flexibilidade auxilia o manuseio. Orienta-se que as instalações n",
    "incluidos": "Fornecimento dos materiais e mão de obra para execução do serviço.",
    "criterio": "Por metro instalado.",
    "normas": [
-    "NBR NM 247-3:2002",
-    "IEC 60227-3",
-    "NBR 280:2011",
-    "NBR 5111:1997",
-    "NBR 5410:2004",
-    "NBR 13248:2014",
-    "NBR 9513:1986",
-    "NBR 9511:1997"
+    "NBRNM247-3:2002 – Cabos isolados com policloreto de vinila (PVC) para tensões nominais",
+    "NBR 280:2011 - Condutores de cabos isolados - NBR 5111:1997 - Fios de cobre nus, de",
+    "NBR 5410:2004 - Instalações elétricas de baixa tensão I - Proteção e segurança.",
+    "NBR13248:2014 - Cabos de potência e condutores isolados sem cobertura, não halogenados",
+    "NBR 9513:1986 – Emendas para cabos de potência isolados para tensões até 750 V –",
+    "NBR 9511:1997 – Cabos elétricos - Raios mínimos de curvatura para instalações e diâmetros"
    ]
   },
   "151405": {
@@ -84,18 +76,16 @@
    "u": "m",
    "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1514 – FIOS E CABOS",
    "atualizacao": "12/2023",
-   "aplicacao": "Indicado as instalações industriais, comerciais e residenciais para alimentação de circuitos de iluminação, força, sinalização e painéis de comando, podendo ser embutidas em eletrodutos, perfilados, eletrocalhas e canaletas em que sua flexibilidade auxilia o manuseio. Orienta-se que as instalações...",
+   "aplicacao": "Indicado as instalações industriais, comerciais e residenciais para alimentação de circuitos de iluminação, força, sinalização e painéis de comando, podendo ser embutidas em eletrodutos, perfilados, eletrocalhas e canaletas em que sua flexibilidade auxilia o manuseio. Orienta-se que as instalações n",
    "incluidos": "Fornecimento dos materiais e mão de obra para execução do serviço.",
    "criterio": "Por metro instalado.",
    "normas": [
-    "NBR NM 247-3:2002",
-    "IEC 60227-3",
-    "NBR 280:2011",
-    "NBR 5111:1997",
-    "NBR 5410:2004",
-    "NBR 13248:2014",
-    "NBR 9513:1986",
-    "NBR 9511:1997"
+    "NBRNM247-3:2002 – Cabos isolados com policloreto de vinila (PVC) para tensões nominais",
+    "NBR 280:2011 - Condutores de cabos isolados - NBR 5111:1997 - Fios de cobre nus, de",
+    "NBR 5410:2004 - Instalações elétricas de baixa tensão I - Proteção e segurança.",
+    "NBR13248:2014 - Cabos de potência e condutores isolados sem cobertura, não halogenados",
+    "NBR 9513:1986 – Emendas para cabos de potência isolados para tensões até 750 V –",
+    "NBR 9511:1997 – Cabos elétricos - Raios mínimos de curvatura para instalações e diâmetros"
    ]
   },
   "151406": {
@@ -103,18 +93,16 @@
    "u": "m",
    "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1514 – FIOS E CABOS",
    "atualizacao": "12/2023",
-   "aplicacao": "Indicado as instalações industriais, comerciais e residenciais para alimentação de circuitos de iluminação, força, sinalização e painéis de comando, podendo ser embutidas em eletrodutos, perfilados, eletrocalhas e canaletas em que sua flexibilidade auxilia o manuseio. Orienta-se que as instalações...",
+   "aplicacao": "Indicado as instalações industriais, comerciais e residenciais para alimentação de circuitos de iluminação, força, sinalização e painéis de comando, podendo ser embutidas em eletrodutos, perfilados, eletrocalhas e canaletas em que sua flexibilidade auxilia o manuseio. Orienta-se que as instalações n",
    "incluidos": "Fornecimento dos materiais e mão de obra para execução do serviço.",
    "criterio": "Por metro instalado.",
    "normas": [
-    "NBR NM 247-3:2002",
-    "IEC 60227-3",
-    "NBR 280:2011",
-    "NBR 5111:1997",
-    "NBR 5410:2004",
-    "NBR 13248:2014",
-    "NBR 9513:1986",
-    "NBR 9511:1997"
+    "NBRNM247-3:2002 – Cabos isolados com policloreto de vinila (PVC) para tensões nominais",
+    "NBR 280:2011 - Condutores de cabos isolados - NBR 5111:1997 - Fios de cobre nus, de",
+    "NBR 5410:2004 - Instalações elétricas de baixa tensão I - Proteção e segurança.",
+    "NBR13248:2014 - Cabos de potência e condutores isolados sem cobertura, não halogenados",
+    "NBR 9513:1986 – Emendas para cabos de potência isolados para tensões até 750 V –",
+    "NBR 9511:1997 – Cabos elétricos - Raios mínimos de curvatura para instalações e diâmetros"
    ]
   },
   "151407": {
@@ -122,18 +110,16 @@
    "u": "m",
    "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1514 – FIOS E CABOS",
    "atualizacao": "12/2023",
-   "aplicacao": "Indicado as instalações industriais, comerciais e residenciais para alimentação de circuitos de iluminação, força, sinalização e painéis de comando, podendo ser embutidas em eletrodutos, perfilados, eletrocalhas e canaletas em que sua flexibilidade auxilia o manuseio. Orienta-se que as instalações...",
+   "aplicacao": "Indicado as instalações industriais, comerciais e residenciais para alimentação de circuitos de iluminação, força, sinalização e painéis de comando, podendo ser embutidas em eletrodutos, perfilados, eletrocalhas e canaletas em que sua flexibilidade auxilia o manuseio. Orienta-se que as instalações n",
    "incluidos": "Fornecimento dos materiais e mão de obra para execução do serviço.",
    "criterio": "Por metro instalado.",
    "normas": [
-    "NBR NM 247-3:2002",
-    "IEC 60227-3",
-    "NBR 280:2011",
-    "NBR 5111:1997",
-    "NBR 5410:2004",
-    "NBR 13248:2014",
-    "NBR 9513:1986",
-    "NBR 9511:1997"
+    "NBRNM247-3:2002 – Cabos isolados com policloreto de vinila (PVC) para tensões nominais",
+    "NBR 280:2011 - Condutores de cabos isolados - NBR 5111:1997 - Fios de cobre nus, de",
+    "NBR 5410:2004 - Instalações elétricas de baixa tensão I - Proteção e segurança.",
+    "NBR13248:2014 - Cabos de potência e condutores isolados sem cobertura, não halogenados",
+    "NBR 9513:1986 – Emendas para cabos de potência isolados para tensões até 750 V –",
+    "NBR 9511:1997 – Cabos elétricos - Raios mínimos de curvatura para instalações e diâmetros"
    ]
   },
   "151413": {
@@ -145,10 +131,10 @@
    "incluidos": "Fornecimento dos materiais e mão de obra para execução do serviço.",
    "criterio": "Por metro instalado.",
    "normas": [
-    "NBR 5410:2004",
-    "NBR 5111",
-    "NBR 6524",
-    "NBR 5349"
+    "NBR 5410:2004 - Instalações elétricas de baixa tensão I - Proteção e segurança.",
+    "NBR 5111 - Fios de cobre nus de seção circular para fins elétricos – Especificação.",
+    "NBR 6524 - Fios e cabos de cobre com ou sem cobertura protetora para instalações aéreas",
+    "NBR 5349 - Cabos nus de cobre mole para fins elétricos - Especificação."
    ]
   },
   "151414": {
@@ -160,10 +146,10 @@
    "incluidos": "Fornecimento dos materiais e mão de obra para execução do serviço.",
    "criterio": "Por metro instalado.",
    "normas": [
-    "NBR 5410:2004",
-    "NBR 5111",
-    "NBR 6524",
-    "NBR 5349"
+    "NBR 5410:2004 - Instalações elétricas de baixa tensão I - Proteção e segurança.",
+    "NBR 5111 - Fios de cobre nus de seção circular para fins elétricos – Especificação.",
+    "NBR 6524 - Fios e cabos de cobre com ou sem cobertura protetora para instalações aéreas",
+    "NBR 5349 - Cabos nus de cobre mole para fins elétricos - Especificação."
    ]
   },
   "151417": {
@@ -171,17 +157,16 @@
    "u": "m",
    "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1514 – FIOS E CABOS",
    "atualizacao": "12/2023",
-   "aplicacao": "Indicado as instalações industriais, comerciais, residenciais e subestação para aplicações fixa que exigem maior proteção mecânica do material isolante, incluindo boa resistência a ambientes úmidos, em alimentação de circuitos de iluminação, força, sinalização e painéis de comando, podendo ser...",
+   "aplicacao": "Indicado as instalações industriais, comerciais, residenciais e subestação para aplicações fixa que exigem maior proteção mecânica do material isolante, incluindo boa resistência a ambientes úmidos, em alimentação de circuitos de iluminação, força, sinalização e painéis de comando, podendo ser embut",
    "incluidos": "Fornecimento dos materiais e mão de obra para execução do serviço.",
    "criterio": "Por metro instalado.",
    "normas": [
-    "NBR 7286",
-    "NBR 280:2011",
-    "NBR 5111:1997",
-    "NBR 5410:2004",
-    "NBR 13248:2014",
-    "NBR 9513:1986",
-    "NBR 9511:1997"
+    "NBR 7286 - Cabos de potência com isolação extrudada de borracha etilenopropileno (EPR,",
+    "NBR 280:2011 - Condutores de cabos isolados - NBR 5111:1997 - Fios de cobre nus, de",
+    "NBR 5410:2004 - Instalações elétricas de baixa tensão I - Proteção e segurança.",
+    "NBR13248:2014 - Cabos de potência e condutores isolados sem cobertura, não halogenados",
+    "NBR 9513:1986 – Emendas para cabos de potência isolados para tensões até 750 V –",
+    "NBR 9511:1997 – Cabos elétricos - Raios mínimos de curvatura para instalações e diâmetros"
    ]
   },
   "151418": {
@@ -189,17 +174,16 @@
    "u": "m",
    "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1514 – FIOS E CABOS",
    "atualizacao": "12/2023",
-   "aplicacao": "Indicado as instalações industriais, comerciais, residenciais e subestação para aplicações fixa que exigem maior proteção mecânica do material isolante, incluindo boa resistência a ambientes úmidos, em alimentação de circuitos de iluminação, força, sinalização e painéis de comando, podendo ser...",
+   "aplicacao": "Indicado as instalações industriais, comerciais, residenciais e subestação para aplicações fixa que exigem maior proteção mecânica do material isolante, incluindo boa resistência a ambientes úmidos, em alimentação de circuitos de iluminação, força, sinalização e painéis de comando, podendo ser embut",
    "incluidos": "Fornecimento dos materiais e mão de obra para execução do serviço.",
    "criterio": "Por metro instalado.",
    "normas": [
-    "NBR 7286",
-    "NBR 280:2011",
-    "NBR 5111:1997",
-    "NBR 5410:2004",
-    "NBR 13248:2014",
-    "NBR 9513:1986",
-    "NBR 9511:1997"
+    "NBR 7286 - Cabos de potência com isolação extrudada de borracha etilenopropileno (EPR,",
+    "NBR 280:2011 - Condutores de cabos isolados - NBR 5111:1997 - Fios de cobre nus, de",
+    "NBR 5410:2004 - Instalações elétricas de baixa tensão I - Proteção e segurança.",
+    "NBR13248:2014 - Cabos de potência e condutores isolados sem cobertura, não halogenados",
+    "NBR 9513:1986 – Emendas para cabos de potência isolados para tensões até 750 V –",
+    "NBR 9511:1997 – Cabos elétricos - Raios mínimos de curvatura para instalações e diâmetros"
    ]
   },
   "151419": {
@@ -207,17 +191,16 @@
    "u": "m",
    "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1514 – FIOS E CABOS",
    "atualizacao": "12/2023",
-   "aplicacao": "Indicado as instalações industriais, comerciais, residenciais e subestação para aplicações fixa que exigem maior proteção mecânica do material isolante, incluindo boa resistência a ambientes úmidos, em alimentação de circuitos de iluminação, força, sinalização e painéis de comando, podendo ser...",
+   "aplicacao": "Indicado as instalações industriais, comerciais, residenciais e subestação para aplicações fixa que exigem maior proteção mecânica do material isolante, incluindo boa resistência a ambientes úmidos, em alimentação de circuitos de iluminação, força, sinalização e painéis de comando, podendo ser embut",
    "incluidos": "Fornecimento dos materiais e mão de obra para execução do serviço.",
    "criterio": "Por metro instalado.",
    "normas": [
-    "NBR 7286",
-    "NBR 280:2011",
-    "NBR 5111:1997",
-    "NBR 5410:2004",
-    "NBR 13248:2014",
-    "NBR 9513:1986",
-    "NBR 9511:1997"
+    "NBR 7286 - Cabos de potência com isolação extrudada de borracha etilenopropileno (EPR,",
+    "NBR 280:2011 - Condutores de cabos isolados - NBR 5111:1997 - Fios de cobre nus, de",
+    "NBR 5410:2004 - Instalações elétricas de baixa tensão I - Proteção e segurança.",
+    "NBR13248:2014 - Cabos de potência e condutores isolados sem cobertura, não halogenados",
+    "NBR 9513:1986 – Emendas para cabos de potência isolados para tensões até 750 V –",
+    "NBR 9511:1997 – Cabos elétricos - Raios mínimos de curvatura para instalações e diâmetros"
    ]
   },
   "151420": {
@@ -225,17 +208,16 @@
    "u": "m",
    "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1514 – FIOS E CABOS",
    "atualizacao": "12/2023",
-   "aplicacao": "Indicado as instalações industriais, comerciais, residenciais e subestação para aplicações fixa que exigem maior proteção mecânica do material isolante, incluindo boa resistência a ambientes úmidos, em alimentação de circuitos de iluminação, força, sinalização e painéis de comando, podendo ser...",
+   "aplicacao": "Indicado as instalações industriais, comerciais, residenciais e subestação para aplicações fixa que exigem maior proteção mecânica do material isolante, incluindo boa resistência a ambientes úmidos, em alimentação de circuitos de iluminação, força, sinalização e painéis de comando, podendo ser embut",
    "incluidos": "Fornecimento dos materiais e mão de obra para execução do serviço.",
    "criterio": "Por metro instalado.",
    "normas": [
-    "NBR 7286",
-    "NBR 280:2011",
-    "NBR 5111:1997",
-    "NBR 5410:2004",
-    "NBR 13248:2014",
-    "NBR 9513:1986",
-    "NBR 9511:1997"
+    "NBR 7286 - Cabos de potência com isolação extrudada de borracha etilenopropileno (EPR,",
+    "NBR 280:2011 - Condutores de cabos isolados - NBR 5111:1997 - Fios de cobre nus, de",
+    "NBR 5410:2004 - Instalações elétricas de baixa tensão I - Proteção e segurança",
+    "NBR13248:2014 - Cabos de potência e condutores isolados sem cobertura, não halogenados",
+    "NBR 9513:1986 – Emendas para cabos de potência isolados para tensões até 750 V –",
+    "NBR 9511:1997 – Cabos elétricos - Raios mínimos de curvatura para instalações e diâmetros"
    ]
   },
   "151421": {
@@ -243,17 +225,16 @@
    "u": "m",
    "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1514 – FIOS E CABOS",
    "atualizacao": "12/2023",
-   "aplicacao": "Indicado as instalações industriais, comerciais, residenciais e subestação para aplicações fixa que exigem maior proteção mecânica do material isolante, incluindo boa resistência a ambientes úmidos, em alimentação de circuitos de iluminação, força, sinalização e painéis de comando, podendo ser...",
+   "aplicacao": "Indicado as instalações industriais, comerciais, residenciais e subestação para aplicações fixa que exigem maior proteção mecânica do material isolante, incluindo boa resistência a ambientes úmidos, em alimentação de circuitos de iluminação, força, sinalização e painéis de comando, podendo ser embut",
    "incluidos": "Fornecimento dos materiais e mão de obra para execução do serviço.",
    "criterio": "Por metro instalado.",
    "normas": [
-    "NBR 7286",
-    "NBR 280:2011",
-    "NBR 5111:1997",
-    "NBR 5410:2004",
-    "NBR 13248:2014",
-    "NBR 9513:1986",
-    "NBR 9511:1997"
+    "NBR 7286 - Cabos de potência com isolação extrudada de borracha etilenopropileno (EPR,",
+    "NBR 280:2011 - Condutores de cabos isolados - NBR 5111:1997 - Fios de cobre nus, de",
+    "NBR 5410:2004 - Instalações elétricas de baixa tensão I - Proteção e segurança",
+    "NBR13248:2014 - Cabos de potência e condutores isolados sem cobertura, não halogenados",
+    "NBR 9513:1986 – Emendas para cabos de potência isolados para tensões até 750 V –",
+    "NBR 9511:1997 – Cabos elétricos - Raios mínimos de curvatura para instalações e diâmetros"
    ]
   },
   "151422": {
@@ -261,17 +242,16 @@
    "u": "m",
    "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1514 – FIOS E CABOS",
    "atualizacao": "12/2023",
-   "aplicacao": "Indicado as instalações industriais, comerciais, residenciais e subestação para aplicações fixa que exigem maior proteção mecânica do material isolante, incluindo boa resistência a ambientes úmidos, em alimentação de circuitos de iluminação, força, sinalização e painéis de comando, podendo ser...",
+   "aplicacao": "Indicado as instalações industriais, comerciais, residenciais e subestação para aplicações fixa que exigem maior proteção mecânica do material isolante, incluindo boa resistência a ambientes úmidos, em alimentação de circuitos de iluminação, força, sinalização e painéis de comando, podendo ser embut",
    "incluidos": "Fornecimento dos materiais e mão de obra para execução do serviço.",
    "criterio": "Por metro instalado.",
    "normas": [
-    "NBR 7286",
-    "NBR 280:2011",
-    "NBR 5111:1997",
-    "NBR 5410:2004",
-    "NBR 13248:2014",
-    "NBR 9513:1986",
-    "NBR 9511:1997"
+    "NBR 7286 - Cabos de potência com isolação extrudada de borracha etilenopropileno (EPR,",
+    "NBR 280:2011 - Condutores de cabos isolados - NBR 5111:1997 - Fios de cobre nus, de",
+    "NBR 5410:2004 - Instalações elétricas de baixa tensão I - Proteção e segurança",
+    "NBR13248:2014 - Cabos de potência e condutores isolados sem cobertura, não halogenados",
+    "NBR 9513:1986 – Emendas para cabos de potência isolados para tensões até 750 V –",
+    "NBR 9511:1997 – Cabos elétricos - Raios mínimos de curvatura para instalações e diâmetros"
    ]
   },
   "151423": {
@@ -279,17 +259,16 @@
    "u": "m",
    "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1514 – FIOS E CABOS",
    "atualizacao": "12/2023",
-   "aplicacao": "Indicado as instalações industriais, comerciais, residenciais e subestação para aplicações fixa que exigem maior proteção mecânica do material isolante, incluindo boa resistência a ambientes úmidos, em alimentação de circuitos de iluminação, força, sinalização e painéis de comando, podendo ser...",
+   "aplicacao": "Indicado as instalações industriais, comerciais, residenciais e subestação para aplicações fixa que exigem maior proteção mecânica do material isolante, incluindo boa resistência a ambientes úmidos, em alimentação de circuitos de iluminação, força, sinalização e painéis de comando, podendo ser embut",
    "incluidos": "Fornecimento dos materiais e mão de obra para execução do serviço.",
    "criterio": "Por metro instalado.",
    "normas": [
-    "NBR 7286",
-    "NBR 280:2011",
-    "NBR 5111:1997",
-    "NBR 5410:2004",
-    "NBR 13248:2014",
-    "NBR 9513:1986",
-    "NBR 9511:1997"
+    "NBR 7286 - Cabos de potência com isolação extrudada de borracha etilenopropileno (EPR,",
+    "NBR 280:2011 - Condutores de cabos isolados - NBR 5111:1997 - Fios de cobre nus, de",
+    "NBR 5410:2004 - Instalações elétricas de baixa tensão I - Proteção e segurança",
+    "NBR13248:2014 - Cabos de potência e condutores isolados sem cobertura, não halogenados",
+    "NBR 9513:1986 – Emendas para cabos de potência isolados para tensões até 750 V –",
+    "NBR 9511:1997 – Cabos elétricos - Raios mínimos de curvatura para instalações e diâmetros"
    ]
   },
   "151425": {
@@ -297,17 +276,16 @@
    "u": "m",
    "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1514 – FIOS E CABOS",
    "atualizacao": "12/2023",
-   "aplicacao": "Indicado as instalações industriais, comerciais, residenciais e subestação para aplicações fixa que exigem maior proteção mecânica do material isolante, incluindo boa resistência a ambientes úmidos, em alimentação de circuitos de iluminação, força, sinalização e painéis de comando, podendo ser...",
+   "aplicacao": "Indicado as instalações industriais, comerciais, residenciais e subestação para aplicações fixa que exigem maior proteção mecânica do material isolante, incluindo boa resistência a ambientes úmidos, em alimentação de circuitos de iluminação, força, sinalização e painéis de comando, podendo ser embut",
    "incluidos": "Fornecimento dos materiais e mão de obra para execução do serviço.",
    "criterio": "Por metro instalado.",
    "normas": [
-    "NBR 7286",
-    "NBR 280:2011",
-    "NBR 5111:1997",
-    "NBR 5410:2004",
-    "NBR 13248:2014",
-    "NBR 9513:1986",
-    "NBR 9511:1997"
+    "NBR 7286 - Cabos de potência com isolação extrudada de borracha etilenopropileno (EPR,",
+    "NBR 280:2011 - Condutores de cabos isolados - NBR 5111:1997 - Fios de cobre nus, de",
+    "NBR 5410:2004 - Instalações elétricas de baixa tensão I - Proteção e segurança",
+    "NBR13248:2014 - Cabos de potência e condutores isolados sem cobertura, não halogenados",
+    "NBR 9513:1986 – Emendas para cabos de potência isolados para tensões até 750 V –",
+    "NBR 9511:1997 – Cabos elétricos - Raios mínimos de curvatura para instalações e diâmetros"
    ]
   },
   "151426": {
@@ -315,17 +293,16 @@
    "u": "m",
    "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1514 – FIOS E CABOS",
    "atualizacao": "12/2023",
-   "aplicacao": "Indicado as instalações industriais, comerciais, residenciais e subestação para aplicações fixa que exigem maior proteção mecânica do material isolante, incluindo boa resistência a ambientes úmidos, em alimentação de circuitos de iluminação, força, sinalização e painéis de comando, podendo ser...",
+   "aplicacao": "Indicado as instalações industriais, comerciais, residenciais e subestação para aplicações fixa que exigem maior proteção mecânica do material isolante, incluindo boa resistência a ambientes úmidos, em alimentação de circuitos de iluminação, força, sinalização e painéis de comando, podendo ser embut",
    "incluidos": "Fornecimento dos materiais e mão de obra para execução do serviço.",
    "criterio": "Por metro instalado.",
    "normas": [
-    "NBR 7286",
-    "NBR 280:2011",
-    "NBR 5111:1997",
-    "NBR 5410:2004",
-    "NBR 13248:2014",
-    "NBR 9513:1986",
-    "NBR 9511:1997"
+    "NBR 7286 - Cabos de potência com isolação extrudada de borracha etilenopropileno (EPR,",
+    "NBR 280:2011 - Condutores de cabos isolados - NBR 5111:1997 - Fios de cobre nus, de",
+    "NBR 5410:2004 - Instalações elétricas de baixa tensão I - Proteção e segurança",
+    "NBR13248:2014 - Cabos de potência e condutores isolados sem cobertura, não halogenados",
+    "NBR 9513:1986 – Emendas para cabos de potência isolados para tensões até 750 V –",
+    "NBR 9511:1997 – Cabos elétricos - Raios mínimos de curvatura para instalações e diâmetros"
    ]
   },
   "151427": {
@@ -333,17 +310,16 @@
    "u": "m",
    "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1514 – FIOS E CABOS",
    "atualizacao": "12/2023",
-   "aplicacao": "Indicado as instalações industriais, comerciais, residenciais e subestação para aplicações fixa que exigem maior proteção mecânica do material isolante, incluindo boa resistência a ambientes úmidos, em alimentação de circuitos de iluminação, força, sinalização e painéis de comando, podendo ser...",
+   "aplicacao": "Indicado as instalações industriais, comerciais, residenciais e subestação para aplicações fixa que exigem maior proteção mecânica do material isolante, incluindo boa resistência a ambientes úmidos, em alimentação de circuitos de iluminação, força, sinalização e painéis de comando, podendo ser embut",
    "incluidos": "Fornecimento dos materiais e mão de obra para execução do serviço.",
    "criterio": "Por metro instalado.",
    "normas": [
-    "NBR 7286",
-    "NBR 280:2011",
-    "NBR 5111:1997",
-    "NBR 5410:2004",
-    "NBR 13248:2014",
-    "NBR 9513:1986",
-    "NBR 9511:1997"
+    "NBR 7286 - Cabos de potência com isolação extrudada de borracha etilenopropileno (EPR,",
+    "NBR 280:2011 - Condutores de cabos isolados - NBR 5111:1997 - Fios de cobre nus, de",
+    "NBR 5410:2004 - Instalações elétricas de baixa tensão I - Proteção e segurança",
+    "NBR13248:2014 - Cabos de potência e condutores isolados sem cobertura, não halogenados",
+    "NBR 9513:1986 – Emendas para cabos de potência isolados para tensões até 750 V –",
+    "NBR 9511:1997 – Cabos elétricos - Raios mínimos de curvatura para instalações e diâmetros"
    ]
   },
   "151428": {
@@ -351,17 +327,16 @@
    "u": "m",
    "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1514 – FIOS E CABOS",
    "atualizacao": "12/2023",
-   "aplicacao": "Indicado as instalações industriais, comerciais, residenciais e subestação para aplicações fixa que exigem maior proteção mecânica do material isolante, incluindo boa resistência a ambientes úmidos, em alimentação de circuitos de iluminação, força, sinalização e painéis de comando, podendo ser...",
+   "aplicacao": "Indicado as instalações industriais, comerciais, residenciais e subestação para aplicações fixa que exigem maior proteção mecânica do material isolante, incluindo boa resistência a ambientes úmidos, em alimentação de circuitos de iluminação, força, sinalização e painéis de comando, podendo ser embut",
    "incluidos": "Fornecimento dos materiais e mão de obra para execução do serviço.",
    "criterio": "Por metro instalado.",
    "normas": [
-    "NBR 7286",
-    "NBR 280:2011",
-    "NBR 5111:1997",
-    "NBR 5410:2004",
-    "NBR 13248:2014",
-    "NBR 9513:1986",
-    "NBR 9511:1997"
+    "NBR 7286 - Cabos de potência com isolação extrudada de borracha etilenopropileno (EPR,",
+    "NBR 280:2011 - Condutores de cabos isolados - NBR 5111:1997 - Fios de cobre nus, de",
+    "NBR 5410:2004 - Instalações elétricas de baixa tensão I - Proteção e segurança",
+    "NBR13248:2014 - Cabos de potência e condutores isolados sem cobertura, não halogenados",
+    "NBR 9513:1986 – Emendas para cabos de potência isolados para tensões até 750 V –",
+    "NBR 9511:1997 – Cabos elétricos - Raios mínimos de curvatura para instalações e diâmetros"
    ]
   },
   "151429": {
@@ -369,16 +344,146 @@
    "u": "m",
    "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1514 – FIOS E CABOS",
    "atualizacao": "12/2023",
-   "aplicacao": "Indicado as instalações industriais, comerciais, residenciais e subestação para aplicações fixa que exigem maior proteção mecânica do material isolante, incluindo boa resistência a ambientes úmidos, em alimentação de circuitos de iluminação, força, sinalização e painéis de comando, podendo ser...",
+   "aplicacao": "Indicado as instalações industriais, comerciais, residenciais e subestação para aplicações fixa que exigem maior proteção mecânica do material isolante, incluindo boa resistência a ambientes úmidos, em alimentação de circuitos de iluminação, força, sinalização e painéis de comando, podendo ser embut",
    "incluidos": "Fornecimento dos materiais e mão de obra para execução do serviço.",
    "criterio": "Por metro instalado.",
    "normas": [
-    "NBR 7286",
-    "NBR 280:2011",
-    "NBR 5111:1997",
-    "NBR 5410:2004",
-    "NBR 13248:2014",
-    "NBR 9513:1986"
+    "NBR 7286 - Cabos de potência com isolação extrudada de borracha etilenopropileno (EPR,",
+    "NBR 280:2011 - Condutores de cabos isolados - NBR 5111:1997 - Fios de cobre nus, de",
+    "NBR 5410:2004 - Instalações elétricas de baixa tensão I - Proteção e segurança",
+    "NBR13248:2014 - Cabos de potência e condutores isolados sem cobertura, não halogenados",
+    "NBR 9513:1986 – Emendas para cabos de potência isolados para tensões até 750 V –",
+    "NBR 9511:1997 – Cabos elétricos - Raios mínimos de curvatura para instalações e diâmetros"
+   ]
+  },
+  "151430": {
+   "d": "Cabo de cobre termoplástico (PVC) flexível isolado 0,60/1kV, antichama, HEPR 90ºC – 150,0mm2",
+   "u": "m",
+   "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1514 – FIOS E CABOS",
+   "atualizacao": "12/2023",
+   "aplicacao": "Indicado as instalações industriais, comerciais, residenciais e subestação para aplicações fixa que exigem maior proteção mecânica do material isolante, incluindo boa resistência a ambientes úmidos, em alimentação de circuitos de iluminação, força, sinalização e painéis de comando, podendo ser embut",
+   "incluidos": "Fornecimento dos materiais e mão de obra para execução do serviço.",
+   "criterio": "Por metro instalado.",
+   "normas": [
+    "NBR 7286 - Cabos de potência com isolação extrudada de borracha etilenopropileno (EPR,",
+    "NBR 280:2011 - Condutores de cabos isolados - NBR 5111:1997 - Fios de cobre nus, de",
+    "NBR 5410:2004 - Instalações elétricas de baixa tensão I - Proteção e segurança",
+    "NBR13248:2014 - Cabos de potência e condutores isolados sem cobertura, não halogenados",
+    "NBR 9513:1986 – Emendas para cabos de potência isolados para tensões até 750 V –",
+    "NBR 9511:1997 – Cabos elétricos - Raios mínimos de curvatura para instalações e diâmetros"
+   ]
+  },
+  "151431": {
+   "d": "Cabo de cobre termoplástico (PVC) flexível isolado 0,60/1kV, antichama, HEPR 90ºC – 185,0mm2",
+   "u": "m",
+   "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1514 – FIOS E CABOS",
+   "atualizacao": "12/2023",
+   "aplicacao": "Indicado as instalações industriais, comerciais, residenciais e subestação para aplicações fixa que exigem maior proteção mecânica do material isolante, incluindo boa resistência a ambientes úmidos, em alimentação de circuitos de iluminação, força, sinalização e painéis de comando, podendo ser embut",
+   "incluidos": "Fornecimento dos materiais e mão de obra para execução do serviço.",
+   "criterio": "Por metro instalado.",
+   "normas": [
+    "NBR 7286 - Cabos de potência com isolação extrudada de borracha etilenopropileno (EPR,",
+    "NBR 280:2011 - Condutores de cabos isolados - NBR 5111:1997 - Fios de cobre nus, de",
+    "NBR 5410:2004 - Instalações elétricas de baixa tensão I - Proteção e segurança",
+    "NBR13248:2014 - Cabos de potência e condutores isolados sem cobertura, não halogenados",
+    "NBR 9513:1986 – Emendas para cabos de potência isolados para tensões até 750 V –",
+    "NBR 9511:1997 – Cabos elétricos - Raios mínimos de curvatura para instalações e diâmetros"
+   ]
+  },
+  "151432": {
+   "d": "Cabo de cobre termoplástico (PVC) flexível isolado 0,60/1kV, antichama, HEPR 90ºC – 240,0mm2",
+   "u": "m",
+   "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1514 – FIOS E CABOS",
+   "atualizacao": "12/2023",
+   "aplicacao": "Indicado as instalações industriais, comerciais, residenciais e subestação para aplicações fixa que exigem maior proteção mecânica do material isolante, incluindo boa resistência a ambientes úmidos, em alimentação de circuitos de iluminação, força, sinalização e painéis de comando, podendo ser embut",
+   "incluidos": "Fornecimento dos materiais e mão de obra para execução do serviço.",
+   "criterio": "Por metro instalado.",
+   "normas": [
+    "NBR 7286 - Cabos de potência com isolação extrudada de borracha etilenopropileno (EPR,",
+    "NBR 280:2011 - Condutores de cabos isolados - NBR 5111:1997 - Fios de cobre nus, de",
+    "NBR 5410:2004 - Instalações elétricas de baixa tensão I - Proteção e segurança.",
+    "NBR13248:2014 - Cabos de potência e condutores isolados sem cobertura, não halogenados",
+    "NBR 9513:1986 – Emendas para cabos de potência isolados para tensões até 750 V –",
+    "NBR 9511:1997 – Cabos elétricos - Raios mínimos de curvatura para instalações e diâmetros"
+   ]
+  },
+  "151433": {
+   "d": "Cabo de cobre termoplástico (PVC/ST2) blindado isolado 8,7/15kV, XLPE 90ºC – 25,0mm2",
+   "u": "m",
+   "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1514 – FIOS E CABOS",
+   "atualizacao": "12/2023",
+   "aplicacao": "Indicado em circuitos de média tensão para entrada e/ou distribuição em instalações industriais, comerciais, residenciais e subestação para aplicações fixa que exigem maior proteção mecânica do material isolante, incluindo boa resistência a ambientes úmidos, podendo ser embutidas em eletrodutos, per",
+   "incluidos": "Fornecimento dos materiais e mão de obra para execução do serviço.",
+   "criterio": "Por metro instalado.",
+   "normas": [
+    "NBR 7287:2023 - Cabos de potência com isolação extrudada de polietileno reticulado (XLPE)",
+    "NBR 9513:1986 – Emendas para cabos de potência isolados para tensões até 750 V –",
+    "NBR 9511:1997 – Cabos elétricos - Raios mínimos de curvatura para instalações e diâmetros"
+   ]
+  },
+  "151434": {
+   "d": "Cabo de cobre termoplástico (PVC/ST2) blindado isolado 8,7/15kV, XLPE 90ºC – 35,0mm2",
+   "u": "m",
+   "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1514 – FIOS E CABOS",
+   "atualizacao": "12/2023",
+   "aplicacao": "Indicado em circuitos de média tensão para entrada e/ou distribuição em instalações industriais, comerciais, residenciais e subestação para aplicações fixa que exigem maior proteção mecânica do material isolante, incluindo boa resistência a ambientes úmidos, podendo ser embutidas em eletrodutos, per",
+   "incluidos": "Fornecimento dos materiais e mão de obra para execução do serviço.",
+   "criterio": "Por metro instalado.",
+   "normas": [
+    "NBR 7287:2023 - Cabos de potência com isolação extrudada de polietileno reticulado (XLPE)",
+    "NBR 9513:1986 – Emendas para cabos de potência isolados para tensões até 750 V –",
+    "NBR 9511:1997 – Cabos elétricos - Raios mínimos de curvatura para instalações e diâmetros"
+   ]
+  },
+  "151438": {
+   "d": "Cabo de cobre termoplástico (PVC) flexível isolado 0,60/1kV, antichama, HEPR 90ºC – 2x2,5mm2",
+   "u": "m",
+   "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1514 – FIOS E CABOS",
+   "atualizacao": "12/2023",
+   "aplicacao": "Indicado as instalações industriais, comerciais, residenciais e subestação para aplicações fixa que exigem maior proteção mecânica do material isolante, incluindo boa resistência a ambientes úmidos, em alimentação de circuitos de iluminação, força, sinalização e painéis de comando, podendo ser embut",
+   "incluidos": "Fornecimento dos materiais e mão de obra para execução do serviço.",
+   "criterio": "Por metro instalado.",
+   "normas": [
+    "NBR 7286 - Cabos de potência com isolação extrudada de borracha etilenopropileno (EPR,",
+    "NBR 280:2011 - Condutores de cabos isolados - NBR 5111:1997 - Fios de cobre nus, de",
+    "NBR 5410:2004 - Instalações elétricas de baixa tensão I - Proteção e segurança.",
+    "NBR13248:2014 - Cabos de potência e condutores isolados sem cobertura, não halogenados",
+    "NBR 9513:1986 – Emendas para cabos de potência isolados para tensões até 750 V –",
+    "NBR 9511:1997 – Cabos elétricos - Raios mínimos de curvatura para instalações e diâmetros"
+   ]
+  },
+  "151439": {
+   "d": "Cabo de cobre termoplástico (PVC) flexível isolado 0,60/1kV, antichama, HEPR 90ºC – 3x2,5mm2",
+   "u": "m",
+   "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1514 – FIOS E CABOS",
+   "atualizacao": "12/2023",
+   "aplicacao": "Indicado as instalações industriais, comerciais, residenciais e subestação para aplicações fixa que exigem maior proteção mecânica do material isolante, incluindo boa resistência a ambientes úmidos, em alimentação de circuitos de iluminação, força, sinalização e painéis de comando, podendo ser embut",
+   "incluidos": "Fornecimento dos materiais e mão de obra para execução do serviço.",
+   "criterio": "Por metro instalado.",
+   "normas": [
+    "NBR 7286 - Cabos de potência com isolação extrudada de borracha etilenopropileno (EPR,",
+    "NBR 280:2011 - Condutores de cabos isolados - NBR 5111:1997 - Fios de cobre nus, de",
+    "NBR 5410:2004 - Instalações elétricas de baixa tensão I - Proteção e segurança.",
+    "NBR13248:2014 - Cabos de potência e condutores isolados sem cobertura, não halogenados",
+    "NBR 9513:1986 – Emendas para cabos de potência isolados para tensões até 750 V –",
+    "NBR 9511:1997 – Cabos elétricos - Raios mínimos de curvatura para instalações e diâmetros"
+   ]
+  },
+  "151440": {
+   "d": "Cabo de cobre termoplástico (PVC) flexível isolado 0,60/1kV, antichama, HEPR 90ºC – 3x4,0mm2",
+   "u": "m",
+   "caderno": "15 – INSTALAÇÕES ELÉTRICAS · 1514 – FIOS E CABOS",
+   "atualizacao": "12/2023",
+   "aplicacao": "Indicado as instalações industriais, comerciais, residenciais e subestação para aplicações fixa que exigem maior proteção mecânica do material isolante, incluindo boa resistência a ambientes úmidos, em alimentação de circuitos de iluminação, força, sinalização e painéis de comando, podendo ser embut",
+   "incluidos": "Fornecimento dos materiais e mão de obra para execução do serviço.",
+   "criterio": "Por metro instalado.",
+   "normas": [
+    "NBR 7286 - Cabos de potência com isolação extrudada de borracha etilenopropileno (EPR,",
+    "NBR 280:2011 - Condutores de cabos isolados - NBR 5111:1997 - Fios de cobre nus, de",
+    "NBR 5410:2004 - Instalações elétricas de baixa tensão I - Proteção e segurança.",
+    "NBR13248:2014 - Cabos de potência e condutores isolados sem cobertura, não halogenados",
+    "NBR 9513:1986 – Emendas para cabos de potência isolados para tensões até 750 V –",
+    "NBR 9511:1997 – Cabos elétricos - Raios mínimos de curvatura para instalações e diâmetros"
    ]
   }
  }
