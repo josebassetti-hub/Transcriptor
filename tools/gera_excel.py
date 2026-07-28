@@ -60,9 +60,11 @@ r = 6
 for k, v in [("Área construída", f"{br(AREA)} m²"),
              ("Pavimentos", oj['obra']['pav']),
              ("Padrão de acabamento", oj['obra']['padrao']),
-             ("Base de preços", f"Tabela DER-ES · data-base {oj['obra'].get('data_base','')}"),
+             ("Base de preços", "DER-ES Abr/2026" + (" + SINAPI-ES 06/2026"
+              if (oj.get('itens_sinapi') or {}).get('itens') else "")),
              ("BDI adotado", f"{br(oj['totais']['bdi_pct'], 1)}%"),
              ("Nº de itens orçados (DER-ES)", len(oj['itens'])),
+             ("Nº de itens orçados (SINAPI-ES)", len((oj.get('itens_sinapi') or {}).get('itens', []))),
              ("Nº de itens do complemento", len(COMPL['itens'])),
              ("  · com preço de outra tabela", sum(1 for i in COMPL['itens']
                                                    if 'cota' not in str(i.get('fonte', 'cotação')).lower())),
@@ -75,12 +77,18 @@ r += 1
 ws.cell(row=r, column=2, value="RESUMO FINANCEIRO").font = Font(bold=True, size=12, color=TEAL); r += 1
 head(ws, r, ["", "Descrição", "Valor (R$)", "% do total", ""]); r += 1
 pbdi = br(oj['totais']['bdi_pct'], 1)
+SIN_ = oj.get('itens_sinapi')
 linhas = [("Custo direto — itens da tabela DER-ES", CD, False),
           (f"BDI {pbdi}% sobre o custo direto", CD * bdi, False),
-          ("SUBTOTAL DER-ES (com BDI)", TOT_DER, True),
-          ("Complemento — itens a cotar (custo direto)", COMPL['custo_direto'], False),
-          (f"BDI {pbdi}% sobre o complemento", COMPL['custo_direto'] * bdi, False),
-          ("SUBTOTAL COMPLEMENTO (com BDI)", COMPL['com_bdi'], True)]
+          ("SUBTOTAL DER-ES (com BDI)", TOT_DER, True)]
+if SIN_ and SIN_['itens']:
+    linhas += [("Custo direto — itens da tabela SINAPI-ES", SIN_['custo_direto'], False),
+               (f"BDI {pbdi}% sobre os itens SINAPI", SIN_['custo_direto'] * bdi, False),
+               ("SUBTOTAL SINAPI (com BDI)", SIN_['com_bdi'], True)]
+if COMPL['itens']:
+    linhas += [("Complemento — itens a cotar (custo direto)", COMPL['custo_direto'], False),
+               (f"BDI {pbdi}% sobre o complemento", COMPL['custo_direto'] * bdi, False),
+               ("SUBTOTAL COMPLEMENTO (com BDI)", COMPL['com_bdi'], True)]
 for d, v, b in linhas:
     ws.cell(row=r, column=2, value=d).font = Font(bold=b, size=10)
     c = ws.cell(row=r, column=3, value=v); c.number_format = RS; c.font = Font(bold=b, size=10)
@@ -105,10 +113,12 @@ head(ws, r, ["", "Capítulo", "Total c/ BDI (R$)", "% do total", ""]); r += 1
 cap_tot = {}
 for it in oj['itens']:
     cap_tot[it['c'][:2]] = cap_tot.get(it['c'][:2], 0) + it['total'] * (1 + bdi)
-cap_tot['— COTAR'] = COMPL['com_bdi']
+if COMPL['com_bdi']: cap_tot['— COTAR'] = COMPL['com_bdi']
+if oj.get('itens_sinapi'): cap_tot['— SINAPI'] = oj['itens_sinapi']['com_bdi']
 ini = r
 for k in sorted(cap_tot, key=lambda x: -cap_tot[x]):
-    nome = "Complemento a cotar (mercado)" if k == '— COTAR' else f"{k} · {CAPS.get(k, '')}"
+    nome = {"— COTAR": "Complemento a cotar (mercado)",
+            "— SINAPI": "Itens da tabela SINAPI-ES"}.get(k, f"{k} · {CAPS.get(k, '')}")
     ws.cell(row=r, column=2, value=nome).font = Font(size=9)
     c = ws.cell(row=r, column=3, value=cap_tot[k]); c.number_format = RS; c.font = Font(size=9)
     c = ws.cell(row=r, column=4, value=cap_tot[k] / TOT_GERAL); c.number_format = PCT; c.font = Font(size=9)
@@ -130,9 +140,12 @@ ws.merge_cells(start_row=r, start_column=2, end_row=r + 2, end_column=4)
 ws.cell(row=r, column=2).alignment = Alignment(wrap_text=True, vertical='top')
 
 # ─────────────── 2. PLANILHA ORÇAMENTÁRIA ───────────────
-ws = wb.create_sheet("2. Planilha DER-ES")
+tem_sin = bool((oj.get('itens_sinapi') or {}).get('itens'))
+ws = wb.create_sheet("2. Planilha orçamentária" if tem_sin else "2. Planilha DER-ES")
 widths(ws, [10, 62, 7, 12, 14, 14, 16])
-ws['A1'] = "PLANILHA ORÇAMENTÁRIA — TABELA DER-ES"; ws['A1'].font = Font(bold=True, size=13, color=TEAL)
+ws['A1'] = ("PLANILHA ORÇAMENTÁRIA — TABELAS DER-ES (Abr/2026) E SINAPI-ES (06/2026)" if tem_sin
+            else "PLANILHA ORÇAMENTÁRIA — TABELA DER-ES")
+ws['A1'].font = Font(bold=True, size=13, color=TEAL)
 head(ws, 3, ["Código", "Especificação do serviço", "Und", "Quant.", "PU s/ BDI", "PU c/ BDI", "Total c/ BDI"])
 ws.freeze_panes = "A4"
 por_cap = {}
@@ -156,47 +169,132 @@ for cap in sorted(por_cap):
             if col in (5, 6, 7): c.number_format = RS
             if col == 2: c.alignment = Alignment(wrap_text=True, vertical='top')
         r += 1
-ws.cell(row=r, column=2, value="TOTAL — ITENS DER-ES (com BDI)").font = Font(bold=True, size=11)
+ws.cell(row=r, column=2, value="SUBTOTAL — ITENS DER-ES (com BDI)").font = Font(bold=True, size=11)
 c = ws.cell(row=r, column=7, value=TOT_DER); c.number_format = RS; c.font = Font(bold=True, size=11)
 for col in range(1, 8): ws.cell(row=r, column=col).fill = PatternFill("solid", fgColor=TEAL_L)
-
-# ─────────────── 3. COMPLEMENTO A COTAR ───────────────
-ws = wb.create_sheet("3. Complemento a cotar")
-widths(ws, [50, 10, 6, 14, 16, 16, 15, 15, 26, 52])
-ws['A1'] = "COMPLEMENTO — ITENS SEM PREÇO NA TABELA DER-ES"; ws['A1'].font = Font(bold=True, size=13, color=LARANJA)
-ws['A2'] = COMPL['nota']; ws['A2'].font = Font(italic=True, size=9, color="475569")
-ws.merge_cells('A2:J2'); ws.row_dimensions[2].height = 30
-ws['A2'].alignment = Alignment(wrap_text=True, vertical='top')
-head(ws, 4, ["Item", "Quant.", "Und", "Preço unit. (R$)", "Total s/ BDI", "Total c/ BDI",
-             "Com preço de tabela (R$/un)", "A cotar (R$/un)", "Fonte do preço", "Observação"], fill=LARANJA)
-ws.freeze_panes = "A5"
-r = 5
-for it in sorted(COMPL['itens'], key=lambda x: -x['total']):
-    fonte = it.get('fonte', 'Cotação de mercado')
-    mo = it.get('mo_oficial', 0)
-    vals = [it['descricao'], it['qtd'], it['und'], it['pu'], it['total'], it['total'] * (1 + bdi),
-            mo or None, (it.get('material_cotar') or None) if mo else it['pu'], fonte, it.get('obs', '')]
-    for col, v in enumerate(vals, start=1):
-        c = ws.cell(row=r, column=col, value=v); c.border = BORDER; c.font = Font(size=9)
-        if col == 2: c.number_format = NUM
-        if col in (4, 5, 6, 7, 8): c.number_format = RS
-        if col in (1, 10): c.alignment = Alignment(wrap_text=True, vertical='top')
-        if col == 7 and mo:
-            c.fill = PatternFill("solid", fgColor="BBF7D0"); c.font = Font(bold=True, size=9)
-        if col == 9 and 'SINAPI' in str(fonte):
-            c.fill = PatternFill("solid", fgColor="BBF7D0"); c.font = Font(bold=True, size=9)
-    r += 1
-ws.cell(row=r, column=1, value="SUBTOTAL COMPLEMENTO").font = Font(bold=True, size=11)
-for col, v in [(5, COMPL['custo_direto']), (6, COMPL['com_bdi'])]:
-    c = ws.cell(row=r, column=col, value=v); c.number_format = RS; c.font = Font(bold=True, size=11)
-for col in range(1, 11): ws.cell(row=r, column=col).fill = PatternFill("solid", fgColor="FED7AA")
-if COMPL.get('mo_oficial_total'):
-    ws.cell(row=r + 1, column=1, value="dos quais JÁ TÊM preço oficial de tabela (composição completa ou mão de obra):").font = Font(bold=True, size=10)
-    c = ws.cell(row=r + 1, column=5, value=COMPL['mo_oficial_total']); c.number_format = RS
-    c.font = Font(bold=True, size=10, color="15803D")
 r += 2
-ws.cell(row=r, column=1, value="RECOMENDAÇÃO: solicitar cotação de 3 fornecedores para os 5 maiores itens desta aba — "
-        "concentram a maior parte da incerteza do orçamento.").font = Font(italic=True, size=9, color="92400E")
+
+SINAPI = oj.get('itens_sinapi')
+if SINAPI and SINAPI['itens']:
+    ws.cell(row=r, column=1, value="SINAPI").font = Font(bold=True, color="FFFFFF", size=10)
+    ws.cell(row=r, column=2, value=SINAPI['fonte']).font = Font(bold=True, color="FFFFFF", size=10)
+    c = ws.cell(row=r, column=7, value=SINAPI['com_bdi']); c.number_format = RS
+    c.font = Font(bold=True, color="FFFFFF", size=10)
+    for col in range(1, 8):
+        ws.cell(row=r, column=col).fill = PatternFill("solid", fgColor="15803D")
+        ws.cell(row=r, column=col).border = BORDER
+    r += 1
+    for it in sorted(SINAPI['itens'], key=lambda x: -x['total']):
+        vals = [it['c'], it['d'], it['u'], it['qtd'], it['pu'], it['pu'] * (1 + bdi), it['total'] * (1 + bdi)]
+        for col, v in enumerate(vals, start=1):
+            c = ws.cell(row=r, column=col, value=v); c.border = BORDER; c.font = Font(size=9)
+            if col == 4: c.number_format = NUM
+            if col in (5, 6, 7): c.number_format = RS
+            if col == 2: c.alignment = Alignment(wrap_text=True, vertical='top')
+        r += 1
+    r += 1
+    ws.cell(row=r, column=2, value="TOTAL GERAL DA OBRA (DER-ES + SINAPI, com BDI)").font = Font(bold=True, size=12)
+    c = ws.cell(row=r, column=7, value=TOT_GERAL); c.number_format = RS; c.font = Font(bold=True, size=12)
+    for col in range(1, 8): ws.cell(row=r, column=col).fill = PatternFill("solid", fgColor="FDE68A")
+
+# ─────────────── 3. COMPLEMENTO / SUBSTITUIÇÕES ───────────────
+SUBS = oj.get('substituicoes')
+if SUBS:
+    ws = wb.create_sheet("3. Substituições")
+    widths(ws, [38, 15, 15, 9, 12, 11, 6, 14, 46, 56])
+    ws['A1'] = "SUBSTITUIÇÃO POR ITENS DE TABELA REFERENCIAL — GRAU DE SIMILARIDADE"
+    ws['A1'].font = Font(bold=True, size=13, color=LARANJA)
+    ws['A2'] = SUBS['nota']; ws['A2'].font = Font(italic=True, size=9, color="475569")
+    ws.merge_cells('A2:J2'); ws.row_dimensions[2].height = 56
+    ws['A2'].alignment = Alignment(wrap_text=True, vertical='top')
+    head(ws, 4, ["Item como especificado no projeto", "Valor de mercado (R$)",
+                 "Valor pela tabela (R$)", "% coberto", "Grau", "Tabela", "Código",
+                 "Quant. × PU", "Serviço de tabela adotado", "Justificativa da similaridade"],
+         fill=LARANJA)
+    ws.freeze_panes = "A5"
+    COR_G = {"ALTO": "BBF7D0", "MÉDIO": "FEF3C7", "BAIXO": "FEE2E2"}
+    ordem_g = {"ALTO": 0, "MÉDIO": 1, "BAIXO": 2}
+    r = 5
+    for it in sorted(SUBS['itens'], key=lambda x: (ordem_g.get(x['grau'], 9), -x['cotado'])):
+        ini_r = r
+        for j, comp in enumerate(it['componentes']):
+            if j == 0:
+                for col, v in [(1, it['item']), (2, it['cotado']), (3, it['substituido']),
+                               (4, it['substituido'] / it['cotado']), (5, it['grau']),
+                               (9, ''), (10, it['justificativa'])]:
+                    c = ws.cell(row=r, column=col, value=v)
+                    if col in (2, 3): c.number_format = RS
+                    if col == 4: c.number_format = PCT
+                    if col == 5:
+                        c.fill = PatternFill("solid", fgColor=COR_G.get(it['grau'], "FFFFFF"))
+                        c.font = Font(bold=True, size=9)
+                        c.alignment = Alignment(horizontal='center', vertical='center')
+                    if col in (1, 10): c.alignment = Alignment(wrap_text=True, vertical='top')
+            for col, v in [(6, comp['tabela']), (7, comp['c']),
+                           (8, f"{br(comp['qtd'])} {comp['u']} × {br(comp['pu'])}"),
+                           (9, comp['d'])]:
+                c = ws.cell(row=r, column=col, value=v); c.font = Font(size=9)
+                if col == 9: c.alignment = Alignment(wrap_text=True, vertical='top')
+            for col in range(1, 11):
+                ws.cell(row=r, column=col).border = BORDER
+                if not ws.cell(row=r, column=col).font.size: ws.cell(row=r, column=col).font = Font(size=9)
+            r += 1
+        if r - ini_r > 1:
+            for col in (1, 2, 3, 4, 5, 10):
+                ws.merge_cells(start_row=ini_r, start_column=col, end_row=r - 1, end_column=col)
+    ws.cell(row=r, column=1, value="TOTAL DOS ITENS SUBSTITUÍDOS").font = Font(bold=True, size=11)
+    for col, v in [(2, SUBS['total_cotado']), (3, SUBS['total_substituido'])]:
+        c = ws.cell(row=r, column=col, value=v); c.number_format = RS; c.font = Font(bold=True, size=11)
+    c = ws.cell(row=r, column=4, value=SUBS['total_substituido'] / SUBS['total_cotado'])
+    c.number_format = PCT; c.font = Font(bold=True, size=11)
+    for col in range(1, 11): ws.cell(row=r, column=col).fill = PatternFill("solid", fgColor="FED7AA")
+    r += 2
+    ws.cell(row=r, column=1, value=(
+        f"DIFERENÇA DE ESCOPO: R$ {br(SUBS['diferenca'])} de custo direto "
+        f"(R$ {br(SUBS['diferenca'] * (1 + bdi))} com BDI). Este valor NÃO desaparece — é o que o cliente "
+        "precisará cobrir com recursos próprios para executar os acabamentos como projetados. A planilha "
+        "codificada atende à exigência do agente financeiro; o memorial descritivo deve manter a "
+        "especificação real.")).font = Font(bold=True, size=10, color="B45309")
+    ws.merge_cells(start_row=r, start_column=1, end_row=r + 3, end_column=10)
+    ws.cell(row=r, column=1).alignment = Alignment(wrap_text=True, vertical='top')
+
+elif COMPL['itens']:
+    ws = wb.create_sheet("3. Complemento a cotar")
+    widths(ws, [50, 10, 6, 14, 16, 16, 15, 15, 26, 52])
+    ws['A1'] = "COMPLEMENTO — ITENS SEM PREÇO NA TABELA DER-ES"; ws['A1'].font = Font(bold=True, size=13, color=LARANJA)
+    ws['A2'] = COMPL['nota']; ws['A2'].font = Font(italic=True, size=9, color="475569")
+    ws.merge_cells('A2:J2'); ws.row_dimensions[2].height = 30
+    ws['A2'].alignment = Alignment(wrap_text=True, vertical='top')
+    head(ws, 4, ["Item", "Quant.", "Und", "Preço unit. (R$)", "Total s/ BDI", "Total c/ BDI",
+                 "Com preço de tabela (R$/un)", "A cotar (R$/un)", "Fonte do preço", "Observação"], fill=LARANJA)
+    ws.freeze_panes = "A5"
+    r = 5
+    for it in sorted(COMPL['itens'], key=lambda x: -x['total']):
+        fonte = it.get('fonte', 'Cotação de mercado')
+        mo = it.get('mo_oficial', 0)
+        vals = [it['descricao'], it['qtd'], it['und'], it['pu'], it['total'], it['total'] * (1 + bdi),
+                mo or None, (it.get('material_cotar') or None) if mo else it['pu'], fonte, it.get('obs', '')]
+        for col, v in enumerate(vals, start=1):
+            c = ws.cell(row=r, column=col, value=v); c.border = BORDER; c.font = Font(size=9)
+            if col == 2: c.number_format = NUM
+            if col in (4, 5, 6, 7, 8): c.number_format = RS
+            if col in (1, 10): c.alignment = Alignment(wrap_text=True, vertical='top')
+            if col == 7 and mo:
+                c.fill = PatternFill("solid", fgColor="BBF7D0"); c.font = Font(bold=True, size=9)
+            if col == 9 and 'SINAPI' in str(fonte):
+                c.fill = PatternFill("solid", fgColor="BBF7D0"); c.font = Font(bold=True, size=9)
+        r += 1
+    ws.cell(row=r, column=1, value="SUBTOTAL COMPLEMENTO").font = Font(bold=True, size=11)
+    for col, v in [(5, COMPL['custo_direto']), (6, COMPL['com_bdi'])]:
+        c = ws.cell(row=r, column=col, value=v); c.number_format = RS; c.font = Font(bold=True, size=11)
+    for col in range(1, 11): ws.cell(row=r, column=col).fill = PatternFill("solid", fgColor="FED7AA")
+    if COMPL.get('mo_oficial_total'):
+        ws.cell(row=r + 1, column=1, value="dos quais JÁ TÊM preço oficial de tabela (composição completa ou mão de obra):").font = Font(bold=True, size=10)
+        c = ws.cell(row=r + 1, column=5, value=COMPL['mo_oficial_total']); c.number_format = RS
+        c.font = Font(bold=True, size=10, color="15803D")
+    r += 2
+    ws.cell(row=r, column=1, value="RECOMENDAÇÃO: solicitar cotação de 3 fornecedores para os 5 maiores itens desta aba — "
+            "concentram a maior parte da incerteza do orçamento.").font = Font(italic=True, size=9, color="92400E")
 
 # ─────────────── 4. CURVA ABC ───────────────
 ws = wb.create_sheet("4. Curva ABC")
@@ -206,6 +304,8 @@ head(ws, 3, ["Código", "Item", "Total c/ BDI", "% do total", "% acum.", "Classe
 ws.freeze_panes = "A4"
 todos = [{"c": i['c'], "d": i['d'], "t": i['total'] * (1 + bdi)} for i in oj['itens']]
 todos += [{"c": "COTAR", "d": i['descricao'], "t": i['total'] * (1 + bdi)} for i in COMPL['itens']]
+todos += [{"c": i['c'], "d": "[SINAPI] " + i['d'], "t": i['total'] * (1 + bdi)}
+          for i in (oj.get('itens_sinapi') or {}).get('itens', [])]
 todos.sort(key=lambda x: -x['t'])
 r = 4; ac = 0
 for it in todos:

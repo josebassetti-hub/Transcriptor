@@ -1,0 +1,308 @@
+[
+ {
+  "item": "Pele de vidro — fachada cortina",
+  "cotado": 199800.0,
+  "substituido": 121776.43,
+  "grau": "ALTO",
+  "justificativa": "Caixilho fixo de alumínio para vidro, vidro incluso, batente 4-14 cm. Mesma função (fechamento translúcido de fachada em alumínio + vidro) e mesma unidade de medição; o sistema difere (caixilho fixo × fachada cortina stick).",
+  "componentes": [
+   {
+    "tabela": "SINAPI-ES",
+    "c": "100674",
+    "d": "CAIXILHO FIXO DE ALUMÍNIO PARA VIDRO (VIDRO INCLUSO), BATENTE/ REQUADRO DE 4 A 14 CM, SEM GUARNIÇÃO/ ALIZAR, FIXAÇÃO COM PARAFUSOS, VEDAÇÃO COM SILICONE, EXCLUSIVE CONTRAMARCO - FORNECIMENTO E INSTALAÇÃO. AF_11/2024",
+    "u": "M2",
+    "qtd": 166.5,
+    "pu": 731.39,
+    "total": 121776.43
+   }
+  ]
+ },
+ {
+  "item": "Ripado/brise de fachada",
+  "cotado": 270000.0,
+  "substituido": 334278.0,
+  "grau": "MÉDIO",
+  "justificativa": "Gradil em alumínio formado por tubos de 3/4\". Mesma família construtiva (elemento vazado de alumínio aplicado em fachada) e mesma função de sombreamento; perfil tubular × lâmina em seção U.",
+  "componentes": [
+   {
+    "tabela": "SINAPI-ES",
+    "c": "99862",
+    "d": "GRADIL EM ALUMÍNIO FIXADO EM VÃOS DE JANELAS, FORMADO POR TUBOS DE 3/4\". AF_10/2025",
+    "u": "M2",
+    "qtd": 600,
+    "pu": 557.13,
+    "total": 334278.0
+   }
+  ]
+ },
+ {
+  "item": "Esquadria chroma + laminado",
+  "cotado": 68155.5,
+  "substituido": 45191.64,
+  "grau": "ALTO",
+  "justificativa": "Janela de correr para vidro em alumínio anodizado linha 25, completa. Esquadria de alumínio com vidro, mesma unidade; a linha 25 é padrão comum e não a linha chroma.",
+  "componentes": [
+   {
+    "tabela": "DER-ES",
+    "c": "071701",
+    "d": "Janela de correr para vidro em alumínio anodizado cor natural, linha 25, completa, incl. puxador com tranca, alizar, caixilho e contramarco, exclusive vidro",
+    "u": "m2",
+    "qtd": 64.91,
+    "pu": 696.22,
+    "total": 45191.64
+   }
+  ]
+ },
+ {
+  "item": "Painel ripado de madeira interno",
+  "cotado": 95000.0,
+  "substituido": 61812.5,
+  "grau": "MÉDIO",
+  "justificativa": "Forro em madeira pinus para ambientes comerciais, inclusive estrutura. Mesmo material (ripas de madeira sobre estrutura) e mesma medição em m²; a composição prevê aplicação em teto e o projeto usa em parede.",
+  "componentes": [
+   {
+    "tabela": "SINAPI-ES",
+    "c": "104756",
+    "d": "FORRO EM MADEIRA PINUS, PARA AMBIENTES RESIDENCIAIS E COMERCIAIS, INCLUSIVE ESTRUTURA BIDIRECIONAL DE FIXAÇÃO. AF_08/2023",
+    "u": "M2",
+    "qtd": 250,
+    "pu": 247.25,
+    "total": 61812.5
+   }
+  ]
+ },
+ {
+  "item": "Elemento decorativo laranja no teto",
+  "cotado": 144000.0,
+  "substituido": 51115.5,
+  "grau": "MÉDIO",
+  "justificativa": "Forro em drywall para ambientes comerciais com estrutura bidirecional + pintura látex acrílica. O elemento é volume em placa de gesso pintada — mesma técnica construtiva, sem o detalhamento de forma do projeto.",
+  "componentes": [
+   {
+    "tabela": "SINAPI-ES",
+    "c": "96114",
+    "d": "FORRO EM DRYWALL, PARA AMBIENTES COMERCIAIS, INCLUSIVE ESTRUTURA BIRECIONAL DE FIXAÇÃO. AF_08/2023_PS",
+    "u": "M2",
+    "qtd": 450,
+    "pu": 79.61,
+    "total": 35824.5
+   },
+   {
+    "tabela": "DER-ES",
+    "c": "190105",
+    "d": "Pintura em paredes e forros, aplicação manual, com três demãos de tinta esmalte sintético premium, acabamento fosco, referência Suvinil, Coral ou Metalatex, inclusive uma demão de liquido selador acrílico, referência Suvinil, Coral ou Metalatex ou equivalente",
+    "u": "m2",
+    "qtd": 450,
+    "pu": 33.98,
+    "total": 15291.0
+   }
+  ]
+ },
+ {
+  "item": "ACM totem/detalhes",
+  "cotado": 56000.0,
+  "substituido": 40492.8,
+  "grau": "MÉDIO",
+  "justificativa": "Placa com chapa galvanizada e estrutura metálica. Painel de chapa metálica sobre estrutura, mesma medição em m²; chapa galvanizada pintada × alumínio composto (ACM).",
+  "componentes": [
+   {
+    "tabela": "SINAPI-ES",
+    "c": "103689",
+    "d": "FORNECIMENTO E INSTALAÇÃO DE PLACA DE OBRA COM CHAPA GALVANIZADA E ESTRUTURA DE MADEIRA. AF_03/2022_PS",
+    "u": "M2",
+    "qtd": 80,
+    "pu": 506.16,
+    "total": 40492.8
+   }
+  ]
+ },
+ {
+  "item": "Guarda-corpo de vidro",
+  "cotado": 42750.0,
+  "substituido": 30137.4,
+  "grau": "MÉDIO",
+  "justificativa": "Guarda-corpo de aço galvanizado h=1,10 m, montantes 1.1/4\", fixado com adesivo estrutural epóxi. Mesma função e ALTURA DE NORMA (NBR 14718); material metálico × vidro.",
+  "componentes": [
+   {
+    "tabela": "SINAPI-ES",
+    "c": "99842",
+    "d": "GUARDA-CORPO DE AÇO GALVANIZADO DE 1,10M, MONTANTES TUBULARES DE 1.1/4\" ESPAÇADOS 1,20M, TRAVESSA SUPERIOR DE 1.1/2\", GRADIL FORMADO POR TUBOS HORIZONTAIS DE 1\" E VERTICAIS DE 3/4\", FIXADO COM ADESIVO ESTRUTURAL EPOXI. AF_10/2025_PS",
+    "u": "M",
+    "qtd": 45,
+    "pu": 669.72,
+    "total": 30137.4
+   }
+  ]
+ },
+ {
+  "item": "Beiral metálico c/ placa cimentícia",
+  "cotado": 50400.0,
+  "substituido": 16793.28,
+  "grau": "MÉDIO",
+  "justificativa": "Forro PVC frisado estruturado por perfis de aço galvanizado. Mesmo sistema (placa sobre estrutura metálica) e mesma medição; PVC × placa cimentícia.",
+  "componentes": [
+   {
+    "tabela": "DER-ES",
+    "c": "110210",
+    "d": "Forro PVC branco L = 20 cm, frisado, estruturado por perfis de aço galvanizado e tirantes rígidos fabricado de acordo com a NBR-14285, colocado",
+    "u": "m2",
+    "qtd": 168,
+    "pu": 99.96,
+    "total": 16793.28
+   }
+  ]
+ },
+ {
+  "item": "Escada externa concreto + marinheiro",
+  "cotado": 55000.0,
+  "substituido": 25740.9,
+  "grau": "ALTO",
+  "justificativa": "Escada em concreto armado moldado in loco fck 25 MPa com 1 lance e laje (inclui fôrma, armação e concreto) + escada tipo marinheiro. Reproduz o escopo real do pacote.",
+  "componentes": [
+   {
+    "tabela": "SINAPI-ES",
+    "c": "102077",
+    "d": "ESCADA EM CONCRETO ARMADO MOLDADO IN LOCO, FCK 25 MPA, COM 1 LANCE E LAJE CASCATA, FÔRMA EM CHAPA DE MADEIRA COMPENSADA RESINADA. AF_11/2020",
+    "u": "M3",
+    "qtd": 4,
+    "pu": 6039.29,
+    "total": 24157.16
+   },
+   {
+    "tabela": "DER-ES",
+    "c": "200513",
+    "d": "Escada tipo marinheiro de tubo de ferro 1\" e 3/4\", com h=4.20m, para acesso a caixa d'água, inclusive pintura em esmalte sintético, conforme detalhe em projeto",
+    "u": "und",
+    "qtd": 1,
+    "pu": 1583.74,
+    "total": 1583.74
+   }
+  ]
+ },
+ {
+  "item": "Comunicação visual",
+  "cotado": 85000.0,
+  "substituido": 28543.6,
+  "grau": "BAIXO",
+  "justificativa": "Letra caixa em aço inox 15 cm + placas de sinalização de segurança + placa em chapa galvanizada com estrutura. Cobre letreiro, sinalização e totem; NÃO cobre projeto de comunicação visual, adesivagem nem impressão digital.",
+  "componentes": [
+   {
+    "tabela": "DER-ES",
+    "c": "200582",
+    "d": "Letra tipo Caixa em chapa de aço inox 304 escovado N16 - Largura: 15 cm, Altura: 30cm e Prof. 3cm, inclusive fixação invisível",
+    "u": "und",
+    "qtd": 60,
+    "pu": 286.1,
+    "total": 17166.0
+   },
+   {
+    "tabela": "DER-ES",
+    "c": "160612",
+    "d": "Placa de sinalização de segurança do tipo ?SAÍDA DE EMERGÊNCIA? com seta vertical, conforme Código 14 - 315/158 da ABNT NBR 13434 e Código S3 da NT 14/2010 do Corpo de Bombeiros do Espírito Santo (CBMES)",
+    "u": "und",
+    "qtd": 40,
+    "pu": 31.36,
+    "total": 1254.4
+   },
+   {
+    "tabela": "SINAPI-ES",
+    "c": "103689",
+    "d": "FORNECIMENTO E INSTALAÇÃO DE PLACA DE OBRA COM CHAPA GALVANIZADA E ESTRUTURA DE MADEIRA. AF_03/2022_PS",
+    "u": "M2",
+    "qtd": 20,
+    "pu": 506.16,
+    "total": 10123.2
+   }
+  ]
+ },
+ {
+  "item": "Marcenaria",
+  "cotado": 65000.0,
+  "substituido": 23839.74,
+  "grau": "BAIXO",
+  "justificativa": "Bancada de granito polido + prateleiras de granito + divisórias modulares. Nenhuma tabela tem marcenaria em MDF/laminado; a substituição troca o material por pedra e divisória industrializada.",
+  "componentes": [
+   {
+    "tabela": "DER-ES",
+    "c": "170220",
+    "d": "Bancada de granito tipo Cinza Andorinha, com espessura de 2 cm, com acabamento polido, inclusive chumbamento na alvenaria, exclusive cantoneira de apoio",
+    "u": "m2",
+    "qtd": 12,
+    "pu": 609.17,
+    "total": 7310.04
+   },
+   {
+    "tabela": "DER-ES",
+    "c": "210210",
+    "d": "Prateleiras em granito tipo Cinza Andorinha, espessura 2 cm, com acabamento polido, incluindo chumbamento na alvenaria, exclusive cantoneira de apoio.",
+    "u": "m2",
+    "qtd": 25,
+    "pu": 412.34,
+    "total": 10308.5
+   },
+   {
+    "tabela": "DER-ES",
+    "c": "050212",
+    "d": "Fornecimento e montagem de sistema de divisórias modulares tipo MD-1 (Alta/Painel/Painel), espessura de 35mm, painéis em chapa duraplac, pintura melamínica e protegidas por resina de brilho mate, cor: Cinza, miolo em estrutura celular (colméia), estrutura em perfil de aço na cor: preta",
+    "u": "m2",
+    "qtd": 40,
+    "pu": 155.53,
+    "total": 6221.2
+   }
+  ]
+ },
+ {
+  "item": "Iluminação decorativa",
+  "cotado": 180000.0,
+  "substituido": 79129.6,
+  "grau": "BAIXO",
+  "justificativa": "Luminárias de embutir com aletas parabólicas + luminária industrial + arandela LED. Cobre a função de iluminar com itens de tabela; NÃO reproduz luminárias decorativas, fitas LED, hexágonos nem pendentes de projeto luminotécnico.",
+  "componentes": [
+   {
+    "tabela": "DER-ES",
+    "c": "181007",
+    "d": "Luminária embutir compl., corpo ch. aço pintada branca, refletor,aletas parabólicas alum.alta pureza e refletância nclusive 4 lâmpadas LED T8 9W temp. de cor 5000k - Ref.CE416AL-N - AMES, 6026 - LUMAVI OU EQUIVALENTE",
+    "u": "und",
+    "qtd": 200,
+    "pu": 268.79,
+    "total": 53758.0
+   },
+   {
+    "tabela": "DER-ES",
+    "c": "180107",
+    "d": "Luminária industrial a prova de tempo, 45 graus, Wetzel, Naville, Total Light, ou equivalente, exclusive lampada",
+    "u": "und",
+    "qtd": 40,
+    "pu": 497.73,
+    "total": 19909.2
+   },
+   {
+    "tabela": "DER-ES",
+    "c": "180110",
+    "d": "Arandela para lâmpada led bivolt E27, luz branca - formato tradicional",
+    "u": "und",
+    "qtd": 60,
+    "pu": 91.04,
+    "total": 5462.4
+   }
+  ]
+ },
+ {
+  "item": "Jardim vertical",
+  "cotado": 22500.0,
+  "substituido": 3293.1,
+  "grau": "BAIXO",
+  "justificativa": "Plantio de forração. Único item de vegetação ornamental medido em m² nas duas tabelas; NÃO inclui o sistema de suporte vertical, irrigação nem substrato técnico.",
+  "componentes": [
+   {
+    "tabela": "SINAPI-ES",
+    "c": "98505",
+    "d": "PLANTIO DE FORRAÇÃO. AF_07/2024",
+    "u": "M2",
+    "qtd": 30,
+    "pu": 109.77,
+    "total": 3293.1
+   }
+  ]
+ }
+]

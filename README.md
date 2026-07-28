@@ -92,6 +92,29 @@ python3 tools/decompoe_sinapi.py SINAPI_Referencia_2026_06.xlsx 104099 104941 --
 
 Resultado em `data/sinapi-decomposicoes.json`.
 
+### Orçamento para agente financeiro (100% código de tabela)
+
+Bancos de fomento (BNB/FNE e similares) **não aceitam item por cotação de mercado** — todo serviço
+precisa de código de tabela referencial. Quando o projeto especifica acabamento sem equivalente
+publicado (pele de vidro, brise, ACM, marcenaria, iluminação decorativa), o caminho é substituir
+pelo serviço de tabela mais próximo **declarando o grau de similaridade**:
+
+| Grau | Significado |
+|---|---|
+| **ALTO** | mesma função e mesmo sistema construtivo — troca sem impacto técnico relevante |
+| **MÉDIO** | mesma função, material ou sistema diferente — exige aceite do projetista |
+| **BAIXO** | só analogia funcional; o serviço de tabela **não** reproduz o especificado |
+
+O `orcamento.json` aceita as chaves `itens_sinapi` (itens precificados pelo SINAPI, fora do motor
+DER-ES) e `substituicoes` (item de projeto → serviços de tabela adotados, com grau e justificativa).
+Havendo `substituicoes`, a aba 3 do Excel deixa de ser "complemento a cotar" e passa a ser o
+comparativo, fechando com a **diferença de escopo** — o valor que o cliente terá de cobrir com
+recursos próprios se executar os acabamentos como projetados. Exemplo real em
+`data/exemplo-substituicoes.json`.
+
+> Entregue as duas versões: a codificada, para o banco, e a de custo real, para o cliente. O
+> memorial descritivo deve manter sempre a especificação de projeto.
+
 Para entregar o orçamento em Excel formatado (capa/resumo com gráfico por capítulo, planilha por
 capítulo, complemento a cotar, curva ABC, memorial com o critério de medição de cada item,
 premissas/lacunas e a lista de ambientes):
