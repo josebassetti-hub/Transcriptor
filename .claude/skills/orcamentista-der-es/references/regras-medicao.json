@@ -64,7 +64,8 @@
    "20 – SERVIÇOS COMPLEMENTARES EXTERNOS · 2005 – DIVERSOS EXTERNOS",
    "21 – SERVIÇOS COMPLEMENTARES INTERNOS · 2101 – QUADROS DE GIZ / AVISO",
    "21 – SERVIÇOS COMPLEMENTARES INTERNOS · 2102 – ARMÁRIOS E PRATELEIRAS",
-   "14 – INSTALAÇÕES HIDROSSANITÁRIAS (caderno GERAL — extração parcial: 14.14 / 14.15 / 14.19 / 14.21)"
+   "14 – INSTALAÇÕES HIDROSSANITÁRIAS (caderno GERAL — extração parcial: 14.14 / 14.15 / 14.19 / 14.21)",
+   "04 – ESTRUTURAS"
   ]
  },
  "regras": {
@@ -5131,11 +5132,10 @@
    "atualizacao": "07/2025",
    "aplicacao": "Em situações em que há necessidade de demolição para troca da camada de base e do revestimento em piso cimentado, geralmente por motivo de recalque do solo, que provoca afundamento, rachaduras ou deformações significativas no piso.",
    "incluidos": "Fornecimento de mão-de-obra para execução do serviço de demolição manual de piso cimentado de espessura de 1,5 cm e do lastro de concreto de 6,0 cm, com auxílio de ferramentas manuais, inclusive transporte horizontal e acondicionamento provisório dos fragmentos e dos resíduos em local apropriado no canteiro de obras. Limpeza do local do serviço, considerando recolhimento, varrição, remoção de resíduos, detritos, fragmentos de concreto e materiais inaproveitáveis.",
-   "criterio": "m2 (metro quadrado) Pela área efetiva de demolição de piso cimentado com lastro de concreto.",
+   "criterio": "m2 (metro quadrado) Pela área efetiva de demolição de piso cimentado com lastro de concreto. 3/3 00",
    "normas": [
-    "NBR 10.004-1",
-    "NBR 10.004-2",
-    "NR 18"
+    "NBR 10.004 - 1: Resíduos sólidos - Classificação - Parte 1: Requisitos de classificação",
+    "NBR 10.004 - 2: Resíduos sólidos - Classificação - Parte 2: Sistema Geral de Classificação"
    ]
   },
   "010202": {
@@ -5147,9 +5147,8 @@
    "incluidos": "Fornecimento de mão-de-obra para execução do serviço de demolição de piso revestido com cerâmica, considerando o transporte horizontal e acondicionamento provisório das peças e dos resíduos em local apropriado no canteiro de obras. Limpeza do local do serviço, considerando recolhimento, varrição, remoção de resíduos e materiais inaproveitáveis, exclusive destinação final.",
    "criterio": "m2 (metro quadrado) Pela área efetiva de piso cerâmico demolido.",
    "normas": [
-    "NBR 10.004-1",
-    "NBR 10.004-2",
-    "NR 18"
+    "NBR 10.004 - 1: Resíduos sólidos - Classificação - Parte 1: Requisitos de classificação",
+    "NBR 10.004 - 2: Resíduos sólidos - Classificação - Parte 2: Sistema Geral de Classificação"
    ]
   },
   "010203": {
@@ -5159,11 +5158,10 @@
    "atualizacao": "07/2025",
    "aplicacao": "Em situações em que há necessidade de demolição para troca da camada de base e do revestimento de piso em cerâmica, geralmente por motivo de recalque do solo, que provoca afundamento, rachaduras ou deformações significativas no piso.",
    "incluidos": "Fornecimento de mão-de-obra para execução do serviço de demolição manual de piso revestido com cerâmica e do lastro de concreto de espessura de 6,0 cm, com auxílio de ferramentas manuais, inclusive transporte horizontal e acondicionamento provisório dos fragmentos e dos resíduos em local apropriado no canteiro de obras. Limpeza do local do serviço, considerando recolhimento, varrição, remoção de resíduos, detritos, fragmentos de concreto, de cerâmica e materiais inaproveitáveis, exclusive destinação final.",
-   "criterio": "m2 (metro quadrado) Pela área efetiva de demolição de piso cerâmico com lastro de concreto.",
+   "criterio": "m2 (metro quadrado) Pela área efetiva de demolição de piso cerâmico com lastro de concreto. 3/3 00",
    "normas": [
-    "NBR 10.004-1",
-    "NBR 10.004-2",
-    "NR 18"
+    "NBR 10.004 - 1: Resíduos sólidos - Classificação - Parte 1: Requisitos de classificação",
+    "NBR 10.004 - 2: Resíduos sólidos - Classificação - Parte 2: Sistema Geral de Classificação"
    ]
   },
   "010204": {
@@ -5172,13 +5170,12 @@
    "caderno": "01 – SERVIÇOS PRELIMINARES · 0102 – DEMOLIÇÕES E RETIRADAS",
    "atualizacao": "07/2025",
    "aplicacao": "Em situações em que há necessidade de demolição para troca do revestimento de piso em tacos de madeira, de um determinado ambiente.",
-   "incluidos": "Demolição de piso revestido com tacos de madeira, considerando o transporte horizontal e acondicionamento provisório das peças e dos resíduos em local apropriado no canteiro de obras. Limpeza do local do serviço, considerando varrição, remoção de resíduos e materiais inaproveitáveis, exclusive destinação final.",
+   "incluidos": "Demolição de piso revestido com tacos de madeira, considerando o transporte horizontal e acondicionamento provisório das peças e dos resíduos em local apropriado no canteiro de obras. Limpeza do local do serviço, considerando varrição, remoção de resíduos e materiais inaproveitáveis, exclusive destinação final. 2/3 00",
    "criterio": "m2 (metro quadrado) Pela área efetiva de piso de taco de madeira demolido.",
    "normas": [
-    "NBR 10.004-1",
-    "NBR 10.004-2",
-    "NR 18",
-    "Decreto Estadual 1.941-R/2007"
+    "NBR 10.004 - 1: Resíduos sólidos - Classificação - Parte 1: Requisitos de classificação",
+    "NBR 10.004 - 2: Resíduos sólidos - Classificação - Parte 2: Sistema Geral de Classificação",
+    "Decreto Estadual nº 1.941- R, de 18 de Outubro de 2007 - utilização de produtos e"
    ]
   },
   "010205": {
@@ -5190,10 +5187,9 @@
    "incluidos": "Demolição de piso revestido com tábuas de madeira, considerando o transporte horizontal e acondicionamento provisório das peças e dos resíduos em local apropriado no canteiro de obras. Limpeza do local do serviço, considerando varrição, remoção de resíduos e materiais inaproveitáveis, exclusive destinação final.",
    "criterio": "m2 (metro quadrado) Pela área efetiva de piso de tábuas demolido.",
    "normas": [
-    "NBR 10.004-1",
-    "NBR 10.004-2",
-    "NR 18",
-    "Decreto Estadual 1.941-R/2007"
+    "NBR 10.004 - 1: Resíduos sólidos - Classificação - Parte 1: Requisitos de classificação",
+    "NBR 10.004 - 2: Resíduos sólidos - Classificação - Parte 2: Sistema Geral de Classificação",
+    "Decreto Estadual nº 1.941- R, de 18 de Outubro de 2007 - utilização de produtos e"
    ]
   },
   "010206": {
@@ -5205,9 +5201,8 @@
    "incluidos": "Fornecimento de mão-de-obra para execução do serviço de demolição de revestimento com azulejos, considerando a proteção do piso nas proximidades do serviço de demolição, o transporte horizontal e acondicionamento provisório das peças e dos resíduos em local apropriado no canteiro de obras. Limpeza do local do serviço, considerando recolhimento, varrição, remoção de resíduos e materiais inaproveitáveis, exclusive destinação final.",
    "criterio": "m2 (metro quadrado) Pela área efetiva de revestimento cerâmico demolido.",
    "normas": [
-    "NBR 10.004-1",
-    "NBR 10.004-2",
-    "NR 18"
+    "NBR 10.004 - 1: Resíduos sólidos - Classificação - Parte 1: Requisitos de classificação",
+    "NBR 10.004 - 2: Resíduos sólidos - Classificação - Parte 2: Sistema Geral de Classificação"
    ]
   },
   "010207": {
@@ -5215,14 +5210,13 @@
    "u": "m2",
    "caderno": "01 – SERVIÇOS PRELIMINARES · 0102 – DEMOLIÇÕES E RETIRADAS",
    "atualizacao": "07/2025",
-   "aplicacao": "Em situações em que há necessidade de demolição para troca do revestimento com lambris de madeira, de um determinado ambiente, por diversos motivos, como: questão estética, infestações de cupins e brocas ou defeitos nas peças que comprometam sua finalidade (sinais de empenamentos, rachaduras e…",
+   "aplicacao": "Em situações em que há necessidade de demolição para troca do revestimento com lambris de madeira, de um determinado ambiente, por diversos motivos, como: questão estética, infestações de cupins e brocas ou defeitos nas peças que comprometam sua finalidade (sinais de empenamentos, rachaduras e lasca",
    "incluidos": "Demolição de revestimento com tábuas ou painéis de madeira, considerando o transporte horizontal e acondicionamento provisório das peças e dos resíduos em local apropriado no canteiro de obras. Limpeza do local do serviço, considerando varrição, remoção de resíduos e materiais inaproveitáveis, exclusive destinação final.",
    "criterio": "m2 (metro quadrado) Pela área efetiva de revestimento com tábuas ou painéis de madeira demolido.",
    "normas": [
-    "NBR 10.004-1",
-    "NBR 10.004-2",
-    "NR 18",
-    "Decreto Estadual 1.941-R/2007"
+    "Decreto Estadual nº 1.941- R, de 18 de Outubro de 2007 - utilização de produtos e",
+    "NBR 10.004 - 1: Resíduos sólidos - Classificação - Parte 1: Requisitos de classificação",
+    "NBR 10.004 - 2: Resíduos sólidos - Classificação - Parte 2: Sistema Geral de Classificação"
    ]
   },
   "010208": {
@@ -5232,11 +5226,10 @@
    "atualizacao": "07/2025",
    "aplicacao": "Em situações em que há necessidade de troca do revestimento em emboço ou reboco, por diversos motivos, como: reboco deteriorado, esfarelando, desplacamento (som cavo), correção de problemas de infiltração (umidade na parede), preparação do substrato para aplicação de um novo revestimento, etc.",
    "incluidos": "Fornecimento de mão-de-obra para execução do serviço de retirada de revestimento antigo em reboco, com auxílio de ferramentas manuais, considerando a proteção do piso nas proximidades do serviço de remoção, o transporte horizontal e acondicionamento provisório dos resíduos em local apropriado no canteiro de obras. Limpeza do local do serviço, considerando recolhimento, varrição, remoção dos fragmentos de reboco, dos resíduos e materiais inaproveitáveis, exclusive destinação final.",
-   "criterio": "m2 (metro quadrado) Pela área efetiva de retirada de revestimento em reboco.",
+   "criterio": "m2 (metro quadrado) Pela área efetiva de retirada de revestimento em reboco. 3/3 00",
    "normas": [
-    "NBR 10.004-1",
-    "NBR 10.004-2",
-    "NR 18"
+    "NBR 10.004 - 1: Resíduos sólidos - Classificação - Parte 1: Requisitos de classificação",
+    "NBR 10.004 - 2: Resíduos sólidos - Classificação - Parte 2: Sistema Geral de Classificação"
    ]
   },
   "010209": {
@@ -5248,9 +5241,8 @@
    "incluidos": "Fornecimento de mão-de-obra para execução do serviço de demolição de alvenaria de bloco furado, inclusive demarcação e execução de cortes com auxílio de máquina manual elétrica, considerando o isolamento e a sinalização das áreas próximas à demolição, a proteção do piso no entorno dos trechos a serem demolidos, o transporte horizontal (e/ou vertical) e o acondicionamento do entulho em local apropriado no canteiro de obras. Limpeza do local do serviço, com varrição e remoção dos resíduos provenientes da demolição, exclusive destinação final.",
    "criterio": "m3 (metro cúbico) Pelo volume efetivo de demolição, sendo considerado o produto da multiplicação das medidas da alvenaria antes da demolição, que são: espessura da parede (metro), vezes a altura (metro) pelo comprimento (metro).",
    "normas": [
-    "NBR 10.004-1",
-    "NBR 10.004-2",
-    "NR 18"
+    "NBR 10.004 - 1: Resíduos sólidos - Classificação - Parte 1: Requisitos de classificação",
+    "NBR 10.004 - 2: Resíduos sólidos - Classificação - Parte 2: Sistema Geral de Classificação"
    ]
   },
   "010210": {
@@ -5258,13 +5250,12 @@
    "u": "m3",
    "caderno": "01 – SERVIÇOS PRELIMINARES · 0102 – DEMOLIÇÕES E RETIRADAS",
    "atualizacao": "07/2025",
-   "aplicacao": "O serviço geralmente é empregado para demolição de camadas de concreto utilizadas para regularização de superfície (lastro) ou para proteção de parte da estrutura em contato com o solo. Também é recomendada sua utilização em situações em que há necessidade de maior controle e precisão na remoção…",
+   "aplicacao": "O serviço geralmente é empregado para demolição de camadas de concreto utilizadas para regularização de superfície (lastro) ou para proteção de parte da estrutura em contato com o solo. Também é recomendada sua utilização em situações em que há necessidade de maior controle e precisão na remoção (co",
    "incluidos": "Fornecimento de mão-de-obra para execução do serviço de demolição manual de concreto simples, com auxílio de ferramentas manuais, inclusive transporte horizontal e acondicionamento provisório dos fragmentos e dos resíduos em local apropriado no canteiro de obras. Limpeza do local do serviço, considerando recolhimento, varrição, remoção de resíduos, detritos, fragmentos de concreto e materiais inaproveitáveis, exclusive destinação final.",
    "criterio": "m3 (metro cúbico) Pelo volume efetivo de concreto demolido, apropriado com base nas dimensões dos elementos íntegros.",
    "normas": [
-    "NBR 10.004-1",
-    "NBR 10.004-2",
-    "NR 18"
+    "NBR 10.004 - 1: Resíduos sólidos - Classificação - Parte 1: Requisitos de classificação",
+    "NBR 10.004 - 2: Resíduos sólidos - Classificação - Parte 2: Sistema Geral de Classificação"
    ]
   },
   "010212": {
@@ -5274,11 +5265,10 @@
    "atualizacao": "07/2025",
    "aplicacao": "Em situações em que há necessidade de retirada dos paralelepípedos para reaproveitamento, por diversos motivos, como: passagem de infraestrutura (tubulações), desnivelamento do piso (recalque do pavimento), mudança de layout, etc.",
    "incluidos": "Fornecimento de mão-de-obra para execução do serviço de retirada manual cuidadosa de pavimento em paralelepípedos, considerando a limpeza das peças, com remoção total de resíduos e sujeiras, inclusive o empilhamento dos blocos, o transporte horizontal e acondicionamento provisório adequado das peças em local apropriado no canteiro de obras. Varrição e limpeza do local do serviço, considerando remoção de todos os resíduos, detritos e materiais inaproveitáveis, exclusive destinação final.",
-   "criterio": "m2 (metro quadrado) Pela área efetiva de pavimentação em paralelepípedo retirada.",
+   "criterio": "m2 (metro quadrado) Pela área efetiva de pavimentação em paralelepípedo retirada. 3/3 00",
    "normas": [
-    "NBR 10.004-1",
-    "NBR 10.004-2",
-    "NR 18"
+    "NBR 10.004 - 1: Resíduos sólidos - Classificação - Parte 1: Requisitos de classificação",
+    "NBR 10.004 - 2: Resíduos sólidos - Classificação - Parte 2: Sistema Geral de Classificação"
    ]
   },
   "010213": {
@@ -5288,11 +5278,10 @@
    "atualizacao": "07/2025",
    "aplicacao": "Em situações em que há necessidade de retirada dos blokrets para reaproveitamento, por diversos motivos, como: passagem de infraestrutura (tubulações), desnivelamento do piso (recalque do pavimento), mudança de layout, etc.",
    "incluidos": "Fornecimento de mão-de-obra para execução do serviço de retirada manual cuidadosa de pavimento de blocos pré-moldados de concreto, considerando a limpeza das peças, com remoção total de resíduos e sujeiras, inclusive o empilhamento dos blocos, o transporte horizontal e acondicionamento provisório adequado das peças em local apropriado no canteiro de obras. Varrição e limpeza do local do serviço, considerando remoção de todos os resíduos, detritos e materiais inaproveitáveis, exclusive destinação final.",
-   "criterio": "m2 (metro quadrado) Pela área efetiva de pavimentação em blocos pré-moldados de concreto retirada.",
+   "criterio": "m2 (metro quadrado) Pela área efetiva de pavimentação em blocos pré-moldados de concreto retirada. 3/3 00",
    "normas": [
-    "NBR 10.004-1",
-    "NBR 10.004-2",
-    "NR 18"
+    "NBR 10.004 - 1: Resíduos sólidos - Classificação - Parte 1: Requisitos de classificação",
+    "NBR 10.004 - 2: Resíduos sólidos - Classificação - Parte 2: Sistema Geral de Classificação"
    ]
   },
   "010214": {
@@ -5300,14 +5289,13 @@
    "u": "m2",
    "caderno": "01 – SERVIÇOS PRELIMINARES · 0102 – DEMOLIÇÕES E RETIRADAS",
    "atualizacao": "07/2025",
-   "aplicacao": "Em situações em que há necessidade de retirada das bandeiras e batentes das esquadrias de madeira, por motivos diversos como: aumento, fechamento ou deslocamento do vão da porta, substituição do tipo da esquadria (por alumínio, por exemplo), infestações de cupins e brocas, defeitos na bandeira que…",
+   "aplicacao": "Em situações em que há necessidade de retirada das bandeiras e batentes das esquadrias de madeira, por motivos diversos como: aumento, fechamento ou deslocamento do vão da porta, substituição do tipo da esquadria (por alumínio, por exemplo), infestações de cupins e brocas, defeitos na bandeira que c",
    "incluidos": "Retirada das bandeiras de portas e janelas, inclusive com remoção dos batentes dessas esquadrias, considerando o transporte horizontal e acondicionamento das peças em local apropriado no canteiro de obras. Limpeza do local do serviço, com remoção de resíduos e materiais inaproveitáveis, exclusive destinação final.",
    "criterio": "m2 (metro quadrado) Pela área efetiva de retirada das bandeiras de portas e janelas de madeira.",
    "normas": [
-    "NBR 10.004-1",
-    "NBR 10.004-2",
-    "NR 18",
-    "Decreto Estadual 1.941-R/2007"
+    "Decreto Estadual nº 1.941- R, de 18 de Outubro de 2007 - utilização de produtos e",
+    "NBR 10.004 - 1: Resíduos sólidos - Classificação - Parte 1: Requisitos de classificação",
+    "NBR 10.004 - 2: Resíduos sólidos - Classificação - Parte 2: Sistema Geral de Classificação"
    ]
   },
   "010215": {
@@ -5316,12 +5304,11 @@
    "caderno": "01 – SERVIÇOS PRELIMINARES · 0102 – DEMOLIÇÕES E RETIRADAS",
    "atualizacao": "03/2026",
    "aplicacao": "Em situações em que há necessidade de retirada completa da esquadria de alumínio, por motivos diversos como: mudança de layout, fechamento ou deslocamento do vão da esquadria, reforma, ampliação ou modernização do ambiente, etc.",
-   "incluidos": "Fornecimento de mão-de-obra para execução do serviço de retirada de esquadrias metálicas em alumínio, inclusive com remoção dos alizares, caixilho, contramarco e acessórios, exclusive remoção de vidros, considerando o transporte horizontal e acondicionamento provisório das peças em local apropriado no canteiro de obras. Limpeza do local do serviço, com remoção de resíduos e materiais inaproveitáveis, exclusive destinação final.",
+   "incluidos": "Fornecimento de mão-de-obra para execução do serviço de retirada de esquadrias metálicas em alumínio, inclusive com remoção dos alizares, caixilho, contramarco e acessórios, exclusive remoção de vidros, considerando o transporte horizontal e acondicionamento provisório das peças em local apropriado no canteiro de obras. Limpeza do local do serviço, com remoção de resíduos e materiais inaproveitáveis, exclusive destinação final. 3/3 00",
    "criterio": "m2 (metro quadrado) Pela área efetiva e total de retirada de esquadrias metálicas em alumínio, considerando bandeiras, alizares, contramarco e acessórios.",
    "normas": [
-    "NBR 10.004-1",
-    "NBR 10.004-2",
-    "NR 18"
+    "NBR 10.004 - 1: Resíduos sólidos - Classificação - Parte 1: Requisitos de classificação",
+    "NBR 10.004 - 2: Resíduos sólidos - Classificação - Parte 2: Sistema Geral de Classificação"
    ]
   },
   "010216": {
@@ -5333,9 +5320,8 @@
    "incluidos": "Fornecimento de mão-de-obra para execução do serviço de retirada manual de meio-fio de concreto, considerando a escavação e o reaterro de valeta, inclusive o transporte horizontal e acondicionamento provisório adequado das peças em local apropriado no canteiro de obras. Varrição e limpeza do local do serviço, considerando remoção de todos os resíduos, detritos e materiais inaproveitáveis, exclusive destinação final.",
    "criterio": "m (metro) Pelo comprimento real de meio-fio de concreto retirado.",
    "normas": [
-    "NBR 10.004-1",
-    "NBR 10.004-2",
-    "NR 18"
+    "NBR 10.004 - 1: Resíduos sólidos - Classificação - Parte 1: Requisitos de classificação",
+    "NBR 10.004 - 2: Resíduos sólidos - Classificação - Parte 2: Sistema Geral de Classificação"
    ]
   },
   "010218": {
@@ -5347,9 +5333,8 @@
    "incluidos": "Fornecimento de mão-de-obra para execução do serviço de remoção de pintura antiga sobre paredes, com aplicação de espátula, escova ou palha de aço, inclusive fornecimento de produto removedor adequado. Varrição e limpeza do local do serviço, com remoção de resíduos e materiais inaproveitáveis, exclusive destinação final.",
    "criterio": "m2 (metro quadrado) Pela área efetiva das superfícies da alvenaria a ser feita a remoção de pintura antiga a base de óleo ou esmalte.",
    "normas": [
-    "NBR 10.004-1",
-    "NBR 10.004-2",
-    "NR 18"
+    "NBR 10.004 - 1: Resíduos sólidos - Classificação - Parte 1: Requisitos de classificação",
+    "NBR 10.004 - 2: Resíduos sólidos - Classificação - Parte 2: Sistema Geral de Classificação"
    ]
   },
   "010219": {
@@ -5357,13 +5342,12 @@
    "u": "m3",
    "caderno": "01 – SERVIÇOS PRELIMINARES · 0102 – DEMOLIÇÕES E RETIRADAS",
    "atualizacao": "07/2025",
-   "aplicacao": "Em situações em que há necessidade de maior controle e precisão na remoção (construções antigas ou recuperação de edifícios históricos), a fim de evitar vibrações que poderiam comprometer a integridade de estruturas vizinhas ou da própria estrutura, ou ainda em locais em que a demolição manual se…",
-   "incluidos": "Fornecimento de mão-de-obra para execução do serviço de demolição manual de concreto armado, com auxílio de ferramentas manuais, inclusive transporte vertical, transporte horizontal e acondicionamento provisório dos fragmentos e dos resíduos em local apropriado no canteiro de obras. Limpeza do local do serviço, considerando recolhimento, varrição, remoção de resíduos, detritos, fragmentos de concreto, pontas de ferro e materiais inaproveitáveis, exclusive destinação final.",
+   "aplicacao": "Em situações em que há necessidade de maior controle e precisão na remoção (construções antigas ou recuperação de edifícios históricos), a fim de evitar vibrações que poderiam comprometer a integridade de estruturas vizinhas ou da própria estrutura, ou ainda em locais em que a demolição manual se to",
+   "incluidos": "Fornecimento de mão-de-obra para execução do serviço de demolição manual de concreto armado, com auxílio de ferramentas manuais, inclusive transporte vertical, transporte 3/3 00 horizontal e acondicionamento provisório dos fragmentos e dos resíduos em local apropriado no canteiro de obras. Limpeza do local do serviço, considerando recolhimento, varrição, remoção de resíduos, detritos, fragmentos de concreto, pontas de ferro e materiais inaproveitáveis, exclusive destinação final.",
    "criterio": "m3 (metro cúbico) Pelo volume de estrutura em concreto armado, considerando-se o volume efetivo dos elementos demolidos, apropriado com base nas dimensões das peças íntegras.",
    "normas": [
-    "NBR 10.004-1",
-    "NBR 10.004-2",
-    "NR 18"
+    "NBR 10.004 - 1: Resíduos sólidos - Classificação - Parte 1: Requisitos de classificação",
+    "NBR 10.004 - 2: Resíduos sólidos - Classificação - Parte 2: Sistema Geral de Classificação"
    ]
   },
   "010220": {
@@ -5375,9 +5359,8 @@
    "incluidos": "Fornecimento de mão-de-obra para execução do serviço de demolição de piso cimentado espessura de 1,5cm, considerando o transporte horizontal e acondicionamento provisório dos fragmentos de piso e dos resíduos em local apropriado no canteiro de obras. Limpeza do local do serviço, considerando recolhimento, varrição, remoção de resíduos, detritos, fragmentos de piso e materiais inaproveitáveis, exclusive destinação final.",
    "criterio": "m2 (metro quadrado) Pela área efetiva de piso cimentado demolido.",
    "normas": [
-    "NBR 10.004-1",
-    "NBR 10.004-2",
-    "NR 18"
+    "NBR 10.004 - 1: Resíduos sólidos - Classificação - Parte 1: Requisitos de classificação",
+    "NBR 10.004 - 2: Resíduos sólidos - Classificação - Parte 2: Sistema Geral de Classificação"
    ]
   },
   "010221": {
@@ -5386,13 +5369,12 @@
    "caderno": "01 – SERVIÇOS PRELIMINARES · 0102 – DEMOLIÇÕES E RETIRADAS",
    "atualizacao": "07/2025",
    "aplicacao": "Em situações em que há necessidade de retirada da folha da porta, por motivos diversos como: aumento, fechamento ou deslocamento do vão da porta, infestações de cupins e brocas, defeitos na bandeira que comprometam seu funcionamento, como: sinais de empenamentos, rachaduras e lascas.",
-   "incluidos": "Retirada da bandeira de porta, considerando o transporte horizontal e acondicionamento das peças em local apropriado no canteiro de obras. Limpeza do local do serviço, com remoção de resíduos e materiais inaproveitáveis, exclusive destinação final.",
+   "incluidos": "Retirada da bandeira de porta, considerando o transporte horizontal e acondicionamento das peças em local apropriado no canteiro de obras. Limpeza do local do serviço, com remoção de resíduos e materiais inaproveitáveis, exclusive destinação final. 2/2 00",
    "criterio": "und (unidade) Pela quantidade de folha de porta retirada.",
    "normas": [
-    "NBR 10.004-1",
-    "NBR 10.004-2",
-    "NR 18",
-    "Decreto Estadual 1.941-R/2007"
+    "Decreto Estadual nº 1.941- R, de 18 de Outubro de 2007 - utilização de produtos e",
+    "NBR 10.004 - 1: Resíduos sólidos - Classificação - Parte 1: Requisitos de classificação",
+    "NBR 10.004 - 2: Resíduos sólidos - Classificação - Parte 2: Sistema Geral de Classificação"
    ]
   },
   "010222": {
@@ -5404,9 +5386,8 @@
    "incluidos": "Fornecimento de mão-de-obra para execução do serviço de demolição de elementos vazados cerâmicos ou de concreto, inclusive execução da proteção do piso no entorno dos trechos a serem demolidos, o transporte horizontal (e/ou vertical) e o acondicionamento do entulho em local apropriado no canteiro de obras. Limpeza do local do serviço, com varrição e remoção dos resíduos provenientes da demolição.",
    "criterio": "m2 (metro quadrado) Pela área efetiva do vão de elemento vazado demolido.",
    "normas": [
-    "NBR 10.004-1",
-    "NBR 10.004-2",
-    "NR 18"
+    "NBR 10.004 - 1: Resíduos sólidos - Classificação - Parte 1: Requisitos de classificação",
+    "NBR 10.004 - 2: Resíduos sólidos - Classificação - Parte 2: Sistema Geral de Classificação"
    ]
   },
   "010223": {
@@ -5418,9 +5399,8 @@
    "incluidos": "Fornecimento de mão-de-obra para execução do serviço de retirada de aparelhos sanitários e vedação dos pontos de esgoto e água fria, inclusive remoção de acessórios de fixação (parafusos e buchas), vedações, tubos de ligação e engates flexíveis, acondicionando as peças em local apropriado no canteiro de obras, para descarte (bota-fora). Limpeza do local do serviço, com remoção de resíduos, excesso de água e materiais inaproveitáveis, exclusive destinação final.",
    "criterio": "und (unidade) Pela quantidade efetiva de louças sanitárias retirados.",
    "normas": [
-    "NBR 10.004-1",
-    "NBR 10.004-2",
-    "NR 18"
+    "NBR 10.004 - 1: Resíduos sólidos - Classificação - Parte 1: Requisitos de classificação",
+    "NBR 10.004 - 2: Resíduos sólidos - Classificação - Parte 2: Sistema Geral de Classificação"
    ]
   },
   "010224": {
@@ -5428,13 +5408,12 @@
    "u": "m2",
    "caderno": "01 – SERVIÇOS PRELIMINARES · 0102 – DEMOLIÇÕES E RETIRADAS",
    "atualizacao": "03/2026",
-   "aplicacao": "Em situações em que há necessidade de retirada completa de cercamentos ou grades metálicas, por motivos diversos como: mudança de layout, reforma ou ampliação dos ambientes, substituição por gradis e portões em aço galvanizado soldado, necessidade de fechamento do trecho com outro tipo de solução…",
-   "incluidos": "Fornecimento de mão-de-obra para execução do serviço de retirada de grades, gradis, alambrados, cercas e portões metálicos, inclusive com remoção de argamassa de chumbamento, acessórios de fixação e corte de soldas das partes metálicas, considerando o transporte horizontal e acondicionamento provisório das peças, acessórios e resíduos em local apropriado no canteiro de obras. Limpeza do local do serviço, com remoção de resíduos e materiais inaproveitáveis, exclusive destinação final.",
+   "aplicacao": "Em situações em que há necessidade de retirada completa de cercamentos ou grades metálicas, por motivos diversos como: mudança de layout, reforma ou ampliação dos ambientes, substituição por gradis e portões em aço galvanizado soldado, necessidade de fechamento do trecho com outro tipo de solução (m",
+   "incluidos": "Fornecimento de mão-de-obra para execução do serviço de retirada de grades, gradis, alambrados, cercas e portões metálicos, inclusive com remoção de argamassa de chumbamento, acessórios de fixação e corte de soldas das partes metálicas, considerando o transporte horizontal e acondicionamento provisório das peças, acessórios e resíduos em local apropriado no canteiro de obras. Limpeza do local do serviço, com remoção de resíduos e materiais inaproveitáveis, exclusive destinação final. 3/3 00",
    "criterio": "m2 (metro quadrado) Pela área efetiva e total de retirada de grades, gradis, alambrados, cercas e portões metálicos, considerando remoção argamassa de chumbamento, de complementos e acessórios de fixação das peças.",
    "normas": [
-    "NBR 10.004-1",
-    "NBR 10.004-2",
-    "NR 18"
+    "NBR 10.004 - 1: Resíduos sólidos - Classificação - Parte 1: Requisitos de classificação",
+    "NBR 10.004 - 2: Resíduos sólidos - Classificação - Parte 2: Sistema Geral de Classificação"
    ]
   },
   "010225": {
@@ -5446,9 +5425,8 @@
    "incluidos": "Fornecimento de mão-de-obra para retirada de bancada de pia, inclusive retirada de rodabanca ou frontão, remoção de calafetagem e cantoneiras de apoio, acondicionamento das peças em local apropriado no canteiro de obras, para descarte (bota-fora). Varrição e limpeza do local do serviço, com remoção de resíduos e materiais inaproveitáveis, exclusive destinação final.",
    "criterio": "m2 (metro quadrado) Pela área efetiva de bancada de pia retirada.",
    "normas": [
-    "NBR 10.004-1",
-    "NBR 10.004-2",
-    "NR 18"
+    "NBR 10.004 - 1: Resíduos sólidos - Classificação - Parte 1: Requisitos de classificação",
+    "NBR 10.004 - 2: Resíduos sólidos - Classificação - Parte 2: Sistema Geral de Classificação"
    ]
   },
   "010226": {
@@ -5460,9 +5438,8 @@
    "incluidos": "Fornecimento de mão-de-obra para retirada de tanque em mármore sintético e sifão, inclusive vedação do ponto de esgoto, remoção dos acessórios de fixação (parafusos e buchas) e vedações, com acondicionamento dos materiais em local apropriado no canteiro de obras, para descarte (bota-fora). Limpeza do local do serviço, com remoção de resíduos, excesso de água e materiais inaproveitáveis, exclusive destinação final.",
    "criterio": "und (unidade) Pela quantidade efetiva de tanque em mármore sintético retirado.",
    "normas": [
-    "NBR 10.004-1",
-    "NBR 10.004-2",
-    "NR 18"
+    "NBR 10.004 - 1: Resíduos sólidos - Classificação - Parte 1: Requisitos de classificação",
+    "NBR 10.004 - 2: Resíduos sólidos - Classificação - Parte 2: Sistema Geral de Classificação"
    ]
   },
   "010227": {
@@ -5470,13 +5447,12 @@
    "u": "und",
    "caderno": "01 – SERVIÇOS PRELIMINARES · 0102 – DEMOLIÇÕES E RETIRADAS",
    "atualizacao": "03/2026",
-   "aplicacao": "Em situações em que há necessidade de troca por um reservatório de outro material, geralmente de polietileno ou de fibra de vidro, visto que a caixa d’água de fibrocimento pode estar danificada, em processo de degradação, com presença de vazamentos ou rachaduras, que podem estar comprometendo a…",
+   "aplicacao": "Em situações em que há necessidade de troca por um reservatório de outro material, geralmente de polietileno ou de fibra de vidro, visto que a caixa d’água de fibrocimento pode estar danificada, em processo de degradação, com presença de vazamentos ou rachaduras, que podem estar comprometendo a qual",
    "incluidos": "Fornecimento de mão-de-obra para execução do serviço de retirada de caixa d’água de fibrocimento, desconexão e vedação dos tubos de água fria remanescentes, inclusive remoção dos flanges e da boia, considerando o transporte vertical, horizontal e acondicionamento provisório dos detritos, resíduos e das peças em local apropriado no canteiro de obras. Limpeza do local do serviço, com remoção de resíduos e materiais inaproveitáveis, exclusive destinação final.",
    "criterio": "und (unidade) Pela quantidade efetiva de caixas d’água de fibrocimento retiradas.",
    "normas": [
-    "NBR 10.004-1",
-    "NBR 10.004-2",
-    "NR 18"
+    "NBR 10.004 - 1: Resíduos sólidos - Classificação - Parte 1: Requisitos de classificação",
+    "NBR 10.004 - 2: Resíduos sólidos - Classificação - Parte 2: Sistema Geral de Classificação"
    ]
   },
   "010228": {
@@ -5484,14 +5460,13 @@
    "u": "m2",
    "caderno": "01 – SERVIÇOS PRELIMINARES · 0102 – DEMOLIÇÕES E RETIRADAS",
    "atualizacao": "07/2025",
-   "aplicacao": "Em situações em que há necessidade de demolição completa das réguas de madeira para troca do forro de um determinado ambiente, por diversos motivos, como: questão estética, infestações de cupins e brocas ou defeitos nas peças que comprometam sua finalidade (sinais de empenamentos, rachaduras e…",
+   "aplicacao": "Em situações em que há necessidade de demolição completa das réguas de madeira para troca do forro de um determinado ambiente, por diversos motivos, como: questão estética, infestações de cupins e brocas ou defeitos nas peças que comprometam sua finalidade (sinais de empenamentos, rachaduras e lasca",
    "incluidos": "Demolição de forro de madeira, considerando o transporte horizontal e acondicionamento provisório das peças e dos resíduos em local apropriado no canteiro de obras. Limpeza do local do serviço, considerando varrição, remoção de resíduos e materiais inaproveitáveis, exclusive destinação final.",
    "criterio": "m2 (metro quadrado) Pela área efetiva de forro de madeira demolido.",
    "normas": [
-    "NBR 10.004-1",
-    "NBR 10.004-2",
-    "NR 18",
-    "Decreto Estadual 1.941-R/2007"
+    "Decreto Estadual nº 1.941- R, de 18 de Outubro de 2007 - utilização de produtos e",
+    "NBR 10.004 - 1: Resíduos sólidos - Classificação - Parte 1: Requisitos de classificação",
+    "NBR 10.004 - 2: Resíduos sólidos - Classificação - Parte 2: Sistema Geral de Classificação"
    ]
   },
   "010229": {
@@ -5503,8 +5478,8 @@
    "incluidos": "Fornecimento de mão-de-obra para execução do serviço de retirada de poste metálico, inclusive remoção de parafusos e acessórios de fixação, considerando o transporte horizontal e acondicionamento provisório das peças, acessórios e resíduos em local apropriado no canteiro de obras. Limpeza do local do serviço, com remoção de resíduos e materiais inaproveitáveis, exclusive destinação final.",
    "criterio": "und (unidade) Pela quantidade efetiva de postes metálicos com altura de 4 a 6 metros, retirados.",
    "normas": [
-    "NBR 10.004-1",
-    "NBR 10.004-2"
+    "NBR 10.004 - 1: Resíduos sólidos - Classificação - Parte 1: Requisitos de classificação",
+    "NBR 10.004 - 2: Resíduos sólidos - Classificação - Parte 2: Sistema Geral de Classificação"
    ]
   },
   "010230": {
@@ -5516,9 +5491,8 @@
    "incluidos": "Fornecimento de mão-de-obra para execução do serviço de retirada de pintura antiga à base de PVA sobre paredes, com aplicação de espátula, lixa e escova com cerdas de aço. Varrição e limpeza do local do serviço, com remoção de resíduos e materiais inaproveitáveis, exclusive destinação final.",
    "criterio": "m2 (metro quadrado) Pela área efetiva das superfícies da alvenaria a ser feita a remoção de pintura antiga à base de PVA.",
    "normas": [
-    "NBR 10.004-1",
-    "NBR 10.004-2",
-    "NR 18"
+    "NBR 10.004 - 1: Resíduos sólidos - Classificação - Parte 1: Requisitos de classificação",
+    "NBR 10.004 - 2: Resíduos sólidos - Classificação - Parte 2: Sistema Geral de Classificação"
    ]
   },
   "010234": {
@@ -5527,9 +5501,12 @@
    "caderno": "01 – SERVIÇOS PRELIMINARES · 0102 – DEMOLIÇÕES E RETIRADAS",
    "atualizacao": "07/2025",
    "aplicacao": "Em situações em que há necessidade de demolição total ou parcial de uma ou mais lajes pré- moldadas de concreto. Utilizado por exemplo para fazer aberturas na laje para criação de escadas ou shafts para a passagem de prumadas de hidráulica.",
-   "incluidos": null,
-   "criterio": null,
-   "normas": null
+   "incluidos": "Fornecimento de mão-de-obra para execução do serviço de demolição manual de laje pré- moldada em concreto, com auxílio de ferramentas manuais, inclusive transporte vertical, 3/3 00 transporte horizontal e acondicionamento provisório dos fragmentos e dos resíduos em local apropriado no canteiro de obras. Limpeza do local do serviço, considerando recolhimento, varrição, remoção de resíduos, detritos, fragmentos de concreto, pontas de ferro e materiais inaproveitáveis, exclusive destinação final.",
+   "criterio": "m2 (metro quadrado) Pela área de laje pré-moldada de concreto, considerando a área efetiva demolida, apropriada com base nas dimensões das peças íntegras.",
+   "normas": [
+    "NBR 10.004 - 1: Resíduos sólidos - Classificação - Parte 1: Requisitos de classificação",
+    "NBR 10.004 - 2: Resíduos sólidos - Classificação - Parte 2: Sistema Geral de Classificação"
+   ]
   },
   "010315": {
    "d": "Retirada manual de telhas tipo Canalete 49, sem reaproveitamento",
@@ -5958,350 +5935,338 @@
   "040202": {
    "d": "Fornecimento, preparo e aplicação de concreto ciclópico Fck=15MPa com 30% de pedra de mão",
    "u": "m3",
-   "caderno": "0402 – INFRA-ESTRUTURA (FUNDAÇÃO)",
+   "caderno": "04 – ESTRUTURAS",
    "atualizacao": "11/2024",
-   "aplicacao": "Utilizado em muros de contenção e alguns tipos de fundações, que geralmente não necessitam de armadura. O emprego do concreto ciclópico é recomendado em peças de grandes dimensões e com maquinário específico; em pequenas obras pode gerar problemas de recebimento, armazenamento e transporte da rocha.",
+   "aplicacao": "Utilizado em muros de contenção e alguns tipos de fundações, que geralmente não necessitam de armadura. Apesar de ter um método de execução simples, o emprego do concreto ciclópico é recomendado em peças de grandes dimensões e com maquinário específico. Em pequenas obras, pode gerar problemas de rec",
    "incluidos": "Fornecimento e preparo com amassamento mecânico da massa de concreto, considerando perdas por consumo e transporte interno no canteiro até o local da aplicação, inclusive fornecimento da pedra de mão, lançamento, espalhamento, adensamento, acabamento, cura do concreto e limpeza da área, com remoção dos materiais excedentes e inaproveitáveis.",
    "criterio": "m3 (metro cúbico) Pelo volume de concreto calculado no projeto de fôrma.",
    "normas": [
-    "NBR 12655:2022",
-    "NBR 5732:1991",
-    "NBR 7220:1987",
-    "NBR 7211:2005",
-    "NBR 7225:2009",
-    "NBR 12655:2015",
-    "NBR 6118:2023",
-    "NR 18"
+    "NBR 12655:2022 - Concreto de cimento Portland - Preparo, controle, recebimento e aceitação",
+    "NBR 5732:1991 – Cimento Portland Comum.",
+    "NBR 7220:1987 - Agregado - Determinação de impurezas orgânicas húmicas em agregado",
+    "NBR 7211:2005 - Agregados para concreto – Especificação.",
+    "NBR 7225:2009 – Materiais de pedra e agregados naturais.",
+    "NBR 12655:2015 - Preparo, controle e recebimento de concreto.",
+    "NBR 6118:2023 - Projeto de estruturas de concreto - Procedimento."
    ]
   },
   "040206": {
    "d": "Fôrma de tábua de madeira de 2.5 x 30.0 cm para fundações, levando-se em conta a utilização 5 vezes (incluindo o material, corte, montagem, escoramento e desforma)",
    "u": "m2",
-   "caderno": "0402 – INFRA-ESTRUTURA (FUNDAÇÃO)",
+   "caderno": "04 – ESTRUTURAS",
    "atualizacao": "11/2024",
    "aplicacao": "Nos elementos estruturais de infraestrutura (fundações), como por exemplo: sapatas, blocos, cintas, baldrames, radier, etc. As fôrmas têm que ser capazes de resistir à pressão resultante do lançamento e vibração do concreto.",
    "incluidos": "Fornecimento e corte dos materiais (madeira para 5 utilizações) para fabricação da fôrma, inclusive pregos, considerando eventuais perdas, transporte interno do canteiro até o local da montagem, escoramento, nivelamento, aplicação de desmoldante, desfôrma e limpeza da área, com remoção dos materiais excedentes e inaproveitáveis.",
-   "criterio": "m2 (metro quadrado) Pela área da superfície da fôrma em contato com o concreto, efetivamente realizada, sendo descontadas as áreas de interseção.",
+   "criterio": "m2 (metro quadrado) Pela área da superfície da fôrma em contato com o concreto, efetivamente realizada, sendo descontadas as áreas de interseção. 3/4 00",
    "normas": [
-    "NBR 7203:1982",
-    "NBR 14931:2023",
-    "NBR 6118:2023",
-    "NBR 6627:1981",
-    "NBR 15696:2009",
-    "NR 18",
-    "Decreto Estadual nº 1.941-R/2007"
+    "NBR 7203:1982 - Madeira serrada e beneficiada.",
+    "Decreto Estadual nº 1.941- R, de 18 de Outubro de 2007 - utilização de produtos e",
+    "NBR 14931:2023 - Execução de estruturas de concreto armado, protendido e com fibras -",
+    "NBR 6118:2023 - Projeto de estruturas de concreto - Procedimento.",
+    "NBR 6627:1981 – Pregos comuns e arestas de aço para madeiras.",
+    "NBR 15696:2009 - Fôrmas e escoramentos para estruturas de concreto – Projeto,"
    ]
   },
   "040224": {
    "d": "Fornecimento, preparo e aplicação de concreto Fck=30 MPa (brita 1 e 2) - (5% de perdas já incluído no custo)",
    "u": "m3",
-   "caderno": "0402 – INFRA-ESTRUTURA (FUNDAÇÃO)",
+   "caderno": "04 – ESTRUTURAS",
    "atualizacao": "11/2024",
    "aplicacao": "Nos elementos estruturais de infraestrutura (fundações), como por exemplo: sapatas, blocos, cintas, baldrames, radier, etc.",
    "incluidos": "Fornecimento e preparo com amassamento mecânico do concreto, considerando perdas por consumo e transporte interno no canteiro até o local da aplicação, lançamento, espalhamento, adensamento, acabamento, cura do concreto e limpeza da área, com remoção dos materiais excedentes e inaproveitáveis.",
    "criterio": "m3 (metro cúbico) Pelo volume de concreto calculado no projeto de fôrma.",
    "normas": [
-    "NBR 12655:2022",
-    "NBR 5732:1991",
-    "NBR 7220:1987",
-    "NBR 7211:2005",
-    "NBR 12655:2015",
-    "NBR 6118:2023",
-    "NR 18"
+    "NBR 12655:2022 - Concreto de cimento Portland - Preparo, controle, recebimento e aceitação",
+    "NBR 5732:1991 – Cimento Portland Comum.",
+    "NBR 7220:1987 - Agregado - Determinação de impurezas orgânicas húmicas em agregado",
+    "NBR 7211:2005 - Agregados para concreto - Especificação",
+    "NBR 12655:2015 - Preparo, controle e recebimento de concreto.",
+    "NBR 6118:2023 - Projeto de estruturas de concreto - Procedimento."
    ]
   },
   "040231": {
    "d": "Fornecimento, preparo e aplicação de concreto magro com consumo mínimo de cimento de 250 kg/m3 (brita 1 e 2) - (5% de perdas já incluído no custo)",
    "u": "m3",
-   "caderno": "0402 – INFRA-ESTRUTURA (FUNDAÇÃO)",
+   "caderno": "04 – ESTRUTURAS",
    "atualizacao": "11/2024",
    "aplicacao": "Utilizado para recobrimento de fundo de vala dos elementos estruturais de infraestrutura (fundações), como por exemplo: sapatas, blocos, cintas, baldrames, radier, etc.",
    "incluidos": "Fornecimento e preparo com amassamento mecânico do concreto, considerando perdas por consumo e transporte interno no canteiro até o local da aplicação, lançamento, espalhamento, adensamento, acabamento, cura do concreto e limpeza da área, com remoção dos materiais excedentes e inaproveitáveis.",
    "criterio": "m3 (metro cúbico) Pelo volume de concreto efetivamente executado, medido no local de lançamento.",
    "normas": [
-    "NBR 12655:2022",
-    "NBR 5732:1991",
-    "NBR 7220:1987",
-    "NBR 7211:2005",
-    "NBR 12655:2015",
-    "NR 18"
+    "NBR 12655:2022 - Concreto de cimento Portland - Preparo, controle, recebimento e aceitação",
+    "NBR 5732:1991 – Cimento Portland Comum.",
+    "NBR 7220:1987 - Agregado - Determinação de impurezas orgânicas húmicas em agregado",
+    "NBR 7211:2005 - Agregados para concreto - Especificação",
+    "NBR 12655:2015 - Preparo, controle e recebimento de concreto."
    ]
   },
   "040233": {
    "d": "Fornecimento, preparo e aplicação de concreto Fck=15 MPa (brita 1 e 2) - (5% de perdas já incluído no custo)",
    "u": "m3",
-   "caderno": "0402 – INFRA-ESTRUTURA (FUNDAÇÃO)",
+   "caderno": "04 – ESTRUTURAS",
    "atualizacao": "11/2024",
    "aplicacao": "Nos elementos estruturais de infraestrutura (fundações), como por exemplo: sapatas, blocos, cintas, baldrames, radier, etc.",
    "incluidos": "Fornecimento e preparo com amassamento mecânico do concreto, considerando perdas por consumo e transporte interno no canteiro até o local da aplicação, lançamento, espalhamento, adensamento, acabamento, cura do concreto e limpeza da área, com remoção dos materiais excedentes e inaproveitáveis.",
    "criterio": "m3 (metro cúbico) Pelo volume de concreto calculado no projeto de fôrma.",
    "normas": [
-    "NBR 12655:2022",
-    "NBR 5732:1991",
-    "NBR 7220:1987",
-    "NBR 7211:2005",
-    "NBR 12655:2015",
-    "NBR 6118:2023",
-    "NR 18"
+    "NBR 12655:2022 - Concreto de cimento Portland - Preparo, controle, recebimento e aceitação",
+    "NBR 5732:1991 – Cimento Portland Comum.",
+    "NBR 7220:1987 - Agregado - Determinação de impurezas orgânicas húmicas em agregado",
+    "NBR 7211:2005 - Agregados para concreto - Especificação",
+    "NBR 12655:2015 - Preparo, controle e recebimento de concreto.",
+    "NBR 6118:2023 - Projeto de estruturas de concreto - Procedimento."
    ]
   },
   "040235": {
    "d": "Fornecimento, preparo e aplicação de concreto Fck=20 MPa (brita 1 e 2) - (5% de perdas já incluído no custo)",
    "u": "m3",
-   "caderno": "0402 – INFRA-ESTRUTURA (FUNDAÇÃO)",
+   "caderno": "04 – ESTRUTURAS",
    "atualizacao": "11/2024",
    "aplicacao": "Nos elementos estruturais de infraestrutura (fundações), como por exemplo: sapatas, blocos, cintas, baldrames, radier, etc.",
    "incluidos": "Fornecimento e preparo com amassamento mecânico do concreto, considerando perdas por consumo e transporte interno no canteiro até o local da aplicação, lançamento, espalhamento, adensamento, acabamento, cura do concreto e limpeza da área, com remoção dos materiais excedentes e inaproveitáveis.",
    "criterio": "m3 (metro cúbico) Pelo volume de concreto calculado no projeto de fôrma.",
    "normas": [
-    "NBR 12655:2022",
-    "NBR 5732:1991",
-    "NBR 7220:1987",
-    "NBR 7211:2005",
-    "NBR 12655:2015",
-    "NBR 6118:2023",
-    "NR 18"
+    "NBR 12655:2022 - Concreto de cimento Portland - Preparo, controle, recebimento e aceitação",
+    "NBR 5732:1991 – Cimento Portland Comum.",
+    "NBR 7220:1987 - Agregado - Determinação de impurezas orgânicas húmicas em agregado",
+    "NBR 7211:2005 - Agregados para concreto - Especificação",
+    "NBR 12655:2015 - Preparo, controle e recebimento de concreto.",
+    "NBR 6118:2023 - Projeto de estruturas de concreto - Procedimento."
    ]
   },
   "040237": {
    "d": "Fornecimento, preparo e aplicação de concreto Fck=25 MPa (brita 1 e 2) - (5% de perdas já incluído no custo)",
    "u": "m3",
-   "caderno": "0402 – INFRA-ESTRUTURA (FUNDAÇÃO)",
+   "caderno": "04 – ESTRUTURAS",
    "atualizacao": "11/2024",
    "aplicacao": "Nos elementos estruturais de infraestrutura (fundações), como por exemplo: sapatas, blocos, cintas, baldrames, radier, etc.",
    "incluidos": "Fornecimento e preparo com amassamento mecânico do concreto, considerando perdas por consumo e transporte interno no canteiro até o local da aplicação, lançamento, espalhamento, adensamento, acabamento, cura do concreto e limpeza da área, com remoção dos materiais excedentes e inaproveitáveis.",
    "criterio": "m3 (metro cúbico) Pelo volume de concreto calculado no projeto de fôrma.",
    "normas": [
-    "NBR 12655:2022",
-    "NBR 5732:1991",
-    "NBR 7220:1987",
-    "NBR 7211:2005",
-    "NBR 12655:2015",
-    "NBR 6118:2023",
-    "NR 18"
+    "NBR 12655:2022 - Concreto de cimento Portland - Preparo, controle, recebimento e aceitação",
+    "NBR 5732:1991 – Cimento Portland Comum.",
+    "NBR 7220:1987 - Agregado - Determinação de impurezas orgânicas húmicas em agregado",
+    "NBR 7211:2005 - Agregados para concreto - Especificação",
+    "NBR 12655:2015 - Preparo, controle e recebimento de concreto.",
+    "NBR 6118:2023 - Projeto de estruturas de concreto - Procedimento."
    ]
   },
   "040238": {
    "d": "Fôrma de chapa compensada resinada 12mm, considerando 3 utilizações (incluindo o material, corte, montagem, escoramento e desforma)",
    "u": "m2",
-   "caderno": "0402 – INFRA-ESTRUTURA (FUNDAÇÃO)",
+   "caderno": "04 – ESTRUTURAS",
    "atualizacao": "11/2024",
    "aplicacao": "Nos elementos estruturais de infraestrutura (fundações) como por exemplo: sapatas, blocos, cintas, baldrames, radier, etc. As fôrmas devem ser capazes de resistir à pressão resultante do lançamento e vibração do concreto.",
    "incluidos": "Fornecimento e corte das chapas compensadas e dos sarrafos (para 3 utilizações) para fabricação da fôrma, incluindo pregos, considerando eventuais perdas, transporte interno do canteiro até o local da montagem, escoramento, nivelamento, aplicação de desmoldante, desforma e limpeza da área, com remoção dos materiais excedentes e inaproveitáveis.",
-   "criterio": "m2 (metro quadrado) Pela área da superfície da fôrma em contato com o concreto, efetivamente realizada, sendo descontadas as áreas de interseção.",
+   "criterio": "m2 (metro quadrado) 3/4 00 Pela área da superfície da fôrma em contato com o concreto, efetivamente realizada, sendo descontadas as áreas de interseção.",
    "normas": [
-    "NBR 7203:1982",
-    "NBR 14931:2023",
-    "NBR 6118:2023",
-    "NBR 6627:1981",
-    "NBR 15696:2009",
-    "NR 18",
-    "Decreto Estadual nº 1.941-R/2007"
+    "NBR 7203:1982 - Madeira serrada e beneficiada.",
+    "Decreto Estadual nº 1.941- R, de 18 de Outubro de 2007 - utilização de produtos e",
+    "NBR 14931:2023 - Execução de estruturas de concreto armado, protendido e com fibras -",
+    "NBR 6118:2023 - Projeto de estruturas de concreto - Procedimento.",
+    "NBR 6627:1981 – Pregos comuns e arestas de aço para madeiras.",
+    "NBR 15696:2009 - Fôrmas e escoramentos para estruturas de concreto – Projeto,"
    ]
   },
   "040239": {
    "d": "Fornecimento e aplicação de concreto USINADO Fck=20 MPa - considerando lançamento MANUAL para INFRA-ESTRUTURA (5% de perdas já incluído no custo)",
    "u": "m3",
-   "caderno": "0402 – INFRA-ESTRUTURA (FUNDAÇÃO)",
+   "caderno": "04 – ESTRUTURAS",
    "atualizacao": "11/2024",
    "aplicacao": "Nos elementos estruturais de infraestrutura (fundações), como por exemplo: sapatas, blocos, cintas, baldrames, radier, etc.",
    "incluidos": "Fornecimento e transporte do concreto dosado em central, considerando perdas por consumo e transporte interno no canteiro até o local da aplicação, lançamento, espalhamento, adensamento, acabamento, cura do concreto e limpeza da área, com remoção dos materiais excedentes e inaproveitáveis, inclusive fornecimento dos ensaios à compressão e consistência, juntamente com o relatório para comprovação da qualidade do concreto.",
    "criterio": "m3 (metro cúbico) Pelo volume de concreto calculado no projeto de fôrma.",
    "normas": [
-    "NBR 7212:2021",
-    "NBR 12655:2015",
-    "NBR 6118:2023",
-    "NR 18"
+    "NBR 7212:2021 - Execução de concreto dosado em central.",
+    "NBR 12655:2015 - Preparo, controle e recebimento de concreto.",
+    "NBR 6118:2023 - Projeto de estruturas de concreto - Procedimento."
    ]
   },
   "040240": {
    "d": "Fornecimento e aplicação de concreto USINADO Fck=25 MPa - considerando lançamento MANUAL para INFRA-ESTRUTURA (5% de perdas já incluído no custo)",
    "u": "m3",
-   "caderno": "0402 – INFRA-ESTRUTURA (FUNDAÇÃO)",
+   "caderno": "04 – ESTRUTURAS",
    "atualizacao": "11/2024",
    "aplicacao": "Nos elementos estruturais de infraestrutura (fundações), como por exemplo: sapatas, blocos, cintas, baldrames, radier, etc.",
    "incluidos": "Fornecimento e transporte do concreto dosado em central, considerando perdas por consumo e transporte interno no canteiro até o local da aplicação, lançamento, espalhamento, adensamento, acabamento, cura do concreto e limpeza da área, com remoção dos materiais excedentes e inaproveitáveis, inclusive fornecimento dos ensaios à compressão e consistência, juntamente com o relatório para comprovação da qualidade do concreto.",
    "criterio": "m3 (metro cúbico) Pelo volume de concreto calculado no projeto de fôrma.",
    "normas": [
-    "NBR 7212:2021",
-    "NBR 12655:2015",
-    "NBR 6118:2023",
-    "NR 18"
+    "NBR 7212:2021 - Execução de concreto dosado em central.",
+    "NBR 12655:2015 - Preparo, controle e recebimento de concreto.",
+    "NBR 6118:2023 - Projeto de estruturas de concreto - Procedimento."
    ]
   },
   "040243": {
    "d": "Fornecimento, dobragem e colocação em fôrma, de armadura CA-50 A média, diâmetro de 6.3 a 10.0 mm",
    "u": "kg",
-   "caderno": "0402 – INFRA-ESTRUTURA (FUNDAÇÃO)",
+   "caderno": "04 – ESTRUTURAS",
    "atualizacao": "11/2024",
    "aplicacao": "Nos elementos estruturais de infraestrutura (fundações), como por exemplo: sapatas, blocos, cintas, baldrames, radier, etc. As armaduras deverão estar posicionadas de maneira a absorver os esforços de tração sobre as estruturas de concreto armado.",
    "incluidos": "Fornecimento, corte, dobragem, transporte (interno do canteiro até o local de aplicação) e colocação em fôrma de armadura CA-50 de bitolas de diâmetros de 6,3 a 10,0 milímetros, inclusive espaçadores para concreto armado e amarração com fornecimento de arame recozido, posicionamento e limpeza, inclusive limpeza da área com remoção e bota-fora do material excedente e inaproveitável.",
    "criterio": "kg (quilo) Pelo levantamento das bitolas de diâmetros de 6,3 a 10,0 milímetros, nos seus pesos nominais, nas plantas de armadura de infraestrutura, conforme estabelecido no projeto e efetivamente colocado em fôrma (executado). As perdas não devem estar incluídas no levantamento, pois já estão consideradas dentro da composição de preço unitário (10%). Consideram-se armaduras de infraestrutura as utilizadas até o respaldo superior da viga baldrame.",
    "normas": [
-    "NBR 7480:2022",
-    "NBR 6181:2003",
-    "NBR 6118:2023",
-    "NR 18"
+    "NBR 7480:2022- Aço destinado às armaduras para estruturas de concreto armado –",
+    "NBR 6181:2003 - Classificação de meios corrosivos.",
+    "NBR 6118:2023 - Projeto de estruturas de concreto - Procedimento."
    ]
   },
   "040245": {
    "d": "Fornecimento, dobragem e colocação em fôrma, de armadura CA-50 A grossa diâmetro de 12.5 a 25.0 mm (1/2 a 1”)",
    "u": "kg",
-   "caderno": "0402 – INFRA-ESTRUTURA (FUNDAÇÃO)",
+   "caderno": "04 – ESTRUTURAS",
    "atualizacao": "11/2024",
    "aplicacao": "Nos elementos estruturais de infraestrutura (fundações), como por exemplo: sapatas, cintas, baldrames, radier, etc. As armaduras deverão estar posicionadas de maneira a absorver os esforços de tração sobre as estruturas de concreto armado.",
    "incluidos": "Fornecimento, corte, dobragem, transporte (interno do canteiro até o local de aplicação) e colocação em fôrma de armadura CA-50 de bitolas de diâmetros de 12,5 a 25,0 milímetros, inclusive espaçadores para concreto armado e amarração com fornecimento de arame recozido, posicionamento e limpeza, inclusive limpeza da área com remoção e bota-fora do material excedente e inaproveitável.",
    "criterio": "kg (quilo) Pelo levantamento das bitolas de diâmetros de 12,5 a 25,0 milímetros, nos seus pesos nominais, nas plantas de armadura de infraestrutura, conforme estabelecido no projeto e efetivamente colocado em fôrma (executado). As perdas não devem estar incluídas no levantamento, pois já estão consideradas dentro da composição de preço unitário (10%). Consideram-se armaduras de infraestrutura as utilizadas até o respaldo superior da viga baldrame.",
    "normas": [
-    "NBR 7480:2022",
-    "NBR 6181:2003",
-    "NBR 6118:2023",
-    "NR 18"
+    "NBR 7480:2022- Aço destinado às armaduras para estruturas de concreto armado –",
+    "NBR 6181:2003 - Classificação de meios corrosivos.",
+    "NBR 6118:2023 - Projeto de estruturas de concreto - Procedimento."
    ]
   },
   "040246": {
    "d": "Fornecimento, dobragem e colocação em fôrma, de armadura CA-60 B fina, diâmetro de 4.0 a 7.0 mm",
    "u": "kg",
-   "caderno": "0402 – INFRA-ESTRUTURA (FUNDAÇÃO)",
+   "caderno": "04 – ESTRUTURAS",
    "atualizacao": "11/2024",
    "aplicacao": "Nos elementos estruturais de infraestrutura (fundações), como por exemplo: sapatas, cintas, baldrames, radier, etc. As armaduras deverão estar posicionadas de maneira a absorver os esforços de tração sobre as estruturas de concreto armado.",
    "incluidos": "Fornecimento, corte, dobragem, transporte (interno do canteiro até o local de aplicação) e colocação em fôrma de armadura CA-60 de bitolas de diâmetros de 4,0 a 7,0 milímetros, inclusive espaçadores para concreto armado e amarração com fornecimento de arame recozido, posicionamento e limpeza, inclusive limpeza da área com remoção e bota-fora do material excedente e inaproveitável.",
    "criterio": "kg (quilo) Pelo levantamento das bitolas de diâmetros de 4,0 a 7,0 milímetros, nos seus pesos nominais, nas plantas de armadura de infraestrutura, conforme estabelecido no projeto e efetivamente colocado em fôrma (executado). As perdas não devem estar incluídas no levantamento, pois já estão consideradas dentro da composição de preço unitário (10%). Consideram-se armaduras de infraestrutura as utilizadas até o respaldo superior da viga baldrame.",
    "normas": [
-    "NBR 7480:2022",
-    "NBR 6181:2003",
-    "NBR 6118:2023",
-    "NR 18"
+    "NBR 7480:2022- Aço destinado às armaduras para estruturas de concreto armado –",
+    "NBR 6181:2003 - Classificação de meios corrosivos.",
+    "NBR 6118:2023 - Projeto de estruturas de concreto - Procedimento."
    ]
   },
   "040249": {
    "d": "Fôrma de tábua de madeira de 2.5 x 30.0 cm, considerando 1 utilização (incluindo o material, corte, montagem, escoramento e desforma)",
    "u": "m2",
-   "caderno": "0402 – INFRA-ESTRUTURA (FUNDAÇÃO)",
+   "caderno": "04 – ESTRUTURAS",
    "atualizacao": "11/2024",
    "aplicacao": "Nos elementos estruturais de infraestrutura (fundações), como por exemplo: sapatas, cintas, baldrames, radier, etc. As fôrmas têm que ser capazes de resistir à pressão resultante do lançamento e vibração do concreto.",
    "incluidos": "Fornecimento e corte dos materiais para fabricação da fôrma, incluindo pregos, considerando eventuais perdas, transporte interno do canteiro até o local da montagem, escoramento, nivelamento, aplicação de desmoldante, desforma e limpeza da área, com remoção dos materiais excedentes e inaproveitáveis.",
    "criterio": "m2 (metro quadrado) Pela área da superfície da fôrma em contato com o concreto, efetivamente realizada, sendo descontadas as áreas de interseção.",
    "normas": [
-    "NBR 7203:1982",
-    "NBR 14931:2023",
-    "NBR 6118:2023",
-    "NBR 6627:1981",
-    "NBR 15696:2009",
-    "NR 18",
-    "Decreto Estadual nº 1.941-R/2007"
+    "NBR 7203:1982 - Madeira serrada e beneficiada.",
+    "Decreto Estadual nº 1.941- R, de 18 de Outubro de 2007 - utilização de produtos e",
+    "NBR 14931:2023 - Execução de estruturas de concreto armado, protendido e com fibras -",
+    "NBR 6118:2023 - Projeto de estruturas de concreto - Procedimento.",
+    "NBR 6627:1981 – Pregos comuns e arestas de aço para madeiras.",
+    "NBR 15696:2009 - Fôrmas e escoramentos para estruturas de concreto – Projeto,"
    ]
   },
   "040250": {
    "d": "Fôrma de tábua de madeira de 2.5 x 30.0 cm, considerando 3 utilizações (incluindo o material, corte, montagem, escoramento e desforma)",
    "u": "m2",
-   "caderno": "0402 – INFRA-ESTRUTURA (FUNDAÇÃO)",
+   "caderno": "04 – ESTRUTURAS",
    "atualizacao": "11/2024",
    "aplicacao": "Nos elementos estruturais de infraestrutura (fundações), como por exemplo: sapatas, cintas, baldrames, radier, etc. As fôrmas têm que ser capazes de resistir à pressão resultante do lançamento e vibração do concreto.",
    "incluidos": "Fornecimento e corte dos materiais (madeira para 3 utilizações) para fabricação da fôrma, incluindo pregos, considerando eventuais perdas, transporte interno do canteiro até o local da montagem, escoramento, nivelamento, aplicação de desmoldante, desforma e limpeza da área, com remoção dos materiais excedentes e inaproveitáveis.",
-   "criterio": "m2 (metro quadrado) Pela área da superfície da fôrma em contato com o concreto, efetivamente realizada, sendo descontadas as áreas de interseção.",
+   "criterio": "m2 (metro quadrado) Pela área da superfície da fôrma em contato com o concreto, efetivamente realizada, sendo descontadas as áreas de interseção. 3/4 00",
    "normas": [
-    "NBR 7203:1982",
-    "NBR 14931:2023",
-    "NBR 6118:2023",
-    "NBR 6627:1981",
-    "NBR 15696:2009",
-    "NR 18",
-    "Decreto Estadual nº 1.941-R/2007"
+    "NBR 7203:1982 - Madeira serrada e beneficiada.",
+    "Decreto Estadual nº 1.941- R, de 18 de Outubro de 2007 - utilização de produtos e",
+    "NBR 14931:2023 - Execução de estruturas de concreto armado, protendido e com fibras -",
+    "NBR 6118:2023 - Projeto de estruturas de concreto - Procedimento.",
+    "NBR 6627:1981 – Pregos comuns e arestas de aço para madeiras.",
+    "NBR 15696:2009 - Fôrmas e escoramentos para estruturas de concreto – Projeto,"
    ]
   },
   "040253": {
    "d": "Fornecimento e aplicação de concreto USINADO Fck=30 MPa - considerando lançamento MANUAL para INFRA-ESTRUTURA (5% de perdas já incluído no custo)",
    "u": "m3",
-   "caderno": "0402 – INFRA-ESTRUTURA (FUNDAÇÃO)",
+   "caderno": "04 – ESTRUTURAS",
    "atualizacao": "11/2024",
    "aplicacao": "Nos elementos estruturais de infraestrutura (fundações), como por exemplo: sapatas, blocos, cintas, baldrames, radier, etc.",
    "incluidos": "Fornecimento e transporte do concreto dosado em central, considerando perdas por consumo e transporte interno no canteiro até o local da aplicação, lançamento, espalhamento, adensamento, acabamento, cura do concreto e limpeza da área, com remoção dos materiais excedentes e inaproveitáveis, inclusive fornecimento dos ensaios à compressão e consistência, juntamente com o relatório para comprovação da qualidade do concreto.",
    "criterio": "m3 (metro cúbico) Pelo volume de concreto calculado no projeto de fôrma.",
    "normas": [
-    "NBR 7212:2021",
-    "NBR 12655:2015",
-    "NBR 6118:2023",
-    "NR 18"
+    "NBR 7212:2021 - Execução de concreto dosado em central.",
+    "NBR 12655:2015 - Preparo, controle e recebimento de concreto.",
+    "NBR 6118:2023 - Projeto de estruturas de concreto - Procedimento."
    ]
   },
   "040315": {
    "d": "Fornecimento, preparo e aplicação de concreto Fck=30 MPa (brita 1 e 2) - (5% de perdas já incluído no custo)",
    "u": "m3",
-   "caderno": "0403 – SUPER-ESTRUTURA",
+   "caderno": "04 – ESTRUTURAS",
    "atualizacao": "11/2024",
    "aplicacao": "Nos elementos estruturais de superestrutura, como por exemplo: lajes, pilares, vigas, etc.",
    "incluidos": "Fornecimento e preparo com amassamento mecânico do concreto, considerando perdas por consumo e transporte interno no canteiro até o local da aplicação, lançamento, espalhamento, adensamento, acabamento, cura do concreto e limpeza da área, com remoção dos materiais excedentes e inaproveitáveis.",
    "criterio": "m3 (metro cúbico) Pelo volume de concreto calculado no projeto de fôrma.",
    "normas": [
-    "NBR 12655:2022",
-    "NBR 5732:1991",
-    "NBR 7220:1987",
-    "NBR 7211:2005",
-    "NBR 12655:2015",
-    "NBR 6118:2023"
+    "NBR 12655:2022 - Concreto de cimento Portland - Preparo, controle, recebimento e aceitação",
+    "NBR 5732:1991 – Cimento Portland Comum.",
+    "NBR 7220:1987 - Agregado - Determinação de impurezas orgânicas húmicas em agregado",
+    "NBR 7211:2005 - Agregados para concreto - Especificação",
+    "NBR 12655:2015 - Preparo, controle e recebimento de concreto.",
+    "NBR 6118:2023 - Projeto de estruturas de concreto - Procedimento."
    ]
   },
   "040320": {
    "d": "Fornecimento, preparo e aplicação de concreto Fck=15 MPa (brita 1 e 2) - (5% de perdas já incluído no custo)",
    "u": "m3",
-   "caderno": "0403 – SUPER-ESTRUTURA",
+   "caderno": "04 – ESTRUTURAS",
    "atualizacao": "11/2024",
    "aplicacao": "Em alguns elementos estruturais de superestrutura (como capeamento de alguns tipos de lajes) que não exigem uma grande resistência, sendo uma opção mais econômica de concreto.",
    "incluidos": "Fornecimento e preparo com amassamento mecânico do concreto, considerando perdas por consumo e transporte interno no canteiro até o local da aplicação, lançamento, espalhamento, adensamento, acabamento, cura do concreto e limpeza da área, com remoção dos materiais excedentes e inaproveitáveis.",
    "criterio": "m3 (metro cúbico) Pelo volume de concreto calculado no projeto de fôrma.",
    "normas": [
-    "NBR 12655:2022",
-    "NBR 5732:1991",
-    "NBR 7220:1987",
-    "NBR 7211:2005",
-    "NBR 12655:2015",
-    "NBR 6118:2023"
+    "NBR 12655:2022 - Concreto de cimento Portland - Preparo, controle, recebimento e aceitação",
+    "NBR 5732:1991 – Cimento Portland Comum.",
+    "NBR 7220:1987 - Agregado - Determinação de impurezas orgânicas húmicas em agregado",
+    "NBR 7211:2005 - Agregados para concreto - Especificação",
+    "NBR 12655:2015 - Preparo, controle e recebimento de concreto.",
+    "NBR 6118:2023 - Projeto de estruturas de concreto - Procedimento."
    ]
   },
   "040322": {
    "d": "Fornecimento, preparo e aplicação de concreto Fck=20 MPa (brita 1 e 2) - (5% de perdas já incluído no custo)",
    "u": "m3",
-   "caderno": "0403 – SUPER-ESTRUTURA",
+   "caderno": "04 – ESTRUTURAS",
    "atualizacao": "10/2024",
    "aplicacao": "Nos elementos estruturais de superestrutura, como por exemplo: lajes, pilares, vigas, etc.",
    "incluidos": "Fornecimento e preparo com amassamento mecânico do concreto, considerando perdas por consumo e transporte interno no canteiro até o local da aplicação, lançamento, espalhamento, adensamento, acabamento, cura do concreto e limpeza da área, com remoção dos materiais excedentes e inaproveitáveis.",
    "criterio": "m3 (metro cúbico) Pelo volume de concreto calculado no projeto de fôrma.",
    "normas": [
-    "NBR 12655:2022",
-    "NBR 5732:1991",
-    "NBR 7220:1987",
-    "NBR 7211:2005",
-    "NBR 12655:2015",
-    "NBR 6118:2023"
+    "NBR 12655:2022 - Concreto de cimento Portland - Preparo, controle, recebimento e aceitação",
+    "NBR 5732:1991 – Cimento Portland Comum.",
+    "NBR 7220:1987 - Agregado - Determinação de impurezas orgânicas húmicas em agregado",
+    "NBR 7211:2005 - Agregados para concreto - Especificação",
+    "NBR 12655:2015 - Preparo, controle e recebimento de concreto.",
+    "NBR 6118:2023 - Projeto de estruturas de concreto - Procedimento."
    ]
   },
   "040324": {
    "d": "Fornecimento, preparo e aplicação de concreto Fck=25 MPa (brita 1 e 2) - (5% de perdas já incluído no custo)",
    "u": "m3",
-   "caderno": "0403 – SUPER-ESTRUTURA",
+   "caderno": "04 – ESTRUTURAS",
    "atualizacao": "11/2024",
    "aplicacao": "Nos elementos estruturais de superestrutura, como por exemplo: lajes, pilares, vigas, etc.",
    "incluidos": "Fornecimento e preparo com amassamento mecânico do concreto, considerando perdas por consumo e transporte interno no canteiro até o local da aplicação, lançamento, espalhamento, adensamento, acabamento, cura do concreto e limpeza da área, com remoção dos materiais excedentes e inaproveitáveis.",
    "criterio": "m3 (metro cúbico) Pelo volume de concreto calculado no projeto de fôrma.",
    "normas": [
-    "NBR 12655:2022",
-    "NBR 5732:1991",
-    "NBR 7220:1987",
-    "NBR 7211:2005",
-    "NBR 12655:2015",
-    "NBR 6118:2023"
+    "NBR 12655:2022 - Concreto de cimento Portland - Preparo, controle, recebimento e aceitação",
+    "NBR 5732:1991 – Cimento Portland Comum.",
+    "NBR 7220:1987 - Agregado - Determinação de impurezas orgânicas húmicas em agregado",
+    "NBR 7211:2005 - Agregados para concreto - Especificação",
+    "NBR 12655:2015 - Preparo, controle e recebimento de concreto.",
+    "NBR 6118:2023 - Projeto de estruturas de concreto - Procedimento."
    ]
   },
   "040328": {
    "d": "Fornecimento, dobragem e colocação em fôrma, de armadura CA-50 A média, diâmetro de 6.3 a 10.0 mm",
    "u": "kg",
-   "caderno": "0403 – SUPER-ESTRUTURA",
+   "caderno": "04 – ESTRUTURAS",
    "atualizacao": "11/2024",
    "aplicacao": "Nos elementos estruturais de superestrutura, como por exemplo: lajes, pilares, vigas, etc. As armaduras deverão estar posicionadas de maneira a absorver os esforços de tração sobre as estruturas de concreto armado.",
-   "incluidos": null,
-   "criterio": null,
-   "normas": null
+   "incluidos": "Fornecimento, corte, dobragem, transporte (interno do canteiro até o local de aplicação) e colocação em fôrma de armadura CA-50 de bitolas de diâmetros de 6,3 a 10,0 milímetros, inclusive espaçadores para concreto armado e amarração com fornecimento de arame recozido, posicionamento e limpeza, inclusive limpeza da área com remoção e bota-fora do material excedente e inaproveitável.",
+   "criterio": "kg (quilo) Pelo levantamento das bitolas de diâmetros de 6,3 a 10,0 milímetros, nos seus pesos nominais, nas plantas de armadura de infraestrutura, conforme estabelecido no projeto e efetivamente colocado em fôrma (executado). As perdas não devem estar incluídas no levantamento, pois já estão consideradas dentro da composição de preço unitário (10%). Consideram-se armaduras de superestrutura as utilizadas a partir (acima) do respaldo superior da viga baldrame.",
+   "normas": [
+    "NBR 7480:2022- Aço destinado às armaduras para estruturas de concreto armado –",
+    "NBR 6181:2003 - Classificação de meios corrosivos.",
+    "NBR 6118:2023 - Projeto de estruturas de concreto - Procedimento."
+   ]
   },
   "060101": {
    "d": "Marco em madeira de lei tipo Peroba, Ipê, Angelim Pedra ou equivalente, com 15 x 3cm de batente, nas dimensões: 0,60 x 2,10 m",
@@ -11175,6 +11140,654 @@
     "NBR13248:2014 - Cabos de potência e condutores isolados sem cobertura, não halogenados",
     "NBR 9513:1986 – Emendas para cabos de potência isolados para tensões até 750 V –",
     "NBR 9511:1997 – Cabos elétricos - Raios mínimos de curvatura para instalações e diâmetros"
+   ]
+  },
+  "010238": {
+   "d": "Apicoamento manual de superfície revestida com argamassa",
+   "u": "m2",
+   "caderno": "01 – SERVIÇOS PRELIMINARES · 0102 – DEMOLIÇÕES E RETIRADAS",
+   "atualizacao": "07/2025",
+   "aplicacao": "O serviço geralmente é empregado para incremento da rugosidade da superfície revestida com argamassa, com o objetivo de aumentar a área de contato entre o reboco antigo e o reboco novo, ou o revestimento subsequente (acabamento), melhorando significativamente a aderência, no intuito de evitar proble",
+   "incluidos": "Fornecimento de mão-de-obra para execução do serviço de apicoamento de superfície com revestimento em argamassa, com auxílio de ferramentas manuais, considerando a proteção do piso nas proximidades do serviço de apicoamento, o transporte horizontal e acondicionamento provisório dos resíduos em local apropriado no canteiro de obras. Limpeza do local do serviço, considerando recolhimento, varrição, remoção dos fragmentos de argamassa, dos resíduos e materiais inaproveitáveis, exclusive destinação final.",
+   "criterio": "m2 (metro quadrado) Pela área efetiva de apicoamento de superfície com revestimento em argamassa. 3/3 00",
+   "normas": [
+    "NBR 10.004 - 1: Resíduos sólidos - Classificação - Parte 1: Requisitos de classificação",
+    "NBR 10.004 - 2: Resíduos sólidos - Classificação - Parte 2: Sistema Geral de Classificação"
+   ]
+  },
+  "010239": {
+   "d": "Retirada manual de divisórias modulares (tipo Eucatex), com reaproveitamento",
+   "u": "m2",
+   "caderno": "01 – SERVIÇOS PRELIMINARES · 0102 – DEMOLIÇÕES E RETIRADAS",
+   "atualizacao": "07/2025",
+   "aplicacao": "Em situações em que há necessidade de alteração do layout de um determinado ambiente ou remanejamento das divisórias para outro cômodo da edificação.",
+   "incluidos": "Desmontagem de divisórias modulares em chapa e estrutura em perfis metálicos, inclusive ferragens e acessórios (parafusos, buchas e rebites), considerando o transporte horizontal e acondicionamento das peças em local apropriado no canteiro de obras, para reaproveitamento. Limpeza do local do serviço, considerando varrição, remoção de resíduos e materiais inaproveitáveis, exclusive destinação final.",
+   "criterio": "m2 (metro quadrado) Pela área efetiva de divisórias retiradas (desmontadas).",
+   "normas": [
+    "NBR 10.004 - 1: Resíduos sólidos - Classificação - Parte 1: Requisitos de classificação",
+    "NBR 10.004 - 2: Resíduos sólidos - Classificação - Parte 2: Sistema Geral de Classificação"
+   ]
+  },
+  "010240": {
+   "d": "Retirada manual de interruptores e tomadas, sem reaproveitamento",
+   "u": "und",
+   "caderno": "01 – SERVIÇOS PRELIMINARES · 0102 – DEMOLIÇÕES E RETIRADAS",
+   "atualizacao": "07/2025",
+   "aplicacao": "Geralmente em situações em que há necessidade de troca, seja por sinais de falha ou dano, questões estéticas (aparelhos quebrados, desbotados, etc.), melhoria com substituição por aparelhos mais eficientes ou ainda para atendimento à norma NBR 5410.",
+   "incluidos": "Fornecimento de mão-de-obra para execução do serviço de retirada dos interruptores ou tomadas, inclusive com remoção de acessórios de fixação (parafusos, presilhas, suportes etc.) e acondicionamento das peças em local apropriado no canteiro de obras, para descarte (bota-fora). Limpeza do local do serviço, com remoção de resíduos e materiais inaproveitáveis, exclusive destinação final. 2/2 00",
+   "criterio": "und (unidade) Pela quantidade efetiva de interruptores e tomadas retirados.",
+   "normas": [
+    "NBR 10.004 - 1: Resíduos sólidos - Classificação - Parte 1: Requisitos de classificação",
+    "NBR 10.004 - 2: Resíduos sólidos - Classificação - Parte 2: Sistema Geral de Classificação",
+    "NBR 5410 - Execução de instalações elétricas de baixa tensão."
+   ]
+  },
+  "010242": {
+   "d": "Retirada manual de vidros quebrados, sem reaproveitamento",
+   "u": "m2",
+   "caderno": "01 – SERVIÇOS PRELIMINARES · 0102 – DEMOLIÇÕES E RETIRADAS",
+   "atualizacao": "03/2026",
+   "aplicacao": "Esse serviço é aplicado em obras de manutenção predial, reformas, desmontagens, demolições ou substituições de elementos envidraçados em edificaçõe, quando há ocorrência de quebra ou necessidade de remoção preventiva de vidros danificados.",
+   "incluidos": "Fornecimento de mão-de-obra para execução do serviço de retirada vidro quebrados, considerando o transporte horizontal e acondicionamento provisório das peças em local apropriado no canteiro de obras. Limpeza do local do serviço, com remoção de resíduos e materiais inaproveitáveis, exclusive destinação final. 2/2 00",
+   "criterio": "m2 (metro quadrado) Pela área efetiva e total de retirada de vidros quebrados.",
+   "normas": [
+    "NBR 10.004 - 1: Resíduos sólidos - Classificação - Parte 1: Requisitos de classificação",
+    "NBR 10.004 - 2: Resíduos sólidos - Classificação - Parte 2: Sistema Geral de Classificação"
+   ]
+  },
+  "010244": {
+   "d": "Demolição manual de rodapé em argamassa de cimento e areia, sem reaproveitamento",
+   "u": "m",
+   "caderno": "01 – SERVIÇOS PRELIMINARES · 0102 – DEMOLIÇÕES E RETIRADAS",
+   "atualizacao": "07/2025",
+   "aplicacao": "Em situações em que há necessidade de remoção parcial ou completa das peças de rodapé de um determinado ambiente, por diversos motivos, como: troca do tipo de piso com substituição do tipo de rodapé, mudança de layout, abertura de vãos de portas, questão estética (presença significativa de trincas),",
+   "incluidos": "Fornecimento de mão-de-obra para execução do serviço de demolição de rodapé em argamassa de cimento e areia, considerando o transporte horizontal e acondicionamento provisório dos fragmentos do rodapé e dos resíduos em local apropriado no canteiro de obras. Limpeza do local do serviço, considerando recolhimento, varrição, remoção de resíduos, fragmentos de rodapé e materiais inaproveitáveis, exclusive destinação final.",
+   "criterio": "m (metro) Pelo comprimento efetivo de rodapé em argamassa de cimento e areia demolido.",
+   "normas": [
+    "NBR 10.004 - 1: Resíduos sólidos - Classificação - Parte 1: Requisitos de classificação",
+    "NBR 10.004 - 2: Resíduos sólidos - Classificação - Parte 2: Sistema Geral de Classificação"
+   ]
+  },
+  "010246": {
+   "d": "Lixamento manual de parede com pintura PVA para nivelamento e preparo da superfície para recebimento de nova camada de tinta",
+   "u": "m2",
+   "caderno": "01 – SERVIÇOS PRELIMINARES · 0102 – DEMOLIÇÕES E RETIRADAS",
+   "atualizacao": "07/2025",
+   "aplicacao": "Utilizado em ambientes que exigem repintura sobre tinta existente, por motivos como desbotamento, alteração de cor, reformas, ampliações, manutenção preventiva ou modernização estética do espaço.",
+   "incluidos": "Fornecimento de mão-de-obra para execução do serviço de lixamento de parede para recebimento de nova camada de tinta, com aplicação lixa de diversos grãos, de espátula e escova com cerdas de aço. Varrição do ambiente e limpeza da superfície, com remoção de poeira e resíduos, utilizando vassoura, escova e aspirador, exclusive destinação final.",
+   "criterio": "m2 (metro quadrado) Pela área efetiva das superfícies da parede a ser feito o lixamento de pintura antiga PVA, para recebimento de nova camada de tinta.",
+   "normas": [
+    "NBR 10.004 - 1: Resíduos sólidos - Classificação - Parte 1: Requisitos de classificação",
+    "NBR 10.004 - 2: Resíduos sólidos - Classificação - Parte 2: Sistema Geral de Classificação"
+   ]
+  },
+  "010254": {
+   "d": "Remoção manual de telhas cerâmicas, tipo francesa, inclusive cumeeira, sem reaproveitamento",
+   "u": "m2",
+   "caderno": "01 – SERVIÇOS PRELIMINARES · 0102 – DEMOLIÇÕES E RETIRADAS",
+   "atualizacao": "07/2025",
+   "aplicacao": "Em situações em que há necessidade de substituição parcial ou completa das telhas cerâmicas da cobertura, por motivos de infiltrações, peças quebradas, questão estética ou troca do tipo de telhado.",
+   "incluidos": "Remoção de telhas cerâmicas do tipo francesa, considerando o transporte vertical e acondicionamento das peças em local apropriado no canteiro de obras. Limpeza do local do serviço, com remoção de resíduos e materiais inaproveitáveis, exclusive destinação final.",
+   "criterio": "m2 (metro quadrado) Pela área efetiva de telhado considerando a remoção das telhas cerâmicas e da cumeeira.",
+   "normas": [
+    "NBR 10.004 - 1: Resíduos sólidos - Classificação - Parte 1: Requisitos de classificação",
+    "NBR 10.004 - 2: Resíduos sólidos - Classificação - Parte 2: Sistema Geral de Classificação"
+   ]
+  },
+  "010255": {
+   "d": "Remoção manual de telhas cerâmicas, tipo colonial, inclusive cumeeira, sem reaproveitamento",
+   "u": "m2",
+   "caderno": "01 – SERVIÇOS PRELIMINARES · 0102 – DEMOLIÇÕES E RETIRADAS",
+   "atualizacao": "07/2025",
+   "aplicacao": "Em situações em que há necessidade de substituição parcial ou completa das telhas cerâmicas da cobertura, por motivos de infiltrações, peças quebradas, questão estética ou troca do tipo de telhado.",
+   "incluidos": "Remoção de telhas cerâmicas do tipo colonial, considerando o transporte vertical e acondicionamento das peças em local apropriado no canteiro de obras. Limpeza do local do serviço, com remoção de resíduos e materiais inaproveitáveis, exclusive destinação final.",
+   "criterio": "m2 (metro quadrado) Pela área efetiva de telhado considerando a remoção das telhas cerâmicas e da cumeeira.",
+   "normas": [
+    "NBR 10.004 - 1: Resíduos sólidos - Classificação - Parte 1: Requisitos de classificação",
+    "NBR 10.004 - 2: Resíduos sólidos - Classificação - Parte 2: Sistema Geral de Classificação"
+   ]
+  },
+  "010256": {
+   "d": "Remoção manual de telhas ondulada de fibrocimento, inclusive cumeeira, sem reaproveitamento",
+   "u": "m2",
+   "caderno": "01 – SERVIÇOS PRELIMINARES · 0102 – DEMOLIÇÕES E RETIRADAS",
+   "atualizacao": "07/2025",
+   "aplicacao": "Em situações em que há necessidade de substituição parcial ou completa das telhas onduladas de fibrocimento da cobertura ou do fechamento lateral, por motivos de infiltrações, peças quebradas, questão estética ou troca do tipo de telhado.",
+   "incluidos": "Remoção de telhas de fibrocimento, considerando o transporte vertical e acondicionamento das peças em local apropriado no canteiro de obras. Limpeza do local do serviço, com remoção de resíduos e materiais inaproveitáveis, exclusive destinação final.",
+   "criterio": "m2 (metro quadrado) Pela área efetiva de telhado considerando a remoção das telhas de fibrocimento e da cumeeira.",
+   "normas": [
+    "NBR 10.004 - 1: Resíduos sólidos - Classificação - Parte 1: Requisitos de classificação",
+    "NBR 10.004 - 2: Resíduos sólidos - Classificação - Parte 2: Sistema Geral de Classificação"
+   ]
+  },
+  "010259": {
+   "d": "Retirada manual de rodapé de madeira, sem reaproveitamento",
+   "u": "m",
+   "caderno": "01 – SERVIÇOS PRELIMINARES · 0102 – DEMOLIÇÕES E RETIRADAS",
+   "atualizacao": "07/2025",
+   "aplicacao": "Em situações em que há necessidade de substituição parcial ou completa das peças de rodapé de um determinado ambiente.",
+   "incluidos": "Retirada de rodapé de madeira, considerando o transporte horizontal e acondicionamento provisório das peças em local apropriado no canteiro de obras. Limpeza do local do serviço, com remoção de resíduos e materiais inaproveitáveis, exclusive destinação final. 2/2 00",
+   "criterio": "m (metro) Pelo comprimento efetivo de rodapé de madeira retirado.",
+   "normas": [
+    "Decreto Estadual nº 1.941- R, de 18 de Outubro de 2007 - utilização de produtos e",
+    "NBR 10.004 - 1: Resíduos sólidos - Classificação - Parte 1: Requisitos de classificação",
+    "NBR 10.004 - 2: Resíduos sólidos - Classificação - Parte 2: Sistema Geral de Classificação"
+   ]
+  },
+  "010264": {
+   "d": "Demolição manual de piso argamassa de alta resistência tipo granilite, exclusive camada de regularização, sem reaproveitamento",
+   "u": "m2",
+   "caderno": "01 – SERVIÇOS PRELIMINARES · 0102 – DEMOLIÇÕES E RETIRADAS",
+   "atualizacao": "07/2025",
+   "aplicacao": "Em situações em que há necessidade de demolição para troca do tipo de revestimento, por diversos motivos, como: mudança de layout, questão estética (presença significativa de trincas), piso com som cavo ou desplacamento do granilite (piso quebrado).",
+   "incluidos": "Fornecimento de mão-de-obra para execução do serviço de demolição de piso granilite, considerando o transporte horizontal e acondicionamento provisório dos fragmentos de piso e dos resíduos em local apropriado no canteiro de obras. Limpeza do local do serviço, considerando recolhimento, varrição, remoção de resíduos, detritos, fragmentos de piso e materiais inaproveitáveis, exclusive destinação final.",
+   "criterio": "m2 (metro quadrado) Pela área efetiva de piso granilite demolido.",
+   "normas": [
+    "NBR 10.004 - 1: Resíduos sólidos - Classificação - Parte 1: Requisitos de classificação",
+    "NBR 10.004 - 2: Resíduos sólidos - Classificação - Parte 2: Sistema Geral de Classificação"
+   ]
+  },
+  "010271": {
+   "d": "Retirada manual de caixas/quadros elétricos de embutir, com dimensões máximas até 600 x 800 x 120mm, sem reaproveitamento",
+   "u": "und",
+   "caderno": "01 – SERVIÇOS PRELIMINARES · 0102 – DEMOLIÇÕES E RETIRADAS",
+   "atualizacao": "07/2025",
+   "aplicacao": "Geralmente em situações em que há necessidade de troca, seja por questões de aumento da capacidade de circuitos (disjuntores), melhoria com substituição por painéis elétricos mais modernos e eficientes ou ainda para atendimento à norma NBR 5410.",
+   "incluidos": "Fornecimento de mão-de-obra para execução do serviço de retirada de caixas ou quadros elétricos, inclusive com remoção de tampas e acessórios de fixação (parafusos), retirada de massa de chumbamento do quadro e demolição de superfície de alvenaria no contorno do painel elétrico, isolamento e identificação dos condutores, acondicionamento das peças em local apropriado no canteiro de obras para descarte (bota-fora). Limpeza do local do serviço, com a varrição, remoção de resíduos e materiais inaproveitáveis, exclusive destinação final.",
+   "criterio": "und (unidade) Pela quantidade efetiva de caixas ou quadros elétricos retirados.",
+   "normas": [
+    "NBR 10.004 - 1: Resíduos sólidos - Classificação - Parte 1: Requisitos de classificação",
+    "NBR 10.004 - 2: Resíduos sólidos - Classificação - Parte 2: Sistema Geral de Classificação",
+    "NBR 5410 - Execução de instalações elétricas de baixa tensão."
+   ]
+  },
+  "010279": {
+   "d": "Retirada manual de quadro de giz (1.29 x 3.95m), sem reaproveitamento",
+   "u": "m2",
+   "caderno": "01 – SERVIÇOS PRELIMINARES · 0102 – DEMOLIÇÕES E RETIRADAS",
+   "atualizacao": "03/2026",
+   "aplicacao": "Executado em reformas escolares, substituição de equipamentos didáticos ou readequação de ambientes pedagógicos.",
+   "incluidos": "Fornecimento de mão-de-obra para execução do serviço de retirada de quadro de giz, considerando o transporte horizontal e acondicionamento provisório das peças em local apropriado no canteiro de obras. Limpeza do local do serviço, com remoção de resíduos e materiais inaproveitáveis, exclusive destinação final.",
+   "criterio": "und Pela unidade de quadro de giz 2/2 00",
+   "normas": [
+    "NBR 10.004 - 1: Resíduos sólidos - Classificação - Parte 1: Requisitos de classificação",
+    "NBR 10.004 - 2: Resíduos sólidos - Classificação - Parte 2: Sistema Geral de Classificação"
+   ]
+  },
+  "010280": {
+   "d": "Remoção manual de telha metálica, exclusive trama, sem reaproveitamento",
+   "u": "m2",
+   "caderno": "01 – SERVIÇOS PRELIMINARES · 0102 – DEMOLIÇÕES E RETIRADAS",
+   "atualizacao": "07/2025",
+   "aplicacao": "Em situações em que há necessidade de substituição completa da cobertura em telha metálica, não considerando a retirada da estrutura de sustentação do telhado, geralmente para posterior troca por telhas novas.",
+   "incluidos": "Remoção da cobertura em telhas metálicas, considerando o transporte vertical e acondicionamento das peças em local apropriado no canteiro de obras. Limpeza do local do serviço, com remoção de resíduos e materiais inaproveitáveis, exclusive destinação final.",
+   "criterio": "m2 (metro quadrado) Pela área efetiva de telhado considerando a remoção da cobertura em telha metálica.",
+   "normas": [
+    "NBR 10.004 - 1: Resíduos sólidos - Classificação - Parte 1: Requisitos de classificação",
+    "NBR 10.004 - 2: Resíduos sólidos - Classificação - Parte 2: Sistema Geral de Classificação"
+   ]
+  },
+  "010286": {
+   "d": "Retirada manual de divisória de granito, inclusive remoção de calafetagem e demolição de argamassa de chumbamento, sem reaproveitamento",
+   "u": "m2",
+   "caderno": "01 – SERVIÇOS PRELIMINARES · 0102 – DEMOLIÇÕES E RETIRADAS",
+   "atualizacao": "03/2026",
+   "aplicacao": "Em situações em que há necessidade de retirada definitiva de uma divisória, por diversos motivos, como: questão estética, mudança de layout, reforma, ampliação ou modernização do ambiente, etc.",
+   "incluidos": "Fornecimento de mão-de-obra para retirada de divisória de granito, inclusive remoção de calafetagem e demolição da argamassa de chumbamento, acondicionamento das peças e dos detritos em local apropriado no canteiro de obras, para descarte (bota-fora). Varrição e limpeza do local do serviço e das superfícies, com remoção de resíduos e materiais inaproveitáveis, exclusive destinação final.",
+   "criterio": "m2 (metro quadrado) Pela área efetiva de divisória de granito retirada.",
+   "normas": [
+    "NBR 10.004 - 1: Resíduos sólidos - Classificação - Parte 1: Requisitos de classificação",
+    "NBR 10.004 - 2: Resíduos sólidos - Classificação - Parte 2: Sistema Geral de Classificação"
+   ]
+  },
+  "010292": {
+   "d": "Retirada manual de alizar de madeira, sem reaproveitamento",
+   "u": "m",
+   "caderno": "01 – SERVIÇOS PRELIMINARES · 0102 – DEMOLIÇÕES E RETIRADAS",
+   "atualizacao": "07/2025",
+   "aplicacao": "Em situações em que há necessidade de substituição parcial ou completa das réguas de madeira que cobrem parte das faces do batente de um vão, por motivos de aumento, fechamento ou deslocamento do vão da porta, infestações de cupins e brocas, defeitos nas peças que comprometam sua finalidade, como: s",
+   "incluidos": "Retirada das réguas de madeira (alizar), considerando o transporte horizontal e acondicionamento das peças em local apropriado no canteiro de obras. Limpeza do local do serviço, com remoção de resíduos e materiais inaproveitáveis, exclusive destinação final. 2/2 00",
+   "criterio": "m (metro) Pelo comprimento efetivo de alizar de madeira removido.",
+   "normas": [
+    "Decreto Estadual nº 1.941- R, de 18 de Outubro de 2007 - utilização de produtos e",
+    "NBR 10.004 - 1: Resíduos sólidos - Classificação - Parte 1: Requisitos de classificação",
+    "NBR 10.004 - 2: Resíduos sólidos - Classificação - Parte 2: Sistema Geral de Classificação"
+   ]
+  },
+  "040329": {
+   "d": "Fornecimento e aplicação de concreto USINADO Fck=20 MPa - considerando BOMBEAMENTO (5% de perdas já incluído no custo) (6% de taxa p/concr.bombeável)",
+   "u": "m3",
+   "caderno": "04 – ESTRUTURAS",
+   "atualizacao": "11/2024",
+   "aplicacao": "Nos elementos estruturais de superestrutura, como por exemplo: lajes, pilares, vigas, etc.",
+   "incluidos": "Fornecimento e transporte do concreto dosado em central, considerando perdas por consumo e transporte interno, bombeamento (do caminhão betoneira até o local de aplicação), lançamento, espalhamento, adensamento mecânico, acabamento, cura do concreto e limpeza da área, com remoção dos materiais excedentes e inaproveitáveis, inclusive fornecimento dos ensaios à compressão e consistência, juntamente com o relatório para comprovação da qualidade do concreto.",
+   "criterio": "m3 (metro cúbico) Pelo volume de concreto calculado no projeto de fôrma.",
+   "normas": [
+    "NBR 7212:2021 - Execução de concreto dosado em central.",
+    "NBR 12655:2015 - Preparo, controle e recebimento de concreto.",
+    "NBR 6118:2023 - Projeto de estruturas de concreto - Procedimento."
+   ]
+  },
+  "040330": {
+   "d": "Fornecimento e aplicação de concreto USINADO Fck=25 MPa - considerando BOMBEAMENTO (5% de perdas já incluído no custo) (6% de taxa p/concr.bombeável)",
+   "u": "m3",
+   "caderno": "04 – ESTRUTURAS",
+   "atualizacao": "11/2024",
+   "aplicacao": "Nos elementos estruturais de superestrutura, como por exemplo: lajes, pilares, vigas, etc.",
+   "incluidos": "Fornecimento e transporte do concreto dosado em central, considerando perdas por consumo e transporte interno, bombeamento (do caminhão betoneira até o local de aplicação), lançamento, espalhamento, adensamento mecânico, acabamento, cura do concreto e limpeza da área, com remoção dos materiais excedentes e inaproveitáveis, inclusive fornecimento dos ensaios à compressão e consistência, juntamente com o relatório para comprovação da qualidade do concreto.",
+   "criterio": "m3 (metro cúbico) Pelo volume de concreto calculado no projeto de fôrma.",
+   "normas": [
+    "NBR 7212:2021 - Execução de concreto dosado em central.",
+    "NBR 12655:2015 - Preparo, controle e recebimento de concreto.",
+    "NBR 6118:2023 - Projeto de estruturas de concreto - Procedimento."
+   ]
+  },
+  "040331": {
+   "d": "Fornecimento e aplicação de concreto USINADO Fck=30 MPa - considerando BOMBEAMENTO (5% de perdas já incluído no custo) (6% de taxa p/concr.bombeável)",
+   "u": "m3",
+   "caderno": "04 – ESTRUTURAS",
+   "atualizacao": "11/2024",
+   "aplicacao": "Nos elementos estruturais de superestrutura, como por exemplo: lajes, pilares, vigas, etc.",
+   "incluidos": "Fornecimento e transporte do concreto dosado em central, considerando perdas por consumo e transporte interno, bombeamento (do caminhão betoneira até o local de aplicação), lançamento, espalhamento, adensamento mecânico, acabamento, cura do concreto e limpeza da área, com remoção dos materiais excedentes e inaproveitáveis, inclusive fornecimento dos ensaios à compressão e consistência, juntamente com o relatório para comprovação da qualidade do concreto.",
+   "criterio": "m3 (metro cúbico) Pelo volume de concreto calculado no projeto de fôrma.",
+   "normas": [
+    "NBR 7212:2021 - Execução de concreto dosado em central.",
+    "NBR 12655:2015 - Preparo, controle e recebimento de concreto.",
+    "NBR 6118:2023 - Projeto de estruturas de concreto - Procedimento."
+   ]
+  },
+  "040332": {
+   "d": "Fornecimento, dobragem e colocação em fôrma, de armadura CA-50 A grossa, diâmetro de 12.5 a 25.0 mm",
+   "u": "kg",
+   "caderno": "04 – ESTRUTURAS",
+   "atualizacao": "11/2024",
+   "aplicacao": "Nos elementos estruturais de superestrutura, como por exemplo: lajes, pilares, vigas, etc. As armaduras deverão estar posicionadas de maneira a absorver os esforços de tração sobre as estruturas de concreto armado.",
+   "incluidos": "Fornecimento, corte, dobragem, transporte (interno do canteiro até o local de aplicação) e colocação em fôrma de armadura CA-50 de bitolas de diâmetros de 12,5 a 25,0 milímetros, inclusive espaçadores para concreto armado e amarração com fornecimento de arame recozido, posicionamento e limpeza, inclusive limpeza da área com remoção e bota-fora do material excedente e inaproveitável.",
+   "criterio": "kg (quilo) Pelo levantamento das bitolas de diâmetros de 12,5 a 25,0 milímetros, nos seus pesos nominais, nas plantas de armadura de infraestrutura, conforme estabelecido no projeto e efetivamente colocado em fôrma (executado). As perdas não devem estar incluídas no levantamento, pois já estão consideradas dentro da composição de preço unitário (10%). Consideram-se armaduras de superestrutura as utilizadas a partir (acima) do respaldo superior da viga baldrame.",
+   "normas": [
+    "NBR 7480:2022- Aço destinado às armaduras para estruturas de concreto armado –",
+    "NBR 6181:2003 - Classificação de meios corrosivos.",
+    "NBR 6118:2023 - Projeto de estruturas de concreto - Procedimento."
+   ]
+  },
+  "040333": {
+   "d": "Fornecimento, dobragem e colocação em fôrma, de armadura CA-60 B fina, diâmetro de 4.0 a 7.0mm",
+   "u": "kg",
+   "caderno": "04 – ESTRUTURAS",
+   "atualizacao": "11/2024",
+   "aplicacao": "Nos elementos estruturais de superestrutura, como por exemplo: lajes, pilares, vigas, etc. As armaduras deverão estar posicionadas de maneira a absorver os esforços de tração sobre as estruturas de concreto armado.",
+   "incluidos": "Fornecimento, corte, dobragem, transporte (interno do canteiro até o local de aplicação) e colocação em fôrma de armadura CA-60 de bitolas de diâmetros de 4,0 a 7,0 milímetros, inclusive espaçadores para concreto armado e amarração com fornecimento de arame recozido, posicionamento e limpeza, inclusive limpeza da área com remoção e bota-fora do material excedente e inaproveitável.",
+   "criterio": "kg (quilo) Pelo levantamento das bitolas de diâmetros de 4,0 a 7,0 milímetros, nos seus pesos nominais, nas plantas de armadura de infraestrutura, conforme estabelecido no projeto e efetivamente colocado em fôrma (executado). As perdas não devem estar incluídas no levantamento, pois já estão consideradas dentro da composição de preço unitário (10%). Consideram-se armaduras de superestrutura as utilizadas a partir (acima) do respaldo superior da viga baldrame.",
+   "normas": [
+    "NBR 7480:2022- Aço destinado às armaduras para estruturas de concreto armado –",
+    "NBR 6181:2003 - Classificação de meios corrosivos.",
+    "NBR 6118:2023 - Projeto de estruturas de concreto - Procedimento."
+   ]
+  },
+  "040337": {
+   "d": "Fôrma em chapa de madeira compensada plastificada 12mm para estrutura em geral, 5 reaproveitamentos, reforçada com sarrafos de madeira 2.5x10cm (incl material, corte, montagem, escoras em eucalipto e desforma)",
+   "u": "m2",
+   "caderno": "04 – ESTRUTURAS",
+   "atualizacao": "11/2024",
+   "aplicacao": "Nos elementos estruturais de superestrutura, como por exemplo: lajes, vigas, pilares, paredes, etc. As fôrmas têm que ser capazes de resistir à pressão resultante do lançamento e vibração do concreto.",
+   "incluidos": "Fornecimento e corte das chapas compensadas plastificadas, das escoras em eucalipto, dos sarrafos e das tábuas em madeira (para 5 utilizações) para fabricação da fôrma, inclusive pregos, considerando eventuais perdas, transporte interno do canteiro até o local da montagem, escoramento, nivelamento, aplicação de desmoldante, desmontagem, desforma e limpeza da área, com remoção dos materiais excedentes e inaproveitáveis.",
+   "criterio": "m2 (metro quadrado) Pela área da superfície da fôrma em contato com o concreto, efetivamente realizada, sendo descontadas as áreas de interseção.",
+   "normas": [
+    "NBR 7203:1982 - Madeira serrada e beneficiada.",
+    "Decreto Estadual nº 1.941- R, de 18 de Outubro de 2007 - utilização de produtos e",
+    "NBR 14931:2023 - Execução de estruturas de concreto armado, protendido e com fibras -",
+    "NBR 6118:2023 - Projeto de estruturas de concreto - Procedimento.",
+    "NBR 7190:2022 – Projeto de estruturas de madeira.",
+    "NBR 6627:1981 – Pregos comuns e arestas de aço para madeiras.",
+    "NBR 15696:2009 - Fôrmas e escoramentos para estruturas de concreto – Projeto,",
+    "NBR ISO 1096:2006 – Madeira compensada – Classificação."
+   ]
+  },
+  "040339": {
+   "d": "Forma de chapas madeira compensada resinada, esp. 12mm, levando-se em conta a utilização 3 vezes, reforçadas com sarrafos de madeira de 2.5 x 10.0cm (incl material, corte, montagem, escoras em eucalipto e desforma)",
+   "u": "m2",
+   "caderno": "04 – ESTRUTURAS",
+   "atualizacao": "11/2024",
+   "aplicacao": "Nos elementos estruturais de superestrutura, como por exemplo: lajes, vigas, pilares, paredes, etc. As fôrmas têm que ser capazes de resistir à pressão resultante do lançamento e vibração do concreto.",
+   "incluidos": "Fornecimento e corte das chapas compensadas resinadas, das escoras em eucalipto, dos sarrafos e das tábuas em madeira (para 3 utilizações) para fabricação da fôrma, inclusive pregos, considerando eventuais perdas, transporte interno do canteiro até o local da montagem, escoramento, nivelamento, aplicação de desmoldante, desmontagem, desforma e limpeza da área, com remoção dos materiais excedentes e inaproveitáveis.",
+   "criterio": "m2 (metro quadrado) Pela área da superfície da fôrma em contato com o concreto, efetivamente realizada, sendo descontadas as áreas de interseção.",
+   "normas": [
+    "NBR 7203:1982 - Madeira serrada e beneficiada.",
+    "Decreto Estadual nº 1.941- R, de 18 de Outubro de 2007 - utilização de produtos e",
+    "NBR 14931:2023 - Execução de estruturas de concreto armado, protendido e com fibras -",
+    "NBR 6118:2023 - Projeto de estruturas de concreto - Procedimento.",
+    "NBR 7190:2022 – Projeto de estruturas de madeira.",
+    "NBR 6627:1981 – Pregos comuns e arestas de aço para madeiras.",
+    "NBR 15696:2009 - Fôrmas e escoramentos para estruturas de concreto – Projeto,",
+    "NBR ISO 1096:2006 – Madeira compensada – Classificação."
+   ]
+  },
+  "040405": {
+   "d": "Fôrma com chapa compensada plastificada esp. 12mm, utilização 5 vezes",
+   "u": "m2",
+   "caderno": "04 – ESTRUTURAS",
+   "atualizacao": "11/2024",
+   "aplicacao": "Nos serviços de concreto armado aparente. As fôrmas têm que ser capazes de resistir à pressão resultante do lançamento e vibração do concreto.",
+   "incluidos": "Fornecimento dos materiais (madeira para 5 aproveitamentos) para fabricação da fôrma, inclusive pregos, considerando eventuais perdas, transporte interno do canteiro até o local da montagem, nivelamento, aplicação de desmoldante, desmontagem, desforma e limpeza da área, com remoção dos materiais excedentes e inaproveitáveis.",
+   "criterio": "m2 (metro quadrado) Pela área da superfície da fôrma em contato com o concreto, efetivamente realizada sendo descontadas as áreas de interseção.",
+   "normas": [
+    "NBR 7203:1982 - Madeira serrada e beneficiada.",
+    "Decreto Estadual nº 1.941- R, de 18 de Outubro de 2007 - utilização de produtos e",
+    "NBR 14931:2023 - Execução de estruturas de concreto armado, protendido e com fibras -",
+    "NBR 6118:2023 - Projeto de estruturas de concreto - Procedimento.",
+    "NBR 6627:1981 – Pregos comuns e arestas de aço para madeiras.",
+    "NBR 15696:2009 - Fôrmas e escoramentos para estruturas de concreto – Projeto,",
+    "NBR ISO 1096:2006 – Madeira compensada – Classificação."
+   ]
+  },
+  "040601": {
+   "d": "Laje pré-fabricada treliçada (H=8cm) para forro simples revestido, vão até 3.5m, capeamento 2cm, elemento de enchimento bloco cerâmico, espessura final da laje - 10cm, Fck = 150Kg/cm2",
+   "u": "m2",
+   "caderno": "04 – ESTRUTURAS",
+   "atualizacao": "11/2024",
+   "aplicacao": "Elemento estrutural para forro, apoiado em vigas ou em alvenaria de blocos de concreto estrutural.",
+   "incluidos": "Fornecimento, montagem de laje pré-fabricada (inclusive elemento de enchimento), execução de fôrma e escoramento, fornecimento, preparo, montagem e colocação de armadura de distribuição, fornecimento, lançamento, adensamento e cura do concreto de capeamento, incluindo transporte do concreto até a laje, desforma e retirada do escoramento, limpeza da área, com remoção dos materiais excedentes e inaproveitáveis.",
+   "criterio": "m2 (metro quadrado) Pela área de laje pré-fabricada efetivamente executada.",
+   "normas": [
+    "NBR 14859-1:2016 - Laje pré-fabricada - Requisitos. Parte 1: Lajes unidirecionais.",
+    "NBR 9062:2017 - Projeto e execução de estruturas de concreto pré-moldado - Procedimento.",
+    "NBR 8681:2003 - Ações e segurança nas estruturas - Procedimento.",
+    "NBR 6118:2023 - Projeto de estruturas de concreto - Procedimento.",
+    "NBR 8953:2015 - Concreto para fins estruturais - Classificação por grupo de resistência.",
+    "NBR 14931:2023 - Execução de estruturas de concreto armado, protendido e com fibras -",
+    "NBR 12655:2015 - Preparo, controle e recebimento de concreto.",
+    "NBR 7480:2022- Aço destinado às armaduras para estruturas de concreto armado –",
+    "NBR 6627:1981 – Pregos comuns e arestas de aço para madeiras."
+   ]
+  },
+  "040602": {
+   "d": "Laje pré-fabricada treliçada (H=8cm), sobrecarga 300 kg/m2, vão de 3.5 a 4.3m, capeamento 4cm, elemento de enchimento em bloco cerâmico, espessura final da laje – 12cm, Fck = 150 Kg/cm2",
+   "u": "m2",
+   "caderno": "04 – ESTRUTURAS",
+   "atualizacao": "11/2024",
+   "aplicacao": "Elemento estrutural para piso, apoiado em vigas ou em alvenaria de blocos de concreto estrutural.",
+   "incluidos": "Fornecimento, montagem de laje pré-fabricada (inclusive elemento de enchimento), execução de fôrma e escoramento, fornecimento, preparo, montagem e colocação de armadura de distribuição, fornecimento, lançamento, adensamento e cura do concreto de capeamento, incluindo transporte do concreto até a laje, desforma e retirada do escoramento, limpeza da área, com remoção dos materiais excedentes e inaproveitáveis.",
+   "criterio": "m2 (metro quadrado) Pela área de laje pré-fabricada efetivamente executada.",
+   "normas": [
+    "NBR 14859-1:2016 - Laje pré-fabricada - Requisitos. Parte 1: Lajes unidirecionais.",
+    "NBR 9062:2017 - Projeto e execução de estruturas de concreto pré-moldado - Procedimento.",
+    "NBR 8681:2003 - Ações e segurança nas estruturas - Procedimento.",
+    "NBR 6118:2023 - Projeto de estruturas de concreto - Procedimento.",
+    "NBR 8953:2015 - Concreto para fins estruturais - Classificação por grupo de resistência.",
+    "NBR 14931:2023 - Execução de estruturas de concreto armado, protendido e com fibras -",
+    "NBR 12655:2015 - Preparo, controle e recebimento de concreto.",
+    "NBR 7480:2022- Aço destinado às armaduras para estruturas de concreto armado –",
+    "NBR 6627:1981 – Pregos comuns e arestas de aço para madeiras."
+   ]
+  },
+  "040705": {
+   "d": "Preenchimento de junta de dilatação 2 x 2 cm considerando 1cm de aplicação de isopor e 1cm de aplicação de mastique elástico do tipo Sikaflex 1A ou equivalente",
+   "u": "m",
+   "caderno": "04 – ESTRUTURAS",
+   "atualizacao": "11/2024",
+   "aplicacao": "Utilizado para preenchimento de juntas de dilatação em concreto (movimentação e de conexão), verticais e horizontais, tanto internas quanto externas, tornando as juntas estanques quanto à passagem de sólidos, líquidos ou gases.",
+   "incluidos": "Fornecimento e aplicação de mastique elástico, poliestireno expandido e fita adesiva, considerando eventuais perdas e limpeza do local, com remoção dos materiais excedentes e inaproveitáveis.",
+   "criterio": "m (metro) Pelo comprimento real de junta de dilatação preenchida.",
+   "normas": [
+    "NBR 9278:2019 – Adesivos e selantes – Determinação do tempo de escoamento – Método"
+   ]
+  },
+  "040801": {
+   "d": "Escarificação manual de concreto, exclusive limpeza do concreto afetado por processo de hidrojateamento e tratamento de armaduras corroídas",
+   "u": "m3",
+   "caderno": "04 – ESTRUTURAS",
+   "atualizacao": "11/2024",
+   "aplicacao": "Peças estruturais que receberão serviços de recuperação (sapatas, cintas, lajes, vigas, pilares, etc.).",
+   "incluidos": "Identificação, demarcação e delimitação das áreas danificadas para recuperação, remoção cuidadosa e escarificação da superfície das peças do concreto deteriorado, limpeza da área e remoção de partículas soltas.",
+   "criterio": "m3 (metro cúbico) Pelo volume de concreto efetivamente escarificado e removido. 3/3 00",
+   "normas": [
+    "NBR 6118:2023 - Projeto de estruturas de concreto - Procedimento."
+   ]
+  },
+  "040802": {
+   "d": "Escarificação manual de concreto, com profundidade máxima de 5cm, exclusive limpeza do concreto afetado por processo de hidrojateamento e tratamento de armaduras corroídas",
+   "u": "m2",
+   "caderno": "04 – ESTRUTURAS",
+   "atualizacao": "11/2024",
+   "aplicacao": "Peças estruturais que receberão serviços de recuperação (sapatas, cintas, lajes, vigas, pilares, etc.).",
+   "incluidos": "Identificação, demarcação e delimitação das áreas danificadas para recuperação, remoção cuidadosa e escarificação da superfície das peças do concreto deteriorado (na espessura de 5 centímetros), limpeza da área e remoção de partículas soltas.",
+   "criterio": "m2 (metro quadrado) Pela área de concreto efetivamente escarificado e removido, na espessura de 5 centímetros. 3/3 00",
+   "normas": [
+    "NBR 6118:2023 - Projeto de estruturas de concreto - Procedimento."
+   ]
+  },
+  "040804": {
+   "d": "Limpeza de concreto com utilização lavadora de alta pressão para água fria, pressão de operação entre 1400 e 1900 lib/pol2, vazão máxima entre 400 e 700 l/h, inclusive solvente e escova piaçava",
+   "u": "m2",
+   "caderno": "04 – ESTRUTURAS",
+   "atualizacao": "11/2024",
+   "aplicacao": "Preparação de substratos de peças estruturais que receberão serviços de reparo (sapatas, cintas, lajes, vigas, pilares, etc.).",
+   "incluidos": "Limpeza de substrato de concreto contemplando aplicação de solvente desengraxante, escovação da superfície e hidrojateamento com lavadora de alta pressão. Limpeza da área com remoção de eventuais partículas soltas e outras sujidades.",
+   "criterio": "m2 (metro quadrado) Pela área da superfície de concreto efetivamente limpa.",
+   "normas": [
+    "NBR 6118:2023 - Projeto de estruturas de concreto - Procedimento."
+   ]
+  },
+  "040806": {
+   "d": "Tratamento de armaduras corroídas com lixamento manual com escova de aço, até a completa remoção de partículas soltas, materiais indesejáveis e corrosão, exclusive aplicação de argamassa cimentícia, polimérica com inibidor de corrosão",
+   "u": "m2",
+   "caderno": "04 – ESTRUTURAS",
+   "atualizacao": "11/2024",
+   "aplicacao": "Superfícies de armaduras, peças ou estruturas de aço, que receberão a aplicação de revestimentos protetores, como tintas ou tratamentos anticorrosivos.",
+   "incluidos": "Inspeção inicial da corrosão nas barras de aço, proteção das áreas com lonas ou fitas plásticas, lixamento, escovamento, limpeza das armaduras e remoção completa de resíduos de ferrugem, remoção de pó, resíduos e partículas soltas.",
+   "criterio": "m2 (metro quadrado) Pela área total tratada (limpeza, lixamento e escovamento), após conclusão do serviço em cada área específica.",
+   "normas": [
+    "NBR 6118:2023 - Projeto de estruturas de concreto - Procedimento."
+   ]
+  },
+  "040807": {
+   "d": "Tratamento de armadura com duas demãos (esp. 1mm) de Sika Top 108 ou equivalente, exclusive aplicação de graute cimentício",
+   "u": "m2",
+   "caderno": "04 – ESTRUTURAS",
+   "atualizacao": "11/2024",
+   "aplicacao": "Proteção de armaduras na região dos reparos localizados na estrutura de concreto armado.",
+   "incluidos": "Fornecimento, preparo (manual ou mecânico) e transporte até o local de aplicação da argamassa cimentícia inibidora de corrosão, considerando eventuais perdas, inclusive aplicação da pasta (a duas demãos) nas superfícies das armaduras a serem tratadas e limpeza do local, com remoção da argamassa excedente e inaproveitável.",
+   "criterio": "m2 (metro quadrado) Pela área total das superfícies efetivamente tratadas (aplicação de argamassa cimentícia inibidora de corrosão), após conclusão do serviço em cada área específica.",
+   "normas": [
+    "NBR 6118:2023 - Projeto de estruturas de concreto - Procedimento."
+   ]
+  },
+  "040808": {
+   "d": "Retirada (corte) de armadura deteriorada, superior a 20% do diâmetro original",
+   "u": "kg",
+   "caderno": "04 – ESTRUTURAS",
+   "atualizacao": "11/2024",
+   "aplicacao": "Barras de aço de peças estruturais que receberão serviços de reparos localizados (sapatas, cintas, lajes, vigas, pilares, etc.).",
+   "incluidos": "Identificação, avaliação, marcação e corte (retirada) das ferragens comprometidas, inclusive limpeza do local, com remoção dos resíduos indesejáveis e inaproveitáveis.",
+   "criterio": "kg (quilo) Pela quantidade total (em peso) de ferragem corroída efetivamente retirada.",
+   "normas": [
+    "NBR 6118:2023 - Projeto de estruturas de concreto - Procedimento."
+   ]
+  },
+  "040809": {
+   "d": "Recomposição de concreto estrutural, com utilização de argamassa de uso geral Graute cimentício, com profundidade máxima 5cm",
+   "u": "m2",
+   "caderno": "04 – ESTRUTURAS",
+   "atualizacao": "11/2024",
+   "aplicacao": "Utilizado para reparos de estruturas de concreto em geral e falhas de concretagem. Utilizado também como reforço de fundações, pilares e vigas.",
+   "incluidos": "Fornecimento e corte das chapas compensadas e das peças de madeira (sarrafos, tábuas e pontaletes) para fabricação da fôrma, inclusive pregos, considerando eventuais perdas, transporte interno do canteiro até o local da montagem, travamento, escoramento, nivelamento, aplicação de desmoldante e desforma. Fornecimento, preparo e transporte até o local de aplicação da argamassa cimentícia tipo graute, considerando eventuais perdas, inclusive saturação do substrato, lançamento, cura da argamassa e limpeza do local, com remoção de resíduos, materiais excedentes e inaproveitáveis.",
+   "criterio": "m2 (metro quadrado) Pela área de argamassa cimentícia tipo graute efetivamente utilizada (aplicada) para recomposição de concreto, considerando uma espessura da camada de recomposição de 5 centímetros.",
+   "normas": [
+    "NBR 6118:2023 - Projeto de estruturas de concreto - Procedimento.",
+    "NBR 7203:1982 - Madeira serrada e beneficiada.",
+    "Decreto Estadual nº 1.941- R, de 18 de Outubro de 2007 - utilização de produtos e",
+    "NBR 6627:1981 – Pregos comuns e arestas de aço para madeiras.",
+    "NBR 15696:2009 - Fôrmas e escoramentos para estruturas de concreto – Projeto,"
+   ]
+  },
+  "040810": {
+   "d": "Recomposição de concreto estrutural, com utilização de argamassa de uso geral Graute cimentício",
+   "u": "m3",
+   "caderno": "04 – ESTRUTURAS",
+   "atualizacao": "11/2024",
+   "aplicacao": "Utilizado para reparos de estruturas de concreto em geral e falhas de concretagem. Utilizado também como reforço de fundações, pilares e vigas.",
+   "incluidos": "Fornecimento e corte das chapas compensadas e das peças de madeira (sarrafos, tábuas e pontaletes) para fabricação da fôrma, inclusive pregos, considerando eventuais perdas, transporte interno do canteiro até o local da montagem, travamento, escoramento, nivelamento, aplicação de desmoldante e desforma. Fornecimento, preparo e transporte até o local de aplicação da argamassa cimentícia tipo graute, considerando eventuais perdas, inclusive saturação do substrato, lançamento, cura da argamassa e limpeza do local, com remoção de resíduos, materiais excedentes e inaproveitáveis.",
+   "criterio": "m3 (metro cúbico) Pelo volume de argamassa cimentícia tipo graute efetivamente utilizada (aplicada) para recomposição de concreto. 4/5 00",
+   "normas": [
+    "NBR 6118:2023 - Projeto de estruturas de concreto - Procedimento.",
+    "NBR 7203:1982 - Madeira serrada e beneficiada.",
+    "Decreto Estadual nº 1.941- R, de 18 de Outubro de 2007 - utilização de produtos e",
+    "NBR 6627:1981 – Pregos comuns e arestas de aço para madeiras.",
+    "NBR 15696:2009 - Fôrmas e escoramentos para estruturas de concreto – Projeto,"
+   ]
+  },
+  "040813": {
+   "d": "Impermeabilização de superfície com argamassa impemeabilizante, semiflexível bicomponente, 4 demãos - SIKA Top 107, VIAPLUS 1000 ou equivalente",
+   "u": "m2",
+   "caderno": "04 – ESTRUTURAS",
+   "atualizacao": "11/2024",
+   "aplicacao": "Revestimento impermeabilizante para uso em estruturas de concreto, como caixas d’água, reservatórios, poços de elevadores, tanques, cisternas, baldrames, etc. Reduz o processo de carbonatação e é resistente a pressões hidrostáticas positivas e negativas.",
+   "incluidos": "Fornecimento, preparo (manual ou mecânico) e transporte até o local de aplicação da argamassa cimentícia impermeabilizante, considerando eventuais perdas, inclusive aplicação e cura do revestimento (a quatro demãos cruzadas) nas superfícies de concreto a serem impermeabilizadas, limpeza do local, com remoção de resíduos, da argamassa excedente e inaproveitável.",
+   "criterio": "m2 (metro quadrado) Pela área total das superfícies efetivamente impermeabilizadas (aplicação de argamassa cimentícia impermeabilizante). 3/3 00",
+   "normas": [
+    "NBR 11905:2015 – Sistema Impermeabilizante composto por cimento impermeabilizante e",
+    "NBR 9575:2010 – Impermeabilização – Sistemas e projetos.",
+    "NBR 9574:2008 – Execução da impermeabilização."
+   ]
+  },
+  "040816": {
+   "d": "Aplicação de primer convertedor de ferrugem a 2 demãos, exclusive pintura de proteção e acabamento",
+   "u": "m2",
+   "caderno": "04 – ESTRUTURAS",
+   "atualizacao": "11/2024",
+   "aplicacao": "Utilizado em armaduras com ferrugem (óxido de ferro), para convertê-la em um fundo (fosfato de ferro inerte na cor preta) resistente à corrosão, para receber a aplicação de revestimentos protetores, como tintas ou tratamentos anticorrosivos, principalmente em pontos de difícil acesso para o lixament",
+   "incluidos": "Fornecimento, mistura (homogeneização) e transporte até o local de aplicação da solução aquosa, considerando eventuais perdas, inclusive proteção das áreas com lonas ou fitas plásticas, remoção de carepas, raspagem de partes soltas, aplicação do produto (a duas demãos) nas ferragens a serem recuperadas, limpeza do local, com remoção de resíduos e materiais excedentes.",
+   "criterio": "m2 (metro quadrado) Pela área total de aplicação da solução aquosa nas superfícies que contenham as ferragens a serem recuperadas, após conclusão do serviço em cada área específica.",
+   "normas": [
+    "NBR 6118:2023 - Projeto de estruturas de concreto - Procedimento."
+   ]
+  },
+  "040817": {
+   "d": "Fornecimento e lançamento de concreto para grouteamento com adição de pedrisco (30% em peso), utilizando argamassa de graute cimenticio, preparo mecânico com betoneira, exclusive forma",
+   "u": "m3",
+   "caderno": "04 – ESTRUTURAS",
+   "atualizacao": "11/2024",
+   "aplicacao": "Utilizado para reparos de estruturas de concreto em geral e falhas de concretagem. Utilizado também como reforço de fundações, pilares e vigas.",
+   "incluidos": "Fornecimento, preparo e transporte até o local de aplicação do concreto com argamassa cimentícia tipo graute e adição de pedrisco, considerando eventuais perdas, inclusive saturação do substrato, lançamento, cura do concreto e limpeza do local, com remoção de resíduos, materiais excedentes e inaproveitáveis.",
+   "criterio": "m3 (metro cúbico) Pelo volume de concreto com argamassa cimentícia tipo graute e adição de pedrisco, efetivamente utilizado (aplicado).",
+   "normas": [
+    "NBR 6118:2023 - Projeto de estruturas de concreto - Procedimento."
+   ]
+  },
+  "040818": {
+   "d": "Reparo estrutural com recomposição do concreto deteriorado com argamassa polimérica de alto desempenho, esp. 10mm, aplicação manual",
+   "u": "m2",
+   "caderno": "04 – ESTRUTURAS",
+   "atualizacao": "11/2024",
+   "aplicacao": "Indicado para reparos em estruturas de concreto, para recuperação ou reconstituição da superfície do concreto ou aumento da espessura do cobrimento. Utilizado também para recomposição de cantos vivos e peças de concreto. Devido à consistência tixotrópica, a argamassa pode ser aplicada em superfícies",
+   "incluidos": "Fornecimento, preparo e transporte até o local de aplicação da argamassa cimentícia corretiva, considerando eventuais perdas, inclusive saturação do substrato, aplicação, acabamento e cura do revestimento nas superfícies de concreto a serem recuperadas ou reconstituídas, limpeza do local, com remoção de resíduos da argamassa excedente e inaproveitável.",
+   "criterio": "m2 (metro quadrado) Pela área efetivamente revestida com argamassa corretiva.",
+   "normas": [
+    "NBR 6118:2023 - Projeto de estruturas de concreto - Procedimento."
+   ]
+  },
+  "040901": {
+   "d": "Muro de arrimo em concreto ciclópico Fck=15MPa com 30% de pedra de mão, c/ fornecimento, preparo e aplicação de concreto, fôrma em compensado plastificado com travamento e aproveitamento 8 vezes, base em concreto magro esp. 5 cm, filtro de areia drenante, dreno no pé do muro c/ tubo PEAD corrugado Ø100 mm, enchimento c/ brita envolvido c/ manta geotêxtil, exclusive escavação e reaterro, seções típicas nas dimensões: b=0.40m; B=0.70m e H=1.00m",
+   "u": "m",
+   "caderno": "04 – ESTRUTURAS",
+   "atualizacao": "11/2024",
+   "aplicacao": "Utilizado como obras de arrimos de taludes (contenção), objetivando suas estabilizações.",
+   "incluidos": "Fornecimento e corte dos materiais (madeira para 8 utilizações) para fabricação da fôrma, incluindo pregos, considerando eventuais perdas, transporte interno do canteiro até o local da montagem, escoramento, nivelamento, aplicação de desmoldante e desforma. 5/7 00 Fornecimento e preparo com amassamento mecânico da massa de concreto, considerando perdas por consumo e transporte interno no canteiro até o local da aplicação, inclusive fornecimento da pedra de mão, lançamento, espalhamento, adensamento, acabamento e cura do concreto. Fornecimento e assentamento de tubo dreno corrugado, considerando eventuais perdas e transporte interno do canteiro até o local do assentamento, inclusive fornecimento e colocação de manta geotêxtil não tecido em poliéster. Fornecimento e execução de camada drenante de brita 1 e filtro de areia lavada, considerando eventuais perdas, transporte interno do canteiro até o local do lançamento e espalhamento. Limpeza da área, com remoção dos materiais excedentes e inaproveitáveis.",
+   "criterio": "m (metro) Pela metragem de muro de arrimo efetivamente construído.",
+   "normas": [
+    "NBR 7203:1982 - Madeira serrada e beneficiada.",
+    "Decreto Estadual nº 1.941- R, de 18 de Outubro de 2007 - utilização de produtos e",
+    "NBR 6118:2023 - Projeto de estruturas de concreto - Procedimento.",
+    "NBR 6627:1981 – Pregos comuns e arestas de aço para madeiras.",
+    "NBR 15696:2009 - Fôrmas e escoramentos para estruturas de concreto – Projeto,",
+    "NBR 12655:2022 - Concreto de cimento Portland - Preparo, controle, recebimento e aceitação",
+    "NBR 5732:1991 – Cimento Portland Comum.",
+    "NBR 7220:1987 - Agregado - Determinação de impurezas orgânicas húmicas em agregado",
+    "NBR 7211:2005 - Agregados para concreto – Especificação.",
+    "NBR 7225:2009 – Materiais de pedra e agregados naturais.",
+    "NBR 12655:2015 - Preparo, controle e recebimento de concreto.",
+    "NBR 11682:2006 – Estabilidade de encostas.",
+    "NBR 15073:2004 – Tubos corrugados de PVC e de polietileno para drenagem subterrânea.",
+    "NBR 9575:2010 – Impermeabilização – Sistemas e projetos.",
+    "NBR 10319:2013 – Geossintéticos – Ensaio de tração faixa larga."
+   ]
+  },
+  "040902": {
+   "d": "Muro de arrimo em concreto ciclópico Fck=15MPa com 30% de pedra de mão, c/ fornecimento, preparo e aplicação de concreto, fôrma em compensado plastificado com travamento e aproveitamento 8 vezes, base em concreto magro esp. 5 cm, filtro de areia drenante, dreno no pé do muro c/ tubo PEAD corrugado Ø100 mm, enchimento c/ brita envolvido c/ manta geotêxtil, exclusive escavação e reaterro, seções típicas nas dimensões: b=0.40m; B=0.90m e H=1.50m",
+   "u": "m",
+   "caderno": "04 – ESTRUTURAS",
+   "atualizacao": "11/2024",
+   "aplicacao": "Utilizado como obras de arrimos de taludes (contenção), objetivando suas estabilizações.",
+   "incluidos": "Fornecimento e corte dos materiais (madeira para 8 utilizações) para fabricação da fôrma, inclusive pregos, considerando eventuais perdas, transporte interno do canteiro até o local da montagem, escoramento, nivelamento, aplicação de desmoldante e desforma. 5/7 00 Fornecimento e preparo com amassamento mecânico da massa de concreto, considerando perdas por consumo e transporte interno no canteiro até o local da aplicação, inclusive fornecimento da pedra de mão, lançamento, espalhamento, adensamento, acabamento e cura do concreto. Fornecimento e assentamento de tubo dreno corrugado, considerando eventuais perdas e transporte interno do canteiro até o local do assentamento, inclusive fornecimento e colocação de manta geotêxtil não tecido em poliéster. Fornecimento e execução de camada drenante de brita 1 e filtro de areia lavada, considerando eventuais perdas, transporte interno do canteiro até o local do lançamento e espalhamento. Limpeza da área, com remoção dos materiais excedentes e inaproveitáveis.",
+   "criterio": "m (metro) Pela metragem de muro de arrimo efetivamente construído.",
+   "normas": [
+    "NBR 7203:1982 - Madeira serrada e beneficiada.",
+    "Decreto Estadual nº 1.941- R, de 18 de Outubro de 2007 - utilização de produtos e",
+    "NBR 6118:2023 - Projeto de estruturas de concreto - Procedimento.",
+    "NBR 6627:1981 – Pregos comuns e arestas de aço para madeiras.",
+    "NBR 15696:2009 - Fôrmas e escoramentos para estruturas de concreto – Projeto,",
+    "NBR 12655:2022 - Concreto de cimento Portland - Preparo, controle, recebimento e aceitação",
+    "NBR 5732:1991 – Cimento Portland Comum.",
+    "NBR 7220:1987 - Agregado - Determinação de impurezas orgânicas húmicas em agregado",
+    "NBR 7211:2005 - Agregados para concreto – Especificação.",
+    "NBR 7225:2009 – Materiais de pedra e agregados naturais.",
+    "NBR 12655:2015 - Preparo, controle e recebimento de concreto.",
+    "NBR 11682:2006 – Estabilidade de encostas.",
+    "NBR 15073:2004 – Tubos corrugados de PVC e de polietileno para drenagem subterrânea.",
+    "NBR 9575:2010 – Impermeabilização – Sistemas e projetos.",
+    "NBR 10319:2013 – Geossintéticos – Ensaio de tração faixa larga."
+   ]
+  },
+  "040903": {
+   "d": "Muro de arrimo em concreto ciclópico Fck=15MPa com 30% de pedra de mão, c/ fornecimento, preparo e aplicação de concreto, fôrma em compensado plastificado com travamento e aproveitamento 8 vezes, base em concreto magro esp. 5 cm, filtro de areia drenante, dreno no pé do muro c/ tubo PEAD corrugado Ø100 mm, enchimento c/ brita envolvido c/ manta geotêxtil, exclusive escavação e reaterro, seções típicas nas dimensões: b=0.40m; B=1.05m e H=2.00m",
+   "u": "m",
+   "caderno": "04 – ESTRUTURAS",
+   "atualizacao": "11/2024",
+   "aplicacao": "Utilizado como obras de arrimos de taludes (contenção), objetivando suas estabilizações.",
+   "incluidos": "Fornecimento e corte dos materiais (madeira para 8 utilizações) para fabricação da fôrma, inclusive pregos, considerando eventuais perdas, transporte interno do canteiro até o local da montagem, escoramento, nivelamento, aplicação de desmoldante e desforma. 5/7 00 Fornecimento e preparo com amassamento mecânico da massa de concreto, considerando perdas por consumo e transporte interno no canteiro até o local da aplicação, inclusive fornecimento da pedra de mão, lançamento, espalhamento, adensamento, acabamento e cura do concreto. Fornecimento e assentamento de tubo dreno corrugado, considerando eventuais perdas e transporte interno do canteiro até o local do assentamento, inclusive fornecimento e colocação de manta geotêxtil não tecido em poliéster. Fornecimento e execução de camada drenante de brita 1 e filtro de areia lavada, considerando eventuais perdas, transporte interno do canteiro até o local do lançamento e espalhamento. Limpeza da área, com remoção dos materiais excedentes e inaproveitáveis.",
+   "criterio": "m (metro) Pela metragem de muro de arrimo efetivamente construído.",
+   "normas": [
+    "NBR 7203:1982 - Madeira serrada e beneficiada.",
+    "Decreto Estadual nº 1.941- R, de 18 de Outubro de 2007 - utilização de produtos e",
+    "NBR 6118:2023 - Projeto de estruturas de concreto - Procedimento.",
+    "NBR 6627:1981 – Pregos comuns e arestas de aço para madeiras.",
+    "NBR 15696:2009 - Fôrmas e escoramentos para estruturas de concreto – Projeto,",
+    "NBR 12655:2022 - Concreto de cimento Portland - Preparo, controle, recebimento e aceitação",
+    "NBR 5732:1991 – Cimento Portland Comum.",
+    "NBR 7220:1987 - Agregado - Determinação de impurezas orgânicas húmicas em agregado",
+    "NBR 7211:2005 - Agregados para concreto – Especificação.",
+    "NBR 7225:2009 – Materiais de pedra e agregados naturais.",
+    "NBR 12655:2015 - Preparo, controle e recebimento de concreto.",
+    "NBR 11682:2006 – Estabilidade de encostas.",
+    "NBR 15073:2004 – Tubos corrugados de PVC e de polietileno para drenagem subterrânea.",
+    "NBR 9575:2010 – Impermeabilização – Sistemas e projetos.",
+    "NBR 10319:2013 – Geossintéticos – Ensaio de tração faixa larga."
+   ]
+  },
+  "040904": {
+   "d": "Muro de arrimo em concreto ciclópico Fck=15MPa com 30% de pedra de mão, c/ fornecimento, preparo e aplicação de concreto, fôrma em compensado plastificado com travamento e aproveitamento 8 vezes, base em concreto magro esp. 5 cm, filtro de areia drenante, dreno no pé do muro c/ tubo PEAD corrugado Ø100 mm, enchimento c/ brita envolvido c/ manta geotêxtil, exclusive escavação e reaterro, seções típicas nas dimensões: b=0.40m; B=1.23m e H=2.50m",
+   "u": "m",
+   "caderno": "04 – ESTRUTURAS",
+   "atualizacao": "11/2024",
+   "aplicacao": "Utilizado como obras de arrimos de taludes (contenção), objetivando suas estabilizações.",
+   "incluidos": "Fornecimento e corte dos materiais (madeira para 8 utilizações) para fabricação da fôrma, inclusive pregos, considerando eventuais perdas, transporte interno do canteiro até o local da montagem, escoramento, nivelamento, aplicação de desmoldante e desforma. 5/7 00 Fornecimento e preparo com amassamento mecânico da massa de concreto, considerando perdas por consumo e transporte interno no canteiro até o local da aplicação, inclusive fornecimento da pedra de mão, lançamento, espalhamento, adensamento, acabamento e cura do concreto. Fornecimento e assentamento de tubo dreno corrugado, considerando eventuais perdas e transporte interno do canteiro até o local do assentamento, inclusive fornecimento e colocação de manta geotêxtil não tecido em poliéster. Fornecimento e execução de camada drenante de brita 1 e filtro de areia lavada, considerando eventuais perdas, transporte interno do canteiro até o local do lançamento e espalhamento. Limpeza da área, com remoção dos materiais excedentes e inaproveitáveis.",
+   "criterio": "m (metro) Pela metragem de muro de arrimo efetivamente construído.",
+   "normas": [
+    "NBR 7203:1982 - Madeira serrada e beneficiada.",
+    "Decreto Estadual nº 1.941- R, de 18 de Outubro de 2007 - utilização de produtos e",
+    "NBR 6118:2023 - Projeto de estruturas de concreto - Procedimento.",
+    "NBR 6627:1981 – Pregos comuns e arestas de aço para madeiras.",
+    "NBR 15696:2009 - Fôrmas e escoramentos para estruturas de concreto – Projeto,",
+    "NBR 12655:2022 - Concreto de cimento Portland - Preparo, controle, recebimento e aceitação",
+    "NBR 5732:1991 – Cimento Portland Comum.",
+    "NBR 7220:1987 - Agregado - Determinação de impurezas orgânicas húmicas em agregado",
+    "NBR 7211:2005 - Agregados para concreto – Especificação.",
+    "NBR 7225:2009 – Materiais de pedra e agregados naturais.",
+    "NBR 12655:2015 - Preparo, controle e recebimento de concreto.",
+    "NBR 11682:2006 – Estabilidade de encostas.",
+    "NBR 15073:2004 – Tubos corrugados de PVC e de polietileno para drenagem subterrânea.",
+    "NBR 9575:2010 – Impermeabilização – Sistemas e projetos.",
+    "NBR 10319:2013 – Geossintéticos – Ensaio de tração faixa larga."
    ]
   }
  }
