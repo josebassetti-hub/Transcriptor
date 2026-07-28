@@ -3,7 +3,6 @@
   "descricao": "Heurísticas de engenharia para estimar quantitativos quando projetos complementares não são fornecidos. Cada 'regra' é implementada pelo motor do orcamentista.html; os parâmetros aqui são editáveis e citados no memorial como premissa. Referências: NBR 5410 (elétrica), NBR 5626 (água fria), NBR 8160 (esgoto), práticas TCPO/SINAPI.",
   "versao": 1
  },
-
  "parametros": {
   "pe_direito_m": 2.8,
   "esp_parede_revestida_m": 0.15,
@@ -20,25 +19,110 @@
   "raio_cobertura_ponto_eletrico_m": 8,
   "comp_verga_por_vao_m": 0.6,
   "largura_porta_padrao_m": 0.8,
-  "altura_porta_padrao_m": 2.1
+  "altura_porta_padrao_m": 2.1,
+  "kg_estrutura_metalica_por_m2": 22,
+  "_doc_kg_estrutura_metalica": "Consumo de aço da estrutura metálica de cobertura, em kg por m² de projeção horizontal. Faixa técnica: 15-18 (vãos até 12 m com apoios intermediários) · 20-25 (vãos de 15 a 20 m, caso típico de academia/ginásio) · 30-40 (vão livre acima de 25 m). Só é usado quando obra.coberturaMetalica = true."
  },
-
  "ambientes": {
   "_doc": "Pontos mínimos por tipo de ambiente (residencial, NBR 5410 + prática). tug=tomadas de uso geral; luz=pontos de teto; int=interruptores (conjugado c/ tomada). Regras dinâmicas: tug_por_perimetro aplica 1 tomada a cada X m de perímetro (mínimo listado).",
-  "sala":          {"luz": 1, "int": 1, "tug_min": 3, "tug_por_perimetro": 5,   "molhado": false},
-  "quarto":        {"luz": 1, "int": 1, "tug_min": 3, "tug_por_perimetro": 5,   "molhado": false},
-  "cozinha":       {"luz": 1, "int": 1, "tug_min": 3, "tug_por_perimetro": 3.5, "molhado": true,  "pia": 1, "cx_gordura": true},
-  "banheiro":      {"luz": 1, "int": 1, "tug_min": 1, "tug_por_perimetro": 0,   "molhado": true,  "bacia": 1, "lavatorio": 1, "chuveiro": 1, "ralo": 1, "registro": 2},
-  "lavabo":        {"luz": 1, "int": 1, "tug_min": 1, "tug_por_perimetro": 0,   "molhado": true,  "bacia": 1, "lavatorio": 1, "registro": 1},
-  "area_servico":  {"luz": 1, "int": 1, "tug_min": 2, "tug_por_perimetro": 3.5, "molhado": true,  "tanque": 1, "ralo": 1, "registro": 1},
-  "circulacao":    {"luz": 1, "int": 1, "tug_min": 1, "tug_por_perimetro": 0,   "molhado": false},
-  "varanda":       {"luz": 1, "int": 1, "tug_min": 1, "tug_por_perimetro": 0,   "molhado": false},
-  "garagem":       {"luz": 1, "int": 1, "tug_min": 1, "tug_por_perimetro": 0,   "molhado": false},
-  "escritorio":    {"luz": 1, "int": 1, "tug_min": 3, "tug_por_perimetro": 5,   "molhado": false},
-  "despensa":      {"luz": 1, "int": 1, "tug_min": 1, "tug_por_perimetro": 0,   "molhado": false},
-  "outro":         {"luz": 1, "int": 1, "tug_min": 1, "tug_por_perimetro": 5,   "molhado": false}
+  "sala": {
+   "luz": 1,
+   "int": 1,
+   "tug_min": 3,
+   "tug_por_perimetro": 5,
+   "molhado": false
+  },
+  "quarto": {
+   "luz": 1,
+   "int": 1,
+   "tug_min": 3,
+   "tug_por_perimetro": 5,
+   "molhado": false
+  },
+  "cozinha": {
+   "luz": 1,
+   "int": 1,
+   "tug_min": 3,
+   "tug_por_perimetro": 3.5,
+   "molhado": true,
+   "pia": 1,
+   "cx_gordura": true
+  },
+  "banheiro": {
+   "luz": 1,
+   "int": 1,
+   "tug_min": 1,
+   "tug_por_perimetro": 0,
+   "molhado": true,
+   "bacia": 1,
+   "lavatorio": 1,
+   "chuveiro": 1,
+   "ralo": 1,
+   "registro": 2
+  },
+  "lavabo": {
+   "luz": 1,
+   "int": 1,
+   "tug_min": 1,
+   "tug_por_perimetro": 0,
+   "molhado": true,
+   "bacia": 1,
+   "lavatorio": 1,
+   "registro": 1
+  },
+  "area_servico": {
+   "luz": 1,
+   "int": 1,
+   "tug_min": 2,
+   "tug_por_perimetro": 3.5,
+   "molhado": true,
+   "tanque": 1,
+   "ralo": 1,
+   "registro": 1
+  },
+  "circulacao": {
+   "luz": 1,
+   "int": 1,
+   "tug_min": 1,
+   "tug_por_perimetro": 0,
+   "molhado": false
+  },
+  "varanda": {
+   "luz": 1,
+   "int": 1,
+   "tug_min": 1,
+   "tug_por_perimetro": 0,
+   "molhado": false
+  },
+  "garagem": {
+   "luz": 1,
+   "int": 1,
+   "tug_min": 1,
+   "tug_por_perimetro": 0,
+   "molhado": false
+  },
+  "escritorio": {
+   "luz": 1,
+   "int": 1,
+   "tug_min": 3,
+   "tug_por_perimetro": 5,
+   "molhado": false
+  },
+  "despensa": {
+   "luz": 1,
+   "int": 1,
+   "tug_min": 1,
+   "tug_por_perimetro": 0,
+   "molhado": false
+  },
+  "outro": {
+   "luz": 1,
+   "int": 1,
+   "tug_min": 1,
+   "tug_por_perimetro": 5,
+   "molhado": false
+  }
  },
-
  "circuitos": {
   "_doc": "Divisão mínima de circuitos (NBR 5410 §4.2.5.5 simplificada) — usada p/ nº de disjuntores e p/ cabos extras.",
   "iluminacao_area_max_m2": 75,
@@ -46,22 +130,58 @@
   "circuito_dedicado_cozinha_as": 1,
   "por_chuveiro": 1,
   "reserva": 1,
-  "bitola_por_circuito_mm2": {"iluminacao": 1.5, "tug": 2.5, "cozinha_as": 4.0, "chuveiro": 6.0},
-  "cabo_por_bitola_codigo": {"1.5": "151401", "2.5": "151402", "4.0": "151403", "6.0": "151404", "10.0": "151405", "16.0": "151406", "25.0": "151407"},
+  "bitola_por_circuito_mm2": {
+   "iluminacao": 1.5,
+   "tug": 2.5,
+   "cozinha_as": 4.0,
+   "chuveiro": 6.0
+  },
+  "cabo_por_bitola_codigo": {
+   "1.5": "151401",
+   "2.5": "151402",
+   "4.0": "151403",
+   "6.0": "151404",
+   "10.0": "151405",
+   "16.0": "151406",
+   "25.0": "151407"
+  },
   "cabo_extra_alem_raio": "para ambiente a distância d do quadro (medida em planta) além do raio coberto pelo ponto padrão (raio_cobertura_ponto_eletrico_m), adicionar 3 × (d − raio) × fator_rota_eletrica de cabo 2,5mm² (151402) + eletroduto 3/4\" (151126) × (d − raio) × fator_rota_eletrica, por circuito do ambiente"
  },
-
  "estrutura_indices": {
-  "_doc": "Índices p/ estrutura SEM projeto estrutural (residência térrea/sobrado até 2 pav., estrutura convencional c/ alvenaria de vedação). Maior fonte de incerteza — sempre declarado como premissa. Faixas típicas TCPO.",
+  "_doc": "Índices p/ estrutura SEM projeto estrutural — MAIOR fonte de incerteza (±20%), sempre declarada como premissa. Escolha o perfil em obra.perfilEstrutural: 'residencial' (padrão) ou 'comercial'. Faixas típicas TCPO; o perfil comercial foi calibrado em obra real de 2 pavimentos com vãos maiores (academia de 1.886 m²).",
   "baldrame_vol_m3_por_m": 0.08,
   "baldrame_forma_m2_por_m": 0.8,
   "baldrame_escavacao_m3_por_m": 0.24,
   "super_vol_m3_por_m2": 0.045,
   "aco_kg_por_m3": 85,
   "forma_m2_por_m3": 12,
-  "laje_fator_area": 1.0
+  "laje_fator_area": 1.0,
+  "perfis": {
+   "residencial": {
+    "_doc": "Residência térrea ou sobrado até 2 pav., estrutura convencional com alvenaria de vedação. Fundação medida pelo comprimento de paredes (baldrame/sapata corrida).",
+    "base_fundacao": "paredes",
+    "baldrame_vol_m3_por_m": 0.08,
+    "baldrame_forma_m2_por_m": 0.8,
+    "baldrame_escavacao_m3_por_m": 0.24,
+    "super_vol_m3_por_m2": 0.045,
+    "aco_kg_por_m3": 85,
+    "forma_m2_por_m3": 12,
+    "laje_fator_area": 1.0
+   },
+   "comercial": {
+    "_doc": "Edificação comercial/institucional de 1 a 3 pav. com vãos maiores e pilares isolados. Fundação medida pela ÁREA construída (sapatas isoladas sob pilares), não pelo comprimento de paredes. Os índices de fundação são por m² de PROJEÇÃO (footprint = área construída / nº de pavimentos); os de superestrutura, por m² de área construída total.",
+    "base_fundacao": "area",
+    "fundacao_vol_m3_por_m2": 0.064,
+    "fundacao_forma_m2_por_m3": 4.7,
+    "fundacao_escavacao_m3_por_m2": 0.106,
+    "fundacao_aco_kg_por_m3": 90,
+    "super_vol_m3_por_m2": 0.08,
+    "aco_kg_por_m3": 90,
+    "forma_m2_por_m3": 12,
+    "laje_fator_area": 1.0
+   }
+  }
  },
-
  "hidraulica": {
   "_doc": "Comprimentos de tubulação quando não medidos em planta (defaults) — substituídos por medições pela escala quando disponíveis.",
   "prumada_af_m_por_coluna": "pe_direito + 2 (reservatório elevado); nº colunas ≈ nº de zonas molhadas agrupadas (banheiros contíguos = 1 coluna)",
@@ -71,68 +191,68 @@
   "caixas_inspecao": "1 por banheiro/zona molhada + 1 a cada 12m de coletor externo + 1 por mudança de direção do coletor",
   "registros_gaveta": "1 por ambiente molhado + 1 geral (barrilete)"
  },
-
  "regras": {
-  "area_construida":            "área construída total (m²) — soma dos pavimentos, paredes incluídas",
-  "vol_escavacao_baldrame":     "perímetro de paredes térreas (m) × baldrame_escavacao_m3_por_m",
-  "vol_concreto_fundacao":      "perímetro de paredes térreas (m) × baldrame_vol_m3_por_m",
-  "area_forma_fundacao":        "perímetro de paredes térreas (m) × baldrame_forma_m2_por_m",
-  "peso_aco_fundacao":          "vol_concreto_fundacao × aco_kg_por_m3",
-  "area_baldrame":              "perímetro de paredes térreas (m) × 0,5 (duas faces + topo de cinta 20cm)",
-  "vol_concreto_super":         "área construída × super_vol_m3_por_m2 (pilares+cintas+vergas estruturais)",
-  "area_forma_super":           "vol_concreto_super × forma_m2_por_m3",
-  "peso_aco_super":             "vol_concreto_super × aco_kg_por_m3",
-  "area_laje":                  "área de laje (≈ área construída × laje_fator_area quando há laje; 0 se telhado aparente)",
-  "area_paredes_bruta":         "Σ (comprimento de cada parede × pé-direito) − vãos > 2m² (janelas grandes/portões); porta comum e janela ≤2m² não descontadas (compensa vergas/enchimentos)",
-  "comp_vergas":                "Σ larguras de vãos (portas+janelas) + comp_verga_por_vao_m × nº de vãos (transpasse 30cm/lado)",
-  "area_revestimento_total":    "2 × area_paredes_liquida_int + fachadas (chapisco em todas as faces)",
-  "area_revestimento_pintura":  "faces de parede que recebem pintura (total − áreas azulejadas)",
-  "area_parede_molhada":        "perímetro do box+paredes hidráulicas × altura_revest_parede_molhada_m (banheiros: perímetro total × h=1,8 ou teto no padrão alto; cozinha/AS: parede da bancada/tanque × 1,8)",
-  "area_forro":                 "área dos ambientes com forro (padrão médio/alto: todos internos; popular: nenhum)",
-  "area_piso_terreo":           "área interna do pavimento térreo",
-  "area_piso_total":            "área interna de todos os pavimentos",
-  "comp_rodape":                "Σ perímetros internos − larguras de portas (ambientes secos)",
-  "comp_soleiras":              "largura_porta_padrao_m × nº de portas de transição seco/molhado e externas",
-  "comp_peitoril":              "Σ larguras de janelas",
-  "area_telhado":               "área de PROJEÇÃO HORIZONTAL da cobertura × fator_beiral_telhado (1,05) — critério de medição DER-ES (cadernos 0901/0902): estrutura e telhamento medem-se pela projeção horizontal; a inclinação já está embutida nas composições (cerâmica considera 30%)",
-  "qtd_portas_internas":        "contagem em planta (ou 1/quarto + 1/banheiro + 1 cozinha−sala se fechada)",
-  "qtd_portas_todas":           "portas internas + externas (marcos)",
-  "comp_alizar":                "nº portas × (2×altura_porta_padrao_m + largura_porta_padrao_m) × 2 faces",
-  "area_janelas":               "Σ (largura × altura) das janelas do quadro de esquadrias (ou 1/6 da área de piso de cada ambiente de permanência — mínimo de iluminação código de obras)",
-  "area_pintura_total":         "area_revestimento_pintura + area_forro (quando houver) + fachadas",
-  "area_pintura_interna":       "faces internas pintadas (p/ emassamento)",
-  "qtd_pt_agua":                "Σ por ambiente: lavatorio+pia+tanque+bacia (1 cada) — pontos de AF por peça",
-  "qtd_pt_chuveiro":            "nº de banheiros com chuveiro",
-  "qtd_bacias":                 "nº de bacias (banheiros+lavabos)",
-  "qtd_pt_esgoto_sec":          "lavatórios + pias + tanques + ralos secundários",
-  "qtd_ralos":                  "1 por banheiro + 1 por área de serviço",
-  "comp_tubo_prumada":          "nº colunas × (pe_direito + 2) × 2 (AF desce + barrilete)",
-  "comp_tubo_ramal":            "Σ dist. prumada→ambiente molhado (medida em planta ou default 6m) × fator_rota_hidraulica",
-  "comp_esgoto_coletor":        "Σ dist. banheiro→caixa (medida ou 4m) × fator_rota_esgoto",
-  "comp_esgoto_ramal":          "qtd_pt_esgoto_sec × esgoto_ramal50_m_por_ponto_sec",
-  "comp_esgoto_externo":        "dist. última caixa→rede pública ou fossa (medida em planta ou default 8m)",
-  "qtd_caixas_inspecao":        "ver hidraulica.caixas_inspecao",
-  "qtd_caixa_gordura":          "1 (cozinha) — 2 se cozinha industrial",
-  "qtd_fossa":                  "1 conjunto se sem_rede_esgoto",
-  "qtd_lavatorios":             "nº banheiros + lavabos",
-  "qtd_pias_cozinha":           "nº cozinhas",
-  "qtd_tanques":                "nº áreas de serviço",
-  "qtd_registros":              "ver hidraulica.registros_gaveta",
-  "qtd_pt_luz":                 "Σ ambientes.luz",
-  "qtd_pt_tomada":              "Σ max(tug_min, ceil(perímetro/tug_por_perimetro)) por ambiente",
-  "qtd_pt_interruptor":         "Σ ambientes.int",
-  "qtd_circuitos":              "ceil(área/iluminacao_area_max) + ceil(área/tug_area_max) + circuito_dedicado_cozinha_as + nº chuveiros + reserva",
-  "comp_alimentador":           "3 × dist. quadro→medidor (medida ou default 15m) × fator_rota_eletrica",
-  "comp_alimentador_duto":      "dist. quadro→medidor (medida ou default) × fator_rota_eletrica",
-  "area_bancada_banheiro":      "0,6 m² × nº banheiros (bancada 1,0×0,6) — médio/alto",
-  "unitario":                   "1 por obra (ou informado)"
+  "area_construida": "área construída total (m²) — soma dos pavimentos, paredes incluídas",
+  "vol_escavacao_baldrame": "perímetro de paredes térreas (m) × baldrame_escavacao_m3_por_m",
+  "vol_concreto_fundacao": "perímetro de paredes térreas (m) × baldrame_vol_m3_por_m",
+  "area_forma_fundacao": "perímetro de paredes térreas (m) × baldrame_forma_m2_por_m",
+  "peso_aco_fundacao": "vol_concreto_fundacao × aco_kg_por_m3",
+  "area_baldrame": "perímetro de paredes térreas (m) × 0,5 (duas faces + topo de cinta 20cm)",
+  "vol_concreto_super": "área construída × super_vol_m3_por_m2 (pilares+cintas+vergas estruturais)",
+  "area_forma_super": "vol_concreto_super × forma_m2_por_m3",
+  "peso_aco_super": "vol_concreto_super × aco_kg_por_m3",
+  "area_laje": "área de laje (≈ área construída × laje_fator_area quando há laje; 0 se telhado aparente)",
+  "area_paredes_bruta": "Σ (comprimento de cada parede × pé-direito) − vãos > 2m² (janelas grandes/portões); porta comum e janela ≤2m² não descontadas (compensa vergas/enchimentos)",
+  "comp_vergas": "Σ larguras de vãos (portas+janelas) + comp_verga_por_vao_m × nº de vãos (transpasse 30cm/lado)",
+  "area_revestimento_total": "2 × area_paredes_liquida_int + fachadas (chapisco em todas as faces)",
+  "area_revestimento_pintura": "faces de parede que recebem pintura (total − áreas azulejadas)",
+  "area_parede_molhada": "perímetro do box+paredes hidráulicas × altura_revest_parede_molhada_m (banheiros: perímetro total × h=1,8 ou teto no padrão alto; cozinha/AS: parede da bancada/tanque × 1,8)",
+  "area_forro": "área dos ambientes com forro (padrão médio/alto: todos internos; popular: nenhum)",
+  "area_piso_terreo": "área interna do pavimento térreo",
+  "area_piso_total": "área interna de todos os pavimentos",
+  "comp_rodape": "Σ perímetros internos − larguras de portas (ambientes secos)",
+  "comp_soleiras": "largura_porta_padrao_m × nº de portas de transição seco/molhado e externas",
+  "comp_peitoril": "Σ larguras de janelas",
+  "area_telhado": "área de PROJEÇÃO HORIZONTAL da cobertura × fator_beiral_telhado (1,05) — critério de medição DER-ES (cadernos 0901/0902): estrutura e telhamento medem-se pela projeção horizontal; a inclinação já está embutida nas composições (cerâmica considera 30%)",
+  "qtd_portas_internas": "contagem em planta (ou 1/quarto + 1/banheiro + 1 cozinha−sala se fechada)",
+  "qtd_portas_todas": "portas internas + externas (marcos)",
+  "comp_alizar": "nº portas × (2×altura_porta_padrao_m + largura_porta_padrao_m) × 2 faces",
+  "area_janelas": "Σ (largura × altura) das janelas do quadro de esquadrias (ou 1/6 da área de piso de cada ambiente de permanência — mínimo de iluminação código de obras)",
+  "area_pintura_total": "area_revestimento_pintura + area_forro (quando houver) + fachadas",
+  "area_pintura_interna": "faces internas pintadas (p/ emassamento)",
+  "qtd_pt_agua": "Σ por ambiente: lavatorio+pia+tanque+bacia (1 cada) — pontos de AF por peça",
+  "qtd_pt_chuveiro": "nº de banheiros com chuveiro",
+  "qtd_bacias": "nº de bacias (banheiros+lavabos)",
+  "qtd_pt_esgoto_sec": "lavatórios + pias + tanques + ralos secundários",
+  "qtd_ralos": "1 por banheiro + 1 por área de serviço",
+  "comp_tubo_prumada": "nº colunas × (pe_direito + 2) × 2 (AF desce + barrilete)",
+  "comp_tubo_ramal": "Σ dist. prumada→ambiente molhado (medida em planta ou default 6m) × fator_rota_hidraulica",
+  "comp_esgoto_coletor": "Σ dist. banheiro→caixa (medida ou 4m) × fator_rota_esgoto",
+  "comp_esgoto_ramal": "qtd_pt_esgoto_sec × esgoto_ramal50_m_por_ponto_sec",
+  "comp_esgoto_externo": "dist. última caixa→rede pública ou fossa (medida em planta ou default 8m)",
+  "qtd_caixas_inspecao": "ver hidraulica.caixas_inspecao",
+  "qtd_caixa_gordura": "1 (cozinha) — 2 se cozinha industrial",
+  "qtd_fossa": "1 conjunto se sem_rede_esgoto",
+  "qtd_lavatorios": "nº banheiros + lavabos",
+  "qtd_pias_cozinha": "nº cozinhas",
+  "qtd_tanques": "nº áreas de serviço",
+  "qtd_registros": "ver hidraulica.registros_gaveta",
+  "qtd_pt_luz": "Σ ambientes.luz",
+  "qtd_pt_tomada": "Σ max(tug_min, ceil(perímetro/tug_por_perimetro)) por ambiente",
+  "qtd_pt_interruptor": "Σ ambientes.int",
+  "qtd_circuitos": "ceil(área/iluminacao_area_max) + ceil(área/tug_area_max) + circuito_dedicado_cozinha_as + nº chuveiros + reserva",
+  "comp_alimentador": "3 × dist. quadro→medidor (medida ou default 15m) × fator_rota_eletrica",
+  "comp_alimentador_duto": "dist. quadro→medidor (medida ou default) × fator_rota_eletrica",
+  "area_bancada_banheiro": "0,6 m² × nº banheiros (bancada 1,0×0,6) — médio/alto",
+  "unitario": "1 por obra (ou informado)"
  },
-
  "premissas_texto": {
   "sem_projeto_eletrico": "Projeto elétrico não fornecido: pontos dimensionados pelos mínimos da NBR 5410 por ambiente; alimentador e circuitos estimados por distâncias medidas na planta (fator de percurso 1,2). Sujeito a revisão com o projeto executivo.",
   "sem_projeto_hidraulico": "Projeto hidrossanitário não fornecido: pontos por peça sanitária conforme planta de leiaute; tubulações estimadas por distâncias medidas pela escala (fator 1,25) e DNs usuais (NBR 5626/8160).",
   "sem_projeto_estrutural": "Projeto estrutural não fornecido: estrutura estimada por índices paramétricos (residencial convencional). Item de maior incerteza do orçamento (±20%). Recomenda-se projeto estrutural para orçamento definitivo.",
   "escala": "Escala da planta calibrada por cota conhecida; medições sobre a imagem têm precisão ±3%.",
-  "padrao": "Itens de acabamento selecionados pela classe de padrão informada (mapa de padrões DER-ES), sem escolha de cor/marca — preços médios da tabela referencial."
+  "padrao": "Itens de acabamento selecionados pela classe de padrão informada (mapa de padrões DER-ES), sem escolha de cor/marca — preços médios da tabela referencial.",
+  "estrutura_comercial": "Estrutura dimensionada por índices paramétricos de edificação COMERCIAL (0,08 m³/m² de concreto na superestrutura, 90 kg de aço por m³, fundação em sapatas isoladas por área construída). Incerteza de ±20% — recomenda-se projeto estrutural para orçamento definitivo.",
+  "cobertura_metalica": "Estrutura metálica de cobertura orçada por PESO (DER-ES 200738, perfis formados a frio com tratamento e pintura), aplicando o consumo declarado em kg/m² sobre a projeção horizontal. É a linha de maior incerteza do orçamento: exige projeto estrutural e cotação de fabricante."
  }
 }

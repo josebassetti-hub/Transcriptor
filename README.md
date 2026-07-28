@@ -157,9 +157,16 @@ critério fica marcado como "caderno ainda não ingerido" no memorial.
 
 Todo o sistema também existe como **Agent Skill**: no chat do claude.ai (ou em qualquer sessão
 do Claude Code neste repositório), você envia o projeto e o Claude produz **o mesmo orçamento do
-app** — a skill embute a base de preços, o mapa de padrões, os 832 critérios de medição e um
-**motor em Python idêntico ao do app** (validado item a item contra o orçamento dourado:
-custo direto R$ 175.142,06 no exemplo de 70 m²).
+app** — a skill embute **as duas bases de preços** (DER-ES e SINAPI-ES), o mapa de padrões, os 832
+critérios de medição, o gerador de Excel e um **motor em Python idêntico ao do app**, validado
+contra **dois orçamentos dourados**: residencial (custo direto R$ 175.142,06 na casa de 70 m²) e
+comercial (academia de 1.886 m² — 109 itens DER-ES + 10 SINAPI, total R$ 5.876.422,49).
+
+Além do orçamento residencial, a skill sabe: escolher **perfil estrutural comercial**, orçar
+**cobertura metálica por peso**, buscar nas duas tabelas antes de declarar que um item não existe,
+decompor composições SINAPI publicadas sem preço em **mão de obra oficial + material a cotar**, e
+montar **orçamento 100% em código de tabela** para agente financeiro, com o grau de similaridade de
+cada substituição e a diferença de escopo declarada.
 
 **Instalar no claude.ai:** baixe `dist/orcamentista-der-es.zip` → claude.ai → Configurações →
 Capacidades (Capabilities) → **Skills** → carregar o zip → ativar. Depois é só abrir um chat,

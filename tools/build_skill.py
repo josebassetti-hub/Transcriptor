@@ -16,6 +16,9 @@ REFS = [
     ("data/mapa-padroes.json", "mapa-padroes.json"),
     ("data/indices-estimativa.json", "indices-estimativa.json"),
     ("data/regras-medicao.json", "regras-medicao.json"),
+    ("data/base-sinapi-es-skill.json", "base-sinapi-es.json"),
+    ("data/sinapi-decomposicoes.json", "sinapi-decomposicoes.json"),
+    ("data/exemplo-comercial.json", "exemplo-comercial.json"),
     ("METODOLOGIA.md", "METODOLOGIA.md"),
     ("COBERTURA.md", "COBERTURA.md"),
 ]
@@ -37,6 +40,10 @@ def main():
         sys.exit("motor --exemplo falhou: " + ex.stderr[:200])
     with open(os.path.join(refdir, "exemplo-entrada.json"), "w", encoding="utf-8") as f:
         f.write(ex.stdout)
+
+    # o gerador de Excel viaja junto com a skill (entrega final ao cliente)
+    shutil.copyfile("tools/gera_excel.py", os.path.join(SKILL, "scripts", "gera_excel.py"))
+    print("script: gera_excel.py")
 
     # autoteste obrigatório antes de empacotar
     at = subprocess.run([sys.executable, os.path.join(SKILL, "scripts", "motor_orcamento.py"),

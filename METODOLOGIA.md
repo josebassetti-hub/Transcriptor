@@ -12,6 +12,11 @@
 
 ---
 
+> **Segunda tabela.** Desde 07/2026 a base inclui o **SINAPI-ES 06/2026 sem desoneração**
+> (`data/base-sinapi-es.json`: 8.402 composições + 4.278 insumos). É custo direto com BDI 0, igual à
+> DER-ES, portanto **somável e comparável** — mas só a versão SEM desoneração; misturar com a
+> desonerada corrompe o total.
+
 ## FASE 0 — Inventário dos arquivos recebidos
 
 1. Listar pranchas/arquivos e classificar por disciplina: **ARQ** (plantas baixas, cortes,
@@ -20,6 +25,10 @@
    acionam as heurísticas da FASE 4 e as premissas de `indices-estimativa.json → premissas_texto`.
 3. Identificar: nº de pavimentos, área construída declarada (carimbo/tabela de áreas),
    localização (para nota sobre data-base/região da tabela).
+4. **Imagens 3D / renders são fonte de especificação de acabamento** — leia piso, forro, esquadria,
+   revestimento, iluminação e fachada em cada uma. Se o usuário avisar que virão mais imagens,
+   **segure o resultado até chegarem todas**.
+5. **Pergunte se o orçamento é para agente financeiro** (BNB/FNE, Caixa). Se for, vale a FASE 7.
 
 ## FASE 1 — Calibração de escala e medição
 
@@ -95,9 +104,19 @@ Quando o projeto da disciplina existe, **contar o que está desenhado**:
    mudança de direção.
 3. Sem rede pública → fossa séptica + filtro anaeróbio (140102+140103) e premissa.
 
-**Estrutura (índices paramétricos — maior incerteza, ±20%):**
-- Baldrame: perímetro de paredes × 0,08 m³/m (+ fôrma 0,8 m²/m + escavação 0,24 m³/m).
-- Pilares/cintas: área × 0,045 m³/m²; aço 85 kg/m³; fôrma 12 m²/m³; laje treliçada por m².
+**Estrutura (índices paramétricos — maior incerteza, ±20%):** escolha o perfil em
+`obra.perfilEstrutural`.
+- **residencial** (padrão): baldrame = perímetro de paredes × 0,08 m³/m (+ fôrma 0,8 m²/m +
+  escavação 0,24 m³/m); pilares/cintas = área × 0,045 m³/m²; aço 85 kg/m³; fôrma 12 m²/m³.
+- **comercial** (1 a 3 pav., vãos maiores, pilares isolados): fundação medida pela **projeção**
+  (0,064 m³/m² de concreto, 0,106 m³/m² de escavação, fôrma 4,7 m²/m³, aço 90 kg/m³);
+  superestrutura = área construída × 0,08 m³/m²; aço 90 kg/m³. Usar o perfil residencial num prédio
+  comercial subdimensiona a estrutura em silêncio.
+- **Cobertura metálica** (`obra.coberturaMetalica: true`): a estrutura de madeira sai e entra a
+  DER-ES **200738 medida por PESO** = projeção × 1,05 × `kg_estrutura_metalica_por_m2` (default 22;
+  15–18 para vãos até 12 m, 20–25 para 15–20 m, 30–40 acima de 25 m).
+  **Nunca estime estrutura metálica por R$/m² sem dividir pelo R$/kg da tabela e conferir o kg/m²
+  resultante** — R$ 240/m² com a tabela a R$ 40,82/kg equivale a 6 kg/m², peso de terça solta.
 - Declarar sempre: "recomenda-se projeto estrutural para orçamento definitivo".
 
 ## FASE 5 — Seleção de itens e precificação
@@ -110,6 +129,31 @@ Quando o projeto da disciplina existe, **contar o que está desenhado**:
    manualmente da base pesquisando por descrição.
 4. Preços = custo direto DER × (1 + BDI). BDI editável (default 25% residencial privado;
    obras públicas: BDI do órgão). Administração local/canteiro/limpeza conforme porte.
+
+## FASE 6b — Itens fora da tabela
+
+Antes de declarar que um serviço não existe, faça as cinco buscas do protocolo (SKILL.md): serviços
+da DER-ES por sinônimos, composições do SINAPI, insumos das duas bases, o capítulo inteiro, e os
+Cadernos Técnicos do SINAPI. Há composições SINAPI publicadas **sem preço** em nenhuma UF (pele de
+vidro 104099, brises 104941, fachada insertada 105938): `data/sinapi-decomposicoes.json` separa a
+mão de obra oficial do material a cotar.
+
+O `orcamento.json` aceita três blocos: `itens_sinapi` (precificados pelo SINAPI),
+`complemento_a_cotar` (sem código — só quando o cliente aceita cotação) e `substituicoes`.
+
+## FASE 7 — Orçamento para agente financeiro
+
+Banco de fomento **não aceita cotação de mercado**: todo item precisa de código de tabela. Substitua
+cada item sem equivalente pelo serviço de tabela mais próximo e declare o grau — **ALTO** (mesma
+função e sistema), **MÉDIO** (mesma função, material/sistema diferente — pedir aceite do
+projetista), **BAIXO** (só analogia funcional). Preencha `substituicoes` e deixe `complemento`
+vazio; o motor calcula a **diferença de escopo**, que deve ser sempre declarada: é o que o cliente
+cobrirá com recursos próprios. Entregue **duas versões** (codificada para o banco, custo real para o
+cliente) e alinhe o memorial descritivo com a planilha, sob pena de divergência na medição.
+
+**Armadilhas de norma:** DER-ES 210301 é guarda-corpo de 0,80 m e não atende a NBR 14718 (mínimo
+1,10 m) — em pavimento elevado use SINAPI 99842. Edificação de uso público com 2 pavimentos precisa
+de rota acessível vertical (NBR 9050).
 
 ## FASE 6 — Saída (`orcamento.json`)
 

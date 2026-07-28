@@ -53,10 +53,14 @@ def load_refs(refs):
     mapa = rd("mapa-padroes.json")
     ind = rd("indices-estimativa.json")
     reg = rd("regras-medicao.json", {"regras": {}})
+
+    # SINAPI é opcional: quando presente, permite orçar o que a DER-ES não cobre
+    sin = rd("base-sinapi-es.json")
+    if sin:
+        base["_sinapi"] = sin
     return base, mapa, ind, reg
 
 
-# ---------- helpers idênticos ao JS ----------
 def jsround(v):        # Math.round do JS (meio para cima em positivos)
     return math.floor(v + 0.5)
 
@@ -92,6 +96,7 @@ def def_state():
         "ambientes": demo_ambientes(),
         "med": {"quadroMedidor": 12, "esgotoExterno": 8, "escalaNota": ""},
         "ov": {}, "extras": [], "precos": {}, "par": {},
+        "sinapi": [], "complemento": [], "substituicoes": [],
     }
 
 
@@ -102,7 +107,13 @@ class Motor:
         self.SVC = {s["c"]: s for s in base["servicos"]}
         self.CAPS = base.get("capitulos", {})
         self.P = ind["parametros"]; self.AMB = ind["ambientes"]
-        self.CIRC = ind["circuitos"]; self.EST = ind["estrutura_indices"]
+        self.CIRC = ind["circuitos"]
+        # perfil estrutural: residencial (padrão) ou comercial — muda os índices paramétricos
+        est = ind["estrutura_indices"]
+        perfil = (S["obra"].get("perfilEstrutural") or "residencial").lower()
+        self.perfilEst = perfil if perfil in est.get("perfis", {}) else "residencial"
+        self.EST = {**est, **est.get("perfis", {}).get(self.perfilEst, {})}
+        self.SIN = {c["c"]: c for c in (base.get("_sinapi") or {}).get("composicoes", [])}
 
     def par(self, k):
         v = self.S.get("par", {}).get(k)
@@ -181,10 +192,25 @@ class Motor:
         def R(q, f): return {"q": q, "f": f}
         return {
             "area_construida": lambda c: R(c["areaConstr"], f"área construída {fmt1(c['areaConstr'])} m²"),
-            "vol_escavacao_baldrame": lambda c: R(rnd2(c["paredesLen"] * EST["baldrame_escavacao_m3_por_m"]), f"{fmt1(c['paredesLen'])} m de paredes × {EST['baldrame_escavacao_m3_por_m']} m³/m"),
-            "vol_concreto_fundacao": lambda c: R(rnd2(c["paredesLen"] * EST["baldrame_vol_m3_por_m"]), f"{fmt1(c['paredesLen'])} m × {EST['baldrame_vol_m3_por_m']} m³/m (baldrame)"),
-            "area_forma_fundacao": lambda c: R(rnd1(c["paredesLen"] * EST["baldrame_forma_m2_por_m"]), f"{fmt1(c['paredesLen'])} m × {EST['baldrame_forma_m2_por_m']} m²/m"),
-            "peso_aco_fundacao": lambda c: R(rnd1(c["paredesLen"] * EST["baldrame_vol_m3_por_m"] * EST["aco_kg_por_m3"]), f"{fmt(c['paredesLen'] * EST['baldrame_vol_m3_por_m'])} m³ × {EST['aco_kg_por_m3']} kg/m³"),
+            "vol_escavacao_baldrame": (
+                (lambda c: R(rnd2(c["footprint"] * EST["fundacao_escavacao_m3_por_m2"]), f"projeção {fmt1(c['footprint'])} m² × {EST['fundacao_escavacao_m3_por_m2']} m³/m² (cavas de sapata)"))
+                if EST.get("base_fundacao") == "area" else
+                (lambda c: R(rnd2(c["paredesLen"] * EST["baldrame_escavacao_m3_por_m"]), f"{fmt1(c['paredesLen'])} m de paredes × {EST['baldrame_escavacao_m3_por_m']} m³/m"))),
+            "vol_concreto_fundacao": (
+                (lambda c: R(rnd2(c["footprint"] * EST["fundacao_vol_m3_por_m2"]), f"projeção {fmt1(c['footprint'])} m² × {EST['fundacao_vol_m3_por_m2']} m³/m² (sapatas isoladas)"))
+                if EST.get("base_fundacao") == "area" else
+                (lambda c: R(rnd2(c["paredesLen"] * EST["baldrame_vol_m3_por_m"]), f"{fmt1(c['paredesLen'])} m × {EST['baldrame_vol_m3_por_m']} m³/m (baldrame)"))),
+            "area_forma_fundacao": (
+                (lambda c: R(rnd1(c["footprint"] * EST["fundacao_vol_m3_por_m2"] * EST["fundacao_forma_m2_por_m3"]), f"{fmt(c['footprint'] * EST['fundacao_vol_m3_por_m2'])} m³ × {EST['fundacao_forma_m2_por_m3']} m²/m³"))
+                if EST.get("base_fundacao") == "area" else
+                (lambda c: R(rnd1(c["paredesLen"] * EST["baldrame_forma_m2_por_m"]), f"{fmt1(c['paredesLen'])} m × {EST['baldrame_forma_m2_por_m']} m²/m"))),
+            "peso_aco_fundacao": (
+                (lambda c: R(rnd1(c["footprint"] * EST["fundacao_vol_m3_por_m2"] * EST["fundacao_aco_kg_por_m3"]), f"{fmt(c['footprint'] * EST['fundacao_vol_m3_por_m2'])} m³ × {EST['fundacao_aco_kg_por_m3']} kg/m³"))
+                if EST.get("base_fundacao") == "area" else
+                (lambda c: R(rnd1(c["paredesLen"] * EST["baldrame_vol_m3_por_m"] * EST["aco_kg_por_m3"]), f"{fmt(c['paredesLen'] * EST['baldrame_vol_m3_por_m'])} m³ × {EST['aco_kg_por_m3']} kg/m³"))),
+            "peso_estrutura_metalica": lambda c: R(
+                rnd1(c["footprint"] * P["fator_beiral_telhado"] * self.par("kg_estrutura_metalica_por_m2")) if S["obra"].get("coberturaMetalica") else 0,
+                f"projeção horizontal {fmt1(c['footprint'])} m² × beiral {P['fator_beiral_telhado']} × {fmt(self.par('kg_estrutura_metalica_por_m2'))} kg/m² (DER 200738 é medido por PESO)"),
             "area_baldrame": lambda c: R(rnd1(c["paredesLen"] * 0.5), f"{fmt1(c['paredesLen'])} m × 0,5 m (2 faces+topo)"),
             "vol_concreto_super": lambda c: R(rnd2(c["areaConstr"] * EST["super_vol_m3_por_m2"]), f"{fmt1(c['areaConstr'])} m² × {EST['super_vol_m3_por_m2']} m³/m² (pilares/cintas)"),
             "area_forma_super": lambda c: R(rnd1(c["areaConstr"] * EST["super_vol_m3_por_m2"] * EST["forma_m2_por_m3"]), f"{fmt(c['areaConstr'] * EST['super_vol_m3_por_m2'])} m³ × {EST['forma_m2_por_m3']} m²/m³"),
@@ -254,6 +280,11 @@ class Motor:
         for g in self.MAPA["grupos"]:
             if g.get("condicional") == "sem_rede_esgoto" and S["obra"].get("redeEsgoto"):
                 continue
+            if g.get("condicional") == "cobertura_metalica" and not S["obra"].get("coberturaMetalica"):
+                continue
+            # com cobertura metálica, a estrutura de madeira sai de cena
+            if g["id"] == "cobertura_estrutura" and S["obra"].get("coberturaMetalica"):
+                continue
             if S["obra"].get("incluirEstrutura") is False and g["id"] in self.ESTRUTURA_GRUPOS:
                 continue
             ov = S.get("ov", {}).get(g["id"], {})
@@ -293,6 +324,9 @@ class Motor:
             rows.append({"grupo": f"extra{i}", "nome": "Item adicional", "c": x["c"], "d": s["d"], "u": s["u"],
                          "qtd": float(x["qtd"]), "pu": self.preco_de(x["c"]),
                          "f": x.get("obs") or "incluído manualmente", "cap": x["c"][:2], "manual": True})
+        # anti-dupla-contagem: extra que repete código já gerado pelo mapa de padrões
+        do_mapa = {r["c"] for r in rows if not r["manual"]}
+        self.dup = sorted({r["c"] for r in rows if r["manual"] and r["c"] in do_mapa})
         for r in rows:
             r["total"] = r["qtd"] * r["pu"]
         return c, rows
@@ -325,11 +359,89 @@ class Motor:
         if S["obra"].get("semHid"): l.append("Projeto hidrossanitário não fornecido — traçados estimados pela escala.")
         if S["obra"].get("semEst"): l.append("Projeto estrutural não fornecido — estrutura por índices paramétricos (±20%).")
         if not S["med"].get("escalaNota"): l.append("Planta sem calibração de escala registrada — distâncias digitadas/premissa.")
+        for c in getattr(self, "dup", []):
+            sv = self.SVC.get(c, {})
+            l.append(f"CONFERIR: o código {c} ({sv.get('d','')[:56]}) aparece duas vezes — como item do mapa "
+                     f"de padrões E como item extra. Se as duas quantidades têm finalidades distintas "
+                     f"(ex.: pontos de ambiente + pontos de bebedouro), está correto; se não, é dupla contagem.")
         return l
+
+    # ---- itens fora da tabela DER-ES ----
+    def bloco_sinapi(self):
+        """Itens precificados pelo SINAPI (mesma natureza: custo direto, BDI 0)."""
+        itens = []
+        for x in self.S.get("sinapi", []):
+            c = self.SIN.get(str(x.get("c")))
+            q = float(x.get("qtd") or 0)
+            if not c or not q > 0:
+                continue
+            itens.append({"c": c["c"], "d": c["d"], "u": c["u"], "qtd": q, "pu": c["p"],
+                          "total": rnd2(q * c["p"]), "obs": x.get("obs", ""), "grau": x.get("grau", "")})
+        cd = rnd2(sum(i["total"] for i in itens))
+        bdi = float(self.S["obra"].get("bdi") or 0) / 100
+        return {"fonte": (self.BASE.get("_sinapi") or {}).get("meta", {}).get("fonte", "SINAPI"),
+                "referencia": (self.BASE.get("_sinapi") or {}).get("meta", {}).get("referencia", ""),
+                "itens": itens, "custo_direto": cd, "com_bdi": rnd2(cd * (1 + bdi))}
+
+    def bloco_complemento(self):
+        """Itens sem código de tabela — só admissíveis quando o cliente NÃO exige tabela referencial."""
+        itens = []
+        for x in self.S.get("complemento", []):
+            q, pu = float(x.get("qtd") or 0), float(x.get("pu") or 0)
+            if not (q > 0 and pu > 0):
+                continue
+            mo = float(x.get("mo_oficial") or 0)
+            itens.append({"descricao": x.get("descricao", ""), "qtd": q, "und": x.get("und", ""),
+                          "pu": pu, "total": rnd2(q * pu),
+                          "fonte": x.get("fonte", "Cotação de mercado"),
+                          "mo_oficial": mo, "material_cotar": rnd2(pu - mo), "obs": x.get("obs", "")})
+        cd = rnd2(sum(i["total"] for i in itens))
+        bdi = float(self.S["obra"].get("bdi") or 0) / 100
+        return {"nota": self.S.get("complementoNota") or
+                ("Nenhum item por cotação: todos os serviços têm código de tabela referencial."
+                 if not itens else
+                 "Itens sem equivalente publicado nas tabelas — exigem cotação de mercado."),
+                "itens": itens, "custo_direto": cd, "com_bdi": rnd2(cd * (1 + bdi)),
+                "mo_oficial_total": rnd2(sum(i["qtd"] * i["mo_oficial"] for i in itens))}
+
+    def bloco_substituicoes(self):
+        """Item de projeto → serviço de tabela adotado, com grau de similaridade e diferença de escopo."""
+        subs = self.S.get("substituicoes", [])
+        if not subs:
+            return None
+        out = []
+        for x in subs:
+            comps = []
+            for cp in x.get("componentes", []):
+                tab = (cp.get("tabela") or "DER-ES").upper()
+                fonte = self.SVC if tab.startswith("DER") else self.SIN
+                sv = fonte.get(str(cp.get("c")))
+                if not sv:
+                    continue
+                q = float(cp.get("qtd") or 0)
+                comps.append({"tabela": "DER-ES" if tab.startswith("DER") else "SINAPI-ES",
+                              "c": sv["c"], "d": sv["d"], "u": sv["u"], "qtd": q,
+                              "pu": sv["p"], "total": rnd2(q * sv["p"])})
+            sub = rnd2(sum(c["total"] for c in comps))
+            cot = float(x.get("cotado") or 0)
+            out.append({"item": x.get("item", ""), "cotado": cot, "substituido": sub,
+                        "grau": x.get("grau", ""), "justificativa": x.get("justificativa", ""),
+                        "componentes": comps})
+        tc = rnd2(sum(o["cotado"] for o in out)); ts = rnd2(sum(o["substituido"] for o in out))
+        return {"nota": SUBST_NOTA, "itens": out, "total_cotado": tc,
+                "total_substituido": ts, "diferenca": rnd2(tc - ts)}
 
     # ---- saídas ----
     def orcamento_json(self, ctx, rows, T):
         S = self.S
+        sin = self.bloco_sinapi(); compl = self.bloco_complemento()
+        subs = self.bloco_substituicoes()
+        geral = rnd2(T["comBdi"] + sin["com_bdi"] + compl["com_bdi"])
+        extra = {}
+        if sin["itens"]:
+            extra["itens_sinapi"] = sin
+        if subs:
+            extra["substituicoes"] = subs
         return {
             "app": "orcamentista-der-es", "versao": 1,
             "obra": {**S["obra"], "data_base": self.BASE["meta"].get("data_base")},
@@ -337,7 +449,10 @@ class Motor:
             "itens": [{"grupo": r["grupo"], "c": r["c"], "d": r["d"], "u": r["u"], "qtd": r["qtd"],
                        "pu": r["pu"], "total": r["total"], "formula": r["f"], "manual": r["manual"]} for r in rows],
             "overrides": S.get("ov", {}), "extras": S.get("extras", []), "precos": S.get("precos", {}),
-            "totais": {"custo_direto": T["cd"], "bdi_pct": float(S["obra"].get("bdi") or 0), "total": T["comBdi"]},
+            "totais": {"custo_direto": T["cd"], "bdi_pct": float(S["obra"].get("bdi") or 0),
+                       "total": T["comBdi"], "total_geral_com_complemento": geral},
+            "complemento_a_cotar": compl,
+            **extra,
             "premissas": self.premissas(ctx), "lacunas": self.lacunas(),
         }
 
@@ -389,8 +504,23 @@ class Motor:
         return out.getvalue()
 
 
+SUBST_NOTA = (
+    "O agente financeiro só aceita itens com código de tabela referencial. Cada item que seria cotação "
+    "de mercado foi substituído pelo serviço mais próximo com preço publicado (DER-ES ou SINAPI), com o "
+    "grau de similaridade declarado. GRAU ALTO: mesma função e mesmo sistema construtivo, troca sem "
+    "impacto técnico relevante. GRAU MÉDIO: mesma função, material ou sistema diferente — exige aceite "
+    "do projetista. GRAU BAIXO: apenas analogia funcional; o serviço de tabela NÃO reproduz o "
+    "especificado. A diferença entre o valor de projeto e o valor de tabela é escopo que o cliente "
+    "cobrirá com recursos próprios — declare-a sempre.")
+
 GOLD_CUSTO_DIRETO = 175142.06  # casa exemplo 70 m², padrão médio, BDI 25% — idêntico ao app
 # (telhado medido por projeção horizontal conforme critério DER 0901/0902 desde 07/2026)
+
+# 2º dourado: obra COMERCIAL (academia 1.886 m², 2 pav.) — trava perfil estrutural comercial,
+# cobertura metálica por peso, itens SINAPI e substituições com grau de similaridade.
+GOLD_COMERCIAL = {"cd_der": 4009002.22, "cd_sinapi": 692135.77, "geral": 5876422.49,
+                  "n_der": 109, "n_sinapi": 10, "aco_cobertura_kg": 21780.9,
+                  "dif_escopo": 471461.00}
 
 
 def autoteste(refs):
@@ -409,6 +539,33 @@ def autoteste(refs):
         ("zonas molhadas", st["zonasMolhadas"], 3),
         ("custo direto DOURADO", round(T["cd"], 2), GOLD_CUSTO_DIRETO),
     ]
+    # ---- 2º dourado: obra comercial ----
+    exc = os.path.join(refs, "exemplo-comercial.json")
+    if os.path.exists(exc):
+        with open(exc, encoding="utf-8") as f:
+            ent = json.load(f)
+        S2 = def_state()
+        S2["obra"].update(ent["obra"]); S2["ambientes"] = ent["ambientes"]
+        S2["med"].update(ent.get("med", {})); S2["ov"] = ent.get("ov", {})
+        S2["extras"] = ent.get("extras", []); S2["par"] = ent.get("par", {})
+        S2["sinapi"] = ent.get("sinapi", []); S2["complemento"] = ent.get("complemento", [])
+        S2["substituicoes"] = ent.get("substituicoes", [])
+        m2 = Motor(S2, base, mapa, ind, reg)
+        c2, r2 = m2.calc_itens(); T2 = m2.totais(r2)
+        oj2 = m2.orcamento_json(c2, r2, T2)
+        aco = next((r["qtd"] for r in r2 if r["grupo"] == "cobertura_estrutura_metalica"), 0)
+        G = GOLD_COMERCIAL
+        checks += [
+            ("[comercial] itens DER-ES", len(r2), G["n_der"]),
+            ("[comercial] itens SINAPI", len(oj2.get("itens_sinapi", {}).get("itens", [])), G["n_sinapi"]),
+            ("[comercial] itens por cotação", len(oj2["complemento_a_cotar"]["itens"]), 0),
+            ("[comercial] aço da cobertura (kg)", aco, G["aco_cobertura_kg"]),
+            ("[comercial] custo direto DER-ES", round(T2["cd"], 2), G["cd_der"]),
+            ("[comercial] custo direto SINAPI", oj2["itens_sinapi"]["custo_direto"], G["cd_sinapi"]),
+            ("[comercial] diferença de escopo", oj2["substituicoes"]["diferenca"], G["dif_escopo"]),
+            ("[comercial] TOTAL GERAL", oj2["totais"]["total_geral_com_complemento"], G["geral"]),
+        ]
+
     ok = True
     for nome, got, want in checks:
         passed = abs(got - want) < 0.011
@@ -446,12 +603,29 @@ def main():
     S["med"].update(ent.get("med") or ent.get("medicoes") or {})
     S["ov"] = ent.get("ov") or ent.get("overrides") or {}
     S["extras"] = ent.get("extras", []); S["precos"] = ent.get("precos", {}); S["par"] = ent.get("par") or ent.get("parametros") or {}
+    # itens fora da tabela DER-ES
+    S["sinapi"] = ent.get("sinapi", [])
+    S["complemento"] = ent.get("complemento", [])
+    S["complementoNota"] = ent.get("complementoNota")
+    S["substituicoes"] = ent.get("substituicoes", [])
     m = Motor(S, base, mapa, ind, reg)
     ctx, rows = m.calc_itens()
     T = m.totais(rows)
     m2 = float(S["obra"].get("area") or 1) or 1
     print(f"OBRA: {S['obra']['nome']} · {S['obra'].get('local','')} · padrão {S['obra']['padrao']} · {fmt1(m2)} m²")
-    print(f"CUSTO DIRETO R$ {fmt(T['cd'])}  |  BDI {fmt1(T['bdi']*100)}% R$ {fmt(T['cd']*T['bdi'])}  |  TOTAL R$ {fmt(T['comBdi'])}  |  R$/m² {fmt(T['comBdi']/m2)}")
+    sinb = m.bloco_sinapi(); cpl = m.bloco_complemento()
+    geral = T["comBdi"] + sinb["com_bdi"] + cpl["com_bdi"]
+    print(f"CUSTO DIRETO R$ {fmt(T['cd'])}  |  BDI {fmt1(T['bdi']*100)}% R$ {fmt(T['cd']*T['bdi'])}  |  DER-ES c/ BDI R$ {fmt(T['comBdi'])}")
+    if sinb["itens"]:
+        print(f"SINAPI: {len(sinb['itens'])} itens  |  c/ BDI R$ {fmt(sinb['com_bdi'])}")
+    if cpl["itens"]:
+        print(f"COTAÇÃO DE MERCADO: {len(cpl['itens'])} itens  |  c/ BDI R$ {fmt(cpl['com_bdi'])}  ⚠ não aceito por agente financeiro")
+    else:
+        print("COTAÇÃO DE MERCADO: nenhum item — orçamento 100% em tabela referencial ✅")
+    print(f"TOTAL GERAL R$ {fmt(geral)}  |  R$/m² {fmt(geral/m2)}")
+    sb = m.bloco_substituicoes()
+    if sb:
+        print(f"SUBSTITUIÇÕES: {len(sb['itens'])} itens · projeto R$ {fmt(sb['total_cotado'])} → tabela R$ {fmt(sb['total_substituido'])} · DIFERENÇA DE ESCOPO R$ {fmt(sb['diferenca'])} (recursos próprios do cliente)")
     print()
     print(m.planilha_txt(rows, T))
     print(m.memorial_txt(ctx, rows))

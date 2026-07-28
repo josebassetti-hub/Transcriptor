@@ -1,164 +1,816 @@
 {
  "meta": {
   "descricao": "Mapa de padrões de acabamento → itens da Tabela DER-ES (Abr/2026). Cada grupo tem o código DER usado por padrão (popular/medio/alto). 'regra' aponta para a regra de quantificação em indices-estimativa.json. Curadoria de engenharia — revisar a cada atualização da tabela.",
-  "padroes": ["popular", "medio", "alto"],
+  "padroes": [
+   "popular",
+   "medio",
+   "alto"
+  ],
   "data_base": "Abril/2026"
  },
  "grupos": [
-  {"id": "loc_obra", "nome": "Locação de obra (gabarito)", "regra": "area_construida", "und": "m2",
-   "itens": {"popular": "010501", "medio": "010501", "alto": "010501"}},
-
-  {"id": "escavacao_fund", "nome": "Escavação manual de valas (fundação)", "regra": "vol_escavacao_baldrame", "und": "m3",
-   "itens": {"popular": "030101", "medio": "030101", "alto": "030101"}},
-  {"id": "fund_concreto", "nome": "Fundação — concreto (sapata corrida/baldrame)", "regra": "vol_concreto_fundacao", "und": "m3",
-   "itens": {"popular": "040233", "medio": "040235", "alto": "040237"}},
-  {"id": "fund_forma", "nome": "Fundação — fôrma de tábua", "regra": "area_forma_fundacao", "und": "m2",
-   "itens": {"popular": "040206", "medio": "040206", "alto": "040206"}},
-  {"id": "fund_armadura", "nome": "Fundação — armadura CA-50 média", "regra": "peso_aco_fundacao", "und": "kg",
-   "itens": {"popular": "040328", "medio": "040328", "alto": "040328"}},
-  {"id": "imperm_baldrame", "nome": "Impermeabilização de baldrame", "regra": "area_baldrame", "und": "m2",
-   "itens": {"popular": "100203", "medio": "100203", "alto": "100203"}},
-
-  {"id": "super_concreto", "nome": "Superestrutura — concreto (pilares/vigas/cintas)", "regra": "vol_concreto_super", "und": "m3",
-   "itens": {"popular": "040320", "medio": "040322", "alto": "040324"}},
-  {"id": "super_forma", "nome": "Superestrutura — fôrma compensada", "regra": "area_forma_super", "und": "m2",
-   "itens": {"popular": "040339", "medio": "040339", "alto": "040337"}},
-  {"id": "super_armadura", "nome": "Superestrutura — armadura CA-50 média", "regra": "peso_aco_super", "und": "kg",
-   "itens": {"popular": "040328", "medio": "040328", "alto": "040328"}},
-  {"id": "laje", "nome": "Laje pré-fabricada treliçada", "regra": "area_laje", "und": "m2",
-   "itens": {"popular": "040601", "medio": "040601", "alto": "040602"}},
-
-  {"id": "alvenaria", "nome": "Alvenaria de vedação bloco cerâmico 9x19x19", "regra": "area_paredes_bruta", "und": "m2",
-   "itens": {"popular": "050606", "medio": "050605", "alto": "050605"}},
-  {"id": "vergas", "nome": "Vergas/contravergas de concreto", "regra": "comp_vergas", "und": "m",
-   "itens": {"popular": "050301", "medio": "050301", "alto": "050301"}},
-
-  {"id": "chapisco", "nome": "Chapisco (paredes int+ext)", "regra": "area_revestimento_total", "und": "m2",
-   "itens": {"popular": "120308", "medio": "120308", "alto": "120308"}},
-  {"id": "reboco", "nome": "Reboco tipo paulista (massa única)", "regra": "area_revestimento_pintura", "und": "m2",
-   "itens": {"popular": "120303", "medio": "120303", "alto": "120303"}},
-  {"id": "emboco_ceramica", "nome": "Emboço sob revestimento cerâmico (áreas molhadas)", "regra": "area_parede_molhada", "und": "m2",
-   "itens": {"popular": "120301", "medio": "120301", "alto": "120301"}},
-  {"id": "revest_parede_molhada", "nome": "Revestimento cerâmico de parede (áreas molhadas)", "regra": "area_parede_molhada", "und": "m2",
-   "itens": {"popular": "120241", "medio": "120241", "alto": "120221"}},
-
-  {"id": "forro", "nome": "Forro de gesso liso", "regra": "area_forro", "und": "m2", "opcional_em": ["popular"],
-   "itens": {"popular": null, "medio": "110201", "alto": "110201"}},
-
-  {"id": "lastro", "nome": "Lastro de concreto (piso térreo)", "regra": "area_piso_terreo", "und": "m2",
-   "itens": {"popular": "130112", "medio": "130110", "alto": "130110"}},
-  {"id": "regularizacao_piso", "nome": "Regularização de base p/ piso", "regra": "area_piso_total", "und": "m2",
-   "itens": {"popular": "130103", "medio": "130103", "alto": "130104"}},
-  {"id": "piso", "nome": "Piso (acabamento)", "regra": "area_piso_total", "und": "m2",
-   "itens": {"popular": "130236", "medio": "130233", "alto": "130234"}},
-  {"id": "rodape", "nome": "Rodapé", "regra": "comp_rodape", "und": "m",
-   "itens": {"popular": "130303", "medio": "130303", "alto": "130315"}},
-  {"id": "soleiras", "nome": "Soleira de granito", "regra": "comp_soleiras", "und": "m",
-   "itens": {"popular": "130308", "medio": "130308", "alto": "130308"}},
-  {"id": "peitoril", "nome": "Peitoril de granito", "regra": "comp_peitoril", "und": "m",
-   "itens": {"popular": "130317", "medio": "130317", "alto": "130317"}},
-
-  {"id": "cobertura_estrutura", "nome": "Estrutura de madeira p/ telhado", "regra": "area_telhado", "und": "m2",
-   "itens": {"popular": "090103", "medio": "090101", "alto": "090101"}},
-  {"id": "cobertura_telha", "nome": "Telhamento", "regra": "area_telhado", "und": "m2",
-   "itens": {"popular": "090203", "medio": "090212", "alto": "090211"}},
-
-  {"id": "porta_interna", "nome": "Porta interna madeira 80cm compl. (folha+ferragens)", "regra": "qtd_portas_internas", "und": "und",
-   "itens": {"popular": "061303", "medio": "061303", "alto": "061304"}},
-  {"id": "marco_porta", "nome": "Marco de madeira p/ porta", "regra": "qtd_portas_todas", "und": "und",
-   "itens": {"popular": "060103", "medio": "060103", "alto": "060108"}},
-  {"id": "alizar", "nome": "Alizar (guarnição) de madeira", "regra": "comp_alizar", "und": "m",
-   "itens": {"popular": "060107", "medio": "060107", "alto": "060107"}},
-  {"id": "janela_aluminio", "nome": "Janela de correr alumínio (linha 25) p/ vidro", "regra": "area_janelas", "und": "m2",
-   "itens": {"popular": "071701", "medio": "071701", "alto": "071701"}},
-  {"id": "vidro", "nome": "Vidro liso 4mm", "regra": "area_janelas", "und": "m2",
-   "itens": {"popular": "080102", "medio": "080102", "alto": "080102"}},
-
-  {"id": "pintura_selador", "nome": "Selador acrílico (paredes/forros)", "regra": "area_pintura_total", "und": "m2",
-   "itens": {"popular": "190121", "medio": "190114", "alto": "190114"}},
-  {"id": "pintura_massa", "nome": "Emassamento (2 demãos)", "regra": "area_pintura_interna", "und": "m2", "opcional_em": ["popular"],
-   "itens": {"popular": null, "medio": "190101", "alto": "190103"}},
-  {"id": "pintura_tinta", "nome": "Pintura látex/acrílica", "regra": "area_pintura_total", "und": "m2",
-   "itens": {"popular": "190115", "medio": "190117", "alto": "190106"}},
-
-  {"id": "pt_agua_fria", "nome": "Ponto de água fria", "regra": "qtd_pt_agua", "und": "pt",
-   "itens": {"popular": "140701", "medio": "140701", "alto": "140701"}},
-  {"id": "pt_registro_pressao", "nome": "Ponto c/ registro de pressão (chuveiro/descarga)", "regra": "qtd_pt_chuveiro", "und": "pt",
-   "itens": {"popular": "140702", "medio": "140702", "alto": "140702"}},
-  {"id": "pt_esgoto_primario", "nome": "Ponto esgoto primário (bacia)", "regra": "qtd_bacias", "und": "pt",
-   "itens": {"popular": "140705", "medio": "140705", "alto": "140705"}},
-  {"id": "pt_esgoto_secundario", "nome": "Ponto esgoto secundário (pia/lavat./tanque)", "regra": "qtd_pt_esgoto_sec", "und": "pt",
-   "itens": {"popular": "140706", "medio": "140706", "alto": "140706"}},
-  {"id": "pt_ralo", "nome": "Ponto de ralo sifonado", "regra": "qtd_ralos", "und": "pt",
-   "itens": {"popular": "140708", "medio": "140708", "alto": "140708"}},
-  {"id": "tubo_agua_prumada", "nome": "Tubo PVC 32mm (barrilete/prumada)", "regra": "comp_tubo_prumada", "und": "m",
-   "itens": {"popular": "141411", "medio": "141411", "alto": "141411"}},
-  {"id": "tubo_agua_ramal", "nome": "Tubo PVC 25mm (ramais)", "regra": "comp_tubo_ramal", "und": "m",
-   "itens": {"popular": "141410", "medio": "141410", "alto": "141410"}},
-  {"id": "tubo_esgoto_100", "nome": "Tubo esgoto 100mm (coletor interno)", "regra": "comp_esgoto_coletor", "und": "m",
-   "itens": {"popular": "141909", "medio": "141909", "alto": "141909"}},
-  {"id": "tubo_esgoto_50", "nome": "Tubo esgoto 50mm (ramais)", "regra": "comp_esgoto_ramal", "und": "m",
-   "itens": {"popular": "141907", "medio": "141907", "alto": "141907"}},
-  {"id": "tubo_esgoto_ext", "nome": "Tubo esgoto 100mm enterrado (externo, incl. escav.)", "regra": "comp_esgoto_externo", "und": "m",
-   "itens": {"popular": "140903", "medio": "140903", "alto": "140903"}},
-  {"id": "caixa_inspecao", "nome": "Caixa de inspeção 60x60", "regra": "qtd_caixas_inspecao", "und": "und",
-   "itens": {"popular": "141101", "medio": "141101", "alto": "141101"}},
-  {"id": "caixa_gordura", "nome": "Caixa de gordura 60x60", "regra": "qtd_caixa_gordura", "und": "und",
-   "itens": {"popular": "141104", "medio": "141104", "alto": "141104"}},
-  {"id": "fossa_filtro", "nome": "Fossa séptica + filtro anaeróbio (sem rede pública)", "regra": "qtd_fossa", "und": "und", "condicional": "sem_rede_esgoto",
-   "itens": {"popular": "140102+140103", "medio": "140102+140103", "alto": "140108+140109"}},
-  {"id": "entrada_agua", "nome": "Padrão de entrada d'água (hidrômetro)", "regra": "unitario", "und": "und",
-   "itens": {"popular": "140207", "medio": "140207", "alto": "140208"}},
-  {"id": "reservatorio", "nome": "Reservatório elevado c/ suporte", "regra": "unitario", "und": "und",
-   "itens": {"popular": "020710", "medio": "020711", "alto": "020711"}},
-
-  {"id": "pt_luz_teto", "nome": "Ponto de luz no teto", "regra": "qtd_pt_luz", "und": "und",
-   "itens": {"popular": "151801", "medio": "151801", "alto": "151801"}},
-  {"id": "pt_tomada", "nome": "Ponto de tomada 2P+T", "regra": "qtd_pt_tomada", "und": "und",
-   "itens": {"popular": "151803", "medio": "151803", "alto": "151803"}},
-  {"id": "pt_interruptor", "nome": "Ponto de interruptor", "regra": "qtd_pt_interruptor", "und": "und",
-   "itens": {"popular": "151811", "medio": "151811", "alto": "151811"}},
-  {"id": "pt_chuveiro_ele", "nome": "Ponto de tomada p/ chuveiro elétrico (cabo 6mm²)", "regra": "qtd_pt_chuveiro", "und": "und",
-   "itens": {"popular": "151805", "medio": "151805", "alto": "151805"}},
-  {"id": "aparelho_tomada", "nome": "Tomada 2P+T 10A (aparelho — ponto não inclui)", "regra": "qtd_pt_tomada", "und": "und",
-   "itens": {"popular": "180201", "medio": "180201", "alto": "180201"}},
-  {"id": "aparelho_interruptor", "nome": "Interruptor 1 tecla + tomada (aparelho)", "regra": "qtd_pt_interruptor", "und": "und",
-   "itens": {"popular": "180207", "medio": "180207", "alto": "180207"}},
-  {"id": "luminaria", "nome": "Luminária", "regra": "qtd_pt_luz", "und": "und",
-   "itens": {"popular": "180115", "medio": "181003", "alto": "181007"}},
-  {"id": "quadro_distribuicao", "nome": "Quadro de distribuição c/ barramento", "regra": "unitario", "und": "und",
-   "itens": {"popular": "151901", "medio": "151901", "alto": "151902"}},
-  {"id": "disjuntor_mono", "nome": "Disjuntor monopolar (circuitos)", "regra": "qtd_circuitos", "und": "und",
-   "itens": {"popular": "151301", "medio": "151301", "alto": "151301"}},
-  {"id": "disjuntor_chuveiro", "nome": "Disjuntor bipolar 50A (chuveiro)", "regra": "qtd_pt_chuveiro", "und": "und",
-   "itens": {"popular": "151308", "medio": "151308", "alto": "151308"}},
-  {"id": "padrao_entrada", "nome": "Padrão de entrada de energia (poste→medidor)", "regra": "unitario", "und": "und",
-   "itens": {"popular": "151701", "medio": "151702", "alto": "151703"}},
-  {"id": "cabo_alimentador", "nome": "Cabo 10mm² (alimentador quadro↔medidor)", "regra": "comp_alimentador", "und": "m",
-   "itens": {"popular": "151405", "medio": "151405", "alto": "151405"}},
-  {"id": "eletroduto_alimentador", "nome": "Eletroduto 1\" (alimentador)", "regra": "comp_alimentador_duto", "und": "m",
-   "itens": {"popular": "151127", "medio": "151127", "alto": "151127"}},
-
-  {"id": "bacia", "nome": "Bacia sanitária", "regra": "qtd_bacias", "und": "und",
-   "itens": {"popular": "170116", "medio": "170129", "alto": "170136"}},
-  {"id": "lavatorio", "nome": "Lavatório", "regra": "qtd_lavatorios", "und": "und",
-   "itens": {"popular": "170117", "medio": "170120", "alto": "170130"}},
-  {"id": "pia_cozinha", "nome": "Pia de cozinha inox c/ bancada", "regra": "qtd_pias_cozinha", "und": "und",
-   "itens": {"popular": "170533", "medio": "170533", "alto": "170534"}},
-  {"id": "tanque", "nome": "Tanque (área de serviço)", "regra": "qtd_tanques", "und": "und",
-   "itens": {"popular": "170514", "medio": "170514", "alto": "170509"}},
-  {"id": "chuveiro_aparelho", "nome": "Chuveiro elétrico", "regra": "qtd_pt_chuveiro", "und": "und",
-   "itens": {"popular": "180809", "medio": "180809", "alto": "170357"}},
-  {"id": "torneira_pia", "nome": "Torneira de cozinha", "regra": "qtd_pias_cozinha", "und": "und",
-   "itens": {"popular": "170311", "medio": "170315", "alto": "170315"}},
-  {"id": "torneira_tanque", "nome": "Torneira de tanque", "regra": "qtd_tanques", "und": "und",
-   "itens": {"popular": "170306", "medio": "170306", "alto": "170306"}},
-  {"id": "registro_gaveta", "nome": "Registro de gaveta c/ canopla 3/4\"", "regra": "qtd_registros", "und": "und",
-   "itens": {"popular": "170320", "medio": "170328", "alto": "170328"}},
-  {"id": "bancada_granito", "nome": "Bancada de granito (banheiros)", "regra": "area_bancada_banheiro", "und": "m2", "opcional_em": ["popular"],
-   "itens": {"popular": null, "medio": "170220", "alto": "170205"}},
-
-  {"id": "limpeza_final", "nome": "Limpeza final da obra", "regra": "area_construida", "und": "m2",
-   "itens": {"popular": "200401", "medio": "200401", "alto": "200401"}}
+  {
+   "id": "loc_obra",
+   "nome": "Locação de obra (gabarito)",
+   "regra": "area_construida",
+   "und": "m2",
+   "itens": {
+    "popular": "010501",
+    "medio": "010501",
+    "alto": "010501"
+   }
+  },
+  {
+   "id": "escavacao_fund",
+   "nome": "Escavação manual de valas (fundação)",
+   "regra": "vol_escavacao_baldrame",
+   "und": "m3",
+   "itens": {
+    "popular": "030101",
+    "medio": "030101",
+    "alto": "030101"
+   }
+  },
+  {
+   "id": "fund_concreto",
+   "nome": "Fundação — concreto (sapata corrida/baldrame)",
+   "regra": "vol_concreto_fundacao",
+   "und": "m3",
+   "itens": {
+    "popular": "040233",
+    "medio": "040235",
+    "alto": "040237"
+   }
+  },
+  {
+   "id": "fund_forma",
+   "nome": "Fundação — fôrma de tábua",
+   "regra": "area_forma_fundacao",
+   "und": "m2",
+   "itens": {
+    "popular": "040206",
+    "medio": "040206",
+    "alto": "040206"
+   }
+  },
+  {
+   "id": "fund_armadura",
+   "nome": "Fundação — armadura CA-50 média",
+   "regra": "peso_aco_fundacao",
+   "und": "kg",
+   "itens": {
+    "popular": "040328",
+    "medio": "040328",
+    "alto": "040328"
+   }
+  },
+  {
+   "id": "imperm_baldrame",
+   "nome": "Impermeabilização de baldrame",
+   "regra": "area_baldrame",
+   "und": "m2",
+   "itens": {
+    "popular": "100203",
+    "medio": "100203",
+    "alto": "100203"
+   }
+  },
+  {
+   "id": "super_concreto",
+   "nome": "Superestrutura — concreto (pilares/vigas/cintas)",
+   "regra": "vol_concreto_super",
+   "und": "m3",
+   "itens": {
+    "popular": "040320",
+    "medio": "040322",
+    "alto": "040324"
+   }
+  },
+  {
+   "id": "super_forma",
+   "nome": "Superestrutura — fôrma compensada",
+   "regra": "area_forma_super",
+   "und": "m2",
+   "itens": {
+    "popular": "040339",
+    "medio": "040339",
+    "alto": "040337"
+   }
+  },
+  {
+   "id": "super_armadura",
+   "nome": "Superestrutura — armadura CA-50 média",
+   "regra": "peso_aco_super",
+   "und": "kg",
+   "itens": {
+    "popular": "040328",
+    "medio": "040328",
+    "alto": "040328"
+   }
+  },
+  {
+   "id": "laje",
+   "nome": "Laje pré-fabricada treliçada",
+   "regra": "area_laje",
+   "und": "m2",
+   "itens": {
+    "popular": "040601",
+    "medio": "040601",
+    "alto": "040602"
+   }
+  },
+  {
+   "id": "alvenaria",
+   "nome": "Alvenaria de vedação bloco cerâmico 9x19x19",
+   "regra": "area_paredes_bruta",
+   "und": "m2",
+   "itens": {
+    "popular": "050606",
+    "medio": "050605",
+    "alto": "050605"
+   }
+  },
+  {
+   "id": "vergas",
+   "nome": "Vergas/contravergas de concreto",
+   "regra": "comp_vergas",
+   "und": "m",
+   "itens": {
+    "popular": "050301",
+    "medio": "050301",
+    "alto": "050301"
+   }
+  },
+  {
+   "id": "chapisco",
+   "nome": "Chapisco (paredes int+ext)",
+   "regra": "area_revestimento_total",
+   "und": "m2",
+   "itens": {
+    "popular": "120308",
+    "medio": "120308",
+    "alto": "120308"
+   }
+  },
+  {
+   "id": "reboco",
+   "nome": "Reboco tipo paulista (massa única)",
+   "regra": "area_revestimento_pintura",
+   "und": "m2",
+   "itens": {
+    "popular": "120303",
+    "medio": "120303",
+    "alto": "120303"
+   }
+  },
+  {
+   "id": "emboco_ceramica",
+   "nome": "Emboço sob revestimento cerâmico (áreas molhadas)",
+   "regra": "area_parede_molhada",
+   "und": "m2",
+   "itens": {
+    "popular": "120301",
+    "medio": "120301",
+    "alto": "120301"
+   }
+  },
+  {
+   "id": "revest_parede_molhada",
+   "nome": "Revestimento cerâmico de parede (áreas molhadas)",
+   "regra": "area_parede_molhada",
+   "und": "m2",
+   "itens": {
+    "popular": "120241",
+    "medio": "120241",
+    "alto": "120221"
+   }
+  },
+  {
+   "id": "forro",
+   "nome": "Forro de gesso liso",
+   "regra": "area_forro",
+   "und": "m2",
+   "opcional_em": [
+    "popular"
+   ],
+   "itens": {
+    "popular": null,
+    "medio": "110201",
+    "alto": "110201"
+   }
+  },
+  {
+   "id": "lastro",
+   "nome": "Lastro de concreto (piso térreo)",
+   "regra": "area_piso_terreo",
+   "und": "m2",
+   "itens": {
+    "popular": "130112",
+    "medio": "130110",
+    "alto": "130110"
+   }
+  },
+  {
+   "id": "regularizacao_piso",
+   "nome": "Regularização de base p/ piso",
+   "regra": "area_piso_total",
+   "und": "m2",
+   "itens": {
+    "popular": "130103",
+    "medio": "130103",
+    "alto": "130104"
+   }
+  },
+  {
+   "id": "piso",
+   "nome": "Piso (acabamento)",
+   "regra": "area_piso_total",
+   "und": "m2",
+   "itens": {
+    "popular": "130236",
+    "medio": "130233",
+    "alto": "130234"
+   }
+  },
+  {
+   "id": "rodape",
+   "nome": "Rodapé",
+   "regra": "comp_rodape",
+   "und": "m",
+   "itens": {
+    "popular": "130303",
+    "medio": "130303",
+    "alto": "130315"
+   }
+  },
+  {
+   "id": "soleiras",
+   "nome": "Soleira de granito",
+   "regra": "comp_soleiras",
+   "und": "m",
+   "itens": {
+    "popular": "130308",
+    "medio": "130308",
+    "alto": "130308"
+   }
+  },
+  {
+   "id": "peitoril",
+   "nome": "Peitoril de granito",
+   "regra": "comp_peitoril",
+   "und": "m",
+   "itens": {
+    "popular": "130317",
+    "medio": "130317",
+    "alto": "130317"
+   }
+  },
+  {
+   "id": "cobertura_estrutura",
+   "nome": "Estrutura de madeira p/ telhado",
+   "regra": "area_telhado",
+   "und": "m2",
+   "itens": {
+    "popular": "090103",
+    "medio": "090101",
+    "alto": "090101"
+   }
+  },
+  {
+   "id": "cobertura_estrutura_metalica",
+   "nome": "Estrutura metálica p/ cobertura (perfis formados a frio, c/ tratamento e pintura)",
+   "regra": "peso_estrutura_metalica",
+   "und": "kg",
+   "condicional": "cobertura_metalica",
+   "itens": {
+    "popular": "200738",
+    "medio": "200738",
+    "alto": "200738"
+   }
+  },
+  {
+   "id": "cobertura_telha",
+   "nome": "Telhamento",
+   "regra": "area_telhado",
+   "und": "m2",
+   "itens": {
+    "popular": "090203",
+    "medio": "090212",
+    "alto": "090211"
+   }
+  },
+  {
+   "id": "porta_interna",
+   "nome": "Porta interna madeira 80cm compl. (folha+ferragens)",
+   "regra": "qtd_portas_internas",
+   "und": "und",
+   "itens": {
+    "popular": "061303",
+    "medio": "061303",
+    "alto": "061304"
+   }
+  },
+  {
+   "id": "marco_porta",
+   "nome": "Marco de madeira p/ porta",
+   "regra": "qtd_portas_todas",
+   "und": "und",
+   "itens": {
+    "popular": "060103",
+    "medio": "060103",
+    "alto": "060108"
+   }
+  },
+  {
+   "id": "alizar",
+   "nome": "Alizar (guarnição) de madeira",
+   "regra": "comp_alizar",
+   "und": "m",
+   "itens": {
+    "popular": "060107",
+    "medio": "060107",
+    "alto": "060107"
+   }
+  },
+  {
+   "id": "janela_aluminio",
+   "nome": "Janela de correr alumínio (linha 25) p/ vidro",
+   "regra": "area_janelas",
+   "und": "m2",
+   "itens": {
+    "popular": "071701",
+    "medio": "071701",
+    "alto": "071701"
+   }
+  },
+  {
+   "id": "vidro",
+   "nome": "Vidro liso 4mm",
+   "regra": "area_janelas",
+   "und": "m2",
+   "itens": {
+    "popular": "080102",
+    "medio": "080102",
+    "alto": "080102"
+   }
+  },
+  {
+   "id": "pintura_selador",
+   "nome": "Selador acrílico (paredes/forros)",
+   "regra": "area_pintura_total",
+   "und": "m2",
+   "itens": {
+    "popular": "190121",
+    "medio": "190114",
+    "alto": "190114"
+   }
+  },
+  {
+   "id": "pintura_massa",
+   "nome": "Emassamento (2 demãos)",
+   "regra": "area_pintura_interna",
+   "und": "m2",
+   "opcional_em": [
+    "popular"
+   ],
+   "itens": {
+    "popular": null,
+    "medio": "190101",
+    "alto": "190103"
+   }
+  },
+  {
+   "id": "pintura_tinta",
+   "nome": "Pintura látex/acrílica",
+   "regra": "area_pintura_total",
+   "und": "m2",
+   "itens": {
+    "popular": "190115",
+    "medio": "190117",
+    "alto": "190106"
+   }
+  },
+  {
+   "id": "pt_agua_fria",
+   "nome": "Ponto de água fria",
+   "regra": "qtd_pt_agua",
+   "und": "pt",
+   "itens": {
+    "popular": "140701",
+    "medio": "140701",
+    "alto": "140701"
+   }
+  },
+  {
+   "id": "pt_registro_pressao",
+   "nome": "Ponto c/ registro de pressão (chuveiro/descarga)",
+   "regra": "qtd_pt_chuveiro",
+   "und": "pt",
+   "itens": {
+    "popular": "140702",
+    "medio": "140702",
+    "alto": "140702"
+   }
+  },
+  {
+   "id": "pt_esgoto_primario",
+   "nome": "Ponto esgoto primário (bacia)",
+   "regra": "qtd_bacias",
+   "und": "pt",
+   "itens": {
+    "popular": "140705",
+    "medio": "140705",
+    "alto": "140705"
+   }
+  },
+  {
+   "id": "pt_esgoto_secundario",
+   "nome": "Ponto esgoto secundário (pia/lavat./tanque)",
+   "regra": "qtd_pt_esgoto_sec",
+   "und": "pt",
+   "itens": {
+    "popular": "140706",
+    "medio": "140706",
+    "alto": "140706"
+   }
+  },
+  {
+   "id": "pt_ralo",
+   "nome": "Ponto de ralo sifonado",
+   "regra": "qtd_ralos",
+   "und": "pt",
+   "itens": {
+    "popular": "140708",
+    "medio": "140708",
+    "alto": "140708"
+   }
+  },
+  {
+   "id": "tubo_agua_prumada",
+   "nome": "Tubo PVC 32mm (barrilete/prumada)",
+   "regra": "comp_tubo_prumada",
+   "und": "m",
+   "itens": {
+    "popular": "141411",
+    "medio": "141411",
+    "alto": "141411"
+   }
+  },
+  {
+   "id": "tubo_agua_ramal",
+   "nome": "Tubo PVC 25mm (ramais)",
+   "regra": "comp_tubo_ramal",
+   "und": "m",
+   "itens": {
+    "popular": "141410",
+    "medio": "141410",
+    "alto": "141410"
+   }
+  },
+  {
+   "id": "tubo_esgoto_100",
+   "nome": "Tubo esgoto 100mm (coletor interno)",
+   "regra": "comp_esgoto_coletor",
+   "und": "m",
+   "itens": {
+    "popular": "141909",
+    "medio": "141909",
+    "alto": "141909"
+   }
+  },
+  {
+   "id": "tubo_esgoto_50",
+   "nome": "Tubo esgoto 50mm (ramais)",
+   "regra": "comp_esgoto_ramal",
+   "und": "m",
+   "itens": {
+    "popular": "141907",
+    "medio": "141907",
+    "alto": "141907"
+   }
+  },
+  {
+   "id": "tubo_esgoto_ext",
+   "nome": "Tubo esgoto 100mm enterrado (externo, incl. escav.)",
+   "regra": "comp_esgoto_externo",
+   "und": "m",
+   "itens": {
+    "popular": "140903",
+    "medio": "140903",
+    "alto": "140903"
+   }
+  },
+  {
+   "id": "caixa_inspecao",
+   "nome": "Caixa de inspeção 60x60",
+   "regra": "qtd_caixas_inspecao",
+   "und": "und",
+   "itens": {
+    "popular": "141101",
+    "medio": "141101",
+    "alto": "141101"
+   }
+  },
+  {
+   "id": "caixa_gordura",
+   "nome": "Caixa de gordura 60x60",
+   "regra": "qtd_caixa_gordura",
+   "und": "und",
+   "itens": {
+    "popular": "141104",
+    "medio": "141104",
+    "alto": "141104"
+   }
+  },
+  {
+   "id": "fossa_filtro",
+   "nome": "Fossa séptica + filtro anaeróbio (sem rede pública)",
+   "regra": "qtd_fossa",
+   "und": "und",
+   "condicional": "sem_rede_esgoto",
+   "itens": {
+    "popular": "140102+140103",
+    "medio": "140102+140103",
+    "alto": "140108+140109"
+   }
+  },
+  {
+   "id": "entrada_agua",
+   "nome": "Padrão de entrada d'água (hidrômetro)",
+   "regra": "unitario",
+   "und": "und",
+   "itens": {
+    "popular": "140207",
+    "medio": "140207",
+    "alto": "140208"
+   }
+  },
+  {
+   "id": "reservatorio",
+   "nome": "Reservatório elevado c/ suporte",
+   "regra": "unitario",
+   "und": "und",
+   "itens": {
+    "popular": "020710",
+    "medio": "020711",
+    "alto": "020711"
+   }
+  },
+  {
+   "id": "pt_luz_teto",
+   "nome": "Ponto de luz no teto",
+   "regra": "qtd_pt_luz",
+   "und": "und",
+   "itens": {
+    "popular": "151801",
+    "medio": "151801",
+    "alto": "151801"
+   }
+  },
+  {
+   "id": "pt_tomada",
+   "nome": "Ponto de tomada 2P+T",
+   "regra": "qtd_pt_tomada",
+   "und": "und",
+   "itens": {
+    "popular": "151803",
+    "medio": "151803",
+    "alto": "151803"
+   }
+  },
+  {
+   "id": "pt_interruptor",
+   "nome": "Ponto de interruptor",
+   "regra": "qtd_pt_interruptor",
+   "und": "und",
+   "itens": {
+    "popular": "151811",
+    "medio": "151811",
+    "alto": "151811"
+   }
+  },
+  {
+   "id": "pt_chuveiro_ele",
+   "nome": "Ponto de tomada p/ chuveiro elétrico (cabo 6mm²)",
+   "regra": "qtd_pt_chuveiro",
+   "und": "und",
+   "itens": {
+    "popular": "151805",
+    "medio": "151805",
+    "alto": "151805"
+   }
+  },
+  {
+   "id": "aparelho_tomada",
+   "nome": "Tomada 2P+T 10A (aparelho — ponto não inclui)",
+   "regra": "qtd_pt_tomada",
+   "und": "und",
+   "itens": {
+    "popular": "180201",
+    "medio": "180201",
+    "alto": "180201"
+   }
+  },
+  {
+   "id": "aparelho_interruptor",
+   "nome": "Interruptor 1 tecla + tomada (aparelho)",
+   "regra": "qtd_pt_interruptor",
+   "und": "und",
+   "itens": {
+    "popular": "180207",
+    "medio": "180207",
+    "alto": "180207"
+   }
+  },
+  {
+   "id": "luminaria",
+   "nome": "Luminária",
+   "regra": "qtd_pt_luz",
+   "und": "und",
+   "itens": {
+    "popular": "180115",
+    "medio": "181003",
+    "alto": "181007"
+   }
+  },
+  {
+   "id": "quadro_distribuicao",
+   "nome": "Quadro de distribuição c/ barramento",
+   "regra": "unitario",
+   "und": "und",
+   "itens": {
+    "popular": "151901",
+    "medio": "151901",
+    "alto": "151902"
+   }
+  },
+  {
+   "id": "disjuntor_mono",
+   "nome": "Disjuntor monopolar (circuitos)",
+   "regra": "qtd_circuitos",
+   "und": "und",
+   "itens": {
+    "popular": "151301",
+    "medio": "151301",
+    "alto": "151301"
+   }
+  },
+  {
+   "id": "disjuntor_chuveiro",
+   "nome": "Disjuntor bipolar 50A (chuveiro)",
+   "regra": "qtd_pt_chuveiro",
+   "und": "und",
+   "itens": {
+    "popular": "151308",
+    "medio": "151308",
+    "alto": "151308"
+   }
+  },
+  {
+   "id": "padrao_entrada",
+   "nome": "Padrão de entrada de energia (poste→medidor)",
+   "regra": "unitario",
+   "und": "und",
+   "itens": {
+    "popular": "151701",
+    "medio": "151702",
+    "alto": "151703"
+   }
+  },
+  {
+   "id": "cabo_alimentador",
+   "nome": "Cabo 10mm² (alimentador quadro↔medidor)",
+   "regra": "comp_alimentador",
+   "und": "m",
+   "itens": {
+    "popular": "151405",
+    "medio": "151405",
+    "alto": "151405"
+   }
+  },
+  {
+   "id": "eletroduto_alimentador",
+   "nome": "Eletroduto 1\" (alimentador)",
+   "regra": "comp_alimentador_duto",
+   "und": "m",
+   "itens": {
+    "popular": "151127",
+    "medio": "151127",
+    "alto": "151127"
+   }
+  },
+  {
+   "id": "bacia",
+   "nome": "Bacia sanitária",
+   "regra": "qtd_bacias",
+   "und": "und",
+   "itens": {
+    "popular": "170116",
+    "medio": "170129",
+    "alto": "170136"
+   }
+  },
+  {
+   "id": "lavatorio",
+   "nome": "Lavatório",
+   "regra": "qtd_lavatorios",
+   "und": "und",
+   "itens": {
+    "popular": "170117",
+    "medio": "170120",
+    "alto": "170130"
+   }
+  },
+  {
+   "id": "pia_cozinha",
+   "nome": "Pia de cozinha inox c/ bancada",
+   "regra": "qtd_pias_cozinha",
+   "und": "und",
+   "itens": {
+    "popular": "170533",
+    "medio": "170533",
+    "alto": "170534"
+   }
+  },
+  {
+   "id": "tanque",
+   "nome": "Tanque (área de serviço)",
+   "regra": "qtd_tanques",
+   "und": "und",
+   "itens": {
+    "popular": "170514",
+    "medio": "170514",
+    "alto": "170509"
+   }
+  },
+  {
+   "id": "chuveiro_aparelho",
+   "nome": "Chuveiro elétrico",
+   "regra": "qtd_pt_chuveiro",
+   "und": "und",
+   "itens": {
+    "popular": "180809",
+    "medio": "180809",
+    "alto": "170357"
+   }
+  },
+  {
+   "id": "torneira_pia",
+   "nome": "Torneira de cozinha",
+   "regra": "qtd_pias_cozinha",
+   "und": "und",
+   "itens": {
+    "popular": "170311",
+    "medio": "170315",
+    "alto": "170315"
+   }
+  },
+  {
+   "id": "torneira_tanque",
+   "nome": "Torneira de tanque",
+   "regra": "qtd_tanques",
+   "und": "und",
+   "itens": {
+    "popular": "170306",
+    "medio": "170306",
+    "alto": "170306"
+   }
+  },
+  {
+   "id": "registro_gaveta",
+   "nome": "Registro de gaveta c/ canopla 3/4\"",
+   "regra": "qtd_registros",
+   "und": "und",
+   "itens": {
+    "popular": "170320",
+    "medio": "170328",
+    "alto": "170328"
+   }
+  },
+  {
+   "id": "bancada_granito",
+   "nome": "Bancada de granito (banheiros)",
+   "regra": "area_bancada_banheiro",
+   "und": "m2",
+   "opcional_em": [
+    "popular"
+   ],
+   "itens": {
+    "popular": null,
+    "medio": "170220",
+    "alto": "170205"
+   }
+  },
+  {
+   "id": "limpeza_final",
+   "nome": "Limpeza final da obra",
+   "regra": "area_construida",
+   "und": "m2",
+   "itens": {
+    "popular": "200401",
+    "medio": "200401",
+    "alto": "200401"
+   }
+  }
  ]
 }

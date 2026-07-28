@@ -1,0 +1,823 @@
+{
+ "obra": {
+  "nome": "Canário Gym — academia 1.886 m², 2 pav. (exemplo comercial)",
+  "local": "Rua Dr. Oswaldo Cruz, 99 — Bairro Canário, Pinheiros - ES",
+  "area": 1885.79,
+  "pav": 2,
+  "padrao": "alto",
+  "bdi": 25,
+  "redeEsgoto": true,
+  "incluirEstrutura": true,
+  "temLaje": true,
+  "perExt": 135,
+  "semEle": true,
+  "semHid": true,
+  "semEst": true,
+  "perfilEstrutural": "comercial",
+  "coberturaMetalica": true
+ },
+ "ambientes": [
+  {
+   "nome": "Academia (térreo)",
+   "tipo": "outro",
+   "area": 673.72,
+   "per": 121,
+   "distQ": 25,
+   "distP": 0
+  },
+  {
+   "nome": "Sala multiuso",
+   "tipo": "outro",
+   "area": 71.74,
+   "per": 35,
+   "distQ": 30,
+   "distP": 0
+  },
+  {
+   "nome": "WC masculino 01",
+   "tipo": "banheiro",
+   "area": 39.89,
+   "per": 25.3,
+   "distQ": 8,
+   "distP": 3
+  },
+  {
+   "nome": "WC feminino 01",
+   "tipo": "banheiro",
+   "area": 39.89,
+   "per": 25.3,
+   "distQ": 10,
+   "distP": 3
+  },
+  {
+   "nome": "ADM",
+   "tipo": "escritorio",
+   "area": 24.0,
+   "per": 19.6,
+   "distQ": 14,
+   "distP": 0
+  },
+  {
+   "nome": "Recepção",
+   "tipo": "escritorio",
+   "area": 19.58,
+   "per": 17.7,
+   "distQ": 35,
+   "distP": 0
+  },
+  {
+   "nome": "Diretoria",
+   "tipo": "escritorio",
+   "area": 16.19,
+   "per": 16.1,
+   "distQ": 12,
+   "distP": 0
+  },
+  {
+   "nome": "Copa",
+   "tipo": "cozinha",
+   "area": 10.88,
+   "per": 13.2,
+   "distQ": 16,
+   "distP": 5
+  },
+  {
+   "nome": "Sala de avaliação",
+   "tipo": "escritorio",
+   "area": 10.6,
+   "per": 13.0,
+   "distQ": 6,
+   "distP": 0
+  },
+  {
+   "nome": "WC PNE",
+   "tipo": "lavabo",
+   "area": 4.6,
+   "per": 8.4,
+   "distQ": 5,
+   "distP": 4
+  },
+  {
+   "nome": "DML",
+   "tipo": "area_servico",
+   "area": 3.75,
+   "per": 7.8,
+   "distQ": 15,
+   "distP": 6
+  },
+  {
+   "nome": "TI",
+   "tipo": "despensa",
+   "area": 3.19,
+   "per": 7.2,
+   "distQ": 2,
+   "distP": 0
+  },
+  {
+   "nome": "Armários",
+   "tipo": "despensa",
+   "area": 3.19,
+   "per": 7.2,
+   "distQ": 4,
+   "distP": 0
+  },
+  {
+   "nome": "Academia (1º pav)",
+   "tipo": "outro",
+   "area": 855.05,
+   "per": 129,
+   "distQ": 30,
+   "distP": 0
+  },
+  {
+   "nome": "WC masculino 02",
+   "tipo": "banheiro",
+   "area": 22.2,
+   "per": 18.8,
+   "distQ": 12,
+   "distP": 8
+  },
+  {
+   "nome": "WC feminino 02",
+   "tipo": "banheiro",
+   "area": 22.2,
+   "per": 18.8,
+   "distQ": 14,
+   "distP": 8
+  },
+  {
+   "nome": "Depósito (1º pav)",
+   "tipo": "despensa",
+   "area": 6.63,
+   "per": 10.3,
+   "distQ": 18,
+   "distP": 0
+  }
+ ],
+ "med": {
+  "quadroMedidor": 25,
+  "esgotoExterno": 20,
+  "escalaNota": "cotas do projeto executivo (quadro de áreas e quadro de esquadrias) — sem necessidade de calibração gráfica"
+ },
+ "par": {
+  "pe_direito_m": 4.7,
+  "kg_estrutura_metalica_por_m2": 22
+ },
+ "ov": {
+  "cobertura_telha": {
+   "c": "090228",
+   "qtd": 1005
+  },
+  "laje": {
+   "qtd": 928.69
+  },
+  "piso": {
+   "c": "130234",
+   "qtd": 1600.51
+  },
+  "regularizacao_piso": {
+   "qtd": 1885.79
+  },
+  "lastro": {
+   "qtd": 957.1
+  },
+  "forro": {
+   "c": "110201",
+   "qtd": 300
+  },
+  "pintura_massa": {
+   "qtd": 900
+  },
+  "janela_aluminio": {
+   "c": "071703",
+   "qtd": 99.5
+  },
+  "vidro": {
+   "qtd": 99.5
+  },
+  "porta_interna": {
+   "qtd": 11
+  },
+  "marco_porta": {
+   "qtd": 11
+  },
+  "alizar": {
+   "qtd": 150
+  },
+  "pt_luz_teto": {
+   "qtd": 115
+  },
+  "luminaria": {
+   "qtd": 115
+  },
+  "pt_tomada": {
+   "qtd": 90
+  },
+  "aparelho_tomada": {
+   "qtd": 90
+  },
+  "pt_interruptor": {
+   "qtd": 28
+  },
+  "aparelho_interruptor": {
+   "qtd": 28
+  },
+  "qtd_circuitos": {
+   "qtd": 34
+  },
+  "disjuntor_mono": {
+   "qtd": 34
+  },
+  "pt_chuveiro_ele": {
+   "qtd": 10
+  },
+  "disjuntor_chuveiro": {
+   "qtd": 10
+  },
+  "chuveiro_aparelho": {
+   "qtd": 10
+  },
+  "quadro_distribuicao": {
+   "c": "151905",
+   "qtd": 3
+  },
+  "padrao_entrada": {
+   "c": "151706",
+   "qtd": 1
+  },
+  "cabo_alimentador": {
+   "qtd": 180
+  },
+  "eletroduto_alimentador": {
+   "qtd": 60
+  },
+  "bacia": {
+   "qtd": 11
+  },
+  "lavatorio": {
+   "qtd": 15
+  },
+  "pt_agua_fria": {
+   "qtd": 33
+  },
+  "pt_registro_pressao": {
+   "qtd": 10
+  },
+  "pt_esgoto_primario": {
+   "qtd": 11
+  },
+  "pt_esgoto_secundario": {
+   "qtd": 32
+  },
+  "pt_ralo": {
+   "qtd": 10
+  },
+  "registro_gaveta": {
+   "qtd": 12
+  },
+  "tubo_agua_prumada": {
+   "qtd": 120
+  },
+  "tubo_agua_ramal": {
+   "qtd": 260
+  },
+  "tubo_esgoto_100": {
+   "qtd": 150
+  },
+  "tubo_esgoto_50": {
+   "qtd": 110
+  },
+  "tubo_esgoto_ext": {
+   "qtd": 30
+  },
+  "caixa_inspecao": {
+   "qtd": 8
+  },
+  "caixa_gordura": {
+   "qtd": 1
+  },
+  "reservatorio": {
+   "c": "020711",
+   "qtd": 4
+  },
+  "bancada_granito": {
+   "qtd": 18
+  },
+  "pia_cozinha": {
+   "qtd": 1
+  },
+  "tanque": {
+   "qtd": 1
+  },
+  "torneira_pia": {
+   "qtd": 1
+  },
+  "torneira_tanque": {
+   "qtd": 1
+  },
+  "revest_parede_molhada": {
+   "qtd": 420
+  },
+  "emboco_ceramica": {
+   "qtd": 420
+  },
+  "rodape": {
+   "qtd": 180
+  },
+  "soleiras": {
+   "qtd": 25
+  },
+  "peitoril": {
+   "qtd": 0
+  },
+  "imperm_baldrame": {
+   "qtd": 270
+  },
+  "pintura_tinta": {
+   "qtd": 2100
+  },
+  "pintura_selador": {
+   "qtd": 2100
+  }
+ },
+ "extras": [
+  {
+   "c": "140714",
+   "qtd": 5,
+   "obs": "pontos de mictório (WC masculino 01 e 02) — válvula inclusa"
+  },
+  {
+   "c": "151814",
+   "qtd": 6,
+   "obs": "iluminação externa (estacionamento/fachada)"
+  },
+  {
+   "c": "151806",
+   "qtd": 12,
+   "obs": "pontos de tomada p/ ar refrigerado (splits)"
+  },
+  {
+   "c": "090312",
+   "qtd": 140,
+   "obs": "calha em chapa galvanizada 40cm (planta de cobertura)"
+  },
+  {
+   "c": "190117",
+   "qtd": 1200,
+   "obs": "pintura acrílica de fachada (paredes externas cegas)"
+  },
+  {
+   "c": "090314",
+   "qtd": 140,
+   "obs": "rufo/pingadeira metálica (perímetro da cobertura)"
+  },
+  {
+   "c": "130233",
+   "qtd": 135.28,
+   "obs": "porcelanato — WCs, salas administrativas e depósitos"
+  },
+  {
+   "c": "130211",
+   "qtd": 150,
+   "obs": "piso vinílico amadeirado — recepção e área de convivência/café (imagens 2 e 6)"
+  },
+  {
+   "c": "190417",
+   "qtd": 350,
+   "obs": "pintura esmalte sobre ESTRUTURA METÁLICA APARENTE do 1º pav (imagens 8, 10, 11, 12)"
+  },
+  {
+   "c": "080202",
+   "qtd": 180,
+   "obs": "espelhos c/ moldura — musculação, sala de coletivas e funcional"
+  },
+  {
+   "c": "050205",
+   "qtd": 60,
+   "obs": "divisórias sanitárias em granito — cabines dos 5 WCs"
+  },
+  {
+   "c": "170557",
+   "qtd": 6,
+   "obs": "bebedouro coletivo inox 4 torneiras (imagem 12) — 4 un × 1,5 m"
+  },
+  {
+   "c": "140701",
+   "qtd": 4,
+   "obs": "pontos de água fria para bebedouros"
+  },
+  {
+   "c": "140706",
+   "qtd": 4,
+   "obs": "pontos de esgoto para bebedouros"
+  },
+  {
+   "c": "040901",
+   "qtd": 60,
+   "obs": "muro de arrimo — contenção do talude (terreno em declive, imagens 1, 4 e 9)"
+  },
+  {
+   "c": "180609",
+   "qtd": 11,
+   "obs": "split piso-teto 48.000 BTU — áreas de treino térreo e 1º pav"
+  },
+  {
+   "c": "180608",
+   "qtd": 1,
+   "obs": "split piso-teto 36.000 BTU — sala multiuso"
+  },
+  {
+   "c": "180604",
+   "qtd": 1,
+   "obs": "split hi-wall 18.000 BTU — ADM"
+  },
+  {
+   "c": "180603",
+   "qtd": 2,
+   "obs": "split hi-wall 12.000 BTU — recepção e diretoria"
+  },
+  {
+   "c": "180602",
+   "qtd": 2,
+   "obs": "split hi-wall 9.000 BTU — sala de avaliação e copa"
+  },
+  {
+   "c": "161016",
+   "qtd": 230,
+   "obs": "linha frigorígena — 12 máquinas grandes × 15 m + 5 pequenas × 10 m"
+  },
+  {
+   "c": "161004",
+   "qtd": 180,
+   "obs": "tubo de cobre 5/8\" (linha de líquido das máquinas piso-teto)"
+  },
+  {
+   "c": "161007",
+   "qtd": 180,
+   "obs": "tubo de cobre 1.1/8\" (linha de sucção das máquinas piso-teto)"
+  },
+  {
+   "c": "161001",
+   "qtd": 50,
+   "obs": "tubo de cobre 1/4\" (linha de líquido dos hi-wall)"
+  },
+  {
+   "c": "161003",
+   "qtd": 50,
+   "obs": "tubo de cobre 1/2\" (linha de sucção dos hi-wall)"
+  },
+  {
+   "c": "161015",
+   "qtd": 78,
+   "obs": "gás refrigerante R410A — 1,5 kg/TR × 52 TR"
+  },
+  {
+   "c": "071701",
+   "qtd": 64.91,
+   "obs": "SUBSTITUI esquadria chroma+laminado — janela de correr em alumínio linha 25 [ALTO]"
+  },
+  {
+   "c": "190105",
+   "qtd": 450,
+   "obs": "pintura do elemento decorativo do teto [MÉDIO]"
+  },
+  {
+   "c": "110210",
+   "qtd": 168,
+   "obs": "SUBSTITUI beiral c/ placa cimentícia — forro PVC sobre perfis de aço [MÉDIO]"
+  },
+  {
+   "c": "200513",
+   "qtd": 1,
+   "obs": "escada tipo marinheiro [ALTO]"
+  },
+  {
+   "c": "200582",
+   "qtd": 60,
+   "obs": "SUBSTITUI parte da comunicação visual — letra caixa inox 15 cm [BAIXO]"
+  },
+  {
+   "c": "160612",
+   "qtd": 40,
+   "obs": "placas de sinalização de segurança [BAIXO]"
+  },
+  {
+   "c": "170220",
+   "qtd": 12,
+   "obs": "SUBSTITUI marcenaria — bancada de granito [BAIXO]"
+  },
+  {
+   "c": "210210",
+   "qtd": 25,
+   "obs": "SUBSTITUI marcenaria — prateleiras de granito [BAIXO]"
+  },
+  {
+   "c": "050212",
+   "qtd": 40,
+   "obs": "SUBSTITUI marcenaria — divisórias modulares [BAIXO]"
+  },
+  {
+   "c": "181007",
+   "qtd": 200,
+   "obs": "SUBSTITUI iluminação decorativa — luminária de embutir [BAIXO]"
+  },
+  {
+   "c": "180107",
+   "qtd": 40,
+   "obs": "SUBSTITUI iluminação decorativa — luminária industrial 45° [BAIXO]"
+  },
+  {
+   "c": "180110",
+   "qtd": 60,
+   "obs": "SUBSTITUI iluminação decorativa — arandela LED [BAIXO]"
+  }
+ ],
+ "precos": {},
+ "sinapi": [
+  {
+   "c": "100674",
+   "qtd": 166.5,
+   "grau": "ALTO",
+   "obs": "SUBSTITUI pele de vidro — caixilho fixo de alumínio c/ vidro incluso"
+  },
+  {
+   "c": "99862",
+   "qtd": 600,
+   "grau": "MÉDIO",
+   "obs": "SUBSTITUI ripado/brise de fachada — gradil em alumínio tubos 3/4\""
+  },
+  {
+   "c": "104756",
+   "qtd": 250,
+   "grau": "MÉDIO",
+   "obs": "SUBSTITUI painel ripado interno — forro em madeira pinus c/ estrutura"
+  },
+  {
+   "c": "96114",
+   "qtd": 450,
+   "grau": "MÉDIO",
+   "obs": "SUBSTITUI elemento decorativo do teto — forro em drywall comercial"
+  },
+  {
+   "c": "103689",
+   "qtd": 100,
+   "grau": "MÉDIO",
+   "obs": "SUBSTITUI ACM/totem — placa em chapa galvanizada c/ estrutura"
+  },
+  {
+   "c": "99842",
+   "qtd": 45,
+   "grau": "MÉDIO",
+   "obs": "SUBSTITUI guarda-corpo de vidro — aço galvanizado h=1,10 m (NBR 14718)"
+  },
+  {
+   "c": "102077",
+   "qtd": 4,
+   "grau": "ALTO",
+   "obs": "escada externa em concreto armado fck 25 MPa"
+  },
+  {
+   "c": "98505",
+   "qtd": 30,
+   "grau": "BAIXO",
+   "obs": "SUBSTITUI jardim vertical — plantio de forração"
+  },
+  {
+   "c": "102180",
+   "qtd": 56.73,
+   "grau": "ALTO",
+   "obs": "vidro temperado 8 mm em perfil U"
+  },
+  {
+   "c": "104757",
+   "qtd": 25,
+   "grau": "ALTO",
+   "obs": "forro em fibra mineral comercial c/ estrutura"
+  }
+ ],
+ "complemento": [],
+ "substituicoes": [
+  {
+   "item": "Pele de vidro — fachada cortina",
+   "cotado": 199800.0,
+   "substituido": 121776.43,
+   "grau": "ALTO",
+   "justificativa": "Caixilho fixo de alumínio para vidro, vidro incluso, batente 4-14 cm. Mesma função (fechamento translúcido de fachada em alumínio + vidro) e mesma unidade de medição; o sistema difere (caixilho fixo × fachada cortina stick).",
+   "componentes": [
+    {
+     "tabela": "SINAPI-ES",
+     "c": "100674",
+     "qtd": 166.5
+    }
+   ]
+  },
+  {
+   "item": "Ripado/brise de fachada",
+   "cotado": 270000.0,
+   "substituido": 334278.0,
+   "grau": "MÉDIO",
+   "justificativa": "Gradil em alumínio formado por tubos de 3/4\". Mesma família construtiva (elemento vazado de alumínio aplicado em fachada) e mesma função de sombreamento; perfil tubular × lâmina em seção U.",
+   "componentes": [
+    {
+     "tabela": "SINAPI-ES",
+     "c": "99862",
+     "qtd": 600
+    }
+   ]
+  },
+  {
+   "item": "Esquadria chroma + laminado",
+   "cotado": 68155.5,
+   "substituido": 45191.64,
+   "grau": "ALTO",
+   "justificativa": "Janela de correr para vidro em alumínio anodizado linha 25, completa. Esquadria de alumínio com vidro, mesma unidade; a linha 25 é padrão comum e não a linha chroma.",
+   "componentes": [
+    {
+     "tabela": "DER-ES",
+     "c": "071701",
+     "qtd": 64.91
+    }
+   ]
+  },
+  {
+   "item": "Painel ripado de madeira interno",
+   "cotado": 95000.0,
+   "substituido": 61812.5,
+   "grau": "MÉDIO",
+   "justificativa": "Forro em madeira pinus para ambientes comerciais, inclusive estrutura. Mesmo material (ripas de madeira sobre estrutura) e mesma medição em m²; a composição prevê aplicação em teto e o projeto usa em parede.",
+   "componentes": [
+    {
+     "tabela": "SINAPI-ES",
+     "c": "104756",
+     "qtd": 250
+    }
+   ]
+  },
+  {
+   "item": "Elemento decorativo laranja no teto",
+   "cotado": 144000.0,
+   "substituido": 51115.5,
+   "grau": "MÉDIO",
+   "justificativa": "Forro em drywall para ambientes comerciais com estrutura bidirecional + pintura látex acrílica. O elemento é volume em placa de gesso pintada — mesma técnica construtiva, sem o detalhamento de forma do projeto.",
+   "componentes": [
+    {
+     "tabela": "SINAPI-ES",
+     "c": "96114",
+     "qtd": 450
+    },
+    {
+     "tabela": "DER-ES",
+     "c": "190105",
+     "qtd": 450
+    }
+   ]
+  },
+  {
+   "item": "ACM totem/detalhes",
+   "cotado": 56000.0,
+   "substituido": 40492.8,
+   "grau": "MÉDIO",
+   "justificativa": "Placa com chapa galvanizada e estrutura metálica. Painel de chapa metálica sobre estrutura, mesma medição em m²; chapa galvanizada pintada × alumínio composto (ACM).",
+   "componentes": [
+    {
+     "tabela": "SINAPI-ES",
+     "c": "103689",
+     "qtd": 80
+    }
+   ]
+  },
+  {
+   "item": "Guarda-corpo de vidro",
+   "cotado": 42750.0,
+   "substituido": 30137.4,
+   "grau": "MÉDIO",
+   "justificativa": "Guarda-corpo de aço galvanizado h=1,10 m, montantes 1.1/4\", fixado com adesivo estrutural epóxi. Mesma função e ALTURA DE NORMA (NBR 14718); material metálico × vidro.",
+   "componentes": [
+    {
+     "tabela": "SINAPI-ES",
+     "c": "99842",
+     "qtd": 45
+    }
+   ]
+  },
+  {
+   "item": "Beiral metálico c/ placa cimentícia",
+   "cotado": 50400.0,
+   "substituido": 16793.28,
+   "grau": "MÉDIO",
+   "justificativa": "Forro PVC frisado estruturado por perfis de aço galvanizado. Mesmo sistema (placa sobre estrutura metálica) e mesma medição; PVC × placa cimentícia.",
+   "componentes": [
+    {
+     "tabela": "DER-ES",
+     "c": "110210",
+     "qtd": 168
+    }
+   ]
+  },
+  {
+   "item": "Escada externa concreto + marinheiro",
+   "cotado": 55000.0,
+   "substituido": 25740.9,
+   "grau": "ALTO",
+   "justificativa": "Escada em concreto armado moldado in loco fck 25 MPa com 1 lance e laje (inclui fôrma, armação e concreto) + escada tipo marinheiro. Reproduz o escopo real do pacote.",
+   "componentes": [
+    {
+     "tabela": "SINAPI-ES",
+     "c": "102077",
+     "qtd": 4
+    },
+    {
+     "tabela": "DER-ES",
+     "c": "200513",
+     "qtd": 1
+    }
+   ]
+  },
+  {
+   "item": "Comunicação visual",
+   "cotado": 85000.0,
+   "substituido": 28543.6,
+   "grau": "BAIXO",
+   "justificativa": "Letra caixa em aço inox 15 cm + placas de sinalização de segurança + placa em chapa galvanizada com estrutura. Cobre letreiro, sinalização e totem; NÃO cobre projeto de comunicação visual, adesivagem nem impressão digital.",
+   "componentes": [
+    {
+     "tabela": "DER-ES",
+     "c": "200582",
+     "qtd": 60
+    },
+    {
+     "tabela": "DER-ES",
+     "c": "160612",
+     "qtd": 40
+    },
+    {
+     "tabela": "SINAPI-ES",
+     "c": "103689",
+     "qtd": 20
+    }
+   ]
+  },
+  {
+   "item": "Marcenaria",
+   "cotado": 65000.0,
+   "substituido": 23839.74,
+   "grau": "BAIXO",
+   "justificativa": "Bancada de granito polido + prateleiras de granito + divisórias modulares. Nenhuma tabela tem marcenaria em MDF/laminado; a substituição troca o material por pedra e divisória industrializada.",
+   "componentes": [
+    {
+     "tabela": "DER-ES",
+     "c": "170220",
+     "qtd": 12
+    },
+    {
+     "tabela": "DER-ES",
+     "c": "210210",
+     "qtd": 25
+    },
+    {
+     "tabela": "DER-ES",
+     "c": "050212",
+     "qtd": 40
+    }
+   ]
+  },
+  {
+   "item": "Iluminação decorativa",
+   "cotado": 180000.0,
+   "substituido": 79129.6,
+   "grau": "BAIXO",
+   "justificativa": "Luminárias de embutir com aletas parabólicas + luminária industrial + arandela LED. Cobre a função de iluminar com itens de tabela; NÃO reproduz luminárias decorativas, fitas LED, hexágonos nem pendentes de projeto luminotécnico.",
+   "componentes": [
+    {
+     "tabela": "DER-ES",
+     "c": "181007",
+     "qtd": 200
+    },
+    {
+     "tabela": "DER-ES",
+     "c": "180107",
+     "qtd": 40
+    },
+    {
+     "tabela": "DER-ES",
+     "c": "180110",
+     "qtd": 60
+    }
+   ]
+  },
+  {
+   "item": "Jardim vertical",
+   "cotado": 22500.0,
+   "substituido": 3293.1,
+   "grau": "BAIXO",
+   "justificativa": "Plantio de forração. Único item de vegetação ornamental medido em m² nas duas tabelas; NÃO inclui o sistema de suporte vertical, irrigação nem substrato técnico.",
+   "componentes": [
+    {
+     "tabela": "SINAPI-ES",
+     "c": "98505",
+     "qtd": 30
+    }
+   ]
+  }
+ ]
+}
