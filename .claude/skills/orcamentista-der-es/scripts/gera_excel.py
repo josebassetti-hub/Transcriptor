@@ -326,15 +326,24 @@ for it in todos:
 ws = wb.create_sheet("5. Memorial")
 widths(ws, [10, 46, 12, 7, 46, 50])
 ws['A1'] = "MEMORIAL DE CÁLCULO — origem de cada quantidade"; ws['A1'].font = Font(bold=True, size=13, color=TEAL)
-head(ws, 3, ["Código", "Serviço", "Quant.", "Und", "Origem da quantidade (fórmula)", "Critério de medição — Caderno Técnico DER-ES"])
+head(ws, 3, ["Código", "Serviço", "Quant.", "Und", "Origem da quantidade (fórmula)", "Critério de medição — Caderno Técnico"])
 ws.freeze_panes = "A4"
 r = 4
-for it in oj['itens']:
-    crit = (regras.get(it['c']) or {}).get('criterio') or "— caderno técnico deste item não ingerido —"
-    for col, v in enumerate([it['c'], it['d'], it['qtd'], it['u'], it.get('formula', ''), crit], start=1):
+linhas_mem = [(it['c'], it['d'], it['qtd'], it['u'], it.get('formula', ''), 'DER') for it in oj['itens']]
+linhas_mem += [(it['c'], "[SINAPI] " + it['d'], it['qtd'], it['u'], it.get('obs', ''), 'SIN')
+               for it in (oj.get('itens_sinapi') or {}).get('itens', [])]
+for cod, desc, qtd, und, formula, fonte in linhas_mem:
+    crit = (regras.get(cod) or {}).get('criterio')
+    if not crit:
+        crit = ("— o SINAPI não publica caderno de critério de medição por composição; medir pela "
+                "unidade da composição —" if fonte == 'SIN'
+                else "— caderno técnico deste item não ingerido —")
+    for col, v in enumerate([cod, desc, qtd, und, formula, crit], start=1):
         c = ws.cell(row=r, column=col, value=v); c.border = BORDER; c.font = Font(size=9)
         if col == 3: c.number_format = NUM
         if col in (2, 5, 6): c.alignment = Alignment(wrap_text=True, vertical='top')
+        if fonte == 'SIN' and col == 1:
+            c.fill = PatternFill("solid", fgColor="BBF7D0"); c.font = Font(bold=True, size=9)
     r += 1
 
 # ─────────────── 6. PREMISSAS ───────────────

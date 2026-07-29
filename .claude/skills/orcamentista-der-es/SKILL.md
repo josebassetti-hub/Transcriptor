@@ -20,6 +20,8 @@ impacto, ex.: padrão de acabamento; o orçamento é para banco?; tem rede públ
 | `mapa-padroes.json` | grupo de serviço → código DER por padrão (popular/medio/alto) + regra de quantificação |
 | `indices-estimativa.json` | heurísticas p/ projeto ausente: mínimos NBR 5410, fatores de rota, DNs, bitolas, índices estruturais **residenciais e comerciais** |
 | `regras-medicao.json` | 832 critérios de medição oficiais dos Cadernos Técnicos DER-ES (por código) |
+| `insumos-der-es.json` | 1.254 insumos da DER-ES (material, mão de obra, equipamento) com preço — use no passo 3 do protocolo de busca e para ancorar ordem de grandeza |
+| `composicoes-der-es.json` | composição analítica (CPU) dos serviços DER-ES: o que cada preço embute em mão de obra, material e equipamento — use para conferir dupla contagem e para separar MO de material |
 | `sinapi-decomposicoes.json` | composições SINAPI publicadas **sem preço** (pele de vidro, brises, fachada insertada) já separadas em mão de obra oficial + material a cotar |
 | `METODOLOGIA.md` · `COBERTURA.md` | roteiro completo de análise · o que tem/não tem critério oficial e por quê |
 | `exemplo-entrada.json` | entrada de referência residencial (casa 70 m², padrão médio) |
@@ -124,7 +126,8 @@ depois de fazer as cinco buscas:**
    ESPORTES* (200738, por kg); marcenaria em *21.02 ARMÁRIOS E PRATELEIRAS*.
 2. **Composições do SINAPI-ES** (`base-sinapi-es.json`) — 8.402 itens, muito mais fino em
    acabamento que a DER-ES.
-3. **Insumos das duas bases** — se só houver insumo, o serviço não existe, mas o insumo ancora a
+3. **Insumos das duas bases** — `insumos-der-es.json` (1.254) e o bloco `insumos` de
+   `base-sinapi-es.json` (4.278). Se só houver insumo, o serviço não existe, mas o insumo ancora a
    ordem de grandeza.
 4. **Percorra o capítulo inteiro** onde o item deveria estar, não só o resultado da busca textual.
 5. **Cadernos Técnicos do SINAPI** — há composições publicadas **sem preço** em nenhuma das 27 UFs
@@ -245,6 +248,17 @@ subcapítulos **14.07/14.01/14.02/14.21** e **15.18/15.17/15.19/15.01**.
 **Isso não impede orçar:** todo item tem **preço** e a **quantidade** vem das fórmulas/NBR. Quando
 faltar o critério, escreva "critério do Caderno Técnico não disponível — quantidade por
 [fórmula/NBR usada]" em vez de inventar. Detalhe em `references/COBERTURA.md`.
+
+## O que a skill NÃO tem (declare quando o item vier daí)
+
+- **Critério de medição de item SINAPI.** As 832 fichas de `regras-medicao.json` vêm dos Cadernos
+  Técnicos da **DER-ES**. O SINAPI não publica caderno de critério por composição — para item
+  SINAPI, meça pela unidade da composição e diga isso no memorial em vez de inventar critério.
+- **Serviços de manutenção/reforma do SINAPI** (a planilha "Manutenções", ~31 mil linhas) não foi
+  ingerida: a base cobre obra nova. Para reforma, avise que o preço sai de composição de obra nova.
+- **Analítico completo do SINAPI.** Só 15 composições estão decompostas em
+  `sinapi-decomposicoes.json`. Para decompor outra, é preciso o XLSX `SINAPI_Referência` original e
+  o `tools/decompoe_sinapi.py` do repositório.
 
 ## Limitações honestas (declare quando relevante)
 

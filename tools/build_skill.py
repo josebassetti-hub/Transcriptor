@@ -19,6 +19,8 @@ REFS = [
     ("data/base-sinapi-es-skill.json", "base-sinapi-es.json"),
     ("data/sinapi-decomposicoes.json", "sinapi-decomposicoes.json"),
     ("data/exemplo-comercial.json", "exemplo-comercial.json"),
+    ("data/insumos.json", "insumos-der-es.json"),
+    ("data/composicoes-resumo.json", "composicoes-der-es.json"),
     ("METODOLOGIA.md", "METODOLOGIA.md"),
     ("COBERTURA.md", "COBERTURA.md"),
 ]
