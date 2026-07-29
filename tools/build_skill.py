@@ -52,6 +52,19 @@ def main():
     if at.returncode != 0:
         sys.exit("AUTOTESTE FALHOU — zip não gerado:\n" + at.stdout)
 
+    # o SKILL.md não pode citar um dourado diferente do que o motor trava
+    import re
+    with open(os.path.join(SKILL, "SKILL.md"), encoding="utf-8") as f:
+        md = f.read()
+    sys.path.insert(0, os.path.join(SKILL, "scripts"))
+    import motor_orcamento as _m
+    for rotulo, valor in [("residencial", _m.GOLD_CUSTO_DIRETO),
+                          ("comercial", _m.GOLD_COMERCIAL["geral"])]:
+        br = f"{valor:,.2f}".replace(",", "X").replace(".", ",").replace("X", ".")
+        if br not in md:
+            sys.exit(f"SKILL.md não cita o dourado {rotulo} atual (R$ {br}) — atualize o texto")
+    print("dourados citados no SKILL.md conferem com o motor")
+
     # valida frontmatter
     with open(os.path.join(SKILL, "SKILL.md"), encoding="utf-8") as f:
         head = f.read().split("---")[1]
