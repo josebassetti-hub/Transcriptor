@@ -359,6 +359,11 @@ class Motor:
         if S["obra"].get("semHid"): l.append("Projeto hidrossanitário não fornecido — traçados estimados pela escala.")
         if S["obra"].get("semEst"): l.append("Projeto estrutural não fornecido — estrutura por índices paramétricos (±20%).")
         if not S["med"].get("escalaNota"): l.append("Planta sem calibração de escala registrada — distâncias digitadas/premissa.")
+        pav = int(S["obra"].get("pav") or 1)
+        if pav > 1 and S["obra"].get("incluirEstrutura"):
+            l.append(f"CONFERIR AS LAJES: a obra tem {pav} pavimentos, logo {pav - 1} laje(s) de entrepiso "
+                     f"+ a de cobertura (se não for telhado). Confira também o vazio da escada (desconta "
+                     f"área) e lajes de áreas técnicas/barrilete, que o motor não deduz sozinho.")
         for c in getattr(self, "dup", []):
             sv = self.SVC.get(c, {})
             l.append(f"CONFERIR: o código {c} ({sv.get('d','')[:56]}) aparece duas vezes — como item do mapa "
@@ -518,7 +523,7 @@ GOLD_CUSTO_DIRETO = 175142.06  # casa exemplo 70 m², padrão médio, BDI 25% �
 
 # 2º dourado: obra COMERCIAL em alvenaria (academia 1.886 m², 2 pav.) — trava perfil estrutural
 # comercial, itens SINAPI (inclusive a estrutura leve de cobertura) e substituições com grau.
-GOLD_COMERCIAL = {"cd_der": 3122493.88, "cd_sinapi": 871508.17, "geral": 4992502.56,
+GOLD_COMERCIAL = {"cd_der": 3124720.02, "cd_sinapi": 871508.17, "geral": 4995285.23,
                   "n_der": 108, "n_sinapi": 12, "dif_escopo": 471461.00}
 
 

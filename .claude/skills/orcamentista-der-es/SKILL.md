@@ -156,6 +156,24 @@ acabamentos: as tabelas cobriram 65%.
 > substituto no memorial, ou registrando a diferença como escopo fora do financiamento.
 > Entregue **duas versões**: a codificada, para o banco, e a de custo real, para o cliente.
 
+## Lajes: conte uma a uma (o motor só calcula UMA)
+
+O grupo `laje` do mapa gera **um único item**. Numa obra de N pavimentos há **N−1 lajes de
+entrepiso** mais a de cobertura (se o topo não for telhado). O motor avisa nas lacunas quando
+`pav > 1`, mas a conferência é sua:
+
+- **Área de cada laje = PROJEÇÃO do pavimento** (área construída ÷ nº de pavimentos), não a soma
+  das áreas úteis dos ambientes: a projeção inclui paredes e circulação. Numa obra real a diferença
+  foi de 1,5%.
+- **Desconte o vazio da escada e dos shafts** — o motor não deduz sozinho.
+- **Confira o vão da laje.** A DER-ES só tem duas: 040601 (forro, até 3,5 m) e 040602 (sobrecarga
+  300 kg/m², vão 3,5 a 4,3 m). Vão maior — comum em obra comercial — exige laje maciça ou
+  nervurada, montada por concretagem + fôrma + armação, mais cara. Não force a treliçada.
+- **Confira a sobrecarga** contra a NBR 6120 pelo uso do ambiente (academia de ginástica 300 kg/m²;
+  em musculação com anilhas a prática pede 400–500 kg/m²; arquivo/depósito sobe muito mais).
+- Lajes que passam batido: área técnica, barrilete, casa de máquinas, marquise e o **patamar da
+  escada**. Reservatório elevado com código próprio (DER-ES 020711) já traz o suporte.
+
 ## Obra que vai crescer depois (expansão vertical futura)
 
 Se o cliente pretende **subir mais pavimentos no futuro**, a fundação e os pilares precisam ser
