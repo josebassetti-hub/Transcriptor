@@ -516,11 +516,10 @@ SUBST_NOTA = (
 GOLD_CUSTO_DIRETO = 175142.06  # casa exemplo 70 m², padrão médio, BDI 25% — idêntico ao app
 # (telhado medido por projeção horizontal conforme critério DER 0901/0902 desde 07/2026)
 
-# 2º dourado: obra COMERCIAL (academia 1.886 m², 2 pav.) — trava perfil estrutural comercial,
-# cobertura metálica por peso, itens SINAPI e substituições com grau de similaridade.
-GOLD_COMERCIAL = {"cd_der": 4009002.22, "cd_sinapi": 692135.77, "geral": 5876422.49,
-                  "n_der": 109, "n_sinapi": 10, "aco_cobertura_kg": 21780.9,
-                  "dif_escopo": 471461.00}
+# 2º dourado: obra COMERCIAL em alvenaria (academia 1.886 m², 2 pav.) — trava perfil estrutural
+# comercial, itens SINAPI (inclusive a estrutura leve de cobertura) e substituições com grau.
+GOLD_COMERCIAL = {"cd_der": 3122493.88, "cd_sinapi": 871508.17, "geral": 4992502.56,
+                  "n_der": 108, "n_sinapi": 12, "dif_escopo": 471461.00}
 
 
 def autoteste(refs):
@@ -553,13 +552,11 @@ def autoteste(refs):
         m2 = Motor(S2, base, mapa, ind, reg)
         c2, r2 = m2.calc_itens(); T2 = m2.totais(r2)
         oj2 = m2.orcamento_json(c2, r2, T2)
-        aco = next((r["qtd"] for r in r2 if r["grupo"] == "cobertura_estrutura_metalica"), 0)
         G = GOLD_COMERCIAL
         checks += [
             ("[comercial] itens DER-ES", len(r2), G["n_der"]),
             ("[comercial] itens SINAPI", len(oj2.get("itens_sinapi", {}).get("itens", [])), G["n_sinapi"]),
             ("[comercial] itens por cotação", len(oj2["complemento_a_cotar"]["itens"]), 0),
-            ("[comercial] aço da cobertura (kg)", aco, G["aco_cobertura_kg"]),
             ("[comercial] custo direto DER-ES", round(T2["cd"], 2), G["cd_der"]),
             ("[comercial] custo direto SINAPI", oj2["itens_sinapi"]["custo_direto"], G["cd_sinapi"]),
             ("[comercial] diferença de escopo", oj2["substituicoes"]["diferenca"], G["dif_escopo"]),

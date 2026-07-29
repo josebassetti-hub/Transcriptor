@@ -23,7 +23,7 @@ impacto, ex.: padrão de acabamento; o orçamento é para banco?; tem rede públ
 | `sinapi-decomposicoes.json` | composições SINAPI publicadas **sem preço** (pele de vidro, brises, fachada insertada) já separadas em mão de obra oficial + material a cotar |
 | `METODOLOGIA.md` · `COBERTURA.md` | roteiro completo de análise · o que tem/não tem critério oficial e por quê |
 | `exemplo-entrada.json` | entrada de referência residencial (casa 70 m², padrão médio) |
-| `exemplo-comercial.json` | entrada de referência **comercial** (academia 1.886 m², 2 pav.) — mostra perfil estrutural comercial, cobertura metálica, itens SINAPI e substituições |
+| `exemplo-comercial.json` | entrada de referência **comercial** (academia 1.886 m², 2 pav., alvenaria) — mostra perfil estrutural comercial, cobertura leve apoiada em pórtico, itens SINAPI e substituições com grau |
 
 ## Fluxo (6 passos)
 
@@ -62,9 +62,17 @@ contadas via `ov` (override por grupo) ou `extras` (código DER + qtd).
 (0,08 m³/m² de concreto na superestrutura, 90 kg de aço/m³, fundação em sapatas isoladas medida
 por projeção, não por comprimento de parede). Usar o perfil residencial num prédio comercial
 subdimensiona a estrutura em silêncio.
-**Cobertura em estrutura metálica:** ponha `coberturaMetalica:true` — o motor dispensa a estrutura
-de madeira e orça a DER-ES **200738 por PESO**, usando `par.kg_estrutura_metalica_por_m2`
-(default 22; faixa 15–18 para vãos até 12 m, 20–25 para 15–20 m, 30–40 acima de 25 m).
+**Cobertura em estrutura metálica — pergunte primeiro se o telhado vence VÃO LIVRE.** São dois
+casos com preços que diferem em 5×:
+
+| Caso | Como orçar | Ordem de grandeza |
+|---|---|---|
+| **Vão livre** (ginásio, quadra coberta, galpão sem pilares internos) | `coberturaMetalica:true` → DER-ES **200738 por PESO** (R$ 40,82/kg, já com tratamento e pintura), `par.kg_estrutura_metalica_por_m2` = 18–25 (até 25 m) ou 30–40 (acima) | R$ 700–1.000/m² |
+| **Apoiada em pórtico** (prédio em alvenaria/concreto, pilares distribuídos) | deixe `coberturaMetalica:false`, zere a madeira em `ov.cobertura_estrutura={"c":""}` e lance no bloco `sinapi`: **100378** tesouras vãos 6–12 m (R$ 13,13/kg, ~8 kg/m²) + **104314** terças (R$ 12,24/kg, ~6 kg/m²), ambos **exclusive pintura** — some a pintura da estrutura aparente à parte | R$ 150–250/m² |
+
+Numa obra real isso valeu **R$ 710 mil**: a academia parecia ginásio nas imagens, mas era prédio em
+alvenaria com pórtico de concreto (o cliente queria subir andares depois). A composição de quadra
+poliesportiva estava 5× acima do que a obra precisava.
 
 **4. Calcular com o motor (NUNCA calcule os preços de cabeça).**
 
@@ -75,7 +83,7 @@ python3 scripts/gera_excel.py orcamento.json Orcamento.xlsx --refs references
 
 O motor é o **mesmo do app orcamentista.html** (validado item a item). `--autoteste` prova a
 integridade com **dois dourados**: residencial (custo direto R$ 175.142,06) e comercial (academia
-1.886 m² — 109 itens DER-ES, 10 SINAPI, total R$ 5.876.422,49).
+1.886 m² em alvenaria — 108 itens DER-ES, 12 SINAPI, total R$ 4.992.502,56).
 
 **5. Sanidade (checklist do orçamentista).**
 
@@ -85,6 +93,12 @@ integridade com **dois dourados**: residencial (custo direto R$ 175.142,06) e co
 | Residencial médio | ~2,4–3,4 mil |
 | Residencial alto | > 3,2 mil |
 | **Comercial/institucional** | **~2,8–4,0 mil** (estrutura e instalações mais pesadas) |
+
+Na **versão codificada para o banco** o R$/m² fica naturalmente **abaixo** da faixa, porque os
+acabamentos foram substituídos por itens de tabela: some a diferença de escopo antes de comparar
+(na academia: R$ 2.647/m² na versão do banco, R$ 2.960/m² no custo real). Em obra comercial de
+grandes áreas abertas o hidrossanitário também cai abaixo dos 6% — as faixas por capítulo são
+calibradas em residência.
 
 Participação por capítulo: elétrica 8–15% · hidrossanitário 6–12% · estrutura+alvenaria 20–45% ·
 cobertura 8–20% **em obra residencial**. Em obra comercial com estrutura metálica de vão livre a
@@ -142,6 +156,18 @@ acabamentos: as tabelas cobriram 65%.
 > substituto no memorial, ou registrando a diferença como escopo fora do financiamento.
 > Entregue **duas versões**: a codificada, para o banco, e a de custo real, para o cliente.
 
+## Obra que vai crescer depois (expansão vertical futura)
+
+Se o cliente pretende **subir mais pavimentos no futuro**, a fundação e os pilares precisam ser
+dimensionados para a carga final — mas o **orçamento do banco cobre apenas o que está no projeto
+aprovado**. Trate como as substituições de acabamento: orce a estrutura do projeto atual e
+**declare em lacunas** que o reforço de fundação e pilares para os pavimentos futuros é escopo
+adicional, a ser custeado com recursos próprios e definido pelo projeto estrutural. Não infle a
+estrutura no orçamento do banco nem finja que o reforço não existe.
+
+Consequência prática no telhado: prédio pensado para crescer tem **pórtico de concreto**, logo a
+cobertura é leve e apoiada (linha de baixo da tabela acima), não de vão livre.
+
 ## Armadilhas de norma (o item existe na tabela, mas não atende)
 
 - **DER-ES 210301 — guarda-corpo h = 0,80 m**: a NBR 14718 exige **1,10 m** em edificação. Para
@@ -165,10 +191,12 @@ acabamentos: as tabelas cobriram 65%.
    desonerada corrompe o total.
 6. Estrutura de telhado E telhamento medem-se pela **projeção horizontal** × 1,05 de beiral
    (cadernos 0901/0902) — a inclinação já está na composição; nunca usar a área inclinada.
-7. **Estrutura metálica se orça por PESO, nunca por R$/m² de chute.** Sempre divida o R$/m² que
-   você imaginou pelo R$/kg da tabela e confira se o kg/m² resultante é plausível. Estimar
-   R$ 240/m² com a DER-ES a R$ 40,82/kg equivale a 6 kg/m² — peso de terça solta, não de cobertura:
-   erro real de R$ 660 mil numa academia.
+7. **Estrutura metálica se orça por PESO — e o R$/kg depende do sistema, não só o kg/m².** Divida
+   o R$/m² que você imaginou pelo R$/kg da tabela e confira se o kg/m² é plausível; **mas confira
+   também se a composição corresponde ao sistema**. Aplicar a composição de quadra coberta
+   (R$ 40,82/kg, vão livre) a um telhado apoiado em pórtico de concreto (R$ 12–13/kg em terças e
+   tesouras) infla o item em 5×. Os dois erros aconteceram de verdade nesta ferramenta, em sentidos
+   opostos e na mesma obra.
 8. **Item que está no mapa de padrões não entra também como extra** — o motor avisa nas lacunas
    ("CONFERIR: código aparece duas vezes"). Confirme se as finalidades são distintas.
 

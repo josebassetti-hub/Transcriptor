@@ -1,6 +1,6 @@
 {
  "obra": {
-  "nome": "Canário Gym — academia 1.886 m², 2 pav. (exemplo comercial)",
+  "nome": "Canário Gym — academia 1.886 m², 2 pav., alvenaria (exemplo comercial)",
   "local": "Rua Dr. Oswaldo Cruz, 99 — Bairro Canário, Pinheiros - ES",
   "area": 1885.79,
   "pav": 2,
@@ -14,7 +14,7 @@
   "semHid": true,
   "semEst": true,
   "perfilEstrutural": "comercial",
-  "coberturaMetalica": true
+  "coberturaMetalica": false
  },
  "ambientes": [
   {
@@ -160,8 +160,7 @@
   "escalaNota": "cotas do projeto executivo (quadro de áreas e quadro de esquadrias) — sem necessidade de calibração gráfica"
  },
  "par": {
-  "pe_direito_m": 4.7,
-  "kg_estrutura_metalica_por_m2": 22
+  "pe_direito_m": 4.7
  },
  "ov": {
   "cobertura_telha": {
@@ -338,6 +337,9 @@
   },
   "pintura_selador": {
    "qtd": 2100
+  },
+  "cobertura_estrutura": {
+   "c": ""
   }
  },
  "extras": [
@@ -383,8 +385,8 @@
   },
   {
    "c": "190417",
-   "qtd": 350,
-   "obs": "pintura esmalte sobre ESTRUTURA METÁLICA APARENTE do 1º pav (imagens 8, 10, 11, 12)"
+   "qtd": 400,
+   "obs": "pintura esmalte sobre estrutura metálica APARENTE do 1º pav (14,07 t × ~28 m²/t)"
   },
   {
    "c": "080202",
@@ -593,6 +595,18 @@
    "qtd": 25,
    "grau": "ALTO",
    "obs": "forro em fibra mineral comercial c/ estrutura"
+  },
+  {
+   "c": "100378",
+   "qtd": 8040,
+   "grau": "ALTO",
+   "obs": "tesouras em aço, vãos de 6 a 12 m entre pilares de concreto — 1.005 m² × 8 kg/m² (exclusive pintura)"
+  },
+  {
+   "c": "104314",
+   "qtd": 6030,
+   "grau": "ALTO",
+   "obs": "trama de aço em terças p/ telha metálica — 1.005 m² × 6 kg/m² (exclusive pintura)"
   }
  ],
  "complemento": [],

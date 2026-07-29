@@ -160,7 +160,7 @@ do Claude Code neste repositório), você envia o projeto e o Claude produz **o 
 app** — a skill embute **as duas bases de preços** (DER-ES e SINAPI-ES), o mapa de padrões, os 832
 critérios de medição, o gerador de Excel e um **motor em Python idêntico ao do app**, validado
 contra **dois orçamentos dourados**: residencial (custo direto R$ 175.142,06 na casa de 70 m²) e
-comercial (academia de 1.886 m² — 109 itens DER-ES + 10 SINAPI, total R$ 5.876.422,49).
+comercial (academia de 1.886 m² em alvenaria — 108 itens DER-ES + 12 SINAPI, R$ 4.992.502,56).
 
 Além do orçamento residencial, a skill sabe: escolher **perfil estrutural comercial**, orçar
 **cobertura metálica por peso**, buscar nas duas tabelas antes de declarar que um item não existe,
