@@ -1,0 +1,529 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CIPREM · Plano de Produção — Pedreira São Mateus/ES</title>
+<style>
+  /* ============ tokens ============ */
+  :root{
+    color-scheme: light;
+    --paper:#f9f9f7; --surface:#fcfcfb; --card:#ffffff;
+    --ink:#14181d; --ink-2:#4c525b; --ink-3:#84888f;
+    --hair:#e3e2dc; --grid:#e1e0d9; --baseline:#c3c2b7;
+    --accent:#256abf; --accent-ink:#1c5cab; --accent-wash:#eaf1fa;
+    --good:#0ca30c; --good-text:#006300; --warn:#b7791f; --crit:#d03b3b; --crit-wash:#fbeeee;
+    --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --s5:#e87ba4;
+    --shadow:0 1px 2px rgba(20,24,29,.05), 0 8px 24px -18px rgba(20,24,29,.25);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:where(:not([data-theme="light"])){
+      color-scheme: dark;
+      --paper:#0d0d0d; --surface:#1a1a19; --card:#20201f;
+      --ink:#f2f1ec; --ink-2:#c3c2b7; --ink-3:#898781;
+      --hair:#2c2c2a; --grid:#2c2c2a; --baseline:#383835;
+      --accent:#5598e7; --accent-ink:#86b6ef; --accent-wash:#17233a;
+      --good:#0ca30c; --good-text:#0ca30c; --warn:#fab219; --crit:#e66767; --crit-wash:#3a1d1d;
+      --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s5:#d55181;
+      --shadow:none;
+    }
+  }
+  :root[data-theme="dark"]{
+    color-scheme: dark;
+    --paper:#0d0d0d; --surface:#1a1a19; --card:#20201f;
+    --ink:#f2f1ec; --ink-2:#c3c2b7; --ink-3:#898781;
+    --hair:#2c2c2a; --grid:#2c2c2a; --baseline:#383835;
+    --accent:#5598e7; --accent-ink:#86b6ef; --accent-wash:#17233a;
+    --good:#0ca30c; --good-text:#0ca30c; --warn:#fab219; --crit:#e66767; --crit-wash:#3a1d1d;
+    --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s5:#d55181;
+    --shadow:none;
+  }
+  :root[data-theme="light"]{
+    color-scheme: light;
+    --paper:#f9f9f7; --surface:#fcfcfb; --card:#ffffff;
+    --ink:#14181d; --ink-2:#4c525b; --ink-3:#84888f;
+    --hair:#e3e2dc; --grid:#e1e0d9; --baseline:#c3c2b7;
+    --accent:#256abf; --accent-ink:#1c5cab; --accent-wash:#eaf1fa;
+    --good:#0ca30c; --good-text:#006300; --warn:#b7791f; --crit:#d03b3b; --crit-wash:#fbeeee;
+    --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --s5:#e87ba4;
+    --shadow:0 1px 2px rgba(20,24,29,.05), 0 8px 24px -18px rgba(20,24,29,.25);
+  }
+
+  /* ============ base ============ */
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:Charter,"Bitstream Charter",Cambria,Georgia,serif;
+    font-size:17px; line-height:1.65;
+  }
+  .sans, h1,h2,h3,h4, table, .eyebrow, .chip, .tile, .toc, .flow, .viz, .note, .src, header, footer{
+    font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  }
+  .wrap{max-width:900px; margin:0 auto; padding:0 24px}
+  p{max-width:70ch}
+  a{color:var(--accent-ink); text-decoration-thickness:1px; text-underline-offset:2px}
+  a:focus-visible, button:focus-visible{outline:2px solid var(--accent); outline-offset:2px; border-radius:2px}
+  strong{font-weight:650}
+
+  header.masthead{border-bottom:1px solid var(--hair); padding:56px 0 40px; background:var(--surface)}
+  .eyebrow{font-size:12.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--accent-ink); font-weight:650}
+  h1{font-size:clamp(30px,4.6vw,44px); line-height:1.12; margin:10px 0 14px; letter-spacing:-.015em; font-weight:750; text-wrap:balance}
+  .sub{font-size:18px; color:var(--ink-2); max-width:64ch; margin:0}
+  .meta{display:flex; flex-wrap:wrap; gap:8px 22px; margin-top:22px; font-size:13.5px; color:var(--ink-3)}
+  .meta b{color:var(--ink-2); font-weight:600}
+
+  h2{font-size:26px; letter-spacing:-.01em; margin:0 0 6px; font-weight:700; text-wrap:balance}
+  h3{font-size:18.5px; margin:34px 0 10px; font-weight:680}
+  section{padding:44px 0 8px}
+  .sec-head{display:flex; align-items:baseline; gap:14px; border-top:2px solid var(--ink); padding-top:18px; margin-bottom:18px}
+  .sec-num{font-size:14px; font-weight:750; color:var(--accent-ink); letter-spacing:.06em; white-space:nowrap; font-variant-numeric:tabular-nums}
+
+  /* toc */
+  .toc{margin:26px 0 0; padding:0; display:flex; flex-wrap:wrap; gap:8px; list-style:none; font-size:13.5px}
+  .toc a{display:inline-block; padding:6px 12px; border:1px solid var(--hair); border-radius:999px; text-decoration:none; color:var(--ink-2); background:var(--card)}
+  .toc a:hover{border-color:var(--accent); color:var(--accent-ink)}
+
+  /* stat tiles */
+  .tiles{display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:12px; margin:26px 0 8px}
+  .tile{background:var(--card); border:1px solid var(--hair); border-radius:10px; padding:16px 18px; box-shadow:var(--shadow)}
+  .tile .k{font-size:12px; letter-spacing:.09em; text-transform:uppercase; color:var(--ink-3); font-weight:650}
+  .tile .v{font-size:27px; font-weight:750; letter-spacing:-.02em; margin-top:6px; line-height:1.1}
+  .tile .d{font-size:13px; color:var(--ink-2); margin-top:5px; line-height:1.45}
+
+  /* tables */
+  .tbl-wrap{overflow-x:auto; margin:16px 0 8px; border:1px solid var(--hair); border-radius:10px; background:var(--card); box-shadow:var(--shadow)}
+  table{border-collapse:collapse; width:100%; font-size:14px; line-height:1.5}
+  caption{text-align:left; font-size:13px; color:var(--ink-3); padding:12px 14px 0; caption-side:top}
+  th,td{padding:10px 14px; text-align:left; vertical-align:top; border-top:1px solid var(--hair)}
+  thead th{border-top:none; font-size:12px; letter-spacing:.07em; text-transform:uppercase; color:var(--ink-3); font-weight:680; background:var(--surface)}
+  td.num, th.num{text-align:right; font-variant-numeric:tabular-nums}
+  tbody tr:hover{background:var(--accent-wash)}
+  td small, .small{font-size:12.5px; color:var(--ink-3)}
+  .row-hl td{background:var(--accent-wash); font-weight:600}
+  .row-crit td{background:var(--crit-wash)}
+
+  .chip{display:inline-flex; align-items:center; gap:5px; font-size:11.5px; font-weight:700; letter-spacing:.05em; padding:2.5px 9px; border-radius:999px; text-transform:uppercase; white-space:nowrap}
+  .chip.ok{background:color-mix(in srgb,var(--good) 12%,transparent); color:var(--good-text)}
+  .chip.warn{background:color-mix(in srgb,var(--warn) 14%,transparent); color:var(--warn)}
+  .chip.crit{background:color-mix(in srgb,var(--crit) 13%,transparent); color:var(--crit)}
+  .chip.info{background:var(--accent-wash); color:var(--accent-ink)}
+
+  /* callouts */
+  .note{border:1px solid var(--hair); border-left:3px solid var(--accent); background:var(--card); border-radius:8px; padding:14px 18px; margin:20px 0; font-size:14.5px; color:var(--ink-2); box-shadow:var(--shadow)}
+  .note.crit{border-left-color:var(--crit)}
+  .note.good{border-left-color:var(--good)}
+  .note b{color:var(--ink)}
+
+  /* flow diagram */
+  .flow{display:flex; flex-direction:column; gap:0; margin:22px 0; counter-reset:etapa}
+  .fstep{display:grid; grid-template-columns:44px 1fr auto; gap:14px; align-items:start; padding:13px 16px; background:var(--card); border:1px solid var(--hair); border-radius:10px; box-shadow:var(--shadow)}
+  .fstep + .fstep{margin-top:26px; position:relative}
+  .fstep + .fstep::before{content:"▼"; position:absolute; top:-22px; left:56px; font-size:11px; color:var(--ink-3)}
+  .fnum{counter-increment:etapa; width:30px; height:30px; border-radius:8px; background:var(--accent-wash); color:var(--accent-ink); display:flex; align-items:center; justify-content:center; font-weight:750; font-size:14px; margin-top:2px}
+  .fnum::before{content:counter(etapa)}
+  .fstep h4{margin:2px 0 3px; font-size:15.5px; font-weight:700}
+  .fstep p{margin:0; font-size:13.5px; color:var(--ink-2); max-width:none}
+  .fcap{font-size:12.5px; color:var(--ink-3); text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap; padding-top:4px}
+  .fcap b{display:block; color:var(--ink); font-size:14px}
+
+  /* viz shared */
+  .viz{background:var(--card); border:1px solid var(--hair); border-radius:10px; padding:18px 20px 14px; margin:18px 0; box-shadow:var(--shadow)}
+  .viz h4{margin:0 0 2px; font-size:15px; font-weight:700}
+  .viz .sub2{font-size:12.5px; color:var(--ink-3); margin:0 0 14px}
+  .viz .axis-note{font-size:11.5px; color:var(--ink-3); margin-top:10px; border-top:1px solid var(--grid); padding-top:8px}
+
+  /* range/capacity bars */
+  .cap-row{display:grid; grid-template-columns:minmax(150px,220px) 1fr; gap:12px; align-items:center; padding:7px 0}
+  .cap-lab{font-size:13px; color:var(--ink-2); line-height:1.3}
+  .cap-lab b{display:block; color:var(--ink); font-weight:650}
+  .cap-track{position:relative; height:26px; background:var(--surface); border-radius:5px; overflow:hidden}
+  .cap-bar{position:absolute; top:5px; bottom:5px; border-radius:4px; background:var(--s1); min-width:4px}
+  .cap-bar.crit{background:var(--crit)}
+  .cap-bar.warn{background:var(--s4)}
+  .cap-val{position:absolute; top:50%; transform:translateY(-50%); font-size:11.5px; font-weight:650; color:var(--ink-2); white-space:nowrap; font-variant-numeric:tabular-nums}
+  .cap-ref{position:absolute; top:0; bottom:0; width:0; border-left:2px dashed var(--crit); z-index:2}
+  .cap-ref span{position:absolute; top:-1px; left:5px; font-size:10px; color:var(--crit); font-weight:700; white-space:nowrap}
+
+  /* stacked mix bar */
+  .mix{display:flex; height:46px; border-radius:8px; overflow:hidden; margin:8px 0 4px}
+  .mix div{display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:700; color:#fff; text-shadow:0 1px 2px rgba(0,0,0,.35)}
+  .mix div + div{border-left:2px solid var(--card)}
+  .mix-leg{display:flex; flex-wrap:wrap; gap:6px 16px; font-size:12.5px; color:var(--ink-2); margin-top:10px}
+  .mix-leg i{display:inline-block; width:10px; height:10px; border-radius:3px; margin-right:6px}
+
+  /* ramp chart — escala fixa: 15.500 m³ = 217px (14 px por 1.000 m³) */
+  .ramp{display:grid; grid-template-columns:repeat(7,1fr); gap:10px; align-items:end; height:249px; padding:32px 4px 0; position:relative; border-bottom:1px solid var(--baseline)}
+  .ramp .lic{position:absolute; left:0; right:0; bottom:205px; border-top:2px dashed var(--crit); z-index:1}
+  .ramp .lic span{position:absolute; right:0; top:-18px; font-size:11px; font-weight:700; color:var(--crit)}
+  .rcol{display:flex; flex-direction:column; align-items:center; gap:5px; justify-content:flex-end}
+  .rbar{width:100%; max-width:66px; background:var(--s1); border-radius:4px 4px 0 0; flex:none}
+  .rval{font-size:12px; font-weight:700; font-variant-numeric:tabular-nums; color:var(--ink-2)}
+  .ramp-labs{display:grid; grid-template-columns:repeat(7,1fr); gap:10px; padding:6px 4px 0}
+  .rlab{font-size:11px; color:var(--ink-3); text-align:center; line-height:1.25}
+
+  ul.tight{margin:10px 0; padding-left:22px}
+  ul.tight li{margin:7px 0}
+  ol.tight{margin:10px 0; padding-left:22px}
+  ol.tight li{margin:7px 0}
+
+  .src{font-size:13px; color:var(--ink-2)}
+  .src ul{columns:1; padding-left:20px}
+  .src li{margin:5px 0; overflow-wrap:anywhere}
+  footer{border-top:1px solid var(--hair); margin-top:56px; padding:26px 0 48px; font-size:13px; color:var(--ink-3); background:var(--surface)}
+  footer p{max-width:none}
+
+  @media (max-width:640px){
+    .cap-row{grid-template-columns:1fr}
+    .fstep{grid-template-columns:36px 1fr}
+    .fstep > div{min-width:0}
+    .fcap{grid-column:2; text-align:left; padding-top:6px; white-space:normal}
+    .fcap b{display:inline; margin-right:6px}
+    .ramp{grid-template-columns:repeat(7,1fr); gap:5px}
+  }
+  @media print{
+    body{font-size:12.5px; background:#fff}
+    .toc{display:none}
+    section{padding:20px 0 4px; break-inside:avoid-page}
+    .viz,.tile,.tbl-wrap,.fstep{box-shadow:none}
+    a{color:inherit; text-decoration:none}
+  }
+</style>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">CIPREM — Cimento e Premoldados Ltda · Grupo Colombi · São Mateus/ES</div>
+    <h1>Plano de Produção e Análise de Gargalos da Pedreira</h1>
+    <p class="sub">Estudo técnico de capacidade da planta de britagem de 170–180 t/h e expectativa plausível de produção, elaborado como apoio à Carta Consulta FNE/BNB (investimento de R$ 25,57 milhões).</p>
+    <div class="meta">
+      <span><b>Referência</b> · Orçamento de Implantação 19/06/2026 + Carta Consulta Simplificada</span>
+      <span><b>Data</b> · Agosto/2026</span>
+      <span><b>Licenças</b> · ANM nº 8/2021 · LI IEMA nº 000478/2025-D</span>
+    </div>
+    <ul class="toc">
+      <li><a href="#resumo">Resumo executivo</a></li>
+      <li><a href="#premissas">1 · Premissas</a></li>
+      <li><a href="#processo">2 · Processo produtivo</a></li>
+      <li><a href="#equipamentos">3 · Equipamentos</a></li>
+      <li><a href="#capacidade">4 · Capacidade efetiva</a></li>
+      <li><a href="#gargalos">5 · Gargalos</a></li>
+      <li><a href="#cenarios">6 · Cenários p/ o banco</a></li>
+      <li><a href="#recomendacoes">7 · Recomendações</a></li>
+      <li><a href="#fontes">Fontes</a></li>
+    </ul>
+  </div>
+</header>
+
+<main class="wrap">
+
+<!-- ============================== RESUMO ============================== -->
+<section id="resumo">
+  <div class="sec-head"><span class="sec-num">§</span><h2>Resumo executivo</h2></div>
+
+  <div class="tiles">
+    <div class="tile"><div class="k">Planta de britagem</div><div class="v">170–180 t/h</div><div class="d">Mandíbula + cônico Metso em circuito fechado com peneira 8×20 de 3 decks</div></div>
+    <div class="tile"><div class="k">Teto licenciado (LI IEMA)</div><div class="v">≈ 22.000 t/mês</div><div class="d">8.000 m³/mês de rocha in situ ≈ 14.600 m³ de produto solto</div></div>
+    <div class="tile"><div class="k">Platô recomendado ao banco</div><div class="v">12.000 m³/mês</div><div class="d">≈ 18.000 t/mês no ano 4 — 82% da licença, atingível em 1 turno</div></div>
+    <div class="tile"><div class="k">Gargalo real</div><div class="v">Licença, não máquina</div><div class="d">O conjunto de equipamentos comporta 2 a 2,5× o teto ambiental atual</div></div>
+  </div>
+
+  <p><strong>O dimensionamento do orçamento está coerente.</strong> A planta orçada (alimentador + britador de mandíbulas + britador cônico + peneiramento) entrega 170–180 t/h nominais. Operando um único turno de 8 horas, 22 dias/mês, com utilização efetiva típica de ~68%, isso significa <strong>≈ 21.000 t/mês — exatamente o teto da licença ambiental</strong> (8.000 m³/mês in situ ≈ 22.000 t). Ou seja: o equipamento satura a licença em um turno, e ainda guarda reserva enorme de crescimento (2 turnos ⇒ ~38.000 t/mês) para uma futura ampliação de licença, sem novo CAPEX relevante de britagem.</p>
+
+  <ul class="tight">
+    <li><strong>Nenhum equipamento orçado impede o crescimento até o teto licenciado.</strong> Carga (CAT 336: 280–375 t/h), transporte interno (3 basculantes: 227–341 t/h) e expedição (2 pás WA320: ≥1.150 t/dia) superam com folga a britagem, que é o estágio dimensionante do circuito (170–180 t/h).</li>
+    <li><strong>O primeiro gargalo físico a monitorar é a perfuração</strong> — uma única perfuratriz pneumática precisa entregar todo o desmonte; acima de determinado volume mensal, uma 2ª perfuratriz (ou hidráulica) se torna necessária. <span class="chip warn">detalhe na §5</span></li>
+    <li><strong>O gargalo estrutural é regulatório:</strong> a LI nº 000478/2025-D limita a 8.000 m³/mês in situ. Crescer além disso exige reenquadramento no IEMA e atualização do PAE na ANM — processo que deve começar cedo se o mercado responder.</li>
+    <li><strong>A produção da carta consulta (2.000–5.000 m³/mês) é conservadora e defensável no ano 1</strong>, mas, sozinha, não sustenta confortavelmente o serviço da dívida de R$ 24,3 milhões após a carência. O plano deve mostrar ao banco o ramp-up para <strong>10.000–12.000 m³/mês até o fim da carência</strong> — volume que cabe na licença, na planta em 1 turno e na demanda regional. <span class="chip info">cenários na §6</span></li>
+  </ul>
+</section>
+
+<!-- ============================== 1 PREMISSAS ============================== -->
+<section id="premissas">
+  <div class="sec-head"><span class="sec-num">1</span><h2>O empreendimento e as premissas de cálculo</h2></div>
+
+  <p>A CIPREM implantará uma pedreira de granito com planta de britagem no distrito de Nestor Gomes, São Mateus/ES, para produzir <strong>brita 2, brita 1, gravilinha/pedrisco e pó de pedra</strong>. O empreendimento está amparado pelo Registro de Licença ANM nº 8/2021 (válido até 31/08/2029) e pela LI IEMA nº 000478/2025-D (válida até 16/10/2029). O investimento total orçado é de <strong>R$ 25.568.924,08</strong>, com financiamento FNE de até 95% (R$ 24.290.477,88).</p>
+
+  <div class="tbl-wrap"><table>
+    <caption>Conversões usadas em todo o estudo (densidades do PAE e padrão de mercado)</caption>
+    <thead><tr><th>Grandeza</th><th class="num">Valor</th><th>Observação</th></tr></thead>
+    <tbody>
+      <tr><td>Densidade da rocha in situ</td><td class="num">2,749 t/m³</td><td>granito/gnaisse — valor do PAE; literatura usa 2,60–2,70</td></tr>
+      <tr><td>Densidade do produto britado solto</td><td class="num">1,50 t/m³</td><td>empolamento pós-britagem; mercado usa 1,4–1,6</td></tr>
+      <tr><td>1 m³ in situ</td><td class="num">≈ 1,83 m³ de produto</td><td>2,749 ÷ 1,50</td></tr>
+      <tr class="row-hl"><td>Teto licenciado (LI IEMA, condicionante 1)</td><td class="num">8.000 m³ in situ/mês</td><td>= <strong>21.992 t/mês ≈ 14.660 m³ de produto solto/mês</strong></td></tr>
+      <tr><td>Regime de trabalho considerado</td><td class="num">1 turno · 8 h · 22 dias</td><td>igual ao PAE (20.000 t/mês declaradas)</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="note"><b>Atenção às unidades.</b> A licença fala em <b>m³ in situ</b> (rocha no maciço); o mercado vende em <b>m³ de produto solto</b>; a planta é medida em <b>t/h</b>. Um mesmo "5.000 m³/mês" muda de significado conforme a unidade — neste estudo, produção comercial está sempre em m³ de produto solto, e o teto da licença sempre convertido: 8.000 m³ in situ = ~22.000 t = ~14.600 m³ de produto.</div>
+</section>
+
+<!-- ============================== 2 PROCESSO ============================== -->
+<section id="processo">
+  <div class="sec-head"><span class="sec-num">2</span><h2>Como a produção funciona e como os equipamentos se interligam</h2></div>
+
+  <p>Uma pedreira de brita é uma linha industrial contínua: a rocha sai do maciço por perfuração e desmonte, é transportada até a planta e passa por dois estágios de fragmentação com classificação por peneiras. Cada estágio só produz na velocidade do estágio mais lento — por isso a análise de gargalos abaixo compara as capacidades de todas as etapas com a britagem, que dita o ritmo.</p>
+
+  <div class="flow">
+    <div class="fstep"><span class="fnum"></span><div><h4>Perfuração da bancada</h4><p>Perfuratriz pneumática PW5000 + compressor Atlas Copco X‑AIR 970 abrem furos de ~3–3½" na bancada. A malha (afastamento × espaçamento) define quantos m³ cada metro perfurado libera.</p></div><div class="fcap"><b>~9.000 m³ in situ/mês</b>cenário central · 1 turno</div></div>
+    <div class="fstep"><span class="fnum"></span><div><h4>Desmonte por explosivos</h4><p>ANFO/emulsão com espoletas de retardo fragmenta a rocha (ROM). Blaster habilitado e laudo sismográfico são condicionantes da licença. Matacões acima da boca do britador são reduzidos pela pinça/rompedor.</p></div><div class="fcap"><b>por campanha</b>1–2 detonações/mês no início</div></div>
+    <div class="fstep"><span class="fnum"></span><div><h4>Carga e transporte interno</h4><p>Escavadeira CAT 336 (36 t) carrega o ROM nos 3 basculantes Volvo VMX Max (≈18 t/viagem), que percorrem 0,5–1,0 km até a moega. A CAT 320 faz limpeza de praça e apoio. </p></div><div class="fcap"><b>227–341 t/h</b>frota de 3 basculantes</div></div>
+    <div class="fstep"><span class="fnum"></span><div><h4>Britagem primária</h4><p>O ROM cai na moega sobre o alimentador vibratório MV40120, que escalpa finos/terra (peneira de scalpe M30012 desvia contaminantes para bica corrida) e alimenta o britador de mandíbulas Metso (série C), que reduz blocos de até ~700 mm para ~100–150 mm.</p></div><div class="fcap"><b>225–285 t/h</b>C117 em CSS 100 mm</div></div>
+    <div class="fstep"><span class="fnum"></span><div><h4>Pulmão (estoque intermediário)</h4><p>Pilha/silo entre primário e secundário (obra civil orçada) que desacopla os dois estágios: o secundário continua produzindo mesmo com o primário parado para desobstrução ou manutenção — e vice-versa.</p></div><div class="fcap"><b>continuidade</b>absorve paradas curtas</div></div>
+    <div class="fstep"><span class="fnum"></span><div><h4>Britagem secundária em circuito fechado</h4><p>Calha vibratória alimenta o britador cônico Metso HP, que dá forma cúbica e reduz a ~19–32 mm. A descarga vai à peneira; o que passa vira produto, o retido (carga circulante) volta ao cônico até atingir a granulometria.</p></div><div class="fcap"><b>230–280 t/h</b>HP300 em CSS 25 mm</div></div>
+    <div class="fstep"><span class="fnum"></span><div><h4>Peneiramento e classificação</h4><p>Peneira CBS 8×20 de 3 decks separa brita 2, brita 1, pedrisco/gravilinha e pó de pedra; ~10 correias transportadoras (20"–36") interligam os equipamentos e formam as pilhas de produto no pátio.</p></div><div class="fcap"><b>3 decks · 14,9 m²/deck</b>folga p/ 230–280 t/h com circulante</div></div>
+    <div class="fstep"><span class="fnum"></span><div><h4>Estocagem e expedição</h4><p>2 pás carregadeiras Komatsu WA320 carregam clientes (FOB) e a frota própria (2 conjuntos Actros 2651 + basculante Rossetti). Balança rodoviária de 60 t com ERP emite NF-e pela diferença de pesagem.</p></div><div class="fcap"><b>≥1.150 t/dia</b>2 pás em 8 h</div></div>
+  </div>
+
+  <p class="small" style="max-width:70ch">A sinergia do grupo fecha o ciclo: pó de pedra e gravilinha abastecem a própria CIPREM (artefatos de cimento — CNAE 23.30-3/02) e a Concreto Britaki, garantindo escoamento cativo das frações finas — historicamente as mais difíceis de vender em pedreiras novas.</p>
+</section>
+
+<!-- ============================== 3 EQUIPAMENTOS ============================== -->
+<section id="equipamentos">
+  <div class="sec-head"><span class="sec-num">3</span><h2>Capacidade equipamento por equipamento (dados de fabricante)</h2></div>
+  <p>Capacidades nominais levantadas nos sites e catálogos oficiais dos fabricantes (fontes ao final). Onde o catálogo traz faixa por regulagem (CSS) ou por aplicação, indicamos a faixa e o valor esperado nesta planta.</p>
+
+  <h3>Planta de britagem (Metso)</h3>
+  <div class="tbl-wrap"><table>
+    <caption>Capacidades de catálogo Metso (material 2,7 t/m³, alimentação escalpada) e regulagem esperada nesta planta</caption>
+    <thead><tr><th>Equipamento (orçado)</th><th>Especificação de fabricante</th><th class="num">Capacidade de catálogo</th><th>Na configuração desta planta</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Alimentador vibratório MV 40120</strong></td><td>Mesa 4,00 × 1,20 m com barras grizzly (abertura 2"–4"), 2 motores ~16 hp, versão com tremonha ~8,5 t</td><td class="num">120–350 m³/h<br><small>≈180–560 t/h</small></td><td>Recebe o ROM da moega e escalpa finos antes do primário — opera na faixa baixa <span class="chip ok">folga ampla</span></td></tr>
+      <tr class="row-hl"><td><strong>Britador primário de mandíbulas Nordberg C117</strong></td><td>Modelo atual da Série C (substituiu o C116): 132 kW (≈179 cv), 260 rpm, 23,6 t operacional, boca classe 1.150 × 760–800 mm, alimentação máx. ~610–640 mm</td><td class="num">CSS 80: 180–235 t/h<br>CSS 90: 205–255 t/h<br><strong>CSS 100: 225–285 t/h</strong><br>CSS 125: 270–345 t/h</td><td>Em CSS 90–110 mm produz topo ~160–170 mm, compatível com a boca do cônico. Cadencia o circuito junto com o secundário <span class="chip info">dimensionante</span></td></tr>
+      <tr class="row-hl"><td><strong>Britador cônico "HP350 (300 cv)"</strong><br><small>ver nota abaixo — HP300 ou HP350e</small></td><td>HP300: 220 kW (300 hp), cone 1.120 mm, 18,1 t, câmaras EF–EC, CSS 10–45 mm · HP350e (2024): até 250 kW, +10% desempenho, 18,3 t</td><td class="num">CSS 16: 180–220 t/h<br>CSS 22: ≈215–265 t/h<br><strong>CSS 25: 230–280 t/h</strong><br>CSS 32: 250–320 t/h</td><td>Em CSS 22–28 mm, circuito fechado com carga circulante de 20–40% ⇒ <strong>produto líquido ≈180–230 t/h</strong> — valida os 170–180 t/h nominais <span class="chip info">dimensionante</span></td></tr>
+      <tr><td><strong>Peneira CBS 8×20 TD</strong></td><td>Inclinada, 2,44 × 6,10 m, 3 decks (14,9 m²/deck), motor típico 40–60 cv, fabricada na planta Metso de Sorocaba</td><td class="num">porte p/ ≥230–280 t/h<br><small>com carga circulante</small></td><td>Corta brita 2 / brita 1 / pedrisco / pó e devolve oversize ao cônico <span class="chip ok">ok</span></td></tr>
+      <tr><td><strong>Peneira de scalpe M 30012</strong></td><td>Linha M Metso, 3,00 × 1,20 m (3,6 m²/deck), acionamento cardan, ~12,5 cv (equivalente de mercado)</td><td class="num">—</td><td>Separa terra/finos contaminados e bica corrida do fluxo nobre <span class="chip ok">ok</span></td></tr>
+      <tr><td><strong>Correias 20" / 30" / 36" (Global Correias)</strong></td><td>~440 m de correias em 12 transportadores; estruturas metálicas com roletes</td><td class="num">20": ~225–300 t/h<br>30": ~425–580 t/h<br>36": ~635–840 t/h<br><small>a 1,5–2,0 m/s</small></td><td>36" no fluxo principal e 30"/20" nos produtos — todas acima do fluxo da planta <span class="chip ok">ok</span></td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Lavra, transporte interno e expedição</h3>
+  <div class="tbl-wrap"><table>
+    <caption>Especificações de fabricante e produtividade efetiva estimada (premissas: rocha empolada 1,65 t/m³, enchimento 0,9, eficiência 50 min/h)</caption>
+    <thead><tr><th>Equipamento (orçado)</th><th>Especificação de fabricante</th><th class="num">Capacidade efetiva</th><th>Papel / avaliação</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Perfuratriz PWH‑5000</strong><br><small>PW Hidropneumática (Indaiatuba/SP)</small></td><td>Carreta sobre esteiras, avanço pneumático; furos ø64–115 mm (2½"–4½"); hastes 3,70 m; requer 750 pcm; martelo de superfície ou DTH (opcional)</td><td class="num">38–86 m/dia<br><small>central 56 m/dia ⇒ ~9.100 m³ in situ/mês</small></td><td>Único conjunto de perfuração — atende 8.000 m³/mês a ~88% da capacidade <span class="chip warn">elo mais apertado</span></td></tr>
+      <tr><td><strong>Compressor Atlas Copco X‑AIR 970</strong></td><td>~970 pcm (≈27,5 m³/min) @ 10,3 bar, diesel, linha usada em pedreiras</td><td class="num">vazão com folga p/ 1 martelo DTH 3½"–4"</td><td>Pressão de 10,3 bar limita a penetração do DTH (ótimo: 12–17+ bar) — ver recomendação §7</td></tr>
+      <tr><td><strong>Escavadeira CAT 336</strong> (36 t)</td><td>35,2 t; 223,5 kW (300 hp); caçamba rocha 1,88–2,12 m³; força de escavação 211 kN</td><td class="num">280–375 t/h</td><td>Carga do ROM na frente de lavra — folga de 1,6–2,1× sobre a planta <span class="chip ok">ok</span></td></tr>
+      <tr><td><strong>Escavadeira CAT 320</strong> (20 t)</td><td>20,4 t; 121 kW (162 hp); caçamba ~1,0 m³</td><td class="num">apoio</td><td>Limpeza de praça, rechego, drenagem, seleção de matacões <span class="chip ok">ok</span></td></tr>
+      <tr><td><strong>3× Volvo VMX Max 360 6x4</strong><br><small>caçamba rocheira ~12 m³</small></td><td>360 cv (D8, Euro 6); PBT técnico fora de estrada 34 t; I‑Shift; ~18 t/viagem</td><td class="num">227–341 t/h<br><small>(frota, ciclo 8–12 min)</small></td><td>Transporte lavra→moega (0,5–1 km); 2 caminhões já cobrem a planta, o 3º é redundância <span class="chip ok">ok</span></td></tr>
+      <tr><td><strong>2× Pá Komatsu WA320‑6</strong> (15 t)</td><td>14,3–14,5 t; 127 kW (170 hp); caçamba 2,7 m³; tombamento em giro 11.140 kg</td><td class="num">~285 t/h ativas · ≥1.150 t/dia em 8 h</td><td>Expedição (FOB + frota própria) e pátio — cobre 910 t/dia do platô com folga ≥25% <span class="chip ok">ok</span></td></tr>
+      <tr><td><strong>2× Actros 2651 6x4 + Rossetti basculante</strong></td><td>510 cv; PBTC até 74 t; Rossetti GT 30 m³, tara 8,1 t, carga útil estrutural 35 t</td><td class="num">~30,7 t líq./viagem (6 eixos)</td><td>Entrega CIF; caixa de 30 m³ viaja limitada por peso (~20 m³ de brita); p/ 40–48 t exige bitrem/rodotrem <span class="chip warn">atenção</span></td></tr>
+      <tr><td><strong>Pinça hidráulica Guindaumec GMP‑20.000</strong></td><td>Lança de pedestal, giro 360°; alcance 8,0 m horiz. / 6,0 m vert.; 20.000 kgm (5 t a 4,3 m); indicada p/ bocas 110×70 a 120×90 cm</td><td class="num">—</td><td>Desobstrução da câmara do primário e manuseio de matacões — reduz paradas <span class="chip ok">ok</span></td></tr>
+      <tr><td><strong>Balança rodoviária 60 t + ERP</strong></td><td>Células digitais, aferição INMETRO</td><td class="num">~12–15 caminhões/h</td><td>Expedição fiscal (NF‑e por diferença de pesagem); equipamento único — ver §5 <span class="chip warn">ponto único</span></td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="note"><b>Duas verificações de modelo para a cotação final com a Metso.</b> (1) O <b>C117 existe e é modelo atual</b> — entrou na Série C entre o C106 (110 kW) e o C120 (160 kW), substituindo o C116; o orçamento está correto. (2) A designação <b>"HP350 (300 cv)" é híbrida</b>: 300 cv é a potência do HP300 (220 kW), enquanto o modelo de catálogo atual chama-se HP350e (até 250 kW ≈ 340 cv, lançado em 2024). Este estudo usa, por conservadorismo, as capacidades do HP300 — se a proposta da Metso for de HP350e, há ganho adicional de ~10%. Pedir à Metso proposta técnica com modelo, câmara e curva granulométrica garantida para o mix de produtos desejado.</div>
+</section>
+
+<!-- ============================== 4 CAPACIDADE ============================== -->
+<section id="capacidade">
+  <div class="sec-head"><span class="sec-num">4</span><h2>Capacidade efetiva por regime de operação</h2></div>
+
+  <p>Capacidade nominal (t/h de catálogo) não é produção mensal: aplicamos utilização efetiva típica de planta de britagem bem operada — disponibilidade mecânica × horas realmente alimentadas (paradas para desobstrução, troca de telas, chuva, refeições). O quadro abaixo usa 175 t/h nominais.</p>
+
+  <div class="tbl-wrap"><table>
+    <caption>Produção mensal da planta por regime de trabalho (175 t/h nominais)</caption>
+    <thead><tr><th>Regime</th><th class="num">Horas brutas/mês</th><th class="num">Utilização</th><th class="num">Horas efetivas</th><th class="num">t/mês</th><th class="num">m³ produto/mês</th><th class="num">% da licença</th></tr></thead>
+    <tbody>
+      <tr class="row-hl"><td>1 turno · 8 h · 22 dias <span class="chip info">regime do projeto</span></td><td class="num">176</td><td class="num">68%</td><td class="num">120</td><td class="num">20.900</td><td class="num">13.960</td><td class="num">95%</td></tr>
+      <tr><td>1 turno estendido · 10 h</td><td class="num">220</td><td class="num">68%</td><td class="num">150</td><td class="num">26.200</td><td class="num">17.450</td><td class="num">119% <span class="chip crit">excede licença</span></td></tr>
+      <tr><td>2 turnos · 16 h</td><td class="num">352</td><td class="num">62%</td><td class="num">218</td><td class="num">38.200</td><td class="num">25.460</td><td class="num">174% <span class="chip crit">excede licença</span></td></tr>
+      <tr><td>20 h/dia · 26 dias (limite físico)</td><td class="num">520</td><td class="num">55%</td><td class="num">50.000</td><td class="num">50.000</td><td class="num">33.370</td><td class="num">228% <span class="chip crit">excede licença</span></td></tr>
+    </tbody>
+  </table></div>
+
+  <p>A leitura é direta: <strong>em um único turno a planta já entrega 95% do teto licenciado</strong>. Os regimes maiores mostram a reserva de capacidade física instalada — só podem ser acionados se a licença for ampliada (reenquadramento IEMA + atualização do PAE), e são o caminho natural de expansão futura sem trocar britadores.</p>
+
+  <h3>Mix de produtos esperado</h3>
+  <p>Distribuição típica de planta de 2 estágios em granito (ajustável pelas telas da peneira e pelo CSS do cônico conforme a demanda; brita 1 é o carro-chefe comercial):</p>
+
+  <div class="viz">
+    <h4>Composição estimada da produção</h4>
+    <p class="sub2">% da massa total produzida — faixas típicas; a régua abaixo usa o ponto médio</p>
+    <div class="mix" role="img" aria-label="Mix de produtos: pó de pedra 27%, pedrisco e gravilinha 14%, brita 1 33%, brita 2 18%, bica corrida e rachão 8%">
+      <div style="width:27%; background:var(--s1)" title="Pó de pedra — 25–30%">27%</div>
+      <div style="width:14%; background:var(--s2)" title="Pedrisco/gravilinha — 12–15%">14%</div>
+      <div style="width:33%; background:var(--s3); color:#14181d; text-shadow:none" title="Brita 1 — 30–35%">33%</div>
+      <div style="width:18%; background:var(--s4); color:#14181d; text-shadow:none" title="Brita 2 — 15–20%">18%</div>
+      <div style="width:8%; background:var(--s5); color:#14181d; text-shadow:none" title="Bica corrida/rachão — 5–10%">8%</div>
+    </div>
+    <div class="mix-leg">
+      <span><i style="background:var(--s1)"></i>Pó de pedra (&lt;4,8 mm) 25–30%</span>
+      <span><i style="background:var(--s2)"></i>Pedrisco/gravilinha (4,8–12,5 mm) 12–15%</span>
+      <span><i style="background:var(--s3)"></i>Brita 1 (9,5–19 mm) 30–35%</span>
+      <span><i style="background:var(--s4)"></i>Brita 2 (19–31,5 mm) 15–20%</span>
+      <span><i style="background:var(--s5)"></i>Bica corrida/rachão 5–10%</span>
+    </div>
+    <p class="axis-note">No platô de 18.000 t/mês: ≈ 4.900 t de pó, 2.500 t de pedrisco, 5.900 t de brita 1, 3.200 t de brita 2, 1.400 t de bica/rachão. Pó e pedrisco têm escoamento cativo no grupo (premoldados e concreto).</p>
+  </div>
+</section>
+
+<!-- ============================== 5 GARGALOS ============================== -->
+<section id="gargalos">
+  <div class="sec-head"><span class="sec-num">5</span><h2>Análise de gargalos — o que limita o crescimento</h2></div>
+
+  <p>Colocando todas as etapas na mesma régua — toneladas por mês possíveis em 1 turno de 8 h — fica visível onde o fluxo aperta. A faixa clara de cada barra é o intervalo entre o cenário conservador e o otimista; a linha tracejada é o teto da licença ambiental.</p>
+
+  <div class="viz">
+    <h4>Capacidade mensal de cada etapa · 1 turno de 8 h · t/mês</h4>
+    <p class="sub2">barra sólida = piso conservador · faixa clara = até o teto otimista · escala 0–45.000 t/mês</p>
+
+    <div class="cap-row"><div class="cap-lab"><b>Perfuração + desmonte <span class="chip warn">elo mais apertado</span></b>1 carreta PWH‑5000 + X‑AIR 970</div>
+      <div class="cap-track"><span class="cap-ref" style="left:48.9%"><span>licença 22.000</span></span><span class="cap-bar" style="left:0;width:27.9%"></span><span class="cap-bar" style="left:27.9%;width:66.2%;opacity:.32"></span><span class="cap-val" style="left:30%">12.500 – 42.300</span></div></div>
+
+    <div class="cap-row"><div class="cap-lab"><b>Carga na lavra</b>CAT 336 (280–375 t/h)</div>
+      <div class="cap-track"><span class="cap-ref" style="left:48.9%"></span><span class="cap-bar" style="left:0;width:74.7%"></span><span class="cap-bar" style="left:74.7%;width:25.3%;opacity:.32"></span><span class="cap-val" style="left:76%">33.600 – 45.000</span></div></div>
+
+    <div class="cap-row"><div class="cap-lab"><b>Transporte interno</b>3× VMX Max (227–341 t/h)</div>
+      <div class="cap-track"><span class="cap-ref" style="left:48.9%"></span><span class="cap-bar" style="left:0;width:60.5%"></span><span class="cap-bar" style="left:60.5%;width:30.4%;opacity:.32"></span><span class="cap-val" style="left:62%">27.200 – 40.900</span></div></div>
+
+    <div class="cap-row"><div class="cap-lab"><b>Britagem <span class="chip info">dimensionante</span></b>C117 + HP300 (170–180 t/h líquidos)</div>
+      <div class="cap-track"><span class="cap-ref" style="left:48.9%"></span><span class="cap-bar" style="left:0;width:45.3%"></span><span class="cap-bar" style="left:45.3%;width:2.7%;opacity:.32"></span><span class="cap-val" style="left:49.5%">20.400 – 21.600</span></div></div>
+
+    <div class="cap-row"><div class="cap-lab"><b>Peneiramento + correias</b>CBS 8×20 TD · correias 20"–36"</div>
+      <div class="cap-track"><span class="cap-ref" style="left:48.9%"></span><span class="cap-bar" style="left:0;width:60%"></span><span class="cap-bar" style="left:60%;width:20%;opacity:.32"></span><span class="cap-val" style="left:61.5%">27.000 – 36.000</span></div></div>
+
+    <div class="cap-row"><div class="cap-lab"><b>Expedição</b>2× WA320 + balança (1.150–1.730 t/dia)</div>
+      <div class="cap-track"><span class="cap-ref" style="left:48.9%"></span><span class="cap-bar" style="left:0;width:56.2%"></span><span class="cap-bar" style="left:56.2%;width:28.4%;opacity:.32"></span><span class="cap-val" style="left:58%">25.300 – 38.100</span></div></div>
+
+    <p class="axis-note">Leitura: a britagem (20.400–21.600 t/mês) e a licença (22.000 t/mês) coincidem — o projeto satura a licença em 1 turno. A perfuração tem piso conservador <em>abaixo</em> da licença (12.500 t), por isso é o elo a monitorar. Todas as demais etapas carregam folga de 25% a 100%+.</p>
+  </div>
+
+  <h3>Ranking dos gargalos</h3>
+  <ol class="tight">
+    <li><strong>Licença ambiental — o teto estrutural do negócio.</strong> A LI IEMA nº 000478/2025-D limita a produção a 8.000 m³/mês in situ (~22.000 t). Nenhuma máquina orçada impede chegar lá; nada além disso pode ser produzido legalmente. Crescer exige reenquadramento de porte no IEMA (com taxas maiores e possível EIA/RIMA) e atualização do PAE na ANM — processo de 12–24 meses que deve começar quando as vendas se aproximarem do teto. A física instalada suporta ~50.000 t/mês em 20 h/dia: a licença, não o ferro, é o limite. <span class="chip crit">gargalo estrutural</span></li>
+    <li><strong>Perfuração e desmonte — o elo físico mais apertado.</strong> Uma única carreta pneumática (PWH‑5000) com compressor de 10,3 bar entrega, no cenário central, ~9.100 m³ in situ/mês — atende os 8.000 m³ licenciados usando ~88% da capacidade, sem folga confortável. No cenário conservador (granito duro, malha fechada, disponibilidade baixa) cai a 4.600–6.300 m³/mês: déficit de 22–43%. Mitigações baratas, em ordem: compressor de maior pressão (a PW recomenda 12 bar para DTH; o ganho de penetração é quase proporcional à pressão), martelo DTH reserva + bits, 2º turno só da equipe de perfuração (dobra as horas com o mesmo conjunto, cobre até ~18.000 m³/mês) e, por último, 2ª carreta ou perfuratriz hidráulica. <span class="chip warn">monitorar do 1º mês</span></li>
+    <li><strong>Britagem — dimensionante do ritmo, não impeditiva.</strong> O par C117 + HP300 rende 180–230 t/h líquidos; é o estágio que define as horas de operação necessárias. Como satura a licença em 1 turno, só vira gargalo de crescimento <em>depois</em> de ampliada a licença — e aí a resposta é 2º turno (mesmas máquinas), não CAPEX novo. <span class="chip info">dimensionante</span></li>
+    <li><strong>Energia — subestação de 500 kVA no limite.</strong> Somando os motores da planta (C117 132 kW + HP300 220 kW + alimentador ~24 kW + peneiras ~40 kW + ~12 correias ~90 kW + periféricos), a carga instalada fica em ~565–585 kW. Com fator de demanda típico, a demanda simultânea ronda 430–500 kVA — justa para 500 kVA, especialmente na partida do cônico. Se a proposta final for HP350e (250 kW), aperta mais. Exigir estudo de demanda elétrica no projeto executivo; prever soft-starter/inversor nos motores grandes e avaliar transformador de 750 kVA. <span class="chip warn">verificar no executivo</span></li>
+    <li><strong>Pontos únicos de falha.</strong> Há 1 britador primário, 1 cônico, 1 peneira principal e 1 balança rodoviária — qualquer parada não programada para a planta ou a expedição inteira. Mitigação: estoque de peças de desgaste já orçado (R$ 150 mil — mandíbulas, mantos, telas), contrato de peças/serviço Metso, pulmão entre estágios (já previsto nas obras civis), aferição e manutenção preventiva da balança com procedimento de contingência. Meta de disponibilidade ≥ 85%. <span class="chip warn">gestão de ativos</span></li>
+    <li><strong>Fatores sazonais e condicionantes.</strong> Chuva forte para a lavra (praça e rampas) e exige gestão de finos/drenagem (decantadores orçados); condicionantes da LI (sismografia, poeira, água) podem restringir janelas de detonação. Entram no plano como 22 dias úteis/mês e utilização de 68% — premissas já conservadoras. <span class="chip ok">absorvido nas premissas</span></li>
+  </ol>
+
+  <div class="note good"><b>O que NÃO é gargalo.</b> Carga (CAT 336: folga 1,6–2,1×), transporte interno (3 basculantes: folga 1,3–1,9×, um deles é reserva), alimentador MV 40120 (opera na faixa baixa da capacidade), peneiramento e correias (folga ≥ 25%), expedição (2 pás cobrem o dobro do platô) e a pinça GMP‑20.000 (dimensionada para bocas maiores que a do C117). O orçamento está bem balanceado — não há máquina subdimensionada que precise ser trocada.</div>
+</section>
+
+<!-- ============================== 6 CENÁRIOS ============================== -->
+<section id="cenarios">
+  <div class="sec-head"><span class="sec-num">6</span><h2>Expectativa de produção para o banco — cenário recomendado</h2></div>
+
+  <p>A carta consulta declara produção de 2.000–5.000 m³/mês. É um número honesto para o primeiro ano de mercado, mas o projeto tem licença, planta e frota para muito mais — e a análise de capacidade de pagamento vai exigir mais. A trajetória abaixo é o meio-termo defensável: começa dentro da faixa da carta, cresce com o mercado e estabiliza em <strong>82% do teto licenciado</strong>, sem nunca depender de segundo turno nem de licença nova.</p>
+
+  <div class="viz">
+    <h4>Ramp-up recomendado de produção comercial</h4>
+    <p class="sub2">m³ de produto solto/mês · barras = média do período · linha tracejada = teto licenciado (14.660 m³)</p>
+    <div class="ramp" role="img" aria-label="Ramp-up: trimestre 1 2.000, trimestre 2 3.000, trimestre 3 4.000, trimestre 4 5.000, ano 2 7.000, ano 3 10.000, ano 4 em diante 12.000 m³ por mês; teto licenciado 14.660 m³ por mês.">
+      <div class="lic"><span>teto licenciado 14.660</span></div>
+      <div class="rcol"><span class="rval">2.000</span><div class="rbar" style="height:28px" title="Ano 1 · T1: 2.000 m³/mês"></div></div>
+      <div class="rcol"><span class="rval">3.000</span><div class="rbar" style="height:42px" title="Ano 1 · T2: 3.000 m³/mês"></div></div>
+      <div class="rcol"><span class="rval">4.000</span><div class="rbar" style="height:56px" title="Ano 1 · T3: 4.000 m³/mês"></div></div>
+      <div class="rcol"><span class="rval">5.000</span><div class="rbar" style="height:70px" title="Ano 1 · T4: 5.000 m³/mês"></div></div>
+      <div class="rcol"><span class="rval">7.000</span><div class="rbar" style="height:98px" title="Ano 2: 7.000 m³/mês"></div></div>
+      <div class="rcol"><span class="rval">10.000</span><div class="rbar" style="height:140px" title="Ano 3: 10.000 m³/mês"></div></div>
+      <div class="rcol"><span class="rval">12.000</span><div class="rbar" style="height:168px" title="Ano 4 em diante: 12.000 m³/mês (platô)"></div></div>
+    </div>
+    <div class="ramp-labs" aria-hidden="true">
+      <span class="rlab">Ano 1<br>T1</span><span class="rlab">Ano 1<br>T2</span><span class="rlab">Ano 1<br>T3</span><span class="rlab">Ano 1<br>T4</span><span class="rlab">Ano 2</span><span class="rlab">Ano 3</span><span class="rlab">Ano 4+<br>platô</span>
+    </div>
+    <p class="axis-note">Ano 1 na média = 3.500 m³/mês — dentro da faixa 2.000–5.000 da carta consulta. O platô de 12.000 m³/mês usa só ~60% das horas de 1 turno da planta e 82% da licença: sobra folga operacional e regulatória.</p>
+  </div>
+
+  <div class="tbl-wrap"><table>
+    <caption>Trajetória recomendada — volumes, utilização e receita estimada</caption>
+    <thead><tr><th>Período</th><th class="num">m³ produto/mês</th><th class="num">t/mês</th><th class="num">m³ in situ/mês</th><th class="num">% da licença</th><th class="num">Horas de planta/mês</th><th class="num">Receita bruta/mês*</th></tr></thead>
+    <tbody>
+      <tr><td>Ano 1 · T1 (comissionamento)</td><td class="num">2.000</td><td class="num">3.000</td><td class="num">1.090</td><td class="num">14%</td><td class="num">17</td><td class="num">R$ 210 mil</td></tr>
+      <tr><td>Ano 1 · T2</td><td class="num">3.000</td><td class="num">4.500</td><td class="num">1.640</td><td class="num">20%</td><td class="num">26</td><td class="num">R$ 315 mil</td></tr>
+      <tr><td>Ano 1 · T3</td><td class="num">4.000</td><td class="num">6.000</td><td class="num">2.180</td><td class="num">27%</td><td class="num">34</td><td class="num">R$ 420 mil</td></tr>
+      <tr><td>Ano 1 · T4</td><td class="num">5.000</td><td class="num">7.500</td><td class="num">2.730</td><td class="num">34%</td><td class="num">43</td><td class="num">R$ 525 mil</td></tr>
+      <tr><td>Ano 2</td><td class="num">7.000</td><td class="num">10.500</td><td class="num">3.820</td><td class="num">48%</td><td class="num">60</td><td class="num">R$ 735 mil</td></tr>
+      <tr><td>Ano 3</td><td class="num">10.000</td><td class="num">15.000</td><td class="num">5.460</td><td class="num">68%</td><td class="num">86</td><td class="num">R$ 1,05 mi</td></tr>
+      <tr class="row-hl"><td>Ano 4+ · platô</td><td class="num">12.000</td><td class="num">18.000</td><td class="num">6.550</td><td class="num">82%</td><td class="num">103</td><td class="num">R$ 1,26 mi</td></tr>
+    </tbody>
+  </table></div>
+  <p class="small">* Receita = toneladas × <strong>R$ 70/t</strong>, preço médio FOB ponderado do mix de produtos (faixa pesquisada: R$ 60–80/t ≈ R$ 90–120/m³). Referências: SINAPI-ES 06/2026 (brita 1 = R$ 164,89/m³ mediana estadual, que equivale a ~R$ 110/t), DER-ES Rodovias jan/2026 e tabelas FOB de pedreiras — a premissa de R$ 70/t fica 20–35% abaixo da mediana SINAPI, absorvendo o desconto de entrante. Antes de protocolar, calibrar com 3 cotações locais (Pedreira Aracruz, Pedramix São Mateus, Performance São Mateus).</p>
+
+  <h3>Teste de plausibilidade: produção × serviço da dívida</h3>
+  <p>O motivo de o platô precisar ir além dos 5.000 m³/mês da carta consulta é aritmético. Com financiamento de R$ 24,29 milhões (SAC, 12 anos, 3 de carência, juros ilustrativos de 8–10% a.a. — confirmar taxa FNE vigente e bônus de adimplência na simulação do BNB):</p>
+
+  <div class="tbl-wrap"><table>
+    <caption>Capacidade de pagamento por nível de produção (preço R$ 70/t · margem EBITDA de pedreira 35–45%, a validar com o DRE da MSV)</caption>
+    <thead><tr><th>Nível de produção</th><th class="num">Receita/mês</th><th class="num">EBITDA/mês (40%)</th><th class="num">Obrigação mensal</th><th class="num">Cobertura (DSCR)</th><th>Leitura</th></tr></thead>
+    <tbody>
+      <tr><td>Carência (anos 1–3) · produção média do ramp-up</td><td class="num">R$ 210–735 mil</td><td class="num">R$ 84–294 mil</td><td class="num">juros: R$ 162–202 mil</td><td class="num">≥ 1,0 a partir de ~5.000 m³</td><td>Juros da carência ficam cobertos do fim do ano 1 em diante</td></tr>
+      <tr class="row-crit"><td>Se estacionar em 5.000 m³/mês (7.500 t)</td><td class="num">R$ 525 mil</td><td class="num">R$ 210 mil</td><td class="num">prestação inicial: R$ 387–427 mil</td><td class="num"><strong>≈ 0,5</strong></td><td>Insuficiente — não paga a 1ª prestação pós-carência</td></tr>
+      <tr><td>Ano 3 · 10.000 m³/mês (15.000 t)</td><td class="num">R$ 1,05 mi</td><td class="num">R$ 420 mil</td><td class="num">R$ 387–427 mil</td><td class="num">≈ 1,0</td><td>No limiar — por isso o ramp precisa estar maduro antes do fim da carência</td></tr>
+      <tr class="row-hl"><td>Ano 4+ · platô 12.000 m³/mês (18.000 t)</td><td class="num">R$ 1,26 mi</td><td class="num">R$ 441–567 mil</td><td class="num">R$ 387–427 mil (decrescente)</td><td class="num"><strong>1,1–1,4</strong></td><td>Sustentável; melhora a cada ano com a amortização SAC</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="note"><b>Três alavancas de segurança na estruturação.</b> (1) Negociar <b>carência de 4 anos</b> (prazo total 12), casando o fim da carência com o platô maduro; (2) O preço usado é conservador — a R$ 80/t o DSCR do platô vai a 1,2–1,6; (3) O grupo Colombi (MSV, Britaki, Superbritas) dá suporte de garantia e de mercado — parte do risco de ramp-up que o banco precificaria numa estreante pura não se aplica aqui.</div>
+
+  <h3>O mercado absorve esse volume?</h3>
+  <ul class="tight">
+    <li><strong>Vazio competitivo local:</strong> a pesquisa não identificou pedreira comercial estabelecida em São Mateus — o suprimento atual vem de Aracruz/Linhares (~100–130 km), o que embute R$ 40+/t de frete. Uma pedreira local nasce com vantagem de preço entregue em todo o raio de 60 km (São Mateus, Conceição da Barra, Jaguaré, Pinheiros, Nova Venécia).</li>
+    <li><strong>Demanda âncora — concreto:</strong> Polimix opera usina na BR‑101 km 71 em São Mateus e a Pedramix (Grupo Borlini) tem centrais em São Mateus e Linhares. Cada 1.000 m³/mês de concreto consome ~1.000 t/mês de brita. O próprio grupo (Concreto Britaki, +5 filiais; premoldados da CIPREM) dá escoamento cativo, sobretudo de pó de pedra e pedrisco.</li>
+    <li><strong>Demanda âncora — infraestrutura:</strong> novo contrato da BR‑101/ES (Ecovias Capixaba, 2025–2048) prevê R$ 10,3 bilhões, com duplicação de 172 km e terceiras faixas no trecho Linhares–Pedro Canário (que corta São Mateus) até 2027 — obras intensivas em brita graduada e CBUQ na porta da pedreira.</li>
+    <li><strong>Upside não contado:</strong> Porto Petrocity (Urussuquara/São Mateus, LP no IBAMA em jan/2025) demandaria enrocamento e concreto em volume de outra ordem de grandeza — tratado como potencial, não como premissa.</li>
+    <li><strong>Régua de escala:</strong> o platô de 18.000 t/mês equivale a ~30 carretas/dia — fração pequena do consumo de uma região de ~400 mil habitantes em obras (referência nacional ANEPAC: 272 Mt de brita em 2023, ~2,5 t/hab/ano).</li>
+  </ul>
+</section>
+
+<!-- ============================== 7 RECOMENDACOES ============================== -->
+<section id="recomendacoes">
+  <div class="sec-head"><span class="sec-num">7</span><h2>Recomendações práticas</h2></div>
+  <ol class="tight">
+    <li><strong>No projeto para o banco:</strong> apresentar a trajetória 2.000 → 12.000 m³/mês (§6) com platô em 82% da licença — coerente com a carta consulta no ano 1 e com a capacidade de pagamento no pós-carência. Pleitear carência de 4 anos; anexar este estudo de capacidade como fundamentação técnica da projeção.</li>
+    <li><strong>Perfuração (elo crítico):</strong> na cotação final, especificar o compressor na pressão que a PW recomenda para DTH (≥12 bar — a penetração cresce quase proporcionalmente à pressão; verificar variante X‑Air de maior pressão antes de fechar os R$ 700 mil); incluir martelo DTH reserva, bits e hastes no orçamento (não são padrão da carreta); medir metros/hora reais desde o 1º mês. Gatilho de expansão: produção sustentada &gt; 8.000 m³ in situ/mês ⇒ 2º turno da equipe de perfuração (custo mínimo, cobre até ~18.000 m³/mês) antes de pensar em 2ª carreta.</li>
+    <li><strong>Metso:</strong> formalizar qual cônico está proposto (HP300 vs HP350e — a grafia "HP350 300cv" mistura os dois) e pedir curva granulométrica garantida do circuito para o mix brita 1/brita 2/pedrisco/pó. Confirmar no fechamento a tabela de capacidade do C117 no CSS de operação (90–110 mm).</li>
+    <li><strong>Energia:</strong> exigir estudo de demanda elétrica no projeto executivo — a subestação de 500 kVA fica justa para ~565–585 kW instalados; prever soft-starter/inversor nos motores do cônico e do primário e avaliar 750 kVA (diferença de custo pequena frente ao risco de demanda reprimida).</li>
+    <li><strong>Licenciamento:</strong> requerer a LO antes de operar (a LI não autoriza extração — condicionante 9) e programar as renovações de 2029 (ANM, servidão e LI) com ≥120 dias de antecedência. Quando as vendas sustentarem ~70% do teto por 2 trimestres, iniciar o reenquadramento IEMA + atualização do PAE para destravar o crescimento além de 8.000 m³ in situ (12–24 meses de processo).</li>
+    <li><strong>Comercial:</strong> antes do protocolo, buscar cartas de intenção/contratos-âncora: Polimix e Pedramix (concreto em São Mateus/Linhares), empreiteiras da BR‑101 (Ecovias) e o consumo cativo do grupo (Britaki + premoldados). Três cotações locais de preço (Pedreira Aracruz, Pedramix, Performance) para calibrar o R$/t da projeção.</li>
+    <li><strong>Logística de entrega:</strong> a caçamba Rossetti de 30 m³ viaja limitada por peso com brita (~30,7 t líquidas no conjunto de 6 eixos — a caixa não vai cheia); precificar frete CIF por tonelada, e avaliar bitrem/rodotrem (40–48 t, que o Actros 2651 traciona) para rotas de volume.</li>
+    <li><strong>Disponibilidade:</strong> plano de manutenção com meta ≥85% na planta; estoque de desgaste já orçado (R$ 150 mil) gerido por criticidade (mandíbulas, mantos, telas dos decks); contrato de peças Metso; manutenção preventiva + contingência para a balança única (pesagem alternativa conveniada).</li>
+  </ol>
+</section>
+
+<!-- ============================== FONTES ============================== -->
+<section id="fontes" class="src">
+  <div class="sec-head"><span class="sec-num">≡</span><h2>Fontes consultadas</h2></div>
+  <h3>Documentos do projeto</h3>
+  <ul>
+    <li>Orçamento de Implantação CIPREM 19/06/2026 (planilha do cliente); Carta Consulta Simplificada CIPREM (jul/2026); Resumo de Limites de Produção no Licenciamento (jul/2026) — LI IEMA nº 000478/2025-D, Enquadramento IEMA nov/2024, Registro de Licença ANM nº 8/2021, Parecer ANM nº 136/2021, PAE/Plano de Lavra (ICAPES); Relatório Estratégico de Agregados Serra/ES (mar/2026).</li>
+  </ul>
+  <h3>Britagem e peneiramento — Metso</h3>
+  <ul>
+    <li>Nordberg C117 (página oficial): <a href="https://www.metso.com/portfolio/nordberg-c-series/nordberg-c117/">metso.com/portfolio/nordberg-c-series/nordberg-c117</a> · Folheto Nordberg Série C 2024 (nº 4226-04-24): <a href="https://www.metso.com/globalassets/brochure-nordberg-c-series-4226-04-24-en-agg.pdf">metso.com (PDF)</a></li>
+    <li>Nordberg HP300 (página oficial): <a href="https://www.metso.com/portfolio/nordberg-hp-series/nordberg-hp300/">metso.com/portfolio/nordberg-hp-series/nordberg-hp300</a> · Guia de aplicação Série HP: <a href="https://www.metso.com/globalassets/saleshub/documents---episerver/application-guide-hp-series-2602-en-lowres.pdf">metso.com (PDF)</a> · HP350e (lançamento 03/2024): <a href="https://www.metso.com/corporate/media/news/2024/3/metso-launches-nordberg-hp350e-cone-crusher-for-higher-performance/">metso.com/news</a></li>
+    <li>Alimentadores vibratórios MV (brochura): <a href="https://www.metso.com/globalassets/aggregates/alimentadores-vibratorios-mv-2.pdf">metso.com (PDF)</a> · Peneiras vibratórias CBS (brochura): <a href="https://www.metso.com/globalassets/aggregates/peneiras-vibratorias-cbs.pdf">metso.com (PDF)</a> · Peneira M 30012 (referência de mercado): <a href="https://westenge.com.br/portfolio/metso-m-30012-2d-dimensoes-300x120m-2-decks-completa-c-chassis-motor-e-acionamento-por-eixo-cardan-pintura-nova/">westenge.com.br</a></li>
+    <li>Metso Crushing &amp; Screening Handbook 5ª ed. (balanço de circuito): <a href="https://www.ausimm.com/globalassets/insights-and-resources/minerals-processing-toolbox/metso_handbook_fifth_ed.pdf">ausimm.com (PDF)</a></li>
+  </ul>
+  <h3>Lavra e frota</h3>
+  <ul>
+    <li>Caterpillar 336: <a href="https://www.cat.com/pt_BR/products/new/equipment/excavators/large-excavators/127122.html">cat.com (pt-BR)</a> · Caterpillar 320: <a href="https://www.cat.com/pt_BR/products/new/equipment/excavators/medium-excavators/126534.html">cat.com (pt-BR)</a></li>
+    <li>Komatsu WA320-6 (catálogo Brasil): <a href="https://www.komatsu.com.br/uploads/produtos/catalogo/733f4ab781.pdf">komatsu.com.br (PDF)</a></li>
+    <li>Volvo VMX Max 6x4R (ficha técnica): <a href="https://www.volvotrucks.com.br/pt-br/trucks/caminhoes/volvo-vm/volvo-vmx-max.html">volvotrucks.com.br</a> · Mercedes-Benz Actros 2651 S 6x4: <a href="https://www.mercedes-benz-trucks.com.br/caminhoes/actros/2651-s-6x4">mercedes-benz-trucks.com.br</a> · Semirreboques basculantes Rossetti: <a href="https://rossetti.com.br/produtos-categoria/basculante/">rossetti.com.br</a></li>
+    <li>Pinça hidráulica Guindaumec GMP-20.000: <a href="https://guindaumec.com.br/pinca-hidraulica-gmp-20-000/">guindaumec.com.br</a></li>
+  </ul>
+  <h3>Perfuração e desmonte</h3>
+  <ul>
+    <li>Perfuratriz PWH-5000 — PW Hidropneumática: <a href="https://www.pwhidro.com.br/product-page/pwh-5000">pwhidro.com.br</a> · distribuidores: <a href="https://minarmaquinas.com.br/compressores-e-perfuratrizes/perfuratriz-pwh-5000/">minarmaquinas.com.br</a>, <a href="https://www.proroc.com.br/produto/79/carreta-de-perfuracao-pwh-5000">proroc.com.br</a></li>
+    <li>Compressor Atlas Copco X-Air⁺ 970-10: <a href="https://www.crcompressores.com.br/data/arquivos/downloads/catalogo_xair815_xair900_xair970.pdf">catálogo CR Compressores (PDF)</a> · <a href="https://www.atlascopco.com/pt-br/construction-equipment/products/mobile-air-compressors/medium-air-compressors-brasil">atlascopco.com/pt-br</a></li>
+    <li>Parâmetros de desmonte: Koppe — Operações de Lavra em Pedreiras (CETEM): <a href="https://mineralis.cetem.gov.br/bitstream/cetem/2050/1/Cap%207%20Op%20de%20Lavra%20em%20Pedreiras.pdf">mineralis.cetem.gov.br (PDF)</a> · caso real granito 3,5" (Revista Foco, 2025): <a href="https://ojs.focopublicacoes.com.br/foco/article/download/9149/6490/22664">focopublicacoes.com.br</a> · produtividade DTH × pressão: <a href="https://terrarocdrilling.com/understanding-down-the-hole-hammers-a-guide-for-engineers-and-drillers/">terrarocdrilling.com</a></li>
+  </ul>
+  <h3>Preços e mercado</h3>
+  <ul>
+    <li>SINAPI-ES ref. 06/2026 (Caixa): <a href="https://www.caixa.gov.br/poder-publico/modernizacao-gestao/sinapi/Paginas/default.aspx">caixa.gov.br/sinapi</a> (brita 1 R$ 164,89/m³; brita 2 R$ 165,76/m³; pedrisco R$ 190,37/m³; pó de pedra R$ 155,76/m³ — medianas ES)</li>
+    <li>DER-ES — Tabela Referencial, Materiais jan/2026: <a href="https://der.es.gov.br/media/Documentos/Tabela%20Referencial%20de%20Pre%C3%A7o/Referencial%20de%20Rodovias/2026/5_Materiais%20JAN-26%20(sem%20desonera%C3%A7%C3%A3o).pdf">der.es.gov.br (PDF)</a> · IOPES: <a href="https://iopes.es.gov.br/referencial-preco-1">iopes.es.gov.br</a></li>
+    <li>BR-101/ES — Ecovias Capixaba (contrato 2025–2048, R$ 10,3 bi): <a href="https://novocaminho.ecoviascapixaba.com.br/noticias/assinado-o-novo-contrato-de-concessao-da-br-101-esba/">ecoviascapixaba.com.br</a> · terceiras faixas Linhares–Pedro Canário: <a href="https://www.esfala.com.br/2026/05/28/ecovias-vai-antecipar-terceiras-faixas-na-br-101-norte-entre-linhares-e-pedro-canario/">esfala.com.br</a></li>
+    <li>Porto Petrocity (LP IBAMA jan/2025): <a href="https://petronoticias.com.br/o-ano-de-2025-podera-marcar-a-arrancada-dos-grandes-investimentos-do-petrocity-em-usina-termica-e-o-setor-de-logistica-portuaria/">petronoticias.com.br</a> · Setor de agregados (ANEPAC): <a href="https://anepac.org.br/mercado/">anepac.org.br</a></li>
+    <li>Concorrência/oferta regional: Pedreira Aracruz: <a href="https://pedreiraaracruz.com.br/site/">pedreiraaracruz.com.br</a> · Pedramix (Grupo Borlini): <a href="http://pedramix.com.br/">pedramix.com.br</a> · Polimix São Mateus (BR-101 km 71) · Performance Areia e Pedra: <a href="https://www.performanceaep.com.br/distribuidora-de-areia-e-brita-em-sao-mateus">performanceaep.com.br</a></li>
+  </ul>
+  <p class="small">Nota: alguns valores de catálogo foram extraídos por indexação de busca dos PDFs oficiais (acesso direto bloqueado no ambiente de pesquisa); os poucos dados não confirmados na fonte primária estão sinalizados no texto e devem ser conferidos na cotação formal com os fabricantes.</p>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><strong>Nota metodológica.</strong> Capacidades nominais extraídas de catálogos e sites oficiais dos fabricantes (Metso, Caterpillar, Komatsu, Volvo, Mercedes-Benz, Rossetti, Atlas Copco e fornecedores nacionais); produtividades efetivas calculadas com premissas explícitas de utilização, indicadas em cada seção. Valores de produção licenciada conforme LI IEMA nº 000478/2025-D e PAE/ANM. Este documento é um estudo de planejamento para apoiar a análise de crédito — as capacidades finais devem ser confirmadas no projeto executivo da planta com os fabricantes.</p>
+  </div>
+</footer>
