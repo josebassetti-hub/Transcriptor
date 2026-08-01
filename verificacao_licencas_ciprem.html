@@ -1,0 +1,236 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CIPREM · Verificação dos Limites de Produção Licenciados</title>
+<style>
+  :root{
+    color-scheme: light;
+    --paper:#f9f9f7; --surface:#fcfcfb; --card:#ffffff;
+    --ink:#14181d; --ink-2:#4c525b; --ink-3:#84888f;
+    --hair:#e3e2dc;
+    --accent:#256abf; --accent-ink:#1c5cab; --accent-wash:#eaf1fa;
+    --good:#0ca30c; --good-text:#006300; --warn:#b7791f; --crit:#d03b3b; --crit-wash:#fbeeee;
+    --shadow:0 1px 2px rgba(20,24,29,.05), 0 8px 24px -18px rgba(20,24,29,.25);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:where(:not([data-theme="light"])){
+      color-scheme: dark;
+      --paper:#0d0d0d; --surface:#1a1a19; --card:#20201f;
+      --ink:#f2f1ec; --ink-2:#c3c2b7; --ink-3:#898781;
+      --hair:#2c2c2a;
+      --accent:#5598e7; --accent-ink:#86b6ef; --accent-wash:#17233a;
+      --good:#0ca30c; --good-text:#0ca30c; --warn:#fab219; --crit:#e66767; --crit-wash:#3a1d1d;
+      --shadow:none;
+    }
+  }
+  :root[data-theme="dark"]{
+    color-scheme: dark;
+    --paper:#0d0d0d; --surface:#1a1a19; --card:#20201f;
+    --ink:#f2f1ec; --ink-2:#c3c2b7; --ink-3:#898781;
+    --hair:#2c2c2a;
+    --accent:#5598e7; --accent-ink:#86b6ef; --accent-wash:#17233a;
+    --good:#0ca30c; --good-text:#0ca30c; --warn:#fab219; --crit:#e66767; --crit-wash:#3a1d1d;
+    --shadow:none;
+  }
+  :root[data-theme="light"]{
+    color-scheme: light;
+    --paper:#f9f9f7; --surface:#fcfcfb; --card:#ffffff;
+    --ink:#14181d; --ink-2:#4c525b; --ink-3:#84888f;
+    --hair:#e3e2dc;
+    --accent:#256abf; --accent-ink:#1c5cab; --accent-wash:#eaf1fa;
+    --good:#0ca30c; --good-text:#006300; --warn:#b7791f; --crit:#d03b3b; --crit-wash:#fbeeee;
+    --shadow:0 1px 2px rgba(20,24,29,.05), 0 8px 24px -18px rgba(20,24,29,.25);
+  }
+  *{box-sizing:border-box}
+  body{margin:0; background:var(--paper); color:var(--ink); font-family:Charter,"Bitstream Charter",Cambria,Georgia,serif; font-size:17px; line-height:1.65}
+  .sans, h1,h2,h3,h4, table, .eyebrow, .chip, .tile, .note, .src, header, footer, .step, blockquote footer{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+  .wrap{max-width:900px; margin:0 auto; padding:0 24px}
+  p{max-width:70ch}
+  a{color:var(--accent-ink); text-decoration-thickness:1px; text-underline-offset:2px; overflow-wrap:anywhere}
+  a:focus-visible{outline:2px solid var(--accent); outline-offset:2px; border-radius:2px}
+  strong{font-weight:650}
+  header.masthead{border-bottom:1px solid var(--hair); padding:56px 0 40px; background:var(--surface)}
+  .eyebrow{font-size:12.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--accent-ink); font-weight:650}
+  h1{font-size:clamp(30px,4.6vw,42px); line-height:1.12; margin:10px 0 14px; letter-spacing:-.015em; font-weight:750; text-wrap:balance}
+  .sub{font-size:18px; color:var(--ink-2); max-width:64ch; margin:0}
+  .meta{display:flex; flex-wrap:wrap; gap:8px 22px; margin-top:22px; font-size:13.5px; color:var(--ink-3)}
+  .meta b{color:var(--ink-2); font-weight:600}
+  h2{font-size:25px; letter-spacing:-.01em; margin:0 0 6px; font-weight:700; text-wrap:balance}
+  h3{font-size:18.5px; margin:32px 0 10px; font-weight:680}
+  section{padding:42px 0 8px}
+  .sec-head{display:flex; align-items:baseline; gap:14px; border-top:2px solid var(--ink); padding-top:18px; margin-bottom:18px}
+  .sec-num{font-size:14px; font-weight:750; color:var(--accent-ink); letter-spacing:.06em; white-space:nowrap}
+  .tiles{display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:12px; margin:26px 0 8px}
+  .tile{background:var(--card); border:1px solid var(--hair); border-radius:10px; padding:16px 18px; box-shadow:var(--shadow)}
+  .tile .k{font-size:12px; letter-spacing:.09em; text-transform:uppercase; color:var(--ink-3); font-weight:650}
+  .tile .v{font-size:26px; font-weight:750; letter-spacing:-.02em; margin-top:6px; line-height:1.15}
+  .tile .d{font-size:13px; color:var(--ink-2); margin-top:5px; line-height:1.45}
+  .tbl-wrap{overflow-x:auto; margin:16px 0 8px; border:1px solid var(--hair); border-radius:10px; background:var(--card); box-shadow:var(--shadow)}
+  table{border-collapse:collapse; width:100%; font-size:14px; line-height:1.5}
+  caption{text-align:left; font-size:13px; color:var(--ink-3); padding:12px 14px 0; caption-side:top}
+  th,td{padding:10px 14px; text-align:left; vertical-align:top; border-top:1px solid var(--hair)}
+  thead th{border-top:none; font-size:12px; letter-spacing:.07em; text-transform:uppercase; color:var(--ink-3); font-weight:680; background:var(--surface)}
+  td.num, th.num{text-align:right; font-variant-numeric:tabular-nums}
+  tbody tr:hover{background:var(--accent-wash)}
+  td small, .small{font-size:12.5px; color:var(--ink-3)}
+  .row-hl td{background:var(--accent-wash); font-weight:600}
+  .chip{display:inline-flex; align-items:center; gap:5px; font-size:11.5px; font-weight:700; letter-spacing:.05em; padding:2.5px 9px; border-radius:999px; text-transform:uppercase; white-space:nowrap}
+  .chip.ok{background:color-mix(in srgb,var(--good) 12%,transparent); color:var(--good-text)}
+  .chip.warn{background:color-mix(in srgb,var(--warn) 14%,transparent); color:var(--warn)}
+  .chip.crit{background:color-mix(in srgb,var(--crit) 13%,transparent); color:var(--crit)}
+  .chip.info{background:var(--accent-wash); color:var(--accent-ink)}
+  .note{border:1px solid var(--hair); border-left:3px solid var(--accent); background:var(--card); border-radius:8px; padding:14px 18px; margin:20px 0; font-size:14.5px; color:var(--ink-2); box-shadow:var(--shadow)}
+  .note.crit{border-left-color:var(--crit)}
+  .note.good{border-left-color:var(--good)}
+  .note.warn{border-left-color:var(--warn)}
+  .note b{color:var(--ink)}
+  blockquote{margin:18px 0; padding:16px 20px; background:var(--card); border:1px solid var(--hair); border-left:3px solid var(--accent-ink); border-radius:8px; font-size:16px; box-shadow:var(--shadow)}
+  blockquote p{margin:0; max-width:none}
+  blockquote footer{font-size:12.5px; color:var(--ink-3); margin-top:8px}
+  ul.tight, ol.tight{margin:10px 0; padding-left:22px}
+  ul.tight li, ol.tight li{margin:7px 0}
+  .steps{counter-reset:s; list-style:none; padding:0; margin:18px 0}
+  .step{counter-increment:s; display:grid; grid-template-columns:34px 1fr; gap:12px; padding:14px 16px; background:var(--card); border:1px solid var(--hair); border-radius:10px; margin-bottom:10px; font-size:14.5px; box-shadow:var(--shadow)}
+  .step::before{content:counter(s); width:26px; height:26px; border-radius:7px; background:var(--accent-wash); color:var(--accent-ink); display:flex; align-items:center; justify-content:center; font-weight:750; font-size:13px; margin-top:1px}
+  .step b{display:block; margin-bottom:2px}
+  .step .small{display:block; margin-top:4px}
+  .src{font-size:13px; color:var(--ink-2)}
+  .src li{margin:5px 0; overflow-wrap:anywhere}
+  footer.page{border-top:1px solid var(--hair); margin-top:56px; padding:26px 0 48px; font-size:13px; color:var(--ink-3); background:var(--surface)}
+  footer.page p{max-width:none}
+  @media print{
+    body{font-size:12.5px; background:#fff}
+    section{padding:20px 0 4px; break-inside:avoid-page}
+    .tile,.tbl-wrap,.note,.step,blockquote{box-shadow:none}
+    a{color:inherit}
+  }
+</style>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">CIPREM — Cimento e Premoldados Ltda · Pedreira de São Mateus/ES</div>
+    <h1>Verificação: quanto a licença realmente autoriza produzir?</h1>
+    <p class="sub">Auditoria documental das licenças (IEMA e ANM) e conferência em fontes públicas, feita após os empresários informarem que a autorização seria "muito maior" que 8.000 m³/mês. Cada afirmação abaixo tem citação literal do documento original.</p>
+    <div class="meta">
+      <span><b>Data</b> · Agosto/2026</span>
+      <span><b>Processo ANM</b> · 48420.896624/2013-25</span>
+      <span><b>Processos IEMA</b> · 65417860 (2021) · 0001319/2024 (LI vigente)</span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+<section id="resposta">
+  <div class="sec-head"><span class="sec-num">§</span><h2>Resposta direta</h2></div>
+
+  <div class="tiles">
+    <div class="tile"><div class="k">Produção autorizada (LI vigente)</div><div class="v">8.000 m³/mês</div><div class="d">de rocha in situ — condicionante 1 da LI nº 000478/2025-D, válida até 16/10/2029</div></div>
+    <div class="tile"><div class="k">O mesmo limite em toneladas</div><div class="v">≈ 20–22 mil t/mês</div><div class="d">8.000 m³ × densidade 2,67–2,749 t/m³ (valores do próprio PAE)</div></div>
+    <div class="tile"><div class="k">Capacidade física dos equipamentos</div><div class="v">50.000 t/mês</div><div class="d">número do PAE — capacidade instalada operando 20 h/dia; <strong>não é autorização</strong></div></div>
+    <div class="tile"><div class="k">Reserva medida da jazida</div><div class="v">480.591 m³</div><div class="d">≈ 1,3 milhão t (PAE 2019) — estoque total, não produção mensal</div></div>
+  </div>
+
+  <p><strong>A licença autoriza 8.000 m³/mês de rocha in situ — e este número aparece, idêntico, em cinco documentos diferentes emitidos entre 2021 e 2025</strong> (LI de 2021, dois enquadramentos de 2024 e LI vigente de 2025, além do próprio plano de lavra). Não existe, nem na pasta de documentos nem nas bases públicas consultadas, qualquer licença, aditivo ou guia autorizando volume maior.</p>
+
+  <p><strong>Os empresários não estão inventando — estão citando números reais, mas que não são a autorização.</strong> O plano de lavra da CIPREM diz, de fato, que os equipamentos "podem chegar a 50.000 t/mês" e que a jazida tem mais de um milhão de toneladas de reserva. São afirmações verdadeiras sobre <em>capacidade física</em> e <em>estoque geológico</em> — mas a produção <em>legal</em> é limitada pela licença ambiental, que fixa 8.000 m³/mês. O próprio Registro de Licença da ANM diz isso com todas as letras (item III): a extração "ficará condicionada à emissão e à vigência da licença ambiental pertinente".</p>
+</section>
+
+<section id="documentos">
+  <div class="sec-head"><span class="sec-num">1</span><h2>O que cada documento diz — com citação literal</h2></div>
+
+  <div class="tbl-wrap"><table>
+    <caption>Todos os documentos foram lidos na íntegra a partir dos arquivos originais da pasta do cliente (Drive)</caption>
+    <thead><tr><th>Documento</th><th>Data / validade</th><th>O que diz sobre produção (citação literal)</th></tr></thead>
+    <tbody>
+      <tr><td><strong>LP‑GSIM/CM nº 30/2021</strong> e <strong>LI‑GSIM/CM nº 23/2021</strong> — IEMA<br><small>processo 65417860</small></td><td>24/03/2021 · 1.460 dias</td><td>Anexo da LI, condicionante 1: <em>"…em área útil de 6,2 ha e com <strong>produção de 8.000 m³/mês</strong>"</em>. Condicionante 10: a LI não permite operação (exige LO).</td></tr>
+      <tr><td><strong>Enquadramento IEMA — Licença Prévia</strong></td><td>05/11/2024</td><td>Parâmetro: <em>"VOLUME DE EXTRAÇÃO IN SITU — METRO CÚBICO/MÊS — <strong>8000,00</strong>"</em>; área útil 6,20 ha; porte Pequeno; Classe II.</td></tr>
+      <tr><td><strong>Enquadramento IEMA — Licença de Instalação</strong></td><td>05/11/2024</td><td>Mesmo parâmetro: <em>"VOLUME DE EXTRAÇÃO IN SITU — <strong>8000,00 m³/mês</strong>"</em>, 6,20 ha, porte Pequeno, Classe II.</td></tr>
+      <tr class="row-hl"><td><strong>LI nº 000478/2025‑D — IEMA (licença vigente)</strong><br><small>processo 0001319/2024</small></td><td>17/10/2025 · válida até 16/10/2029</td><td>Condicionante 1 (pág. 3/5): <em>"…em área útil de 6,2 ha e com <strong>produção de 8.000 m³/mês</strong>. Cópia desta licença deverá ser encaminhada à ANM."</em> Condicionante 9: <em>"Esta licença não permite a operação da atividade de extração mineral, devendo para tanto, ser requerida e obtida a LO."</em></td></tr>
+      <tr><td><strong>Registro de Licença nº 8/2021 — ANM/ES</strong><br><small>NUP 48420.896624/2013‑25</small></td><td>05/05/2021 · até 31/08/2029</td><td><strong>Não fixa teto de volume</strong> (autoriza extrair granito/brita em 6,84 ha), mas o item III condiciona: <em>"A extração efetiva da substância mineral licenciada <strong>ficará condicionada à emissão e à vigência da licença ambiental pertinente</strong>."</em></td></tr>
+      <tr><td><strong>Parecer ANM nº 136/2021</strong></td><td>05/05/2021</td><td>Sobre a LI 23/2021: <em>"<strong>Contempla a escala de produção informada no PAE</strong>"</em> — ou seja, a ANM validou o registro com base na escala de 20.000 t/mês do plano de lavra.</td></tr>
+      <tr><td><strong>PAE / Plano de Lavra (ICAPES)</strong> — partes 1 e 2</td><td>2019–2020</td><td><em>"Produção mensal de britas (produto final) = <strong>20.000,00 ton/mês</strong> … Volume desmontado de rocha/mês = <strong>8.000,00 m³ (in situ)</strong>. Valor da massa = 2,749 ton/m³."</em> E: <em>"Capacidade máxima instalada total: 20 h/dia × 25 dias/mês … = <strong>50.000 toneladas. Cerca de 20.000 m³ in situ</strong>"</em>, <em>"dependendo exclusivamente do aumento do número de horas de operação"</em>.</td></tr>
+      <tr><td><strong>PAE — Estudo de Viabilidade (Exigência 19)</strong></td><td>set/2019</td><td><em>"Considerando o afloramento AF‑01, as <strong>reservas da área cedida são de 480.591,00 m³</strong>"</em> (≈ 1,3 milhão t*), com <em>"vida útil <strong>Vu = 5,34 anos</strong>"</em> à produção de 20.000 t/mês. Cessão da Construtora Colombi (processo‑mãe 896.059/2012) para a CIPREM.</td></tr>
+      <tr><td><strong>Publicação no DOU</strong></td><td>18/05/2021 · ed. 92, Seção 1, pág. 115</td><td>ANM/ES, Relação nº 11/2021: <em>"Autoriza transformação do regime de Autorização de Pesquisa para Licenciamento — 896.569/2013 ‑ CIPREM CIMENTO E PREMOLDADOS LTDA ME"</em>.</td></tr>
+    </tbody>
+  </table></div>
+
+  <p class="small">* O PDF do estudo de viabilidade traz "2.283.177,97 toneladas" em dois trechos e "1.283.177,97" no cálculo da vida útil. Pela aritmética do próprio documento (480.591 m³ × 2,67 t/m³ = 1.283.178 t; × 2,749 = 1.321.145 t), o valor consistente é <strong>≈ 1,3 milhão de toneladas</strong> — o "2.283.177" é erro de digitação. Vale corrigir na próxima revisão do PAE.</p>
+</section>
+
+<section id="confusao">
+  <div class="sec-head"><span class="sec-num">2</span><h2>De onde vem o "a licença permite muito mais"</h2></div>
+
+  <p>Há três números grandes e verdadeiros circulando nos documentos — e nenhum deles é a autorização mensal. A confusão é natural, porque todos aparecem no mesmo plano de lavra:</p>
+
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Número</th><th>O que é de verdade</th><th>O que NÃO é</th></tr></thead>
+    <tbody>
+      <tr><td><strong>50.000 t/mês</strong> (≈ 20.000 m³ in situ)</td><td>Capacidade física dos equipamentos operando 20 h/dia, declarada no PAE — <em>"dependendo exclusivamente do aumento do número de horas de operação"</em></td><td>Não é autorização. Para usá‑la seria preciso reenquadrar a licença no IEMA e atualizar o PAE na ANM</td></tr>
+      <tr><td><strong>≈ 1,3 milhão t</strong> (480.591 m³)</td><td>Reserva medida da jazida (estoque geológico total do afloramento AF‑01, cubado em 2019)</td><td>Não é produção mensal — é o que existe para lavrar ao longo de toda a vida da mina</td></tr>
+      <tr><td><strong>"A ANM não limita"</strong></td><td>Verdade: o Registro de Licença nº 8/2021 não traz teto de volume</td><td>Mas o próprio registro (item III) condiciona a extração à licença ambiental — e é a LI do IEMA que fixa os 8.000 m³/mês</td></tr>
+      <tr class="row-hl"><td><strong>8.000 m³/mês in situ</strong> = 20–22 mil t = ≈ 14.600 m³ de produto solto</td><td colspan="2"><strong>Este é o único número que autoriza produção</strong> — repetido na LI 2021, nos dois enquadramentos 2024 e na LI 2025 vigente</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="note crit"><b>O que acontece se produzir acima dos 8.000 m³/mês?</b> A própria licença responde: condicionante 11 — multa, interdição/embargo e suspensão ou cassação da licença (Lei Estadual 7.058/2002, art. 8º e 17); condicionante 14 — operar contrariando as normas "constitui crime contra o meio ambiente" (art. 60 da Lei 9.605/98). E o cruzamento é automático: o RAL anual declarado à ANM e a CFEM recolhida sobre as notas fiscais expõem qualquer produção acima do licenciado. Não é um risco que um projeto financiado pelo BNB possa correr.</div>
+
+  <div class="note good"><b>O lado bom — e é genuinamente bom.</b> Os empresários têm razão na essência: o empreendimento <em>foi desenhado</em> para produzir muito mais. O ferro aguenta 2,5× o teto atual, o título minerário da ANM não impõe volume e a área da ANM (6,84 ha) é maior que a área útil licenciada (6,2 ha). O caminho para destravar isso é administrativo, não físico: <strong>reenquadramento de porte no IEMA + atualização da escala no PAE/ANM</strong> — processo de 12–24 meses que pode começar quando as vendas se aproximarem do teto. O plano de produção enviado ao banco já foi construído exatamente assim: platô em 82% da licença atual, com a expansão como upside.</div>
+</section>
+
+<section id="conferir">
+  <div class="sec-head"><span class="sec-num">3</span><h2>Como conferir você mesmo em 10 minutos</h2></div>
+
+  <p>Roteiro para bater o martelo com os empresários (ou com o gerente do banco), usando só documentos e sites públicos:</p>
+
+  <ol class="steps">
+    <li class="step"><div><b>Abra a LI vigente e leia a condicionante 1</b> Arquivo da pasta: <em>CIPREM LICENÇA DE INSTALAÇÃO 2025.pdf</em>, página 3 de 5 ("Condicionantes de Validade desta Licença — LI Nº 000478/2025‑D"). Está escrito: "área útil de 6,2 ha e com produção de 8.000 m³/mês". Na página 4, a condicionante 9 confirma que sem LO não pode operar.<span class="small">É o documento que manda. Se alguém disser que a licença permite mais, peça para mostrar em qual página.</span></div></li>
+    <li class="step"><div><b>Confira os dois enquadramentos do IEMA (nov/2024)</b> Arquivos: <em>LIC PREVIA ‑ ENQUADRAMENTO 11 2024.pdf</em> e <em>LIC INSTLAÇÃO ENQUADRAMENTO 11 2024.pdf</em>. Campo "Parâmetros do Enquadramento": VOLUME DE EXTRAÇÃO IN SITU = 8.000,00 m³/mês. É este parâmetro que define porte (Pequeno) e taxa — produzir mais exige novo enquadramento.</div></li>
+    <li class="step"><div><b>Verifique a autenticidade dos documentos da ANM</b> Em <a href="https://www.anm.gov.br/autenticidade">anm.gov.br/autenticidade</a>: Registro de Licença nº 8/2021 → código verificador <strong>2473528</strong>, CRC <strong>E0685E42</strong>; Parecer nº 136/2021 → verificador <strong>2469972</strong>, CRC <strong>270B36FF</strong>. Leia no Registro o item III: extração condicionada à licença ambiental.</div></li>
+    <li class="step"><div><b>Consulte o processo minerário na ANM</b> No SCM (<a href="https://sistemas.anm.gov.br/SCM/site/admin/dadosProcesso.aspx">sistemas.anm.gov.br/SCM</a>), busque o processo <strong>896.624/2013</strong> (UF: ES): fase Licenciamento, titular CIPREM, granito/brita, 6,84 ha, validade 31/08/2029 — sem campo de volume autorizado (não existe teto da ANM). A poligonal pode ser vista no <a href="https://geo.anm.gov.br/portal/apps/webappviewer/index.html?id=6a8f5ccc4b6a4c2bba79759aa952d908">SIGMINE</a>.<span class="small">Espelho público alternativo: <a href="https://www.requerimentomineral.com.br/view?q=896624/2013">requerimentomineral.com.br/view?q=896624/2013</a>.</span></div></li>
+    <li class="step"><div><b>Confirme a publicação no DOU</b> Em <a href="https://www.in.gov.br/autenticidade.html">in.gov.br/autenticidade.html</a>, informe o código <strong>05152021051800115</strong> (DOU de 18/05/2021, Seção 1, pág. 115 — arquivo <em>Publicacao DOU ANM LICENCIAMENTO.pdf</em> da pasta).</div></li>
+    <li class="step"><div><b>Confirme a cópia autenticada da LP/LI 2021 no E‑Docs do Governo do ES</b> Link impresso no próprio PDF: <a href="https://e-docs.es.gov.br/d/2021-78GQWD">e‑docs.es.gov.br/d/2021‑78GQWD</a>. E, para o andamento do processo IEMA da LI vigente, a consulta pública do IEMA (<a href="https://iema.es.gov.br/licenciamento-ambiental">iema.es.gov.br</a>) com o processo <strong>0001319/2024</strong>.</div></li>
+    <li class="step"><div><b>Pergunta final aos empresários</b> "Existe algum documento mais novo que estes — um aditivo, reenquadramento ou nova licença ampliando os 8.000 m³/mês?" Na pasta de documentos e nas bases públicas consultadas, <strong>não existe</strong>. Se eles tiverem algo, é só anexar que a análise é refeita na hora.</div></li>
+  </ol>
+</section>
+
+<section id="alerta">
+  <div class="sec-head"><span class="sec-num">4</span><h2>Um achado novo que importa para o banco: a vida útil da reserva</h2></div>
+
+  <p>A verificação trouxe um dado que ainda não estava no radar do projeto. O estudo de viabilidade do PAE (2019) cuba a <strong>reserva medida em 480.591 m³ (~1,3 milhão t)</strong> e calcula <strong>vida útil de 5,34 anos</strong> produzindo 20.000 t/mês. Confrontando com o plano de produção recomendado ao banco:</p>
+
+  <div class="tbl-wrap"><table>
+    <caption>Vida útil da reserva medida (480.591 m³ in situ) conforme o ritmo de produção</caption>
+    <thead><tr><th>Ritmo de produção</th><th class="num">Consumo in situ/mês</th><th class="num">Duração da reserva medida</th></tr></thead>
+    <tbody>
+      <tr><td>Teto licenciado contínuo (20–22 mil t/mês)</td><td class="num">8.000 m³</td><td class="num">≈ 5,0 anos</td></tr>
+      <tr class="row-hl"><td>Ramp-up recomendado no plano de produção (platô de 18.000 t/mês no ano 4)</td><td class="num">1.900 → 6.550 m³</td><td class="num">esgota por volta do <strong>ano 8</strong></td></tr>
+      <tr><td>Faixa da carta consulta mantida (2.000–5.000 m³ de produto/mês)</td><td class="num">1.100–2.700 m³</td><td class="num">15–36 anos</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="note warn"><b>Por que isso importa.</b> O financiamento pretendido é de 12 anos — mais longo que a vida útil da reserva <em>medida</em> no ritmo do platô recomendado. Isso não inviabiliza nada: a cubagem de 2019 mediu apenas o afloramento AF‑01 da área cedida, e a área ANM tem 6,84 ha (vs. 6,2 ha úteis licenciados), com bancadas que podem aprofundar. Mas o analista do BNB vai fazer exatamente essa conta. <strong>Recomendação: antes de protocolar o projeto, pedir ao engenheiro de minas uma atualização da cubagem (reservas medida + indicada + inferida) demonstrando lastro geológico ≥ prazo do financiamento</strong> — e corrigir de passagem o erro de digitação das "2.283.177 t". É um estudo relativamente simples (sondagem/topografia + relatório) que blinda o projeto.</div>
+</section>
+
+<section id="fontes" class="src">
+  <div class="sec-head"><span class="sec-num">≡</span><h2>Fontes</h2></div>
+  <h3>Documentos analisados (íntegra, pasta do cliente)</h3>
+  <ul>
+    <li>LI nº 000478/2025‑D (IEMA, 17/10/2025) — 5 páginas, condicionantes 1 a 16 · LP‑GSIM/CM nº 30/2021 e LI‑GSIM/CM nº 23/2021 + Anexo com 17 condicionantes (IEMA, 24/03/2021; cópia autenticada E‑Docs 2021‑78GQWD) · Enquadramentos IEMA LP e LI de 05/11/2024 · Registro de Licença nº 8/2021 ANM/ES (SEI 2473528) · Parecer nº 136/2021 ANM (SEI 2469972) · PAE/Plano de Lavra ICAPES (partes 1–5, incl. Estudo de Viabilidade set/2019, Eng. de Minas Bernabe A. Sanjombi, CREA/ES 014545/D) · Publicação DOU 18/05/2021 (ed. 92, S.1, p. 115).</li>
+  </ul>
+  <h3>Verificação pública</h3>
+  <ul>
+    <li>ANM — autenticidade de documentos: <a href="https://www.anm.gov.br/autenticidade">anm.gov.br/autenticidade</a> · SCM (consulta de processos): <a href="https://sistemas.anm.gov.br/SCM/site/admin/dadosProcesso.aspx">sistemas.anm.gov.br/SCM</a> · SIGMINE: <a href="https://geo.anm.gov.br/">geo.anm.gov.br</a></li>
+    <li>Imprensa Nacional — autenticidade DOU: <a href="https://www.in.gov.br/autenticidade.html">in.gov.br/autenticidade.html</a> (código 05152021051800115)</li>
+    <li>Governo do ES — E‑Docs: <a href="https://e-docs.es.gov.br/d/2021-78GQWD">e‑docs.es.gov.br/d/2021‑78GQWD</a> · IEMA licenciamento: <a href="https://iema.es.gov.br/licenciamento-ambiental">iema.es.gov.br</a></li>
+    <li>Espelho público do cadastro mineiro: <a href="https://www.requerimentomineral.com.br/view?q=896624/2013">requerimentomineral.com.br (processo 896624/2013)</a></li>
+  </ul>
+  <p class="small">Nota: o ambiente desta análise não conseguiu abrir diretamente alguns sites .gov (bloqueio de rede); os links e códigos acima foram extraídos dos próprios documentos e de indexação pública, e permitem a conferência manual em qualquer navegador.</p>
+</section>
+
+</main>
+
+<footer class="page">
+  <div class="wrap">
+    <p><strong>Conclusão da verificação.</strong> Limite de produção vigente: 8.000 m³/mês de rocha in situ (≈ 20–22 mil t/mês ≈ 14.600 m³ de produto solto), fixado pela LI nº 000478/2025‑D e consistente em toda a cadeia documental 2021→2025. Os números maiores citados (50.000 t/mês; ~1,3 milhão t) são capacidade instalada de equipamentos e reserva geológica total, respectivamente — reais, porém não autorizativos. O plano de produção enviado ao banco permanece válido sem alterações; recomenda‑se apenas a atualização da cubagem de reservas antes do protocolo.</p>
+  </div>
+</footer>
