@@ -257,7 +257,7 @@
    "qtd": 15
   },
   "pt_agua_fria": {
-   "qtd": 33
+   "qtd": 28
   },
   "pt_registro_pressao": {
    "qtd": 10
@@ -266,7 +266,7 @@
    "qtd": 11
   },
   "pt_esgoto_secundario": {
-   "qtd": 32
+   "qtd": 17
   },
   "pt_ralo": {
    "qtd": 10
@@ -340,6 +340,9 @@
   },
   "cobertura_estrutura": {
    "c": ""
+  },
+  "reboco": {
+   "qtd": 2535.4
   }
  },
  "extras": [
@@ -833,5 +836,439 @@
     }
    ]
   }
- ]
+ ],
+ "memoria": {
+  "grupos": {
+   "cobertura_telha": [
+    "A",
+    "Planta de cobertura: projeção 942,89 m² + beirais/avanços reais = 1.005 m² medidos na prancha. Critério DER 0902: telhamento medido pela PROJEÇÃO HORIZONTAL — a inclinação já está na composição."
+   ],
+   "laje": [
+    "C",
+    "1 laje de entrepiso (térreo→1º pav) = projeção do pavimento: 1.885,79 ÷ 2 = 942,89 m² (inclui paredes e circulação). Topo sem laje (telha metálica). Vazio de escada interna não descontado — ver apontamentos."
+   ],
+   "piso": [
+    "A",
+    "Porcelanato grande formato (imagens 3D): Academia térreo 673,72 + Academia 1º pav 855,05 + Sala multiuso 71,74 = 1.600,51 m²."
+   ],
+   "regularizacao_piso": [
+    "C",
+    "Toda a área de piso: 942,89 (térreo) + 942,89 (1º pav) = 1.885,79 m², sob qualquer acabamento."
+   ],
+   "lastro": [
+    "A",
+    "Pavimento em contato com o solo: projeção 942,89 m² + rampas/acessos contíguos = 957,10 m² (planta baixa do térreo)."
+   ],
+   "forro": [
+    "B",
+    "Gesso liso apenas no bloco administrativo do térreo (recepção, ADM, diretoria, avaliação, copa, circulação) ≈ 300 m². Imagens 3D: áreas de treino SEM forro (estrutura aparente)."
+   ],
+   "pintura_massa": [
+    "F",
+    "Emassamento só nas paredes de acabamento liso à vista (bloco adm + sanitários) ≈ 900 m² — premissa das imagens (3 tons)."
+   ],
+   "pintura_selador": [
+    "C",
+    "Mesma área da tinta: 2.100 m² (selador sempre antecede a tinta)."
+   ],
+   "pintura_tinta": [
+    "C",
+    "Faces rebocadas 2.535,4 − espelhos 180 − painéis ripados internos 250 = 2.105,4 ≈ 2.100 m² de paredes pintadas. Pintura do forro de gesso: ver apontamentos."
+   ],
+   "janela_aluminio": [
+    "A",
+    "Quadro de esquadrias do projeto executivo v02: Σ janelas/maxim-ar = 99,50 m²."
+   ],
+   "vidro": [
+    "A",
+    "Vidro nas mesmas esquadrias do quadro: 99,50 m²."
+   ],
+   "porta_interna": [
+    "B",
+    "Contagem em planta: 11 portas internas de madeira (adm, WCs, depósitos, TI)."
+   ],
+   "marco_porta": [
+    "B",
+    "1 marco por porta interna = 11."
+   ],
+   "alizar": [
+    "F",
+    "11 portas × guarnição (2×2,10+0,90) m × 2 faces = 112 m + requadros de vãos ≈ 150 m adotados."
+   ],
+   "pt_luz_teto": [
+    "C",
+    "Área interna 1.827,3 m² ÷ ~16 m² por luminária (iluminância de academia, pé-direito 4,70 m) = 114 → adotados 115, conferido com as linhas de luminárias das imagens 3D."
+   ],
+   "luminaria": [
+    "C",
+    "1 luminária por ponto de luz = 115."
+   ],
+   "pt_tomada": [
+    "C",
+    "Mínimos NBR 5410 por perímetro: Σ ambientes = 88 pontos + reforço p/ equipamentos = 90 adotados."
+   ],
+   "aparelho_tomada": [
+    "C",
+    "1 tomada 2P+T por ponto = 90 (o ponto 15.18 NÃO inclui o aparelho — cap. 18 à parte)."
+   ],
+   "pt_interruptor": [
+    "B",
+    "1 por ambiente (17) + comandos setoriais das áreas de treino/circulações = 28."
+   ],
+   "aparelho_interruptor": [
+    "C",
+    "1 conjunto por ponto de interruptor = 28."
+   ],
+   "qtd_circuitos": [
+    "F",
+    "Quadro de cargas estimado: 34 circuitos em 3 quadros (a fórmula residencial NBR daria 62; academia usa circuitos setoriais de maior corrente). Confirmar no projeto elétrico."
+   ],
+   "disjuntor_mono": [
+    "C",
+    "1 disjuntor monopolar por circuito = 34."
+   ],
+   "pt_chuveiro_ele": [
+    "B",
+    "10 chuveiros contados nos vestiários (5 masc. + 5 fem.) — ponto dedicado c/ cabo 6 mm²."
+   ],
+   "disjuntor_chuveiro": [
+    "C",
+    "1 disjuntor bipolar 50 A por chuveiro = 10."
+   ],
+   "chuveiro_aparelho": [
+    "C",
+    "1 aparelho por ponto de chuveiro = 10."
+   ],
+   "quadro_distribuicao": [
+    "F",
+    "3 quadros: QGBT + QDL térreo + QDL 1º pavimento."
+   ],
+   "padrao_entrada": [
+    "C",
+    "Entrada TRIFÁSICA: climatização 52 TR + 115 luminárias + equipamentos ⇒ carga estimada > 75 kW (padrão NORTEC/ESCELSA)."
+   ],
+   "cabo_alimentador": [
+    "C",
+    "Trajeto medidor→QGBT 25 m (planta de situação) × rota 1,2 = 30 m × 6 condutores (3F+N+PE+res.) = 180 m. Bitola definitiva sai do projeto elétrico — ver apontamentos."
+   ],
+   "eletroduto_alimentador": [
+    "F",
+    "30 m × 2 eletrodutos (alimentador + reserva/medição) = 60 m."
+   ],
+   "bacia": [
+    "B",
+    "Contagem na planta de leiaute: WC masc-01: 3 + WC fem-01: 3 + WC PNE: 1 + WC masc-02: 2 + WC fem-02: 2 = 11 bacias."
+   ],
+   "lavatorio": [
+    "B",
+    "Contagem: masc-01: 4 + fem-01: 4 + PNE: 1 + masc-02: 3 + fem-02: 3 = 15 lavatórios."
+   ],
+   "pt_agua_fria": [
+    "B",
+    "1 ponto por peça: 15 lavatórios + 11 bacias + 1 pia (copa) + 1 tanque (DML) = 28. Mictórios NÃO entram — o ponto 140714 já inclui alimentação e válvula."
+   ],
+   "pt_registro_pressao": [
+    "B",
+    "1 registro de pressão por box de chuveiro = 10."
+   ],
+   "pt_esgoto_primario": [
+    "B",
+    "1 ponto primário (Ø100) por bacia = 11."
+   ],
+   "pt_esgoto_secundario": [
+    "B",
+    "15 lavatórios + 1 pia + 1 tanque = 17. Chuveiros esgotam pelos ralos (140708) e mictórios pelo 140714 — sem dupla contagem."
+   ],
+   "pt_ralo": [
+    "B",
+    "1 ralo sifonado por box de chuveiro = 10."
+   ],
+   "registro_gaveta": [
+    "F",
+    "1 por ambiente molhado (7) + barrilete/geral e setoriais (5) = 12."
+   ],
+   "tubo_agua_prumada": [
+    "F",
+    "4 colunas × (descida 6,7 m + trechos de barrilete) × 2 pavimentos ≈ 120 m DN32 — premissa de traçado."
+   ],
+   "tubo_agua_ramal": [
+    "C",
+    "Σ distâncias prumada→ambientes molhados (planta) × fator de rota 1,25 ≈ 260 m DN25."
+   ],
+   "tubo_esgoto_100": [
+    "C",
+    "Coletores internos: Σ trechos WCs→caixas medidos em planta × 1,15 ≈ 150 m."
+   ],
+   "tubo_esgoto_50": [
+    "C",
+    "Ramais secundários: 17 pontos × ~2,5 m + interligações ≈ 110 m."
+   ],
+   "tubo_esgoto_ext": [
+    "A",
+    "Última caixa→rede pública: 20 m medidos × 1,15 + folga ≈ 30 m (o preço inclui escavação e reaterro)."
+   ],
+   "caixa_inspecao": [
+    "C",
+    "5 zonas sanitárias + mudanças de direção + regra de 1 caixa a cada 12 m de coletor = 8."
+   ],
+   "caixa_gordura": [
+    "B",
+    "1 caixa de gordura na copa."
+   ],
+   "reservatorio": [
+    "F",
+    "Consumo de academia (público rotativo): 4 reservatórios de 1.000 L c/ suporte."
+   ],
+   "bancada_granito": [
+    "B",
+    "Bancadas dos 5 WCs: Σ comprimentos × 0,60 m ≈ 18 m²."
+   ],
+   "pia_cozinha": [
+    "B",
+    "1 pia com bancada na copa."
+   ],
+   "tanque": [
+    "B",
+    "1 tanque no DML."
+   ],
+   "torneira_pia": [
+    "B",
+    "1 torneira na pia da copa."
+   ],
+   "torneira_tanque": [
+    "B",
+    "1 torneira no tanque do DML."
+   ],
+   "revest_parede_molhada": [
+    "B",
+    "Sanitários revestidos de piso a teto (imagens 3D): Σ perímetros molhados 96,6 m × altura ≈ 4,35 m = 420 m²."
+   ],
+   "emboco_ceramica": [
+    "C",
+    "Emboço sob o revestimento cerâmico, mesma área: 420 m²."
+   ],
+   "reboco": [
+    "C",
+    "2 faces das paredes 2.955,4 − áreas azulejadas 420 = 2.535,4 m²."
+   ],
+   "rodape": [
+    "F",
+    "Apenas ambientes adm/apoio ≈ 180 m — áreas de treino sem rodapé (paredes com espelho/impacto)."
+   ],
+   "soleiras": [
+    "B",
+    "Vãos de transição seco/molhado e acessos: ≈ 25 m (vãos × 0,90 m, portas duplas contadas em dobro)."
+   ],
+   "peitoril": [
+    "B",
+    "Sem peitoril de granito: fachadas em esquadria/pele de vidro (decisão de projeto)."
+   ],
+   "cobertura_estrutura": [
+    "B",
+    "Sem estrutura de madeira: cobertura em estrutura metálica leve (itens SINAPI 100378/104314)."
+   ]
+  },
+  "codigos": {
+   "140714": [
+    "B",
+    "Mictórios contados: 3 no WC masc-01 + 2 no WC masc-02 = 5 (ponto completo, válvula inclusa)."
+   ],
+   "151814": [
+    "F",
+    "Iluminação externa (fachada/estacionamento): 6 pontos — premissa."
+   ],
+   "151806": [
+    "B",
+    "1 ponto de força por evaporadora piso-teto (11×48.000 + 1×36.000 BTU) = 12. Hi-walls pelos circuitos de tomadas — ver apontamentos."
+   ],
+   "090312": [
+    "A",
+    "Calha: perímetro de calhas medido na planta de cobertura = 140 m."
+   ],
+   "090314": [
+    "A",
+    "Rufo/pingadeira no mesmo perímetro = 140 m."
+   ],
+   "190117": [
+    "C",
+    "Fachadas cegas: perímetro externo 135 m × altura média 9,4 m = 1.269 − aberturas ≈ 1.200 m²."
+   ],
+   "040901": [
+    "B",
+    "Muro de arrimo na divisa do talude (imagens 1, 4 e 9): ~60 m, seção típica da tabela."
+   ],
+   "130233": [
+    "E",
+    "Saldo de piso: 1.885,79 − 1.600,51 (porcelanato treino) − 150,00 (vinílico) = 135,28 m² (WCs, adm e depósitos)."
+   ],
+   "130211": [
+    "F",
+    "Vinílico amadeirado: recepção 19,58 + copa 10,88 + convivência/café ≈ 120 → 150 m² adotados (imagens 2 e 6)."
+   ],
+   "190417": [
+    "C",
+    "Esmalte sobre a estrutura metálica aparente: 14,07 t × ~28 m²/t = 394 ≈ 400 m²."
+   ],
+   "080202": [
+    "B",
+    "Espelhos: panos de musculação/coletivas/funcional medidos nas imagens ≈ 180 m²."
+   ],
+   "050205": [
+    "C",
+    "Divisórias sanitárias em granito: 16 cabines (11 bacias + 5 mictórios) × ~3,75 m² = 60 m²."
+   ],
+   "170557": [
+    "B",
+    "4 bebedouros coletivos × 1,5 m de calha inox = 6 m."
+   ],
+   "140701": [
+    "B",
+    "1 ponto de água por bebedouro = 4 (além dos 28 pontos por peça — duplicidade intencional conferida)."
+   ],
+   "140706": [
+    "B",
+    "1 ponto de esgoto por bebedouro = 4."
+   ],
+   "180609": [
+    "B",
+    "11 splits piso-teto 48.000 BTU — contagem de evaporadoras nas imagens das áreas de treino."
+   ],
+   "180608": [
+    "B",
+    "1 split piso-teto 36.000 BTU na sala multiuso."
+   ],
+   "180604": [
+    "B",
+    "1 hi-wall 18.000 BTU no ADM."
+   ],
+   "180603": [
+    "B",
+    "2 hi-wall 12.000 BTU (recepção e diretoria)."
+   ],
+   "180602": [
+    "B",
+    "2 hi-wall 9.000 BTU (avaliação e copa). Verificação: 624.000 BTU ÷ 1.827 m² = 342 BTU/m² (faixa típica de academia no ES: 300–400)."
+   ],
+   "161016": [
+    "C",
+    "Linhas frigorígenas: 12 máquinas grandes × 15 m + 5 hi-wall × 10 m = 230 m."
+   ],
+   "161004": [
+    "C",
+    "Linha de líquido 5/8\": 12 conjuntos piso-teto × 15 m = 180 m."
+   ],
+   "161007": [
+    "C",
+    "Linha de sucção 1.1/8\": 12 × 15 m = 180 m."
+   ],
+   "161001": [
+    "C",
+    "Linha de líquido 1/4\": 5 hi-wall × 10 m = 50 m."
+   ],
+   "161003": [
+    "C",
+    "Linha de sucção 1/2\": 5 × 10 m = 50 m."
+   ],
+   "161015": [
+    "C",
+    "Gás R410A: 1,5 kg/TR × 52 TR = 78 kg."
+   ],
+   "071701": [
+    "A",
+    "Quadro de esquadrias: vãos substituídos da esquadria chroma = 64,91 m² (grau ALTO)."
+   ],
+   "190105": [
+    "C",
+    "Pintura do teto decorativo em drywall: mesma área do forro SINAPI 96114 = 450 m²."
+   ],
+   "110210": [
+    "C",
+    "Beiral/testeira perimetral: 140 m × 1,20 m de largura = 168 m²."
+   ],
+   "200513": [
+    "B",
+    "1 escada marinheiro de acesso à cobertura/reservatórios."
+   ],
+   "200582": [
+    "F",
+    "Letreiro em letra caixa (fachada + recepção): ~60 letras — premissa até o projeto de comunicação visual."
+   ],
+   "160612": [
+    "F",
+    "Placas de rota de fuga/emergência: ~40 un para 2 pavimentos — premissa até o PPCI."
+   ],
+   "170220": [
+    "F",
+    "Substituição da marcenaria (grau BAIXO): 12 m² de bancadas de granito."
+   ],
+   "210210": [
+    "F",
+    "Substituição da marcenaria (grau BAIXO): 25 m² de prateleiras de granito."
+   ],
+   "050212": [
+    "F",
+    "Substituição da marcenaria (grau BAIXO): 40 m² de divisórias modulares."
+   ],
+   "181007": [
+    "F",
+    "Substituição da iluminação decorativa (grau BAIXO): 200 luminárias de embutir ADICIONAIS às 115 funcionais — verba equivalente ao projeto luminotécnico."
+   ],
+   "180107": [
+    "F",
+    "Idem: 40 luminárias industriais nas áreas de treino."
+   ],
+   "180110": [
+    "F",
+    "Idem: 60 arandelas LED (fachada/circulações)."
+   ],
+   "100378": [
+    "C",
+    "Tesouras em aço (vãos 6–12 m entre pilares do pórtico): 1.005 m² × 8 kg/m² = 8.040 kg — exclusive pintura (item 190417)."
+   ],
+   "104314": [
+    "C",
+    "Terças em aço: 1.005 m² × 6 kg/m² = 6.030 kg. Verificação: 14 kg/m² × R$ 12–13/kg ≈ R$ 178/m² (faixa de cobertura apoiada: 150–250)."
+   ],
+   "100674": [
+    "A",
+    "Pele de vidro da fachada medida nas elevações: 166,50 m² — substituída por caixilho fixo de alumínio c/ vidro (grau ALTO)."
+   ],
+   "99862": [
+    "B",
+    "Fachada ripada/brise (elevações + 3D): ≈ 600 m² — substituída por gradil de alumínio (grau MÉDIO)."
+   ],
+   "104756": [
+    "B",
+    "Painéis ripados internos (imagens 6, 8 e 11): ≈ 250 m² — forro de pinus como equivalente de tabela (grau MÉDIO)."
+   ],
+   "96114": [
+    "B",
+    "Elemento decorativo do teto (imagens 8 e 10): ≈ 450 m² em drywall (grau MÉDIO)."
+   ],
+   "103689": [
+    "F",
+    "ACM do totem e detalhes: 100 m² em chapa galvanizada c/ estrutura (grau MÉDIO)."
+   ],
+   "99842": [
+    "B",
+    "Guarda-corpo: 45 m medidos (escada/mezanino) — aço galvanizado h=1,10 m, atende NBR 14718 (grau MÉDIO)."
+   ],
+   "102077": [
+    "C",
+    "Escada externa: 2 lances ≈ 4 m³ de concreto armado — a composição já inclui fôrma, armação e concreto."
+   ],
+   "98505": [
+    "F",
+    "Jardim vertical 30 m² → plantio de forração como equivalente de tabela (grau BAIXO)."
+   ],
+   "102180": [
+    "A",
+    "Vidro temperado 8 mm (portas/divisórias do quadro de esquadrias): 56,73 m²."
+   ],
+   "104757": [
+    "B",
+    "Forro em fibra mineral na recepção: 25 m² (imagem 2)."
+   ]
+  }
+ }
 }

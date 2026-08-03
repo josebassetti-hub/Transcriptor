@@ -59,7 +59,8 @@ tools/   build_base.py (XLSX→JSON) · parse_caderno.py (Caderno Técnico PDF�
          embed_data.py (injeta os JSON no orcamentista.html) ·
          build_sinapi.py (SINAPI_Referência.xlsx → preços da UF) ·
          decompoe_sinapi.py (composição sem preço → MO oficial + material a cotar) ·
-         gera_excel.py (orcamento.json → planilha .xlsx de 8 abas)
+         gera_excel.py (orcamento.json → planilha .xlsx de 8 abas) ·
+         gera_memoria.py + memoria_docx.js (entrada → Memória de Cálculo .docx p/ o engenheiro)
 ```
 
 ### Segunda tabela de referência: SINAPI
@@ -123,6 +124,21 @@ premissas/lacunas e a lista de ambientes):
 python3 tools/gera_excel.py orcamento.json Orcamento.xlsx --refs data
 ```
 
+**Memória de cálculo para o engenheiro** — documento Word que demonstra a origem de cada
+quantidade (12 seções: quadro de ambientes, geometria derivada, memória item a item com a
+expressão aritmética e a CLASSE de origem A–F, verificações de fechamento, apontamentos,
+substituições, premissas e lacunas). As derivações ficam no bloco `memoria` da própria entrada
+(`{grupos, codigos}` → `[classe, texto]`); itens sem derivação declarada herdam a fórmula do motor:
+
+```bash
+python3 tools/gera_memoria.py entrada.json --refs data --out memoria-data.json
+node tools/memoria_docx.js memoria-data.json Memoria-de-Calculo.docx   # npm i docx, 1ª vez
+```
+
+Escrever a memória é também uma auditoria: no exemplo comercial ela eliminou 5 pontos de água e
+15 de esgoto duplicados com mictórios/ralos e corrigiu o desconto de azulejo do reboco (−R$ 23,6
+mil c/ BDI no total).
+
 Quando sair tabela nova (ou de outro estado/SINAPI no mesmo formato):
 
 ```bash
@@ -160,7 +176,7 @@ do Claude Code neste repositório), você envia o projeto e o Claude produz **o 
 app** — a skill embute **as duas bases de preços** (DER-ES e SINAPI-ES), o mapa de padrões, os 832
 critérios de medição, o gerador de Excel e um **motor em Python idêntico ao do app**, validado
 contra **dois orçamentos dourados**: residencial (custo direto R$ 175.142,06 na casa de 70 m²) e
-comercial (academia de 1.886 m² em alvenaria — 108 itens DER-ES + 12 SINAPI, R$ 4.995.285,23).
+comercial (academia de 1.886 m² em alvenaria — 108 itens DER-ES + 12 SINAPI, R$ 4.973.643,43).
 
 Além do orçamento residencial, a skill sabe: escolher **perfil estrutural comercial**, orçar
 **cobertura metálica por peso**, buscar nas duas tabelas antes de declarar que um item não existe,

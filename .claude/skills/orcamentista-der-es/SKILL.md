@@ -85,7 +85,7 @@ python3 scripts/gera_excel.py orcamento.json Orcamento.xlsx --refs references
 
 O motor é o **mesmo do app orcamentista.html** (validado item a item). `--autoteste` prova a
 integridade com **dois dourados**: residencial (custo direto R$ 175.142,06) e comercial (academia
-1.886 m² em alvenaria — 108 itens DER-ES, 12 SINAPI, total R$ 4.995.285,23).
+1.886 m² em alvenaria — 108 itens DER-ES, 12 SINAPI, total R$ 4.973.643,43).
 
 **5. Sanidade (checklist do orçamentista).**
 
