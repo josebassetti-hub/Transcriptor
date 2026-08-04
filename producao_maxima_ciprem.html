@@ -1,0 +1,425 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CIPREM · Produção Máxima, Preço e Jazida</title>
+<style>
+  /* ============ tokens (família CIPREM) ============ */
+  :root{
+    color-scheme: light;
+    --paper:#f9f9f7; --surface:#fcfcfb; --card:#ffffff;
+    --ink:#14181d; --ink-2:#4c525b; --ink-3:#84888f;
+    --hair:#e3e2dc; --grid:#e1e0d9; --baseline:#c3c2b7;
+    --accent:#256abf; --accent-ink:#1c5cab; --accent-wash:#eaf1fa;
+    --good:#0ca30c; --good-text:#006300; --warn:#b7791f; --crit:#d03b3b; --crit-wash:#fbeeee;
+    --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --s5:#e87ba4;
+    --shadow:0 1px 2px rgba(20,24,29,.05), 0 8px 24px -18px rgba(20,24,29,.25);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:where(:not([data-theme="light"])){
+      color-scheme: dark;
+      --paper:#0d0d0d; --surface:#1a1a19; --card:#20201f;
+      --ink:#f2f1ec; --ink-2:#c3c2b7; --ink-3:#898781;
+      --hair:#2c2c2a; --grid:#2c2c2a; --baseline:#383835;
+      --accent:#5598e7; --accent-ink:#86b6ef; --accent-wash:#17233a;
+      --good:#0ca30c; --good-text:#0ca30c; --warn:#fab219; --crit:#e66767; --crit-wash:#3a1d1d;
+      --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s5:#d55181;
+      --shadow:none;
+    }
+  }
+  :root[data-theme="dark"]{
+    color-scheme: dark;
+    --paper:#0d0d0d; --surface:#1a1a19; --card:#20201f;
+    --ink:#f2f1ec; --ink-2:#c3c2b7; --ink-3:#898781;
+    --hair:#2c2c2a; --grid:#2c2c2a; --baseline:#383835;
+    --accent:#5598e7; --accent-ink:#86b6ef; --accent-wash:#17233a;
+    --good:#0ca30c; --good-text:#0ca30c; --warn:#fab219; --crit:#e66767; --crit-wash:#3a1d1d;
+    --s1:#3987e5; --s2:#d95926; --s3:#199e70; --s4:#c98500; --s5:#d55181;
+    --shadow:none;
+  }
+  :root[data-theme="light"]{
+    color-scheme: light;
+    --paper:#f9f9f7; --surface:#fcfcfb; --card:#ffffff;
+    --ink:#14181d; --ink-2:#4c525b; --ink-3:#84888f;
+    --hair:#e3e2dc; --grid:#e1e0d9; --baseline:#c3c2b7;
+    --accent:#256abf; --accent-ink:#1c5cab; --accent-wash:#eaf1fa;
+    --good:#0ca30c; --good-text:#006300; --warn:#b7791f; --crit:#d03b3b; --crit-wash:#fbeeee;
+    --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --s5:#e87ba4;
+    --shadow:0 1px 2px rgba(20,24,29,.05), 0 8px 24px -18px rgba(20,24,29,.25);
+  }
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:Charter,"Bitstream Charter",Cambria,Georgia,serif;
+    font-size:17px; line-height:1.65;
+  }
+  .sans, h1,h2,h3,h4, table, .eyebrow, .chip, .tile, .toc, .viz, .note, .src, header, footer{
+    font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  }
+  .wrap{max-width:900px; margin:0 auto; padding:0 24px}
+  p{max-width:70ch}
+  a{color:var(--accent-ink); text-decoration-thickness:1px; text-underline-offset:2px}
+  a:focus-visible{outline:2px solid var(--accent); outline-offset:2px; border-radius:2px}
+  strong{font-weight:650}
+
+  header.masthead{border-bottom:1px solid var(--hair); padding:56px 0 40px; background:var(--surface)}
+  .eyebrow{font-size:12.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--accent-ink); font-weight:650}
+  h1{font-size:clamp(30px,4.6vw,44px); line-height:1.12; margin:10px 0 14px; letter-spacing:-.015em; font-weight:750; text-wrap:balance}
+  .sub{font-size:18px; color:var(--ink-2); max-width:64ch; margin:0}
+  .meta{display:flex; flex-wrap:wrap; gap:8px 22px; margin-top:22px; font-size:13.5px; color:var(--ink-3)}
+  .meta b{color:var(--ink-2); font-weight:600}
+
+  h2{font-size:26px; letter-spacing:-.01em; margin:0 0 6px; font-weight:700; text-wrap:balance}
+  h3{font-size:18.5px; margin:34px 0 10px; font-weight:680}
+  section{padding:44px 0 8px}
+  .sec-head{display:flex; align-items:baseline; gap:14px; border-top:2px solid var(--ink); padding-top:18px; margin-bottom:18px}
+  .sec-num{font-size:14px; font-weight:750; color:var(--accent-ink); letter-spacing:.06em; white-space:nowrap; font-variant-numeric:tabular-nums}
+
+  .toc{margin:26px 0 0; padding:0; display:flex; flex-wrap:wrap; gap:8px; list-style:none; font-size:13.5px}
+  .toc a{display:inline-block; padding:6px 12px; border:1px solid var(--hair); border-radius:999px; text-decoration:none; color:var(--ink-2); background:var(--card)}
+  .toc a:hover{border-color:var(--accent); color:var(--accent-ink)}
+
+  .tiles{display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:12px; margin:26px 0 8px}
+  .tile{background:var(--card); border:1px solid var(--hair); border-radius:10px; padding:16px 18px; box-shadow:var(--shadow)}
+  .tile .k{font-size:12px; letter-spacing:.09em; text-transform:uppercase; color:var(--ink-3); font-weight:650}
+  .tile .v{font-size:27px; font-weight:750; letter-spacing:-.02em; margin-top:6px; line-height:1.1}
+  .tile .d{font-size:13px; color:var(--ink-2); margin-top:5px; line-height:1.45}
+
+  .tbl-wrap{overflow-x:auto; margin:16px 0 8px; border:1px solid var(--hair); border-radius:10px; background:var(--card); box-shadow:var(--shadow)}
+  table{border-collapse:collapse; width:100%; font-size:14px; line-height:1.5}
+  caption{text-align:left; font-size:13px; color:var(--ink-3); padding:12px 14px 0; caption-side:top}
+  th,td{padding:10px 14px; text-align:left; vertical-align:top; border-top:1px solid var(--hair)}
+  thead th{border-top:none; font-size:12px; letter-spacing:.07em; text-transform:uppercase; color:var(--ink-3); font-weight:680; background:var(--surface)}
+  td.num, th.num{text-align:right; font-variant-numeric:tabular-nums}
+  tbody tr:hover{background:var(--accent-wash)}
+  td small, .small{font-size:12.5px; color:var(--ink-3)}
+  .row-hl td{background:var(--accent-wash); font-weight:600}
+  .row-crit td{background:var(--crit-wash)}
+
+  .chip{display:inline-flex; align-items:center; gap:5px; font-size:11.5px; font-weight:700; letter-spacing:.05em; padding:2.5px 9px; border-radius:999px; text-transform:uppercase; white-space:nowrap}
+  .chip.ok{background:color-mix(in srgb,var(--good) 12%,transparent); color:var(--good-text)}
+  .chip.warn{background:color-mix(in srgb,var(--warn) 14%,transparent); color:var(--warn)}
+  .chip.crit{background:color-mix(in srgb,var(--crit) 13%,transparent); color:var(--crit)}
+  .chip.info{background:var(--accent-wash); color:var(--accent-ink)}
+
+  .note{border:1px solid var(--hair); border-left:3px solid var(--accent); background:var(--card); border-radius:8px; padding:14px 18px; margin:20px 0; font-size:14.5px; color:var(--ink-2); box-shadow:var(--shadow)}
+  .note.crit{border-left-color:var(--crit)}
+  .note.good{border-left-color:var(--good)}
+  .note b{color:var(--ink)}
+
+  .viz{background:var(--card); border:1px solid var(--hair); border-radius:10px; padding:18px 20px 14px; margin:18px 0; box-shadow:var(--shadow)}
+  .viz h4{margin:0 0 2px; font-size:15px; font-weight:700}
+  .viz .sub2{font-size:12.5px; color:var(--ink-3); margin:0 0 14px}
+  .viz .axis-note{font-size:11.5px; color:var(--ink-3); margin-top:10px; border-top:1px solid var(--grid); padding-top:8px}
+
+  .cap-row{display:grid; grid-template-columns:minmax(150px,230px) 1fr; gap:12px; align-items:center; padding:7px 0}
+  .cap-lab{font-size:13px; color:var(--ink-2); line-height:1.3}
+  .cap-lab b{display:block; color:var(--ink); font-weight:650}
+  .cap-track{position:relative; height:26px; background:var(--surface); border-radius:5px; overflow:hidden}
+  .cap-bar{position:absolute; top:5px; bottom:5px; border-radius:4px; background:var(--s1); min-width:4px}
+  .cap-bar.crit{background:var(--crit)}
+  .cap-bar.warn{background:var(--s4)}
+  .cap-bar.good{background:var(--s3)}
+  .cap-val{position:absolute; top:50%; transform:translateY(-50%); font-size:11.5px; font-weight:650; color:var(--ink-2); white-space:nowrap; font-variant-numeric:tabular-nums}
+  .cap-ref{position:absolute; top:0; bottom:0; width:0; border-left:2px dashed var(--crit); z-index:2}
+  .cap-ref span{position:absolute; top:-1px; left:5px; font-size:10px; color:var(--crit); font-weight:700; white-space:nowrap}
+
+  ul.tight{margin:10px 0; padding-left:22px}
+  ul.tight li{margin:7px 0}
+  ol.tight{margin:10px 0; padding-left:22px}
+  ol.tight li{margin:7px 0}
+
+  .src{font-size:13px; color:var(--ink-2)}
+  .src ul{columns:1; padding-left:20px}
+  .src li{margin:5px 0; overflow-wrap:anywhere}
+  footer{border-top:1px solid var(--hair); margin-top:56px; padding:26px 0 48px; font-size:13px; color:var(--ink-3); background:var(--surface)}
+  footer p{max-width:none}
+
+  @media (max-width:640px){
+    .cap-row{grid-template-columns:1fr}
+  }
+  @media print{
+    body{font-size:12.5px; background:#fff}
+    .toc{display:none}
+    section{padding:20px 0 4px; break-inside:avoid-page}
+    .viz,.tile,.tbl-wrap{box-shadow:none}
+    a{color:inherit; text-decoration:none}
+  }
+</style>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="eyebrow">CIPREM — Cimento e Premoldados Ltda · Grupo Colombi · São Mateus/ES</div>
+    <h1>Produção máxima, preço e jazida — análise focada de riscos</h1>
+    <p class="sub">Quanto pode sair da pedreira por mês (e em que unidade), como a brita é vendida e precificada no ES e na Bahia, quanto dura a jazida e por onde crescer — com fontes públicas citadas e os dados reais da pedreira-modelo do grupo (PVV, 2025).</p>
+    <div class="meta">
+      <span><b>Complementa:</b> Plano de Produção · Verificação de Licenças · Estudo de Viabilidade</span>
+      <span><b>Data:</b> ago/2026</span>
+    </div>
+    <ul class="toc">
+      <li><a href="#escada">1 · Máximo por mês</a></li>
+      <li><a href="#empolamento">2 · Empolamento (fontes)</a></li>
+      <li><a href="#unidade">3 · m³ ou tonelada?</a></li>
+      <li><a href="#preco">4 · Preço ES × Bahia</a></li>
+      <li><a href="#jazida">5 · Jazida e vida útil</a></li>
+      <li><a href="#expansao">6 · Onde crescer</a></li>
+      <li><a href="#mitigacao">7 · Mitigação de riscos</a></li>
+    </ul>
+  </div>
+</header>
+
+<!-- ============================== 1 ESCADA ============================== -->
+<section id="escada"><div class="wrap">
+  <div class="sec-head"><span class="sec-num">1</span><h2>Quanto pode sair por mês — a escada de tetos</h2></div>
+
+  <p>“Produção máxima” tem <strong>cinco respostas diferentes</strong>, dependendo de qual limite se olha. A escada abaixo coloca todas na mesma régua (toneladas/mês), e a tabela traduz cada degrau nas três unidades que aparecem nos documentos — m³ <em>in situ</em> (rocha no maciço, a unidade da licença), toneladas (a unidade da balança e da nota fiscal) e m³ de produto solto (a unidade do pátio e do varejo).</p>
+
+  <div class="viz">
+    <h4>Os cinco tetos de produção mensal</h4>
+    <p class="sub2">toneladas/mês · linha tracejada = teto legal vigente (licença ambiental)</p>
+    <div class="cap-row"><div class="cap-lab"><b>Física da planta</b>britagem 20 h/dia, 2 turnos</div>
+      <div class="cap-track"><div class="cap-bar" style="left:0;width:100%"></div><span class="cap-val" style="right:6px;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.4)">≈ 50.000 t</span></div></div>
+    <div class="cap-row"><div class="cap-lab"><b>Teto do porte Pequeno</b>Anexo II — exige alterar a licença</div>
+      <div class="cap-track"><div class="cap-ref" style="left:44%"><span></span></div><div class="cap-bar warn" style="left:0;width:66.5%"></div><span class="cap-val" style="left:calc(66.5% + 8px)">≈ 33.250 t</span></div></div>
+    <div class="cap-row"><div class="cap-lab"><b>Perfuração — 1 turno</b>cenário central PWH-5000</div>
+      <div class="cap-track"><div class="cap-ref" style="left:44%"><span></span></div><div class="cap-bar warn" style="left:0;width:50%"></div><span class="cap-val" style="left:calc(50% + 8px)">≈ 25.000 t</span></div></div>
+    <div class="cap-row"><div class="cap-lab"><b>Licença ambiental ATUAL</b>LI 000478/2025-D, condicionante 1</div>
+      <div class="cap-track"><div class="cap-bar crit" style="left:0;width:44%"></div><span class="cap-val" style="left:calc(44% + 8px)">≈ 22.000 t</span></div></div>
+    <div class="cap-row"><div class="cap-lab"><b>PVV real 2025 (benchmark)</b>rocha desmontada na pedreira-modelo</div>
+      <div class="cap-track"><div class="cap-ref" style="left:44%"><span></span></div><div class="cap-bar" style="left:0;width:39.4%"></div><span class="cap-val" style="left:calc(39.4% + 8px)">≈ 19.700 t</span></div></div>
+    <div class="cap-row"><div class="cap-lab"><b>Platô do plano (ano 4+)</b>recomendado ao banco — 82% da licença</div>
+      <div class="cap-track"><div class="cap-ref" style="left:44%"><span></span></div><div class="cap-bar good" style="left:0;width:36%"></div><span class="cap-val" style="left:calc(36% + 8px)">18.000 t</span></div></div>
+    <p class="axis-note">O ferro aguenta ~50.000 t/mês; a lei permite ~22.000 t hoje e ~33.250 t após ampliação simples (mesmo porte); o plano pede 18.000 t — abaixo de todos os tetos e igual ao ritmo real da PVV.</p>
+  </div>
+
+  <div class="tbl-wrap"><table>
+    <caption>A mesma escada nas três unidades — conversões do PAE: 2,749 t/m³ in situ · 1,5 t/m³ produto solto</caption>
+    <thead><tr><th>Teto</th><th class="num">m³ in situ/mês</th><th class="num">t/mês</th><th class="num">m³ produto/mês</th><th>Natureza do limite</th></tr></thead>
+    <tbody>
+      <tr><td>Física da planta (20 h/dia)</td><td class="num">≈ 18.200</td><td class="num">≈ 50.000</td><td class="num">≈ 33.300</td><td>Equipamento <span class="chip info">folga enorme</span></td></tr>
+      <tr><td>Porte Pequeno máx. (Anexo II: 75.000 ÷ 6,2 ha)</td><td class="num">12.097</td><td class="num">≈ 33.250</td><td class="num">≈ 22.170</td><td>Regulatório futuro <span class="chip warn">exige alterar licença</span></td></tr>
+      <tr><td>Perfuração 1 turno (cenário central)</td><td class="num">≈ 9.100</td><td class="num">≈ 25.000</td><td class="num">≈ 16.700</td><td>Operacional <span class="chip warn">monitorar</span></td></tr>
+      <tr class="row-crit"><td><strong>Licença ATUAL — teto legal vigente</strong></td><td class="num"><strong>8.000</strong></td><td class="num"><strong>≈ 22.000</strong></td><td class="num"><strong>≈ 14.660</strong></td><td>Regulatório vigente <span class="chip crit">trava hoje</span></td></tr>
+      <tr><td>PVV 2025 — realizado (236.281 t no ano)</td><td class="num">7.163</td><td class="num">19.690</td><td class="num">≈ 13.100</td><td>Benchmark real do grupo <span class="chip info">referência</span></td></tr>
+      <tr class="row-hl"><td>Platô do plano CIPREM (ano 4+)</td><td class="num">6.548</td><td class="num">18.000</td><td class="num">12.000</td><td>Meta recomendada <span class="chip ok">82% da licença</span></td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="note good"><b>O platô pedido ao banco é o ritmo que o grupo já pratica.</b> Em 2025 a Pedreira Vale Verde desmontou 236.280 t de rocha (≈ 7.160 m³ in situ/mês) e produziu 216.385 t de britados. O platô da CIPREM (6.548 m³ in situ = 18.000 t/mês) é <em>ligeiramente menor</em> que o realizado da pedreira-modelo — não é uma aposta, é replicação.</div>
+</div></section>
+
+<!-- ============================== 2 EMPOLAMENTO ============================== -->
+<section id="empolamento"><div class="wrap">
+  <div class="sec-head"><span class="sec-num">2</span><h2>8.000 m³ é pedra bruta? E o desmonte aumenta o volume? — sim, com fontes</h2></div>
+
+  <p><strong>Sim: os 8.000 m³/mês da licença são rocha bruta no maciço (in situ)</strong> — e sim, depois do desmonte o mesmo material ocupa muito mais espaço, porque a pilha fragmentada tem vazios entre os pedaços. Esse fenômeno tem nome técnico (<strong>empolamento</strong>; em inglês <em>swell factor</em>) e é tão conhecido que o antigo DNPM padronizou a <em>tonelada</em> como unidade oficial da mineração justamente para eliminar a ambiguidade entre volume no maciço e volume desagregado.</p>
+
+  <div class="viz">
+    <h4>O caminho do volume — de maciço a produto vendável (1 mês no teto da licença)</h4>
+    <p class="sub2">a massa não muda (≈ 22.000 t); o que muda é o espaço que ela ocupa</p>
+    <div class="cap-row"><div class="cap-lab"><b>1 · Rocha no maciço (in situ)</b>o que a licença mede</div>
+      <div class="cap-track"><div class="cap-bar" style="left:0;width:54.5%"></div><span class="cap-val" style="left:calc(54.5% + 8px)">8.000 m³ · 2,749 t/m³</span></div></div>
+    <div class="cap-row"><div class="cap-lab"><b>2 · Pilha detonada</b>empolamento de rocha dura: +50–80%</div>
+      <div class="cap-track"><div class="cap-bar warn" style="left:0;width:88%"></div><span class="cap-val" style="left:calc(88% + 8px)">≈ 12.000–14.400 m³</span></div></div>
+    <div class="cap-row"><div class="cap-lab"><b>3 · Brita classificada solta</b>massa unitária ≈ 1,5 t/m³ (NBR NM 45)</div>
+      <div class="cap-track"><div class="cap-bar good" style="left:0;width:100%"></div><span class="cap-val" style="right:6px;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.4)">≈ 14.660 m³</span></div></div>
+    <p class="axis-note">Fator volumétrico total: 2,749 ÷ 1,5 = <strong>1,83×</strong> — cada m³ de maciço vira ~1,83 m³ de produto solto. O manual do CETEM traz exatamente essa razão (massa específica ≈ 2,7 ÷ massa unitária ≈ 1,5 = 1,8).</p>
+  </div>
+
+  <h3>O que as fontes dizem (verificáveis nos links)</h3>
+  <div class="tbl-wrap"><table>
+    <caption>Confirmação independente dos três fatos — medição in situ, empolamento e densidades</caption>
+    <thead><tr><th>Fonte</th><th>O que confirma</th><th class="num">Valor</th></tr></thead>
+    <tbody>
+      <tr><td><a href="https://www.gov.br/dnit/pt-br/assuntos/planejamento-e-pesquisa/ipr/coletanea-de-normas/coletanea-de-normas/especificacao-de-servico-es/dnit106_2009_es.pdf">Norma DNIT 106/2009-ES (Cortes)</a></td><td>Medição oficial de escavação é pelo volume <strong>no corte (in situ)</strong>, por topografia</td><td class="num">—</td></tr>
+      <tr><td><a href="https://crirsco.com/wp-content/uploads/2023/12/BRAZIL-CBRR-2022-Portuguese.pdf">Guia CBRR 2022 (padrão da Resolução ANM 94/2022)</a></td><td>Recurso/reserva mineral é definido e quantificado <strong>in situ</strong></td><td class="num">—</td></tr>
+      <tr><td><a href="https://ibram.org.br/noticia/dnpm-publica-portaria-sobre-unidade-de-medida-padrao-para-os-produtos-minerais/">Portaria DNPM da unidade-padrão (via IBRAM)</a></td><td>DNPM adotou a <strong>tonelada</strong> para eliminar o erro “volume aparente × volume real (<em>empolamento</em>)”</td><td class="num">—</td></tr>
+      <tr><td><a href="https://monografias.ufop.br/bitstream/35400000/3008/6/MONOGRAFIA_Sele%C3%A7aoDimensionamentoFrota.pdf">UFOP — Escola de Minas</a></td><td>Definição: empolamento = volume solto ÷ volume <strong>no banco (in situ)</strong></td><td class="num">V<sub>s</sub> = V<sub>c</sub>·(1+E)</td></tr>
+      <tr><td><a href="https://degraus.com.br/empolamento-do-solo/">Ricardo &amp; Catalani — Manual Prático de Escavação</a></td><td>Empolamento de <strong>rocha detonada</strong></td><td class="num">≈ 50%</td></tr>
+      <tr><td><a href="http://www.rio.rj.gov.br/dlstatic/10112/7219844/4197840/TabelasO.pdf">Tabelas SCO-Rio / FGV (Prefeitura do Rio)</a></td><td>Pedra: empolamento 65%; <strong>rocha fragmentada: fator 1,50</strong>; marroada 1,60 t/m³</td><td class="num">65% · 1,5</td></tr>
+      <tr><td><a href="https://www.gxcontractor.com/equipment/article/13003780/what-you-see-isnt-always-what-you-get">Referências internacionais (base Caterpillar Performance Handbook)</a></td><td><em>Blasted rock</em> 40–65%; <strong>granito são ≈ 80%</strong> de swell</td><td class="num">40–80%</td></tr>
+      <tr><td><a href="https://mineralis.cetem.gov.br/bitstream/cetem/2043/1/manual_de_agregados_para_construcao_civil.pdf">CETEM — Manual de Agregados para Construção Civil</a></td><td>Brita comum: massa específica ≈ 2,7 g/cm³; <strong>massa unitária solta ≈ 1,5 g/cm³</strong> → razão 1,8</td><td class="num">2,7 · 1,5</td></tr>
+      <tr><td><a href="https://dcc.ufpr.br/wp-content/uploads/2020/08/TC-031-Agregados-2020.pdf">UFPR — apostila de agregados (NBR NM 45)</a></td><td>Massa unitária solta: brita 1 = 1,43 t/m³; brita 2 = 1,38 t/m³</td><td class="num">1,38–1,43</td></tr>
+      <tr><td><a href="https://pt.linkedin.com/pulse/convers%C3%A3o-de-brita-tonelada-metros-c%C3%BAbicos-daniel-lopes-jr">Índices CPTI (conversão comercial por produto)</a></td><td>Brita 1/2/3 = 1,45 · pó = 1,56 · pedrisco = 1,42 · graduada = 1,78 t/m³</td><td class="num">1,42–1,78</td></tr>
+      <tr><td><a href="https://www.materiais.gelsonluz.com/2018/09/densidade-granito.html">Densidade do granito (referências de materiais)</a></td><td>Granito in situ</td><td class="num">2,63–2,75 t/m³</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="note"><b>Método da verificação.</b> O ambiente desta análise não conseguiu abrir os sites diretamente (bloqueio de proxy em vários domínios, inclusive .gov.br); os trechos acima vêm do índice do buscador, com a URL registrada — <b>clique nos links para conferir na fonte</b>. Nenhum valor foi inventado; onde o número não apareceu literalmente, ele não foi citado. Ressalva de honestidade: uma monografia da UFOP cita “~30% típico” para material de mina genérico, e o índice estatístico do Anuário Mineral (DNPM) usa 1,80 t/m³ para “brita” como conversão de produção — nenhum dos dois trata da massa unitária de brita classificada solta (NBR NM 45), que é o que vale para pátio e caçamba.</div>
+
+  <div class="note crit"><b>A pegadinha que a seção 3 resolve: o volume cresce, a massa e a receita não.</b> Os 8.000 m³ in situ viram ~14.660 m³ de produto — mas continuam sendo as mesmas ~22.000 toneladas. Como pedreira vende <em>por tonelada na balança</em>, o empolamento não cria receita extra: ele só muda a unidade em que o mesmo material é descrito. Todo cálculo de receita deste projeto usa toneladas exatamente para não cair nessa armadilha.</div>
+</div></section>
+
+<!-- ============================== 3 UNIDADE ============================== -->
+<section id="unidade"><div class="wrap">
+  <div class="sec-head"><span class="sec-num">3</span><h2>Como se vende: por m³ ou por tonelada?</h2></div>
+
+  <p><strong>Na porta da pedreira, vende-se por tonelada — e isso não é só costume, é regra do setor.</strong> Desde outubro de 2010, atendendo à <a href="http://www.sindibrita.org.br/destaque/svp.htm">Portaria DNPM nº 456/2007 (Sistema de Venda a Peso)</a>, as mineradoras de pedra britada vendem cobrando pelo <em>peso</em>, com balança aferida pelo INMETRO e tíquete de pesagem emitido junto com a nota fiscal — por isso o orçamento da CIPREM inclui uma balança rodoviária. O m³ aparece nos outros elos: as tabelas oficiais (SINAPI e DER) publicam os insumos de brita em R$/m³ <em>“posto pedreira, sem frete”</em>, e o varejo (depósitos, caminhoneiros, caçambas e sacos) vende “o metro” ao consumidor final.</p>
+
+  <div class="tbl-wrap"><table>
+    <caption>Quem usa qual unidade — evidência externa e a prova interna (tabela de preços oficial da PVV, 2025)</caption>
+    <thead><tr><th>Evidência</th><th>Unidade</th></tr></thead>
+    <tbody>
+      <tr class="row-hl"><td>Portaria DNPM nº 456/2007 — Sistema de Venda a Peso (vigente desde out/2010): mineradoras de brita vendem pelo peso, balança aferida INMETRO + NF-e (<a href="http://www.sindibrita.org.br/destaque/svp.htm">SINDIBRITA</a>)</td><td><strong>R$/tonelada</strong></td></tr>
+      <tr><td>Tabela de Preços PVV: colunas “Preço <strong>(t)</strong> PEDREIRA”, “Preço <strong>(t)</strong> FILIAL PORTO”, “Preço <strong>(t)</strong> FILIAL TRANCOSO”</td><td><strong>R$/tonelada</strong></td></tr>
+      <tr><td>Regra de frete escrita na própria tabela PVV: “Carreta: 0,91 × volume <strong>(T)</strong> × KM · Truck: 0,99 × volume <strong>(T)</strong> × KM”</td><td><strong>R$/t/km</strong></td></tr>
+      <tr><td>Controles operacionais PVV 2025: “PRODUÇÃO <strong>(T)</strong>”, “VENDA <strong>(T)</strong>”, “ESTOQUE <strong>(T)</strong>”, “ROCHA BRUTA DESMONTADA (T)”</td><td><strong>toneladas</strong></td></tr>
+      <tr><td>Licença ambiental (LI) e PAE/ANM: volume autorizado e reserva</td><td><strong>m³ in situ</strong></td></tr>
+      <tr><td>Tabelas oficiais de preço — insumos SINAPI “posto pedreira/fornecedor, sem frete” (cód. 4721 brita 1 etc.) e DER-ES: publicadas em m³ (<a href="https://orcamentor.com/insumos/britas-e-agregados/">família SINAPI</a>)</td><td><strong>R$/m³ solto</strong></td></tr>
+      <tr><td>Varejo e entrega final: caçamba (5–12 m³), “o metro”, saco de 20 kg</td><td><strong>m³ / saco</strong></td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="note"><b>Recomendação contratual.</b> Vender e projetar em <strong>R$/t</strong> (como a PVV faz) e, em qualquer contrato ou cotação que fale em m³, gravar a conversão por escrito (“1 m³ = 1,5 t” ou o valor por produto — brita 1,45 · pó 1,56 · graduada 1,78 t/m³, índices CPTI). É onde nascem as brigas comerciais e as confusões de licença: <em>m³ da licença é maciço; m³ do cliente é solto</em> — nunca compare os dois diretamente.</div>
+</div></section>
+
+<!-- ============================== 4 PRECO ============================== -->
+<section id="preco"><div class="wrap">
+  <div class="sec-head"><span class="sec-num">4</span><h2>O preço do ES é mesmo mais barato que o da Bahia — ou é o frete?</h2></div>
+
+  <p><strong>É o frete (e a margem de revenda das filiais). Na mesma base de comparação — porta da pedreira —, os preços são próximos, e o modelo CIPREM ainda está ~8% abaixo do realizado do grupo.</strong> A impressão de que “na Bahia se vende muito mais caro” vem de comparar o preço médio <em>consolidado</em> da PVV (R$ 116/t, que embute entrega e revenda em Porto Seguro e Trancoso) com o preço <em>FOB</em> do modelo ES (R$ 68,50/t, sem nenhum frete). É comparar preço entregue com preço na porteira.</p>
+
+  <div class="viz">
+    <h4>Decomposição do preço médio realizado da PVV em 2025 (R$/t)</h4>
+    <p class="sub2">147.566 t vendidas por 3 canais · receita bruta real R$ 17,14 milhões</p>
+    <div class="cap-row"><div class="cap-lab"><b>Na porta da pedreira (FOB)</b>75.189 t · tabela com desconto médio</div>
+      <div class="cap-track"><div class="cap-bar" style="left:0;width:50.3%"></div><span class="cap-val" style="left:calc(50.3% + 8px)">R$ 76,80/t</span></div></div>
+    <div class="cap-row"><div class="cap-lab"><b>Filial Porto Seguro</b>44.783 t · inclui frete ~45 km + margem</div>
+      <div class="cap-track"><div class="cap-bar warn" style="left:0;width:65.5%"></div><span class="cap-val" style="left:calc(65.5% + 8px)">R$ 100,00/t</span></div></div>
+    <div class="cap-row"><div class="cap-lab"><b>Filial Trancoso</b>27.593 t · praça turística, frete maior</div>
+      <div class="cap-track"><div class="cap-bar crit" style="left:0;width:100%"></div><span class="cap-val" style="right:6px;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.4)">R$ 152,80/t</span></div></div>
+    <div class="cap-row"><div class="cap-lab"><b>Média consolidada (o “R$ 116”)</b>o número que parece “muito mais caro”</div>
+      <div class="cap-track"><div class="cap-bar" style="left:0;width:76%"></div><span class="cap-val" style="left:calc(76% + 8px)">R$ 116,14/t</span></div></div>
+    <div class="cap-row"><div class="cap-lab"><b>FOB-equivalente PVV</b>todas as t a preço de pedreira</div>
+      <div class="cap-track"><div class="cap-bar good" style="left:0;width:48.5%"></div><span class="cap-val" style="left:calc(48.5% + 8px)">R$ 74,08/t</span></div></div>
+    <div class="cap-row"><div class="cap-lab"><b>Modelo CIPREM-ES (FOB)</b>mix conservador da projeção</div>
+      <div class="cap-track"><div class="cap-bar good" style="left:0;width:44.9%"></div><span class="cap-val" style="left:calc(44.9% + 8px)">R$ 68,50/t</span></div></div>
+    <p class="axis-note">Da receita bruta real da PVV, ≈ 36% (R$ 6,2 milhões) é logística/margem de canal embutida — não é “preço da brita”, é entrega. FOB = na porta, frete por conta do comprador.</p>
+  </div>
+
+  <div class="tbl-wrap"><table>
+    <caption>Produto a produto — tabela oficial PVV (R$/t, à vista) × premissa CIPREM-ES</caption>
+    <thead><tr><th>Produto</th><th class="num">PVV pedreira (FOB)</th><th class="num">Filial Porto</th><th class="num">Filial Trancoso</th><th class="num">Modelo CIPREM-ES (FOB)</th></tr></thead>
+    <tbody>
+      <tr><td>Pó de pedra / areia industrial</td><td class="num">25</td><td class="num">56,71</td><td class="num">64,47</td><td class="num">35</td></tr>
+      <tr><td>Brita 0</td><td class="num">120</td><td class="num">166,67</td><td class="num">219,54</td><td class="num">— <small>(no mix via brita 1)</small></td></tr>
+      <tr><td>Brita 1</td><td class="num">98</td><td class="num">130,00</td><td class="num">163,70</td><td class="num">85</td></tr>
+      <tr><td>Brita 2</td><td class="num">98</td><td class="num">166,67</td><td class="num">163,70</td><td class="num">78</td></tr>
+      <tr><td>Pedrisco / gravilha</td><td class="num">80</td><td class="num">166,91</td><td class="num">—</td><td class="num">90</td></tr>
+      <tr><td>Brita graduada</td><td class="num">85</td><td class="num">163,63</td><td class="num">163,63</td><td class="num">— <small>(no mix via b2/rachão)</small></td></tr>
+      <tr><td>Rachão / pulmão</td><td class="num">85</td><td class="num">164,13</td><td class="num">164,13</td><td class="num">55</td></tr>
+      <tr class="row-hl"><td><strong>Média ponderada (mix vendido)</strong></td><td class="num"><strong>76,80–83,10</strong></td><td class="num"><strong>≈ 100</strong></td><td class="num"><strong>≈ 153</strong></td><td class="num"><strong>68,50</strong></td></tr>
+    </tbody>
+  </table></div>
+
+  <ul class="tight">
+    <li><strong>Conclusão 1 — o modelo não está otimista; está conservador.</strong> Se o mix real vendido pelo grupo em 2025 fosse precificado com as premissas ES, daria R$ 70,87/t — e o realizado FOB-equivalente foi R$ 74,08/t. A premissa de R$ 68,50/t fica <em>abaixo dos dois</em>. O cenário de upside da viabilidade (R$ 82/t) é simplesmente o realizado do grupo com um pouco de CIF.</li>
+    <li><strong>Conclusão 2 — a “receita da Bahia” ensina o caminho do upside no ES.</strong> A PVV transforma R$ 74 em R$ 116/t médios com frota e pontos de venda (frete cobrado à parte: 0,91–0,99 R$/t/km). O projeto CIPREM já orçou 2 conjuntos Actros+Rossetti — replicar o modelo CIF/entrega no ES é o mesmo movimento, e está só parcialmente contado na projeção (35% CIF).</li>
+    <li><strong>Conclusão 3 — atenção ao pó de pedra.</strong> Na PVV ele vale só R$ 25/t FOB e sobra em estoque (32–64 mil t acumuladas em 2025). O modelo ES assume R$ 35/t para 27% do mix — validar com cotações locais, e ter destino cativo (premoldados/concreto do próprio grupo) é a defesa certa.</li>
+  </ul>
+
+  <h3>As referências públicas de preço — ES e Brasil</h3>
+  <div class="tbl-wrap"><table>
+    <caption>Referências externas encontradas (ago/2026) — convertidas a R$/t por 1,45–1,5 t/m³ quando publicadas em m³</caption>
+    <thead><tr><th>Referência</th><th class="num">Publicado</th><th class="num">≈ R$/t</th><th>Natureza</th></tr></thead>
+    <tbody>
+      <tr><td><a href="https://der.es.gov.br/referencial-de-precos-rodovias">DER-ES · Referencial Rodovias jan/2026</a> — “brita comercial” (1 a 4), material sem frete</td><td class="num">R$ 126,41/m³</td><td class="num">84–87</td><td>Tabela oficial ES</td></tr>
+      <tr><td>SINAPI-ES 06/2026 — brita 1 (insumo 4721, “posto pedreira, sem frete”; levantamento desta consultoria)</td><td class="num">R$ 164,89/m³</td><td class="num">≈ 110</td><td>Tabela oficial ES</td></tr>
+      <tr><td><a href="https://www.painelconstru.com.br/product/detail/3912">SINAPI — brita 1, média nacional (~11/2025)</a></td><td class="num">R$ 160,40/m³</td><td class="num">107–111</td><td>Referencial nacional</td></tr>
+      <tr><td><a href="https://www.bancodeprecos.com.br/CertificadoAutenticidade?token=KjFo%2BkZUA5XtQm1WavOvmIWYHclyiOTC%2BM0L%2FfJUk7wqHU8nPtm6WA%3D%3D">Licitação 2025 — bica corrida FOB, lote 4.000 t</a></td><td class="num">—</td><td class="num">71,87</td><td>Banco de preços público</td></tr>
+      <tr><td><a href="https://es.olx.com.br/norte-do-espirito-santo/materiais-de-construcao/fundacao-e-estrutura/cacamba-de-areia-e-brita-1233323432">Varejo Grande Vitória-ES — caçamba entregue (brita 0/1)</a></td><td class="num">R$ 230–268/m³</td><td class="num">≈ 155–180</td><td>Varejo CIF</td></tr>
+      <tr class="row-hl"><td><strong>Premissa CIPREM (mix FOB médio)</strong> · upside R$ 82/t</td><td class="num">—</td><td class="num"><strong>68,50</strong></td><td>~19% abaixo do DER-ES; ~38% abaixo do SINAPI-ES</td></tr>
+    </tbody>
+  </table></div>
+  <p class="small">Nenhuma pedreira do norte do ES publica preço on-line — Pedreira Aracruz, Pedramix/Borlini (Britanorte, Linhares) e Mineração Usibrita (Jaguaré) vendem sob cotação por telefone/WhatsApp. Por isso a recomendação de anexar 2–3 <strong>cotações formais</strong> ao projeto: fecham a lacuna entre a premissa conservadora e as tabelas oficiais. Frete: o parâmetro da tabela PVV (R$ 0,91/t·km carreta) é ligeiramente <em>acima</em> do referencial SICRO/DNIT (~R$ 0,78/t·km pavimentado) — conservador como custo e efetivamente praticado como receita pelo grupo.</p>
+
+  <h3>E onde o grupo vende na Bahia — a geografia explica o preço</h3>
+  <p>A pesquisa pública localizou a operação: a <a href="https://pedreiravaleverde.com.br/">Pedreira Vale Verde</a> é filial da <a href="https://www.mineracaosaovicente.com.br/">Mineração São Vicente Ltda</a> (CNPJ 06.537.334/0006-90, aberta em 2020) na estrada para Vale Verde, distrito de Vera Cruz, <strong>Porto Seguro-BA</strong> — “a maior produtora de agregados do Extremo Sul Baiano”, atendendo Trancoso, Arraial d’Ajuda, Caraíva e região. Os pontos “Porto” e “Trancoso” da tabela de preços são as bases da rede <a href="https://www.britaki.com.br/">Britaki</a> (mesmo grupo familiar). O litoral de Porto Seguro tem pouquíssimas pedreiras (duas identificadas no município, ambas recentes), frete longo a partir do eixo da BR-101, o 3º maior parque hoteleiro do país e boom imobiliário em Trancoso — <strong>por isso a filial Trancoso vende brita 0 a R$ 219/t</strong>. Preço público de balcão no sul da BA não existe on-line (tudo por WhatsApp); a comparação correta com o ES é a da decomposição acima: <strong>FOB × FOB</strong>.</p>
+</div></section>
+
+<!-- ============================== 5 JAZIDA ============================== -->
+<section id="jazida"><div class="wrap">
+  <div class="sec-head"><span class="sec-num">5</span><h2>Tamanho da jazida e quanto tempo ela dura</h2></div>
+
+  <div class="tiles">
+    <div class="tile"><div class="k">Reserva medida (PAE 2019)</div><div class="v">480.591 m³</div><div class="d">in situ ≈ 1,28–1,32 milhão t (o “2,28 milhões t” do PAE é erro de digitação — a conta 480.591 × 2,67 prova)</div></div>
+    <div class="tile"><div class="k">Consumo do plano</div><div class="v">841 mil m³</div><div class="d">em 12 anos (ramp + platô) · ≈ 1,0 milhão m³ nos 14 anos do financiamento</div></div>
+    <div class="tile"><div class="k">Cobertura atual</div><div class="v">48%</div><div class="d">da necessidade dos 14 anos — por isso a expansão da reserva é pré-requisito do pleito integral</div></div>
+  </div>
+
+  <div class="tbl-wrap"><table>
+    <caption>Vida útil da reserva medida (480.591 m³ in situ) em cada ritmo — a jazida esgota mais rápido quanto mais se produz</caption>
+    <thead><tr><th>Ritmo de produção</th><th class="num">m³ in situ/mês</th><th class="num">t/mês</th><th class="num">Vida útil</th></tr></thead>
+    <tbody>
+      <tr><td>Carta consulta — piso (2.000 m³ produto)</td><td class="num">1.091</td><td class="num">3.000</td><td class="num">≈ 36,7 anos</td></tr>
+      <tr><td>Carta consulta — teto (5.000 m³ produto)</td><td class="num">2.728</td><td class="num">7.500</td><td class="num">≈ 14,7 anos</td></tr>
+      <tr class="row-hl"><td>Platô do plano (12.000 m³ produto = 18.000 t)</td><td class="num">6.548</td><td class="num">18.000</td><td class="num">≈ 6,1 anos <small>(no plano com ramp: esgota no ano 8)</small></td></tr>
+      <tr><td>Licença cheia (8.000 in situ)</td><td class="num">8.000</td><td class="num">≈ 22.000</td><td class="num">≈ 5,0 anos</td></tr>
+      <tr class="row-crit"><td>Porte P máximo pós-expansão (12.097 in situ)</td><td class="num">12.097</td><td class="num">≈ 33.250</td><td class="num">≈ 3,3 anos</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="note crit"><b>A leitura de risco que o banco fará.</b> Produzir mais resolve a capacidade de pagamento, mas consome a jazida mais rápido: no platô, a reserva <em>medida</em> hoje acaba no ano 8 do plano — antes do fim dos 14 anos do financiamento. Aumentar produção e aumentar reserva comprovada são o <strong>mesmo dever de casa</strong>: sem a seção 6, qualquer plano acima de ~5.000 m³/mês de produto fica sem lastro para o prazo total.</div>
+</div></section>
+
+<!-- ============================== 6 EXPANSAO ============================== -->
+<section id="expansao"><div class="wrap">
+  <div class="sec-head"><span class="sec-num">6</span><h2>Onde crescer: mesma cava, processos vizinhos e licença</h2></div>
+
+  <p>Há <strong>quatro rotas reais</strong> — duas para aumentar a <em>reserva comprovada</em> (lastro), uma para aumentar o <em>teto de produção</em> (licença) e uma de longo prazo. Elas se somam, não competem.</p>
+
+  <div class="tbl-wrap"><table>
+    <caption>Rotas de expansão — o que cada uma destrava, custo e prazo típicos</caption>
+    <thead><tr><th>Rota</th><th>O que destrava</th><th class="num">Ganho</th><th>Custo/prazo</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr class="row-hl"><td><strong>A · Aprofundar a mesma cava</strong> (nova cubagem com sondagem + aditivo do PAE)</td><td>Reserva comprovada — a cubagem de 2019 contou só o afloramento de 10 m, nada abaixo da praça</td><td class="num">+≈ 408 mil m³ por bancada de 10 m</td><td>3–5 furos de sondagem; 60–90 dias; ortofoto/topografia 2026 já prontas</td><td><span class="chip ok">caminho mais barato</span></td></tr>
+      <tr><td><strong>B · RFP do processo-mãe 896.059/2012</strong> (mesma jazida, área original inteira)</td><td>Reserva já pesquisada e aprovada na ANM — o PAE da CIPREM remete a ela (“as respectivas reservas estão descritas no Relatório Final de Pesquisa do processo Mãe”)</td><td class="num">a apurar no RFP</td><td>Custo ~zero: pedir cópia ao consultor mineral / SEI-ANM. Atestado Bradesco (2020) e espelho público do Cadastro Mineiro (2026) confirmam a CIPREM titular, fase Requerimento de Lavra</td><td><span class="chip ok">documento existe</span></td></tr>
+      <tr><td><strong>C · Ampliar o volume da licença IEMA</strong> (8.000 → até 12.097 m³ in situ/mês)</td><td>Teto de produção — capacidade de pagamento extra</td><td class="num">+51% de teto legal</td><td>Alteração de licença; mantém porte Pequeno (Anexo II: 6,2 ha × 12.097 = 75.000); iniciar quando as vendas sustentarem ~70% do teto</td><td><span class="chip warn">12–24 meses de processo</span></td></tr>
+      <tr><td><strong>D · Processo vizinho 896.516/2012 (58 ha)</strong> e áreas mapeadas (Faz. Alvorada II, “área futura Marchiori”)</td><td>Reserva e área de longo prazo, contíguas à atual</td><td class="num">ordem de grandeza acima</td><td>Processo administrativo ANM + licenciamento próprio; horizonte de anos</td><td><span class="chip info">titularidade CIPREM (58 ha)</span></td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Status ANM dos processos — o que a checagem pública encontrou (04/08/2026)</h3>
+  <div class="tbl-wrap"><table>
+    <caption>Espelhos públicos do Cadastro Mineiro + DOU — os sistemas da ANM bloquearam acesso direto nesta análise; confirmar pelo roteiro abaixo</caption>
+    <thead><tr><th>Processo</th><th>Titular</th><th>Fase encontrada</th><th>Evidência</th></tr></thead>
+    <tbody>
+      <tr class="row-hl"><td><strong>896.059/2012</strong> (mãe — mesma jazida)</td><td>CIPREM (cessão da Construtora Colombi publicada em despacho GER-ES de 19/07/2018; Alvará de Pesquisa nº 6.874/2012)</td><td><strong>Requerimento de Lavra</strong> — regime que pressupõe RFP aprovado; nenhuma Portaria de Lavra publicada foi localizada até aqui</td><td><a href="https://www.requerimentomineral.com.br/view?q=896059/2012">espelho SX</a> · DOU candidatos: S1 11/08/2020 p.37; S1 27/04/2021 p.60; S1 05/05/2021 p.80</td></tr>
+      <tr><td><strong>896.516/2012</strong> (vizinho, ~58 ha)</td><td>CIPREM (conforme documento interno “situação do requerimento 12-2024”)</td><td>Sem dado público alcançado — há menção em DOU S3 de 12/01/2022 p.48, natureza a confirmar</td><td>verificar no SCM/SIGMINE (roteiro abaixo)</td></tr>
+      <tr><td><strong>896.624/2013</strong> (o licenciado — pedreira atual)</td><td>CIPREM</td><td><strong>Licenciamento</strong> — coerente com o Registro de Licença nº 8/2021 ativo</td><td><a href="https://www.requerimentomineral.com.br/view?q=896624/2013">espelho SX</a></td></tr>
+      <tr><td><strong>896.569/2013</strong> (origem de pesquisa)</td><td>Cedido à CIPREM no mesmo despacho de 19/07/2018</td><td>Fase atual não confirmada</td><td>despacho GER-ES 19/07/2018 (ANMlegis)</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="note"><b>Roteiro de confirmação em 10 minutos (fora deste ambiente).</b> (1) <a href="https://sistemas.anm.gov.br/SCM/Extra/site/admin/ConsultarProcessos.aspx">Cadastro Mineiro/SCM</a>: digitar 896.059/2012, 896.516/2012, 896.624/2013 e 896.569/2013 → abas Fase, Eventos (último evento com data), Títulos e Área. (2) <a href="https://geo.anm.gov.br">SIGMINE</a> (mapa, camada ES): buscar por processo → campos FASE, ULT_EVENTO, AREA_HA. (3) <a href="https://www.in.gov.br/consulta/-/buscar/dou?q=%22896.516%2F2012%22">DOU</a>: buscar cada número com e sem pontos — conferir em especial a Seção 3 de 12/01/2022 p.48 (896.516) e a S1 de 11/08/2020 p.37 (896.059). (4) <a href="https://dadosabertos.anm.gov.br">Dados abertos ANM</a>: CSVs de Processo/Evento. O que confirmar: <em>896.059 segue em Requerimento de Lavra?</em> (se sim, o RFP aprovado existe nos autos — pedir cópia via SEI-ANM) e <em>qual a fase real do 896.516?</em></div>
+
+  <div class="note good"><b>Combinação recomendada (a mesma da viabilidade).</b> Antes do protocolo: rota A (1ª bancada: 480,6 + 408 ≈ 889 mil m³ — cobre o plano de 12 anos) <em>mais</em> rota B (RFP — tende a cobrir a folga para os 14 anos, que pedem ≈ 1,0 milhão m³; sem ele, 2ª bancada na sondagem). Rota C entra em operação (ano 2–3) para destravar crescimento além de 18.000 t/mês. Rota D é o futuro do grupo na região, não pré-requisito do pleito.</div>
+</div></section>
+
+<!-- ============================== 7 MITIGACAO ============================== -->
+<section id="mitigacao"><div class="wrap">
+  <div class="sec-head"><span class="sec-num">7</span><h2>Matriz de mitigação — e quanto cada ação vale</h2></div>
+
+  <div class="tbl-wrap"><table>
+    <caption>Ação → risco que mata → impacto no financiamento (motor oficial BNB, 14 anos = 2 carência + 12 amortização)</caption>
+    <thead><tr><th>#</th><th>Ação</th><th>Risco mitigado</th><th>Impacto econômico</th><th>Quando</th></tr></thead>
+    <tbody>
+      <tr class="row-hl"><td>1</td><td>Sondagem + nova cubagem + RFP do 896.059/2012 (rotas A+B)</td><td>Lastro geológico &lt; prazo do financiamento — hoje é o risco nº 1: sem isso o financiável cai para ~R$ 13–14,5 mi</td><td>Sustenta o pleito integral de <strong>R$ 24,29 mi</strong> (máx. financiável na receita-base: R$ 24,84 mi)</td><td>antes do protocolo</td></tr>
+      <tr><td>2</td><td>Contratos-âncora + 3 cotações locais de preço (Polimix, Pedramix, Ecovias/BR-101, consumo do próprio grupo)</td><td>Risco de demanda/preço do entrante — e valida o R$ 68,50/t (que já está abaixo do FOB real do grupo, R$ 74,08)</td><td>Preço a R$ 82/t leva o comprometimento de 48,5% → <strong>39,8%</strong> (máx. financiável R$ 28,98 mi)</td><td>antes do protocolo</td></tr>
+      <tr><td>3</td><td>Replicar no ES o modelo de entrega da PVV (CIF com frota própria orçada; futura filial/ponto de venda)</td><td>Dependência de preço FOB baixo; captura a margem logística que na PVV é 36% da receita</td><td>Cada +R$ 10/t no realizado ≈ +R$ 2,2 mi/ano de receita no platô</td><td>ano 1–3</td></tr>
+      <tr><td>4</td><td>2º turno só da perfuração + compressor ≥ 12 bar (elo físico mais justo)</td><td>Gargalo operacional de desmonte (cenário conservador: 4.600–6.300 m³ in situ/mês)</td><td>Garante os 6.548 m³ in situ/mês do platô com folga; cobre até ~18.000 m³</td><td>do 1º mês</td></tr>
+      <tr><td>5</td><td>Alterar volume da licença para até 12.097 m³ in situ (rota C — mantém porte P)</td><td>Teto legal vira teto de crescimento quando as vendas maturarem</td><td>+51% de capacidade legal (~33.250 t/mês) sem reenquadrar porte — exige reserva da ação 1</td><td>quando vendas ≥ 70% do teto</td></tr>
+      <tr><td>6</td><td>Destino cativo para o pó de pedra (premoldados/concreto do grupo; areia industrial)</td><td>27% do mix a R$ 25–35/t encalhado — na PVV o pó acumulou 32–64 mil t de estoque em 2025</td><td>Protege ~R$ 1,9 mi/ano de receita do platô</td><td>desenho comercial já no ano 1</td></tr>
+      <tr><td>7</td><td>Aditivo da servidão (vence 31/08/2029) + CNDAs + formalização FNE Mulher</td><td>Risco documental que trava a contratação (flags da leitura 360°)</td><td>Condição de acesso ao prazo de 14 anos (2c+12a), que é a montagem que passa na janela BNB</td><td>antes da contratação</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="note"><b>Síntese executiva.</b> (1) O máximo legal hoje é <strong>8.000 m³ in situ = ~22.000 t/mês</strong>; o plano usa 82% disso e é o ritmo que a PVV já roda. (2) O empolamento é real e documentado — mas muda volume, não massa nem receita: vender por tonelada elimina o risco. (3) O preço ES <em>não</em> é “muito mais barato que a Bahia”: na mesma base FOB é R$ 68,50 × R$ 74,08 — a diferença grande é frete/canal, que é justamente o upside replicável. (4) A jazida medida dura 6 anos no platô — por isso reserva e produção crescem juntas: sondagem + RFP antes do protocolo, ampliação de licença no ano 2–3. Feito isso, o projeto sobe de teto em teto com a mesma planta.</div>
+</div></section>
+
+<footer>
+  <div class="wrap">
+    <p><strong>Fontes.</strong> Tabela de Preços PVV 2025 e controles operacionais (DADOS PARA CIPREM.xlsx — produção, venda, estoque, rocha desmontada, custos, insumos); DRE/BI PVV 2025 conciliada (RB R$ 17.137.603); PAE 2019 (reserva AF-01, densidade 2,749 t/m³); LI IEMA 000478/2025-D; Anexo II da IN IEMA 002-N/2023; orçamento de implantação 19/06/2026; motor de capacidade de pagamento BNB (algoritmo oficial, 14a = 2c+12a); fontes externas citadas ao longo do texto com links — destaque: SINDIBRITA (Portaria DNPM 456/2007 — venda a peso), DER-ES Referencial Rodovias jan/2026, família de insumos SINAPI, CETEM (Manual de Agregados), DNIT 106/2009-ES, Ricardo &amp; Catalani, SCO-Rio/FGV, espelho do Cadastro Mineiro (requerimentomineral.com.br) e despacho GER-ES/ANM de 19/07/2018; identificação pública da PVV: Serasa/Econodata (CNPJ 06.537.334/0006-90), pedreiravaleverde.com.br, mineracaosaovicente.com.br e britaki.com.br. Relatórios-irmãos: Plano de Produção, Verificação de Licenças e Estudo de Viabilidade CIPREM.</p>
+    <p>Elaborado por Projet Consultoria com assistência de análise documental automatizada · agosto/2026. Valores de mercado a calibrar com cotações locais antes do protocolo.</p>
+  </div>
+</footer>
