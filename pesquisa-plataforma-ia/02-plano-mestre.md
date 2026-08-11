@@ -18,7 +18,7 @@ O mercado hoje se divide em três grupos, e nenhum entrega o ciclo completo:
 | Marketplaces com IA assistiva | Fiverr Go, Upwork "Uma" | IA ajuda o humano a vender/produzir | O gargalo continua sendo o humano |
 | Ferramentas de IA por área | Midjourney, Veo, ElevenLabs, Lovable, Gamma | Executam UMA tarefa, para quem sabe usar | O cliente comum não sabe qual usar, nem como, nem integra os resultados |
 
-**A lacuna:** ninguém — especialmente no Brasil — oferece um balcão único onde o pedido em linguagem natural vira serviço entregue, com a **melhor IA de cada área** trabalhando em conjunto, preço fechado e garantia de qualidade. É o espaço entre "contratar um freelancer" e "aprender 10 ferramentas de IA".
+**A lacuna:** ninguém — especialmente no Brasil — oferece um balcão único onde o pedido em linguagem natural vira serviço entregue, com a **melhor IA de cada área** trabalhando em conjunto, preço fechado e garantia de qualidade. É o espaço entre "contratar um freelancer" e "aprender 10 ferramentas de IA". A pesquisa de mercado (`01-pesquisa-mercado.md`) confirmou essa lacuna em detalhe: são 8 vazios documentados, entre eles preço fixo por entregável (a dor nº 1 dos agentes de IA atuais, todos cobrando créditos imprevisíveis), QA que assina a entrega, revisões incluídas, direitos comerciais garantidos e consistência de marca entre mídias.
 
 ### 1.2 Posicionamento
 
