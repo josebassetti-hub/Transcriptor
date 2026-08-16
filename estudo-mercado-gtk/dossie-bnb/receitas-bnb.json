@@ -1,0 +1,277 @@
+{
+  "largura_descricao": 38,
+  "atividades": [
+    {
+      "descricao": "Fabricação de artefatos de cimento para uso na construção",
+      "atividade_economica": "Fabricação de artefatos de cimento para uso na construção (Indústria/Ind. de Transformação) CNAE 2330-3/02",
+      "produtos": [
+        {
+          "descricao": "Bloco de concreto 14x19x39 - vedação",
+          "unidade": "UND",
+          "preco_unitario": 3.3,
+          "qtd_atual": 0,
+          "qtd_projetada": 522655,
+          "anos": [
+            {
+              "pct": 71.75,
+              "qtd": 375000.0
+            },
+            {
+              "pct": 89.29,
+              "qtd": 466666.67
+            },
+            {
+              "pct": 100.0,
+              "qtd": 522654.55
+            },
+            {
+              "pct": 100.0,
+              "qtd": 522654.55
+            },
+            {
+              "pct": 100.0,
+              "qtd": 522654.55
+            },
+            {
+              "pct": 100.0,
+              "qtd": 522654.55
+            },
+            {
+              "pct": 100.0,
+              "qtd": 522654.55
+            },
+            {
+              "pct": 100.0,
+              "qtd": 522654.55
+            },
+            {
+              "pct": 100.0,
+              "qtd": 522654.55
+            },
+            {
+              "pct": 100.0,
+              "qtd": 522654.55
+            },
+            {
+              "pct": 100.0,
+              "qtd": 522654.55
+            }
+          ]
+        },
+        {
+          "descricao": "Bloco de concreto 14x19x39 - estrutural",
+          "unidade": "UND",
+          "preco_unitario": 4.5,
+          "qtd_atual": 0,
+          "qtd_projetada": 276813,
+          "anos": [
+            {
+              "pct": 44.15,
+              "qtd": 122222.22
+            },
+            {
+              "pct": 71.09,
+              "qtd": 196777.78
+            },
+            {
+              "pct": 100.0,
+              "qtd": 276813.33
+            },
+            {
+              "pct": 100.0,
+              "qtd": 276813.33
+            },
+            {
+              "pct": 100.0,
+              "qtd": 276813.33
+            },
+            {
+              "pct": 100.0,
+              "qtd": 276813.33
+            },
+            {
+              "pct": 100.0,
+              "qtd": 276813.33
+            },
+            {
+              "pct": 100.0,
+              "qtd": 276813.33
+            },
+            {
+              "pct": 100.0,
+              "qtd": 276813.33
+            },
+            {
+              "pct": 100.0,
+              "qtd": 276813.33
+            },
+            {
+              "pct": 100.0,
+              "qtd": 276813.33
+            }
+          ]
+        },
+        {
+          "descricao": "Bloco de concreto 9x19x39 - vedação",
+          "unidade": "UND",
+          "preco_unitario": 2.8,
+          "qtd_atual": 0,
+          "qtd_projetada": 153996,
+          "anos": [
+            {
+              "pct": 70.15,
+              "qtd": 108035.71
+            },
+            {
+              "pct": 89.29,
+              "qtd": 137500.0
+            },
+            {
+              "pct": 100.0,
+              "qtd": 153996.43
+            },
+            {
+              "pct": 100.0,
+              "qtd": 153996.43
+            },
+            {
+              "pct": 100.0,
+              "qtd": 153996.43
+            },
+            {
+              "pct": 100.0,
+              "qtd": 153996.43
+            },
+            {
+              "pct": 100.0,
+              "qtd": 153996.43
+            },
+            {
+              "pct": 100.0,
+              "qtd": 153996.43
+            },
+            {
+              "pct": 100.0,
+              "qtd": 153996.43
+            },
+            {
+              "pct": 100.0,
+              "qtd": 153996.43
+            },
+            {
+              "pct": 100.0,
+              "qtd": 153996.43
+            }
+          ]
+        },
+        {
+          "descricao": "Bloco 19x19x39 e canaletas",
+          "unidade": "UND",
+          "preco_unitario": 5.5,
+          "qtd_atual": 0,
+          "qtd_projetada": 34844,
+          "anos": [
+            {
+              "pct": 43.05,
+              "qtd": 15000.0
+            },
+            {
+              "pct": 70.31,
+              "qtd": 24500.0
+            },
+            {
+              "pct": 100.0,
+              "qtd": 34843.64
+            },
+            {
+              "pct": 100.0,
+              "qtd": 34843.64
+            },
+            {
+              "pct": 100.0,
+              "qtd": 34843.64
+            },
+            {
+              "pct": 100.0,
+              "qtd": 34843.64
+            },
+            {
+              "pct": 100.0,
+              "qtd": 34843.64
+            },
+            {
+              "pct": 100.0,
+              "qtd": 34843.64
+            },
+            {
+              "pct": 100.0,
+              "qtd": 34843.64
+            },
+            {
+              "pct": 100.0,
+              "qtd": 34843.64
+            },
+            {
+              "pct": 100.0,
+              "qtd": 34843.64
+            }
+          ]
+        },
+        {
+          "descricao": "Piso intertravado (paver) 35 MPa",
+          "unidade": "M2",
+          "preco_unitario": 57.0,
+          "qtd_atual": 0,
+          "qtd_projetada": 21013,
+          "anos": [
+            {
+              "pct": 48.22,
+              "qtd": 10131.58
+            },
+            {
+              "pct": 75.54,
+              "qtd": 15872.81
+            },
+            {
+              "pct": 100.0,
+              "qtd": 21013.16
+            },
+            {
+              "pct": 100.0,
+              "qtd": 21013.16
+            },
+            {
+              "pct": 100.0,
+              "qtd": 21013.16
+            },
+            {
+              "pct": 100.0,
+              "qtd": 21013.16
+            },
+            {
+              "pct": 100.0,
+              "qtd": 21013.16
+            },
+            {
+              "pct": 100.0,
+              "qtd": 21013.16
+            },
+            {
+              "pct": 100.0,
+              "qtd": 21013.16
+            },
+            {
+              "pct": 100.0,
+              "qtd": 21013.16
+            },
+            {
+              "pct": 100.0,
+              "qtd": 21013.16
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "obs": "Empresa em implantação: Qtd. Atual = 0 (sem operação). Qtd. Projetada = plano de regime (ano 3+), limitado ao teto de EPP (LC 123/2006) de R$ 4,8 milhões — receita de estabilização R$ 4.791.000. % de Utilização por ano reflete o ramp-up e a migração do mix para produtos de maior valor (vedação -> estrutural e paver). Detalhamento mensal do ano 1 em previsao-faturamento.xlsx."
+}

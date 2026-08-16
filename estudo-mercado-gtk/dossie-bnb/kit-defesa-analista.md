@@ -7,6 +7,9 @@
 **1. "Empresa sem histórico — de onde vem a receita projetada?"**
 Do estudo de mercado anexo, construído em três passos auditáveis: capacidade por produto (proposta contratada do fabricante), horas alocadas na proporção do que o mercado regional compra (45% vedação / 30% estrutural / 25% paver — derivado do próprio dimensionamento de demanda) e escala limitada ao teto de pequena empresa. Resultado: R$ 4,791 milhões exigem 19–30% de um mercado endereçável de R$ 16–25 milhões/ano — para o único fabricante de escala industrial num raio de ~150 km, com frete 3–5× menor que o dos concorrentes certificados da Grande Vitória. Cada número tem referência (146 fontes com URL) e memória de cálculo recalculável.
 
+**1-b. "Como a receita se distribui no primeiro ano?"**
+Está aberta mês a mês em `previsao-faturamento.xlsx` / `previsao-faturamento.md`: o ano 1 parte de R$ 35,6 mil em janeiro (só vedação, venda de balcão e revenda) e chega a R$ 366 mil em outubro, somando R$ 2.750.000. A curva combina três camadas declaradas: entrada escalonada dos produtos (estrutural no mês 3, após o laudo NBR; paver privado no mês 4; paver B2G no mês 6, após cadastro e atas; canaletas no mês 8), ramp-up comercial e sazonalidade do setor (jan/fev são os piores meses de venda de cimento no país; dezembro tem férias coletivas e parada de revisão). Nenhum mês passa de 76% da capacidade mensal.
+
 **2. "A receita não está otimista?"**
 Está deliberadamente limitada: a fábrica consegue produzir mais (capacidade efetiva de R$ 5,76 milhões/ano em 1 turno, já descontando feriados, manutenção e paradas — OEE 76%), e o plano usa 83% disso. Há ainda 2º turno e melhoria de OEE fora do plano. Vendemos menos do que fabricamos por decisão de porte (EPP).
 
