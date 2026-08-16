@@ -1,5 +1,4 @@
-# Fontes do Estudo de Mercado — GTK Pré-Moldados
-
+# Fontes do Estudo de Mercado — GTK Pré-Moldados (138 referências)
 [1] Rota Mapas — Distância entre São Mateus e Nova Venécia. Disponível em: https://www.rotamapas.com.br/distancia-entre-sao-mateus-e-nova-venecia . Acesso em: 16/08/2026.
 
 [2] ceps.io — Rodovia BR-381 Miguel Curry Carneiro — São Mateus–Nova Venécia, km 20,001 ao km 37,000 — Nova Aimorés (Nova Verona), São Mateus-ES. Disponível em: https://ceps.io/ES/Sao-Mateus/Nova-Aimores-Nova-Verona/Rodovia-BR-381-Miguel-Curry-Carneiro-Sao-Mateus-Nova-Venecia-do-km-20-001-ao-km-37-000/29947010/ . Acesso em: 16/08/2026.
@@ -258,6 +257,22 @@
 
 [129] Galpão Pré-Moldado — Quanto custa construir um galpão? Calculadora (2026) — R$ 1.250–1.900/m². Disponível em: https://galpao-premoldado.com/quanto-custa-construir-um-galpao/ . Acesso em: 16/08/2026.
 
-[130] SEDES-ES — Invista no ES — incentivos (área Sudene abrange 28 municípios do norte do ES; Invest-ES; Funres). Disponível em: https://sedes.es.gov.br/invista-no-es . Acesso em: 16/08/2026.
+[130] SEDES-ES — Invista no ES — incentivos estaduais (Invest-ES, Funres) e federais na área da Sudene. Disponível em: https://sedes.es.gov.br/invista-no-es . Acesso em: 16/08/2026.
+
+[131] Folha Vitória — Indústria capixaba avança 20,2% e é a que mais cresce no país no primeiro semestre (PIM-PF/IBGE, jan–jun/2026 vs. 1S2025; Brasil +1,5%). Disponível em: https://www.folhavitoria.com.br/economia/industria-capixaba-avanca-202-e-e-a-que-mais-cresce-no-pais-no-primeiro-semestre/ . Acesso em: 16/08/2026.
+
+[132] IBGE — Área de Atuação da SUDENE (delimitação oficial; inclui 31 municípios do Espírito Santo conforme LC nº 185/2021). Disponível em: https://www.ibge.gov.br/geociencias/organizacao-do-territorio/estrutura-territorial/34331-area-de-atuacao-da-sudene.html . Acesso em: 16/08/2026.
+
+[133] JusBrasil — Lei Complementar nº 125, de 03/01/2007 (institui a Sudene; área de atuação com municípios listados por alterações posteriores — LC nº 185/2021). Disponível em: https://www.jusbrasil.com.br/legislacao/95031/lei-de-criacao-da-sudene-lei-complementar-125-07 . Acesso em: 16/08/2026.
+
+[134] CADE — Cadernos do Cade: Mercado de Cimento no Brasil (2019) — estrutura de canais e concorrência do setor. Disponível em: https://cdn.cade.gov.br/Portal/centrais-de-conteudo/publicacoes/estudos-economicos/cadernos-do-cade/mercado-de-cimento-no-brasil-2019.pdf . Acesso em: 16/08/2026.
+
+[135] Governo do Estado do ES — Governo do Estado anuncia investimentos e entrega obras em São Mateus (pavimentação em blocos de 26 ruas: mais de 32 mil m² e 10 km de meio-fio; recursos do acordo do Rio Doce/SERD). Disponível em: https://www.es.gov.br/Noticia/governo-do-estado-anuncia-investimentos-e-entrega-obras-em-sao-mateus . Acesso em: 16/08/2026.
+
+[136] SEAG-ES — Programa de Calçamento Rural (o Estado fornece blocos intertravados e meios-fios de concreto; as prefeituras executam as obras). Disponível em: https://seag.es.gov.br/programa-de-calcamento-rural . Acesso em: 16/08/2026.
+
+[137] SEAG-ES — Caminhos do Campo: Estado vai pavimentar mais 476 km de estradas rurais. Disponível em: https://seag.es.gov.br/caminhos-do-campo-estado-vai-pavimentar-mais . Acesso em: 16/08/2026.
+
+[138] Cimento.Org — Cimento no Brasil (consumo per capita de cimento ~280 kg/habitante). Disponível em: https://cimento.org/cimento-no-brasil/ . Acesso em: 16/08/2026.
 
 *Nota metodológica: as URLs acima foram coletadas e conferidas por mecanismo de busca em 15–16/08/2026. A política de rede do ambiente de elaboração impediu a abertura direta (fetch) de parte dos domínios (órgãos estaduais *.es.gov.br, portais de notícias e diretórios empresariais); nesses casos, os dados citados provêm dos resultados indexados da busca e a URL é fornecida para verificação direta pelo leitor.*
