@@ -1,6 +1,6 @@
 # AUDITORIA DE FONTES — Estudo de Mercado GTK Pré-Moldados
 
-**Data da auditoria:** 16/08/2026 · **Escopo:** as 138 referências do estudo, os parâmetros sem fonte pública (premissas) e a consistência aritmética interna.
+**Data da auditoria:** 16/08/2026 (atualizada na revisão v3 — mix por absorção, teto EPP e capacidade efetiva) · **Escopo:** as 146 referências do estudo, os parâmetros sem fonte pública (premissas) e a consistência aritmética interna.
 
 **Legenda de status:**
 - ✅ **Confirmada** — o dado citado foi verificado em mais de um resultado de busca ou em documento primário (proposta comercial, SINAPI-ES, legislação);
@@ -12,10 +12,10 @@
 
 | Categoria | Qtde | Situação |
 |---|---|---|
-| Referências confirmadas (✅) | 34 | dados centrais: capacidades (proposta), populações Censo 2022, SINAPI-ES 06/2026, Sudene/LC 185, obras SM e Jaguaré, cimento nacional, indústria ES 1S2026 |
+| Referências confirmadas (✅) | 42 | dados centrais: capacidades (proposta), populações Censo 2022, SINAPI-ES 06/2026, Sudene/LC 185, obras SM e Jaguaré, cimento nacional, indústria ES 1S2026, LC 123/EPP, Anexo II do Simples, dias úteis 2027, feriados municipais, benchmarks OEE |
 | Referências em snippet (🟡) | 104 | majoritariamente cadastros de empresas (CNPJ/Econodata), notícias oficiais estaduais e diretórios — URLs conferíveis |
-| Premissas declaradas (📌) | 9 | listadas na seção 3, todas com sensibilidade ou faixa |
-| Afirmações corrigidas na auditoria (🔁) | 12 | listadas na seção 4 |
+| Premissas declaradas (📌) | 12 | listadas na seção 3, todas com sensibilidade ou faixa |
+| Afirmações corrigidas na auditoria (🔁) | 16 | listadas na seção 4 |
 | Referências reprovadas e removidas | 0 (2 realocadas) | [22] deixou de apoiar "crescimento setorial/orçamento MCMV" e passou a apoiar apenas ordem de grandeza de CAPEX; [61] deixou de apoiar número e passou a contexto |
 
 ## 2. Verificação das 30 afirmações que o analista confere primeiro
@@ -63,9 +63,12 @@
 | Anualização do pipeline público | pacotes ÷ 2–3 anos | evita dupla contagem; obras sem data ficam fora da soma | §5.3 / §8.1 |
 | Consumo de cimento por bloco 14 vedação | 1,00 kg | ref. de mercado ~1,05 [17]; vibrocompactação economiza até 15% | §13.2 |
 | Preços-alvo de venda GTK | tabela §6.4 | 10–25% abaixo da mediana SINAPI-ES; validar com 5 cotações locais | §6.4 |
-| MC média do mix | 35% | derivada: 36,5% (planilha, aba Mix); adotado valor menor | §13.4 |
+| Mix de vendas (% do mercado em valor) | ved. 45% (36+9), estrutural+compl. 30% (26+4), paver 25% | paver derivado do SAM (24–33%→25%); horas da planta alocadas na proporção do mercado | §5.4 |
+| Carga tributária sobre a receita | 15% | cobre Simples Anexo II no topo (15,0% [140]) e L. Presumido típico; regime a definir com contador (upside) | §13.2 |
+| MC média do mix | 30% | derivada: 31,2% (planilha, aba Mix e Plano); adotado valor menor | §13.2/§13.4 |
+| Cascata de capacidade efetiva | 249 dias úteis − paradas = ~210 dias efetivos (OEE ~76%) | calendário [141][142]; manutenção [145][146]; benchmark OEE [143][144]; não planejadas 6% e refugo 2% como premissas | §3.7 |
 | Custos fixos mensais | R$ 52 mil | decomposição item a item no §13.3 | §13.3 |
-| Serviço da dívida FNE | ~R$ 60 mil/mês | SAC ~R$ 5 mi/10 anos pós-carência; substituir pela simulação BNB | §13.4 |
+| Serviço da dívida FNE | ~R$ 46–50 mil/mês | recomendação: ~R$ 4,0–4,5 mi em 12 anos (DSCR ≥1,35); substituir pela simulação BNB | §13.4 |
 
 ## 4. Correções aplicadas nesta auditoria (transparência total)
 
@@ -82,9 +85,14 @@
 11. **Indústria ES +20,2%** com período e pesquisa explícitos (1S2026, PIM-PF/IBGE) e segunda fonte.
 12. **Custo variável**: padronizado R$ 1,85 industrial / R$ 2,28 total (o "R$ 1,90" remanescente é meta operacional, rotulada como meta); obras de Pedro Canário/Pinheiros marcadas como histórico fora da soma anual; citação [22] realocada para custo de implantação; MCMV 8–11 mi blocos/ano qualificado como teto de premissa.
 
+13. **Mix por absorção de mercado (v3)**: o mix anterior (40/20/15/10/15% dos dias de produção) era premissa qualitativa; substituído pelo método em 3 passos — capacidade máxima por produto → horas alocadas na proporção do valor que cada família representa no mercado (45% vedação, 30% estrutural+complementos, 25% paver) → escala única até o teto. A participação de cada produto na receita anual agora é mostrada separadamente (§5.4).
+14. **Teto de receita EPP (v3)**: plano-base limitado a R$ 4.791.000/ano (< R$ 4,8 mi da LC 123 [139]) — decisão de conservadorismo e enquadramento de porte (independe do regime tributário); vende-se menos do que se fabrica.
+15. **Carga tributária (v3)**: premissa anterior de 8,5% (faixa inicial do Simples) era indefensável no teto da faixa; corrigida para 15% com comparação Simples Anexo II × Lucro Presumido (folha enxuta) no §13.2 — MC média passou de 35% para 30% (derivada 31,2%) e todos os indicadores foram refeitos (BE R$ 173 mil/mês; EBITDA regime R$ 813 mil; DSCR por estrutura de dívida; payback ~9 anos).
+16. **Capacidade efetiva (v3)**: a utilização passou a ser medida contra ~210 dias efetivos/ano (cascata §3.7: 252 dias úteis nacionais − 3 feriados locais − manutenção preventiva 16 − trocas 2 − revisão anual 3 − não planejadas 6% − refugo 2%; OEE implícito 76%) — o plano no teto usa 83% da capacidade efetiva (e 66% da nominal), respondendo à diligência sobre feriados e paradas obrigatórias.
+
 ## 5. Numeração completa das referências
 
-A lista integral com instituição, descrição e URL de cada uma das 138 referências está em `fontes.md` e na seção 16 do estudo. Nesta auditoria, **todas** foram checadas quanto a: (i) a afirmação do texto corresponder ao conteúdo indexado da fonte; (ii) especificidade da URL (página do dado, não domínio genérico); (iii) uso não decorativo (cada citação alimenta uma conclusão, premissa ou mitigador). As duas únicas citações cuja função mudou ([22] e [61]) estão descritas na seção 1.
+A lista integral com instituição, descrição e URL de cada uma das 146 referências está em `fontes.md` e na seção 16 do estudo. Nesta auditoria, **todas** foram checadas quanto a: (i) a afirmação do texto corresponder ao conteúdo indexado da fonte; (ii) especificidade da URL (página do dado, não domínio genérico); (iii) uso não decorativo (cada citação alimenta uma conclusão, premissa ou mitigador). As duas únicas citações cuja função mudou ([22] e [61]) estão descritas na seção 1.
 
 ## 6. Limitações remanescentes (para diligência da implantação)
 

@@ -1,4 +1,4 @@
-# Fontes do Estudo de Mercado — GTK Pré-Moldados (138 referências)
+# Fontes do Estudo de Mercado — GTK Pré-Moldados (146 referências)
 [1] Rota Mapas — Distância entre São Mateus e Nova Venécia. Disponível em: https://www.rotamapas.com.br/distancia-entre-sao-mateus-e-nova-venecia . Acesso em: 16/08/2026.
 
 [2] ceps.io — Rodovia BR-381 Miguel Curry Carneiro — São Mateus–Nova Venécia, km 20,001 ao km 37,000 — Nova Aimorés (Nova Verona), São Mateus-ES. Disponível em: https://ceps.io/ES/Sao-Mateus/Nova-Aimores-Nova-Verona/Rodovia-BR-381-Miguel-Curry-Carneiro-Sao-Mateus-Nova-Venecia-do-km-20-001-ao-km-37-000/29947010/ . Acesso em: 16/08/2026.
@@ -274,5 +274,21 @@
 [137] SEAG-ES — Caminhos do Campo: Estado vai pavimentar mais 476 km de estradas rurais. Disponível em: https://seag.es.gov.br/caminhos-do-campo-estado-vai-pavimentar-mais . Acesso em: 16/08/2026.
 
 [138] Cimento.Org — Cimento no Brasil (consumo per capita de cimento ~280 kg/habitante). Disponível em: https://cimento.org/cimento-no-brasil/ . Acesso em: 16/08/2026.
+
+[139] Presidência da República — Lei Complementar nº 123/2006, art. 3º, II (empresa de pequeno porte: receita bruta anual até R$ 4.800.000,00, redação da LC nº 155/2016). Disponível em: https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm . Acesso em: 16/08/2026.
+
+[140] Contabilizei — Anexo II do Simples Nacional (indústria): tabela de alíquotas de 4,5% a 30% e parcelas a deduzir até R$ 720 mil. Disponível em: https://www.contabilizei.com.br/contabilidade-online/anexo-2-simples-nacional/ . Acesso em: 16/08/2026.
+
+[141] Dias-Uteis.com — Dias úteis no ano de 2027 no Brasil (252 dias úteis, feriados nacionais). Disponível em: https://www.dias-uteis.com/EN/quantos_dias_uteis_no_ano_2027_Feriados_nacionais.htm . Acesso em: 16/08/2026.
+
+[142] Prefeitura de São Mateus — Feriados municipais (21/09, padroeiro e aniversário da cidade; 27/12, São Benedito). Disponível em: https://saomateus.es.gov.br/sao-mateus/feriados-municipais . Acesso em: 16/08/2026.
+
+[143] OEE.com.br — OEE Classe Mundial (OEE ≥85%; disponibilidade ≥90%; performance ≥95%; qualidade ≥99,9%). Disponível em: https://www.oee.com.br/oee-classe-mundial/ . Acesso em: 16/08/2026.
+
+[144] Vedois Tecnologia — Como atingir o OEE de 85% (média das indústrias brasileiras ~60%). Disponível em: https://vedois.com.br/site/como-atingir-o-oee-de-85/ . Acesso em: 16/08/2026.
+
+[145] Hiwston — Vibro prensa máquina de bloco (rotinas de limpeza e lubrificação por turno; manutenção periódica). Disponível em: https://www.hiwston.com.br/vibro-prensa-maquina-bloco . Acesso em: 16/08/2026.
+
+[146] Mapa da Obra (Votorantim) — Limpeza e manutenção de máquinas é essencial (inspeção e limpeza regulares de molde, vibração e hidráulica). Disponível em: https://www.mapadaobra.com.br/capacitacao/limpeza-e-manutencao-de-equipamentos-e-essencial/ . Acesso em: 16/08/2026.
 
 *Nota metodológica: as URLs acima foram coletadas e conferidas por mecanismo de busca em 15–16/08/2026. A política de rede do ambiente de elaboração impediu a abertura direta (fetch) de parte dos domínios (órgãos estaduais *.es.gov.br, portais de notícias e diretórios empresariais); nesses casos, os dados citados provêm dos resultados indexados da busca e a URL é fornecida para verificação direta pelo leitor.*

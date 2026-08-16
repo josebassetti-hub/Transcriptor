@@ -118,7 +118,7 @@ A tabela a seguir consolida os dados de produção da proposta Gervasi (bandeja 
 | Bloco 9×19×39 | 6 | 1.200 | 10.530 un | ≈231.700 un | ≈2,78 milhões un | 7,3 |
 | Paver H6 (m²) | 0,37 m² | ≈74 m² | ≈530 m² | ≈11.700 m² | ≈140 mil m² | 4,1 |
 
-Notas técnicas: (i) os números por turno são os declarados pelo fabricante; os valores por hora do paver foram derivados da produção por turno (530 m² ÷ 7,2 h efetivas ≈ 74 m²/h), pois a linha correspondente da proposta apresenta os dígitos comprimidos; (ii) canaletas e meios-blocos produzem em cadência igual ou superior à do bloco inteiro correspondente; pavers de 8 e 10 cm produzem o mesmo nº de bandejas/hora com maior consumo de concreto por m²; (iii) a máquina é preparada para **dois turnos** (o sistema hidráulico tem trocador de calor dimensionado para isso), o que dobra todos os valores sem novo investimento em equipamento — este é o principal "colchão de crescimento" embutido no projeto.
+Notas técnicas: (i) os números por turno são os declarados pelo fabricante; os valores por hora do paver foram derivados da produção por turno (530 m² ÷ 7,2 h efetivas ≈ 74 m²/h), pois a linha correspondente da proposta apresenta os dígitos comprimidos; (ii) canaletas e meios-blocos produzem em cadência igual ou superior à do bloco inteiro correspondente; pavers de 8 e 10 cm produzem o mesmo nº de bandejas/hora com maior consumo de concreto por m²; (iii) a máquina é preparada para **dois turnos** (o sistema hidráulico tem trocador de calor dimensionado para isso), o que dobra todos os valores sem novo investimento em equipamento — este é o principal "colchão de crescimento" embutido no projeto; (iv) os valores desta tabela são nominais por turno — o §3.7 converte calendário real e paradas obrigatórias em capacidade efetiva anual.
 
 Em regime de dois turnos, portanto, o teto físico da planta é da ordem de **3,7 milhões de blocos de 14 cm por ano** (ou o equivalente no mix), patamar de fábrica média-grande no interior do Brasil.
 
@@ -139,6 +139,27 @@ A área de cura merece atenção especial de projeto: com 2.000 bandejas/turno e
 ## 3.6 Consumo de insumos em capacidade plena
 
 Referências operacionais em um turno (produto-base bloco 14×19×39, vedação): consumo de concreto de 5,4 m³/h ≈ **39 m³/turno**; massa específica do concreto seco compactado ≈ 2.200 kg/m³; peso médio do bloco 14 de vedação ≈ 11–12 kg [16]. O consumo de cimento, no traço típico de vedação (1:11 a 1:13 em massa, ~150–190 kg de cimento/m³), fica próximo de **1,0 kg por bloco** [17] — ou cerca de 7 toneladas de cimento por dia de produção plena. O silo de 90 t confere, assim, autonomia de ~13 dias úteis, permitindo comprar cimento a granel em carretas completas (melhor preço) e atravessar eventuais atrasos de entrega sem parar a fábrica. Agregados: ~34 m³/turno no mix areia/pó de pedra/pedrisco, o que significa receber 5 a 6 caçambas de 27 m³ por semana — volume que justifica negociar contrato de fornecimento com pedreira da região (capítulo 7).
+
+---
+
+## 3.7 Da capacidade nominal à capacidade efetiva: feriados e paradas obrigatórias
+
+Nenhuma fábrica produz todos os dias úteis do calendário — e um plano que finge o contrário perde credibilidade. Esta seção converte a capacidade nominal em **capacidade efetiva**, descontando, com fontes, tudo o que obrigatoriamente para uma planta de vibroprensagem:
+
+| Etapa da cascata (base: ano de 2027, 1 turno) | Dias | Critério/fonte |
+|---|---|---|
+| Dias úteis nacionais | 252 | calendário oficial de 2027 (13 feriados nacionais) [141] |
+| (−) Feriados estadual e municipais em dia útil: N. Sra. da Penha (móvel), 21/09 (padroeiro/aniversário de São Mateus) e 27/12 (São Benedito) | −3 → 249 | calendário municipal [142] |
+| (−) Manutenção preventiva programada: rotina por turno de limpeza e lubrificação de colunas, molde e painel + preventiva semanal (2–4 h: lubrificação geral, inspeções NR-12, apertos) + mensal (8 h: chapas de desgaste, hidráulica, misturador) | −16 | rotinas recomendadas pelos fabricantes de vibroprensas [145][146] |
+| (−) Trocas de molde do mix (2–3 por semana × 15–20 min) | −2 | proposta Gervasi |
+| (−) Parada anual de revisão geral | −3 | prática industrial |
+| (−) Paradas não planejadas — corretivas, queda de energia rural, atraso de insumo, absenteísmo (6% do tempo programável) | −14 | benchmark de disponibilidade OEE [143][144]; premissa conservadora para planta nova em garantia, com silo de 90 t, estoque de agregados e 95% das peças de reposição de mercado |
+| (×) Qualidade: refugo máximo de 2% (meta do cap. 14) | −4 equiv. | meta interna |
+| **= Dias efetivos de produção vendável** | **≈210/ano** | |
+
+Na métrica industrial padrão (OEE — Overall Equipment Effectiveness), o plano embute **disponibilidade de 86% × performance de 90% (o fator que a própria Gervasi já desconta no ritmo de 7.020 blocos/turno) × qualidade de 98% ≈ OEE de 76%** — posição intermediária entre a média da indústria brasileira (~60% [144]) e o padrão classe mundial (85%, com disponibilidade ≥90% [143]). É um nível realista para uma planta automática nova; se a operação atingir disciplina classe mundial, os dias efetivos sobem e toda a folga vira potencial adicional.
+
+**Conclusão operacional**: a capacidade que vale para o plano de negócios não é a nominal de 264 dias-padrão, e sim **≈210 dias efetivos/ano** — é contra ela que os capítulos 5 e 13 medem utilização, ponto de equilíbrio e folga.
 
 ---
 
@@ -228,19 +249,37 @@ Sem uma "taxa de penetração" publicada para blocos (produto intermediário, n�
 
 **Convergência.** Os dois métodos convergem para um mercado anual na área de influência da ordem de **4 a 6 milhões de blocos-equivalentes + 70 a 150 mil m² de pavimentação intertravada**. Em valor, a preços de fábrica da região (cap. 6.4), isso representa um mercado endereçável (SAM) de **R$ 16 a 25 milhões/ano**.
 
-## 5.4 Capacidade da GTK versus mercado (market share requerido)
+## 5.4 Plano de vendas: mix pela absorção do mercado e teto de receita de pequena empresa
 
-| Cenário de operação GTK | Produção anual (blocos-eq + paver) | Receita estimada | Share do SAM |
+O plano de vendas foi construído em **três passos encadeados**, para que cada quantidade projetada tenha origem rastreável:
+
+**Passo 1 — Quanto a planta consegue produzir de cada produto.** É a tabela do §3.3: em dedicação exclusiva, até 1,85 milhão de blocos 14, 2,78 milhões de blocos 9, 1,39 milhão de blocos 19 ou 140 mil m² de paver por ano (nominal, 1 turno).
+
+**Passo 2 — Quanto o mercado absorve de cada produto.** A demanda da área de influência não compra os produtos na proporção em que a máquina os produz — compra na proporção das obras. Da análise dos capítulos 5 a 8 derivam as participações de cada família **no valor** do mercado endereçável: **pavimentação intertravada ≈ 25%** (os 70–150 mil m²/ano × ~R$ 55 equivalem a R$ 3,9–8,3 milhões, isto é, 24–33% do SAM de R$ 16–25 milhões — adotado o centro); **alvenaria estrutural ≈ 30%** (bloco 14 estrutural 26% + bloco 19/canaletas 4%), refletindo o peso das obras formais e do MCMV em alvenaria estrutural; e **vedação ≈ 45%** (bloco 14 vedação 36% + bloco 9 9%), o canal dominante do varejo, dos muros e da autoconstrução no interior. As horas da planta são então alocadas exatamente nessa proporção de mercado — a fábrica produz o que a região compra, não o que a máquina prefere.
+
+**Passo 3 — Escala limitada ao teto de pequena empresa.** Sobre esse mix aplica-se um único fator de escala até a receita anual projetada atingir **R$ 4.791.000 — deliberadamente abaixo do limite de R$ 4.800.000 da empresa de pequeno porte (LC nº 123/2006, art. 3º, II [139])**. A decisão é estratégica e dupla: (i) conservadorismo bancário — projeta-se vender menos do que se consegue fabricar; (ii) permanência no enquadramento EPP, que independe do regime tributário escolhido e preserva o tratamento diferenciado da empresa, inclusive as condições de porte no crédito FNE [124]. Ultrapassar o teto, no futuro, é decisão consciente de porte e tributação — não acidente de projeção.
+
+| Produto | % do mercado (valor) | Vendas/ano (plano-base) | Dias de produção | Receita | % da receita anual |
+|---|---|---|---|---|---|
+| Bloco 14×19×39 vedação | 36% | 522.655 un | 74,5 | R$ 1.724.760 | 36,0% |
+| Bloco 14×19×39 estrutural | 26% | 276.813 un | 39,4 | R$ 1.245.660 | 26,0% |
+| Bloco 9×19×39 vedação | 9% | 153.996 un | 14,6 | R$ 431.190 | 9,0% |
+| Bloco 19×19×39 + canaletas | 4% | 34.844 un | 6,6 | R$ 191.640 | 4,0% |
+| Paver 35 MPa e=6/8 | 25% | 21.013 m² | 39,7 | R$ 1.197.750 | 25,0% |
+| **Total** | **100%** | **≈988 mil blocos + 21 mil m²** | **174,8** | **R$ 4.791.000** | **100%** |
+
+**Leitura de utilização (contra a capacidade certa).** Os 174,8 dias de produção do plano equivalem a **≈83% dos ~210 dias efetivos** que a planta realmente tem por ano (§3.7) — e a 66% da referência nominal de 264 dias. Ou seja: no regime, a fábrica opera em ritmo industrial pleno e realista, vendendo menos do que fabrica, com **folga de ~35 dias efetivos/ano** para picos, atas e encomendas — além das reservas estruturais (2º turno e melhoria de OEE) que ficam fora do plano-base.
+
+**Coerência de absorção (o teste que o mix anterior não passava).** As quantidades do plano implicam shares consistentes entre si: ~988 mil blocos = **16–25% do mercado regional de 4–6 milhões de blocos-eq/ano**, e 21 mil m² de paver = **14–30% do mercado de 70–150 mil m²/ano** — participações compatíveis com a posição de único fabricante industrial-certificável do raio de ~150 km, sem exigir domínio irrealista de nenhum segmento.
+
+| Cenário | Receita anual | % da capacidade EFETIVA (R$ 5,76 mi — §3.7) | % do teto EPP |
 |---|---|---|---|
-| Ano 1 — ramp-up (40–45% de 1 turno) | ~740–830 mil blocos-eq + ~11–13 mil m² paver | ~R$ 2,9–3,3 milhões | ~12–20% |
-| Ano 2 (≈60% de 1 turno) | ~1,1 milhão + ~17 mil m² | ~R$ 4,3 milhões | ~17–27% |
-| Ano 3 — regime (≈75–80% de 1 turno) | ~1,4–1,5 milhão + ~21–22 mil m² | ~R$ 5,4–5,8 milhões | ~22–36% |
-| Teto físico 1 turno (100%) | ~1,85 milhão de blocos 14 (ou o mix equivalente) | ~R$ 7,2 milhões | ~29–45% |
-| 2º turno (expansão futura) | até o dobro | até ~R$ 14,5 milhões | exige ampliar raio |
+| Ano 1 — ramp-up | R$ 2,6–2,9 mi | 45–50% | 54–61% |
+| Ano 2 | R$ 3,8–3,9 mi | 66–68% | 79–81% |
+| Ano 3+ — regime (plano-base) | R$ 4,79 mi | ≈83% | 100% |
+| Referências de folga (fora do plano) | efetiva 1 turno R$ 5,76 mi · nominal R$ 7,24 mi · 2º turno ~dobra | — | — |
 
-*Nota: a receita de 100% de 1 turno (R$ 7,24 milhões) é derivada do mix de produção — 40% dos dias em bloco 14 vedação, 20% bloco 14 estrutural, 15% bloco 9, 10% bloco 19/canaleta, 15% paver — multiplicando dias × capacidade × preço-alvo de cada família (memória completa no Apêndice A); os cenários aplicam o percentual de utilização sobre essa base única, a mesma da planilha anexa.*
-
-A leitura honesta desses números: **o mercado local absorve com folga o ramp-up dos anos 1 e 2** (shares de 12–27%, factíveis para o único fabricante industrial do raio de 50 km, que ainda captura demanda hoje suprida por fábricas da Grande Vitória, pela cerâmica e por produção artesanal). O regime de cruzeiro do ano 3 (~22–36% do SAM) é ambicioso porém alcançável **desde que** a GTK execute a estratégia comercial do capítulo 12 — ancoragem em licitações municipais, rede de 8–12 revendas e 2–3 contratos com construtoras/agroindústrias. Já a ativação do 2º turno não deve ser presumida no fluxo bancário: é opção real de crescimento condicionada à expansão do raio (Linhares, noroeste do estado, sul da Bahia) e/ou à captura de grandes obras (Petrocity, MCMV-faixa 1 em empreendimento). O projeto financeiro deve, portanto, ser dimensionado para pagar-se em 1 turno — e é o que o capítulo 13 demonstra.
+O ramp-up exige shares de mercado de 10–18% (ano 1) e o regime de **19–30% do SAM** — factíveis para quem chega com produto certificado, frete 3–5× menor que o dos concorrentes industriais (cap. 9) e os canais do capítulo 8. A ativação do 2º turno e o rompimento do teto EPP não são presumidos no fluxo bancário: são opções reais de crescimento documentadas, condicionadas a decisão societária e tributária. O projeto financeiro é dimensionado para pagar-se dentro do plano-base — e é o que o capítulo 13 demonstra.
 
 ---
 
@@ -451,12 +490,12 @@ Regras práticas que devem governar o comercial (memória no Apêndice A): um ca
 | 5 | Custo de entrega do valor | CAPEX alto já equacionado; custo variável baixo | 7 |
 | 6 | Exclusividade da oferta | Única industrial no raio; barreira de capital e curva | 8 |
 | 7 | Velocidade de entrada | 150–180 dias de fábrica + obras civis; janela suficiente antes de reação | 6 |
-| 8 | Investimento × retorno | Payback estimado 4–6 anos com FNE (cap. 13) | 7 |
+| 8 | Investimento × retorno | Payback ~9 anos no teto EPP — deliberado; compatível c/ prazo FNE 10–12 anos (cap. 13) | 6 |
 | 9 | Produtos secundários | Pavers coloridos, piso grama, canaletas, futura argamassa/meio-fio | 9 |
 | 10 | Receita recorrente | Registro de preços, revendas com pedido programado, reposição contínua | 8 |
-| | **TOTAL** | | **77/100** |
+| | **TOTAL** | | **76/100** |
 
-**Interpretação**: acima de 75 pontos — **mercado altamente atrativo**, com ressalva de execução concentrada nos fatores 7 e 8 (cronograma de implantação e disciplina financeira no ramp-up).
+**Interpretação**: acima de 75 pontos — **mercado altamente atrativo**, com ressalva de execução concentrada nos fatores 7 e 8 (cronograma de implantação e retorno deliberadamente alongado pela opção EPP).
 
 ---
 
@@ -549,11 +588,13 @@ O capital social subscrito de R$ 7,5 milhões é coerente com essa ordem de gran
 | Manutenção, moldes e desgaste | provisão | — | R$ 0,08 |
 | Diesel pá carregadeira + consumíveis | provisão | — | R$ 0,04 |
 | **Custo variável industrial** | | | **≈R$ 1,85** |
-| Tributos sobre venda (Simples Nacional indústria, faixa relevante) | ~8,5% s/ PV R$ 3,30 | | R$ 0,28 |
-| Frete médio embutido (parcela CIF do mix) | | | R$ 0,15 |
-| **Custo variável total** | | | **≈R$ 2,28** |
+| Tributos sobre a venda (premissa conservadora — ver quadro de regime abaixo) | 15,0% s/ PV R$ 3,30 | | R$ 0,50 |
+| Frete médio embutido (parcela CIF do mix) | 4,5% s/ PV | | R$ 0,15 |
+| **Custo variável total** | | | **≈R$ 2,50** |
 
-**Margem de contribuição no bloco 14 vedação**: R$ 3,30 (preço médio de tabela) – R$ 2,28 ≈ **R$ 1,02/bloco (31%)**. Nos produtos nobres a margem é maior: bloco estrutural fbk 6–8 (PV R$ 4,50; CV ~R$ 2,60 com traço mais rico) ≈ **R$ 1,90/un (42%)**; paver e=6 (PV R$ 57/m²; CV ~R$ 30/m² incluindo pigmento parcial) ≈ **R$ 27/m² (47%)**. É por isso que a estratégia empurra o mix para estrutural + paver.
+**Margem de contribuição por produto** (PV × (1 − 15% tributos − 4,5% frete) − custo variável industrial): bloco 14 vedação **R$ 0,81/un (24,4%)**; bloco 14 estrutural fbk 6–8 (CV industrial ~R$ 2,10, traço mais rico) **R$ 1,52/un (33,8%)**; bloco 9 (CV ~R$ 1,45) **R$ 0,80/un (28,7%)**; bloco 19/canaleta (CV ~R$ 2,45) **R$ 1,98/un (36,0%)**; paver e=6 (CV industrial ~R$ 24/m², incluindo pigmento parcial) **R$ 21,88/m² (38,4%)**. Ponderada pelo mix do §5.4, a margem média derivada é de **31,2%** — o modelo adota **30,0%** (conservador). É por isso que a estratégia protege o espaço do estrutural e do paver no mix.
+
+**Regime tributário: decisão em aberto, premissa fechada.** O teto de receita mantém a empresa no porte EPP em qualquer regime [139]; a escolha entre os regimes é do planejamento tributário, não do estudo de mercado: no **Simples Nacional (Anexo II — indústria)**, a alíquota efetiva vai de ~11,6% no ramp-up a **15,0% no topo da faixa** (nominal de 30% com dedução de R$ 720 mil [140]); no **Lucro Presumido**, os tributos federais somam ~6,2% da receita (IRPJ com adicional + CSLL sobre bases presumidas de 8%/12% + PIS/COFINS cumulativos), acrescidos do ICMS por débito e crédito e da CPP de 20% sobre uma folha enxuta — desenho que pode ser competitivo justamente porque a planta automática emprega poucos funcionários, e que ainda pode capturar benefícios estaduais. **O modelo adota carga total de 15% sobre a receita, que cobre com folga os dois cenários; a definição fina com o contador antes do start-up só pode melhorar o resultado projetado.**
 
 ## 13.3 Custos fixos mensais (regime, 1 turno)
 
@@ -568,26 +609,33 @@ O capital social subscrito de R$ 7,5 milhões é coerente com essa ordem de gran
 | Manutenção predial e miudezas | 3.000 |
 | **Total fixo desembolsável** | **≈52.000** |
 
-## 13.4 Ponto de equilíbrio e cenários
+## 13.4 Ponto de equilíbrio, cenários e capacidade de pagamento
 
-Com margem de contribuição média ponderada do mix-alvo de **≈35%** sobre a receita:
+Com margem de contribuição média de **30%** sobre a receita (derivada de 31,2% no mix do §5.4 — Apêndice A):
 
-- **Ponto de equilíbrio operacional**: R$ 52.000 ÷ 35% ≈ **R$ 149 mil/mês de receita** (≈R$ 1,78 milhão/ano) — o equivalente a ~45 mil blocos-eq/mês, **cerca de 25% da capacidade de 1 turno** (24,6% da receita plena derivada de R$ 7,24 milhões — Apêndice A). 
-- Incluindo o serviço estimado da dívida FNE (SAC sobre ~R$ 4,5–5,5 milhões financiados, parcela média inicial de R$ 55–65 mil/mês pós-carência), o equilíbrio financeiro sobe para **~R$ 310–330 mil/mês — cerca de 53 a 57% da capacidade de 1 turno**. É por isso que a carência típica do FNE (que cobre o ano 1 de ramp-up) e o cronograma de utilização crescente importam: no regime do ano 3 (75–80% de utilização, receita de ~R$ 480–520 mil/mês), a operação cobre fixos e parcela com folga de ~35–40%. A distância entre o equilíbrio e o teto físico é o colchão de segurança do projeto — e ela é confortável justamente porque o equilíbrio cabe dentro de 1 turno.
+- **Ponto de equilíbrio operacional**: R$ 52.000 ÷ 30% ≈ **R$ 173 mil/mês** (R$ 2,08 milhões/ano) — ou seja, **36% da capacidade efetiva** (§3.7), **43% do teto EPP** e 29% da referência nominal. No regime, a operação roda 2,3 vezes acima do equilíbrio.
+- O plano-base (teto EPP) gera **EBITDA de ≈R$ 813 mil/ano** (R$ 4.791.000 × 30% − R$ 624.000 de fixos).
 
-| Cenário anual | Utilização (1 turno) | Receita (R$) | Margem contrib. (35%) | Fixos | EBITDA aprox. |
+| Cenário anual | Receita | % da capacidade efetiva | Margem contrib. (30%) | Fixos | EBITDA aprox. |
 |---|---|---|---|---|---|
-| Pessimista (ano 1 fraco) | 35% | 2,5 mi | 0,89 mi | 0,62 mi | ≈0,26 mi |
-| Base ano 1 | 40–45% | 2,9–3,3 mi | 1,0–1,1 mi | 0,62 mi | ≈0,4–0,5 mi |
-| Base ano 2 | 60% | 4,3 mi | 1,5 mi | 0,62 mi | ≈0,9 mi |
-| Base ano 3 (regime) | 75–80% | 5,4–5,8 mi | 1,9–2,0 mi | 0,62 mi | ≈1,3–1,4 mi |
-| Potencial 1 turno pleno | 95% | 6,9 mi | 2,4 mi | 0,62 mi | ≈1,8 mi |
+| Ano 1 — ramp-up | R$ 2,6–2,9 mi | 45–50% | R$ 0,78–0,87 mi | R$ 0,62 mi | ≈R$ 0,16–0,25 mi |
+| Ano 2 | R$ 3,8–3,9 mi | 66–68% | R$ 1,14–1,17 mi | R$ 0,62 mi | ≈R$ 0,52–0,55 mi |
+| Ano 3+ — regime (teto EPP) | R$ 4,79 mi | ≈83% | R$ 1,44 mi | R$ 0,62 mi | **≈R$ 0,81 mi** |
 
-*Todas as linhas aplicam o percentual de utilização sobre a mesma base — receita plena de 1 turno de R$ 7,24 milhões derivada do mix (§5.4 e Apêndice A) — com margem de contribuição de 35% e custos fixos constantes de R$ 52 mil/mês (crescimentos reais de fixos tendem a ser diluídos pela inflação repassada aos preços).*
+*Todas as linhas usam a mesma base (mix do §5.4; capacidade efetiva de R$ 5,76 milhões do §3.7), margem de 30% e fixos constantes de R$ 52 mil/mês — a mesma da planilha anexa e do Apêndice A.*
 
-Com EBITDA de regime de R$ 1,3–1,4 milhão/ano, o projeto de ~R$ 7 milhões apresenta **payback bruto de 5 a 6 anos** (4 a 5 anos considerando o subsídio implícito do FNE e a alavancagem fiscal do Simples/da depreciação) — perfil típico e saudável de indústria de materiais básicos, compatível com os prazos longos (8–12 anos) e carência do crédito FNE industrial [124].
+**Capacidade de pagamento (DSCR).** O indicador que o banco olha é a cobertura do serviço da dívida pelo EBITDA:
 
-**Capital de giro**: o ciclo financeiro estimado é de 45–60 dias (estoque de insumos ~15 dias + estoque de produto ~30 dias + prazo médio de recebimento 21–28 dias – prazo de fornecedores ~14 dias). Em regime, isso imobiliza R$ 550–750 mil — daí a reserva de R$ 700–900 mil no funding, o item cuja falta mata a maioria das indústrias novas do setor [126][127].
+| Estrutura da dívida FNE (SAC, pós-carência) | Serviço anual | DSCR no regime (EBITDA R$ 813 mil) |
+|---|---|---|
+| ~R$ 5,0 milhões em 10 anos (≈R$ 60 mil/mês) | R$ 720 mil | 1,13× — apertado |
+| **~R$ 4,0–4,5 milhões em 12 anos (≈R$ 46–50 mil/mês)** | **R$ 552–600 mil** | **1,36–1,47× — adequado** |
+
+A recomendação ao módulo financeiro do projeto é, portanto, **prazo de 12 anos e financiamento de até ~R$ 4,5 milhões**, com a contrapartida própria reforçada (o capital subscrito de R$ 7,5 milhões comporta) — além da carência típica do FNE cobrindo o ramp-up do ano 1 e do bônus de adimplência dando folga adicional à cobertura.
+
+**Payback e horizonte.** No teto EPP, o payback bruto do investimento total (~R$ 7,4 milhões) é de **~9 anos** — deliberadamente alongado pela opção de permanecer pequena empresa, e compatível com o prazo de 10–12 anos do crédito FNE industrial [124]. As alavancas documentadas para encurtá-lo, quando o investidor decidir: enriquecer o mix dentro do teto (mais estrutural e paver elevam a margem média), otimizar o regime tributário (qualquer carga abaixo dos 15% premissados vira margem) e, a partir do ano 5, romper o teto EPP como decisão consciente de porte — a capacidade instalada já está paga e pronta.
+
+**Capital de giro**: o ciclo financeiro estimado é de 45–60 dias (estoque de insumos ~15 dias + estoque de produto ~30 dias + prazo médio de recebimento 21–28 dias – prazo de fornecedores ~14 dias). Em regime (teto EPP), isso imobiliza R$ 450–650 mil — daí a reserva de R$ 700–900 mil no funding, já com folga,, o item cuja falta mata a maioria das indústrias novas do setor [126][127].
 
 ## 13.5 Sensibilidades que o investidor deve monitorar
 
@@ -612,11 +660,12 @@ Este capítulo condensa, em formato operacional, o que a experiência do setor e
 | 5 | Disponibilidade da linha (% horas programadas) | ≥92% | Semanal |
 | 6 | Vendas (R$ e peças, por canal) | conforme orçamento | Semanal |
 | 7 | Preço médio realizado vs. tabela | ≥97% | Semanal |
-| 8 | Margem de contribuição média (%) | ≥35% | Mensal |
+| 8 | Margem de contribuição média (%) | ≥30% (derivada: 31,2% — §13.2) | Mensal |
 | 9 | Dias de estoque de produto acabado | 25–45 | Semanal |
 | 10 | Inadimplência (>15 dias, % carteira) | <3% | Semanal |
 | 11 | Resistência à compressão (ensaios, MPa) | 100% dentro da classe | Mensal (lab.) |
 | 12 | Caixa mínimo (dias de custo fixo+folha) | ≥45 dias | Semanal |
+| 13 | Receita bruta acumulada 12 meses (RBT12) | ≤ R$ 4,8 milhões (teto EPP — decisão de romper é societária, não acidental) | Mensal |
 
 Regra prática: **prancheta diária** (produção, refugo, cimento), **reunião semanal de 1 hora** (vendas, estoque, caixa, inadimplência) e **fechamento mensal** com o contador (DRE gerencial simplificada por produto). O supervisório da XP350 registra automaticamente boa parte dos dados de processo — usar os relatórios da máquina, não anotações soltas.
 
@@ -682,12 +731,12 @@ Regra prática: **prancheta diária** (produção, refugo, cimento), **reunião 
 2. **Mercado**: a área de influência ponderada soma ~152,9 mil habitantes-equivalentes (9 municípios), com demanda estimada de 4 a 6 milhões de blocos-equivalentes + 70 a 150 mil m² de pavimentação por ano (SAM de R$ 16–25 milhões/ano), sustentada por três motores simultâneos: pipeline público de pavimentação em blocos (padrão adotado pelas prefeituras da região, com registro de preços ativo em São Mateus), ciclo econômico regional (petróleo, café, Marcopolo, Guriri) e habitação (MCMV + déficit local).
 3. **Concorrência**: a oferta local é artesanal e pulverizada (nenhum fabricante certificado no raio de ~150 km); os players industriais estão a 200+ km com frete proibitivo para o dia a dia. A GTK nascerá como única planta automática do interior norte-capixaba — posição defensável por capital, certificação e contratos.
 4. **Suprimentos**: cadeia mapeada e viável — pedreira a ~40 km, cimento a granel de 2 fornecedores estaduais com silo de 90 t de autonomia, aditivos e pallets com oferta competitiva, energia enquadrável em MT rural.
-5. **Economia do negócio**: ponto de equilíbrio operacional em ~25% da capacidade de 1 turno; EBITDA de regime estimado em R$ 1,3–1,4 milhão/ano; investimento total de ~R$ 6,6–8,2 milhões compatível com o capital subscrito de R$ 7,5 milhões e com funding FNE (a área legal da Sudene abrange 31 municípios do norte do ES — LC nº 185/2021 —, incluindo todos os nove da área de influência; indústria é setor prioritário no FNE 2026 de R$ 52,6 bilhões, com R$ 1,3 bilhão para o ES).
+5. **Economia do negócio**: plano-base limitado ao teto de pequena empresa (R$ 4,79 milhões/ano — LC 123), vendendo ~988 mil blocos + 21 mil m² de paver com **83% da capacidade efetiva** (que desconta feriados, manutenção e paradas — OEE implícito de 76%); ponto de equilíbrio em 36% da capacidade efetiva; EBITDA de regime de ~R$ 813 mil/ano; DSCR de 1,36–1,47× com dívida FNE de ~R$ 4,0–4,5 milhões em 12 anos; investimento total de ~R$ 6,6–8,2 milhões compatível com o capital subscrito de R$ 7,5 milhões (a área legal da Sudene abrange 31 municípios do norte do ES — LC nº 185/2021 —, incluindo todos os nove da área de influência; indústria é setor prioritário no FNE 2026 de R$ 52,6 bilhões, com R$ 1,3 bilhão para o ES).
 6. **Riscos**: reais e mapeados (17 riscos na matriz) — os críticos são de execução (ramp-up comercial, CAPEX complementar, prazo de implantação), não de mercado; todos com mitigadores definidos.
 
 ## 15.2 Parecer
 
-**A viabilidade mercadológica do empreendimento é FAVORÁVEL.** A demanda regional absorve com folga o ramp-up projetado (shares de 12–27% do mercado endereçável nos anos 1–2) e comporta o regime de cruzeiro (~22–36%) na condição de execução da estratégia comercial — ancoragem em licitações e atas municipais, rede de 8–12 revendas, 2–3 contas B2B estruturantes e balcão de fábrica. O projeto deve ser dimensionado financeiramente para pagar-se com 1 turno, tratando o 2º turno como opção de crescimento, e condicionado às providências de implantação listadas no plano de ação (licença ambiental, energia, galpão, bandejas e pré-venda iniciados de imediato).
+**A viabilidade mercadológica do empreendimento é FAVORÁVEL.** A demanda regional absorve com folga o ramp-up projetado (shares de 10–18% do mercado endereçável no ano 1) e comporta o regime de cruzeiro no teto EPP (~19–30% do SAM, com o mix espelhando a absorção do mercado) na condição de execução da estratégia comercial — ancoragem em licitações e atas municipais, rede de 8–12 revendas, 2–3 contas B2B estruturantes e balcão de fábrica. O projeto paga-se dentro do plano-base de pequena empresa — vendendo menos do que fabrica, com folga operacional documentada —, tratando o 2º turno e o rompimento do teto EPP como opções futuras de crescimento, e condicionado às providências de implantação listadas no plano de ação (licença ambiental, energia, galpão, bandejas e pré-venda iniciados de imediato).
 
 Não existe empreendimento "sem como dar errado" — existe empreendimento com risco tratado. O conjunto aqui apresentado — vantagem locacional mensurável, vazio competitivo no segmento industrial, demanda pública recorrente já contratada na vizinhança imediata, economia unitária folgada e funding adequado — configura um caso de risco bem remunerado, à altura da análise de um banco de desenvolvimento.
 
@@ -970,6 +1019,22 @@ Não existe empreendimento "sem como dar errado" — existe empreendimento com r
 [137] SEAG-ES — Caminhos do Campo: Estado vai pavimentar mais 476 km de estradas rurais. Disponível em: https://seag.es.gov.br/caminhos-do-campo-estado-vai-pavimentar-mais . Acesso em: 16/08/2026.
 
 [138] Cimento.Org — Cimento no Brasil (consumo per capita de cimento ~280 kg/habitante). Disponível em: https://cimento.org/cimento-no-brasil/ . Acesso em: 16/08/2026.
+
+[139] Presidência da República — Lei Complementar nº 123/2006, art. 3º, II (empresa de pequeno porte: receita bruta anual até R$ 4.800.000,00, redação da LC nº 155/2016). Disponível em: https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm . Acesso em: 16/08/2026.
+
+[140] Contabilizei — Anexo II do Simples Nacional (indústria): tabela de alíquotas de 4,5% a 30% e parcelas a deduzir até R$ 720 mil. Disponível em: https://www.contabilizei.com.br/contabilidade-online/anexo-2-simples-nacional/ . Acesso em: 16/08/2026.
+
+[141] Dias-Uteis.com — Dias úteis no ano de 2027 no Brasil (252 dias úteis, feriados nacionais). Disponível em: https://www.dias-uteis.com/EN/quantos_dias_uteis_no_ano_2027_Feriados_nacionais.htm . Acesso em: 16/08/2026.
+
+[142] Prefeitura de São Mateus — Feriados municipais (21/09, padroeiro e aniversário da cidade; 27/12, São Benedito). Disponível em: https://saomateus.es.gov.br/sao-mateus/feriados-municipais . Acesso em: 16/08/2026.
+
+[143] OEE.com.br — OEE Classe Mundial (OEE ≥85%; disponibilidade ≥90%; performance ≥95%; qualidade ≥99,9%). Disponível em: https://www.oee.com.br/oee-classe-mundial/ . Acesso em: 16/08/2026.
+
+[144] Vedois Tecnologia — Como atingir o OEE de 85% (média das indústrias brasileiras ~60%). Disponível em: https://vedois.com.br/site/como-atingir-o-oee-de-85/ . Acesso em: 16/08/2026.
+
+[145] Hiwston — Vibro prensa máquina de bloco (rotinas de limpeza e lubrificação por turno; manutenção periódica). Disponível em: https://www.hiwston.com.br/vibro-prensa-maquina-bloco . Acesso em: 16/08/2026.
+
+[146] Mapa da Obra (Votorantim) — Limpeza e manutenção de máquinas é essencial (inspeção e limpeza regulares de molde, vibração e hidráulica). Disponível em: https://www.mapadaobra.com.br/capacitacao/limpeza-e-manutencao-de-equipamentos-e-essencial/ . Acesso em: 16/08/2026.
 
 *Nota metodológica: as URLs acima foram coletadas e conferidas por mecanismo de busca em 15–16/08/2026. A política de rede do ambiente de elaboração impediu a abertura direta (fetch) de parte dos domínios (órgãos estaduais *.es.gov.br, portais de notícias e diretórios empresariais); nesses casos, os dados citados provêm dos resultados indexados da busca e a URL é fornecida para verificação direta pelo leitor.*
 
