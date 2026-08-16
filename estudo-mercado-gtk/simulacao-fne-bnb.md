@@ -46,3 +46,6 @@ Leituras importantes:
 | Juros da carência (pagos trimestralmente) | ~R$ 379 mil/ano |
 
 *Notas de rigor: (i) simulação pela regra oficial de desembolso (aplicação integral no ano 1 — conservadora: superestima os juros iniciais; o desembolso real escalonado do cronograma físico só melhora o quadro); (ii) taxa cheia, sem bônus de adimplência (pagamento pontual reduz o desembolso efetivo); (iii) valores a validar na simulação do sistema do BNB no protocolo — este anexo usa o mesmo algoritmo da planilha oficial, mas o enquadramento de custo padrão e a taxa contratual final são definidos pelo banco.*
+
+---
+*Continuidade: este anexo alimenta o **dossiê de protocolo** em `dossie-bnb/` (memória de cálculo espelho com Mapa de Origem e Conferência, justificativa técnica, kit de defesa do analista e checklist de providências contábeis).*
