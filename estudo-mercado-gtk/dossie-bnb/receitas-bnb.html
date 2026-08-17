@@ -1,0 +1,66 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8">
+<title>Receitas/Custos — GTK Pré-Moldados</title>
+<style>
+@page { size: A4 landscape; margin: 9mm 8mm 10mm; }
+* { box-sizing:border-box; }
+body { margin:0; font-family:'Liberation Sans',Arial,sans-serif; color:#000; font-size:8pt;
+        -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+.abas { display:flex; gap:1px; margin-bottom:0; }
+.abas div { background:#F7F7F7; color:#444; font-size:7.5pt; padding:2mm 3mm; border:0.5pt solid #CCC; border-bottom:none; }
+.abas div.on { background:#E87722; color:#fff; font-weight:bold; border-color:#E87722; }
+.barra-laranja { height:1.4mm; background:#F08030; margin-bottom:3mm; }
+.titulo { font-size:14pt; font-weight:bold; margin:0 0 2mm; }
+.barra-sec { margin-bottom:2.5mm; }
+.barra-sec .ativa { font-weight:bold; font-size:8.5pt; border-bottom:2pt solid #E87722; padding-bottom:1mm; margin-right:8mm; }
+.barra-sec .inativa { color:#888; font-size:8.5pt; }
+.faixa { background:#F9F9F9; border:0.5pt solid #CCC; padding:1.6mm 2mm; font-size:9pt; font-weight:bold; margin-bottom:2.5mm; }
+.lbl { font-size:7pt; color:#888; margin-bottom:0.6mm; }
+.campo { border:0.5pt solid #999; padding:1.6mm 2mm; font-size:9.5pt; margin-bottom:2.5mm; }
+table { width:100%; border-collapse:collapse; table-layout:fixed; }
+th { font-size:7pt; font-weight:bold; color:#333; background:#fff; border-top:0.8pt solid #999;
+      border-bottom:0.8pt solid #999; padding:1.1mm 0.6mm; text-align:center; vertical-align:middle; }
+th.c-desc { text-align:left; width:50mm; } th.c-un { width:11mm; }
+th.c-num { width:16mm; } th.c-ano { border-left:0.5pt solid #CCC; }
+th.c-sub { font-size:6.6pt; color:#666; border-top:none; border-bottom:0.5pt solid #DDD; padding:0.5mm 0; }
+td { font-size:7.8pt; padding:1.7mm 0.6mm; border-bottom:0.5pt solid #DDD; text-align:right; white-space:nowrap; }
+td.c-desc { text-align:left; font-size:7.8pt; white-space:normal; line-height:1.25; } td.c-un { text-align:center; }
+td.c-pct { color:#228B22; border-left:0.5pt solid #EEE; }
+tr.zebra td { background:#FFF8F0; }
+.obs { background:#FFF2CC; color:#B07000; font-style:italic; font-size:7pt; padding:2mm; margin-top:3mm;
+        border:0.5pt solid #E8D9A0; }
+.rodape { margin-top:2.5mm; font-size:6.8pt; color:#777; display:flex; justify-content:space-between; }
+.cont { font-size:7.5pt; color:#666; margin:2mm 0 1mm; }
+.quebra { page-break-before:always; }
+</style></head><body>
+
+<div class="abas">
+  <div>Inf. Gerais</div><div>Prog. Invest.</div><div>Cron. Desembolso</div><div>Fin. Existentes</div>
+  <div>Garantias</div><div class="on">Receitas/Custos</div><div>Patrimônio</div><div>Cálc. Financeiro</div><div>Relatórios</div>
+</div>
+<div class="barra-laranja"></div>
+
+<div class="titulo">Receitas/Custos</div>
+<div class="barra-sec"><span class="ativa">ATIVIDADES</span><span class="inativa">CUSTO PADRÃO (%)</span></div>
+<div class="faixa">Fabricação de artefatos de cimento para uso na construção</div>
+<div class="lbl">Descrição Atividade *</div>
+<div class="campo">Fabricação de artefatos de cimento para uso na construção</div>
+<div class="lbl">Atividade Econômica *</div>
+<div class="campo">Fabricação de artefatos de cimento para uso na construção (Indústria/Ind. de Transformação) CNAE 2330-3/02</div>
+<table><tr><th class="c-desc">Descrição</th><th class="c-un">Unidade</th><th class="c-num">Preço<br>Unitário (R$)</th><th class="c-num">Qtd.<br>Atual</th><th class="c-num">Qtd.<br>Projetada</th><th class="c-ano" colspan="2">Ano Atual</th><th class="c-ano" colspan="2">Ano 1</th><th class="c-ano" colspan="2">Ano 2</th><th class="c-ano" colspan="2">Ano 3</th><th class="c-ano" colspan="2">Ano 4</th><th class="c-ano" colspan="2">Ano 5</th></tr><tr><th></th><th></th><th></th><th></th><th></th><th class="c-sub">%</th><th class="c-sub">Qtd.</th><th class="c-sub">%</th><th class="c-sub">Qtd.</th><th class="c-sub">%</th><th class="c-sub">Qtd.</th><th class="c-sub">%</th><th class="c-sub">Qtd.</th><th class="c-sub">%</th><th class="c-sub">Qtd.</th><th class="c-sub">%</th><th class="c-sub">Qtd.</th></tr><tr><td class="c-desc">Bloco de concreto 14x19x39 - vedação</td><td class="c-un">UND</td><td class="c-num">3,30</td><td class="c-num">0,00</td><td class="c-num">522.655,00</td><td class="c-pct">0,00%</td><td class="c-qtd">0</td><td class="c-pct">71,75%</td><td class="c-qtd">375.000</td><td class="c-pct">89,29%</td><td class="c-qtd">466.667</td><td class="c-pct">100,00%</td><td class="c-qtd">522.655</td><td class="c-pct">100,00%</td><td class="c-qtd">522.655</td><td class="c-pct">100,00%</td><td class="c-qtd">522.655</td></tr><tr class="zebra"><td class="c-desc">Bloco de concreto 14x19x39 - estrutural</td><td class="c-un">UND</td><td class="c-num">4,50</td><td class="c-num">0,00</td><td class="c-num">276.813,00</td><td class="c-pct">0,00%</td><td class="c-qtd">0</td><td class="c-pct">44,15%</td><td class="c-qtd">122.222</td><td class="c-pct">71,09%</td><td class="c-qtd">196.778</td><td class="c-pct">100,00%</td><td class="c-qtd">276.813</td><td class="c-pct">100,00%</td><td class="c-qtd">276.813</td><td class="c-pct">100,00%</td><td class="c-qtd">276.813</td></tr><tr><td class="c-desc">Bloco de concreto 9x19x39 - vedação</td><td class="c-un">UND</td><td class="c-num">2,80</td><td class="c-num">0,00</td><td class="c-num">153.996,00</td><td class="c-pct">0,00%</td><td class="c-qtd">0</td><td class="c-pct">70,15%</td><td class="c-qtd">108.036</td><td class="c-pct">89,29%</td><td class="c-qtd">137.500</td><td class="c-pct">100,00%</td><td class="c-qtd">153.996</td><td class="c-pct">100,00%</td><td class="c-qtd">153.996</td><td class="c-pct">100,00%</td><td class="c-qtd">153.996</td></tr><tr class="zebra"><td class="c-desc">Bloco 19x19x39 e canaletas</td><td class="c-un">UND</td><td class="c-num">5,50</td><td class="c-num">0,00</td><td class="c-num">34.844,00</td><td class="c-pct">0,00%</td><td class="c-qtd">0</td><td class="c-pct">43,05%</td><td class="c-qtd">15.000</td><td class="c-pct">70,31%</td><td class="c-qtd">24.500</td><td class="c-pct">100,00%</td><td class="c-qtd">34.844</td><td class="c-pct">100,00%</td><td class="c-qtd">34.844</td><td class="c-pct">100,00%</td><td class="c-qtd">34.844</td></tr><tr><td class="c-desc">Piso intertravado (paver) 35 MPa</td><td class="c-un">M2</td><td class="c-num">57,00</td><td class="c-num">0,00</td><td class="c-num">21.013,00</td><td class="c-pct">0,00%</td><td class="c-qtd">0</td><td class="c-pct">48,22%</td><td class="c-qtd">10.132</td><td class="c-pct">75,54%</td><td class="c-qtd">15.873</td><td class="c-pct">100,00%</td><td class="c-qtd">21.013</td><td class="c-pct">100,00%</td><td class="c-qtd">21.013</td><td class="c-pct">100,00%</td><td class="c-qtd">21.013</td></tr></table>
+<div class="obs">OBS: Empresa em implantação: coluna Ano Atual zerada (sem operação); Qtd. Atual = 0. Qtd. Projetada = plano de regime (Ano 3 em diante), limitado ao teto de EPP da LC 123/2006 — receita de estabilização de R$ 4.791.000. O % de Utilização por ano reflete o ramp-up comercial e a migração do mix para produtos de maior valor. Abertura mensal do Ano 1 em previsao-faturamento.pdf.</div>
+<div class="rodape"><span>GTK PRÉ-MOLDADOS LTDA · CNPJ 66.492.016/0001-77 · São Mateus – ES</span>
+<span>Receitas/Custos — Ano Atual a Ano 5 · página 1 de 2</span></div>
+
+<div class="quebra"></div>
+<div class="abas">
+  <div>Inf. Gerais</div><div>Prog. Invest.</div><div>Cron. Desembolso</div><div>Fin. Existentes</div>
+  <div>Garantias</div><div class="on">Receitas/Custos</div><div>Patrimônio</div><div>Cálc. Financeiro</div><div>Relatórios</div>
+</div>
+<div class="barra-laranja"></div>
+<div class="titulo">Receitas/Custos</div>
+<div class="faixa">Fabricação de artefatos de cimento para uso na construção</div>
+<div class="cont">Continuação — colunas Ano 6 a Ano 11 (as cinco primeiras colunas repetem-se para leitura).</div>
+<table><tr><th class="c-desc">Descrição</th><th class="c-un">Unidade</th><th class="c-num">Preço<br>Unitário (R$)</th><th class="c-num">Qtd.<br>Atual</th><th class="c-num">Qtd.<br>Projetada</th><th class="c-ano" colspan="2">Ano 6</th><th class="c-ano" colspan="2">Ano 7</th><th class="c-ano" colspan="2">Ano 8</th><th class="c-ano" colspan="2">Ano 9</th><th class="c-ano" colspan="2">Ano 10</th><th class="c-ano" colspan="2">Ano 11</th></tr><tr><th></th><th></th><th></th><th></th><th></th><th class="c-sub">%</th><th class="c-sub">Qtd.</th><th class="c-sub">%</th><th class="c-sub">Qtd.</th><th class="c-sub">%</th><th class="c-sub">Qtd.</th><th class="c-sub">%</th><th class="c-sub">Qtd.</th><th class="c-sub">%</th><th class="c-sub">Qtd.</th><th class="c-sub">%</th><th class="c-sub">Qtd.</th></tr><tr><td class="c-desc">Bloco de concreto 14x19x39 - vedação</td><td class="c-un">UND</td><td class="c-num">3,30</td><td class="c-num">0,00</td><td class="c-num">522.655,00</td><td class="c-pct">100,00%</td><td class="c-qtd">522.655</td><td class="c-pct">100,00%</td><td class="c-qtd">522.655</td><td class="c-pct">100,00%</td><td class="c-qtd">522.655</td><td class="c-pct">100,00%</td><td class="c-qtd">522.655</td><td class="c-pct">100,00%</td><td class="c-qtd">522.655</td><td class="c-pct">100,00%</td><td class="c-qtd">522.655</td></tr><tr class="zebra"><td class="c-desc">Bloco de concreto 14x19x39 - estrutural</td><td class="c-un">UND</td><td class="c-num">4,50</td><td class="c-num">0,00</td><td class="c-num">276.813,00</td><td class="c-pct">100,00%</td><td class="c-qtd">276.813</td><td class="c-pct">100,00%</td><td class="c-qtd">276.813</td><td class="c-pct">100,00%</td><td class="c-qtd">276.813</td><td class="c-pct">100,00%</td><td class="c-qtd">276.813</td><td class="c-pct">100,00%</td><td class="c-qtd">276.813</td><td class="c-pct">100,00%</td><td class="c-qtd">276.813</td></tr><tr><td class="c-desc">Bloco de concreto 9x19x39 - vedação</td><td class="c-un">UND</td><td class="c-num">2,80</td><td class="c-num">0,00</td><td class="c-num">153.996,00</td><td class="c-pct">100,00%</td><td class="c-qtd">153.996</td><td class="c-pct">100,00%</td><td class="c-qtd">153.996</td><td class="c-pct">100,00%</td><td class="c-qtd">153.996</td><td class="c-pct">100,00%</td><td class="c-qtd">153.996</td><td class="c-pct">100,00%</td><td class="c-qtd">153.996</td><td class="c-pct">100,00%</td><td class="c-qtd">153.996</td></tr><tr class="zebra"><td class="c-desc">Bloco 19x19x39 e canaletas</td><td class="c-un">UND</td><td class="c-num">5,50</td><td class="c-num">0,00</td><td class="c-num">34.844,00</td><td class="c-pct">100,00%</td><td class="c-qtd">34.844</td><td class="c-pct">100,00%</td><td class="c-qtd">34.844</td><td class="c-pct">100,00%</td><td class="c-qtd">34.844</td><td class="c-pct">100,00%</td><td class="c-qtd">34.844</td><td class="c-pct">100,00%</td><td class="c-qtd">34.844</td><td class="c-pct">100,00%</td><td class="c-qtd">34.844</td></tr><tr><td class="c-desc">Piso intertravado (paver) 35 MPa</td><td class="c-un">M2</td><td class="c-num">57,00</td><td class="c-num">0,00</td><td class="c-num">21.013,00</td><td class="c-pct">100,00%</td><td class="c-qtd">21.013</td><td class="c-pct">100,00%</td><td class="c-qtd">21.013</td><td class="c-pct">100,00%</td><td class="c-qtd">21.013</td><td class="c-pct">100,00%</td><td class="c-qtd">21.013</td><td class="c-pct">100,00%</td><td class="c-qtd">21.013</td><td class="c-pct">100,00%</td><td class="c-qtd">21.013</td></tr></table>
+<div class="rodape"><span>GTK PRÉ-MOLDADOS LTDA · CNPJ 66.492.016/0001-77 · São Mateus – ES</span>
+<span>Receitas/Custos — Ano 6 a Ano 11 · página 2 de 2</span></div>
+</body></html>

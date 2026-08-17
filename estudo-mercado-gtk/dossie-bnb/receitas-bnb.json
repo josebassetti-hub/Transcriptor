@@ -13,6 +13,10 @@
           "qtd_projetada": 522655,
           "anos": [
             {
+              "pct": 0.0,
+              "qtd": 0.0
+            },
+            {
               "pct": 71.75,
               "qtd": 375000.0
             },
@@ -65,6 +69,10 @@
           "qtd_atual": 0,
           "qtd_projetada": 276813,
           "anos": [
+            {
+              "pct": 0.0,
+              "qtd": 0.0
+            },
             {
               "pct": 44.15,
               "qtd": 122222.22
@@ -119,6 +127,10 @@
           "qtd_projetada": 153996,
           "anos": [
             {
+              "pct": 0.0,
+              "qtd": 0.0
+            },
+            {
               "pct": 70.15,
               "qtd": 108035.71
             },
@@ -171,6 +183,10 @@
           "qtd_atual": 0,
           "qtd_projetada": 34844,
           "anos": [
+            {
+              "pct": 0.0,
+              "qtd": 0.0
+            },
             {
               "pct": 43.05,
               "qtd": 15000.0
@@ -225,6 +241,10 @@
           "qtd_projetada": 21013,
           "anos": [
             {
+              "pct": 0.0,
+              "qtd": 0.0
+            },
+            {
               "pct": 48.22,
               "qtd": 10131.58
             },
@@ -273,5 +293,5 @@
       ]
     }
   ],
-  "obs": "Empresa em implantação: Qtd. Atual = 0 (sem operação). Qtd. Projetada = plano de regime (ano 3+), limitado ao teto de EPP (LC 123/2006) de R$ 4,8 milhões — receita de estabilização R$ 4.791.000. % de Utilização por ano reflete o ramp-up e a migração do mix para produtos de maior valor (vedação -> estrutural e paver). Detalhamento mensal do ano 1 em previsao-faturamento.xlsx."
+  "obs": "Empresa em implantação: coluna Ano Atual zerada (sem operação); Qtd. Atual = 0. Qtd. Projetada = plano de regime (Ano 3 em diante), limitado ao teto de EPP da LC 123/2006 — receita de estabilização de R$ 4.791.000. O % de Utilização por ano reflete o ramp-up comercial e a migração do mix para produtos de maior valor. Abertura mensal do Ano 1 em previsao-faturamento.pdf."
 }
