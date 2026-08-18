@@ -1,5 +1,6 @@
 # PROVIDÊNCIAS CONTÁBEIS E DOCUMENTAIS — CHECKLIST PARA O CONTADOR
 ## GTK Pré-Moldados Ltda (CNPJ 66.492.016/0001-77) · antes do protocolo FNE/BNB
+### Contador responsável: HILTON CHISTE JUNIOR — CRC-ES Nº 004602/O
 
 ## A. Contabilidade (nada formalizado até 16/08/2026 — prioridade)
 1. **Balanço de abertura** (base 28/04/2026): capital subscrito R$ 7.500.000; integralizado R$ 100.000; registrar o compromisso de integralização (AFAC/quotas a integralizar até 28/04/2036).
