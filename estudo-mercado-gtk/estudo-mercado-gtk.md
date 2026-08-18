@@ -99,7 +99,7 @@ A XP350 trabalha com bandejas de até 700 × 550 mm (superfície útil de moldag
 
 **Família 3 — Canaletas e complementos estruturais.** Canaletas U (9/14/19), canaletas J e blocos compensadores, usados em vergas, contravergas e cintas de amarração; acompanham obrigatoriamente qualquer venda de bloco estrutural (SINAPI-ES: canaleta 14×19×19 = R$ 3,08 [11]).
 
-**Família 4 — Pavers / pavimento intertravado (NBR 9781).** Peças de 35 MPa (tráfego leve) ou 50 MPa (tráfego pesado), nas espessuras 6, 8 e 10 cm, nos formatos retangular 10×20 ("holandês"), 16 faces 22×11, sextavado 25×25, raquete e tijolinho, em cor natural ou pigmentado (dupla camada). É o produto de venda pública por excelência (calçadas, praças, pátios e ruas) e o de melhor margem por m² (referências SINAPI-ES 06/2026: paver e=6 natural R$ 69,97–88,39/m²; sextavado e=8 R$ 95,76/m²; e=10 R$ 126,57/m² [11]).
+**Família 4 — Pavers / pavimento intertravado (NBR 9781).** Peças de 35 MPa (pedestres e veículos leves) ou 50 MPa (tráfego pesado) — o portfólio contratado da GTK adota **6 cm/35 MPa e 8 cm/50 MPa**, o par coerente com a norma —, nas espessuras 6, 8 e 10 cm, nos formatos retangular 10×20 ("holandês"), 16 faces 22×11, sextavado 25×25, raquete e tijolinho, em cor natural ou pigmentado (dupla camada). É o produto de venda pública por excelência (calçadas, praças, pátios e ruas) e o de melhor margem por m² (referências SINAPI-ES 06/2026: paver e=6 natural R$ 69,97–88,39/m²; sextavado e=8 R$ 95,76/m²; e=10 R$ 126,57/m² [11]).
 
 **Família 5 — Piso grama / concregrama.** Placas vazadas 40×40 ou similares para estacionamentos permeáveis e taludes; nicho crescente com a agenda de drenagem urbana (NBR 16416, pavimento permeável) [12].
 
@@ -116,17 +116,40 @@ A tabela a seguir consolida os dados de produção da proposta Gervasi (bandeja 
 | Bloco 14×19×39 | 4 | 1.000 | 7.020 un | ≈154.400 un | ≈1,85 milhão un | 5,4 |
 | Bloco 19×19×39 | 3 | 750 | 5.265 un | ≈115.800 un | ≈1,39 milhão un | 4,7 |
 | Bloco 9×19×39 | 6 | 1.200 | 10.530 un | ≈231.700 un | ≈2,78 milhões un | 7,3 |
-| Paver H6 (m²) | 0,37 m² | ≈74 m² | ≈530 m² | ≈11.700 m² | ≈140 mil m² | 4,1 |
+| Paver H6 — 6 cm (m²) | 0,30 m² | ≈74 m² | ≈530 m² | ≈11.700 m² | ≈140 mil m² | 4,1 |
+| Paver H8 — 8 cm (m²) | 0,30 m² | ≈65 m² | ≈466 m² (premissa) | ≈10.300 m² | ≈123 mil m² | ≈5,5 |
 
-Notas técnicas: (i) os números por turno são os declarados pelo fabricante; os valores por hora do paver foram derivados da produção por turno (530 m² ÷ 7,2 h efetivas ≈ 74 m²/h), pois a linha correspondente da proposta apresenta os dígitos comprimidos; (ii) canaletas e meios-blocos produzem em cadência igual ou superior à do bloco inteiro correspondente; pavers de 8 e 10 cm produzem o mesmo nº de bandejas/hora com maior consumo de concreto por m²; (iii) a máquina é preparada para **dois turnos** (o sistema hidráulico tem trocador de calor dimensionado para isso), o que dobra todos os valores sem novo investimento em equipamento — este é o principal "colchão de crescimento" embutido no projeto; (iv) os valores desta tabela são nominais por turno — o §3.7 converte calendário real e paradas obrigatórias em capacidade efetiva anual.
+Notas técnicas: (i) os números por turno são os declarados pelo fabricante; os valores por hora do paver foram derivados da produção por turno (530 m² ÷ 7,2 h efetivas ≈ 74 m²/h), pois a linha correspondente da proposta apresenta os dígitos comprimidos; (ii) canaletas e meios-blocos produzem em cadência igual à do bloco inteiro de mesma largura (mesma pegada na bandeja), e é essa a premissa adotada no plano; **o paver de 8 cm ocupa o mesmo número de peças por bandeja, mas consome 33% mais concreto por m², o que alonga o ciclo — o plano adota produtividade de 88% da do H6 (≈466 m²/turno), premissa declarada a substituir pelo dado oficial da Gervasi**; (iii) a máquina é preparada para **dois turnos** (o sistema hidráulico tem trocador de calor dimensionado para isso), o que dobra todos os valores sem novo investimento em equipamento — este é o principal "colchão de crescimento" embutido no projeto; (iv) os valores desta tabela são nominais por turno — o §3.7 converte calendário real e paradas obrigatórias em capacidade efetiva anual.
 
 Em regime de dois turnos, portanto, o teto físico da planta é da ordem de **3,7 milhões de blocos de 14 cm por ano** (ou o equivalente no mix), patamar de fábrica média-grande no interior do Brasil.
+
+
+### Portfólio contratado e os moldes que ele exige
+
+O empreendedor definiu o portfólio comercial em **11 itens**: os três tipos de peça (vedação, estrutural e canaleta) em cada uma das três larguras (9, 14 e 19 cm) e o piso intertravado em duas espessuras (6 e 8 cm). Isso **não** significa onze moldes, e a distinção vale dinheiro:
+
+- **Vedação e estrutural saem do mesmo molde.** Pela NBR 6136:2016 (Tabela 2), a espessura mínima de parede é de 25 mm (transversal) e 32/25 mm (longitudinal, blocos de 19/14 cm) nas classes A e B — estruturais — contra 18 mm na classe C, de vedação. Um molde construído na espessura estrutural atende às duas classes; o que muda entre um produto e outro é o **traço** (consumo de cimento, e portanto o fbk), não a geometria. O inverso não vale: molde de parede fina não produz bloco estrutural. **Recomendação: especificar todos os moldes de bloco na espessura de classe A/B.** O custo dessa escolha é que o bloco de vedação sai um pouco mais pesado — e é ele que está no custo unitário do §13.2.
+- **Canaleta é geometria própria** e exige molde dedicado por largura.
+- **Paver de 6 e 8 cm**: a máquina cobre as duas espessuras sem alteração (altura de peça de 40 a 350 mm na ficha técnica), mas o molde é fabricado contra uma altura nominal — a caixa precisa comportar o concreto solto (fator de enchimento de 1,3 a 1,5) e a sapata precisa de curso compatível. A proposta cotou produtividade apenas para "Pavimento H6". **O plano orça dois moldes de paver**; se a Gervasi confirmar por escrito que um único molde (eventualmente com segunda sapata) cobre 60 e 80 mm, sobra caixa.
+
+| Molde | Produtos que gera | Situação |
+|---|---|---|
+| Bloco vazado 14×19×39 | vedação e estrutural de 14 | **contratado** (proposta REV00) |
+| Bloco vazado 9×19×39 | vedação e estrutural de 9 | a adquirir |
+| Bloco vazado 19×19×39 | vedação e estrutural de 19 | a adquirir |
+| Canaleta 14×19×39 | canaleta de 14 | a adquirir |
+| Canaleta 9×19×39 | canaleta de 9 | a adquirir |
+| Canaleta 19×19×39 | canaleta de 19 | a adquirir |
+| Paver 6 cm (35 MPa) | piso intertravado de tráfego leve | a adquirir |
+| Paver 8 cm (50 MPa) | piso intertravado de tráfego pesado | a adquirir |
+
+**Alerta de coerência para o analista e para o investidor**: a proposta comercial REV00 inclui **um único molde** (o de bloco 14×19×39, embutido na linha de R$ 774.000,00); o fornecimento dos demais aparece em "PÓS-VENDA", isto é, é venda separada. Sem os sete moldes restantes, a planta contratada produz um só produto. O §13.1 traz a rubrica correspondente no investimento.
 
 ## 3.4 Troca de moldes e planejamento do mix
 
 A troca de molde na XP350 usa fixação por bolsas de ar com pré-carga pneumática e leva **cerca de 15 a 20 minutos** — contra 1 a 3 horas em máquinas de gerações anteriores. As implicações gerenciais são três:
 
-1. **Flexibilidade real de mix.** Perder 20 minutos (≈4% de um turno) torna viável alternar produtos até diariamente. A prática recomendada é organizar a semana em blocos de produção (por exemplo: 3 dias de bloco 14, 1 dia de bloco 9/canaleta, 1 dia de paver) e usar o estoque como pulmão, em vez de trocar o molde várias vezes ao dia.
+1. **Flexibilidade real de mix.** Perder 20 minutos (≈4% de um turno) torna viável alternar produtos até diariamente. Com 8 moldes e 11 itens de venda, a prática recomendada é organizar a produção em campanhas (por exemplo: bloco 14 em campanha longa, bloco 9 e canaletas em campanha semanal, paver 6 e 8 em campanhas quinzenais casadas com o empenho das prefeituras) e usar o pátio como pulmão. O plano dimensiona **cerca de 10 trocas por mês**, o que consome ≈5 dias/ano na cascata do §3.7 — trocar molde à toa é a forma mais fácil de destruir capacidade nesta planta.
 2. **Lote mínimo econômico baixo.** Com troca rápida, encomendas específicas (um lote de bloco estrutural fbk 8 para uma obra, pavers pigmentados para um condomínio) podem ser encaixadas sem desorganizar a fábrica — vantagem comercial sobre concorrentes de máquina lenta.
 3. **Disciplina de manutenção de moldes.** O molde é o item de desgaste mais caro da operação (vida útil de referência de 40.000 ciclos para blocos e 80.000 para pavers). Rodízio correto, limpeza, aperto e substituição das chapas de desgaste devem constar da rotina; o orçamento de manutenção do capítulo financeiro reserva verba mensal para isso.
 
@@ -151,15 +174,15 @@ Nenhuma fábrica produz todos os dias úteis do calendário — e um plano que f
 | Dias úteis nacionais | 252 | calendário oficial de 2027 (13 feriados nacionais) [141] |
 | (−) Feriados estadual e municipais em dia útil: N. Sra. da Penha (móvel), 21/09 (padroeiro/aniversário de São Mateus) e 27/12 (São Benedito) | −3 → 249 | calendário municipal [142] |
 | (−) Manutenção preventiva programada: rotina por turno de limpeza e lubrificação de colunas, molde e painel + preventiva semanal (2–4 h: lubrificação geral, inspeções NR-12, apertos) + mensal (8 h: chapas de desgaste, hidráulica, misturador) | −16 | rotinas recomendadas pelos fabricantes de vibroprensas [145][146] |
-| (−) Trocas de molde do mix (2–3 por semana × 15–20 min) | −2 | proposta Gervasi |
+| (−) Trocas de molde do mix (≈10 por mês × 15–20 min, com 8 moldes e 11 itens) | −5 | proposta Gervasi + plano de campanhas do §3.4 |
 | (−) Parada anual de revisão geral | −3 | prática industrial |
 | (−) Paradas não planejadas — corretivas, queda de energia rural, atraso de insumo, absenteísmo (6% do tempo programável) | −14 | benchmark de disponibilidade OEE [143][144]; premissa conservadora para planta nova em garantia, com silo de 90 t, estoque de agregados e 95% das peças de reposição de mercado |
 | (×) Qualidade: refugo máximo de 2% (meta do cap. 14) | −4 equiv. | meta interna |
-| **= Dias efetivos de produção vendável** | **≈210/ano** | |
+| **= Dias efetivos de produção vendável** | **≈207/ano** | |
 
-Na métrica industrial padrão (OEE — Overall Equipment Effectiveness), o plano embute **disponibilidade de 86% × performance de 90% (o fator que a própria Gervasi já desconta no ritmo de 7.020 blocos/turno) × qualidade de 98% ≈ OEE de 76%** — posição intermediária entre a média da indústria brasileira (~60% [144]) e o padrão classe mundial (85%, com disponibilidade ≥90% [143]). É um nível realista para uma planta automática nova; se a operação atingir disciplina classe mundial, os dias efetivos sobem e toda a folga vira potencial adicional.
+Na métrica industrial padrão (OEE — Overall Equipment Effectiveness), o plano embute **disponibilidade de 84% × performance de 90% (o fator que a própria Gervasi já desconta no ritmo de 7.020 blocos/turno) × qualidade de 98% ≈ OEE de 74%** — posição intermediária entre a média da indústria brasileira (~60% [144]) e o padrão classe mundial (85%, com disponibilidade ≥90% [143]). É um nível realista para uma planta automática nova; se a operação atingir disciplina classe mundial, os dias efetivos sobem e toda a folga vira potencial adicional.
 
-**Conclusão operacional**: a capacidade que vale para o plano de negócios não é a nominal de 264 dias-padrão, e sim **≈210 dias efetivos/ano** — é contra ela que os capítulos 5 e 13 medem utilização, ponto de equilíbrio e folga.
+**Conclusão operacional**: a capacidade que vale para o plano de negócios não é a nominal de 264 dias-padrão, e sim **≈207 dias efetivos/ano** — é contra ela que os capítulos 5 e 13 medem utilização, ponto de equilíbrio e folga.
 
 ---
 
@@ -251,33 +274,41 @@ Sem uma "taxa de penetração" publicada para blocos (produto intermediário, n�
 
 ## 5.4 Plano de vendas: mix pela absorção do mercado e teto de receita de pequena empresa
 
-O plano de vendas foi construído em **três passos encadeados**, para que cada quantidade projetada tenha origem rastreável:
+O plano de vendas foi construído em **quatro passos encadeados**, para que cada quantidade projetada tenha origem rastreável — nenhum percentual desta seção é arbitrado:
 
-**Passo 1 — Quanto a planta consegue produzir de cada produto.** É a tabela do §3.3: em dedicação exclusiva, até 1,85 milhão de blocos 14, 2,78 milhões de blocos 9, 1,39 milhão de blocos 19 ou 140 mil m² de paver por ano (nominal, 1 turno).
+**Passo 1 — Quanto a planta produz de cada produto.** É a tabela do §3.3: 7.020 blocos de 14 (ou canaletas de 14), 10.530 blocos de 9, 5.265 blocos de 19, 530 m² de paver de 6 cm ou 466 m² de paver de 8 cm por turno.
 
-**Passo 2 — Quanto o mercado absorve de cada produto.** A demanda da área de influência não compra os produtos na proporção em que a máquina os produz — compra na proporção das obras. Da análise dos capítulos 5 a 8 derivam as participações de cada família **no valor** do mercado endereçável: **pavimentação intertravada ≈ 25%** (os 70–150 mil m²/ano × ~R$ 55 equivalem a R$ 3,9–8,3 milhões, isto é, 24–33% do SAM de R$ 16–25 milhões — adotado o centro); **alvenaria estrutural ≈ 30%** (bloco 14 estrutural 26% + bloco 19/canaletas 4%), refletindo o peso das obras formais e do MCMV em alvenaria estrutural; e **vedação ≈ 45%** (bloco 14 vedação 36% + bloco 9 9%), o canal dominante do varejo, dos muros e da autoconstrução no interior. As horas da planta são então alocadas exatamente nessa proporção de mercado — a fábrica produz o que a região compra, não o que a máquina prefere.
+**Passo 2 — Que peças cada tipo de obra consome.** A obra não compra produtos na proporção em que a máquina os fabrica; compra na proporção da física da alvenaria. Em obra de **vedação**, a cada 1.000 peças vão ≈630 blocos de 14, 330 de 9, 15 de 19 e 25 canaletas (vergas e contravergas ≈2,5%). Em obra **estrutural**, a cinta de amarração ocupa uma fiada a cada 13 (pé-direito de 2,60 m ÷ 0,20 m de fiada = 7,7%) e, somadas as vergas, as canaletas chegam a ≈9,5% das peças; o restante se divide em ≈700 blocos de 14, 130 de 19 e 75 de 9. Na **pavimentação**, a espessura é definida pelo tráfego conforme a NBR 9781 — 6 cm para pedestres e veículos leves, 8 cm onde passa caminhão: como o canal público (ruas, Calçamento Rural da SEAG, pátios de agroindústria) responde por ≈60% da demanda regional de piso, a área se divide em **61% de 8 cm e 39% de 6 cm**, o que em receita equivale a 68% e 32%.
 
-**Passo 3 — Escala limitada ao teto de pequena empresa.** Sobre esse mix aplica-se um único fator de escala até a receita anual projetada atingir **R$ 4.791.000 — deliberadamente abaixo do limite de R$ 4.800.000 da empresa de pequeno porte (LC nº 123/2006, art. 3º, II [139])**. A decisão é estratégica e dupla: (i) conservadorismo bancário — projeta-se vender menos do que se consegue fabricar; (ii) permanência no enquadramento EPP, que independe do regime tributário escolhido e preserva o tratamento diferenciado da empresa, inclusive as condições de porte no crédito FNE [124]. Ultrapassar o teto, no futuro, é decisão consciente de porte e tributação — não acidente de projeção.
+**Passo 3 — Peso de cada bloco de mercado.** Mantém-se a divisão já auditada na versão anterior deste estudo, derivada dos capítulos 5 a 8: **vedação ≈45%**, **estrutural ≈30%** e **pavimentação ≈25%** do valor do mercado endereçável. A novidade da v4 é que cada um desses blocos agora se decompõe nos produtos que a obra realmente consome, em vez de ser tratado como um item único.
 
-| Produto | % do mercado (valor) | Vendas/ano (plano-base) | Dias de produção | Receita | % da receita anual |
+**Passo 4 — Escala limitada ao teto de pequena empresa.** Sobre esse mix aplica-se um único fator de escala até a receita atingir **R$ 4.791.000 — deliberadamente abaixo do limite de R$ 4.800.000 da empresa de pequeno porte (LC nº 123/2006, art. 3º, II [139])**. A decisão é estratégica e dupla: (i) conservadorismo bancário — projeta-se vender menos do que se consegue fabricar; (ii) permanência no enquadramento EPP, que independe do regime tributário escolhido e preserva o tratamento diferenciado no crédito FNE [124]. Ultrapassar o teto, no futuro, é decisão consciente de porte e tributação — não acidente de projeção.
+
+| Produto | Preço posto-fábrica | Vendas/ano (plano-base) | Dias de produção | Receita | % da receita |
 |---|---|---|---|---|---|
-| Bloco 14×19×39 vedação | 36% | 522.655 un | 74,5 | R$ 1.724.760 | 36,0% |
-| Bloco 14×19×39 estrutural | 26% | 276.813 un | 39,4 | R$ 1.245.660 | 26,0% |
-| Bloco 9×19×39 vedação | 9% | 153.996 un | 14,6 | R$ 431.190 | 9,0% |
-| Bloco 19×19×39 + canaletas | 4% | 34.844 un | 6,6 | R$ 191.640 | 4,0% |
-| Paver 35 MPa e=6/8 | 25% | 21.013 m² | 39,7 | R$ 1.197.750 | 25,0% |
-| **Total** | **100%** | **≈988 mil blocos + 21 mil m²** | **174,8** | **R$ 4.791.000** | **100%** |
+| Bloco de concreto 14x19x39 - vedação | R$ 3,30 | 426.371 un | 60.7 | R$ 1.407.025 | 29,37% |
+| Bloco de concreto 14x19x39 - estrutural | R$ 4,50 | 218.601 un | 31.1 | R$ 983.703 | 20,53% |
+| Canaleta de concreto 14x19x39 | R$ 5,00 | 34.042 un | 4.8 | R$ 170.211 | 3,55% |
+| Bloco de concreto 9x19x39 - vedação | R$ 2,80 | 223.337 un | 21.2 | R$ 625.345 | 13,05% |
+| Bloco de concreto 9x19x39 - estrutural | R$ 3,40 | 23.422 un | 2.2 | R$ 79.633 | 1,66% |
+| Canaleta de concreto 9x19x39 | R$ 3,80 | 7.860 un | 0.7 | R$ 29.869 | 0,62% |
+| Bloco de concreto 19x19x39 - vedação | R$ 4,40 | 10.152 un | 1.9 | R$ 44.667 | 0,93% |
+| Bloco de concreto 19x19x39 - estrutural | R$ 5,50 | 40.597 un | 7.7 | R$ 223.285 | 4,66% |
+| Canaleta de concreto 19x19x39 | R$ 6,30 | 4.684 un | 0.9 | R$ 29.511 | 0,62% |
+| Piso intertravado (paver) 8 cm - 50 MPa | R$ 78,00 | 10.466 m² | 22.5 | R$ 816.344 | 17,04% |
+| Piso intertravado (paver) 6 cm - 35 MPa | R$ 57,00 | 6.691 m² | 12.6 | R$ 381.406 | 7,96% |
+| **Total** | | **989.067 peças + 17.157 m²** | **166.5** | **R$ 4.791.000** | **100,00%** |
 
-**Leitura de utilização (contra a capacidade certa).** Os 174,8 dias de produção do plano equivalem a **≈83% dos ~210 dias efetivos** que a planta realmente tem por ano (§3.7) — e a 66% da referência nominal de 264 dias. Ou seja: no regime, a fábrica opera em ritmo industrial pleno e realista, vendendo menos do que fabrica, com **folga de ~35 dias efetivos/ano** para picos, atas e encomendas — além das reservas estruturais (2º turno e melhoria de OEE) que ficam fora do plano-base.
+**Leitura de utilização (contra a capacidade certa).** Os 166.5 dias de produção do plano equivalem a **≈80% dos 207 dias efetivos** que a planta realmente tem por ano (§3.7). No regime, portanto, a fábrica opera em ritmo industrial pleno e realista, vendendo menos do que fabrica, com **folga de ≈40 dias efetivos/ano** para picos, atas e encomendas — além das reservas estruturais (2º turno e melhoria de OEE) que ficam fora do plano-base. Em valor, a capacidade efetiva de um turno é de **R$ 5.955.701/ano** neste mix, contra os R$ 4.791.000 planejados.
 
-**Coerência de absorção (o teste que o mix anterior não passava).** As quantidades do plano implicam shares consistentes entre si: ~988 mil blocos = **16–25% do mercado regional de 4–6 milhões de blocos-eq/ano**, e 21 mil m² de paver = **14–30% do mercado de 70–150 mil m²/ano** — participações compatíveis com a posição de único fabricante industrial-certificável do raio de ~150 km, sem exigir domínio irrealista de nenhum segmento.
+**Coerência de absorção.** As quantidades implicam shares consistentes: ≈989 mil peças de alvenaria = **16–25% do mercado regional de 4 a 6 milhões de blocos-eq/ano**, e 17.157 m² de piso = **11–25% do mercado de 70 a 150 mil m²/ano** — participações compatíveis com a posição de único fabricante industrial-certificável do raio de ≈150 km, sem exigir domínio irrealista de nenhum segmento.
 
-| Cenário | Receita anual | % da capacidade EFETIVA (R$ 5,76 mi — §3.7) | % do teto EPP |
+| Cenário | Receita anual | % da capacidade EFETIVA (R$ 5,96 mi — §3.7) | % do teto EPP |
 |---|---|---|---|
-| Ano 1 — ramp-up | R$ 2,6–2,9 mi | 45–50% | 54–61% |
-| Ano 2 | R$ 3,8–3,9 mi | 66–68% | 79–81% |
-| Ano 3+ — regime (plano-base) | R$ 4,79 mi | ≈83% | 100% |
-| Referências de folga (fora do plano) | efetiva 1 turno R$ 5,76 mi · nominal R$ 7,24 mi · 2º turno ~dobra | — | — |
+| Ano 1 — ramp-up | R$ 2,75 mi | 46% | 57% |
+| Ano 2 | R$ 3,85 mi | 65% | 80% |
+| Ano 3+ — regime (plano-base) | R$ 4,79 mi | ≈80% | 100% |
+| Referências de folga (fora do plano) | efetiva 1 turno R$ 5,96 mi · 2º turno ≈dobra | — | — |
 
 O ramp-up exige shares de mercado de 10–18% (ano 1) e o regime de **19–30% do SAM** — factíveis para quem chega com produto certificado, frete 3–5× menor que o dos concorrentes industriais (cap. 9) e os canais do capítulo 8. A ativação do 2º turno e o rompimento do teto EPP não são presumidos no fluxo bancário: são opções reais de crescimento documentadas, condicionadas a decisão societária e tributária. O projeto financeiro é dimensionado para pagar-se dentro do plano-base — e é o que o capítulo 13 demonstra.
 
@@ -317,7 +348,7 @@ Registros ativos do grupo CNAE 23.30-3 em São Mateus somam ao menos 10–14 est
 
 ## 6.4 Preços de referência
 
-Nenhum fabricante capixaba publica tabela; as referências triangulam tabelas oficiais e mercado nacional (validar com cotação local na implantação — ver plano de ação):
+Nenhum fabricante capixaba publica tabela; as referências triangulam tabelas oficiais e mercado nacional (validar com cotação local na implantação — ver plano de ação). **Correção da v4**: a linha da canaleta comparava, na versão anterior, o preço SINAPI de uma peça de 14×19×**19** cm com o preço-alvo de uma peça de 39 cm — o dobro do comprimento. Os preços de canaleta abaixo já estão na peça de 39 cm, referenciados em praça.
 
 | Produto | Referência oficial SINAPI-ES 06/2026 [11] | Mercado nacional 2025/26 [90][26] | Preço-alvo GTK "posto fábrica" (premissa conservadora) |
 |---|---|---|---|
@@ -325,9 +356,13 @@ Nenhum fabricante capixaba publica tabela; as referências triangulam tabelas of
 | Bloco vedação 14×19×39 | — | R$ 3,50–6,50 | **R$ 3,20–3,60** |
 | Bloco estrutural 14×19×39 fbk 6–8 | R$ 4,80–5,25 | R$ 4,00–5,30 | **R$ 4,20–4,80** |
 | Bloco estrutural 19×19×39 fbk 4,5–8 | R$ 5,94–6,63 | — | **R$ 5,20–5,90** |
-| Canaleta 14 | R$ 3,08 (14×19×19) | — | **R$ 3,00–3,60 (14×19×39)** |
+| Bloco vedação 19×19×39 | — (estrutural fbk 8: R$ 6,97 nacional) | R$ 5,50–6,20 | **R$ 4,20–4,60** |
+| Bloco estrutural 9×19×39 fbk 4,5 | R$ 3,30 | — | **R$ 3,20–3,60** |
+| Canaleta 9×19×39 | — | R$ 5,90 (varejo) | **R$ 3,60–4,00** |
+| Canaleta 14×19×39 | R$ 3,08 (peça de 14×19×**19**) | R$ 3,89–8,94 (varejo) | **R$ 4,60–5,20** |
+| Canaleta 19×19×39 | — | R$ 8,00 (varejo) | **R$ 6,00–6,60** |
 | Paver 35 MPa e=6 cm (m²) | R$ 69,97–88,39 | R$ 55–95 | **R$ 52–62** |
-| Paver 35 MPa e=8 cm (m²) | R$ 95,76–105,58 | R$ 80–130 | **R$ 68–80** |
+| Paver 50 MPa e=8 cm (m²) | R$ 95,76–105,58 | R$ 80–130 | **R$ 72–84** |
 | Sextavado e=8/10 (m²) | R$ 95,76–126,57 | — | **R$ 70–95** |
 
 Os preços-alvo da GTK posicionam-se deliberadamente 10–25% abaixo da mediana SINAPI (que reflete preço ao consumidor final com margem de revenda) — margem suficiente para remunerar a revenda, ganhar licitação e ainda assim preservar a rentabilidade demonstrada no capítulo 13, graças ao custo variável industrial de ~R$ 1,85/bloco (cap. 13.2).
@@ -565,6 +600,7 @@ Nenhum negócio é "à prova de erro" — o que existe é risco conhecido, medid
 | Galpão industrial ≈1.500 m² cobertos (estrutura + cobertura + piso) | 1.900.000–2.600.000 | R$ 1.250–1.900/m² p/ pré-moldado/metálico [128][129]; inclui piso industrial e fundações da linha |
 | Obras externas: terraplanagem, pátio de cura e estoque, acessos, cercamento, reservatório/poço | 350.000–550.000 | estimativa paramétrica local |
 | Entrada de energia MT (subestação simplificada ~112,5–150 kVA) + instalações elétricas internas | 120.000–180.000 | norma EDP [13] + mercado |
+| **Moldes adicionais — 7 conjuntos** (blocos de 9 e 19, canaletas de 9, 14 e 19, paver de 6 cm e paver de 8 cm), na espessura de parede de classe A/B da NBR 6136 | **a orçar junto à Gervasi** | a proposta REV00 inclui **apenas** o molde de bloco 14×19×39; "fornecimento de moldes" consta como pós-venda. Sem esta rubrica, a planta produz um único produto (§3.3) |
 | Bandejas (≈5.000 un) + estantes/gaiolas de cura + pallets iniciais | 280.000–420.000 | mercado (item não incluso na proposta) |
 | Pá carregadeira (seminova) + empilhadeira | 280.000–420.000 | mercado [103] |
 | Compressor, ferramentaria, laboratório interno básico, EPIs | 60.000–90.000 | mercado |
@@ -573,6 +609,8 @@ Nenhum negócio é "à prova de erro" — o que existe é risco conhecido, medid
 | **Subtotal CAPEX** | **5.893.000–7.263.000** | |
 | Capital de giro inicial (estoque de insumos + 60–75 dias de custo operacional + colchão do ramp-up) | 700.000–900.000 | cap. 13.4 |
 | **INVESTIMENTO TOTAL DO PROJETO** | **≈6,6–8,2 milhões** | |
+
+**A rubrica de moldes é a única do quadro sem valor**: ela depende de cotação formal da Gervasi, já solicitada, e precisa entrar no protocolo — é ela que dá lastro à receita de paver, canaleta e blocos de 9 e 19 projetada no §5.4. Enquanto a cotação não chega, o subtotal do CAPEX abaixo está subestimado nesse montante, e a recomendação é reservá-lo dentro da contrapartida própria (não do financiamento), preservando o comprometimento simulado no cap. 13.4.
 
 O capital social subscrito de R$ 7,5 milhões é coerente com essa ordem de grandeza, e o total encontra respaldo em guias de custo de implantação de fábricas do setor [22]. A estrutura de funding recomendada é FNE/BNB para o CAPEX financiável (equipamentos + obras civis, tipicamente com carência e prazo longo; indústria é setor prioritário do FNE 2026 [123][124]) com contrapartida própria no capital de giro — desenho a detalhar no módulo financeiro do projeto de crédito. Quanto à elegibilidade territorial, não há ambiguidade: **a área de atuação legal da Sudene inclui 31 municípios do norte do Espírito Santo (LC nº 185/2021), entre eles São Mateus e todos os demais oito municípios da área de influência deste estudo** [132][133][130].
 
@@ -592,7 +630,23 @@ O capital social subscrito de R$ 7,5 milhões é coerente com essa ordem de gran
 | Frete médio embutido (parcela CIF do mix) | 4,5% s/ PV | | R$ 0,15 |
 | **Custo variável total** | | | **≈R$ 2,50** |
 
-**Margem de contribuição por produto** (PV × (1 − 15% tributos − 4,5% frete) − custo variável industrial): bloco 14 vedação **R$ 0,81/un (24,4%)**; bloco 14 estrutural fbk 6–8 (CV industrial ~R$ 2,10, traço mais rico) **R$ 1,52/un (33,8%)**; bloco 9 (CV ~R$ 1,45) **R$ 0,80/un (28,7%)**; bloco 19/canaleta (CV ~R$ 2,45) **R$ 1,98/un (36,0%)**; paver e=6 (CV industrial ~R$ 24/m², incluindo pigmento parcial) **R$ 21,88/m² (38,4%)**. Ponderada pelo mix do §5.4, a margem média derivada é de **31,2%** — o modelo adota **30,0%** (conservador). É por isso que a estratégia protege o espaço do estrutural e do paver no mix.
+**Margem de contribuição por produto** — PV × (1 − 15% de tributos − 4,5% de frete) − custo variável industrial. O custo variável de cada item é derivado do volume de concreto da peça (geometria com as espessuras de parede da NBR 6136) e do teor de cimento da classe, sobre a mesma base de preços do bloco 14 de vedação auditada acima:
+
+| Produto | Preço | Custo variável | Margem de contribuição | MC % |
+|---|---|---|---|---|
+| Bloco de concreto 14x19x39 - vedação | R$ 3,30 | R$ 1,85 | R$ 0,81/un | 24,5% |
+| Bloco de concreto 14x19x39 - estrutural | R$ 4,50 | R$ 2,09 | R$ 1,54/un | 34,1% |
+| Canaleta de concreto 14x19x39 | R$ 5,00 | R$ 2,12 | R$ 1,90/un | 38,1% |
+| Bloco de concreto 9x19x39 - vedação | R$ 2,80 | R$ 1,44 | R$ 0,81/un | 29,1% |
+| Bloco de concreto 9x19x39 - estrutural | R$ 3,40 | R$ 1,63 | R$ 1,11/un | 32,6% |
+| Canaleta de concreto 9x19x39 | R$ 3,80 | R$ 1,70 | R$ 1,36/un | 35,8% |
+| Bloco de concreto 19x19x39 - vedação | R$ 4,40 | R$ 2,23 | R$ 1,31/un | 29,8% |
+| Bloco de concreto 19x19x39 - estrutural | R$ 5,50 | R$ 2,52 | R$ 1,91/un | 34,7% |
+| Canaleta de concreto 19x19x39 | R$ 6,30 | R$ 2,76 | R$ 2,32/un | 36,8% |
+| Piso intertravado (paver) 6 cm - 35 MPa | R$ 57,00 | R$ 26,95 | R$ 18,93/m² | 33,2% |
+| Piso intertravado (paver) 8 cm - 50 MPa | R$ 78,00 | R$ 38,36 | R$ 24,43/m² | 31,3% |
+
+Ponderada pelo mix do §5.4, a margem média derivada é de **30,2%** — o modelo adota **30,0%** (conservador). Dois pontos merecem leitura: o bloco de vedação tem a **menor** margem do portfólio (é o produto de entrada, feito em molde de espessura estrutural, o que o encarece), e o paver de 8 cm, apesar do preço maior, tem margem percentual próxima à do de 6 cm porque o traço de 50 MPa consome mais cimento. É por isso que a estratégia protege o espaço do estrutural, das canaletas e do paver no mix.
 
 **Regime tributário: decisão em aberto, premissa fechada.** O teto de receita mantém a empresa no porte EPP em qualquer regime [139]; a escolha entre os regimes é do planejamento tributário, não do estudo de mercado: no **Simples Nacional (Anexo II — indústria)**, a alíquota efetiva vai de ~11,6% no ramp-up a **15,0% no topo da faixa** (nominal de 30% com dedução de R$ 720 mil [140]); no **Lucro Presumido**, os tributos federais somam ~6,2% da receita (IRPJ com adicional + CSLL sobre bases presumidas de 8%/12% + PIS/COFINS cumulativos), acrescidos do ICMS por débito e crédito e da CPP de 20% sobre uma folha enxuta — desenho que pode ser competitivo justamente porque a planta automática emprega poucos funcionários, e que ainda pode capturar benefícios estaduais. **O modelo adota carga total de 15% sobre a receita, que cobre com folga os dois cenários; a definição fina com o contador antes do start-up só pode melhorar o resultado projetado.**
 
@@ -611,7 +665,7 @@ O capital social subscrito de R$ 7,5 milhões é coerente com essa ordem de gran
 
 ## 13.4 Ponto de equilíbrio, cenários e capacidade de pagamento
 
-Com margem de contribuição média de **30%** sobre a receita (derivada de 31,2% no mix do §5.4 — Apêndice A):
+Com margem de contribuição média de **30%** sobre a receita (derivada de 30,2% no mix do §5.4 — Apêndice A):
 
 - **Ponto de equilíbrio operacional**: R$ 52.000 ÷ 30% ≈ **R$ 173 mil/mês** (R$ 2,08 milhões/ano) — ou seja, **36% da capacidade efetiva** (§3.7), **43% do teto EPP** e 29% da referência nominal. No regime, a operação roda 2,3 vezes acima do equilíbrio.
 - O plano-base (teto EPP) gera **EBITDA de ≈R$ 813 mil/ano** (R$ 4.791.000 × 30% − R$ 624.000 de fixos).
@@ -620,9 +674,9 @@ Com margem de contribuição média de **30%** sobre a receita (derivada de 31,2
 |---|---|---|---|---|---|
 | Ano 1 — ramp-up | R$ 2,6–2,9 mi | 45–50% | R$ 0,78–0,87 mi | R$ 0,62 mi | ≈R$ 0,16–0,25 mi |
 | Ano 2 | R$ 3,8–3,9 mi | 66–68% | R$ 1,14–1,17 mi | R$ 0,62 mi | ≈R$ 0,52–0,55 mi |
-| Ano 3+ — regime (teto EPP) | R$ 4,79 mi | ≈83% | R$ 1,44 mi | R$ 0,62 mi | **≈R$ 0,81 mi** |
+| Ano 3+ — regime (teto EPP) | R$ 4,79 mi | ≈80% | R$ 1,44 mi | R$ 0,62 mi | **≈R$ 0,81 mi** |
 
-*Todas as linhas usam a mesma base (mix do §5.4; capacidade efetiva de R$ 5,76 milhões do §3.7), margem de 30% e fixos constantes de R$ 52 mil/mês — a mesma da planilha anexa e do Apêndice A.*
+*Todas as linhas usam a mesma base (mix do §5.4; capacidade efetiva de R$ 5,96 milhões do §3.7), margem de 30% e fixos constantes de R$ 52 mil/mês — a mesma da planilha anexa e do Apêndice A.*
 
 **Capacidade de pagamento (DSCR).** O indicador que o banco olha é a cobertura do serviço da dívida pelo EBITDA:
 
@@ -662,7 +716,7 @@ Este capítulo condensa, em formato operacional, o que a experiência do setor e
 | 5 | Disponibilidade da linha (% horas programadas) | ≥92% | Semanal |
 | 6 | Vendas (R$ e peças, por canal) | conforme orçamento | Semanal |
 | 7 | Preço médio realizado vs. tabela | ≥97% | Semanal |
-| 8 | Margem de contribuição média (%) | ≥30% (derivada: 31,2% — §13.2) | Mensal |
+| 8 | Margem de contribuição média (%) | ≥30% (derivada: 30,2% — §13.2) | Mensal |
 | 9 | Dias de estoque de produto acabado | 25–45 | Semanal |
 | 10 | Inadimplência (>15 dias, % carteira) | <3% | Semanal |
 | 11 | Resistência à compressão (ensaios, MPa) | 100% dentro da classe | Mensal (lab.) |
@@ -733,7 +787,7 @@ Regra prática: **prancheta diária** (produção, refugo, cimento), **reunião 
 2. **Mercado**: a área de influência ponderada soma ~152,9 mil habitantes-equivalentes (9 municípios), com demanda estimada de 4 a 6 milhões de blocos-equivalentes + 70 a 150 mil m² de pavimentação por ano (SAM de R$ 16–25 milhões/ano), sustentada por três motores simultâneos: pipeline público de pavimentação em blocos (padrão adotado pelas prefeituras da região, com registro de preços ativo em São Mateus), ciclo econômico regional (petróleo, café, Marcopolo, Guriri) e habitação (MCMV + déficit local).
 3. **Concorrência**: a oferta local é artesanal e pulverizada (nenhum fabricante certificado no raio de ~150 km); os players industriais estão a 200+ km com frete proibitivo para o dia a dia. A GTK nascerá como única planta automática do interior norte-capixaba — posição defensável por capital, certificação e contratos.
 4. **Suprimentos**: cadeia mapeada e viável — pedreira a ~40 km, cimento a granel de 2 fornecedores estaduais com silo de 90 t de autonomia, aditivos e pallets com oferta competitiva, energia enquadrável em MT rural.
-5. **Economia do negócio**: plano-base limitado ao teto de pequena empresa (R$ 4,79 milhões/ano — LC 123), vendendo ~988 mil blocos + 21 mil m² de paver com **83% da capacidade efetiva** (que desconta feriados, manutenção e paradas — OEE implícito de 76%); ponto de equilíbrio em 36% da capacidade efetiva; EBITDA de regime de ~R$ 813 mil/ano; DSCR de 1,36–1,47× com dívida FNE de ~R$ 4,0–4,5 milhões em 12 anos; investimento total de ~R$ 6,6–8,2 milhões compatível com o capital subscrito de R$ 7,5 milhões (a área legal da Sudene abrange 31 municípios do norte do ES — LC nº 185/2021 —, incluindo todos os nove da área de influência; indústria é setor prioritário no FNE 2026 de R$ 52,6 bilhões, com R$ 1,3 bilhão para o ES).
+5. **Economia do negócio**: plano-base limitado ao teto de pequena empresa (R$ 4,79 milhões/ano — LC 123), vendendo ≈989 mil peças de alvenaria + 17.157 m² de piso intertravado com **80% da capacidade efetiva** (que desconta feriados, manutenção, trocas de molde e paradas — OEE implícito de 74%); ponto de equilíbrio em 36% da capacidade efetiva; EBITDA de regime de ~R$ 813 mil/ano; DSCR de 1,36–1,47× com dívida FNE de ~R$ 4,0–4,5 milhões em 12 anos; investimento total de ~R$ 6,6–8,2 milhões compatível com o capital subscrito de R$ 7,5 milhões (a área legal da Sudene abrange 31 municípios do norte do ES — LC nº 185/2021 —, incluindo todos os nove da área de influência; indústria é setor prioritário no FNE 2026 de R$ 52,6 bilhões, com R$ 1,3 bilhão para o ES).
 6. **Riscos**: reais e mapeados (17 riscos na matriz) — os críticos são de execução (ramp-up comercial, CAPEX complementar, prazo de implantação), não de mercado; todos com mitigadores definidos.
 
 ## 15.2 Parecer
