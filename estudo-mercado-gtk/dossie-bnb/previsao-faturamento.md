@@ -44,21 +44,21 @@
 
 ## 3. Ano 1 mês a mês (jan–dez/2027) — R$ 2.750.000
 
-| Mês | Vedação | Estrutural | Canaletas | Paver 8 cm | Paver 6 cm | **Receita do mês** | Dias de produção | % da capacidade mensal |
+| Mês | Bloco 14×19×39 | Bloco 9×19×39 | Bloco 19×19×39 | Paver 8 cm | Paver 6 cm | **Receita do mês** | Dias de produção | % da capacidade mensal |
 |---|---|---|---|---|---|---|---|---|
-| jan/2027 | 31.453 | — | — | — | — | **31.453** | 1,2 | 7% |
-| fev/2027 | 53.469 | — | — | — | — | **53.469** | 2,1 | 11% |
-| mar/2027 | 83.874 | 21.633 | — | — | — | **105.507** | 4,0 | 22% |
-| abr/2027 | 102.745 | 37.101 | 4.551 | — | 8.641 | **153.038** | 5,8 | 32% |
-| mai/2027 | 124.295 | 61.163 | 7.628 | — | 15.519 | **208.605** | 7,8 | 44% |
-| jun/2027 | 132.608 | 78.170 | 10.698 | 24.508 | 21.985 | **267.969** | 9,8 | 56% |
-| jul/2027 | 140.841 | 85.206 | 13.529 | 36.329 | 29.098 | **305.003** | 11,1 | 64% |
-| ago/2027 | 155.900 | 96.719 | 15.230 | 48.681 | 32.111 | **348.641** | 12,6 | 73% |
-| set/2027 | 164.105 | 101.809 | 16.347 | 60.286 | 33.801 | **376.349** | 13,6 | 79% |
-| out/2027 | 164.105 | 101.809 | 16.347 | 60.286 | 33.801 | **376.349** | 13,6 | 79% |
-| nov/2027 | 142.700 | 88.530 | 14.215 | 52.423 | 29.392 | **327.260** | 11,8 | 69% |
-| dez/2027 | 85.620 | 53.118 | 8.529 | 31.454 | 17.635 | **196.356** | 7,1 | 41% |
-| **TOTAL** | **1.381.717** | **725.259** | **107.072** | **313.967** | **221.985** | **R$ 2.750.000** | **100,5** | — |
+| jan/2027 | 22.150 | 9.302 | — | — | — | **31.453** | 1,2 | 7% |
+| fev/2027 | 37.655 | 15.814 | — | — | — | **53.469** | 2,1 | 11% |
+| mar/2027 | 79.287 | 26.219 | — | — | — | **105.507** | 4,0 | 22% |
+| abr/2027 | 110.983 | 33.413 | — | — | 8.641 | **153.038** | 5,8 | 32% |
+| mai/2027 | 143.666 | 40.915 | 8.505 | — | 15.519 | **208.605** | 7,8 | 44% |
+| jun/2027 | 163.605 | 44.363 | 13.508 | 24.508 | 21.985 | **267.969** | 9,8 | 56% |
+| jul/2027 | 174.824 | 47.216 | 17.536 | 36.329 | 29.098 | **305.003** | 11,1 | 64% |
+| ago/2027 | 192.925 | 52.104 | 22.820 | 48.681 | 32.111 | **348.641** | 12,6 | 73% |
+| set/2027 | 203.079 | 54.846 | 24.337 | 60.286 | 33.801 | **376.349** | 13,6 | 79% |
+| out/2027 | 203.079 | 54.846 | 24.337 | 60.286 | 33.801 | **376.349** | 13,6 | 79% |
+| nov/2027 | 176.590 | 47.692 | 21.163 | 52.423 | 29.392 | **327.260** | 11,8 | 69% |
+| dez/2027 | 105.954 | 28.615 | 12.698 | 31.454 | 17.635 | **196.356** | 7,1 | 41% |
+| **TOTAL** | **1.613.797** | **455.346** | **144.905** | **313.967** | **221.985** | **R$ 2.750.000** | **100,5** | — |
 
 Nenhum mês ultrapassa 79% da capacidade mensal efetiva (R$ 477.697), e o ano usa 100,5 dos 207 dias efetivos — o ramp-up cabe com folga na planta, sem exigir 2º turno nem hora extra.
 
@@ -91,7 +91,7 @@ Quantidades do regime:
 
 **`receitas-bnb.xlsx`** traz os 11 itens no layout da aba Receitas/Atividades, com `Qtd. Produzida = % de Utilização × Qtd. Projetada` e **Qtd. Atual = 0** (empresa em implantação).
 
-**`demonstrativo-receitas-bnb.pdf`** é o formulário "Demonstrativo de Receitas Projetadas para Empresas em Implantação" (v. 02/08/2021), que admite no máximo 6 itens e determina o agrupamento por tipo. Os 11 SKUs entram agrupados em 6 famílias, com preço unitário médio ponderado pelas quantidades — as quantidades são idênticas às da aba Receitas/Custos, e o arredondamento dos preços médios a duas casas é escolhido de modo a fechar por baixo da receita do plano.
+**`demonstrativo-receitas-bnb.pdf`** é o formulário "Demonstrativo de Receitas Projetadas para Empresas em Implantação" (v. 02/08/2021), que admite no máximo 6 itens e determina o agrupamento por tipo. Os 11 SKUs entram agrupados **por modelo** — cada largura de bloco reúne vedação, estrutural e canaleta —, com preço unitário médio ponderado pelas quantidades — as quantidades são idênticas às da aba Receitas/Custos, e o arredondamento dos preços médios a duas casas é escolhido de modo a fechar por baixo da receita do plano.
 
 ## 6. Alerta estratégico — valores constantes × valores nominais
 
