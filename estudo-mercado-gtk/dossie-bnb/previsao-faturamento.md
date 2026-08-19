@@ -1,6 +1,6 @@
 # PREVISÃO DE FATURAMENTO — GTK PRÉ-MOLDADOS
 ## Receita projetada de R$ 4.791.000 aberta por produto, mês e ano
-### Portfólio de 11 itens · data-base agosto/2026 · valores constantes
+### Portfólio de 11 itens · preços ancorados no insumo SINAPI-ES 06/2026 · valores constantes de ago/2026
 
 ## 1. Linha do tempo a partir de agora
 
@@ -13,23 +13,23 @@
 
 ## 2. Como a previsão foi construída (3 camadas)
 
-**Camada 1 — quanto se vende de cada produto.** O mix não é arbitrado: sai da cesta de peças que cada tipo de obra consome (§5.4 do estudo), avaliada aos preços posto-fábrica.
+**Camada 1 — quanto se vende de cada produto.** O mix não é arbitrado: sai da cesta de peças que cada tipo de obra consome (§5.4 do estudo), avaliada aos preços posto-fábrica. Cada preço é o **insumo** SINAPI-ES 06/2026 (material puro, sem serviço de assentamento) menos 17,5% — o desconto médio dos canais de venda.
 
-| Produto | Preço | Ano 1 | Ano 2 | Regime (ano 3+) |
-|---|---|---|---|---|
-| Bloco de concreto 14x19x39 - vedação | R$ 3,30 | 34,1% | 31,0% | 29,4% |
-| Bloco de concreto 14x19x39 - estrutural | R$ 4,50 | 20,8% | 20,6% | 20,5% |
-| Canaleta de concreto 14x19x39 | R$ 5,00 | 3,3% | 3,5% | 3,6% |
-| Bloco de concreto 9x19x39 - vedação | R$ 2,80 | 15,2% | 13,8% | 13,1% |
-| Bloco de concreto 9x19x39 - estrutural | R$ 3,40 | 1,7% | 1,7% | 1,7% |
-| Canaleta de concreto 9x19x39 | R$ 3,80 | 0,6% | 0,6% | 0,6% |
-| Bloco de concreto 19x19x39 - vedação | R$ 4,40 | 0,8% | 0,9% | 0,9% |
-| Bloco de concreto 19x19x39 - estrutural | R$ 5,50 | 3,9% | 4,4% | 4,7% |
-| Canaleta de concreto 19x19x39 | R$ 6,30 | 0,4% | 0,6% | 0,6% |
-| Piso intertravado (paver) 6 cm - 35 MPa | R$ 57,00/m² | 7,2% | 7,7% | 8,0% |
-| Piso intertravado (paver) 8 cm - 50 MPa | R$ 78,00/m² | 12,2% | 15,3% | 17,0% |
+| Produto | Preço | Insumo SINAPI-ES | Ano 1 | Ano 2 | Regime (ano 3+) |
+|---|---|---|---|---|---|
+| Bloco de concreto 14x19x39 - vedação | R$ 3,43 | R$ 4,16 | 34,9% | 31,8% | 30,1% |
+| Bloco de concreto 14x19x39 - estrutural | R$ 4,17 | R$ 5,05 | 20,8% | 20,7% | 20,6% |
+| Canaleta de concreto 14x19x39 | R$ 4,41 | R$ 5,35 | 3,0% | 3,2% | 3,3% |
+| Bloco de concreto 9x19x39 - vedação | R$ 2,75 | R$ 3,33 | 14,6% | 13,3% | 12,6% |
+| Bloco de concreto 9x19x39 - estrutural | R$ 2,72 | R$ 3,30 | 1,5% | 1,4% | 1,4% |
+| Canaleta de concreto 9x19x39 | R$ 2,98 | R$ 3,61 | 0,5% | 0,5% | 0,5% |
+| Bloco de concreto 19x19x39 - vedação | R$ 4,26 | R$ 5,16 | 0,7% | 0,8% | 0,9% |
+| Bloco de concreto 19x19x39 - estrutural | R$ 5,47 | R$ 6,63 | 4,1% | 4,7% | 5,0% |
+| Canaleta de concreto 19x19x39 | R$ 5,29 | R$ 6,41 | 0,4% | 0,5% | 0,6% |
+| Piso intertravado (paver) 6 cm - 35 MPa | R$ 57,73/m² | R$ 69,97 | 8,1% | 8,7% | 9,0% |
+| Piso intertravado (paver) 8 cm - 50 MPa | R$ 65,83/m² | R$ 79,80 | 11,4% | 14,4% | 16,0% |
 
-**Camada 2 — quando cada produto entra na venda.** Não se vende tudo desde o primeiro dia:
+**Camada 2 — quando cada produto entra na venda.**
 
 | Produto | Entra em | Motivo |
 |---|---|---|
@@ -46,56 +46,56 @@
 
 | Mês | Vedação | Estrutural | Canaletas | Paver 8 cm | Paver 6 cm | **Receita do mês** | Dias de produção | % da capacidade mensal |
 |---|---|---|---|---|---|---|---|---|
-| jan/2027 | 31.307 | — | — | — | — | **31.307** | 1,3 | 6% |
-| fev/2027 | 53.221 | — | — | — | — | **53.221** | 2,1 | 11% |
-| mar/2027 | 83.484 | 21.840 | — | — | — | **105.324** | 4,1 | 21% |
-| abr/2027 | 102.268 | 37.455 | 5.034 | — | 7.677 | **152.434** | 5,7 | 31% |
-| mai/2027 | 123.789 | 61.179 | 8.438 | — | 13.787 | **207.193** | 7,6 | 42% |
-| jun/2027 | 132.098 | 78.072 | 11.831 | 26.128 | 19.532 | **267.660** | 9,5 | 54% |
-| jul/2027 | 140.322 | 84.934 | 14.961 | 38.731 | 25.851 | **304.799** | 10,7 | 61% |
-| ago/2027 | 155.352 | 96.233 | 16.841 | 51.900 | 28.527 | **348.853** | 12,2 | 70% |
-| set/2027 | 163.528 | 101.298 | 18.076 | 64.272 | 30.029 | **377.203** | 13,1 | 76% |
-| out/2027 | 163.528 | 101.298 | 18.076 | 64.272 | 30.029 | **377.203** | 13,1 | 76% |
-| nov/2027 | 142.199 | 88.085 | 15.718 | 55.889 | 26.112 | **328.002** | 11,4 | 66% |
-| dez/2027 | 85.319 | 52.851 | 9.431 | 33.533 | 15.667 | **196.801** | 6,8 | 40% |
-| **TOTAL** | **1.376.416** | **723.243** | **118.406** | **334.724** | **197.210** | **R$ 2.750.000** | **97,7** | — |
+| jan/2027 | 31.453 | — | — | — | — | **31.453** | 1,2 | 7% |
+| fev/2027 | 53.469 | — | — | — | — | **53.469** | 2,1 | 11% |
+| mar/2027 | 83.874 | 21.633 | — | — | — | **105.507** | 4,0 | 22% |
+| abr/2027 | 102.745 | 37.101 | 4.551 | — | 8.641 | **153.038** | 5,8 | 32% |
+| mai/2027 | 124.295 | 61.163 | 7.628 | — | 15.519 | **208.605** | 7,8 | 44% |
+| jun/2027 | 132.608 | 78.170 | 10.698 | 24.508 | 21.985 | **267.969** | 9,8 | 56% |
+| jul/2027 | 140.841 | 85.206 | 13.529 | 36.329 | 29.098 | **305.003** | 11,1 | 64% |
+| ago/2027 | 155.900 | 96.719 | 15.230 | 48.681 | 32.111 | **348.641** | 12,6 | 73% |
+| set/2027 | 164.105 | 101.809 | 16.347 | 60.286 | 33.801 | **376.349** | 13,6 | 79% |
+| out/2027 | 164.105 | 101.809 | 16.347 | 60.286 | 33.801 | **376.349** | 13,6 | 79% |
+| nov/2027 | 142.700 | 88.530 | 14.215 | 52.423 | 29.392 | **327.260** | 11,8 | 69% |
+| dez/2027 | 85.620 | 53.118 | 8.529 | 31.454 | 17.635 | **196.356** | 7,1 | 41% |
+| **TOTAL** | **1.381.717** | **725.259** | **107.072** | **313.967** | **221.985** | **R$ 2.750.000** | **100,5** | — |
 
-Nenhum mês ultrapassa 76% da capacidade mensal efetiva (R$ 496.308), e o ano usa 97,7 dos 207 dias efetivos — o ramp-up cabe com folga na planta, sem exigir 2º turno nem hora extra.
+Nenhum mês ultrapassa 79% da capacidade mensal efetiva (R$ 477.697), e o ano usa 100,5 dos 207 dias efetivos — o ramp-up cabe com folga na planta, sem exigir 2º turno nem hora extra.
 
 ## 4. Evolução anual (horizonte do financiamento)
 
 | Ano | Calendário | Receita | Dias de produção | % da capacidade efetiva (207 dias) |
 |---|---|---|---|---|
-| 1 | 2027 | R$ 2.750.000 | 97,7 | 47% |
-| 2 | 2028 | R$ 3.850.000 | 134,8 | 65% |
-| 3 a 12 | 2029–2038 | R$ 4.791.000/ano | 166,5 | 80% |
+| 1 | 2027 | R$ 2.750.000 | 100,5 | 49% |
+| 2 | 2028 | R$ 3.850.000 | 139,6 | 67% |
+| 3 a 12 | 2029–2038 | R$ 4.791.000/ano | 173,0 | 84% |
 
 Quantidades do regime:
 
 | Produto | Quantidade/ano | Receita | % da receita |
 |---|---|---|---|
-| Bloco de concreto 14x19x39 - vedação | 426.371 un | R$ 1.407.025 | 29,37% |
-| Bloco de concreto 14x19x39 - estrutural | 218.601 un | R$ 983.703 | 20,53% |
-| Canaleta de concreto 14x19x39 | 34.042 un | R$ 170.211 | 3,55% |
-| Bloco de concreto 9x19x39 - vedação | 223.337 un | R$ 625.345 | 13,05% |
-| Bloco de concreto 9x19x39 - estrutural | 23.422 un | R$ 79.633 | 1,66% |
-| Canaleta de concreto 9x19x39 | 7.860 un | R$ 29.869 | 0,62% |
-| Bloco de concreto 19x19x39 - vedação | 10.152 un | R$ 44.667 | 0,93% |
-| Bloco de concreto 19x19x39 - estrutural | 40.597 un | R$ 223.285 | 4,66% |
-| Canaleta de concreto 19x19x39 | 4.684 un | R$ 29.511 | 0,62% |
-| Piso intertravado (paver) 6 cm - 35 MPa | 6.691 m² | R$ 381.406 | 7,96% |
-| Piso intertravado (paver) 8 cm - 50 MPa | 10.466 m² | R$ 816.344 | 17,04% |
+| Bloco de concreto 14x19x39 - vedação | 420.180 un | R$ 1.441.217 | 30,08% |
+| Bloco de concreto 14x19x39 - estrutural | 236.623 un | R$ 986.719 | 20,60% |
+| Canaleta de concreto 14x19x39 | 35.667 un | R$ 157.294 | 3,28% |
+| Bloco de concreto 9x19x39 - vedação | 220.094 un | R$ 605.259 | 12,63% |
+| Bloco de concreto 9x19x39 - estrutural | 25.352 un | R$ 68.959 | 1,44% |
+| Canaleta de concreto 9x19x39 | 8.049 un | R$ 23.986 | 0,50% |
+| Bloco de concreto 19x19x39 - vedação | 10.004 un | R$ 42.618 | 0,89% |
+| Bloco de concreto 19x19x39 - estrutural | 43.944 un | R$ 240.375 | 5,02% |
+| Canaleta de concreto 19x19x39 | 5.070 un | R$ 26.823 | 0,56% |
+| Piso intertravado (paver) 6 cm - 35 MPa | 7.454 m² | R$ 430.294 | 8,98% |
+| Piso intertravado (paver) 8 cm - 50 MPa | 11.658 m² | R$ 767.456 | 16,02% |
 | **Total** | | **R$ 4.791.000** | **100%** |
 
 ## 5. Formato dos formulários do banco
 
 **`receitas-bnb.xlsx`** traz os 11 itens no layout da aba Receitas/Atividades, com `Qtd. Produzida = % de Utilização × Qtd. Projetada` e **Qtd. Atual = 0** (empresa em implantação).
 
-**`demonstrativo-receitas-bnb.pdf`** é o formulário "Demonstrativo de Receitas Projetadas para Empresas em Implantação" (v. 02/08/2021), que admite no máximo 6 itens e determina o agrupamento por tipo. Os 11 SKUs entram agrupados em 6 famílias, com preço unitário médio ponderado pelas quantidades; o total do quadro (R$ 4.790.467,64) difere da receita do plano em R$ 532 (0,01%), diferença que vem apenas do arredondamento dos preços médios a duas casas — e no sentido conservador.
+**`demonstrativo-receitas-bnb.pdf`** é o formulário "Demonstrativo de Receitas Projetadas para Empresas em Implantação" (v. 02/08/2021), que admite no máximo 6 itens e determina o agrupamento por tipo. Os 11 SKUs entram agrupados em 6 famílias, com preço unitário médio ponderado pelas quantidades — as quantidades são idênticas às da aba Receitas/Custos, e o arredondamento dos preços médios a duas casas é escolhido de modo a fechar por baixo da receita do plano.
 
 ## 6. Alerta estratégico — valores constantes × valores nominais
 
-Esta previsão está em **valores constantes de agosto/2026**, padrão dos projetos de financiamento e conservador por natureza. Cabe registrar a consequência prática: **em valores nominais, um reajuste de apenas 4% ao ano leva a receita a R$ 4.982.640 já no ano seguinte à estabilização — acima do teto de R$ 4.800.000 da empresa de pequeno porte.** A permanência no porte EPP exigirá, a partir daí, decisão ativa: reduzir volume para caber no teto nominal ou assumir o porte maior. A capacidade instalada comporta as duas escolhas.
+Esta previsão está em **valores constantes de agosto/2026**, padrão dos projetos de financiamento e conservador por natureza. Cabe registrar a consequência prática: **em valores nominais, um reajuste de apenas 4% ao ano leva a receita a R$ 4.982.640 já no ano seguinte à estabilização — acima do teto de R$ 4.800.000 da empresa de pequeno porte.** A permanência no porte EPP exigirá, a partir daí, decisão ativa: reduzir volume para caber no teto nominal ou assumir o porte maior.
 
 ## 7. Coerência verificada
 
@@ -104,8 +104,9 @@ Esta previsão está em **valores constantes de agosto/2026**, padrão dos proje
 | Soma dos 12 meses do ano 1 | R$ 2.750.000 — exato |
 | Receita do regime (mix × preços) | R$ 4.791.000 — igual ao estudo §5.4 |
 | Folga para o teto EPP | R$ 9.000 |
-| Dias de produção no regime | 166,5 de 207 (80%) — §3.7 |
-| Mês de maior utilização | 76% da capacidade mensal |
+| Dias de produção no regime | 173,0 de 207 (84%) — §3.7 |
+| Mês de maior utilização | 79% da capacidade mensal |
+| Preço de venda × insumo SINAPI-ES | todos abaixo da referência de material (−17,5%) |
 | Série usada na simulação de capacidade de pagamento | 2,75 / 3,85 / 4,791 milhões — a mesma |
 
-*Arquivos: `previsao-faturamento.xlsx` (Linha do Tempo, Mensal Ano 1, Anual 12 anos, Sazonalidade, Conferência), `receitas-bnb.xlsx` e `demonstrativo-receitas-bnb.pdf`. Mix, entrada escalonada e sazonalidade são derivados e declarados — a memória está em `memoria-de-calculo.md` e no script `mix_v4.py`.*
+*Arquivos: `previsao-faturamento.xlsx`, `receitas-bnb.xlsx` e `demonstrativo-receitas-bnb.pdf`. A memória de preços, mix e custo está em `mix-produtos-v4.py`.*

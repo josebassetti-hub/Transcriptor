@@ -41,21 +41,48 @@ CIM = {"b14v": 185, "b14e": 260, "can14": 260,
        "pav6": 330, "pav8": 400}
 
 # ────────────────────────── 3. SKUs: descrição, unidade, preço e capacidade ──────────────────────────
-# preços posto-fábrica, 10-25% abaixo da mediana SINAPI-ES 06/2026, conforme política do §6.4 do estudo
+# PREÇO DE VENDA POSTO-FÁBRICA = insumo SINAPI-ES 06/2026 (MATERIAL, sem serviço de assentamento) x 0,825.
+# O fator de 0,825 (-17,5%) é o centro da faixa de 10 a 25% declarada no §6.4 e corresponde ao mix de canais
+# do cap. 8 (balcão a preço cheio, revenda -25 a -35%, construtora/volume -10 a -20%).
+# ATENÇÃO: usa-se o INSUMO, nunca a composição. Exemplo do erro que isso evita — paver 20x10 e=6 natural:
+#   insumo 36155 = R$ 69,97/m² (só o material)  x  composição 92397 = R$ 89,91/m² (pavimento executado,
+#   com areia, assentamento, compactação e mão de obra). A diferença não pode entrar num preço de fábrica.
+SINAPI_ES = {                       # código: (preço do insumo, descrição da referência)
+    "b14v":  (4.16,  "651 — bloco de vedação de concreto 14x19x39 (classe C)"),
+    "b14e":  (5.05,  "34573 — bloco estrutural 14x19x39 fbk 8 MPa"),
+    "can14": (5.35,  "38597 — canaleta estrutural 14x19x39 fbk 4,5 MPa"),
+    "b9v":   (3.33,  "650 — bloco de vedação de concreto 9x19x39 (classe C)"),
+    "b9e":   (3.30,  "25071 — bloco estrutural 9x19x39 fbk 4,5 MPa"),
+    "can9":  (3.61,  "derivado: 38597 x (658/659) = 5,35 x 0,675 — não há insumo de canaleta 9x19x39"),
+    "b19v":  (5.16,  "654 — bloco de vedação de concreto 19x19x39 (classe C)"),
+    "b19e":  (6.63,  "34580 — bloco estrutural 19x19x39 fbk 8 MPa"),
+    "can19": (6.41,  "derivado: 38597 x (660/659) = 5,35 x 1,198 — não há insumo de canaleta 19x19x39"),
+    "pav6":  (69.97, "36155 — piso intertravado 20x10, e=6 cm, 35 MPa, cor natural"),
+    "pav8":  (79.80, "36170 — piso intertravado 20x10, e=8 cm, 35 MPa, cor natural"),
+}
+DESCONTO_CANAL = 0.825
+def preco(k): return round(SINAPI_ES[k][0] * DESCONTO_CANAL, 2)
+# Ressalvas registradas: (i) o SINAPI-ES precifica o bloco estrutural de 9 praticamente igual ao de vedação
+# (3,30 x 3,33) — o plano não assume prêmio de resistência nessa linha; (ii) não existe insumo de 8 cm/50 MPa
+# na tabela do ES: adota-se o de 8 cm/35 MPa, o que é conservador (o prêmio de tráfego pesado fica como
+# upside não computado); (iii) as canaletas de 9 e 19 em 39 cm não têm insumo e são derivadas pela razão
+# entre as canaletas de 19 cm das mesmas larguras.
 SKU = [
-    # chave    descrição                                          un    preço  capacidade/turno
-    ("b14v",  "Bloco de concreto 14x19x39 - vedação",             "UND",  3.30, cap_bloco("b14")),
-    ("b14e",  "Bloco de concreto 14x19x39 - estrutural",          "UND",  4.50, cap_bloco("b14")),
-    ("can14", "Canaleta de concreto 14x19x39",                    "UND",  5.00, cap_bloco("b14")),
-    ("b9v",   "Bloco de concreto 9x19x39 - vedação",              "UND",  2.80, cap_bloco("b9")),
-    ("b9e",   "Bloco de concreto 9x19x39 - estrutural",           "UND",  3.40, cap_bloco("b9")),
-    ("can9",  "Canaleta de concreto 9x19x39",                     "UND",  3.80, cap_bloco("b9")),
-    ("b19v",  "Bloco de concreto 19x19x39 - vedação",             "UND",  4.40, cap_bloco("b19")),
-    ("b19e",  "Bloco de concreto 19x19x39 - estrutural",          "UND",  5.50, cap_bloco("b19")),
-    ("can19", "Canaleta de concreto 19x19x39",                    "UND",  6.30, cap_bloco("b19")),
-    ("pav6",  "Piso intertravado (paver) 6 cm - 35 MPa",          "M2",  57.00, CAP_PAVER_H6),
-    ("pav8",  "Piso intertravado (paver) 8 cm - 50 MPa",          "M2",  78.00, CAP_PAVER_H8),
+    # chave    descrição                                          un    preço        capacidade/turno
+    ("b14v",  "Bloco de concreto 14x19x39 - vedação",             "UND", preco("b14v"),  cap_bloco("b14")),
+    ("b14e",  "Bloco de concreto 14x19x39 - estrutural",          "UND", preco("b14e"),  cap_bloco("b14")),
+    ("can14", "Canaleta de concreto 14x19x39",                    "UND", preco("can14"), cap_bloco("b14")),
+    ("b9v",   "Bloco de concreto 9x19x39 - vedação",              "UND", preco("b9v"),   cap_bloco("b9")),
+    ("b9e",   "Bloco de concreto 9x19x39 - estrutural",           "UND", preco("b9e"),   cap_bloco("b9")),
+    ("can9",  "Canaleta de concreto 9x19x39",                     "UND", preco("can9"),  cap_bloco("b9")),
+    ("b19v",  "Bloco de concreto 19x19x39 - vedação",             "UND", preco("b19v"),  cap_bloco("b19")),
+    ("b19e",  "Bloco de concreto 19x19x39 - estrutural",          "UND", preco("b19e"),  cap_bloco("b19")),
+    ("can19", "Canaleta de concreto 19x19x39",                    "UND", preco("can19"), cap_bloco("b19")),
+    ("pav6",  "Piso intertravado (paver) 6 cm - 35 MPa",          "M2",  preco("pav6"),  CAP_PAVER_H6),
+    ("pav8",  "Piso intertravado (paver) 8 cm - 50 MPa",          "M2",  preco("pav8"),  CAP_PAVER_H8),
 ]
+for _k, *_ in SKU:
+    assert preco(_k) < SINAPI_ES[_k][0], f"preço de venda de {_k} não pode superar o insumo SINAPI"
 PV  = {k: pv for k, _, _, pv, _ in SKU}
 CAP = {k: c for k, _, _, _, c in SKU}
 DESC = {k: d for k, d, _, _, _ in SKU}

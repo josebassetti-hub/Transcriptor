@@ -286,29 +286,29 @@ O plano de vendas foi construído em **quatro passos encadeados**, para que cada
 
 | Produto | Preço posto-fábrica | Vendas/ano (plano-base) | Dias de produção | Receita | % da receita |
 |---|---|---|---|---|---|
-| Bloco de concreto 14x19x39 - vedação | R$ 3,30 | 426.371 un | 60.7 | R$ 1.407.025 | 29,37% |
-| Bloco de concreto 14x19x39 - estrutural | R$ 4,50 | 218.601 un | 31.1 | R$ 983.703 | 20,53% |
-| Canaleta de concreto 14x19x39 | R$ 5,00 | 34.042 un | 4.8 | R$ 170.211 | 3,55% |
-| Bloco de concreto 9x19x39 - vedação | R$ 2,80 | 223.337 un | 21.2 | R$ 625.345 | 13,05% |
-| Bloco de concreto 9x19x39 - estrutural | R$ 3,40 | 23.422 un | 2.2 | R$ 79.633 | 1,66% |
-| Canaleta de concreto 9x19x39 | R$ 3,80 | 7.860 un | 0.7 | R$ 29.869 | 0,62% |
-| Bloco de concreto 19x19x39 - vedação | R$ 4,40 | 10.152 un | 1.9 | R$ 44.667 | 0,93% |
-| Bloco de concreto 19x19x39 - estrutural | R$ 5,50 | 40.597 un | 7.7 | R$ 223.285 | 4,66% |
-| Canaleta de concreto 19x19x39 | R$ 6,30 | 4.684 un | 0.9 | R$ 29.511 | 0,62% |
-| Piso intertravado (paver) 8 cm - 50 MPa | R$ 78,00 | 10.466 m² | 22.5 | R$ 816.344 | 17,04% |
-| Piso intertravado (paver) 6 cm - 35 MPa | R$ 57,00 | 6.691 m² | 12.6 | R$ 381.406 | 7,96% |
-| **Total** | | **989.067 peças + 17.157 m²** | **166.5** | **R$ 4.791.000** | **100,00%** |
+| Bloco de concreto 14x19x39 - vedação | R$ 3,43 | 420.180 un | 59.9 | R$ 1.441.217 | 30,08% |
+| Bloco de concreto 14x19x39 - estrutural | R$ 4,17 | 236.623 un | 33.7 | R$ 986.719 | 20,60% |
+| Canaleta de concreto 14x19x39 | R$ 4,41 | 35.667 un | 5.1 | R$ 157.294 | 3,28% |
+| Bloco de concreto 9x19x39 - vedação | R$ 2,75 | 220.094 un | 20.9 | R$ 605.259 | 12,63% |
+| Bloco de concreto 9x19x39 - estrutural | R$ 2,72 | 25.352 un | 2.4 | R$ 68.959 | 1,44% |
+| Canaleta de concreto 9x19x39 | R$ 2,98 | 8.049 un | 0.8 | R$ 23.986 | 0,50% |
+| Bloco de concreto 19x19x39 - vedação | R$ 4,26 | 10.004 un | 1.9 | R$ 42.618 | 0,89% |
+| Bloco de concreto 19x19x39 - estrutural | R$ 5,47 | 43.944 un | 8.3 | R$ 240.375 | 5,02% |
+| Canaleta de concreto 19x19x39 | R$ 5,29 | 5.070 un | 1.0 | R$ 26.823 | 0,56% |
+| Piso intertravado (paver) 8 cm - 50 MPa | R$ 65,83 | 11.658 m² | 25.0 | R$ 767.456 | 16,02% |
+| Piso intertravado (paver) 6 cm - 35 MPa | R$ 57,73 | 7.454 m² | 14.1 | R$ 430.294 | 8,98% |
+| **Total** | | **1.004.985 peças + 19.112 m²** | **173.0** | **R$ 4.791.000** | **100,00%** |
 
-**Leitura de utilização (contra a capacidade certa).** Os 166.5 dias de produção do plano equivalem a **≈80% dos 207 dias efetivos** que a planta realmente tem por ano (§3.7). No regime, portanto, a fábrica opera em ritmo industrial pleno e realista, vendendo menos do que fabrica, com **folga de ≈40 dias efetivos/ano** para picos, atas e encomendas — além das reservas estruturais (2º turno e melhoria de OEE) que ficam fora do plano-base. Em valor, a capacidade efetiva de um turno é de **R$ 5.955.701/ano** neste mix, contra os R$ 4.791.000 planejados.
+**Leitura de utilização (contra a capacidade certa).** Os 173,0 dias de produção do plano equivalem a **≈84% dos 207 dias efetivos** que a planta realmente tem por ano (§3.7). No regime, portanto, a fábrica opera em ritmo industrial pleno e realista, vendendo menos do que fabrica, com **folga de ≈40 dias efetivos/ano** para picos, atas e encomendas — além das reservas estruturais (2º turno e melhoria de OEE) que ficam fora do plano-base. Em valor, a capacidade efetiva de um turno é de **R$ 5.732.361/ano** neste mix, contra os R$ 4.791.000 planejados.
 
 **Coerência de absorção.** As quantidades implicam shares consistentes: ≈989 mil peças de alvenaria = **16–25% do mercado regional de 4 a 6 milhões de blocos-eq/ano**, e 17.157 m² de piso = **11–25% do mercado de 70 a 150 mil m²/ano** — participações compatíveis com a posição de único fabricante industrial-certificável do raio de ≈150 km, sem exigir domínio irrealista de nenhum segmento.
 
-| Cenário | Receita anual | % da capacidade EFETIVA (R$ 5,96 mi — §3.7) | % do teto EPP |
+| Cenário | Receita anual | % da capacidade EFETIVA (R$ 5,73 mi — §3.7) | % do teto EPP |
 |---|---|---|---|
 | Ano 1 — ramp-up | R$ 2,75 mi | 46% | 57% |
 | Ano 2 | R$ 3,85 mi | 65% | 80% |
-| Ano 3+ — regime (plano-base) | R$ 4,79 mi | ≈80% | 100% |
-| Referências de folga (fora do plano) | efetiva 1 turno R$ 5,96 mi · 2º turno ≈dobra | — | — |
+| Ano 3+ — regime (plano-base) | R$ 4,79 mi | ≈84% | 100% |
+| Referências de folga (fora do plano) | efetiva 1 turno R$ 5,73 mi · 2º turno ≈dobra | — | — |
 
 O ramp-up exige shares de mercado de 10–18% (ano 1) e o regime de **19–30% do SAM** — factíveis para quem chega com produto certificado, frete 3–5× menor que o dos concorrentes industriais (cap. 9) e os canais do capítulo 8. A ativação do 2º turno e o rompimento do teto EPP não são presumidos no fluxo bancário: são opções reais de crescimento documentadas, condicionadas a decisão societária e tributária. O projeto financeiro é dimensionado para pagar-se dentro do plano-base — e é o que o capítulo 13 demonstra.
 
@@ -348,24 +348,35 @@ Registros ativos do grupo CNAE 23.30-3 em São Mateus somam ao menos 10–14 est
 
 ## 6.4 Preços de referência
 
-Nenhum fabricante capixaba publica tabela; as referências triangulam tabelas oficiais e mercado nacional (validar com cotação local na implantação — ver plano de ação). **Correção da v4**: a linha da canaleta comparava, na versão anterior, o preço SINAPI de uma peça de 14×19×**19** cm com o preço-alvo de uma peça de 39 cm — o dobro do comprimento. Os preços de canaleta abaixo já estão na peça de 39 cm, referenciados em praça.
+Nenhum fabricante capixaba publica tabela de preços, e os depósitos de São Mateus, Linhares e Nova Venécia não expõem preço em canal digital. A melhor âncora local disponível é a própria base **SINAPI-ES 06/2026** [11] — que é pesquisa de preço de mercado realizada no Espírito Santo —, usada aqui com um cuidado metodológico que faz toda a diferença.
 
-| Produto | Referência oficial SINAPI-ES 06/2026 [11] | Mercado nacional 2025/26 [90][26] | Preço-alvo GTK "posto fábrica" (premissa conservadora) |
+**Insumo, nunca composição.** O SINAPI publica duas coisas com nomes parecidos: o **insumo**, que é o preço do material posto obra, e a **composição**, que é o serviço executado — material mais areia, assentamento, compactação, equipamento e mão de obra. Para um preço de fábrica só o insumo serve. A diferença é grande:
+
+| Piso intertravado 20×10, e=6 cm, 35 MPa, cor natural | Código | Preço |
+|---|---|---|
+| **Insumo** — só as peças | 36155 | **R$ 69,97/m²** |
+| Composição — pavimento executado | 92397 | R$ 89,91/m² |
+| *Diferença (assentamento, areia, compactação, mão de obra)* | | *R$ 19,94/m² — **não** entra em preço de fábrica* |
+
+**Correção da v5.** A versão anterior deste estudo ancorava três linhas em referências erradas, todas no sentido de superestimar a receita: o paver de 8 cm usava o **sextavado 25×25** (712) e o **retangular colorido** (36154), produtos mais caros que o retangular natural que a GTK vai fabricar; a canaleta de 14 comparava com a peça de 14×19×**19**, metade do comprimento; e o bloco estrutural de 9 tinha preço-alvo acima do próprio insumo. A tabela abaixo refaz as onze linhas sob uma regra única: **preço posto-fábrica = insumo SINAPI-ES × 0,825**, isto é, −17,5% — o centro da faixa de 10 a 25% que corresponde ao mix de canais do capítulo 8 (balcão a preço cheio, revenda −25 a −35%, construtora e volume −10 a −20%).
+
+| Produto | Código do insumo | Insumo SINAPI-ES 06/2026 (material) | Preço-alvo GTK posto-fábrica |
 |---|---|---|---|
-| Bloco vedação 9×19×39 | — (estrutural fbk 4,5: R$ 3,30) | R$ 3,60–4,60 | **R$ 2,60–3,00** |
-| Bloco vedação 14×19×39 | — | R$ 3,50–6,50 | **R$ 3,20–3,60** |
-| Bloco estrutural 14×19×39 fbk 6–8 | R$ 4,80–5,25 | R$ 4,00–5,30 | **R$ 4,20–4,80** |
-| Bloco estrutural 19×19×39 fbk 4,5–8 | R$ 5,94–6,63 | — | **R$ 5,20–5,90** |
-| Bloco vedação 19×19×39 | — (estrutural fbk 8: R$ 6,97 nacional) | R$ 5,50–6,20 | **R$ 4,20–4,60** |
-| Bloco estrutural 9×19×39 fbk 4,5 | R$ 3,30 | — | **R$ 3,20–3,60** |
-| Canaleta 9×19×39 | — | R$ 5,90 (varejo) | **R$ 3,60–4,00** |
-| Canaleta 14×19×39 | R$ 3,08 (peça de 14×19×**19**) | R$ 3,89–8,94 (varejo) | **R$ 4,60–5,20** |
-| Canaleta 19×19×39 | — | R$ 8,00 (varejo) | **R$ 6,00–6,60** |
-| Paver 35 MPa e=6 cm (m²) | R$ 69,97–88,39 | R$ 55–95 | **R$ 52–62** |
-| Paver 50 MPa e=8 cm (m²) | R$ 95,76–105,58 | R$ 80–130 | **R$ 72–84** |
-| Sextavado e=8/10 (m²) | R$ 95,76–126,57 | — | **R$ 70–95** |
+| Bloco de concreto 14x19x39 - vedação | 651 | R$ 4,16 | **R$ 3,43** |
+| Bloco de concreto 14x19x39 - estrutural | 34573 | R$ 5,05 | **R$ 4,17** |
+| Canaleta de concreto 14x19x39 | 38597 | R$ 5,35 | **R$ 4,41** |
+| Bloco de concreto 9x19x39 - vedação | 650 | R$ 3,33 | **R$ 2,75** |
+| Bloco de concreto 9x19x39 - estrutural | 25071 | R$ 3,30 | **R$ 2,72** |
+| Canaleta de concreto 9x19x39 | derivado: 38597 x (658/659) = 5,35 x 0,675 | R$ 3,61 | **R$ 2,98** |
+| Bloco de concreto 19x19x39 - vedação | 654 | R$ 5,16 | **R$ 4,26** |
+| Bloco de concreto 19x19x39 - estrutural | 34580 | R$ 6,63 | **R$ 5,47** |
+| Canaleta de concreto 19x19x39 | derivado: 38597 x (660/659) = 5,35 x 1,198 | R$ 6,41 | **R$ 5,29** |
+| Piso intertravado (paver) 8 cm - 50 MPa | 36170 | R$ 79,80/m² | **R$ 65,83/m²** |
+| Piso intertravado (paver) 6 cm - 35 MPa | 36155 | R$ 69,97/m² | **R$ 57,73/m²** |
 
-Os preços-alvo da GTK posicionam-se deliberadamente 10–25% abaixo da mediana SINAPI (que reflete preço ao consumidor final com margem de revenda) — margem suficiente para remunerar a revenda, ganhar licitação e ainda assim preservar a rentabilidade demonstrada no capítulo 13, graças ao custo variável industrial de ~R$ 1,85/bloco (cap. 13.2).
+Três ressalvas ficam registradas: (i) o SINAPI-ES precifica o bloco estrutural de 9 praticamente no mesmo nível do de vedação (R$ 3,30 contra R$ 3,33), de modo que o plano **não** assume prêmio de resistência nessa linha; (ii) **não existe insumo de 8 cm com 50 MPa na tabela do ES** — adotou-se o de 8 cm com 35 MPa, o que é conservador: o prêmio do produto de tráfego pesado, se realizado, é ganho não computado; (iii) as canaletas de 9 e 19 cm em comprimento de 39 cm não têm insumo próprio e foram derivadas da razão entre as canaletas de 19 cm das mesmas larguras (658/659 e 660/659 aplicadas ao insumo 38597).
+
+Como checagem de sanidade, os preços de varejo nacionais levantados (canaleta de 14: R$ 3,89 a 8,94; bloco estrutural de 19: R$ 6,21 a 6,40) são compatíveis com os insumos acima, que embutem margem de revenda. **Providência da implantação**: coletar três cotações reais de fabricantes de São Mateus, Linhares e Nova Venécia e substituir a referência oficial por preço de praça antes do protocolo (§14.2).
 
 ---
 
@@ -634,19 +645,19 @@ O capital social subscrito de R$ 7,5 milhões é coerente com essa ordem de gran
 
 | Produto | Preço | Custo variável | Margem de contribuição | MC % |
 |---|---|---|---|---|
-| Bloco de concreto 14x19x39 - vedação | R$ 3,30 | R$ 1,85 | R$ 0,81/un | 24,5% |
-| Bloco de concreto 14x19x39 - estrutural | R$ 4,50 | R$ 2,09 | R$ 1,54/un | 34,1% |
-| Canaleta de concreto 14x19x39 | R$ 5,00 | R$ 2,12 | R$ 1,90/un | 38,1% |
-| Bloco de concreto 9x19x39 - vedação | R$ 2,80 | R$ 1,44 | R$ 0,81/un | 29,1% |
-| Bloco de concreto 9x19x39 - estrutural | R$ 3,40 | R$ 1,63 | R$ 1,11/un | 32,6% |
-| Canaleta de concreto 9x19x39 | R$ 3,80 | R$ 1,70 | R$ 1,36/un | 35,8% |
-| Bloco de concreto 19x19x39 - vedação | R$ 4,40 | R$ 2,23 | R$ 1,31/un | 29,8% |
-| Bloco de concreto 19x19x39 - estrutural | R$ 5,50 | R$ 2,52 | R$ 1,91/un | 34,7% |
-| Canaleta de concreto 19x19x39 | R$ 6,30 | R$ 2,76 | R$ 2,32/un | 36,8% |
-| Piso intertravado (paver) 6 cm - 35 MPa | R$ 57,00 | R$ 26,95 | R$ 18,93/m² | 33,2% |
-| Piso intertravado (paver) 8 cm - 50 MPa | R$ 78,00 | R$ 38,36 | R$ 24,43/m² | 31,3% |
+| Bloco de concreto 14x19x39 - vedação | R$ 3,43 | R$ 1,85 | R$ 0,91/un | 26,6% |
+| Bloco de concreto 14x19x39 - estrutural | R$ 4,17 | R$ 2,09 | R$ 1,27/un | 30,5% |
+| Canaleta de concreto 14x19x39 | R$ 4,41 | R$ 2,12 | R$ 1,43/un | 32,4% |
+| Bloco de concreto 9x19x39 - vedação | R$ 2,75 | R$ 1,44 | R$ 0,77/un | 28,2% |
+| Bloco de concreto 9x19x39 - estrutural | R$ 2,72 | R$ 1,63 | R$ 0,56/un | 20,6% |
+| Canaleta de concreto 9x19x39 | R$ 2,98 | R$ 1,70 | R$ 0,70/un | 23,5% |
+| Bloco de concreto 19x19x39 - vedação | R$ 4,26 | R$ 2,23 | R$ 1,20/un | 28,2% |
+| Bloco de concreto 19x19x39 - estrutural | R$ 5,47 | R$ 2,52 | R$ 1,89/un | 34,5% |
+| Canaleta de concreto 19x19x39 | R$ 5,29 | R$ 2,76 | R$ 1,50/un | 28,4% |
+| Piso intertravado (paver) 8 cm - 50 MPa | R$ 65,83 | R$ 38,36 | R$ 14,64/m² | 22,2% |
+| Piso intertravado (paver) 6 cm - 35 MPa | R$ 57,73 | R$ 26,95 | R$ 19,52/m² | 33,8% |
 
-Ponderada pelo mix do §5.4, a margem média derivada é de **30,2%** — o modelo adota **30,0%** (conservador). Dois pontos merecem leitura: o bloco de vedação tem a **menor** margem do portfólio (é o produto de entrada, feito em molde de espessura estrutural, o que o encarece), e o paver de 8 cm, apesar do preço maior, tem margem percentual próxima à do de 6 cm porque o traço de 50 MPa consome mais cimento. É por isso que a estratégia protege o espaço do estrutural, das canaletas e do paver no mix.
+Ponderada pelo mix do §5.4, a margem média derivada é de **28,1%** — e é ela que o modelo financeiro passa a adotar, no lugar dos 30% da versão anterior. A queda de 2,1 pontos vem inteiramente da correção de preços do §6.4: os preços caíram, os custos não. Dois pontos merecem leitura: o bloco de vedação e o paver de 8 cm têm as menores margens do portfólio — o primeiro porque é o produto de entrada, feito em molde de espessura estrutural; o segundo porque o traço de 50 MPa consome mais cimento enquanto o preço se ancora, conservadoramente, no insumo de 35 MPa. É por isso que a estratégia protege o espaço do estrutural, das canaletas e do paver no mix.
 
 **Regime tributário: decisão em aberto, premissa fechada.** O teto de receita mantém a empresa no porte EPP em qualquer regime [139]; a escolha entre os regimes é do planejamento tributário, não do estudo de mercado: no **Simples Nacional (Anexo II — indústria)**, a alíquota efetiva vai de ~11,6% no ramp-up a **15,0% no topo da faixa** (nominal de 30% com dedução de R$ 720 mil [140]); no **Lucro Presumido**, os tributos federais somam ~6,2% da receita (IRPJ com adicional + CSLL sobre bases presumidas de 8%/12% + PIS/COFINS cumulativos), acrescidos do ICMS por débito e crédito e da CPP de 20% sobre uma folha enxuta — desenho que pode ser competitivo justamente porque a planta automática emprega poucos funcionários, e que ainda pode capturar benefícios estaduais. **O modelo adota carga total de 15% sobre a receita, que cobre com folga os dois cenários; a definição fina com o contador antes do start-up só pode melhorar o resultado projetado.**
 
@@ -665,31 +676,33 @@ Ponderada pelo mix do §5.4, a margem média derivada é de **30,2%** — o mode
 
 ## 13.4 Ponto de equilíbrio, cenários e capacidade de pagamento
 
-Com margem de contribuição média de **30%** sobre a receita (derivada de 30,2% no mix do §5.4 — Apêndice A):
+Com margem de contribuição média de **28%** sobre a receita (derivada de 28,1% no mix do §5.4 — Apêndice A):
 
-- **Ponto de equilíbrio operacional**: R$ 52.000 ÷ 30% ≈ **R$ 173 mil/mês** (R$ 2,08 milhões/ano) — ou seja, **36% da capacidade efetiva** (§3.7), **43% do teto EPP** e 29% da referência nominal. No regime, a operação roda 2,3 vezes acima do equilíbrio.
-- O plano-base (teto EPP) gera **EBITDA de ≈R$ 813 mil/ano** (R$ 4.791.000 × 30% − R$ 624.000 de fixos).
+- **Ponto de equilíbrio operacional**: R$ 52.000 ÷ 28% ≈ **R$ 2.229 mil/mês** (R$ 26,74 milhões/ano) — ou seja, **467% da capacidade efetiva** (§3.7) e **557% do teto EPP**. No regime, a operação roda 0.2 vezes acima do equilíbrio.
+- O plano-base (teto EPP) gera **EBITDA de ≈R$ 717 mil/ano** (R$ 4.791.000 × 28% − R$ 624.000 de fixos).
 
-| Cenário anual | Receita | % da capacidade efetiva | Margem contrib. (30%) | Fixos | EBITDA aprox. |
+| Cenário anual | Receita | % da capacidade efetiva | Margem contrib. (28%) | Fixos | EBITDA aprox. |
 |---|---|---|---|---|---|
-| Ano 1 — ramp-up | R$ 2,6–2,9 mi | 45–50% | R$ 0,78–0,87 mi | R$ 0,62 mi | ≈R$ 0,16–0,25 mi |
-| Ano 2 | R$ 3,8–3,9 mi | 66–68% | R$ 1,14–1,17 mi | R$ 0,62 mi | ≈R$ 0,52–0,55 mi |
-| Ano 3+ — regime (teto EPP) | R$ 4,79 mi | ≈80% | R$ 1,44 mi | R$ 0,62 mi | **≈R$ 0,81 mi** |
+| Ano 1 — ramp-up | R$ 2,75 mi | 48% | R$ 0,77 mi | R$ 0,62 mi | ≈R$ 0,15 mi |
+| Ano 2 | R$ 3,85 mi | 67% | R$ 1,08 mi | R$ 0,62 mi | ≈R$ 0,45 mi |
+| Ano 3+ — regime (teto EPP) | R$ 4,79 mi | ≈84% | R$ 1,34 mi | R$ 0,62 mi | **≈R$ 0,72 mi** |
 
-*Todas as linhas usam a mesma base (mix do §5.4; capacidade efetiva de R$ 5,96 milhões do §3.7), margem de 30% e fixos constantes de R$ 52 mil/mês — a mesma da planilha anexa e do Apêndice A.*
+*Todas as linhas usam a mesma base (mix do §5.4; capacidade efetiva de R$ 5,73 milhões do §3.7), margem de 28% e fixos constantes de R$ 52 mil/mês — a mesma da planilha anexa e do Apêndice A.*
 
 **Capacidade de pagamento (DSCR).** O indicador que o banco olha é a cobertura do serviço da dívida pelo EBITDA:
 
-| Estrutura da dívida FNE (SAC, pós-carência) | Serviço anual | DSCR no regime (EBITDA R$ 813 mil) |
+| Estrutura da dívida FNE (SAC, pós-carência) | Serviço anual | DSCR no regime (EBITDA R$ 717 mil) |
 |---|---|---|
-| ~R$ 5,0 milhões em 10 anos (≈R$ 60 mil/mês) | R$ 720 mil | 1,13× — apertado |
-| **~R$ 4,0–4,5 milhões em 12 anos (≈R$ 46–50 mil/mês)** | **R$ 552–600 mil** | **1,36–1,47× — adequado** |
+| ~R$ 5,0 milhões em 10 anos (≈R$ 60 mil/mês) | R$ 720 mil | 1.00× — insuficiente |
+| **~R$ 4,0–4,5 milhões em 12 anos (≈R$ 46–50 mil/mês)** | **R$ 552–600 mil** | **1,20–1,30× — adequado, porém mais apertado que na v4** |
+
+**Efeito da correção de preços (v5).** A ancoragem dos preços no insumo SINAPI-ES (§6.4) derrubou a margem de contribuição de 30,2% para 28,1% e elevou o custo total projetado de 82,8% para **85,0% da receita** — meio ponto acima do teto de 84,39% da faixa de custo padrão de referência do banco. A consequência prática é dupla e precisa ser dita ao analista sem rodeio: o EBITDA de regime cai de R$ 813 mil para R$ 717 mil, e o DSCR da estrutura recomendada cai de 1,36–1,47× para 1,20–1,30×. O projeto continua pagando o serviço da dívida na estrutura de 12 anos, mas a folga encolheu — e as alavancas de recuperação estão identificadas: enriquecer o mix (canaletas e estrutural têm margem acima da média), praticar o prêmio de 50 MPa no paver de 8 cm (não computado na receita) e otimizar o regime tributário, já premissado no topo (15%).
 
 A recomendação ao módulo financeiro do projeto é, portanto, **prazo de 12 anos e financiamento de até ~R$ 4,5 milhões**, com a contrapartida própria reforçada (o capital subscrito de R$ 7,5 milhões comporta) — além da carência típica do FNE cobrindo o ramp-up do ano 1 e do bônus de adimplência dando folga adicional à cobertura.
 
 Essa recomendação foi **testada no algoritmo oficial de capacidade de pagamento do BNB** (anexo "Simulação FNE/BNB"): com taxa de 8,8945% a.a., 144 meses e a receita deste estudo, o pleito aprovável na janela de comprometimento de 30–50% do banco vai de **R$ 4,46 milhões** (custo padrão no piso da faixa de 76,72%, carência de 24 meses — comprometimento equalizado de 50,0%) a **~R$ 3,0 milhões** (custo padrão no teto de 84,39%), com R$ 4,8 milhões reprovado em qualquer combinação. O cenário de protocolo sugerido é **R$ 4,4 milhões / 144 meses / carência 24 meses** (comprometimento 49,1% no piso da faixa), com plano B dimensionado para ~R$ 3,0 milhões caso o analista aplique o teto do custo padrão.
 
-**Payback e horizonte.** No teto EPP, o payback bruto do investimento total (~R$ 7,4 milhões) é de **~9 anos** — deliberadamente alongado pela opção de permanecer pequena empresa, e compatível com o prazo de 10–12 anos do crédito FNE industrial [124]. As alavancas documentadas para encurtá-lo, quando o investidor decidir: enriquecer o mix dentro do teto (mais estrutural e paver elevam a margem média), otimizar o regime tributário (qualquer carga abaixo dos 15% premissados vira margem) e, a partir do ano 5, romper o teto EPP como decisão consciente de porte — a capacidade instalada já está paga e pronta.
+**Payback e horizonte.** No teto EPP, o payback bruto do investimento total (~R$ 7,4 milhões) é de **~10 anos** — deliberadamente alongado pela opção de permanecer pequena empresa, e compatível com o prazo de 10–12 anos do crédito FNE industrial [124]. As alavancas documentadas para encurtá-lo, quando o investidor decidir: enriquecer o mix dentro do teto (mais estrutural e paver elevam a margem média), otimizar o regime tributário (qualquer carga abaixo dos 15% premissados vira margem) e, a partir do ano 5, romper o teto EPP como decisão consciente de porte — a capacidade instalada já está paga e pronta.
 
 **Capital de giro**: o ciclo financeiro estimado é de 45–60 dias (estoque de insumos ~15 dias + estoque de produto ~30 dias + prazo médio de recebimento 21–28 dias – prazo de fornecedores ~14 dias). Em regime (teto EPP), isso imobiliza R$ 450–650 mil — daí a reserva de R$ 700–900 mil no funding, já com folga,, o item cuja falta mata a maioria das indústrias novas do setor [126][127].
 
@@ -716,7 +729,7 @@ Este capítulo condensa, em formato operacional, o que a experiência do setor e
 | 5 | Disponibilidade da linha (% horas programadas) | ≥92% | Semanal |
 | 6 | Vendas (R$ e peças, por canal) | conforme orçamento | Semanal |
 | 7 | Preço médio realizado vs. tabela | ≥97% | Semanal |
-| 8 | Margem de contribuição média (%) | ≥30% (derivada: 30,2% — §13.2) | Mensal |
+| 8 | Margem de contribuição média (%) | ≥28% (derivada: 28,1% — §13.2) | Mensal |
 | 9 | Dias de estoque de produto acabado | 25–45 | Semanal |
 | 10 | Inadimplência (>15 dias, % carteira) | <3% | Semanal |
 | 11 | Resistência à compressão (ensaios, MPa) | 100% dentro da classe | Mensal (lab.) |
@@ -726,6 +739,8 @@ Este capítulo condensa, em formato operacional, o que a experiência do setor e
 Regra prática: **prancheta diária** (produção, refugo, cimento), **reunião semanal de 1 hora** (vendas, estoque, caixa, inadimplência) e **fechamento mensal** com o contador (DRE gerencial simplificada por produto). O supervisório da XP350 registra automaticamente boa parte dos dados de processo — usar os relatórios da máquina, não anotações soltas.
 
 ## 14.2 Plano de ação da implantação (o relógio corre a favor de quem começa cedo)
+
+**Providência de preço, prioritária.** Toda a receita deste estudo se apoia no insumo SINAPI-ES 06/2026 menos 17,5% (§6.4), porque nenhum fabricante capixaba publica tabela. Antes do protocolo, coletar **três cotações reais** — uma em São Mateus, uma em Linhares e uma em Nova Venécia ou Jaguaré — para os onze produtos, e substituir a referência oficial pelo preço de praça. É a diligência que transforma uma premissa referenciada em preço verificado, e é a primeira coisa que um analista pede quando o preço de venda sustenta a projeção inteira.
 
 **Fase 1 — Imediata (meses 0–2, enquanto a fábrica é construída em Içara):**
 1. Protocolar licenciamento ambiental (IEMA/Secretaria municipal — definir enquadramento) [49][50]; 
@@ -787,7 +802,7 @@ Regra prática: **prancheta diária** (produção, refugo, cimento), **reunião 
 2. **Mercado**: a área de influência ponderada soma ~152,9 mil habitantes-equivalentes (9 municípios), com demanda estimada de 4 a 6 milhões de blocos-equivalentes + 70 a 150 mil m² de pavimentação por ano (SAM de R$ 16–25 milhões/ano), sustentada por três motores simultâneos: pipeline público de pavimentação em blocos (padrão adotado pelas prefeituras da região, com registro de preços ativo em São Mateus), ciclo econômico regional (petróleo, café, Marcopolo, Guriri) e habitação (MCMV + déficit local).
 3. **Concorrência**: a oferta local é artesanal e pulverizada (nenhum fabricante certificado no raio de ~150 km); os players industriais estão a 200+ km com frete proibitivo para o dia a dia. A GTK nascerá como única planta automática do interior norte-capixaba — posição defensável por capital, certificação e contratos.
 4. **Suprimentos**: cadeia mapeada e viável — pedreira a ~40 km, cimento a granel de 2 fornecedores estaduais com silo de 90 t de autonomia, aditivos e pallets com oferta competitiva, energia enquadrável em MT rural.
-5. **Economia do negócio**: plano-base limitado ao teto de pequena empresa (R$ 4,79 milhões/ano — LC 123), vendendo ≈989 mil peças de alvenaria + 17.157 m² de piso intertravado com **80% da capacidade efetiva** (que desconta feriados, manutenção, trocas de molde e paradas — OEE implícito de 74%); ponto de equilíbrio em 36% da capacidade efetiva; EBITDA de regime de ~R$ 813 mil/ano; DSCR de 1,36–1,47× com dívida FNE de ~R$ 4,0–4,5 milhões em 12 anos; investimento total de ~R$ 6,6–8,2 milhões compatível com o capital subscrito de R$ 7,5 milhões (a área legal da Sudene abrange 31 municípios do norte do ES — LC nº 185/2021 —, incluindo todos os nove da área de influência; indústria é setor prioritário no FNE 2026 de R$ 52,6 bilhões, com R$ 1,3 bilhão para o ES).
+5. **Economia do negócio**: plano-base limitado ao teto de pequena empresa (R$ 4,79 milhões/ano — LC 123), vendendo ≈1.005 mil peças de alvenaria + 19.112 m² de piso intertravado com **84% da capacidade efetiva** (que desconta feriados, manutenção, trocas de molde e paradas — OEE implícito de 74%); preços de venda ancorados no insumo SINAPI-ES 06/2026 menos 17,5%; ponto de equilíbrio em 467% da capacidade efetiva; EBITDA de regime de ~R$ 717 mil/ano; DSCR de 1,20–1,30× com dívida FNE de ~R$ 4,0–4,5 milhões em 12 anos; custo total projetado de 85,0% da receita, meio ponto acima do teto da faixa de custo padrão do banco — desvio declarado e explicado no §13.4; investimento total de ~R$ 6,6–8,2 milhões compatível com o capital subscrito de R$ 7,5 milhões (a área legal da Sudene abrange 31 municípios do norte do ES — LC nº 185/2021 —, incluindo todos os nove da área de influência; indústria é setor prioritário no FNE 2026 de R$ 52,6 bilhões, com R$ 1,3 bilhão para o ES).
 6. **Riscos**: reais e mapeados (17 riscos na matriz) — os críticos são de execução (ramp-up comercial, CAPEX complementar, prazo de implantação), não de mercado; todos com mitigadores definidos.
 
 ## 15.2 Parecer
