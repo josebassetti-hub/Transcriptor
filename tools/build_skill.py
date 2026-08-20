@@ -43,9 +43,10 @@ def main():
     with open(os.path.join(refdir, "exemplo-entrada.json"), "w", encoding="utf-8") as f:
         f.write(ex.stdout)
 
-    # o gerador de Excel viaja junto com a skill (entrega final ao cliente)
-    shutil.copyfile("tools/gera_excel.py", os.path.join(SKILL, "scripts", "gera_excel.py"))
-    print("script: gera_excel.py")
+    # geradores de entrega viajam junto com a skill
+    for src in ("tools/gera_excel.py", "tools/gera_memoria.py", "tools/memoria_docx.js"):
+        shutil.copyfile(src, os.path.join(SKILL, "scripts", os.path.basename(src)))
+        print("script:", os.path.basename(src))
 
     # autoteste obrigatório antes de empacotar
     at = subprocess.run([sys.executable, os.path.join(SKILL, "scripts", "motor_orcamento.py"),

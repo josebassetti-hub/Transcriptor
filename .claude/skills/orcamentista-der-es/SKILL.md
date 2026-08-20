@@ -27,6 +27,21 @@ impacto, ex.: padrão de acabamento; o orçamento é para banco?; tem rede públ
 | `exemplo-entrada.json` | entrada de referência residencial (casa 70 m², padrão médio) |
 | `exemplo-comercial.json` | entrada de referência **comercial** (academia 1.886 m², 2 pav., alvenaria) — mostra perfil estrutural comercial, cobertura leve apoiada em pórtico, itens SINAPI e substituições com grau |
 
+### Scripts (pasta `scripts/`)
+
+| Arquivo | O que faz |
+|---|---|
+| `motor_orcamento.py` | motor determinístico — idêntico ao do app; `--autoteste` prova a integridade |
+| `gera_excel.py` | `orcamento.json` → planilha .xlsx de 8 abas |
+| `gera_memoria.py` | entrada → memória de cálculo em Markdown + JSON (item a item, com classe de origem) |
+| `memoria_docx.js` | JSON da memória → documento Word de 12 seções (requer Node com o pacote `docx`) |
+
+**Dependências.** O motor e a memória em Markdown rodam com Python puro — sempre funcionam. Os dois
+formatos "bonitos" têm dependência externa: `gera_excel.py` precisa de `openpyxl`
+(`pip install openpyxl`) e `memoria_docx.js` precisa de Node com `docx` (`npm i docx`). Se a
+instalação falhar no ambiente, **entregue o CSV do motor e a memória em Markdown** e diga por que —
+não deixe de entregar o conteúdo por causa do formato.
+
 ## Fluxo (6 passos)
 
 **1. Inventário.** Liste as pranchas/arquivos e classifique por disciplina (ARQ, EST, ELE, HID).
@@ -250,6 +265,10 @@ faltar o critério, escreva "critério do Caderno Técnico não disponível — 
 [fórmula/NBR usada]" em vez de inventar. Detalhe em `references/COBERTURA.md`.
 
 ## O que a skill NÃO tem (declare quando o item vier daí)
+
+- **Formatos que dependem de biblioteca externa.** `gera_excel.py` exige `openpyxl` e
+  `memoria_docx.js` exige Node com `docx`. Sem eles o conteúdo continua saindo: CSV pelo motor
+  (`--csv`) e memória em Markdown (`--md`), ambos com Python puro e o mesmo conteúdo.
 
 - **Critério de medição de item SINAPI.** As 832 fichas de `regras-medicao.json` vêm dos Cadernos
   Técnicos da **DER-ES**. O SINAPI não publica caderno de critério por composição — para item

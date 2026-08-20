@@ -139,6 +139,10 @@ Escrever a memória é também uma auditoria: no exemplo comercial ela eliminou 
 15 de esgoto duplicados com mictórios/ralos e corrigiu o desconto de azulejo do reboco (−R$ 23,6
 mil c/ BDI no total).
 
+Os dois geradores viajam dentro da skill (`scripts/`). A saída Markdown roda com **Python puro** —
+use-a quando `openpyxl` ou o `docx` do Node não estiverem disponíveis no ambiente: o conteúdo é o
+mesmo, só o formato muda.
+
 Quando sair tabela nova (ou de outro estado/SINAPI no mesmo formato):
 
 ```bash
