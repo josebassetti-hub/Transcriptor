@@ -286,24 +286,24 @@ O plano de vendas foi construído em **quatro passos encadeados**, para que cada
 
 | Produto | Preço posto-fábrica | Vendas/ano (plano-base) | Dias de produção | Receita | % da receita |
 |---|---|---|---|---|---|
-| Bloco de concreto 14x19x39 - vedação | R$ 3,43 | 420.180 un | 59.9 | R$ 1.441.217 | 30,08% |
+| Bloco de concreto 14x19x39 - vedação | R$ 3,43 | 441.151 un | 62.8 | R$ 1.513.149 | 31,58% |
 | Bloco de concreto 14x19x39 - estrutural | R$ 4,17 | 236.623 un | 33.7 | R$ 986.719 | 20,60% |
-| Canaleta de concreto 14x19x39 | R$ 4,41 | 35.667 un | 5.1 | R$ 157.294 | 3,28% |
-| Bloco de concreto 9x19x39 - vedação | R$ 2,75 | 220.094 un | 20.9 | R$ 605.259 | 12,63% |
+| Canaleta de concreto 14x19x39 | R$ 4,41 | 34.940 un | 5.0 | R$ 154.085 | 3,22% |
+| Bloco de concreto 9x19x39 - vedação | R$ 2,75 | 199.016 un | 18.9 | R$ 547.293 | 11,42% |
 | Bloco de concreto 9x19x39 - estrutural | R$ 2,72 | 25.352 un | 2.4 | R$ 68.959 | 1,44% |
-| Canaleta de concreto 9x19x39 | R$ 2,98 | 8.049 un | 0.8 | R$ 23.986 | 0,50% |
-| Bloco de concreto 19x19x39 - vedação | R$ 4,26 | 10.004 un | 1.9 | R$ 42.618 | 0,89% |
+| Canaleta de concreto 9x19x39 | R$ 2,98 | 7.361 un | 0.7 | R$ 21.935 | 0,46% |
+| Bloco de concreto 19x19x39 - vedação | R$ 4,26 | 7.961 un | 1.5 | R$ 33.912 | 0,71% |
 | Bloco de concreto 19x19x39 - estrutural | R$ 5,47 | 43.944 un | 8.3 | R$ 240.375 | 5,02% |
 | Canaleta de concreto 19x19x39 | R$ 5,29 | 5.070 un | 1.0 | R$ 26.823 | 0,56% |
-| Piso intertravado (paver) 8 cm - 50 MPa | R$ 65,83 | 11.658 m² | 25.0 | R$ 767.456 | 16,02% |
-| Piso intertravado (paver) 6 cm - 35 MPa | R$ 57,73 | 7.454 m² | 14.1 | R$ 430.294 | 8,98% |
-| **Total** | | **1.004.985 peças + 19.112 m²** | **173.0** | **R$ 4.791.000** | **100,00%** |
+| Piso intertravado (paver) 8 cm - 50 MPa | R$ 65,83 | 8.965 m² | 19.2 | R$ 590.179 | 12,32% |
+| Piso intertravado (paver) 6 cm - 35 MPa | R$ 57,73 | 10.524 m² | 19.9 | R$ 607.571 | 12,68% |
+| **Total** | | **1.001.419 peças + 19.490 m²** | **173.5** | **R$ 4.791.000** | **100,00%** |
 
-**Leitura de utilização (contra a capacidade certa).** Os 173,0 dias de produção do plano equivalem a **≈84% dos 207 dias efetivos** que a planta realmente tem por ano (§3.7). No regime, portanto, a fábrica opera em ritmo industrial pleno e realista, vendendo menos do que fabrica, com **folga de ≈40 dias efetivos/ano** para picos, atas e encomendas — além das reservas estruturais (2º turno e melhoria de OEE) que ficam fora do plano-base. Em valor, a capacidade efetiva de um turno é de **R$ 5.732.361/ano** neste mix, contra os R$ 4.791.000 planejados.
+**Leitura de utilização (contra a capacidade certa).** Os 173,5 dias de produção do plano equivalem a **≈84% dos 207 dias efetivos** que a planta realmente tem por ano (§3.7). No regime, portanto, a fábrica opera em ritmo industrial pleno e realista, vendendo menos do que fabrica, com **folga de ≈34 dias efetivos/ano** para picos, atas e encomendas — além das reservas estruturais (2º turno e melhoria de OEE) que ficam fora do plano-base. Em valor, a capacidade efetiva de um turno é de **R$ 5.717.703/ano** neste mix, contra os R$ 4.791.000 planejados.
 
-**Coerência de absorção.** As quantidades implicam shares consistentes: ≈989 mil peças de alvenaria = **16–25% do mercado regional de 4 a 6 milhões de blocos-eq/ano**, e 17.157 m² de piso = **11–25% do mercado de 70 a 150 mil m²/ano** — participações compatíveis com a posição de único fabricante industrial-certificável do raio de ≈150 km, sem exigir domínio irrealista de nenhum segmento.
+**Coerência de absorção.** As quantidades implicam shares consistentes: ≈1.001 mil peças de alvenaria = **17–25% do mercado regional de 4 a 6 milhões de blocos-eq/ano**, e 19.490 m² de piso = **13–28% do mercado de 70 a 150 mil m²/ano** — participações compatíveis com a posição de único fabricante industrial-certificável do raio de ≈150 km, sem exigir domínio irrealista de nenhum segmento.
 
-| Cenário | Receita anual | % da capacidade EFETIVA (R$ 5,73 mi — §3.7) | % do teto EPP |
+| Cenário | Receita anual | % da capacidade EFETIVA (R$ 5,72 mi — §3.7) | % do teto EPP |
 |---|---|---|---|
 | Ano 1 — ramp-up | R$ 2,75 mi | 46% | 57% |
 | Ano 2 | R$ 3,85 mi | 65% | 80% |
@@ -657,7 +657,7 @@ O capital social subscrito de R$ 7,5 milhões é coerente com essa ordem de gran
 | Piso intertravado (paver) 8 cm - 50 MPa | R$ 65,83 | R$ 38,36 | R$ 14,64/m² | 22,2% |
 | Piso intertravado (paver) 6 cm - 35 MPa | R$ 57,73 | R$ 26,95 | R$ 19,52/m² | 33,8% |
 
-Ponderada pelo mix do §5.4, a margem média derivada é de **28,1%** — e é ela que o modelo financeiro passa a adotar, no lugar dos 30% da versão anterior. A queda de 2,1 pontos vem inteiramente da correção de preços do §6.4: os preços caíram, os custos não. Dois pontos merecem leitura: o bloco de vedação e o paver de 8 cm têm as menores margens do portfólio — o primeiro porque é o produto de entrada, feito em molde de espessura estrutural; o segundo porque o traço de 50 MPa consome mais cimento enquanto o preço se ancora, conservadoramente, no insumo de 35 MPa. É por isso que a estratégia protege o espaço do estrutural, das canaletas e do paver no mix.
+Ponderada pelo mix do §5.4, a margem média derivada é de **28,5%** — e é ela que o modelo financeiro passa a adotar, no lugar dos 30% da versão anterior. A queda de 2,1 pontos vem inteiramente da correção de preços do §6.4: os preços caíram, os custos não. Dois pontos merecem leitura: o bloco de vedação e o paver de 8 cm têm as menores margens do portfólio — o primeiro porque é o produto de entrada, feito em molde de espessura estrutural; o segundo porque o traço de 50 MPa consome mais cimento enquanto o preço se ancora, conservadoramente, no insumo de 35 MPa. É por isso que a estratégia protege o espaço do estrutural, das canaletas e do paver no mix.
 
 **Regime tributário: decisão em aberto, premissa fechada.** O teto de receita mantém a empresa no porte EPP em qualquer regime [139]; a escolha entre os regimes é do planejamento tributário, não do estudo de mercado: no **Simples Nacional (Anexo II — indústria)**, a alíquota efetiva vai de ~11,6% no ramp-up a **15,0% no topo da faixa** (nominal de 30% com dedução de R$ 720 mil [140]); no **Lucro Presumido**, os tributos federais somam ~6,2% da receita (IRPJ com adicional + CSLL sobre bases presumidas de 8%/12% + PIS/COFINS cumulativos), acrescidos do ICMS por débito e crédito e da CPP de 20% sobre uma folha enxuta — desenho que pode ser competitivo justamente porque a planta automática emprega poucos funcionários, e que ainda pode capturar benefícios estaduais. **O modelo adota carga total de 15% sobre a receita, que cobre com folga os dois cenários; a definição fina com o contador antes do start-up só pode melhorar o resultado projetado.**
 
@@ -676,7 +676,7 @@ Ponderada pelo mix do §5.4, a margem média derivada é de **28,1%** — e é e
 
 ## 13.4 Ponto de equilíbrio, cenários e capacidade de pagamento
 
-Com margem de contribuição média de **28%** sobre a receita (derivada de 28,1% no mix do §5.4 — Apêndice A):
+Com margem de contribuição média de **28%** sobre a receita (derivada de 28,5% no mix do §5.4 — Apêndice A):
 
 - **Ponto de equilíbrio operacional**: R$ 52.000 ÷ 28% ≈ **R$ 2.229 mil/mês** (R$ 26,74 milhões/ano) — ou seja, **467% da capacidade efetiva** (§3.7) e **557% do teto EPP**. No regime, a operação roda 0.2 vezes acima do equilíbrio.
 - O plano-base (teto EPP) gera **EBITDA de ≈R$ 717 mil/ano** (R$ 4.791.000 × 28% − R$ 624.000 de fixos).
@@ -696,7 +696,7 @@ Com margem de contribuição média de **28%** sobre a receita (derivada de 28,1
 | ~R$ 5,0 milhões em 10 anos (≈R$ 60 mil/mês) | R$ 720 mil | 1.00× — insuficiente |
 | **~R$ 4,0–4,5 milhões em 12 anos (≈R$ 46–50 mil/mês)** | **R$ 552–600 mil** | **1,20–1,30× — adequado, porém mais apertado que na v4** |
 
-**Efeito da correção de preços (v5).** A ancoragem dos preços no insumo SINAPI-ES (§6.4) derrubou a margem de contribuição de 30,2% para 28,1% e elevou o custo total projetado de 82,8% para **85,0% da receita** — meio ponto acima do teto de 84,39% da faixa de custo padrão de referência do banco. A consequência prática é dupla e precisa ser dita ao analista sem rodeio: o EBITDA de regime cai de R$ 813 mil para R$ 717 mil, e o DSCR da estrutura recomendada cai de 1,36–1,47× para 1,20–1,30×. O projeto continua pagando o serviço da dívida na estrutura de 12 anos, mas a folga encolheu — e as alavancas de recuperação estão identificadas: enriquecer o mix (canaletas e estrutural têm margem acima da média), praticar o prêmio de 50 MPa no paver de 8 cm (não computado na receita) e otimizar o regime tributário, já premissado no topo (15%).
+**Efeito da correção de preços (v5).** A ancoragem dos preços no insumo SINAPI-ES (§6.4) derrubou a margem de contribuição de 30,2% para 28,5% e elevou o custo total projetado de 82,8% para **84,6% da receita** — praticamente no teto de 84,39% da faixa de custo padrão de referência do banco. A consequência prática é dupla e precisa ser dita ao analista sem rodeio: o EBITDA de regime cai de R$ 813 mil para R$ 717 mil, e o DSCR da estrutura recomendada cai de 1,36–1,47× para 1,20–1,30×. O projeto continua pagando o serviço da dívida na estrutura de 12 anos, mas a folga encolheu — e as alavancas de recuperação estão identificadas: enriquecer o mix (canaletas e estrutural têm margem acima da média), praticar o prêmio de 50 MPa no paver de 8 cm (não computado na receita) e otimizar o regime tributário, já premissado no topo (15%).
 
 A recomendação ao módulo financeiro do projeto é, portanto, **prazo de 12 anos e financiamento de até ~R$ 4,5 milhões**, com a contrapartida própria reforçada (o capital subscrito de R$ 7,5 milhões comporta) — além da carência típica do FNE cobrindo o ramp-up do ano 1 e do bônus de adimplência dando folga adicional à cobertura.
 
@@ -729,7 +729,7 @@ Este capítulo condensa, em formato operacional, o que a experiência do setor e
 | 5 | Disponibilidade da linha (% horas programadas) | ≥92% | Semanal |
 | 6 | Vendas (R$ e peças, por canal) | conforme orçamento | Semanal |
 | 7 | Preço médio realizado vs. tabela | ≥97% | Semanal |
-| 8 | Margem de contribuição média (%) | ≥28% (derivada: 28,1% — §13.2) | Mensal |
+| 8 | Margem de contribuição média (%) | ≥28% (derivada: 28,5% — §13.2) | Mensal |
 | 9 | Dias de estoque de produto acabado | 25–45 | Semanal |
 | 10 | Inadimplência (>15 dias, % carteira) | <3% | Semanal |
 | 11 | Resistência à compressão (ensaios, MPa) | 100% dentro da classe | Mensal (lab.) |
@@ -802,7 +802,7 @@ Regra prática: **prancheta diária** (produção, refugo, cimento), **reunião 
 2. **Mercado**: a área de influência ponderada soma ~152,9 mil habitantes-equivalentes (9 municípios), com demanda estimada de 4 a 6 milhões de blocos-equivalentes + 70 a 150 mil m² de pavimentação por ano (SAM de R$ 16–25 milhões/ano), sustentada por três motores simultâneos: pipeline público de pavimentação em blocos (padrão adotado pelas prefeituras da região, com registro de preços ativo em São Mateus), ciclo econômico regional (petróleo, café, Marcopolo, Guriri) e habitação (MCMV + déficit local).
 3. **Concorrência**: a oferta local é artesanal e pulverizada (nenhum fabricante certificado no raio de ~150 km); os players industriais estão a 200+ km com frete proibitivo para o dia a dia. A GTK nascerá como única planta automática do interior norte-capixaba — posição defensável por capital, certificação e contratos.
 4. **Suprimentos**: cadeia mapeada e viável — pedreira a ~40 km, cimento a granel de 2 fornecedores estaduais com silo de 90 t de autonomia, aditivos e pallets com oferta competitiva, energia enquadrável em MT rural.
-5. **Economia do negócio**: plano-base limitado ao teto de pequena empresa (R$ 4,79 milhões/ano — LC 123), vendendo ≈1.005 mil peças de alvenaria + 19.112 m² de piso intertravado com **84% da capacidade efetiva** (que desconta feriados, manutenção, trocas de molde e paradas — OEE implícito de 74%); preços de venda ancorados no insumo SINAPI-ES 06/2026 menos 17,5%; ponto de equilíbrio em 467% da capacidade efetiva; EBITDA de regime de ~R$ 717 mil/ano; DSCR de 1,20–1,30× com dívida FNE de ~R$ 4,0–4,5 milhões em 12 anos; custo total projetado de 85,0% da receita, meio ponto acima do teto da faixa de custo padrão do banco — desvio declarado e explicado no §13.4; investimento total de ~R$ 6,6–8,2 milhões compatível com o capital subscrito de R$ 7,5 milhões (a área legal da Sudene abrange 31 municípios do norte do ES — LC nº 185/2021 —, incluindo todos os nove da área de influência; indústria é setor prioritário no FNE 2026 de R$ 52,6 bilhões, com R$ 1,3 bilhão para o ES).
+5. **Economia do negócio**: plano-base limitado ao teto de pequena empresa (R$ 4,79 milhões/ano — LC 123), vendendo ≈1.001 mil peças de alvenaria + 19.490 m² de piso intertravado com **84% da capacidade efetiva** (que desconta feriados, manutenção, trocas de molde e paradas — OEE implícito de 74%); preços de venda ancorados no insumo SINAPI-ES 06/2026 menos 17,5%; ponto de equilíbrio em 467% da capacidade efetiva; EBITDA de regime de ~R$ 717 mil/ano; DSCR de 1,20–1,30× com dívida FNE de ~R$ 4,0–4,5 milhões em 12 anos; custo total projetado de 85,0% da receita, meio ponto acima do teto da faixa de custo padrão do banco — desvio declarado e explicado no §13.4; investimento total de ~R$ 6,6–8,2 milhões compatível com o capital subscrito de R$ 7,5 milhões (a área legal da Sudene abrange 31 municípios do norte do ES — LC nº 185/2021 —, incluindo todos os nove da área de influência; indústria é setor prioritário no FNE 2026 de R$ 52,6 bilhões, com R$ 1,3 bilhão para o ES).
 6. **Riscos**: reais e mapeados (17 riscos na matriz) — os críticos são de execução (ramp-up comercial, CAPEX complementar, prazo de implantação), não de mercado; todos com mitigadores definidos.
 
 ## 15.2 Parecer

@@ -91,15 +91,22 @@ UN  = {k: u for k, _, u, _, _ in SKU}
 # ────────────────────────── 4. cesta de produtos por tipo de obra (peças por 1.000) ──────────────────────────
 # Obra de vedação: paredes externas em bloco 14, divisórias em bloco 9, canaleta só em verga/contraverga (~2,5%).
 # Obra estrutural: cinta de amarração = 1 fiada a cada 13 (pé-direito 2,60 m ÷ 0,20 m) = 7,7%, + vergas ≈ 9,5%.
+# Bloco de 9: as duas práticas convivem na área de influência — a autoconstrução do interior costuma
+# usar o mesmo bloco 14 em toda a obra (o pedreiro compra um produto só) e a obra popular formal usa 9
+# nas divisórias. Adota-se o ponto médio entre as duas (300 por 1.000 em vez de 270 ou 330).
 CESTA = {
-    "vedacao":    {"b14v": 630, "b9v": 330, "b19v": 15, "can14": 18, "can9": 7},
+    "vedacao":    {"b14v": 665, "b9v": 300, "b19v": 12, "can14": 17, "can9": 6},
     "estrutural": {"b14e": 700, "b19e": 130, "b9e": 75, "can14": 70, "can19": 15, "can9": 10},
 }
 for nome, c in CESTA.items():
     assert sum(c.values()) == 1000, f"cesta {nome} deve somar 1.000 peças"
 
 # Pavimentação: espessura definida pelo tráfego (NBR 9781 — 6 cm pedestre/veículo leve; 8 cm tráfego pesado)
-PAV_CANAL = {"publica": 0.60, "privada": 0.40}          # peso dos canais na demanda de pavimento (cap. 8 do estudo)
+# Peso dos canais na venda de pavimento. O plano-base ancora no canal declarado no formulário do BNB —
+# venda de balcão para pessoas físicas e jurídicas —, em que domina o paver de 6 cm (calçada, garagem,
+# área de lazer). O canal público, que é quem compra 8 cm, entra com peso menor; ampliá-lo elevaria a
+# receita por m² e REDUZIRIA a margem (MC de 22,2% no 8 cm contra 33,8% no 6 cm).
+PAV_CANAL = {"publica": 0.35, "privada": 0.65}
 PAV_ESPESSURA = {"publica": {"pav8": 0.85, "pav6": 0.15},   # ruas e calçamento rural x passeios da mesma obra
                  "privada": {"pav8": 0.25, "pav6": 0.75}}   # pátios/acessos de caminhão x calçadas e condomínios
 

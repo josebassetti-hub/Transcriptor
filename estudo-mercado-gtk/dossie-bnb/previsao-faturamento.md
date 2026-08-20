@@ -17,17 +17,17 @@
 
 | Produto | Preço | Insumo SINAPI-ES | Ano 1 | Ano 2 | Regime (ano 3+) |
 |---|---|---|---|---|---|
-| Bloco de concreto 14x19x39 - vedação | R$ 3,43 | R$ 4,16 | 34,9% | 31,8% | 30,1% |
-| Bloco de concreto 14x19x39 - estrutural | R$ 4,17 | R$ 5,05 | 20,8% | 20,7% | 20,6% |
-| Canaleta de concreto 14x19x39 | R$ 4,41 | R$ 5,35 | 3,0% | 3,2% | 3,3% |
-| Bloco de concreto 9x19x39 - vedação | R$ 2,75 | R$ 3,33 | 14,6% | 13,3% | 12,6% |
-| Bloco de concreto 9x19x39 - estrutural | R$ 2,72 | R$ 3,30 | 1,5% | 1,4% | 1,4% |
-| Canaleta de concreto 9x19x39 | R$ 2,98 | R$ 3,61 | 0,5% | 0,5% | 0,5% |
-| Bloco de concreto 19x19x39 - vedação | R$ 4,26 | R$ 5,16 | 0,7% | 0,8% | 0,9% |
+| Bloco de concreto 14x19x39 - vedação | R$ 3,43 | R$ 4,16 | 36,3% | 33,2% | 31,6% |
+| Bloco de concreto 14x19x39 - estrutural | R$ 4,17 | R$ 5,05 | 20,6% | 20,6% | 20,6% |
+| Canaleta de concreto 14x19x39 | R$ 4,41 | R$ 5,35 | 2,9% | 3,1% | 3,2% |
+| Bloco de concreto 9x19x39 - vedação | R$ 2,75 | R$ 3,33 | 13,1% | 12,0% | 11,4% |
+| Bloco de concreto 9x19x39 - estrutural | R$ 2,72 | R$ 3,30 | 1,4% | 1,4% | 1,4% |
+| Canaleta de concreto 9x19x39 | R$ 2,98 | R$ 3,61 | 0,4% | 0,4% | 0,5% |
+| Bloco de concreto 19x19x39 - vedação | R$ 4,26 | R$ 5,16 | 0,6% | 0,7% | 0,7% |
 | Bloco de concreto 19x19x39 - estrutural | R$ 5,47 | R$ 6,63 | 4,1% | 4,7% | 5,0% |
 | Canaleta de concreto 19x19x39 | R$ 5,29 | R$ 6,41 | 0,4% | 0,5% | 0,6% |
-| Piso intertravado (paver) 6 cm - 35 MPa | R$ 57,73/m² | R$ 69,97 | 8,1% | 8,7% | 9,0% |
-| Piso intertravado (paver) 8 cm - 50 MPa | R$ 65,83/m² | R$ 79,80 | 11,4% | 14,4% | 16,0% |
+| Piso intertravado (paver) 6 cm - 35 MPa | R$ 57,73/m² | R$ 69,97 | 11,3% | 12,2% | 12,7% |
+| Piso intertravado (paver) 8 cm - 50 MPa | R$ 65,83/m² | R$ 79,80 | 8,7% | 11,1% | 12,3% |
 
 **Camada 2 — quando cada produto entra na venda.**
 
@@ -46,45 +46,45 @@
 
 | Mês | Bloco 14×19×39 | Bloco 9×19×39 | Bloco 19×19×39 | Paver 8 cm | Paver 6 cm | **Receita do mês** | Dias de produção | % da capacidade mensal |
 |---|---|---|---|---|---|---|---|---|
-| jan/2027 | 22.150 | 9.302 | — | — | — | **31.453** | 1,2 | 7% |
-| fev/2027 | 37.655 | 15.814 | — | — | — | **53.469** | 2,1 | 11% |
-| mar/2027 | 79.287 | 26.219 | — | — | — | **105.507** | 4,0 | 22% |
-| abr/2027 | 110.983 | 33.413 | — | — | 8.641 | **153.038** | 5,8 | 32% |
-| mai/2027 | 143.666 | 40.915 | 8.505 | — | 15.519 | **208.605** | 7,8 | 44% |
-| jun/2027 | 163.605 | 44.363 | 13.508 | 24.508 | 21.985 | **267.969** | 9,8 | 56% |
-| jul/2027 | 174.824 | 47.216 | 17.536 | 36.329 | 29.098 | **305.003** | 11,1 | 64% |
-| ago/2027 | 192.925 | 52.104 | 22.820 | 48.681 | 32.111 | **348.641** | 12,6 | 73% |
-| set/2027 | 203.079 | 54.846 | 24.337 | 60.286 | 33.801 | **376.349** | 13,6 | 79% |
-| out/2027 | 203.079 | 54.846 | 24.337 | 60.286 | 33.801 | **376.349** | 13,6 | 79% |
-| nov/2027 | 176.590 | 47.692 | 21.163 | 52.423 | 29.392 | **327.260** | 11,8 | 69% |
-| dez/2027 | 105.954 | 28.615 | 12.698 | 31.454 | 17.635 | **196.356** | 7,1 | 41% |
-| **TOTAL** | **1.613.797** | **455.346** | **144.905** | **313.967** | **221.985** | **R$ 2.750.000** | **100,5** | — |
+| jan/2027 | 23.077 | 8.347 | — | — | — | **31.424** | 1,2 | 7% |
+| fev/2027 | 39.231 | 14.189 | — | — | — | **53.420** | 2,1 | 11% |
+| mar/2027 | 81.603 | 23.660 | — | — | — | **105.263** | 4,1 | 22% |
+| abr/2027 | 113.634 | 30.217 | — | — | 12.108 | **155.958** | 5,9 | 33% |
+| mai/2027 | 146.718 | 37.057 | 8.180 | — | 21.744 | **213.699** | 7,9 | 45% |
+| jun/2027 | 166.732 | 40.237 | 13.018 | 18.702 | 30.804 | **269.494** | 9,9 | 57% |
+| jul/2027 | 178.091 | 42.825 | 16.905 | 27.722 | 40.771 | **306.314** | 11,1 | 64% |
+| ago/2027 | 196.530 | 47.259 | 22.000 | 37.148 | 44.992 | **347.928** | 12,6 | 73% |
+| set/2027 | 206.874 | 49.746 | 23.471 | 46.004 | 47.360 | **373.455** | 13,5 | 78% |
+| out/2027 | 206.874 | 49.746 | 23.471 | 46.004 | 47.360 | **373.455** | 13,5 | 78% |
+| nov/2027 | 179.890 | 43.258 | 20.410 | 40.003 | 41.182 | **324.743** | 11,8 | 68% |
+| dez/2027 | 107.934 | 25.955 | 12.246 | 24.002 | 24.709 | **194.846** | 7,1 | 41% |
+| **TOTAL** | **1.647.187** | **412.496** | **139.702** | **239.586** | **311.030** | **R$ 2.750.000** | **100,7** | — |
 
-Nenhum mês ultrapassa 79% da capacidade mensal efetiva (R$ 477.697), e o ano usa 100,5 dos 207 dias efetivos — o ramp-up cabe com folga na planta, sem exigir 2º turno nem hora extra.
+Nenhum mês ultrapassa 78% da capacidade mensal efetiva (R$ 476.475), e o ano usa 100,7 dos 207 dias efetivos — o ramp-up cabe com folga na planta, sem exigir 2º turno nem hora extra.
 
 ## 4. Evolução anual (horizonte do financiamento)
 
 | Ano | Calendário | Receita | Dias de produção | % da capacidade efetiva (207 dias) |
 |---|---|---|---|---|
-| 1 | 2027 | R$ 2.750.000 | 100,5 | 49% |
-| 2 | 2028 | R$ 3.850.000 | 139,6 | 67% |
-| 3 a 12 | 2029–2038 | R$ 4.791.000/ano | 173,0 | 84% |
+| 1 | 2027 | R$ 2.750.000 | 100,7 | 49% |
+| 2 | 2028 | R$ 3.850.000 | 139,9 | 68% |
+| 3 a 12 | 2029–2038 | R$ 4.791.000/ano | 173,5 | 84% |
 
 Quantidades do regime:
 
 | Produto | Quantidade/ano | Receita | % da receita |
 |---|---|---|---|
-| Bloco de concreto 14x19x39 - vedação | 420.180 un | R$ 1.441.217 | 30,08% |
+| Bloco de concreto 14x19x39 - vedação | 441.151 un | R$ 1.513.149 | 31,58% |
 | Bloco de concreto 14x19x39 - estrutural | 236.623 un | R$ 986.719 | 20,60% |
-| Canaleta de concreto 14x19x39 | 35.667 un | R$ 157.294 | 3,28% |
-| Bloco de concreto 9x19x39 - vedação | 220.094 un | R$ 605.259 | 12,63% |
+| Canaleta de concreto 14x19x39 | 34.940 un | R$ 154.085 | 3,22% |
+| Bloco de concreto 9x19x39 - vedação | 199.016 un | R$ 547.293 | 11,42% |
 | Bloco de concreto 9x19x39 - estrutural | 25.352 un | R$ 68.959 | 1,44% |
-| Canaleta de concreto 9x19x39 | 8.049 un | R$ 23.986 | 0,50% |
-| Bloco de concreto 19x19x39 - vedação | 10.004 un | R$ 42.618 | 0,89% |
+| Canaleta de concreto 9x19x39 | 7.361 un | R$ 21.935 | 0,46% |
+| Bloco de concreto 19x19x39 - vedação | 7.961 un | R$ 33.912 | 0,71% |
 | Bloco de concreto 19x19x39 - estrutural | 43.944 un | R$ 240.375 | 5,02% |
 | Canaleta de concreto 19x19x39 | 5.070 un | R$ 26.823 | 0,56% |
-| Piso intertravado (paver) 6 cm - 35 MPa | 7.454 m² | R$ 430.294 | 8,98% |
-| Piso intertravado (paver) 8 cm - 50 MPa | 11.658 m² | R$ 767.456 | 16,02% |
+| Piso intertravado (paver) 6 cm - 35 MPa | 10.524 m² | R$ 607.571 | 12,68% |
+| Piso intertravado (paver) 8 cm - 50 MPa | 8.965 m² | R$ 590.179 | 12,32% |
 | **Total** | | **R$ 4.791.000** | **100%** |
 
 ## 5. Formato dos formulários do banco
@@ -104,8 +104,8 @@ Esta previsão está em **valores constantes de agosto/2026**, padrão dos proje
 | Soma dos 12 meses do ano 1 | R$ 2.750.000 — exato |
 | Receita do regime (mix × preços) | R$ 4.791.000 — igual ao estudo §5.4 |
 | Folga para o teto EPP | R$ 9.000 |
-| Dias de produção no regime | 173,0 de 207 (84%) — §3.7 |
-| Mês de maior utilização | 79% da capacidade mensal |
+| Dias de produção no regime | 173,5 de 207 (84%) — §3.7 |
+| Mês de maior utilização | 78% da capacidade mensal |
 | Preço de venda × insumo SINAPI-ES | todos abaixo da referência de material (−17,5%) |
 | Série usada na simulação de capacidade de pagamento | 2,75 / 3,85 / 4,791 milhões — a mesma |
 
