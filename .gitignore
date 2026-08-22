@@ -1,0 +1,26 @@
+# Sessão do navegador — contém cookies da conta gov.br. Nunca versionar.
+automacao/perfil-jucees/
+
+# Resultados de consulta — dados de clientes.
+automacao/saida/
+
+# Configuração local (URLs e seletores do site).
+automacao/config.json
+
+# Listas de trabalho (CNPJs de clientes).
+automacao/cnpjs.txt
+
+# Credenciais — nunca devem existir no repositório, mas por garantia.
+.env
+*.env
+!*.env.exemplo
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Sistema
+.DS_Store
+Thumbs.db

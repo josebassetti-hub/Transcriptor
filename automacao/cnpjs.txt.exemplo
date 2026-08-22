@@ -1,0 +1,8 @@
+# Um CNPJ por linha. Com ou sem pontuação — o script limpa.
+# Linhas em branco e linhas com # são ignoradas.
+#
+# Copie para cnpjs.txt (que fica fora do Git) e edite:
+#     cp cnpjs.txt.exemplo cnpjs.txt
+
+33.000.167/0001-01
+11222333000181
