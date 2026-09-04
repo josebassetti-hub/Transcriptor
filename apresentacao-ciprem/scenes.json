@@ -1,0 +1,275 @@
+{
+  "meta": {
+    "titulo": "CIPREM — Brita de São Mateus para São Mateus",
+    "fps": 25,
+    "width": 1920,
+    "height": 1080,
+    "letterbox_px": 110,
+    "duracao_conteudo_s": 90,
+    "duracao_conteudo_frames": 2250,
+    "vinheta": {
+      "arquivo": "footage/vinheta_apresenta.mp4",
+      "duracao_s": 18.22,
+      "observacao": "Toca antes da cena 1, intacta, com o áudio original. Termina em 'APRESENTA'. Tem barras cinematográficas de ~110 px em cima e embaixo; o resto do vídeo mantém as mesmas barras."
+    },
+    "paleta": {
+      "navy_fundo": "#01002D",
+      "navy_claro": "#0B1F5C",
+      "branco": "#FFFFFF",
+      "prata_clara": "#E6E9EF",
+      "prata_escura": "#9AA3B5",
+      "ambar_destaque": "#D9A441",
+      "vermelho_titulo_local": "#B3261E"
+    },
+    "tipografia": {
+      "familia": "Montserrat (alternativas: Gotham, Arial)",
+      "titulo": "Bold/ExtraBold, caixa alta, espaçamento entre letras 0.18em",
+      "apoio": "Regular/Medium, caixa normal, espaçamento 0.02em"
+    },
+    "footage": {
+      "vinheta_apresenta": "footage/vinheta_apresenta.mp4 (18.2 s) — abertura pronta: operário na planta, escavadeira, pavimentadora com engenheira, central de concreto, escritório; depois logo Grupo São Vicente e 'APRESENTA'.",
+      "novo_investimento": "footage/novo_investimento.mp4 (50.7 s) — zoom do Google Earth do globo até a jazida em Nestor Gomes. 0–12.9 s limpo (rota roxa a partir de 5 s); 13–14 s tem o rótulo '≈40 km' gravado; 14–15 s polígono da área; 16–25 s aérea limpa da jazida; 26–35 s tem números gravados (investimento e empregos) — NÃO USAR; 36–40.7 s cartela do grupo com logos.",
+      "mineracao_1": "footage/mineracao_1.mp4 (22.2 s) — Mineração São Vicente, Itagimirim/BA: mapa do Brasil (0–3 s), mapa da Bahia (4–6 s), logo (7 s), aérea com 'LOCAL ITAGIMIRIM-BA' gravado (8–10 s), perfuração (11–13 s), alimentador do britador (14–16 s), pá carregadeira Komatsu (17–18 s), aperto de mão no escritório (19–21 s).",
+      "mineracao_2": "footage/mineracao_2.mp4 (41.7 s) — Pedreira Vale Verde/Porto Seguro (0–19 s), Topbritas/Nazaré (20–38 s), Superbritas/Lauro de Freitas (39–41 s): mapas, logos, estrutura da planta com 'PORTO SEGURO-BA' gravado (6–8 s), perfuração (9–10 s e 30–32 s), pá carregadeira (11–13 s), retrato de operador (14–16 s), escavadeira CAT com rompedor (17–19 s), aérea com 'LOCAL NAZARÉ-BA' (25–27 s), pilhas de brita com caminhão (28–29 s), aérea da lavra (33–35 s), foto da equipe (36–38 s)."
+    },
+    "audio": {
+      "clipes_originais": "Mutar todos os clipes: todos têm trilha própria gravada (RMS por volta de -19 dB).",
+      "trilha": "Uma única trilha licenciada do início ao fim; ver seção Trilha.",
+      "vinheta": "Manter o áudio original da vinheta e fazer crossfade de 1 s para a trilha nova."
+    }
+  },
+  "scenes": [
+    {
+      "id": 1,
+      "nome": "GANCHO",
+      "startFrame": 0,
+      "durationFrames": 200,
+      "start_s": 0,
+      "end_s": 8,
+      "footage": {
+        "arquivo": "novo_investimento",
+        "in_s": 0.0,
+        "out_s": 8.0,
+        "descricao": "Globo terrestre girando, zoom sobre o Brasil até a costa do Espírito Santo e a região de São Mateus. Sem textos gravados.",
+        "tratamento": "Escurecer 25% com vinheta radial para o texto ler bem. Manter as barras cinematográficas de 110 px."
+      },
+      "title": "SÃO MATEUS NUNCA TEVE UMA PEDREIRA PRÓPRIA.",
+      "title_in_s": 1.5,
+      "subtitle": "ATÉ AGORA.",
+      "subtitle_in_s": 5.5,
+      "animation": "Título entra palavra por palavra por máscara horizontal (mesmo reveal da vinheta), 12 frames por palavra. 'ATÉ AGORA.' entra em corte seco, escala 1.06 → 1.0 em 8 frames, cor âmbar.",
+      "sfx": "Drone grave contínuo; impacto seco (hit) exatamente na entrada de 'ATÉ AGORA.'",
+      "musicCue": "0 s: pad grave e sub, sem percussão. 5.5 s: primeiro hit."
+    },
+    {
+      "id": 2,
+      "nome": "A DOR (FRETE)",
+      "startFrame": 200,
+      "durationFrames": 200,
+      "start_s": 8,
+      "end_s": 16,
+      "footage": {
+        "arquivo": "novo_investimento",
+        "in_s": 5.0,
+        "out_s": 12.9,
+        "descricao": "Vista de satélite com a linha da rota (roxa) sendo desenhada da cidade até a jazida. CORTAR ANTES de 13.0 s, quando aparece o rótulo '≈40 km' gravado na imagem.",
+        "tratamento": "Mesma escurecida da cena 1. Se a rota parecer curta, aplicar câmera lenta de 0.8x."
+      },
+      "title": "HOJE, TODA BRITA DA REGIÃO CHEGA DE FORA DO MUNICÍPIO.",
+      "title_in_s": 8.5,
+      "subtitle": "Distância vira frete. Frete vira custo na sua obra.",
+      "subtitle_in_s": 12.0,
+      "animation": "Título em duas linhas, entrada por máscara de baixo para cima. Apoio entra com fade e deslocamento de 20 px em 15 frames. Linha fina prata de 2 px se desenha entre título e apoio (mesmo detalhe da vinheta sob 'APRESENTA').",
+      "sfx": "Whoosh curto na entrada do título; ambiente de rodovia bem baixo (-24 dB) sob a trilha.",
+      "musicCue": "Percussão surda entra em 8 s (bumbo a cada 2 tempos), tensão crescente."
+    },
+    {
+      "id": 3,
+      "nome": "A SOLUÇÃO (CIPREM)",
+      "startFrame": 400,
+      "durationFrames": 250,
+      "start_s": 16,
+      "end_s": 26,
+      "footage": {
+        "arquivo": "novo_investimento",
+        "in_s": 14.0,
+        "out_s": 24.0,
+        "descricao": "Polígono da área da jazida sobre o rio (14–15 s) e, em seguida, aérea limpa da área com o desenho da lavra, zoom lento (16–24 s). Sem textos gravados.",
+        "tratamento": "Clarear de volta ao normal (a solução chega com luz). Gradiente navy só no terço inferior para o texto."
+      },
+      "title": "CIPREM",
+      "title_in_s": 16.0,
+      "subtitle": "Pedreira e planta de britagem em Nestor Gomes, São Mateus/ES.",
+      "subtitle_in_s": 17.5,
+      "extra": [
+        {"text": "BRITA PRODUZIDA AQUI. ENTREGUE AQUI.", "in_s": 21.0, "style": "título grande centralizado, âmbar em 'AQUI' (as duas vezes)"}
+      ],
+      "animation": "'CIPREM' entra grande (220 px), prata metálica com brilho passando da esquerda para a direita em 20 frames (igual ao logo da vinheta). Apoio abaixo, branco. Em 21 s o título encolhe para o canto superior esquerdo e a frase-chave assume o centro por máscara.",
+      "sfx": "Impacto forte com cauda em 16 s (o maior do vídeo). Segundo hit menor em 21 s.",
+      "musicCue": "16 s: tema principal entra (cordas ou synth em acorde maior), percussão completa. Ponto de virada da trilha."
+    },
+    {
+      "id": 4,
+      "nome": "PRODUTOS",
+      "startFrame": 650,
+      "durationFrames": 400,
+      "start_s": 26,
+      "end_s": 42,
+      "footage": {
+        "arquivo": "mineracao_2 + mineracao_1",
+        "in_s": null,
+        "out_s": null,
+        "cortes": [
+          {"arquivo": "mineracao_2", "in_s": 28.0, "out_s": 29.9, "descricao": "Pilhas de brita com caminhão e pessoa caminhando (melhor plano de produto)."},
+          {"arquivo": "mineracao_1", "in_s": 17.0, "out_s": 18.9, "descricao": "Pá carregadeira Komatsu carregando brita com a planta ao fundo."},
+          {"arquivo": "mineracao_2", "in_s": 11.0, "out_s": 13.9, "descricao": "Pá carregadeira na frente de lavra."},
+          {"arquivo": "mineracao_1", "in_s": 14.0, "out_s": 16.9, "descricao": "Operador junto ao alimentador do britador, paisagem ao fundo."},
+          {"arquivo": "mineracao_2", "in_s": 28.0, "out_s": 29.9, "descricao": "Repetir as pilhas de brita em câmera lenta 0.7x para fechar a cena."}
+        ],
+        "descricao": "Sequência de 5 planos, 3 a 4 s cada, em câmera lenta 0.8x para dar peso. Os feixes de luz gravados nos clipes funcionam como transição natural entre os planos.",
+        "tratamento": "Escurecer o lado esquerdo do quadro (gradiente navy 60%) onde a lista de produtos aparece."
+      },
+      "title": "TODAS AS FRAÇÕES. TODAS COM DESTINO.",
+      "title_in_s": 26.0,
+      "subtitle": "Circuito fechado de britagem, com laboratório próprio de controle tecnológico.",
+      "subtitle_in_s": 38.0,
+      "products": [
+        {"nome": "BRITA 0", "uso": "concreto usinado e blocos", "in_s": 27.5},
+        {"nome": "BRITA 1", "uso": "concreto estrutural", "in_s": 29.0},
+        {"nome": "BRITA 2", "uso": "pavimentação e drenagem", "in_s": 30.5},
+        {"nome": "GRAVILINHA", "uso": "asfalto e pré-moldados", "in_s": 32.0},
+        {"nome": "PÓ DE PEDRA", "uso": "intertravado, blocos e argamassa", "in_s": 33.5},
+        {"nome": "BGS / BICA CORRIDA", "uso": "base e sub-base de vias", "in_s": 35.0},
+        {"nome": "AREIA DE BRITA", "uso": "concreto e argamassa", "in_s": 36.5}
+      ],
+      "animation": "Título no topo. Lista de produtos entra no lado esquerdo, um item a cada 1.5 s: nome em caixa alta branca (56 px) + uso em prata (30 px), com um traço âmbar de 40 px que se desenha antes de cada nome. Ao final (38 s) os 7 itens permanecem e o apoio entra na base.",
+      "sfx": "Tick metálico curto a cada item que entra (7 ticks). Ambiente de britador (rumble grave) a -20 dB sob a trilha.",
+      "musicCue": "Trilha em regime constante, percussão marcando os itens. Sem hits grandes."
+    },
+    {
+      "id": 5,
+      "nome": "QUEM ENTREGA (GRUPO SÃO VICENTE)",
+      "startFrame": 1050,
+      "durationFrames": 350,
+      "start_s": 42,
+      "end_s": 56,
+      "footage": {
+        "arquivo": "mineracao_1 + mineracao_2",
+        "in_s": null,
+        "out_s": null,
+        "cortes": [
+          {"arquivo": "mineracao_1", "in_s": 11.0, "out_s": 13.9, "descricao": "Dois operadores na perfuratriz junto à frente de rocha."},
+          {"arquivo": "mineracao_2", "in_s": 17.0, "out_s": 19.9, "descricao": "Escavadeira CAT com rompedor hidráulico quebrando rocha."},
+          {"arquivo": "mineracao_2", "in_s": 33.0, "out_s": 35.9, "descricao": "Aérea da lavra com escavadeira carregando."},
+          {"arquivo": "mineracao_2", "in_s": 6.0, "out_s": 8.9, "descricao": "Estrutura da planta de Porto Seguro contra o céu (tem 'PORTO SEGURO-BA' gravado em vermelho; aceitável, reforça que são pedreiras reais)."},
+          {"arquivo": "mineracao_2", "in_s": 14.0, "out_s": 16.9, "descricao": "Retrato do operador com a perfuratriz atrás (rosto humano, confiança)."}
+        ],
+        "descricao": "5 planos de 2.8 s. Velocidade normal (energia de operação).",
+        "tratamento": "Sem escurecer; os textos ficam em caixas com fundo navy 80% no lado direito."
+      },
+      "title": "GRUPO SÃO VICENTE",
+      "title_in_s": 42.0,
+      "subtitle": "Mais de 20 anos em mineração, britagem e concreto.",
+      "subtitle_in_s": 43.5,
+      "extra": [
+        {"text": "Pedreiras em plena operação na Bahia e em Minas Gerais", "in_s": 46.0, "style": "bullet com traço âmbar"},
+        {"text": "Da extração ao concreto usinado: cadeia completa", "in_s": 48.5, "style": "bullet com traço âmbar"},
+        {"text": "Britadores Metso e laboratório próprio", "in_s": 51.0, "style": "bullet com traço âmbar"},
+        {"text": "Licenças ANM e IEMA já obtidas para São Mateus", "in_s": 53.5, "style": "bullet com traço âmbar"}
+      ],
+      "animation": "Título entra com o mesmo brilho metálico do logo. Apoio logo abaixo. Os 4 bullets entram um a um (a cada 2.5 s), alinhados à direita, cada um sincronizado com um corte de plano.",
+      "sfx": "Whoosh a cada corte; som de rompedor hidráulico bem baixo no plano 2.",
+      "musicCue": "Segunda seção da trilha, mais grave e marcial (bumbo + taiko leve). Sobe de intensidade até 56 s."
+    },
+    {
+      "id": 6,
+      "nome": "POR QUE AGORA (OBRAS DA REGIÃO)",
+      "startFrame": 1400,
+      "durationFrames": 250,
+      "start_s": 56,
+      "end_s": 66,
+      "footage": {
+        "arquivo": "vinheta_apresenta",
+        "in_s": 1.0,
+        "out_s": 5.5,
+        "descricao": "Reaproveitar os planos reais de obra da abertura: operário na planta (1–2 s), escavadeira com pessoas no pátio (2–3 s), pavimentadora de asfalto com engenheira (3–4 s), central de concreto (4–5 s). Esticar com câmera lenta 0.5x para cobrir 10 s.",
+        "tratamento": "SUBSTITUIR por drone das obras de Guriri / Contorno ES-318 se a produção conseguir gravar antes do evento. Até lá, este trecho cobre a cena.",
+        "alternativa": "novo_investimento 16–24 s (aérea da jazida) com zoom lento, se não quiser repetir imagem da vinheta."
+      },
+      "title": "SÃO MATEUS VIVE O MAIOR CICLO DE OBRAS DA SUA HISTÓRIA.",
+      "title_in_s": 56.0,
+      "subtitle": "Drenagem e pavimentação de Guriri  |  Contorno ES-318  |  Terceiras faixas da BR-101",
+      "subtitle_in_s": 59.0,
+      "extra": [
+        {"text": "QUEM CONSTRÓI AQUI PRECISA DE BRITA AQUI.", "in_s": 62.5, "style": "título centralizado, âmbar em 'AQUI' (as duas vezes)"}
+      ],
+      "animation": "Título em máscara. Apoio entra como três chips separados por barras finas, um a cada 10 frames. Em 62.5 s tudo sai para cima e a frase-chave entra por máscara no centro.",
+      "sfx": "Hit médio em 62.5 s.",
+      "musicCue": "Trilha no ponto mais alto de energia (crescendo). Preparar a resolução para 66 s."
+    },
+    {
+      "id": 7,
+      "nome": "PARCERIA (CONVITE SEGMENTADO)",
+      "startFrame": 1650,
+      "durationFrames": 350,
+      "start_s": 66,
+      "end_s": 80,
+      "footage": {
+        "arquivo": "mineracao_1 + mineracao_2",
+        "in_s": null,
+        "out_s": null,
+        "cortes": [
+          {"arquivo": "mineracao_1", "in_s": 19.0, "out_s": 21.9, "descricao": "Aperto de mão no escritório, uniforme São Vicente (imagem-chave de parceria). Câmera lenta 0.6x para cobrir 5 s."},
+          {"arquivo": "mineracao_2", "in_s": 28.0, "out_s": 29.9, "descricao": "Pilhas de brita com caminhão (o produto pronto para entregar)."},
+          {"arquivo": "mineracao_2", "in_s": 36.0, "out_s": 38.9, "descricao": "Equipe completa em frente à planta (quem vai atender). Câmera lenta 0.6x."}
+        ],
+        "descricao": "3 planos: 5 s + 4 s + 5 s.",
+        "tratamento": "Escurecer 30% e aplicar gradiente navy no centro para os três cartões."
+      },
+      "title": "VAMOS CONSTRUIR SÃO MATEUS JUNTOS.",
+      "title_in_s": 66.0,
+      "subtitle": null,
+      "cards": [
+        {"para": "CONSTRUTORAS", "oferta": "Fornecimento contínuo, entrega programada e laudo de cada lote.", "in_s": 69.0},
+        {"para": "CONCRETEIRAS E PRÉ-MOLDADOS", "oferta": "Granulometria estável, lote a lote, para o seu traço.", "in_s": 72.0},
+        {"para": "PODER PÚBLICO", "oferta": "Material local, emprego local e frete menor nas obras do município.", "in_s": 75.0}
+      ],
+      "animation": "Título entra grande em máscara em 66 s e sobe para o topo em 68.5 s. Três cartões lado a lado entram de baixo para cima com 3 s de intervalo: nome do público em âmbar (28 px, caixa alta, espaçamento largo) e oferta em branco (34 px). Fundo do cartão navy 80% com borda prata de 1 px.",
+      "sfx": "Whoosh suave por cartão. Sem hits.",
+      "musicCue": "Resolução: a trilha abre em acorde maior sustentado em 66 s, percussão mais leve, sensação de conquista."
+    },
+    {
+      "id": 8,
+      "nome": "CHAMADA FINAL",
+      "startFrame": 2000,
+      "durationFrames": 250,
+      "start_s": 80,
+      "end_s": 90,
+      "footage": {
+        "arquivo": "novo_investimento",
+        "in_s": 36.0,
+        "out_s": 40.7,
+        "descricao": "Cartela do Grupo São Vicente com partículas azuis e logos das empresas do grupo (36–40 s). Congelar o último frame e prolongar até 90 s.",
+        "tratamento": "Alternativa: fundo gerado no Remotion em navy #01002D com partículas, replicando a cartela, para colocar o logo da CIPREM no centro."
+      },
+      "title": "CIPREM  |  GRUPO SÃO VICENTE",
+      "title_in_s": 80.0,
+      "subtitle": "Parcerias e pré-contratos: fale com a nossa equipe hoje, aqui no evento.",
+      "subtitle_in_s": 82.0,
+      "extra": [
+        {"text": "[WhatsApp comercial]  |  [Instagram]  |  [site]", "in_s": 84.5, "style": "prata, 28 px. PREENCHER com os contatos reais antes de renderizar."},
+        {"text": "Brita de São Mateus para São Mateus.", "in_s": 86.5, "style": "assinatura, itálico leve, prata, 32 px"}
+      ],
+      "animation": "Logo/nome entra com brilho metálico. Chamada entra por fade. Contatos entram com linha prata se desenhando por cima. Assinatura entra por último e tudo faz fade para preto nos últimos 20 frames.",
+      "sfx": "Hit final com cauda longa em 80 s; silêncio de 0.5 s antes do hit (corte da trilha em 79.5 s) para dar peso.",
+      "musicCue": "79.5 s: corte seco da trilha (meio segundo de silêncio). 80 s: acorde final sustentado com cauda que morre junto com o fade para preto em 90 s."
+    }
+  ],
+  "trilha": {
+    "estilo": "Corporativo cinematográfico, percussão crescente (bumbo grave, taiko leve, palmas ou caixa marcial), pad de cordas ou synth em modo maior, sem vocal. Entre 100 e 110 BPM.",
+    "estrutura": "0–16 s tensão (pad + sub + bumbo esparso) | 16–56 s tema principal e crescimento | 56–66 s clímax | 66–79.5 s resolução aberta | 79.5 s meio segundo de silêncio | 80–90 s acorde final e cauda.",
+    "referencias_de_busca": "Termos para buscar em bibliotecas licenciadas (Epidemic Sound, Artlist, Uppbeat, Pixabay Music): 'corporate cinematic build', 'industrial inspiring percussion', 'construction company trailer'. Escolher faixa com marcações claras a cada 8 segundos para facilitar os hits. NÃO usar música sem licença de uso comercial em evento.",
+    "pontos_de_sincronia_s": [5.5, 16, 21, 26, 42, 56, 62.5, 66, 79.5, 80],
+    "mixagem": "Trilha a -14 LUFS integrado; ambientes a -20/-24 dB; hits a -8 dB de pico; clipes originais mutados. Master com limitador em -1 dBTP."
+  }
+}
