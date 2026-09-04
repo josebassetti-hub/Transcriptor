@@ -19,7 +19,7 @@ export const Porque: React.FC = () => {
       </Camera>
       <Kicker text={PORQUE.titulo} />
       <div style={{ position: "absolute", left: 120, right: 120, top: 220, bottom: 140, perspective: 1400 }}>
-        <div style={{ position: "absolute", inset: 0, transform: `rotateY(${drift}deg)`, transformStyle: "preserve-3d", display: "grid", gridTemplateColumns: "1fr 1fr", gridTemplateRows: "1fr 1fr", gap: 40 }}>
+        <div style={{ position: "absolute", inset: 0, transform: `rotateY(${drift}deg)`, display: "grid", gridTemplateColumns: "1fr 1fr", gridTemplateRows: "1fr 1fr", gap: 40 }}>
           {PORQUE.itens.map((it, i) => {
             const at = 6 + i * BEAT;
             const p = springAt(frame, fps, at, { damping: 16, stiffness: 120, mass: 0.8 });
@@ -32,8 +32,7 @@ export const Porque: React.FC = () => {
                 key={it.titulo}
                 style={{
                   opacity: op,
-                  transform: `translateX(${tx}px) rotateY(${ry}deg)`,
-                  transformStyle: "preserve-3d",
+                  transform: `perspective(1400px) translateX(${tx}px) rotateY(${ry}deg)`,
                   background: "linear-gradient(135deg, rgba(255,255,255,0.10), rgba(255,255,255,0.04))",
                   border: "1px solid rgba(255,255,255,0.18)",
                   borderRadius: 28,

@@ -6,10 +6,10 @@ impacto no logo. Progressão D - Bm - G - A. Livre de direitos autorais.
 
 Estrutura (em segundos):
   0.0 - 4.8   intro: pad + impacto inicial
-  4.8 - 16.2  build: entra arpejo e bumbo
- 16.2 - 46.2  cheio: bumbo, chimbal, baixo, arpejo
- 46.2 - 52.2  clímax: riser
- 52.2 - 60.0  final: impacto + pad, fade-out
+  4.8 - 10.8  build: entra arpejo e bumbo
+ 10.8 - 44.4  cheio: bumbo, chimbal, baixo, arpejo (impactos suaves em 10,8 s e 22,8 s)
+ 44.4 - 50.4  clímax: riser
+ 50.4 - 60.0  final: impacto + pad, fade-out
 
 Uso: python3 scripts/gerar_trilha.py [saida.wav]
 """
@@ -25,7 +25,8 @@ BPM = 100
 BEAT = 60.0 / BPM        # 0.6 s
 BAR = BEAT * 4           # 2.4 s
 
-T_BUILD, T_FULL, T_RISER, T_END = 4.8, 16.2, 46.2, 52.2
+T_BUILD, T_FULL, T_RISER, T_END = 4.8, 10.8, 44.4, 50.4
+CHAPTER_HITS = [10.8, 22.8]  # impactos suaves nas aberturas de capítulo
 
 def midi(n):
     return 440.0 * 2 ** ((n - 69) / 12)
@@ -164,6 +165,12 @@ def render():
             if 0 <= dt < 2.0:
                 imp += math.sin(2 * math.pi * (40 + 60 * math.exp(-dt * 6)) * dt) * math.exp(-dt * 2.2) * 0.45
                 imp += noise() * math.exp(-dt * 12) * 0.12
+
+        for t0 in CHAPTER_HITS:
+            dt = t - t0
+            if 0 <= dt < 1.2:
+                imp += math.sin(2 * math.pi * (45 + 50 * math.exp(-dt * 7)) * dt) * math.exp(-dt * 3.5) * 0.28
+                imp += noise() * math.exp(-dt * 16) * 0.07
 
         s = pad + bass + arp + kick + hat + riser + imp
         if t < 0.3:

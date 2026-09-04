@@ -12,13 +12,12 @@ export const BEAT = 18;
 // Duração de cada cena em frames (cortes no tempo da música). Soma = 1800.
 export const SCENES = {
   abertura: 144, // 0.0 - 4.8 s
-  verbos: 180, // 4.8 - 10.8 s
-  metodo: 162, // 10.8 - 16.2 s
-  jornada: 342, // 16.2 - 27.6 s
-  incentivos: 324, // 27.6 - 38.4 s
-  porque: 234, // 38.4 - 46.2 s
-  numeros: 180, // 46.2 - 52.2 s
-  final: 234, // 52.2 - 60.0 s
+  oquefaz: 180, // 4.8 - 10.8 s
+  financiamento: 360, // 10.8 - 22.8 s
+  incentivos: 396, // 22.8 - 36.0 s
+  porque: 216, // 36.0 - 43.2 s
+  numeros: 216, // 43.2 - 50.4 s
+  final: 288, // 50.4 - 60.0 s
 };
 
 // Duração (frames) da transição que liga cada cena à seguinte.
@@ -40,35 +39,40 @@ export const ABERTURA = {
   palavra: "CRESCER.",
 };
 
-export const VERBOS = {
-  pre: "Sua empresa quer",
-  palavras: ["EXPANDIR.", "MODERNIZAR.", "INVESTIR."],
+// Cena 2: o que a Projet faz (os dois pilares).
+export const OQUEFAZ = {
+  pre: "A Projet estrutura",
+  pilar1: "FINANCIAMENTOS",
+  mais: "+",
+  pilar2: "INCENTIVOS FISCAIS",
+  pos: "para a sua empresa crescer pagando menos",
 };
 
-export const METODO = {
-  linha1: "Crédito de longo prazo",
-  linha2a: "exige",
-  linha2b: "MÉTODO.",
-  pill: "BNB · FNE",
-};
-
-export const JORNADA = {
-  titulo: "Estruturação de projetos",
-  etapas: [
-    { n: "01", titulo: "Diagnóstico", desc: "Viabilidade e linha de crédito" },
-    { n: "02", titulo: "Cadastro e carta-consulta", desc: "Dossiê e enquadramento" },
-    { n: "03", titulo: "Projeto econômico-financeiro", desc: "Memória de cálculo defensável" },
-    { n: "04", titulo: "Defesa e aprovação", desc: "Resposta técnica ao analista" },
-    { n: "05", titulo: "Contratação e liberação", desc: "Até a primeira parcela" },
+// Capítulo 01
+export const FINANCIAMENTO = {
+  numero: "01",
+  titulo: "Financiamento",
+  sub: "BNB · FNE",
+  kicker: "01 · Financiamento BNB · FNE",
+  abertura: 36, // frames da abertura do capítulo
+  hits: [
+    { rotulo: "BNB · FNE", texto: "JUROS REDUZIDOS", desc: "custo menor para investir" },
+    { rotulo: "BNB · FNE", texto: "PRAZOS LONGOS", desc: "para pagar com folga" },
+    { rotulo: "BNB · FNE", texto: "CARÊNCIA", desc: "para começar a pagar depois" },
   ],
 };
 
+// Capítulo 02
 export const INCENTIVOS = {
+  numero: "02",
   titulo: "Incentivos fiscais",
+  sub: "pague menos imposto para crescer",
+  kicker: "02 · Incentivos fiscais",
+  abertura: 72,
   hits: [
     { rotulo: "SUDENE", valor: 67.5, sufixo: "%", desc: "de redução do IRPJ" },
     { rotulo: "REINVESTIMENTO", valor: 27, sufixo: "%", desc: "do IRPJ reinvestido" },
-    { rotulo: "INVEST-ES", valor: null, texto: "ICMS", desc: "e incentivos estaduais e municipais" },
+    { rotulo: "INVEST-ES", texto: "ICMS", desc: "e incentivos estaduais e municipais" },
   ],
   rodape: "Percentuais conforme Lei Complementar 224/2025",
 };

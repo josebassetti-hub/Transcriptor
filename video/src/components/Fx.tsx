@@ -98,7 +98,7 @@ export const Grain: React.FC = () => {
         </filter>
         <rect width="100%" height="100%" filter="url(#grain)" />
       </svg>
-      <AbsoluteFill style={{ background: "radial-gradient(ellipse at center, transparent 55%, rgba(0,0,0,0.55) 100%)" }} />
+      <AbsoluteFill style={{ background: "radial-gradient(ellipse at center, transparent 55%, rgba(0,0,0,0.55) 100%)", opacity: interpolate(frame, [1500, 1524], [1, 0.22], { extrapolateLeft: "clamp", extrapolateRight: "clamp" }) }} />
     </AbsoluteFill>
   );
 };

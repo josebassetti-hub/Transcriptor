@@ -1,7 +1,6 @@
 import React from "react";
 import { AbsoluteFill, Audio, staticFile } from "remotion";
 import { TransitionSeries, linearTiming } from "@remotion/transitions";
-import { fade } from "@remotion/transitions/fade";
 import { slide } from "@remotion/transitions/slide";
 import { wipe } from "@remotion/transitions/wipe";
 import "@fontsource/inter/400.css";
@@ -13,9 +12,8 @@ import "@fontsource/inter/900.css";
 import { Background, Grain } from "./components/Fx";
 import { SCENES, TRANSITION } from "./content";
 import { Abertura } from "./scenes/Abertura";
-import { Verbos } from "./scenes/Verbos";
-import { Metodo } from "./scenes/Metodo";
-import { Jornada } from "./scenes/Jornada";
+import { OQueFaz } from "./scenes/OQueFaz";
+import { Financiamento } from "./scenes/Financiamento";
 import { Incentivos } from "./scenes/Incentivos";
 import { Porque } from "./scenes/Porque";
 import { Numeros } from "./scenes/Numeros";
@@ -35,22 +33,18 @@ export const Video: React.FC = () => (
         <Abertura />
       </TransitionSeries.Sequence>
       <TransitionSeries.Transition presentation={wipe({ direction: "from-left" })} timing={timing} />
-      <TransitionSeries.Sequence durationInFrames={SCENES.verbos + T}>
-        <Verbos />
+      <TransitionSeries.Sequence durationInFrames={SCENES.oquefaz + T}>
+        <OQueFaz />
       </TransitionSeries.Sequence>
       <TransitionSeries.Transition presentation={slide({ direction: "from-bottom" })} timing={timing} />
-      <TransitionSeries.Sequence durationInFrames={SCENES.metodo + T}>
-        <Metodo />
+      <TransitionSeries.Sequence durationInFrames={SCENES.financiamento + T}>
+        <Financiamento />
       </TransitionSeries.Sequence>
-      <TransitionSeries.Transition presentation={wipe({ direction: "from-right" })} timing={timing} />
-      <TransitionSeries.Sequence durationInFrames={SCENES.jornada + T}>
-        <Jornada />
-      </TransitionSeries.Sequence>
-      <TransitionSeries.Transition presentation={slide({ direction: "from-right" })} timing={timing} />
+      <TransitionSeries.Transition presentation={wipe({ direction: "from-top-left" })} timing={timing} />
       <TransitionSeries.Sequence durationInFrames={SCENES.incentivos + T}>
         <Incentivos />
       </TransitionSeries.Sequence>
-      <TransitionSeries.Transition presentation={wipe({ direction: "from-top-left" })} timing={timing} />
+      <TransitionSeries.Transition presentation={slide({ direction: "from-right" })} timing={timing} />
       <TransitionSeries.Sequence durationInFrames={SCENES.porque + T}>
         <Porque />
       </TransitionSeries.Sequence>
@@ -58,7 +52,7 @@ export const Video: React.FC = () => (
       <TransitionSeries.Sequence durationInFrames={SCENES.numeros + T}>
         <Numeros />
       </TransitionSeries.Sequence>
-      <TransitionSeries.Transition presentation={fade()} timing={linearTiming({ durationInFrames: T })} />
+      <TransitionSeries.Transition presentation={wipe({ direction: "from-bottom" })} timing={linearTiming({ durationInFrames: T })} />
       <TransitionSeries.Sequence durationInFrames={SCENES.final}>
         <Final />
       </TransitionSeries.Sequence>
