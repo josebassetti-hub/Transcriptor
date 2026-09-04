@@ -14,6 +14,8 @@ import { Scene08Jobs } from "./scenes/Scene08Jobs";
 import { Scene09Outro } from "./scenes/Scene09Outro";
 import { contact } from "./data";
 import { colors } from "./theme";
+import { SCENES, TRANSITION } from "./timing";
+import { SoundTrack } from "./audio/SoundTrack";
 
 export const gtkSchema = z.object({
   investmentBRL: z.number().min(0),
@@ -35,21 +37,7 @@ export const gtkDefaultProps: GTKProps = {
   contactPhone: contact.phone,
 };
 
-// Duração de cada cena (frames a 30 fps). Transições de 12 frames sobrepõem as cenas:
-// soma = 2796, total da composição = 2796 - 8*12 = 2700 (90 s).
-export const SCENES = {
-  brand: 192,
-  company: 312,
-  products: 312,
-  line: 672,
-  capacity: 312,
-  plant: 312,
-  investment: 312,
-  jobs: 192,
-  outro: 180,
-};
-export const TRANSITION = 12;
-export const TOTAL_FRAMES = Object.values(SCENES).reduce((a, b) => a + b, 0) - TRANSITION * (Object.keys(SCENES).length - 1);
+export { SCENES, TRANSITION, TOTAL_FRAMES } from "./timing";
 
 export const GTKInstitutional: React.FC<GTKProps> = (props) => {
   return (
@@ -91,6 +79,7 @@ export const GTKInstitutional: React.FC<GTKProps> = (props) => {
           <Scene09Outro contactName={props.contactName} contactRole={props.contactRole} contactPhone={props.contactPhone} />
         </TransitionSeries.Sequence>
       </TransitionSeries>
+      <SoundTrack />
     </AbsoluteFill>
   );
 };

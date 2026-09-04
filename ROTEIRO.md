@@ -32,7 +32,29 @@ Transições: fade de 12 frames entre cenas.
 8. **Empregos (1:18)** — "Doze empregos diretos e cerca de trinta e seis indiretos, movimentando pedreiras, transporte, revendas e a construção civil da região."
 9. **Encerramento (1:24)** — "GTK Pré-Moldados. Construindo o futuro do norte capixaba. Vendas e parcerias: fale com Kauã Boldrini."
 
-Para incluir a locução e uma trilha: coloque `public/gtk/locucao.mp3` e `public/gtk/trilha.mp3` e adicione `<Audio>` de `@remotion/media` em `src/GTK/GTKInstitutional.tsx`.
+Para incluir a locução: coloque `public/gtk/audio/locucao.mp3` e adicione um `<Audio>` de `@remotion/media` em `src/GTK/audio/SoundTrack.tsx` (reduza `master` da trilha para ~0,6 quando houver voz).
+
+## Som (v2)
+
+Três camadas, montadas em `src/GTK/audio/SoundTrack.tsx` a partir de `src/GTK/audio/soundMap.ts`:
+
+- **Trilha** `public/gtk/audio/trilha.mp3` — sintetizada por `scripts/gen-audio.py` (Python puro): drone em Ré menor na abertura, pulso a 95 BPM com hi-hat e sub-baixo a partir da cena 2, kick e arpejo da cena 4 em diante, clímax (pad em duas oitavas, kick em todas as batidas) nas cenas 6–7, alívio na cena 8 e acorde final em Ré maior com fade. Progressão Dm – Bb – F – C.
+- **Ambiente** — som real da fábrica-modelo extraído dos vídeos (`amb-*.mp3`): galpão ao fundo nas cenas 1, 6 e 9; vibroprensa em operação na cena 4; ciclo da prensa na cena 5. Volumes entre 5 % e 16 %.
+- **Efeitos** (WAV gerados pelo mesmo script), sincronizados frame a frame:
+
+| Cena | Efeitos |
+|---|---|
+| 1 Marca | 3 impactos de bloco de concreto no encaixe do logo, riser + whoosh na linha amarela, brilho na tagline |
+| 2 Empresa | whoosh longo no zoom do mapa, thud do pino, ping do raio, 4 ticks nas linhas de dados |
+| 3 Produtos | 3 thuds nos cards |
+| 4 Linha | whoosh + clique a cada etapa; "shunk" hidráulico na vibroprensa |
+| 5 Capacidade | rajada de ticks nos contadores + ding em cada total |
+| 6 Planta 3D | whoosh aéreo no sobrevoo, riser e sub-drop no mergulho, 7 "power-on" (hum + clique) nos equipamentos, dings nos rótulos |
+| 7 Investimento | impacto cinematográfico no número, ticks acelerando, ding grave, pops nos chips; a trilha "respira" antes do impacto |
+| 8 Empregos | pops por pessoa, dings nos totais, acorde grave no 48 |
+| 9 Encerramento | impactos do logo, pop do card de contato, ding, fade da trilha |
+
+Para trocar a trilha por uma música licenciada: substitua `public/gtk/audio/trilha.mp3` por um arquivo de 90 s (ou mais) e ajuste `musicVolume` em `soundMap.ts` se quiser outra curva. Para regenerar os sons: `python3 scripts/gen-audio.py`.
 
 ## Premissas dos números
 

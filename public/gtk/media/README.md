@@ -15,3 +15,9 @@ Arquivos referenciados por `src/GTK/mediaManifest.ts`.
 
 Para preencher um slot faltante: copie o arquivo com o nome indicado para esta pasta e
 edite a entrada correspondente em `mediaManifest.ts` (troque `null` pelo objeto com `file`).
+
+## Áudio (`public/gtk/audio/`)
+
+- `trilha.mp3` — trilha sintetizada (`scripts/gen-audio.py`); pode ser substituída por música licenciada de 90 s.
+- `amb-*.mp3` — áudio real extraído dos vídeos da fábrica (ambiente).
+- `*.wav` — efeitos sonoros gerados pelo script.
