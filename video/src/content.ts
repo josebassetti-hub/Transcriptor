@@ -6,23 +6,27 @@ export const WIDTH = 1920;
 export const HEIGHT = 1080;
 export const TOTAL_FRAMES = 60 * FPS; // 60 s
 
-const s = (sec: number) => Math.round(sec * FPS);
+// Trilha a 100 bpm: 1 tempo = 18 frames. Todos os cortes caem em múltiplos de 18.
+export const BEAT = 18;
 
-// Início e duração de cada cena, em frames.
+// Duração de cada cena em frames (cortes no tempo da música). Soma = 1800.
 export const SCENES = {
-  abertura: { from: s(0), duration: s(5) },
-  desafio: { from: s(5), duration: s(8) },
-  estruturacao: { from: s(13), duration: s(13) },
-  incentivos: { from: s(26), duration: s(12) },
-  diferenciais: { from: s(38), duration: s(10) },
-  numeros: { from: s(48), duration: s(6) },
-  encerramento: { from: s(54), duration: s(6) },
+  abertura: 144, // 0.0 - 4.8 s
+  verbos: 180, // 4.8 - 10.8 s
+  metodo: 162, // 10.8 - 16.2 s
+  jornada: 342, // 16.2 - 27.6 s
+  incentivos: 324, // 27.6 - 38.4 s
+  porque: 234, // 38.4 - 46.2 s
+  numeros: 180, // 46.2 - 52.2 s
+  final: 234, // 52.2 - 60.0 s
 };
+
+// Duração (frames) da transição que liga cada cena à seguinte.
+export const TRANSITION = 12;
 
 export const EMPRESA = {
   nome: "Projet",
   tagline: "Consultoria & Investimentos",
-  descricao: "Estruturação de projetos e incentivos fiscais",
   desde: "Desde 2011",
   anoFundacao: 2011,
   operacoes: 1000,
@@ -31,15 +35,25 @@ export const EMPRESA = {
   fraseFinal: "Do projeto à liberação do crédito.",
 };
 
-export const DESAFIO = {
-  linha1: "Investir exige capital.",
-  linha2: "Acessar crédito de longo prazo exige método.",
-  itens: ["Expansão", "Modernização", "Capital de giro estrutural"],
+export const ABERTURA = {
+  pre: "Toda empresa quer",
+  palavra: "CRESCER.",
 };
 
-export const ESTRUTURACAO = {
+export const VERBOS = {
+  pre: "Sua empresa quer",
+  palavras: ["EXPANDIR.", "MODERNIZAR.", "INVESTIR."],
+};
+
+export const METODO = {
+  linha1: "Crédito de longo prazo",
+  linha2a: "exige",
+  linha2b: "MÉTODO.",
+  pill: "BNB · FNE",
+};
+
+export const JORNADA = {
   titulo: "Estruturação de projetos",
-  subtitulo: "Financiamento BNB · FNE",
   etapas: [
     { n: "01", titulo: "Diagnóstico", desc: "Viabilidade e linha de crédito" },
     { n: "02", titulo: "Cadastro e carta-consulta", desc: "Dossiê e enquadramento" },
@@ -51,21 +65,20 @@ export const ESTRUTURACAO = {
 
 export const INCENTIVOS = {
   titulo: "Incentivos fiscais",
-  subtitulo: "que reduzem o custo de crescer",
-  cards: [
+  hits: [
     { rotulo: "SUDENE", valor: 67.5, sufixo: "%", desc: "de redução do IRPJ" },
     { rotulo: "REINVESTIMENTO", valor: 27, sufixo: "%", desc: "do IRPJ reinvestido" },
-    { rotulo: "INVEST-ES", valor: null, sufixo: "", desc: "e incentivos estaduais e municipais" },
+    { rotulo: "INVEST-ES", valor: null, texto: "ICMS", desc: "e incentivos estaduais e municipais" },
   ],
   rodape: "Percentuais conforme Lei Complementar 224/2025",
 };
 
-export const DIFERENCIAIS = {
+export const PORQUE = {
   titulo: "Por que a Projet",
   itens: [
-    { titulo: "Enquadramento otimizado", desc: "A melhor linha, porte e condições para o seu caso" },
+    { titulo: "Enquadramento otimizado", desc: "A melhor linha, porte e condições" },
     { titulo: "Projeto defensável", desc: "Cada indicador com justificativa técnica" },
     { titulo: "Defesa junto ao banco", desc: "Respostas fundamentadas ao analista" },
-    { titulo: "Acompanhamento completo", desc: "Da carta-consulta à liberação dos recursos" },
+    { titulo: "Acompanhamento completo", desc: "Da carta-consulta à liberação" },
   ],
 };

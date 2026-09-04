@@ -4,17 +4,22 @@
 **Uso:** abertura de reuniões presenciais com empresários que buscam financiamento e incentivos fiscais.
 **Público:** empresas que querem financiamento (BNB/FNE) e incentivos fiscais (SUDENE, INVEST-ES, municipais).
 
+## Linguagem
+
+Ritmo de propaganda, não de apresentação: câmera em movimento contínuo (push-in, pan, viagem lateral), cortes e wipes sincronizados com a trilha (100 bpm, um tempo = 18 quadros), tipografia cinética (palavras que "batem" na tela com escala e desfoque), ondas de choque e flashes nos hits, partículas, grão de filme e vinheta.
+
 ## Storyboard
 
-| # | Cena | Tempo | Texto em tela | Animação |
-|---|------|-------|---------------|----------|
-| 1 | Abertura | 0–5 s | Logo Projet · "Estruturação de projetos e incentivos fiscais" · "DESDE 2011" | Logo surge com leve escala; linha azul se estende; textos entram de baixo |
-| 2 | O desafio | 5–13 s | "Investir exige capital." / "Acessar crédito de longo prazo exige método." · Expansão · Modernização · Capital de giro estrutural | Frases em sequência; três ícones desenhados por traço animado |
-| 3 | Estruturação de projetos | 13–26 s | "Estruturação de projetos" · "Financiamento BNB · FNE" · 01 Diagnóstico → 02 Cadastro e carta-consulta → 03 Projeto econômico-financeiro → 04 Defesa e aprovação → 05 Contratação e liberação | Trilho azul avança; cada etapa "acende" com pop e legenda |
-| 4 | Incentivos fiscais | 26–38 s | "Incentivos fiscais que reduzem o custo de crescer" · SUDENE **67,5%** de redução do IRPJ · REINVESTIMENTO **27%** do IRPJ reinvestido · INVEST-ES ICMS e incentivos estaduais e municipais · rodapé "Percentuais conforme Lei Complementar 224/2025" | Três cartões sobem; contadores animam até o valor |
-| 5 | Por que a Projet | 38–48 s | Enquadramento otimizado · Projeto defensável · Defesa junto ao banco · Acompanhamento completo (cada um com uma linha de apoio) | Grade 2×2; check azul desenhado em cada cartão |
-| 6 | Números | 48–54 s | "DESDE 2011" · **+1.000** · "operações aprovadas" | Contador sobe de 0 a 1.000 |
-| 7 | Encerramento | 54–60 s | Logo · "Do projeto à liberação do crédito." · (27) 98142-8090 · (27) 3727-3251 | Fade-in do logo; trilha em fade-out nos últimos 4 s |
+| # | Cena | Tempo | Texto em tela | Movimento |
+|---|------|-------|---------------|-----------|
+| 1 | Abertura fria | 0,0–4,8 s | "TODA EMPRESA QUER" · **CRESCER.** | A linha ascendente do logo se desenha com brilho, barras sobem; a palavra bate no 3º tempo com onda de choque e flash. Câmera recua suavemente. Corte: wipe da esquerda. |
+| 2 | Verbos | 4,8–10,8 s | "SUA EMPRESA QUER" · **EXPANDIR.** / **MODERNIZAR.** / **INVESTIR.** | Uma palavra a cada 3 tempos, entra com escala+desfoque e sai subindo; placa diagonal azul cruza o fundo. Corte: slide de baixo. |
+| 3 | Método | 10,8–16,2 s | "Crédito de longo prazo" · "exige **MÉTODO.**" · selo "BNB · FNE" | Anéis concêntricos giram; MÉTODO bate no 2º tempo; linha varre; selo sobe. Corte: wipe da direita. |
+| 4 | Jornada | 16,2–27,6 s | "ESTRUTURAÇÃO DE PROJETOS" · 01 Diagnóstico → 02 Cadastro e carta-consulta → 03 Projeto econômico-financeiro → 04 Defesa e aprovação → 05 Contratação e liberação | Câmera viaja lateralmente por uma trilha ascendente, parando 50 quadros em cada estação; paralaxe em três camadas (números fantasma ao fundo); barra de progresso no canto. Corte: slide da direita. |
+| 5 | Incentivos | 27,6–38,4 s | "INCENTIVOS FISCAIS" · SUDENE **67,5%** de redução do IRPJ · REINVESTIMENTO **27%** do IRPJ reinvestido · INVEST-ES **ICMS** e incentivos estaduais e municipais · rodapé "Percentuais conforme Lei Complementar 224/2025" | Três hits de 6 tempos: número gigante entra com zoom, contador sobe, onda de choque; raios de luz giram ao fundo. Corte: wipe diagonal. |
+| 6 | Por que a Projet | 38,4–46,2 s | Enquadramento otimizado · Projeto defensável · Defesa junto ao banco · Acompanhamento completo | Cartões em 3D voam da direita e se encaixam a cada tempo; check desenhado; leve rotação constante. Corte: slide da esquerda. |
+| 7 | Números | 46,2–52,2 s | "DESDE 2011" · **+1.000** · "operações aprovadas" | Contador sobe em 4 tempos, barras crescem como no logo, explosão de onda e flash ao completar. Corte: fade. |
+| 8 | Final | 52,2–60,0 s | Logo · "Do projeto à liberação do crédito." · (27) 98142-8090 · (27) 3727-3251 | Impacto na trilha, logo entra com mola e varredura de luz; frase e telefones sobem; ponto pulsante no tempo; fade-out. |
 
 ## Fontes dos textos
 
@@ -24,7 +29,7 @@
 
 ## Como alterar e gerar de novo
 
-Todos os textos, telefones, números e tempos de cena estão em `src/content.ts`. As cores estão em `src/theme.ts`.
+Todos os textos, telefones, números e durações de cena estão em `src/content.ts` (durações em quadros, múltiplas de 18 para cair no tempo da música). As cores estão em `src/theme.ts`. As transições entre cenas estão em `src/Video.tsx`.
 
 ```bash
 cd video
@@ -42,7 +47,7 @@ Para trocar o logo, substitua `public/logo.png` (PNG com fundo transparente). O 
 
 ## Trilha
 
-`public/trilha.wav` é um instrumental sintetizado (progressão D – Bm – G – A, 72 bpm, pad + arpejo + baixo), gerado por `scripts/gerar_trilha.py` sem dependências externas e livre de direitos autorais. Pode ser substituída por qualquer MP3/WAV licenciado: basta trocar o arquivo e o nome em `src/Video.tsx`.
+`public/trilha.wav` é um instrumental sintetizado (progressão D – Bm – G – A, 100 bpm, pad + arpejo + baixo + bumbo/chimbal, riser antes do final e impactos), gerado por `scripts/gerar_trilha.py` sem dependências externas e livre de direitos autorais. Pode ser substituída por qualquer MP3/WAV licenciado: basta trocar o arquivo e o nome em `src/Video.tsx`.
 
 ## Licença do Remotion
 

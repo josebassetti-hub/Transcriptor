@@ -1,31 +1,34 @@
 import React from "react";
-import { AbsoluteFill, interpolate, spring, useCurrentFrame, useVideoConfig } from "remotion";
-import { Logo } from "../components/Logo";
-import { useEnter, useSceneFade } from "../components/anim";
-import { EMPRESA, SCENES } from "../content";
+import { AbsoluteFill, interpolate, useCurrentFrame } from "remotion";
+import { Camera } from "../components/Camera";
+import { Particles, RisingLine, Shockwave, Flash } from "../components/Fx";
+import { riseIn, slamIn } from "../components/anim";
+import { ABERTURA, BEAT, SCENES } from "../content";
 import { font, theme } from "../theme";
 
+/** Cena 1: abertura fria. A linha ascendente do logo se desenha, barras sobem, "CRESCER." bate no tempo 3. */
 export const Abertura: React.FC = () => {
   const frame = useCurrentFrame();
-  const { fps } = useVideoConfig();
-  const fade = useSceneFade(SCENES.abertura.duration, 10, 14);
-  const logoIn = spring({ frame, fps, config: { damping: 200, stiffness: 60, mass: 1.2 } });
-  const scale = 0.92 + 0.08 * logoIn;
-  const lineW = interpolate(frame, [20, 60], [0, 520], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
-  const desc = useEnter(38);
-  const desde = useEnter(52);
+  const hit = BEAT * 3; // 54
+  const lineOpacity = interpolate(frame, [hit, hit + 10], [1, 0.35], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
   return (
-    <AbsoluteFill style={{ opacity: fade, alignItems: "center", justifyContent: "center", fontFamily: font.family }}>
-      <div style={{ transform: `scale(${scale})`, opacity: logoIn }}>
-        <Logo width={720} />
+    <AbsoluteFill style={{ fontFamily: font.family }}>
+      <Camera duration={SCENES.abertura} from={1.12} to={1} panX={-30}>
+        <Particles count={60} speed={0.8} seed="a" />
+        <div style={{ position: "absolute", left: 210, top: 260, opacity: lineOpacity }}>
+          <RisingLine at={4} />
+        </div>
+      </Camera>
+      <div style={{ position: "absolute", left: 0, right: 0, top: 300, textAlign: "center", ...riseIn(frame, BEAT * 1, 14, 30) }}>
+        <div style={{ fontSize: 44, fontWeight: 500, color: theme.muted, letterSpacing: 6, textTransform: "uppercase" }}>{ABERTURA.pre}</div>
       </div>
-      <div style={{ height: 4, width: lineW, background: `linear-gradient(90deg, transparent, ${theme.blueLight}, transparent)`, marginTop: 56 }} />
-      <div style={{ ...desc, marginTop: 30, fontSize: 40, fontWeight: 600, color: theme.white, letterSpacing: 0.5 }}>
-        {EMPRESA.descricao}
+      <div style={{ position: "absolute", left: 0, right: 0, top: 380, textAlign: "center", ...slamIn(frame, hit) }}>
+        <div style={{ fontSize: 300, fontWeight: 900, color: theme.white, letterSpacing: -12, lineHeight: 1, textShadow: `0 0 80px ${theme.glow}` }}>
+          {ABERTURA.palavra}
+        </div>
       </div>
-      <div style={{ ...desde, marginTop: 14, fontSize: 28, fontWeight: 500, color: theme.muted, letterSpacing: 4, textTransform: "uppercase" }}>
-        {EMPRESA.desde}
-      </div>
+      <Shockwave at={hit} />
+      <Flash at={hit} strength={0.35} />
     </AbsoluteFill>
   );
 };

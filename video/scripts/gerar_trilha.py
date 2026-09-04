@@ -1,8 +1,15 @@
-"""Gera a trilha instrumental do vídeo institucional (60 s, WAV 44.1 kHz estéreo).
+"""Gera a trilha do vídeo institucional (60 s, WAV 44.1 kHz estéreo), estilo propaganda.
 
-Síntese aditiva em Python puro (sem dependências): pad de acordes sustentados,
-arpejo suave de "piano elétrico" e um baixo discreto. Progressão em Ré maior,
-andamento calmo, fade-in de 1,5 s e fade-out nos últimos 4 s. Sem direitos autorais.
+Síntese em Python puro (sem dependências): 100 bpm, pad de acordes, arpejo de
+16 avos, baixo pulsado, bumbo e chimbal sintetizados, riser antes do final e
+impacto no logo. Progressão D - Bm - G - A. Livre de direitos autorais.
+
+Estrutura (em segundos):
+  0.0 - 4.8   intro: pad + impacto inicial
+  4.8 - 16.2  build: entra arpejo e bumbo
+ 16.2 - 46.2  cheio: bumbo, chimbal, baixo, arpejo
+ 46.2 - 52.2  clímax: riser
+ 52.2 - 60.0  final: impacto + pad, fade-out
 
 Uso: python3 scripts/gerar_trilha.py [saida.wav]
 """
@@ -14,116 +21,169 @@ import wave
 SR = 44100
 DUR = 60.0
 N = int(SR * DUR)
-BPM = 72
-BEAT = 60.0 / BPM          # 0.833 s
-BAR = BEAT * 4             # 3.333 s -> 18 compassos em 60 s
+BPM = 100
+BEAT = 60.0 / BPM        # 0.6 s
+BAR = BEAT * 4           # 2.4 s
+
+T_BUILD, T_FULL, T_RISER, T_END = 4.8, 16.2, 46.2, 52.2
 
 def midi(n):
     return 440.0 * 2 ** ((n - 69) / 12)
 
-# Progressão (D maior): D  - Bm - G - A  (I - vi - IV - V), 2 compassos cada
-# notas MIDI: D3=50, F#3=54, A3=57, B3=59, G3=55, C#4=61, E4=64
-CHORDS = [
-    [50, 54, 57, 62],  # D
-    [47, 50, 54, 59],  # Bm
-    [43, 47, 50, 55],  # G
-    [45, 49, 52, 57],  # A
-]
-ARP_PATTERNS = [
-    [62, 66, 69, 74, 69, 66],  # D
-    [59, 62, 66, 71, 66, 62],  # Bm
-    [55, 59, 62, 67, 62, 59],  # G
-    [57, 61, 64, 69, 64, 61],  # A
-]
+CHORDS = [[50, 54, 57, 62], [47, 50, 54, 59], [43, 47, 50, 55], [45, 49, 52, 57]]
+ARPS = [[62, 66, 69, 74], [59, 62, 66, 71], [55, 59, 62, 67], [57, 61, 64, 69]]
 
-def chord_at(t):
-    bar = int(t // BAR)
-    idx = (bar // 2) % 4
-    return idx
+def chord_idx(t):
+    return int(t // BAR) % 4
 
-def env_ad(t, a, d):
-    if t < 0:
+# ruído determinístico (LCG)
+_seed = 12345
+def noise():
+    global _seed
+    _seed = (_seed * 1103515245 + 12345) & 0x7FFFFFFF
+    return (_seed / 0x7FFFFFFF) * 2 - 1
+
+def env(dt, a, d):
+    if dt < 0:
         return 0.0
-    if t < a:
-        return t / a
-    return math.exp(-(t - a) / d)
+    if dt < a:
+        return dt / a
+    return math.exp(-(dt - a) / d)
 
-# Pré-cálculo dos eventos de arpejo (nota, tempo de início)
+def section_gain(t):
+    """ganho por camada: (arp, kick, hat, bass)"""
+    if t < T_BUILD:
+        return (0.0, 0.0, 0.0, 0.0)
+    if t < T_FULL:
+        x = (t - T_BUILD) / (T_FULL - T_BUILD)
+        return (0.6 + 0.4 * x, 0.7, 0.0, 0.5 + 0.5 * x)
+    if t < T_END:
+        return (1.0, 1.0, 1.0, 1.0)
+    return (0.0, 0.0, 0.0, 0.0)
+
+# eventos
 arp_events = []
 t = 0.0
-step = BEAT / 2  # colcheia
 i = 0
-while t < DUR:
-    idx = chord_at(t)
-    pat = ARP_PATTERNS[idx]
-    note = pat[i % len(pat)]
-    arp_events.append((midi(note), t))
-    t += step
+while t < T_END:
+    idx = chord_idx(t)
+    pat = ARPS[idx]
+    seq = [pat[0], pat[1], pat[2], pat[3], pat[2], pat[1], pat[3], pat[0]]
+    arp_events.append((midi(seq[i % 8]), t))
+    t += BEAT / 4
     i += 1
+
+kick_events = []
+t = 0.0
+while t < T_END:
+    kick_events.append(t)
+    t += BEAT
+hat_events = []
+t = BEAT / 2
+while t < T_END:
+    hat_events.append(t)
+    t += BEAT / 2
+impacts = [0.0, T_END]
 
 def render():
     out = []
-    # tabela de eventos ativos para eficiência
-    ev_i = 0
-    active = []
+    ai = ki = hi = 0
+    arp_active, kick_active, hat_active = [], [], []
+    hp_prev_in = 0.0
+    hp_prev_out = 0.0
     for n in range(N):
         t = n / SR
-        # --- pad ---
-        idx = chord_at(t)
-        # crossfade entre acordes nos limites
+        g_arp, g_kick, g_hat, g_bass = section_gain(t)
+        idx = chord_idx(t)
+
+        # pad
         pad = 0.0
-        for k, note in enumerate(CHORDS[idx]):
+        for note in CHORDS[idx]:
             f = midi(note)
-            # duas ondas levemente desafinadas + sub-harmônico suave
-            pad += (math.sin(2 * math.pi * f * t) + 0.6 * math.sin(2 * math.pi * f * 1.003 * t + 0.3)
-                    + 0.25 * math.sin(2 * math.pi * f * 2 * t)) / 4
-        # envelope de compasso: cresce e decai suavemente a cada 2 compassos
-        ph = (t % (2 * BAR)) / (2 * BAR)
-        pad_env = 0.55 + 0.45 * math.sin(math.pi * ph)
-        pad *= 0.11 * pad_env
-        # tremolo lento
-        pad *= 1 + 0.08 * math.sin(2 * math.pi * 0.25 * t)
+            pad += (math.sin(2 * math.pi * f * t) + 0.5 * math.sin(2 * math.pi * f * 1.004 * t + 0.4)
+                    + 0.2 * math.sin(2 * math.pi * f * 2 * t)) / 4
+        ph = (t % BAR) / BAR
+        pad *= 0.10 * (0.6 + 0.4 * math.sin(math.pi * ph))
+        if t >= T_END:
+            pad *= 1.3
 
-        # --- baixo ---
+        # baixo: pulsado em colcheias
         root = midi(CHORDS[idx][0] - 12)
-        bass = math.sin(2 * math.pi * root * t) * 0.10
-        bass *= 0.6 + 0.4 * math.sin(math.pi * ((t % BAR) / BAR))
+        bph = (t % (BEAT / 2)) / (BEAT / 2)
+        bass = math.sin(2 * math.pi * root * t) * 0.16 * math.exp(-bph * 2.2) * g_bass
+        bass += 0.04 * math.sin(2 * math.pi * root * 2 * t) * math.exp(-bph * 3) * g_bass
 
-        # --- arpejo ---
-        while ev_i < len(arp_events) and arp_events[ev_i][1] <= t:
-            active.append(arp_events[ev_i])
-            ev_i += 1
-        active = [e for e in active if t - e[1] < 2.5]
+        # arpejo
+        while ai < len(arp_events) and arp_events[ai][1] <= t:
+            arp_active.append(arp_events[ai]); ai += 1
+        arp_active = [e for e in arp_active if t - e[1] < 0.8]
         arp = 0.0
-        for f, t0 in active:
+        for f, t0 in arp_active:
             dt = t - t0
-            e = env_ad(dt, 0.008, 0.55)
-            arp += e * (math.sin(2 * math.pi * f * dt) + 0.35 * math.sin(2 * math.pi * 2 * f * dt)
-                        + 0.12 * math.sin(2 * math.pi * 3 * f * dt))
-        arp *= 0.075
+            e = env(dt, 0.004, 0.16)
+            arp += e * (math.sin(2 * math.pi * f * dt) + 0.4 * math.sin(2 * math.pi * 2 * f * dt))
+        arp *= 0.07 * g_arp
 
-        s = pad + bass + arp
-        # fades
-        if t < 1.5:
-            s *= t / 1.5
+        # bumbo
+        while ki < len(kick_events) and kick_events[ki] <= t:
+            kick_active.append(kick_events[ki]); ki += 1
+        kick_active = [e for e in kick_active if t - e < 0.4]
+        kick = 0.0
+        for t0 in kick_active:
+            dt = t - t0
+            fk = 48 + 110 * math.exp(-dt * 28)
+            kick += math.sin(2 * math.pi * fk * dt) * math.exp(-dt * 9)
+        kick *= 0.42 * g_kick
+
+        # chimbal
+        while hi < len(hat_events) and hat_events[hi] <= t:
+            hat_active.append(hat_events[hi]); hi += 1
+        hat_active = [e for e in hat_active if t - e < 0.08]
+        hat = 0.0
+        if hat_active:
+            nz = noise()
+            for t0 in hat_active:
+                dt = t - t0
+                hat += nz * math.exp(-dt * 70)
+        # passa-altas simples
+        hp = hat - hp_prev_in + 0.95 * hp_prev_out
+        hp_prev_in, hp_prev_out = hat, hp
+        hat = hp * 0.10 * g_hat
+
+        # riser (ruído filtrado subindo) antes do final
+        riser = 0.0
+        if T_RISER <= t < T_END:
+            x = (t - T_RISER) / (T_END - T_RISER)
+            riser = noise() * 0.12 * x * x
+            riser += 0.05 * x * math.sin(2 * math.pi * (200 + 600 * x) * t)
+
+        # impactos
+        imp = 0.0
+        for t0 in impacts:
+            dt = t - t0
+            if 0 <= dt < 2.0:
+                imp += math.sin(2 * math.pi * (40 + 60 * math.exp(-dt * 6)) * dt) * math.exp(-dt * 2.2) * 0.45
+                imp += noise() * math.exp(-dt * 12) * 0.12
+
+        s = pad + bass + arp + kick + hat + riser + imp
+        if t < 0.3:
+            s *= t / 0.3
         if t > DUR - 4.0:
             s *= max(0.0, (DUR - t) / 4.0)
-        # estéreo: pad levemente aberto, arpejo alternando
-        l = s + 0.02 * math.sin(2 * math.pi * 0.11 * t) * arp
-        r = s - 0.02 * math.sin(2 * math.pi * 0.11 * t) * arp
-        out.append((max(-1, min(1, l)), max(-1, min(1, r))))
+        # soft clip
+        s = math.tanh(s * 1.4) / 1.4
+        pan = 0.03 * math.sin(2 * math.pi * 0.13 * t)
+        out.append((max(-1, min(1, s + pan * arp)), max(-1, min(1, s - pan * arp))))
     return out
 
 def main():
     path = sys.argv[1] if len(sys.argv) > 1 else "public/trilha.wav"
     samples = render()
     with wave.open(path, "wb") as w:
-        w.setnchannels(2)
-        w.setsampwidth(2)
-        w.setframerate(SR)
+        w.setnchannels(2); w.setsampwidth(2); w.setframerate(SR)
         frames = bytearray()
         for l, r in samples:
-            frames += struct.pack("<hh", int(l * 32000), int(r * 32000))
+            frames += struct.pack("<hh", int(l * 31000), int(r * 31000))
         w.writeframes(bytes(frames))
     print("ok", path, len(samples) / SR, "s")
 
