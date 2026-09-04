@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
 """
-Desenho de som do vídeo CIPREM (vinheta + 8 cenas), estilo trailer.
+Desenho de som do vídeo CIPREM (vinheta + 8 cenas), versão 2: mais suave e numa grade única.
 
-Gera public/audio/score.wav (estéreo, 48 kHz, 108.29 s) totalmente sintetizado:
-sub drops, braams, risers, taikos, tiques, pads, shimmer, reversos, hits e silêncios,
-posicionados segundo a segundo conforme o roteiro de som.
+Gera public/audio/score.wav (estéreo, 48 kHz, 108.29 s) totalmente sintetizado.
+
+Grade rítmica: 120 BPM, batida 0,5 s, compasso 2,0 s, ancorada no início do conteúdo (18,22 s).
+Todas as cenas começam em cabeça de compasso (compassos 0, 4, 8, 13, 21, 28, 33, 40), então
+os hits de cena caem sempre na pulsação que já está tocando.
 
 Uso:  python build_score.py [saida.wav]
 Requer numpy e scipy.
@@ -15,56 +17,59 @@ from scipy.signal import butter, sosfilt, fftconvolve
 from scipy.io import wavfile
 
 SR = 48000
-DUR = 108.29                 # vinheta 18.22 s + conteúdo 90 s + folga do último quadro
+DUR = 108.29
 N = int(DUR * SR)
-C0 = 18.22                   # início do conteúdo (fim da vinheta)
-BEAT = 0.6                   # 100 BPM
+C0 = 18.22                   # início do conteúdo
+BEAT = 0.5                   # 120 BPM
+BAR = 2.0
 rng = np.random.default_rng(20260904)
 
-def c(t):                    # tempo do conteúdo -> tempo absoluto
+def bar(n, beat=0.0):        # cabeça do compasso n do conteúdo (+ deslocamento em batidas)
+    return C0 + n * BAR + beat * BEAT
+
+def c(t):                    # segundo do conteúdo -> tempo absoluto
     return C0 + t
 
 # ------------------------------------------------------------------ utilidades
 def t_axis(dur):
     return np.arange(int(dur * SR)) / SR
 
-def env_adsr(n, a, d, s, r, total=None):
-    """Envelope em amostras. a/d/r em segundos, s nível de sustain."""
+def env_adsr(n, a, d, s, r):
     a, d, r = int(a * SR), int(d * SR), int(r * SR)
-    e = np.zeros(n)
-    i = 0
-    k = min(a, n); e[:k] = np.linspace(0, 1, k, endpoint=False); i += k
+    e = np.zeros(n); i = 0
+    k = min(a, n); e[:k] = np.linspace(0, 1, k, endpoint=False) ** 1.5; i += k
     k = min(d, n - i); e[i:i + k] = np.linspace(1, s, k, endpoint=False); i += k
     k = max(0, n - i - r); e[i:i + k] = s; i += k
     k = n - i
-    if k > 0: e[i:] = np.linspace(e[i - 1] if i > 0 else s, 0, k)
+    if k > 0: e[i:] = np.linspace(e[i - 1] if i > 0 else s, 0, k) ** 1.0
     return e
 
 def exp_decay(n, tau):
     return np.exp(-np.arange(n) / (tau * SR))
 
+def soft_attack(n, ms):
+    k = int(ms / 1000 * SR)
+    e = np.ones(n); e[:k] = np.linspace(0, 1, k) ** 2
+    return e
+
 def sine(freq, dur, phase=0.0):
-    t = t_axis(dur)
-    return np.sin(2 * np.pi * freq * t + phase)
+    return np.sin(2 * np.pi * freq * t_axis(dur) + phase)
 
 def sine_glide(f0, f1, dur, curve=1.0):
-    t = t_axis(dur)
-    x = (t / dur) ** curve
+    t = t_axis(dur); x = (t / dur) ** curve
     f = f0 * (f1 / f0) ** x
-    ph = 2 * np.pi * np.cumsum(f) / SR
-    return np.sin(ph)
+    return np.sin(2 * np.pi * np.cumsum(f) / SR)
 
 def saw(freq, dur, detune_cents=0.0):
     f = freq * 2 ** (detune_cents / 1200)
-    t = t_axis(dur)
-    return 2 * ((t * f) % 1.0) - 1
+    return 2 * ((t_axis(dur) * f) % 1.0) - 1
 
 def noise(dur):
     return rng.standard_normal(int(dur * SR))
 
 def brown(dur):
     x = np.cumsum(rng.standard_normal(int(dur * SR)))
-    x -= np.convolve(x, np.ones(2000) / 2000, mode="same")  # tira o passeio lento
+    x -= np.convolve(x, np.ones(2000) / 2000, mode="same")
     return x / (np.abs(x).max() + 1e-9)
 
 def lp(sig, fc, order=2):
@@ -80,25 +85,20 @@ def bp(sig, f1, f2, order=2):
     return sosfilt(butter(order, [f1, f2], btype="band", fs=SR, output="sos"), sig)
 
 def sweep_lp(sig, fc_curve, order=2, block=512):
-    """Passa-baixas com corte variando no tempo (fc_curve com o mesmo tamanho de sig)."""
-    out = np.zeros_like(sig)
-    zi = None
+    out = np.zeros_like(sig); zi = None
     for i in range(0, len(sig), block):
         fc = float(np.clip(fc_curve[min(i + block // 2, len(sig) - 1)], 30, SR / 2 - 200))
         sos = butter(order, fc, btype="low", fs=SR, output="sos")
-        if zi is None:
-            zi = np.zeros((sos.shape[0], 2))
+        if zi is None: zi = np.zeros((sos.shape[0], 2))
         out[i:i + block], zi = sosfilt(sos, sig[i:i + block], zi=zi)
     return out
 
 def sweep_bp(sig, fc_curve, width=0.8, block=512):
-    out = np.zeros_like(sig)
-    zi = None
+    out = np.zeros_like(sig); zi = None
     for i in range(0, len(sig), block):
         fc = float(np.clip(fc_curve[min(i + block // 2, len(sig) - 1)], 60, SR / 2 - 400))
         sos = butter(2, [fc / (1 + width), min(fc * (1 + width), SR / 2 - 200)], btype="band", fs=SR, output="sos")
-        if zi is None:
-            zi = np.zeros((sos.shape[0], 2))
+        if zi is None: zi = np.zeros((sos.shape[0], 2))
         out[i:i + block], zi = sosfilt(sos, sig[i:i + block], zi=zi)
     return out
 
@@ -106,16 +106,13 @@ def softclip(x, drive=1.0):
     return np.tanh(x * drive) / np.tanh(drive)
 
 _ir_cache = {}
-def reverb(sig, decay=2.0, mix=0.35, predelay=0.02):
-    """Reverb por convolução com IR sintética estéreo. Retorna (L, R)."""
-    key = round(decay, 2)
+def reverb(sig, decay=2.0, mix=0.35, predelay=0.02, tone=5000):
+    """Reverb por convolução com IR sintética estéreo (mais escura que a v1). Retorna (L, R)."""
+    key = (round(decay, 2), tone)
     if key not in _ir_cache:
-        n = int(decay * 3 * SR)
-        t = np.arange(n) / SR
+        n = int(decay * 3 * SR); t = np.arange(n) / SR
         e = np.exp(-t / decay * 3)
-        irl = rng.standard_normal(n) * e
-        irr = rng.standard_normal(n) * e
-        irl = lp(irl, 6000); irr = lp(irr, 6000)
+        irl = lp(rng.standard_normal(n) * e, tone); irr = lp(rng.standard_normal(n) * e, tone)
         pd = int(predelay * SR)
         irl = np.concatenate([np.zeros(pd), irl]); irr = np.concatenate([np.zeros(pd), irr])
         norm = np.sqrt(np.sum(irl ** 2))
@@ -132,90 +129,107 @@ def pan_lr(sig, pan=0.0):
 
 class Stem:
     def __init__(self, name):
-        self.name = name
-        self.L = np.zeros(N); self.R = np.zeros(N)
-    def add(self, t, sig, gain=1.0, pan=0.0):
-        if isinstance(sig, tuple):
-            l, r = sig
-        else:
-            l, r = pan_lr(sig, pan)
-        i = int(t * SR)
+        self.name = name; self.L = np.zeros(N); self.R = np.zeros(N); self.onsets = []
+    def add(self, t, sig, gain=1.0, pan=0.0, onset=False):
+        l, r = sig if isinstance(sig, tuple) else pan_lr(sig, pan)
+        i = int(round(t * SR))
         if i >= N or i < 0: return
         k = min(len(l), N - i)
         self.L[i:i + k] += l[:k] * gain; self.R[i:i + k] += r[:k] * gain
+        if onset: self.onsets.append(t)
     def stereo(self):
         return np.stack([self.L, self.R], axis=1)
 
 # ------------------------------------------------------------------ notas
 def hz(name):
     names = {"C": 0, "C#": 1, "Db": 1, "D": 2, "D#": 3, "Eb": 3, "E": 4, "F": 5, "F#": 6, "Gb": 6, "G": 7, "G#": 8, "Ab": 8, "A": 9, "A#": 10, "Bb": 10, "B": 11}
-    n, o = name[:-1], int(name[-1])
-    return 440.0 * 2 ** ((names[n] + 12 * (o + 1) - 69) / 12)
+    return 440.0 * 2 ** ((names[name[:-1]] + 12 * (int(name[-1]) + 1) - 69) / 12)
 
 CH = {
-    "Dm":  ["D3", "F3", "A3"],
-    "Bb":  ["Bb2", "D3", "F3"],
-    "F":   ["F3", "A3", "C4"],
-    "C":   ["C3", "E3", "G3"],
-    "Dm5": ["D3", "F3", "A3", "D4", "F4"],
+    "Dm":   ["D3", "F3", "A3"],
+    "Dm_hi": ["D4", "F4", "A4"],
+    "Bb":   ["Bb2", "D3", "F3"],
+    "F":    ["F3", "A3", "C4"],
+    "C":    ["C3", "E3", "G3"],
+    "Dm5":  ["D3", "F3", "A3", "D4", "F4"],
+    "Bb5":  ["Bb2", "D3", "F3", "Bb3", "D4"],
+    "F5":   ["F3", "A3", "C4", "F4", "A4"],
+    "C5":   ["C3", "E3", "G3", "C4", "E4"],
     "Dmaj": ["D3", "F#3", "A3", "D4"],
     "Dmaj5": ["D3", "F#3", "A3", "D4", "F#4", "A4"],
     "Bbchoir": ["Bb2", "F3", "Bb3", "D4", "F4"],
     "Cchoir": ["C3", "G3", "C4", "E4", "G4"],
 }
-BASS = {"Dm": "D2", "Bb": "Bb1", "F": "F2", "C": "C2", "Dm5": "D2", "Dmaj": "D2", "Dmaj5": "D2", "Bbchoir": "Bb1", "Cchoir": "C2"}
+BASS = {"Dm": "D2", "Dm_hi": "D2", "Bb": "Bb1", "F": "F2", "C": "C2", "Dm5": "D2", "Bb5": "Bb1", "F5": "F2", "C5": "C2",
+        "Dmaj": "D2", "Dmaj5": "D2", "Bbchoir": "Bb1", "Cchoir": "C2"}
 
-# ------------------------------------------------------------------ instrumentos
-def i_sub_drop(f0=55, f1=30, dur=2.5):
-    s = sine_glide(f0, f1, dur, curve=0.6)
-    return s * env_adsr(len(s), 0.01, 0.4, 0.7, 1.2)
+# ------------------------------------------------------------------ instrumentos (v2: suaves)
+def i_pad(chord, dur, gain=1.0, fc0=500, fc1=900, attack=0.35, release=0.5, octave=0, vib=0.0025, decay=3.0):
+    """Cordas sintéticas macias: 5 serras em unison bem filtradas + seno; sem distorção; reverb longo."""
+    n = int(dur * SR); t = np.arange(n) / SR
+    L = np.zeros(n); R = np.zeros(n)
+    for i, name in enumerate(chord):
+        f = hz(name) * 2 ** octave
+        v = 1 + vib * np.sin(2 * np.pi * (4.2 + 0.25 * i) * t + i)
+        s = np.sin(2 * np.pi * np.cumsum(f * v) / SR) * 0.7
+        uni_l = sum(saw(f, dur, d) for d in (-7, -3, 2)) * 0.12
+        uni_r = sum(saw(f, dur, d) for d in (-2, 3, 7)) * 0.12
+        L += uni_l + s; R += uni_r + s
+    fc = fc0 + (fc1 - fc0) * (1 - np.exp(-t / max(0.3, dur * 0.5)))
+    L = sweep_lp(L, fc, order=4); R = sweep_lp(R, fc, order=4)
+    e = env_adsr(n, attack, 0.2, 0.92, release)
+    L *= e; R *= e
+    wl, _ = reverb(L, decay=decay, mix=0.4, tone=3500); _, wr = reverb(R, decay=decay, mix=0.4, tone=3500)
+    return wl * gain / len(chord), wr * gain / len(chord)
 
-def i_braam(f=36.71, dur=3.0, bright=1.0):
-    n = int(dur * SR)
-    voices = 0
-    for cents in (-9, -4, 3, 8):
-        voices = voices + saw(f, dur, cents) * 0.5 + saw(f * 2, dur, cents * 0.5) * 0.35
-    t = np.arange(n) / SR
-    fc = 150 + (1400 * bright) * (1 - np.exp(-t / 0.5))
-    v = sweep_lp(voices, fc, order=2)
-    v = softclip(v * 1.8, 1.6)
-    v *= env_adsr(n, 0.25, 0.6, 0.75, 1.0)
-    return reverb(v, decay=2.2, mix=0.3)
+def i_shimmer(chord, dur, gain=1.0):
+    return i_pad(chord, dur, gain=gain, fc0=1200, fc1=2200, attack=1.2, release=1.5, octave=1, vib=0.003, decay=4.0)
+
+def i_braam(f=36.71, dur=3.0):
+    """Braam suave: serras detunadas com passa-baixas fechado (<= 800 Hz), ataque lento, sub por baixo."""
+    n = int(dur * SR); t = np.arange(n) / SR
+    v = sum(saw(f, dur, d) * 0.45 + saw(f * 2, dur, d * 0.5) * 0.25 for d in (-8, -3, 4, 9))
+    fc = 120 + 680 * (1 - np.exp(-t / 0.6))
+    v = sweep_lp(v, fc, order=4)
+    v = softclip(v * 1.1, 1.1)
+    v += sine(f, dur) * 0.9 + sine(f * 2, dur) * 0.3
+    v *= env_adsr(n, 0.4, 0.5, 0.75, 1.2)
+    return reverb(v, decay=2.5, mix=0.35, tone=2500)
 
 def i_hit(size=1.0, tail=2.5):
-    dur = 0.6
-    n = int(dur * SR)
-    body = lp(noise(dur), 2500) * exp_decay(n, 0.12)
-    thump = sine_glide(90, 45, dur) * exp_decay(n, 0.25)
-    sub = sine(42, dur) * exp_decay(n, 0.5)
-    x = body * 0.8 + thump * 1.2 + sub * 0.9 * size
-    x = softclip(x, 1.4)
-    return reverb(x, decay=tail, mix=0.45 if tail > 1 else 0.15)
+    """Impacto: mais 'thump' grave, menos ruído; ataque de 8 ms; cauda de reverb escura."""
+    dur = 0.7; n = int(dur * SR)
+    body = lp(noise(dur), 1200) * exp_decay(n, 0.10) * 0.35
+    thump = sine_glide(85, 42, dur, curve=0.6) * exp_decay(n, 0.28) * 1.2
+    sub = sine(40, dur) * exp_decay(n, 0.55) * 0.9 * size
+    x = (body + thump + sub) * soft_attack(n, 8)
+    x = softclip(x, 1.15)
+    return reverb(x, decay=tail, mix=0.45, tone=2500)
 
-def i_hit_dry():
+def i_hit_soft():
     dur = 0.5; n = int(dur * SR)
-    x = lp(noise(dur), 900) * exp_decay(n, 0.08) + sine_glide(70, 38, dur) * exp_decay(n, 0.3)
-    return softclip(x, 1.3)
+    x = lp(noise(dur), 600) * exp_decay(n, 0.07) * 0.4 + sine_glide(70, 38, dur) * exp_decay(n, 0.3)
+    return reverb(x * soft_attack(n, 10), decay=1.2, mix=0.3, tone=2000)
 
-def i_riser(dur=3.0, f0=180, f1=2400, tone=True):
-    n = int(dur * SR)
-    t = np.arange(n) / SR
-    x = t / dur
-    fc = f0 * (f1 / f0) ** (x ** 1.4)
-    nz = sweep_bp(noise(dur), fc, width=0.9)
-    trem_rate = 4 + 26 * x ** 2
-    trem = 0.55 + 0.45 * np.sign(np.sin(2 * np.pi * np.cumsum(trem_rate) / SR))
-    e = (x ** 2.2) * 1.0
-    out = nz * e * trem
-    if tone:
-        gl = sine_glide(f0 / 2, f1 / 4, dur, curve=1.5) * e * 0.5 * trem
-        out = out + gl
-    return out
+def i_sub_drop(f0=55, f1=30, dur=2.5):
+    s = sine_glide(f0, f1, dur, curve=0.6)
+    return s * env_adsr(len(s), 0.03, 0.4, 0.7, 1.2)
 
-def i_swell(dur=1.5, f1=3000, f2=9000):
-    n = int(dur * SR)
-    x = (np.arange(n) / n) ** 3
-    return bp(noise(dur), f1, f2) * x
+def i_riser(dur=4.0, f0=150, f1=1800):
+    """Riser suave: ruído com banda subindo (teto 2,5 kHz), tremolo senoidal acelerando, sem tom agudo."""
+    n = int(dur * SR); t = np.arange(n) / SR; x = t / dur
+    fc = np.minimum(f0 * (f1 / f0) ** (x ** 1.3), 2500)
+    nz = sweep_bp(noise(dur), fc, width=1.0)
+    rate = 3 + 14 * x ** 2
+    trem = 0.6 + 0.4 * np.sin(2 * np.pi * np.cumsum(rate) / SR)
+    e = x ** 2.5
+    out = lp(nz * e * trem, 2500)
+    out += sine_glide(f0 / 3, f0, dur, curve=1.3) * e * 0.25   # tom grave subindo, discreto
+    return reverb(out, decay=1.8, mix=0.3, tone=2500)
+
+def i_swell(dur=1.5):
+    n = int(dur * SR); x = (np.arange(n) / n) ** 3
+    return lp(bp(noise(dur), 1500, 5000) * x, 4500)
 
 def i_reverse(dur=0.8, size=0.8):
     l, r = i_hit(size, tail=dur)
@@ -223,372 +237,284 @@ def i_reverse(dur=0.8, size=0.8):
     fade = np.linspace(0, 1, len(l)) ** 2
     return l * fade, r * fade
 
-def i_taiko(low=True):
-    dur = 0.7; n = int(dur * SR)
-    f0, f1 = (130, 52) if low else (200, 90)
-    x = sine_glide(f0, f1, dur, curve=0.5) * exp_decay(n, 0.22)
-    x += lp(noise(dur), 1800) * exp_decay(n, 0.02) * 0.6
-    x = softclip(x * 1.2, 1.2)
-    return reverb(x, decay=0.9, mix=0.25)
+def i_taiko(low=True, soft=False):
+    """Taiko: pele grave com ataque de 4 ms, passa-baixas 1,2 kHz, sala curta."""
+    dur = 0.8; n = int(dur * SR)
+    f0, f1 = (120, 50) if low else (180, 85)
+    x = sine_glide(f0, f1, dur, curve=0.5) * exp_decay(n, 0.26)
+    x += lp(noise(dur), 900) * exp_decay(n, 0.025) * (0.25 if soft else 0.4)
+    x = lp(x * soft_attack(n, 4), 1200)
+    x = softclip(x * 1.1, 1.1)
+    return reverb(x, decay=1.0, mix=0.3, tone=2000)
 
-def i_kick():
-    dur = 0.4; n = int(dur * SR)
-    x = sine_glide(160, 42, dur, curve=0.4) * exp_decay(n, 0.12)
-    x += lp(noise(dur), 3000) * exp_decay(n, 0.008)
-    return softclip(x * 1.3, 1.3)
+def i_shaker():
+    dur = 0.12; n = int(dur * SR)
+    return lp(bp(noise(dur), 2000, 5000) * exp_decay(n, 0.02) * soft_attack(n, 6), 5000)
 
-def i_snare(gain=1.0):
-    dur = 0.25; n = int(dur * SR)
-    x = bp(noise(dur), 900, 5000) * exp_decay(n, 0.05) + sine(190, dur) * exp_decay(n, 0.03) * 0.6
-    return x * gain
-
-def i_hat(dur=0.05):
+def i_ping(freq, dur=1.8):
+    """Sino/vidro suave, com reverb longo e sem parcial estridente."""
     n = int(dur * SR)
-    return hp(noise(dur), 7000) * exp_decay(n, 0.012)
+    x = sine(freq, dur) * exp_decay(n, 0.5) + sine(freq * 2.0, dur) * exp_decay(n, 0.18) * 0.25 + sine(freq * 2.76, dur) * exp_decay(n, 0.08) * 0.12
+    x = lp(x * soft_attack(n, 3), 6000)
+    return reverb(x * 0.6, decay=2.2, mix=0.45, tone=4000)
 
-def i_tick(kind="clock"):
-    if kind == "clock":
-        dur = 0.06; n = int(dur * SR)
-        return (sine(2100, dur) * 0.6 + hp(noise(dur), 3000) * 0.5) * exp_decay(n, 0.008)
-    if kind == "glass":
-        dur = 0.5; n = int(dur * SR)
-        x = sine(3200, dur) * exp_decay(n, 0.09) + sine(3200 * 2.41, dur) * exp_decay(n, 0.05) * 0.4
-        return reverb(x * 0.6, decay=1.0, mix=0.35)
-    if kind == "metal":
-        dur = 0.35; n = int(dur * SR)
-        x = 0
-        for k, a in ((1.0, 1), (1.83, 0.6), (2.71, 0.45), (3.96, 0.3)):
-            x = x + sine(1500 * k, dur) * a
-        x = x * exp_decay(n, 0.045) + hp(noise(dur), 5000) * exp_decay(n, 0.006)
-        return reverb(x * 0.5, decay=0.8, mix=0.3)
-    raise ValueError(kind)
-
-def i_ping(freq, dur=1.4):
-    n = int(dur * SR)
-    x = sine(freq, dur) * exp_decay(n, 0.45) + sine(freq * 2.76, dur) * exp_decay(n, 0.12) * 0.35 + sine(freq * 5.4, dur) * exp_decay(n, 0.05) * 0.15
-    return reverb(x * 0.7, decay=1.6, mix=0.4)
-
-def i_piano(freq, dur=3.5, bright=1.0):
+def i_piano(freq, dur=3.5, bright=0.8):
     n = int(dur * SR)
     x = 0
     for k in range(1, 7):
-        x = x + sine(freq * k, dur) * (1 / k ** 1.3) * bright ** (k - 1) * exp_decay(n, 1.4 / k ** 0.8)
-    x = x * (1 - np.exp(-np.arange(n) / (0.004 * SR)))
-    return reverb(x * 0.8, decay=2.8, mix=0.4)
+        x = x + sine(freq * k, dur) * (1 / k ** 1.4) * bright ** (k - 1) * exp_decay(n, 1.6 / k ** 0.8)
+    x = lp(x * soft_attack(n, 5), 5000)
+    return reverb(x * 0.8, decay=3.0, mix=0.4, tone=3500)
 
-def i_pad(chord, dur, gain=1.0, fc0=900, fc1=None, attack=1.2, release=1.5, octave=0, vib=0.003):
-    """Pad de cordas sintéticas: 2 serras detunadas + seno por voz, filtro com abertura lenta."""
-    n = int(dur * SR)
-    t = np.arange(n) / SR
-    L = np.zeros(n); R = np.zeros(n)
-    for i, name in enumerate(chord):
-        f = hz(name) * 2 ** octave
-        v = 1 + vib * np.sin(2 * np.pi * (4.6 + 0.3 * i) * t + i)
-        ph = 2 * np.pi * np.cumsum(f * v) / SR
-        s = np.sin(ph) * 0.6
-        left = saw(f, dur, -6 - 2 * i) * 0.35 + s
-        right = saw(f, dur, 6 + 2 * i) * 0.35 + s
-        L += left; R += right
-    fc1 = fc1 or fc0 * 1.6
-    fc = fc0 + (fc1 - fc0) * (1 - np.exp(-t / (dur * 0.5)))
-    L = sweep_lp(L, fc); R = sweep_lp(R, fc)
-    e = env_adsr(n, attack, 0.3, 0.9, release)
-    L *= e; R *= e
-    wl, _ = reverb(L, decay=2.4, mix=0.3); _, wr = reverb(R, decay=2.4, mix=0.3)
-    return wl * gain / len(chord), wr * gain / len(chord)
-
-def i_shimmer(chord, dur, gain=1.0):
-    return i_pad(chord, dur, gain=gain, fc0=2500, fc1=4500, attack=1.5, release=2.0, octave=1, vib=0.004)
-
-def i_bass(note, dur=0.28):
-    n = int(dur * SR)
-    f = hz(note)
-    x = lp(saw(f, dur) * 0.7 + sine(f, dur) * 0.6, 260) * exp_decay(n, 0.11)
-    return softclip(x * 1.4, 1.2)
+def i_bass(note, dur=0.8):
+    n = int(dur * SR); f = hz(note)
+    x = lp(saw(f, dur) * 0.5 + sine(f, dur) * 0.8, 220, order=4) * env_adsr(n, 0.02, 0.2, 0.6, 0.3)
+    return x
 
 def i_drone(freq, dur, gain=1.0):
     n = int(dur * SR); t = np.arange(n) / SR
-    x = sine(freq, dur) + 0.5 * sine(freq * 2.002, dur) + 0.25 * sine(freq * 3.0, dur)
-    x *= 0.8 + 0.2 * np.sin(2 * np.pi * 0.17 * t)
-    x *= env_adsr(n, 0.8, 0.1, 1.0, 1.0)
-    return x * gain
+    x = sine(freq, dur) + 0.4 * sine(freq * 2.001, dur) + 0.15 * sine(freq * 3.0, dur)
+    x *= 0.85 + 0.15 * np.sin(2 * np.pi * 0.15 * t)
+    return x * env_adsr(n, 1.0, 0.1, 1.0, 1.2) * gain
 
 def i_rumble(dur, gain=1.0):
     n = int(dur * SR); t = np.arange(n) / SR
-    x = lp(brown(dur), 110, order=2)
-    x *= 0.7 + 0.3 * np.sin(2 * np.pi * 0.23 * t) * np.sin(2 * np.pi * 0.07 * t + 1)
+    x = lp(brown(dur), 100, order=2)
+    x *= 0.7 + 0.3 * np.sin(2 * np.pi * 0.21 * t) * np.sin(2 * np.pi * 0.06 * t + 1)
     return x / (np.abs(x).max() + 1e-9) * gain
 
-def i_whoosh(dur=0.6, f_peak=2500):
-    n = int(dur * SR); t = np.arange(n) / SR
-    x = t / dur
-    fc = 300 + (f_peak - 300) * np.sin(np.pi * x) ** 1.5 + 200 * x
-    nz = sweep_bp(noise(dur), fc, width=0.7)
-    e = np.sin(np.pi * x) ** 2
-    return nz * e
+def i_whoosh(dur=0.7, f_peak=1800):
+    n = int(dur * SR); t = np.arange(n) / SR; x = t / dur
+    fc = 250 + (f_peak - 250) * np.sin(np.pi * x) ** 1.5
+    nz = lp(sweep_bp(noise(dur), fc, width=0.8), 2500)
+    return nz * np.sin(np.pi * x) ** 2
 
 def i_heartbeat():
-    """Dois batimentos surdos (lub-dub)."""
-    dur = 0.5; n = int(dur * SR)
-    a = sine_glide(80, 45, 0.25) * exp_decay(int(0.25 * SR), 0.07)
-    b = sine_glide(70, 40, 0.25) * exp_decay(int(0.25 * SR), 0.06) * 0.7
+    n = int(0.5 * SR)
+    a = sine_glide(75, 42, 0.25) * exp_decay(int(0.25 * SR), 0.07)
+    b = sine_glide(65, 38, 0.25) * exp_decay(int(0.25 * SR), 0.06) * 0.7
     x = np.zeros(n); x[: len(a)] += a; x[int(0.17 * SR): int(0.17 * SR) + len(b)] += b
-    return lp(x, 200)
+    return lp(x, 160)
 
 # ------------------------------------------------------------------ stems
 music = Stem("music"); perc = Stem("perc"); fx = Stem("fx"); amb = Stem("amb"); hits = Stem("hits")
 
-def whoosh_pan(t, dur=0.6, gain=1.0, f_peak=2500):
-    """Whoosh que cruza da esquerda para a direita, acompanhando o reveal dos textos."""
-    w = i_whoosh(dur, f_peak)
-    n = len(w); p = np.linspace(-0.8, 0.8, n)
-    th = (p + 1) * np.pi / 4
+def whoosh_pan(t, gain=0.3, dur=0.7, f_peak=1800):
+    w = i_whoosh(dur, f_peak); n = len(w)
+    th = (np.linspace(-0.7, 0.7, n) + 1) * np.pi / 4
     fx.add(t, (w * np.cos(th), w * np.sin(th)), gain)
 
-def taiko_grid(t0, t1, pattern, gain=1.0, low=True):
-    """pattern: lista de deslocamentos em batidas dentro de um compasso de 4 tempos."""
-    bar = 4 * BEAT
-    t = t0
-    while t < t1 - 1e-6:
-        for off in pattern:
-            tt = t + off * BEAT
-            if tt < t1:
-                perc.add(tt, i_taiko(low), gain)
-        t += bar
+def motif(t, notes, gain=0.5, step=BEAT):
+    for k, n in enumerate(notes):
+        music.add(t + k * step, i_piano(hz(n), 3.5, 0.75), gain * (1 - 0.12 * k))
 
-def grid(t0, t1, step, fn, gain=1.0, accent=None):
-    t = t0; k = 0
-    while t < t1 - 1e-6:
-        g = gain * (accent(k) if accent else 1.0)
-        perc.add(t, fn(), g)
-        t += step; k += 1
+def fill(n_bar, gain=0.7):
+    """Virada de 3 taikos no último tempo do compasso n, levando à cabeça do compasso seguinte."""
+    for k, off in enumerate((3.0, 3.5, 3.75)):
+        perc.add(bar(n_bar, off), i_taiko(low=(k == 0)), gain * (0.6 + 0.2 * k), onset=True)
+
+# =========================================================== harmonia por compasso (45 compassos)
+PROG = (["Dm"] * 3 + ["Dm_hi"]                          # cena 1  c0–3
+        + ["Dm", "Bb", "Dm", "Bb"]                       # cena 2  c4–7
+        + ["Dm5", "Dm5", "Bb5", "F5", "C5"]              # cena 3  c8–12
+        + ["Dm", "Bb", "F", "C", "Dm", "Bb", "F", "C"]   # cena 4  c13–20 (oitava acima)
+        + ["Dm5", "Dm5", "Bb5", "F5", "C5", "Dm5", "Bb5"]  # cena 5  c21–27
+        + ["Bbchoir", "Bbchoir", "Cchoir", "Cchoir", "Dm5"]  # cena 6  c28–32
+        + ["Dmaj5", "Dmaj", "Dmaj5", "Dmaj", "Dmaj5", "Dmaj", "Dmaj"]  # cena 7  c33–39
+        + ["Dmaj5"] * 5)                                 # cena 8  c40–44
+assert len(PROG) == 45
+
+def pad_gain(n):
+    if n <= 3: return 0.30 + 0.03 * n
+    if n <= 7: return 0.36 + 0.04 * (n - 4)
+    if n <= 12: return 0.50
+    if n <= 20: return 0.30 + 0.12 * (n - 13) / 7
+    if n <= 27: return 0.48
+    if n <= 32: return 0.50 if n != 31 else 0.42
+    if n <= 39: return 0.46 if n < 38 else 0.30
+    return 0.0                                           # cena 8 usa um pad longo próprio
+
+for n_bar, ch in enumerate(PROG):
+    g = pad_gain(n_bar)
+    if g <= 0: continue
+    octave = 1 if 13 <= n_bar <= 20 else 0
+    fc0, fc1 = (450, 900) if n_bar < 8 else ((550, 1100) if n_bar < 33 else (600, 1200))
+    if 4 <= n_bar <= 7:                                   # tensão da cena 2: filtro fecha
+        fc0, fc1 = 380, 650
+    music.add(bar(n_bar), i_pad(CH[ch], BAR + 0.5, gain=1.0, fc0=fc0, fc1=fc1, attack=0.35, release=0.5, octave=octave), g)
+    if 4 <= n_bar <= 39 and n_bar not in (28, 29, 30, 31, 32):
+        music.add(bar(n_bar), i_bass(BASS[ch], 1.0), 0.55 if n_bar >= 8 else 0.25 + 0.08 * (n_bar - 4))
+        if 8 <= n_bar <= 27:
+            music.add(bar(n_bar, 2), i_bass(BASS[ch], 0.7), 0.35)
 
 # =========================================================== VINHETA (0 – 18.22)
-amb.add(1.5, i_rumble(16.5, gain=1.0) * np.concatenate([np.linspace(0, 1, int(2 * SR)), np.ones(int(14.5 * SR))])[: int(16.5 * SR)], 0.032)
-music.add(2.5, i_piano(hz("D2"), 4.0, bright=0.8), 0.28)
-music.add(4.5, i_piano(hz("A2"), 4.0, bright=0.8), 0.24)
-music.add(6.0, i_piano(hz("F3"), 4.0, bright=0.9), 0.22)
-hits.add(6.6, i_reverse(0.9, 0.9), 0.55)
-hits.add(7.5, i_braam(hz("D1"), 3.2, bright=0.8), 0.6)
-music.add(7.5, i_shimmer(["D3", "A3", "D4"], 5.0, gain=0.8), 0.35)
-amb.add(7.5, i_rumble(10.7, gain=1.0), 0.05)
-music.add(9.0, i_pad(CH["Dm"], 3.5, gain=1.0, fc0=500, fc1=900, attack=0.8, release=0.6), 0.5)
-grid(9.0, 12.0, BEAT, lambda: i_tick("clock"), gain=0.35)
-hits.add(12.0, i_sub_drop(60, 28, 2.2), 0.8)
-fx.add(12.0, i_tick("metal"), 0.9)
-music.add(12.4, i_pad(CH["Dm"], 5.4, gain=0.5, fc0=400, fc1=700, attack=0.3, release=0.5), 0.35)
-fx.add(12.5, i_riser(5.2, 150, 3200), 0.55)
-# tiques dobrando de velocidade a cada 1,5 s
-for a, b, step in ((12.5, 14.0, 0.6), (14.0, 15.5, 0.3), (15.5, 17.0, 0.15), (17.0, 17.75, 0.075)):
-    grid(a, b, step, lambda: i_tick("clock"), gain=0.3)
-# 17.8 – 18.22: silêncio (nada é colocado; o corte é feito no master)
+amb.add(1.5, i_rumble(16.3) * np.concatenate([np.linspace(0, 1, int(2 * SR)), np.ones(int(14.3 * SR))])[: int(16.3 * SR)], 0.03)
+motif(2.5, ["D2"], 0.34); motif(4.5, ["A2"], 0.30); motif(6.0, ["F3"], 0.28)
+fx.add(6.6, i_reverse(0.9, 0.6), 0.35)
+music.add(7.5, i_pad(CH["Dm"], 5.0, gain=1.0, fc0=450, fc1=800, attack=0.6, release=1.0), 0.42)
+music.add(7.5, i_shimmer(["D3", "A3", "D4"], 5.0, gain=0.8), 0.22)
+hits.add(7.5, i_hit_soft(), 0.5)
+hits.add(12.0, i_sub_drop(55, 30, 2.0), 0.45)
+music.add(12.0, i_ping(hz("D5")), 0.35)
+music.add(12.3, i_pad(CH["Dm"], 5.5, gain=1.0, fc0=380, fc1=900, attack=0.4, release=0.4), 0.38)
+fx.add(12.7, i_riser(5.0, 120, 1500), 0.32)
+grid_t = 13.7
+while grid_t < 17.6:                                     # taikos suaves acelerando (não são "tiques")
+    perc.add(grid_t, i_taiko(False, soft=True), 0.3 + 0.25 * (grid_t - 13.7) / 4)
+    grid_t += 1.0 if grid_t < 15.7 else 0.5
+# 17.7 – 18.22: silêncio (feito no master)
 
-# =========================================================== CENA 1 GANCHO (c 0–8)
-hits.add(c(0.0), i_hit_dry(), 0.9)
-music.add(c(0.1), i_drone(hz("D2"), 5.6, gain=1.0), 0.28)
-for k in range(4):                                   # batimento a cada 1,2 s de 1,5 a 5,1 s
-    perc.add(c(1.5 + k * 1.2), i_heartbeat(), 0.9)
-for k in range(7):                                   # um tique por palavra (12 frames = 0,48 s)
-    fx.add(c(1.5 + k * 0.48), i_tick("clock"), 0.28, pan=-0.5 + k * 0.17)
-fx.add(c(4.8), i_swell(0.7, 2500, 8000), 0.45)
-hits.add(c(5.5), i_braam(hz("D1"), 3.0, bright=1.1), 0.95)
-hits.add(c(5.5), i_sub_drop(55, 30, 2.6), 0.9)
-hits.add(c(5.5), i_hit(1.0, 3.0), 0.9)
-music.add(c(5.6), i_drone(hz("D3"), 2.6, gain=1.0), 0.18)
-grid(c(6.5), c(8.0), BEAT, lambda: i_tick("clock"), gain=0.3)
+# =========================================================== CENA 1 GANCHO (c0–3)
+hits.add(bar(0), i_hit_soft(), 0.7, onset=True)
+music.add(bar(0) + 0.1, i_drone(hz("D2"), 7.5), 0.22)
+amb.add(bar(0), i_rumble(90.1), 0.016)                   # cola grave por todo o conteúdo
+motif(bar(0), ["D3", "A3", "F4"], 0.28)
+for t in (bar(0, 3), bar(1, 3), bar(2, 1)):              # batimento sob as palavras (na grade)
+    perc.add(t, i_heartbeat(), 0.8, onset=True)
+fx.add(c(4.9), i_swell(0.6), 0.25)
+hits.add(c(5.5), i_braam(hz("D1"), 2.6), 0.55, onset=True)          # "ATÉ AGORA." = c2 tempo 4
+hits.add(c(5.5), i_sub_drop(55, 30, 2.4), 0.6)
+hits.add(c(5.5), i_hit(0.8, 2.5), 0.55)
 
-# =========================================================== CENA 2 DOR (c 8–16)
-whoosh_pan(c(8.0), 0.6, 0.6)
-music.add(c(8.0), i_pad(CH["Dm"], 8.2, gain=1.0, fc0=350, fc1=1400, attack=0.6, release=0.2), 0.42)
-t = c(8.0); k = 0
-while t < c(15.8):                                   # baixo em colcheias crescendo
-    g = 10 ** ((-30 + 12 * (t - c(8.0)) / 8) / 20) * 3.2
-    perc.add(t, i_bass("D1"), g); t += 0.3; k += 1
-fx.add(c(8.5), i_tick("metal"), 0.6)
-fx.add(c(8.5), i_swell(0.5, 3000, 8000), 0.3)
-fx.add(c(12.0), i_tick("glass"), 0.5, pan=0.2)
-fx.add(c(12.5), i_riser(3.5, 200, 3800), 0.75)
-fx.add(c(12.5), i_swell(3.4, 3000, 9000), 0.5)
-t = c(12.5)
-while t < c(14.8):
-    perc.add(t, i_taiko(True), 0.7); t += BEAT
-t = c(14.8)
-while t < c(15.95):
-    perc.add(t, i_taiko(False), 0.65); t += 0.3
-# c(16.0)–c(16.2): silêncio, feito no master
+# =========================================================== CENA 2 DOR (c4–7)
+whoosh_pan(bar(4), 0.25)
+hits.add(bar(4), i_hit_soft(), 0.45, onset=True)
+motif(bar(4), ["D3", "A3", "F4"], 0.26)
+fx.add(bar(6), i_riser(3.75, 150, 1600), 0.36)
+for k in range(8):                                       # taikos em semínimas crescendo (c6–c7)
+    perc.add(bar(6, k), i_taiko(True, soft=True), 0.35 + 0.05 * k, onset=True)
+fill(7, 0.75)
+# 33.97 – 34.22: silêncio (master)
 
-# =========================================================== CENA 3 SOLUÇÃO (c 16–26)
-T3 = c(16.0)
-hits.add(T3, i_hit(1.2, 3.2), 1.0)
-hits.add(T3, i_braam(hz("D1"), 3.5, bright=1.2), 1.0)
-hits.add(T3, i_sub_drop(55, 28, 3.0), 1.0)
-fx.add(T3 - 0.9, i_reverse(0.9, 1.0), 0.6)
-# tema principal: Dm (2 compassos) -> Bb (2) -> F (2) -> C (2), 2,4 s por compasso
-prog = ["Dm", "Dm", "Bb", "Bb", "F", "F", "C", "C"]
-for i, ch in enumerate(prog):
-    t0 = T3 + i * 2.4
-    if t0 >= c(26.0): break
-    music.add(t0, i_pad(CH[ch], 2.6, gain=1.0, fc0=700, fc1=1900, attack=0.35, release=0.4), 0.5)
-    music.add(t0, i_bass(BASS[ch], 1.2), 0.9)
-taiko_grid(T3, c(26.0), [0, 2], gain=0.8)
-grid(T3 + BEAT, c(26.0), 2 * BEAT, lambda: i_tick("metal"), gain=0.45)
-music.add(c(17.5), i_shimmer(["D4", "A4", "D5"], 5.0, gain=0.7), 0.3)
-fx.add(c(20.3), i_reverse(0.7, 0.8), 0.5)
-hits.add(c(21.0), i_hit(0.8, 2.0), 0.8)
-perc.add(c(21.0), i_taiko(True), 1.0); perc.add(c(21.15), i_taiko(True), 0.8)
-fx.add(c(24.8), i_reverse(1.2, 0.9), 0.6)
+# =========================================================== CENA 3 SOLUÇÃO (c8–12)
+hits.add(bar(8), i_hit(1.1, 3.2), 0.85, onset=True)      # "CIPREM"
+hits.add(bar(8), i_braam(hz("D1"), 3.5), 0.75)
+hits.add(bar(8), i_sub_drop(55, 28, 3.0), 0.75)
+fx.add(bar(8) - 0.9, i_reverse(0.9, 0.9), 0.4)
+for n in range(8, 13):
+    perc.add(bar(n), i_taiko(True), 0.7, onset=True)
+    perc.add(bar(n, 2), i_taiko(False, soft=True), 0.35, onset=True)
+music.add(bar(8) + 1.0, i_shimmer(["D4", "A4", "D5"], 6.0, gain=0.8), 0.22)
+fx.add(bar(10, 2) - 0.6, i_reverse(0.6, 0.7), 0.3)
+hits.add(bar(10, 2), i_hit(0.7, 2.0), 0.55, onset=True)  # "Brita produzida aqui" = c10 tempo 3
+fill(12, 0.7)
 
-# =========================================================== CENA 4 PRODUTOS (c 26–42)
-T4 = c(26.0)
-whoosh_pan(T4, 0.6, 0.7)
-prog4 = ["Dm", "Bb", "Dm", "Bb", "F", "C", "Dm", "Bb"]
-for i, ch in enumerate(prog4):
-    t0 = T4 + i * 2.0
-    swell_g = 0.22 + 0.16 * i / 7                                    # o pad cresce ao longo da cena
-    music.add(t0, i_pad(CH[ch], 2.2, gain=0.9, fc0=700 + 120 * i, fc1=1600 + 200 * i, attack=0.25, release=0.3, octave=1), swell_g)
-    music.add(t0, i_bass(BASS[ch], 0.9), 0.8)
-    music.add(t0 + 1.0, i_bass(BASS[ch], 0.5), 0.6)
-# padrão motor em duas metades: a primeira mais seca, um respiro sem bumbo em 32,4–33,6 e a segunda mais cheia
-grid(T4, c(32.4), 2 * BEAT, i_kick, gain=0.8)                       # bumbo em 1 e 3
-grid(c(33.6), c(40.5), 2 * BEAT, i_kick, gain=1.0)
-taiko_grid(c(33.6), c(40.5), [1, 3], gain=0.6, low=False)           # taiko em 2 e 4 só na segunda metade
-grid(T4, c(32.4), BEAT / 2, i_hat, gain=0.3, accent=lambda k: 1.0 if k % 2 == 0 else 0.5)
-grid(c(33.6), c(40.5), BEAT / 4, i_hat, gain=0.32, accent=lambda k: 1.0 if k % 4 == 0 else (0.6 if k % 2 == 0 else 0.4))
-for k in range(4):                                                  # virada de taiko no respiro
-    perc.add(c(33.0 + 0.15 * k), i_taiko(False), 0.5 + 0.15 * k)
+# =========================================================== CENA 4 PRODUTOS (c13–20)
+whoosh_pan(bar(13), 0.25)
+hits.add(bar(13), i_hit_soft(), 0.4, onset=True)
+for n in range(13, 21):
+    if n == 17: continue                                 # respiro
+    perc.add(bar(n), i_taiko(True), 0.6, onset=True)
+    perc.add(bar(n, 2), i_taiko(False, soft=True), 0.4, onset=True)
 scale = ["D4", "E4", "F4", "G4", "A4", "Bb4", "C5"]
-for k, note in enumerate(scale):                                   # um produto a cada 1,5 s
-    tt = c(27.5 + 1.5 * k)
-    fx.add(tt, i_tick("metal"), 0.7, pan=-0.6)
-    music.add(tt, i_ping(hz(note)), 0.55, pan=-0.3)
-for tt in (29.2, 32.4, 35.6, 38.8):                                 # cortes de plano
-    whoosh_pan(c(tt), 0.5, 0.45, 3000)
-fx.add(c(38.0), i_tick("glass"), 0.55, pan=0.3)
-music.add(c(38.0), i_pad(CH["Dm5"], 4.0, gain=0.8, fc0=1200, fc1=3200, attack=0.4, release=0.6), 0.3)
-fx.add(c(40.3), i_reverse(1.6, 1.0), 0.65)
-t = c(40.4)
-while t < c(41.9):                                                  # tercinas subindo
-    perc.add(t, i_taiko(t < c(41.2)), 0.6 + 0.4 * (t - c(40.4)) / 1.5); t += BEAT / 3
+for k, note in enumerate(scale):                         # produtos: 27,5 + 1,5k s (todos na grade)
+    music.add(c(27.5 + 1.5 * k), i_ping(hz(note)), 0.4, pan=-0.3, onset=True)
+for tt in (29.2, 32.4, 35.6, 38.8):                      # cortes de plano: só ar, sem ritmo
+    whoosh_pan(c(tt), 0.14, 0.6, 1400)
+music.add(c(38.0), i_ping(hz("D5")), 0.3, pan=0.3)
+fill(20, 0.7)
 
-# =========================================================== CENA 5 GRUPO (c 42–56)
-T5 = c(42.0)
-hits.add(T5, i_hit(1.0, 2.4), 0.95)
-hits.add(T5, i_braam(hz("D1"), 2.2, bright=1.0), 0.7)
-prog5 = ["Dm", "Dm", "Bb", "Bb", "F", "C", "Dm", "Dm", "Bb", "C", "Dm", "Dm"]
-voices = 3
-for i, ch in enumerate(prog5):
-    t0 = T5 + i * 1.2
-    chord = CH[ch]
-    if t0 >= c(46.0): chord = chord + [chord[0].replace(chord[0][-1], str(int(chord[0][-1]) + 1))]
-    if t0 >= c(51.0): chord = chord + [chord[1].replace(chord[1][-1], str(int(chord[1][-1]) + 1))]
-    music.add(t0, i_pad(chord, 1.4, gain=1.0, fc0=800, fc1=2200, attack=0.2, release=0.3), 0.45)
-    music.add(t0, i_bass(BASS[ch], 0.6), 0.9)
-grid(T5, c(54.5), 2 * BEAT, i_kick, gain=1.0)
-grid(T5 + BEAT, c(54.5), 2 * BEAT, lambda: i_snare(1.0), gain=0.55)
-grid(T5, c(54.5), BEAT / 4, lambda: i_snare(0.35), gain=0.5, accent=lambda k: 1.0 if k % 4 == 0 else (0.7 if k % 2 == 0 else 0.45))
-for tt in (44.8, 47.6, 50.4, 53.2):                                 # taiko em cada corte
-    perc.add(c(tt), i_taiko(True), 1.0)
-    whoosh_pan(c(tt), 0.45, 0.4, 2200)
-music.add(c(43.5), i_shimmer(["D4", "A4", "F5"], 4.0, gain=0.7), 0.28)
-for tt in (46.0, 51.0, 53.5):                                       # bullets
-    whoosh_pan(c(tt), 0.5, 0.5, 2800)
-    fx.add(c(tt) + 0.1, i_tick("glass"), 0.5, pan=0.5)
-fx.add(c(54.3), i_swell(1.7, 2500, 9000), 0.6)
-fx.add(c(54.5), i_riser(1.5, 300, 2500, tone=False), 0.5)
+# =========================================================== CENA 5 GRUPO (c21–27)
+hits.add(bar(21), i_hit(0.9, 2.4), 0.65, onset=True)
+for n in range(21, 28):
+    perc.add(bar(n), i_taiko(True), 0.7, onset=True)
+    perc.add(bar(n, 2), i_taiko(True, soft=True), 0.45, onset=True)
+    if n < 27:
+        for k in range(8):
+            perc.add(bar(n, k * 0.5), i_shaker(), 0.16 if k % 2 == 0 else 0.09)
+music.add(bar(21) + 1.5, i_shimmer(["D4", "A4", "F5"], 5.0, gain=0.7), 0.2)
+for tt in (44.8, 47.6, 50.4, 53.2):                      # cortes de plano
+    whoosh_pan(c(tt), 0.16, 0.6, 1400)
+for tt in (46.0, 51.0, 53.5):                            # bullets (todos na grade)
+    music.add(c(tt), i_ping(hz("A4")), 0.3, pan=0.4, onset=True)
+fx.add(bar(27), i_swell(1.8), 0.3)
+fill(27, 0.7)
 
-# =========================================================== CENA 6 OBRAS (c 56–66)
-T6 = c(56.0)
-hits.add(T6, i_hit(0.9, 2.0), 0.85)
-grid(T6, c(62.4), BEAT, lambda: sine(46, 0.5) * exp_decay(int(0.5 * SR), 0.15), gain=0.8)   # pulso de sub em semínimas
-music.add(T6, i_pad(CH["Bbchoir"], 3.4, gain=1.0, fc0=900, fc1=2600, attack=0.5, release=0.4), 0.5)
-music.add(T6 + 3.2, i_pad(CH["Cchoir"], 3.6, gain=1.0, fc0=1000, fc1=2800, attack=0.4, release=0.4), 0.52)
-music.add(T6, i_bass("Bb1", 1.5), 0.8); music.add(T6 + 3.2, i_bass("C2", 1.5), 0.8)
+# =========================================================== CENA 6 OBRAS (c28–32)
+hits.add(bar(28), i_hit(0.8, 2.0), 0.55, onset=True)
+music.add(bar(28), i_bass("Bb1", 3.9), 0.4); music.add(bar(30), i_bass("C2", 3.9), 0.4)
+for n in range(28, 32):
+    for k in range(4):
+        t = bar(n, k)
+        if c(62.5) <= t < c(63.5): continue              # 1 s sem pulso depois do hit
+        perc.add(t, lp(sine(46, 0.45) * exp_decay(int(0.45 * SR), 0.14) * soft_attack(int(0.45 * SR), 6), 120), 0.55, onset=True)
 for k in range(3):
-    fx.add(c(59.0 + 0.4 * k), i_tick("glass"), 0.5, pan=-0.5 + 0.5 * k)
-fx.add(c(60.0), i_riser(2.5, 220, 4200), 0.85)
-fx.add(c(60.0), i_swell(2.4, 3000, 10000), 0.55)
-for a, b, step in ((60.0, 61.0, 0.3), (61.0, 61.8, 0.15), (61.8, 62.45, 0.075)):
-    grid(c(a), c(b), step, lambda: i_tick("clock"), gain=0.35)
-grid(c(60.0), c(62.4), BEAT / 2, lambda: i_taiko(False), gain=0.7)
-hits.add(c(62.5), i_hit(1.1, 3.0), 1.0)
-hits.add(c(62.5), i_sub_drop(55, 28, 2.8), 0.95)
-music.add(c(62.6), i_pad(CH["Dm5"], 3.6, gain=1.0, fc0=1200, fc1=2000, attack=0.6, release=0.5), 0.45)
-# 62.5–63.5: sem percussão (respiro); volta em meia intensidade
-grid(c(63.6), c(65.6), 2 * BEAT, i_kick, gain=0.55)
-grid(c(63.6), c(65.6), BEAT / 2, i_hat, gain=0.25)
-fx.add(c(65.0), i_reverse(1.0, 0.9), 0.55)
+    music.add(bar(29, 2 + k), i_ping(hz("A4")), 0.25, pan=-0.4 + 0.4 * k, onset=True)   # chips
+fx.add(c(60.0), i_riser(2.5, 180, 2000), 0.36)
+fx.add(c(60.0), i_swell(2.4), 0.25)
+hits.add(c(62.5), i_hit(1.0, 3.0), 0.8, onset=True)      # "Quem constrói aqui" = c31 tempo 2
+hits.add(c(62.5), i_sub_drop(55, 28, 2.8), 0.7)
+music.add(c(62.6), i_shimmer(["D4", "A4", "D5"], 4.0, gain=0.8), 0.2)
+fill(32, 0.45)
 
-# =========================================================== CENA 7 PARCERIA (c 66–80)
-T7 = c(66.0)
-hits.add(T7, i_hit(0.8, 2.6), 0.75)
-for i in range(6):                                                  # Ré maior aberto, 2,4 s por compasso
-    t0 = T7 + i * 2.4
-    g = 1.0 if t0 < c(76.0) else 0.6
-    music.add(t0, i_pad(CH["Dmaj5"] if i % 2 == 0 else CH["Dmaj"], 2.6, gain=1.0, fc0=1100, fc1=3000, attack=0.4, release=0.5), 0.42 * g)
-    music.add(t0, i_bass("D2", 1.4), 0.7 * g)
-music.add(T7, i_shimmer(["D4", "F#4", "A4", "D5"], 8.0, gain=0.9), 0.3)
-grid(T7, c(76.0), 4 * BEAT, i_kick, gain=0.6)
-grid(T7, c(76.0), BEAT / 2, i_hat, gain=0.2, accent=lambda k: 1.0 if k % 2 == 0 else 0.5)
-whoosh_pan(c(68.5), 0.6, 0.35, 2000)
+# =========================================================== CENA 7 PARCERIA (c33–39)
+hits.add(bar(33), i_hit(0.7, 2.6), 0.5, onset=True)
+motif(bar(33), ["D3", "A3", "F#4"], 0.3)
+music.add(bar(33), i_shimmer(["D4", "F#4", "A4", "D5"], 9.0, gain=0.9), 0.22)
+for n in range(33, 38):
+    perc.add(bar(n), i_taiko(True, soft=True), 0.4, onset=True)
+whoosh_pan(c(68.5), 0.2, 0.7, 1200)
 for k, (tt, note) in enumerate(((69.0, "D5"), (72.0, "F#5"), (75.0, "A5"))):
-    whoosh_pan(c(tt), 0.5, 0.4, 2600)
-    music.add(c(tt) + 0.05, i_ping(hz(note), 1.8), 0.55, pan=-0.5 + 0.5 * k)
-# 79.5–80.0: silêncio no master
+    whoosh_pan(c(tt), 0.18, 0.6, 1400)
+    music.add(c(tt), i_ping(hz(note), 2.0), 0.4, pan=-0.5 + 0.5 * k, onset=True)
+# 97.72 – 98.22: silêncio (master)
 
-# =========================================================== CENA 8 FINAL (c 80–90)
-T8 = c(80.0)
-hits.add(T8, i_braam(hz("D1"), 4.0, bright=1.0), 0.9)
-hits.add(T8, i_hit(1.2, 4.0), 1.0)
-hits.add(T8, i_sub_drop(50, 30, 3.0), 0.8)
-music.add(T8 + 0.2, i_shimmer(["D4", "F#4", "A4", "D5"], 8.5, gain=1.0), 0.32)
-music.add(c(82.0), i_pad(CH["Dmaj5"], 8.0, gain=1.0, fc0=700, fc1=2400, attack=1.5, release=2.5), 0.45)
-music.add(c(82.0), i_bass("D2", 2.0), 0.5)
-fx.add(c(84.5), i_tick("glass"), 0.5, pan=0.0)
-music.add(c(86.5), i_piano(hz("D5"), 3.5, bright=0.7), 0.5)
-music.add(c(86.5), i_piano(hz("A4"), 3.5, bright=0.7), 0.3)
+# =========================================================== CENA 8 FINAL (c40–44)
+hits.add(bar(40), i_braam(hz("D1"), 4.0), 0.7, onset=True)
+hits.add(bar(40), i_hit(1.1, 4.0), 0.8)
+hits.add(bar(40), i_sub_drop(50, 30, 3.0), 0.6)
+motif(bar(40) + 0.4, ["D3", "A3", "F#4"], 0.3)
+music.add(bar(40) + 0.3, i_shimmer(["D4", "F#4", "A4", "D5"], 9.0, gain=1.0), 0.24)
+music.add(bar(41), i_pad(CH["Dmaj5"], 8.5, gain=1.0, fc0=500, fc1=1300, attack=1.5, release=2.5), 0.45)
+music.add(bar(41), i_bass("D2", 2.5), 0.35)
+music.add(c(84.5), i_ping(hz("D5")), 0.3, onset=True)                       # contatos
+music.add(c(86.5), i_piano(hz("D5"), 3.5, 0.7), 0.4)                        # assinatura
+music.add(c(86.5), i_piano(hz("A4"), 3.5, 0.7), 0.25)
 
 # ------------------------------------------------------------------ master
 def rms_env(x, win=0.05):
     n = int(win * SR)
-    k = np.ones(n) / n
-    return np.sqrt(np.convolve(x ** 2, k, mode="same") + 1e-12)
+    return np.sqrt(np.convolve(x ** 2, np.ones(n) / n, mode="same") + 1e-12)
 
 def gain_curve(t_pts, g_pts):
-    t = np.arange(N) / SR
-    return np.interp(t, t_pts, g_pts)
+    return np.interp(np.arange(N) / SR, t_pts, g_pts)
 
 M = music.stereo(); P = perc.stereo(); F = fx.stereo(); A = amb.stereo(); H = hits.stereo()
+duck = 1 - 0.30 * np.clip(rms_env(H.mean(axis=1)) / 0.2, 0, 1)      # música cede ~3 dB nos hits
+mix = (M + P) * duck[:, None] + F + A + H
 
-# ducking: música/percussão cedem 4 dB durante os hits grandes
-duck = 1 - 0.37 * np.clip(rms_env(H.mean(axis=1)) / 0.25, 0, 1)
-mix = (M * 1.0 + P * 0.9) * duck[:, None] + F * 0.9 + A * 1.0 + H * 1.0
-
-# silêncios de impacto (cortes secos no master, com 5 ms de rampa)
 def cut(mix, t0, t1):
-    a, b = int(t0 * SR), int(t1 * SR); r = int(0.005 * SR)
+    a, b = int(t0 * SR), int(t1 * SR); r = int(0.008 * SR)
     mix[a:b] = 0
     mix[a - r:a] *= np.linspace(1, 0, r)[:, None]
     mix[b:b + r] *= np.linspace(0, 1, r)[:, None]
-for t0, t1 in ((17.8, C0), (c(16.0) - 0.2, c(16.0)), (c(79.5), c(80.0))):
+for t0, t1 in ((17.7, C0), (bar(8) - 0.25, bar(8)), (bar(40) - 0.5, bar(40))):
     cut(mix, t0, t1)
 
-# fades globais: silêncio até 1,5 s e fade final de 2,8 s
 mix *= gain_curve([0, 1.5, 1.6, c(87.4), DUR], [0, 0, 1, 1, 0])[:, None]
 
-# compressão leve (1.5:1 acima de -12 dBFS) + soft clip + normalização a -1 dBTP
+# passa-baixas suave no master, compressão 1.5:1 acima de -14 dBFS, alvo -16 LUFS, pico <= -3 dBTP
+mix = np.stack([lp(mix[:, 0], 9000), lp(mix[:, 1], 9000)], axis=1)
 e = rms_env(mix.mean(axis=1), 0.08)
-thr = 10 ** (-12 / 20)
-gr = np.where(e > thr, (thr / e) ** (1 / 3), 1.0)
-mix *= gr[:, None]
-mix = np.tanh(mix * 1.15) / np.tanh(1.15)
-mix *= (10 ** (-1 / 20)) / (np.abs(mix).max() + 1e-9)
-mix *= 10 ** (-2.1 / 20)      # leva o programa de ~-12 para ~-14 LUFS (pico fica em ~-3 dBTP)
+thr = 10 ** (-14 / 20)
+mix *= np.where(e > thr, (thr / e) ** (1 / 3), 1.0)[:, None]
+rms = np.sqrt(np.mean(mix ** 2))
+mix *= 10 ** (-17.2 / 20) / rms                          # RMS -17.2 dBFS ~ -16 LUFS (medido na v1)
+peak_lim = 10 ** (-3 / 20)
+over = np.abs(mix) > peak_lim
+if over.any():
+    mix = np.where(over, np.sign(mix) * (peak_lim + (np.abs(mix) - peak_lim) * 0.15), mix)
+mix = np.clip(mix, -0.99, 0.99)
 
 out = sys.argv[1] if len(sys.argv) > 1 else os.path.join(os.path.dirname(__file__), "..", "public", "audio", "score.wav")
 wavfile.write(out, SR, (mix * 32767).astype(np.int16))
 
-# relatório: RMS por segundo (anti-monotonia) e picos nos cues
+# relatório
 sec_rms = [20 * math.log10(np.sqrt(np.mean(mix[i * SR:(i + 1) * SR] ** 2)) + 1e-9) for i in range(int(DUR))]
 print(f"score.wav: {DUR} s, pico {20*math.log10(np.abs(mix).max()):.1f} dBFS, RMS médio {20*math.log10(np.sqrt(np.mean(mix**2))):.1f} dBFS")
-print("RMS por segundo (dBFS):")
-print(" ".join(f"{i}:{v:.0f}" for i, v in enumerate(sec_rms)))
+print("RMS por segundo (dBFS):", " ".join(f"{i}:{v:.0f}" for i, v in enumerate(sec_rms)))
+ons = sorted(perc.onsets + hits.onsets + music.onsets)
+off = [((t - C0) / BEAT) % 1 for t in ons if t >= C0]
+off = [min(o, 1 - o) for o in off]
+print(f"onsets no conteúdo: {len(off)}; fora da grade de 0,5 s (>10 ms): {sum(1 for o in off if o * BEAT > 0.01)}")
+print("fronteiras de cena em cabeça de compasso:", all(abs(((C0 + s) - C0) / BAR - round(((C0 + s) - C0) / BAR)) < 1e-6 for s in (0, 8, 16, 26, 42, 56, 66, 80)))

@@ -119,7 +119,7 @@ Duração total do conteúdo: 90 s (2250 frames a 25 fps), somando as 8 cenas ab
 |---|---|
 | **Imagem** | novo_investimento 00:36.0–00:40.7: Cartela do Grupo São Vicente com partículas azuis e logos das empresas do grupo (36–40 s). Congelar o último frame e prolongar até 90 s. |
 | **Tratamento** | Alternativa: fundo gerado no Remotion em navy #01002D com partículas, replicando a cartela, para colocar o logo da CIPREM no centro. |
-| **Texto na tela** | 80.0 s — TÍTULO: CIPREM  |  GRUPO SÃO VICENTE<br>82.0 s — APOIO: Parcerias e pré-contratos: fale com a nossa equipe hoje, aqui no evento.<br>84.5 s — [WhatsApp comercial]  |  [Instagram]  |  [site]  [prata, 28 px. PREENCHER com os contatos reais antes de renderizar.]<br>86.5 s — Brita de São Mateus para São Mateus.  [assinatura, itálico leve, prata, 32 px] |
+| **Texto na tela** | 80.0 s — TÍTULO: CIPREM  |  GRUPO SÃO VICENTE<br>82.0 s — APOIO: Parcerias e pré-contratos: fale com a nossa equipe hoje, aqui no evento.<br>84.5 s — gerencia1@mineracaosaovicente.com.br  |  www.mineracaosaovicente.com.br<br>(73) 3262-1601  |  (73) 99983-4832  [prata, 28 px, duas linhas (e-mail e site; telefones)]<br>86.5 s — Brita de São Mateus para São Mateus.  [assinatura, itálico leve, prata, 32 px] |
 | **Animação** | Logo/nome entra com brilho metálico. Chamada entra por fade. Contatos entram com linha prata se desenhando por cima. Assinatura entra por último e tudo faz fade para preto nos últimos 20 frames. |
 | **Som e efeitos** | Hit final com cauda longa em 80 s; silêncio de 0.5 s antes do hit (corte da trilha em 79.5 s) para dar peso. |
 | **Trilha** | 79.5 s: corte seco da trilha (meio segundo de silêncio). 80 s: acorde final sustentado com cauda que morre junto com o fade para preto em 90 s. |

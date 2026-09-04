@@ -256,7 +256,7 @@
       "subtitle": "Parcerias e pré-contratos: fale com a nossa equipe hoje, aqui no evento.",
       "subtitle_in_s": 82.0,
       "extra": [
-        {"text": "[WhatsApp comercial]  |  [Instagram]  |  [site]", "in_s": 84.5, "style": "prata, 28 px. PREENCHER com os contatos reais antes de renderizar."},
+        {"text": "gerencia1@mineracaosaovicente.com.br  |  www.mineracaosaovicente.com.br\n(73) 3262-1601  |  (73) 99983-4832", "in_s": 84.5, "style": "prata, 28 px, duas linhas (e-mail e site; telefones)"},
         {"text": "Brita de São Mateus para São Mateus.", "in_s": 86.5, "style": "assinatura, itálico leve, prata, 32 px"}
       ],
       "animation": "Logo/nome entra com brilho metálico. Chamada entra por fade. Contatos entram com linha prata se desenhando por cima. Assinatura entra por último e tudo faz fade para preto nos últimos 20 frames.",

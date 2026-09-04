@@ -43,7 +43,9 @@ export const S8Final: React.FC<{ sc: Scene }> = ({ sc }) => {
         <Fade text={grupo} from={t0 + 12} size={30} color={C.silver} upper tracking={0.35} weight={500} />
         <Rule from={t1 - 10} width={700} style={{ marginTop: 10 }} />
         <Fade text={sc.subtitle} from={t1} size={40} maxWidth={1300} />
-        <Fade text={contatos.text} from={tc} size={26} color={C.silverDark} tracking={0.08} style={{ marginTop: 18 }} />
+        {contatos.text.split("\n").map((linha, i) => (
+          <Fade key={i} text={linha} from={tc + i * 10} size={28} color={C.silver} tracking={0.06} style={{ marginTop: i === 0 ? 18 : 4 }} />
+        ))}
         <Fade text={assinatura.text} from={ta} size={32} color={C.silver} italic style={{ marginTop: 26 }} />
       </Safe>
       <AbsoluteFill style={{ background: "#000", opacity: fadeOut }} />
