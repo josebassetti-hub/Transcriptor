@@ -51,8 +51,6 @@ export const SCENES = {
 export const TRANSITION = 12;
 export const TOTAL_FRAMES = Object.values(SCENES).reduce((a, b) => a + b, 0) - TRANSITION * (Object.keys(SCENES).length - 1);
 
-const T: React.FC = () => <TransitionSeries.Transition presentation={fade()} timing={linearTiming({ durationInFrames: TRANSITION })} />;
-
 export const GTKInstitutional: React.FC<GTKProps> = (props) => {
   return (
     <AbsoluteFill style={{ background: colors.navyDeep }}>
@@ -60,35 +58,35 @@ export const GTKInstitutional: React.FC<GTKProps> = (props) => {
         <TransitionSeries.Sequence durationInFrames={SCENES.brand} name="01 Marca">
           <Scene01Brand />
         </TransitionSeries.Sequence>
-        <T />
+        <TransitionSeries.Transition presentation={fade()} timing={linearTiming({ durationInFrames: TRANSITION })} />
         <TransitionSeries.Sequence durationInFrames={SCENES.company} name="02 Empresa">
           <Scene02Company />
         </TransitionSeries.Sequence>
-        <T />
+        <TransitionSeries.Transition presentation={fade()} timing={linearTiming({ durationInFrames: TRANSITION })} />
         <TransitionSeries.Sequence durationInFrames={SCENES.products} name="03 Produtos">
           <Scene03Products />
         </TransitionSeries.Sequence>
-        <T />
+        <TransitionSeries.Transition presentation={fade()} timing={linearTiming({ durationInFrames: TRANSITION })} />
         <TransitionSeries.Sequence durationInFrames={SCENES.line} name="04 Linha">
           <Scene04Line />
         </TransitionSeries.Sequence>
-        <T />
+        <TransitionSeries.Transition presentation={fade()} timing={linearTiming({ durationInFrames: TRANSITION })} />
         <TransitionSeries.Sequence durationInFrames={SCENES.capacity} name="05 Capacidade">
           <Scene05Capacity />
         </TransitionSeries.Sequence>
-        <T />
+        <TransitionSeries.Transition presentation={fade()} timing={linearTiming({ durationInFrames: TRANSITION })} />
         <TransitionSeries.Sequence durationInFrames={SCENES.plant} name="06 Planta 3D">
           <Scene06Plant />
         </TransitionSeries.Sequence>
-        <T />
+        <TransitionSeries.Transition presentation={fade()} timing={linearTiming({ durationInFrames: TRANSITION })} />
         <TransitionSeries.Sequence durationInFrames={SCENES.investment} name="07 Investimento">
           <Scene07Investment investmentBRL={props.investmentBRL} />
         </TransitionSeries.Sequence>
-        <T />
+        <TransitionSeries.Transition presentation={fade()} timing={linearTiming({ durationInFrames: TRANSITION })} />
         <TransitionSeries.Sequence durationInFrames={SCENES.jobs} name="08 Empregos">
           <Scene08Jobs directJobs={props.directJobs} indirectJobs={props.indirectJobs} />
         </TransitionSeries.Sequence>
-        <T />
+        <TransitionSeries.Transition presentation={fade()} timing={linearTiming({ durationInFrames: TRANSITION })} />
         <TransitionSeries.Sequence durationInFrames={SCENES.outro} name="09 Encerramento">
           <Scene09Outro contactName={props.contactName} contactRole={props.contactRole} contactPhone={props.contactPhone} />
         </TransitionSeries.Sequence>
