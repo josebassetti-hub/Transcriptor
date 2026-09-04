@@ -14,6 +14,22 @@ tributação brasileira por regime (Simples Nacional, Lucro Presumido, Lucro Rea
 | `index.html` | O app completo (simulação técnica + apresentação + parâmetros) |
 | `original/Simulador_BNB_1.html` | Versão original intacta — baseline de regressão do motor |
 | `README.md` | Este guia |
+| `src/`, `remotion.config.ts`, `package.json` | Projeto Remotion (template Hello World) — ver seção abaixo |
+| `.agents/skills/` | Agent Skills oficiais do Remotion (`npx skills add remotion-dev/skills`) |
+
+## Projeto Remotion (vídeo)
+
+Projeto criado com `npx create-video@latest --hello-world`. Requer Node 18+.
+
+```console
+npm install        # instala dependências
+npm run dev        # abre o Remotion Studio em http://localhost:3000
+npx remotion render HelloWorld out/video.mp4   # renderiza a composição
+npm run lint       # eslint + tsc
+```
+
+Composições registradas em `src/Root.tsx`: `HelloWorld` e `OnlyLogo`. Guia original do
+template em `REMOTION.md`.
 
 ## Os três modos
 
