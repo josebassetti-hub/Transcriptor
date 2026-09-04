@@ -28,7 +28,7 @@ export const S7Parceria: React.FC<{ sc: Scene }> = ({ sc }) => {
   const scale = 1 - 0.25 * m;
   return (
     <AbsoluteFill>
-      <ClipSequence cuts={cuts} totalFrames={sc.durationFrames} weights={[5, 4, 5]} darken={0.3} gradient="center" />
+      <ClipSequence cuts={cuts} totalFrames={sc.durationFrames} weights={[5, 4, 5]} darken={0.15} gradient="bottom" />
       <div style={{ position: "absolute", top: LETTERBOX, bottom: LETTERBOX, left: 0, right: 0, display: "flex", alignItems: "center", justifyContent: "center" }}>
         <div style={{ transform: `translateY(${ty}px) scale(${scale})` }}>
           <Reveal text={<>VAMOS CONSTRUIR<br />SÃO MATEUS JUNTOS.</>} from={t0} size={74} maxWidth={1500} duration={26} />

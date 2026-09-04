@@ -33,7 +33,11 @@ export const Clip: React.FC<Props> = ({ file, inS, outS, displayFrames, darken =
   const rate = clamp(srcFrames / displayFrames, 0.5, maxRate);
   const covered = Math.min(displayFrames, Math.floor(srcFrames / rate));
   const startFrom = Math.round(inS * FPS);
-  const endAt = startFrom + Math.ceil(covered * rate);
+  // No Remotion, endAt - startFrom define quantos frames da COMPOSIÇÃO o vídeo fica visível;
+  // o playbackRate só altera o tempo da mídia. Por isso a janela é `covered`, não o trecho da fonte.
+  const endAt = startFrom + covered;
+  // último quadro da mídia efetivamente exibido (para o congelamento)
+  const lastMedia = startFrom + Math.max(0, Math.ceil(covered * rate) - 1);
   const src = staticFile(footageFile(file));
 
   const overlays: React.CSSProperties[] = [];
@@ -51,7 +55,7 @@ export const Clip: React.FC<Props> = ({ file, inS, outS, displayFrames, darken =
       {covered < displayFrames ? (
         <Sequence from={covered} durationInFrames={displayFrames - covered} layout="none">
           <Freeze frame={0}>
-            <OffthreadVideo src={src} startFrom={endAt - 1} endAt={endAt} muted style={{ width: "100%", height: "100%", objectFit: "cover", transform: `scale(${zoom})` }} />
+            <OffthreadVideo src={src} startFrom={lastMedia} endAt={lastMedia + 1} muted style={{ width: "100%", height: "100%", objectFit: "cover", transform: `scale(${zoom})` }} />
           </Freeze>
         </Sequence>
       ) : null}

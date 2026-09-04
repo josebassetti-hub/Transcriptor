@@ -28,7 +28,7 @@ export const S6Obras: React.FC<{ sc: Scene }> = ({ sc }) => {
   const frame = useCurrentFrame();
   return (
     <AbsoluteFill>
-      <Clip file={f.arquivo} inS={f.in_s!} outS={f.out_s!} displayFrames={sc.durationFrames} darken={0.3} gradient="center" zoom={1.04} />
+      <Clip file={f.arquivo} inS={f.in_s!} outS={f.out_s!} displayFrames={sc.durationFrames} darken={0.12} gradient="center" zoom={1.04} />
       <Safe justify="center" style={{ gap: 40 }}>
         <Reveal text={sc.title} from={t0} until={tk} size={62} maxWidth={1500} duration={26} />
         <div style={{ display: "flex", gap: 22, justifyContent: "center" }}>
