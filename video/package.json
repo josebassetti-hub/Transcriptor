@@ -1,0 +1,23 @@
+{
+  "name": "projet-video-institucional",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Vídeo institucional Projet Consultoria (60 s, 1920x1080, motion graphics) em Remotion",
+  "scripts": {
+    "render": "remotion render Projet out/projet-institucional.mp4 --browser-executable \"$REMOTION_BROWSER\"",
+    "still": "remotion still Projet",
+    "studio": "remotion studio"
+  },
+  "dependencies": {
+    "@fontsource/inter": "^5.0.0",
+    "@remotion/cli": "4.0.520",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "remotion": "4.0.520"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "sharp": "^0.35.4",
+    "typescript": "^5.6.0"
+  }
+}
