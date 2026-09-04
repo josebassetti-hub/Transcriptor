@@ -191,8 +191,8 @@
       "footage": {
         "arquivo": "vinheta_apresenta",
         "in_s": 1.0,
-        "out_s": 5.5,
-        "descricao": "Reaproveitar os planos reais de obra da abertura: operário na planta (1–2 s), escavadeira com pessoas no pátio (2–3 s), pavimentadora de asfalto com engenheira (3–4 s), central de concreto (4–5 s). Esticar com câmera lenta 0.5x para cobrir 10 s.",
+        "out_s": 5.0,
+        "descricao": "Reaproveitar os planos reais de obra da abertura: operário na planta (1–2 s), escavadeira com pessoas no pátio (2–3 s), pavimentadora de asfalto com engenheira (3–4 s), central de concreto (4–5 s). Cortar em 5.0 s, antes da transição escura para o logo. Câmera lenta 0.5x cobre 8 s e o último quadro fica congelado nos 2 s finais.",
         "tratamento": "SUBSTITUIR por drone das obras de Guriri / Contorno ES-318 se a produção conseguir gravar antes do evento. Até lá, este trecho cobre a cena.",
         "alternativa": "novo_investimento 16–24 s (aérea da jazida) com zoom lento, se não quiser repetir imagem da vinheta."
       },

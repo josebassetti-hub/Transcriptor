@@ -1,0 +1,24 @@
+{
+  "name": "ciprem-evento-video",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Video comercial da CIPREM para o evento (vinheta + 8 cenas, um unico MP4)",
+  "scripts": {
+    "preview": "remotion preview src/index.ts",
+    "compositions": "remotion compositions src/index.ts",
+    "render:preview": "remotion render src/index.ts CipremEvento out/preview.mp4 --scale 0.5 --jpeg-quality 70 --browser-executable /opt/pw-browsers/chromium_headless_shell-1194/chrome-linux/headless_shell",
+    "render": "remotion render src/index.ts CipremEvento out/ciprem-evento.mp4 --codec h264 --crf 18 --browser-executable /opt/pw-browsers/chromium_headless_shell-1194/chrome-linux/headless_shell"
+  },
+  "dependencies": {
+    "@fontsource/montserrat": "^5.3.0",
+    "@remotion/cli": "4.0.520",
+    "@remotion/fonts": "^4.0.520",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "remotion": "4.0.520"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.12",
+    "typescript": "^5.6.3"
+  }
+}

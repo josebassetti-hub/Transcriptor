@@ -95,7 +95,7 @@ Duração total do conteúdo: 90 s (2250 frames a 25 fps), somando as 8 cenas ab
 
 | Campo | Conteúdo |
 |---|---|
-| **Imagem** | vinheta_apresenta 00:01.0–00:05.5: Reaproveitar os planos reais de obra da abertura: operário na planta (1–2 s), escavadeira com pessoas no pátio (2–3 s), pavimentadora de asfalto com engenheira (3–4 s), central de concreto (4–5 s). Esticar com câmera lenta 0.5x para cobrir 10 s.<br>Alternativa: novo_investimento 16–24 s (aérea da jazida) com zoom lento, se não quiser repetir imagem da vinheta. |
+| **Imagem** | vinheta_apresenta 00:01.0–00:05.0: Reaproveitar os planos reais de obra da abertura: operário na planta (1–2 s), escavadeira com pessoas no pátio (2–3 s), pavimentadora de asfalto com engenheira (3–4 s), central de concreto (4–5 s). Cortar em 5.0 s, antes da transição escura para o logo. Câmera lenta 0.5x cobre 8 s e o último quadro fica congelado nos 2 s finais.<br>Alternativa: novo_investimento 16–24 s (aérea da jazida) com zoom lento, se não quiser repetir imagem da vinheta. |
 | **Tratamento** | SUBSTITUIR por drone das obras de Guriri / Contorno ES-318 se a produção conseguir gravar antes do evento. Até lá, este trecho cobre a cena. |
 | **Texto na tela** | 56.0 s — TÍTULO: SÃO MATEUS VIVE O MAIOR CICLO DE OBRAS DA SUA HISTÓRIA.<br>59.0 s — APOIO: Drenagem e pavimentação de Guriri  |  Contorno ES-318  |  Terceiras faixas da BR-101<br>62.5 s — QUEM CONSTRÓI AQUI PRECISA DE BRITA AQUI.  [título centralizado, âmbar em 'AQUI' (as duas vezes)] |
 | **Animação** | Título em máscara. Apoio entra como três chips separados por barras finas, um a cada 10 frames. Em 62.5 s tudo sai para cima e a frase-chave entra por máscara no centro. |
