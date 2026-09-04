@@ -28,8 +28,13 @@ npx remotion render HelloWorld out/video.mp4   # renderiza a composição
 npm run lint       # eslint + tsc
 ```
 
-Composições registradas em `src/Root.tsx`: `HelloWorld` e `OnlyLogo`. Guia original do
-template em `REMOTION.md`.
+Composições registradas em `src/Root.tsx`:
+
+- `GTKInstitutional` — vídeo institucional da GTK Pré-Moldados (90 s). Roteiro, locução e premissas em `ROTEIRO.md`;
+  código em `src/GTK/`; mídias em `public/gtk/media/`.
+- `GTK-Cenas/*` — cada cena isolada, para edição no Studio.
+- `GTK-Logo/*` — logomarca em PNG (`npx remotion still GTKLogoHorizontal out/logo.png`).
+- `HelloWorld` e `OnlyLogo` — template original. Guia do template em `REMOTION.md`.
 
 ## Os três modos
 
