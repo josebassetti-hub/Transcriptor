@@ -111,7 +111,7 @@ tbl(["Cena", "Versão A (no roteiro)", "Versão B"], [
   ["3 Solução", "BRITA PRODUZIDA AQUI. ENTREGUE AQUI.", "DA JAZIDA À SUA OBRA, DENTRO DO MUNICÍPIO."],
   ["6 Por que agora", "QUEM CONSTRÓI AQUI PRECISA DE BRITA AQUI.", "AS OBRAS JÁ COMEÇARAM. O FORNECEDOR LOCAL TAMBÉM."],
   ["7 Parceria", "VAMOS CONSTRUIR SÃO MATEUS JUNTOS.", "SEJA PARCEIRO DESDE A PRIMEIRA TONELADA."],
-  ["8 Chamada", "Parcerias e pré-contratos: fale com a nossa equipe hoje, aqui no evento.", "Garanta prioridade de fornecimento: converse com a equipe CIPREM antes de sair."],
+  ["8 Chamada", "Parcerias e pré-contratos: fale com a nossa equipe.", "Garanta prioridade de fornecimento: converse com a equipe CIPREM antes de sair."],
 ]);
 
 h2("7. Pendências antes de renderizar");
