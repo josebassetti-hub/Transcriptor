@@ -9,9 +9,9 @@ import { LETTERBOX } from "../theme";
 const Card: React.FC<{ para: string; oferta: string; from: number }> = ({ para, oferta, from }) => {
   const frame = useCurrentFrame();
   const t = interpolate(frame, [from, from + 18], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp", easing: Easing.out(Easing.cubic) });
-  if (frame < from) return null;
+  // antes da hora o cartão ocupa o espaço invisível, para os três terem sempre a mesma largura
   return (
-    <div style={{ flex: 1, background: `${C.navy}cc`, border: `1px solid ${C.silverDark}`, padding: "38px 40px", opacity: t, transform: `translateY(${(1 - t) * 60}px)`, display: "flex", flexDirection: "column", gap: 18, minHeight: 250 }}>
+    <div style={{ flex: 1, background: `${C.navy}cc`, border: `1px solid ${C.silverDark}`, padding: "38px 40px", opacity: frame < from ? 0 : t, transform: `translateY(${(1 - t) * 60}px)`, display: "flex", flexDirection: "column", gap: 18, minHeight: 250 }}>
       <div style={{ fontFamily: FONT, fontWeight: 700, fontSize: 26, color: C.amber, letterSpacing: "0.2em", textTransform: "uppercase" }}>{para}</div>
       <div style={{ fontFamily: FONT, fontWeight: 500, fontSize: 32, color: C.white, lineHeight: 1.35 }}>{oferta}</div>
     </div>
