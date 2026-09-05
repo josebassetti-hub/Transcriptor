@@ -58,14 +58,14 @@ Duração total do conteúdo: 90 s (2250 frames a 25 fps), somando as 8 cenas ab
 | **Som e efeitos** | Whoosh curto na entrada do título; ambiente de rodovia bem baixo (-24 dB) sob a trilha. |
 | **Trilha** | Percussão surda entra em 8 s (bumbo a cada 2 tempos), tensão crescente. |
 
-### Cena 3 — A SOLUÇÃO (CIPREM)  (00:16.0 → 00:26.0, 250 frames)
+### Cena 3 — A SOLUÇÃO (PEDREIRA VALE DO CRICARÉ)  (00:16.0 → 00:26.0, 250 frames)
 
 | Campo | Conteúdo |
 |---|---|
 | **Imagem** | novo_investimento 00:14.0–00:24.0: Polígono da área da jazida sobre o rio (14–15 s) e, em seguida, aérea limpa da área com o desenho da lavra, zoom lento (16–24 s). Sem textos gravados. |
 | **Tratamento** | Clarear de volta ao normal (a solução chega com luz). Gradiente navy só no terço inferior para o texto. |
-| **Texto na tela** | 16.0 s — TÍTULO: CIPREM<br>17.5 s — APOIO: Pedreira e planta de britagem em Nestor Gomes, São Mateus/ES.<br>21.0 s — BRITA PRODUZIDA AQUI. ENTREGUE AQUI.  [título grande centralizado, âmbar em 'AQUI' (as duas vezes)] |
-| **Animação** | 'CIPREM' entra grande (220 px), prata metálica com brilho passando da esquerda para a direita em 20 frames (igual ao logo da vinheta). Apoio abaixo, branco. Em 21 s o título encolhe para o canto superior esquerdo e a frase-chave assume o centro por máscara. |
+| **Texto na tela** | 16.0 s — TÍTULO: PEDREIRA VALE DO CRICARÉ<br>17.5 s — APOIO: Pedreira e planta de britagem em Nestor Gomes, São Mateus/ES.<br>21.0 s — BRITA PRODUZIDA AQUI. ENTREGUE AQUI.  [título grande centralizado, âmbar em 'AQUI' (as duas vezes)] |
+| **Animação** | 'PEDREIRA' pequeno em prata e 'VALE DO CRICARÉ' grande (120 px), prata metálica com brilho passando da esquerda para a direita em 20 frames (igual ao logo da vinheta). Apoio abaixo, branco. Em 21 s o título encolhe para o canto superior esquerdo e a frase-chave assume o centro por máscara. |
 | **Som e efeitos** | Impacto forte com cauda em 16 s (o maior do vídeo). Segundo hit menor em 21 s. |
 | **Trilha** | 16 s: tema principal entra (cordas ou synth em acorde maior), percussão completa. Ponto de virada da trilha. |
 
@@ -118,8 +118,8 @@ Duração total do conteúdo: 90 s (2250 frames a 25 fps), somando as 8 cenas ab
 | Campo | Conteúdo |
 |---|---|
 | **Imagem** | novo_investimento 00:36.0–00:40.7: Cartela do Grupo São Vicente com partículas azuis e logos das empresas do grupo (36–40 s). Congelar o último frame e prolongar até 90 s. |
-| **Tratamento** | Alternativa: fundo gerado no Remotion em navy #01002D com partículas, replicando a cartela, para colocar o logo da CIPREM no centro. |
-| **Texto na tela** | 80.0 s — TÍTULO: CIPREM  |  GRUPO SÃO VICENTE<br>82.0 s — APOIO: Parcerias e pré-contratos: fale com a nossa equipe.<br>84.5 s — gerencia1@mineracaosaovicente.com.br  |  www.mineracaosaovicente.com.br<br>(73) 3262-1601  |  (73) 99983-4832  [prata, 28 px, duas linhas (e-mail e site; telefones)]<br>86.5 s — Brita de São Mateus para São Mateus.  [assinatura, itálico leve, prata, 32 px] |
+| **Tratamento** | Alternativa: fundo gerado no Remotion em navy #01002D com partículas, replicando a cartela, para colocar o logo da Pedreira Vale do Cricaré no centro. |
+| **Texto na tela** | 80.0 s — TÍTULO: PEDREIRA VALE DO CRICARÉ  |  GRUPO SÃO VICENTE<br>82.0 s — APOIO: Parcerias e pré-contratos: fale com a nossa equipe.<br>84.5 s — gerencia1@mineracaosaovicente.com.br  |  www.mineracaosaovicente.com.br<br>(73) 3262-1601  |  (73) 99983-4832  [prata, 28 px, duas linhas (e-mail e site; telefones)]<br>86.5 s — Brita de São Mateus para São Mateus.  [assinatura, itálico leve, prata, 32 px] |
 | **Animação** | Logo/nome entra com brilho metálico. Chamada entra por fade. Contatos entram com linha prata se desenhando por cima. Assinatura entra por último e tudo faz fade para preto nos últimos 20 frames. |
 | **Som e efeitos** | Hit final com cauda longa em 80 s; silêncio de 0.5 s antes do hit (corte da trilha em 79.5 s) para dar peso. |
 | **Trilha** | 79.5 s: corte seco da trilha (meio segundo de silêncio). 80 s: acorde final sustentado com cauda que morre junto com o fade para preto em 90 s. |
@@ -176,4 +176,4 @@ Trechos que NÃO devem entrar: novo_investimento 13–14 s (rótulo "≈40 km") 
 - Fonte Montserrat empacotada localmente. Trilha e efeitos entram como arquivos de áudio na pasta audio/.
 - Remotion exige licença de empresa para uso comercial acima de 3 pessoas; conferir antes do uso final.
 
-_Gerado por build_roteiro.js a partir de scenes.json em 2026-09-04._
+_Gerado por build_roteiro.js a partir de scenes.json em 2026-09-05._

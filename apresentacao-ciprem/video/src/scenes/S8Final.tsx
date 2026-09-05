@@ -3,7 +3,8 @@ import { AbsoluteFill, interpolate, useCurrentFrame } from "remotion";
 import { Scene } from "../data";
 import { sec, C, WIDTH, HEIGHT } from "../theme";
 import { Safe } from "../ui/Layout";
-import { Reveal, Fade, Rule } from "../ui/Text";
+import { Fade, Rule } from "../ui/Text";
+import { BrandName } from "../ui/BrandName";
 
 /** Fundo navy com partículas, no espírito da cartela do grupo. Determinístico (sem Math.random). */
 const Particles: React.FC = () => {
@@ -39,7 +40,7 @@ export const S8Final: React.FC<{ sc: Scene }> = ({ sc }) => {
     <AbsoluteFill style={{ background: `radial-gradient(ellipse at 50% 45%, ${C.navyLight} 0%, ${C.navy} 55%, #000010 100%)` }}>
       <Particles />
       <Safe justify="center" style={{ gap: 26 }}>
-        <Reveal text={cip} from={t0} size={150} metallic tracking={0.24} duration={22} />
+        <BrandName name={cip} from={t0} sizeSmall={36} sizeBig={96} />
         <Fade text={grupo} from={t0 + 12} size={30} color={C.silver} upper tracking={0.35} weight={500} />
         <Rule from={t1 - 10} width={700} style={{ marginTop: 10 }} />
         <Fade text={sc.subtitle} from={t1} size={40} maxWidth={1300} />
